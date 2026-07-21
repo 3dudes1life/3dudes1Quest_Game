@@ -1,23 +1,34 @@
-# 3Dudes1Quest v1.0.8U — Mobile Heartfield Update
+# 3Dudes1Quest v1.0.8V — Combat Feel & Character Identity
+
+## Daniel cleanup
+- Removed Daniel's glitter-cloud switch entrance.
+- Daniel now receives one restrained heart pulse when selected.
+- Heartfields visibly stun and float enemies.
+- Heartfield bursts charge Triangle Power, with bonuses for defeated enemies and absorbed attacks.
+
+## Will — Rainbow Ricochet
+- Rainbow shots bounce to as many as two additional nearby targets.
+- Each bounce redirects toward the nearest valid enemy.
+- Projectiles display remaining ricochet charges.
+
+## Caleb — Sticky Cookie Chaos
+- Cookies stick to enemies, the Queen, or the ground.
+- A visible fuse warns before detonation.
+- Sticky explosions retain large splash damage and stronger combat feedback.
+
+## Combat feel
+- Enemies flash, stun, recoil, and show power-status icons.
+- Defeats use source-specific echoes instead of simply disappearing.
+- Floating hit symbols clarify which power landed.
+- Switching through all three dudes within three seconds awards +20 Triangle Power.
+- Lightweight generated sound cues and distinct mobile haptics were added.
 
 ## Mobile UX
-- Rebuilt action buttons with separate icons and responsive labels.
-- SWITCH, HEARTS/BLAST/BOMB, and JUMP labels now fit narrow iPhone screens.
-- Character-specific Power button icon and label update automatically.
-- Reduced portrait cinematic card size and improved message wrapping.
-- Tightened HUD, objective card, safe-area spacing, and narrow-screen controls.
-
-## Daniel — Heartfield Burst
-- Replaced the passive Positive Shield power with an offensive ranged attack.
-- Daniel fires a homing animated heart projectile.
-- A hit traps the target inside a glowing positivity field.
-- Orbiting hearts, layered rings, bloom, and particles build before detonation.
-- The field explodes HOA enemies and damages nearby enemies.
-- Enemy paperwork/projectiles entering the field are absorbed.
-- Daniel receives a brief launch guard instead of unlimited healing.
-- Heartfield works against the Queen and uses the existing combat/save systems.
+- Compact start messages.
+- Better narrow-button typography for BOUNCE, HEARTS, and STICKY.
+- Controls fade slightly while idle and brighten while touched.
+- Portrait play-space and cinematic card spacing were tightened.
 
 ## Compatibility
-- Built from the exact files currently on GitHub main for v1.0.8T.
-- Saves migrate from 1.0.8T and earlier.
-- All T finale, dog, protest-wave, City Hall, Safari, and touch fixes remain included.
+- Includes every feature from v1.0.8U.
+- Migrates saves from U and earlier versions.

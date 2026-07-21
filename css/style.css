@@ -2084,3 +2084,31 @@ body.touchDevice #gameCanvas{
   #touchControls .controlLabel{font-size:8px}
   #touchControls .controlIcon{font-size:17px}
 }
+
+
+/* =========================================================
+   v1.0.8V — Combat Feel & Character Identity
+   ========================================================= */
+#powerBtn[data-hero="will"] .controlLabel{letter-spacing:-.075em}
+#powerBtn[data-hero="caleb"] .controlLabel{letter-spacing:-.075em}
+#message{transition:opacity .22s ease,transform .22s ease}
+#touchControls{transition:opacity .25s ease,filter .25s ease}
+#touchControls:not(:active){opacity:.82}
+#touchControls:active{opacity:1;filter:brightness(1.08)}
+
+@media (hover:none), (pointer:coarse){
+  #message{font-size:clamp(11px,2.9vw,14px);padding:10px 14px;max-width:70vw}
+  #touchControls .controlLabel{font-size:clamp(7px,20cqw,10px);letter-spacing:-.07em}
+  #powerBtn .controlIcon{font-size:19px}
+}
+
+@media (hover:none) and (pointer:coarse) and (orientation:portrait){
+  .cinematicZoneCard{top:20%;max-height:126px;overflow:hidden}
+  #message{bottom:calc(max(8px,env(safe-area-inset-bottom)) + 72px)}
+  #touchControls button,#touchControls .mini{height:56px}
+}
+
+@media (hover:none) and (pointer:coarse) and (max-width:390px){
+  #powerBtn[data-hero="will"] .controlLabel{font-size:7px}
+  #powerBtn[data-hero="caleb"] .controlLabel{font-size:7px}
+}
