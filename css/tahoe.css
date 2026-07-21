@@ -128,3 +128,14 @@ button{color:#fff;border:0;font-weight:950;cursor:pointer}
 .inputStatus.active .inputDot{background:#70f0bd;box-shadow:0 0 14px #70f0bd}
 .inputStatus.active{transform:translateY(-2px)}
 @media(max-width:760px){.inputStatus{display:none}}
+
+
+/* v2.0.5v — World Polish */
+.saveToast{
+  position:absolute;z-index:24;left:50%;top:76px;transform:translate(-50%,-12px);
+  padding:9px 15px;border-radius:999px;background:rgba(4,26,37,.92);
+  border:1px solid rgba(126,244,202,.7);box-shadow:0 12px 35px rgba(0,0,0,.35);
+  font-weight:900;font-size:.75rem;letter-spacing:.08em;opacity:0;pointer-events:none;
+  transition:opacity .25s,transform .25s
+}
+.saveToast.show{opacity:1;transform:translate(-50%,0)}

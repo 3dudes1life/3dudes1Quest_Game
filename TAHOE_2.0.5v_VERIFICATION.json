@@ -1,0 +1,16 @@
+{
+  "release": "2.0.5v",
+  "base": "v2.0.4 Playable Input Fix",
+  "javascript_syntax": "PASS",
+  "checks": {
+    "new_script_linked": true,
+    "save_system": true,
+    "checkpoint_save": true,
+    "trail_props": true,
+    "improved_beetles": true,
+    "dog_trail_follow": true,
+    "landing_animation": true,
+    "zoey_tail_wag": true
+  },
+  "all_pass": true
+}
