@@ -1,34 +1,31 @@
-# 3Dudes1Quest v1.0.8V — Combat Feel & Character Identity
+# 3Dudes1Quest v1.0.8W — Landscape Combat Polish
 
 ## Daniel cleanup
-- Removed Daniel's glitter-cloud switch entrance.
-- Daniel now receives one restrained heart pulse when selected.
-- Heartfields visibly stun and float enemies.
-- Heartfield bursts charge Triangle Power, with bonuses for defeated enemies and absorbed attacks.
+- Removed Daniel's body-centered pink/teal particle burst.
+- Removed Daniel's character-switch ring.
+- Removed the character-centered particle explosion from the Triple Switch Combo.
+- Daniel now forms one clean heart directly in front of his hands.
+- Heartfield particles still happen where they belong: around the targeted enemy.
 
-## Will — Rainbow Ricochet
-- Rainbow shots bounce to as many as two additional nearby targets.
-- Each bounce redirects toward the nearest valid enemy.
-- Projectiles display remaining ricochet charges.
+## Caleb range upgrade
+- Cookie horizontal speed increased from 7.4 to 10.4.
+- Throw arc is flatter and gravity is reduced.
+- Effective same-height travel distance increased from roughly 261px to roughly 441px.
+- Cookies retain sticky targeting and delayed explosions.
+- Added a small crumb trail so the longer throw is easier to track.
 
-## Caleb — Sticky Cookie Chaos
-- Cookies stick to enemies, the Queen, or the ground.
-- A visible fuse warns before detonation.
-- Sticky explosions retain large splash damage and stronger combat feedback.
+## Mobile landscape UX
+- Landscape is now the primary tuned phone layout.
+- Uses dynamic viewport units where available.
+- HUD, controls, objective card, messages, boss UI, and dialogue are compressed vertically.
+- Touch buttons remain readable on extra-short iPhone landscape heights.
+- Canvas fills the available landscape height without browser-page scrolling.
+- Portrait remains playable and shows a small rotate recommendation.
 
-## Combat feel
-- Enemies flash, stun, recoil, and show power-status icons.
-- Defeats use source-specific echoes instead of simply disappearing.
-- Floating hit symbols clarify which power landed.
-- Switching through all three dudes within three seconds awards +20 Triangle Power.
-- Lightweight generated sound cues and distinct mobile haptics were added.
-
-## Mobile UX
-- Compact start messages.
-- Better narrow-button typography for BOUNCE, HEARTS, and STICKY.
-- Controls fade slightly while idle and brighten while touched.
-- Portrait play-space and cinematic card spacing were tightened.
-
-## Compatibility
-- Includes every feature from v1.0.8U.
-- Migrates saves from U and earlier versions.
+## Cumulative
+Includes the V combat identity systems:
+- Will's Rainbow Ricochet
+- Daniel's Heartfield Control
+- Caleb's sticky cookie behavior
+- Enemy hit reactions
+- Triple Switch Combo
