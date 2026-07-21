@@ -1718,3 +1718,39 @@ body.touchDevice #gameCanvas{
 @media(prefers-reduced-motion:reduce){
   .cinematicZoneCard.play,.petMoment.show,.passportStampM.complete{animation:none}
 }
+
+
+/* =========================================================
+   v1.0.8N — Zoey Rescue UX Fix
+   ========================================================= */
+
+.releaseBadge::after{
+  content:" • RESCUE ZOEY";
+  color:#ffe66d;
+}
+
+.portalDudes .rigsby,
+.portalDudes .zoey{
+  display:inline-grid;
+  place-items:center;
+  filter:drop-shadow(0 5px 10px rgba(0,0,0,.25));
+}
+
+.portalDudes .zoey{
+  position:relative;
+}
+.portalDudes .zoey::after{
+  content:"♥";
+  position:absolute;
+  top:-10px;
+  right:-7px;
+  color:#ff6b9d;
+  font-size:12px;
+}
+
+@media(max-width:760px){
+  .portalDudes .rigsby,
+  .portalDudes .zoey{
+    font-size:.88em;
+  }
+}

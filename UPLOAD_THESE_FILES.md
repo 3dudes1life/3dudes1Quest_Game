@@ -1,36 +1,44 @@
-# 3Dudes1Quest v1.0.8M — Cinematic Adventure Update
+# 3Dudes1Quest v1.0.8N — Zoey Rescue Update
 
-Upload and replace all four runtime files:
+Upload and replace:
 
 - `index.html`
 - `css/style.css`
-- `js/app108m.js`
+- `js/app108n.js`
 - `js/remaster.js`
 
-## New cinematic features
+## Critical dog fix
 
-- Animated location title cards for Home Base, Hillcrest, PCH, Hollywood, and Los Angeles
-- Southern California world-map overlay with discovered locations and live completion stats
-- Animated Adventure Passport with progress and completion stamp
-- Photo Mode that hides the HUD and saves a canvas screenshot
-- Expanded pause menu with Resume, Map, Passport, Photo Mode, and Save
-- Multi-stage Queen of Beige boss banter
-- Animated PCH ocean foam, shimmer, traffic, and background life
-- Magical character-switch transformation rings
-- Five hidden secret discoveries
+The live 1.0.8M build rendered Rigsby twice:
+1. the original HD Rigsby sprite
+2. the additional cinematic hand-drawn Rigsby
+3. Zoey
 
-## Rigsby and Zoey
+1.0.8N removes the duplicate cinematic Rigsby. During normal SoCal gameplay there is now exactly one Rigsby.
 
-- Rigsby is the explorer and reveals hidden secret locations
-- Zoey is the protector and restores health when the player is in danger
-- Zoey grants temporary protection and Triangle energy
-- Rare pet-duo scouting moments feature both dogs
-- Both dogs appear in the Lake Tahoe portal scene
+## Zoey rescue story
+
+- Zoey is missing from Home Base
+- The objective establishes that the Queen of Beige captured her
+- Zoey is visible inside an HOA cage at the final boss arena
+- Boss dialogue references the rescue
+- Defeating the Queen breaks the captivity and permanently unlocks Zoey
+- The objective changes to bringing both beagles to the Lake Tahoe portal
+- Both dogs appear in the portal sequence
+- Completed 1.0.8M saves automatically unlock Zoey
+
+## Zoey gameplay
+
+Zoey's Guardian Heart is locked until she is rescued. After rescue she:
+- follows the player with Rigsby
+- restores one health when the team is in danger
+- grants temporary protection and Triangle energy
+- appears in future-adventure continuity
 
 ## Preserved
 
-- All 1.0.8L Living World restoration effects
-- All 1.0.8K Safari zoom and touch protections
+- Cinematic Adventure features from M
+- Living World effects from L
+- Safari zoom/touch protections from K
 - Mobile and desktop controls
-- Existing levels, boss fight, saves, collectibles, and objectives
-- Save migration from 1.0.8L and earlier
+- Save migration from M and earlier
