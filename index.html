@@ -1,89 +1,87 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no" />
-  <meta name="theme-color" content="#120b2e" />
-  <meta name="apple-mobile-web-app-capable" content="yes" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-  <meta name="description" content="3Dudes1Quest — an original campy retro browser platformer." />
-  <title>3Dudes1Quest: Prism Panic</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
+  <meta name="theme-color" content="#15102f">
+  <title>3Dudes1Quest v0.5</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <main class="game-shell">
-    <header class="game-header">
-      <div class="brand-lockup">
-        <p class="eyebrow">3DUDES1LIFE PRESENTS</p>
-        <h1>3DUDES<span>1</span>QUEST</h1>
-        <p class="subtitle">PRISM PANIC • LEVEL 1</p>
+  <main id="app">
+    <section id="titleScreen" class="screen active">
+      <div class="card">
+        <div class="eyebrow">3DUDES1LIFE CREATIVE PRESENTS</div>
+        <h1>3Dudes1Quest</h1>
+        <h2>Adventure 1: Southern California</h2>
+        <p>Lord Beige is draining the color from SoCal. Restore the Prism Beacons, recover every Gay Card, defeat the HOA Queen of Beige, and enter the portal to the next adventure.</p>
+        <button id="startBtn" class="primary">Start Adventure</button>
+        <button id="helpBtn" class="secondary">How to Play</button>
+        <small>Best played in landscape on mobile.</small>
       </div>
-      <div class="header-actions">
-        <button id="fullscreenButton" class="small-button" type="button" aria-label="Enter full screen">EXPAND</button>
-        <button id="muteButton" class="small-button" type="button" aria-label="Toggle sound">SOUND: ON</button>
+    </section>
+
+    <section id="helpScreen" class="screen">
+      <div class="card compact">
+        <h2>How to Play</h2>
+        <p><b>Move:</b> Arrow keys or A / D</p>
+        <p><b>Jump:</b> Space or W</p>
+        <p><b>Power:</b> X or F</p>
+        <p><b>Switch dudes:</b> 1, 2, 3 or the Switch button</p>
+        <p><b>Goal:</b> Collect 6 Gay Cards, activate 3 Prism Beacons, then beat the boss in Los Angeles.</p>
+        <button id="backBtn" class="primary">Back</button>
       </div>
-    </header>
+    </section>
 
-    <p class="rotate-hint">↻ Rotate sideways for full arcade mode</p>
+    <section id="gameScreen" class="screen">
+      <canvas id="gameCanvas" width="1280" height="720"></canvas>
 
-    <section id="stageWrap" class="stage-wrap" aria-label="3Dudes1Quest game area">
-      <canvas id="game" width="960" height="540">Your browser needs canvas support to play.</canvas>
+      <div id="hud">
+        <div class="chip"><span id="hudDude">Will</span></div>
+        <div class="chip">❤️ <span id="hudHealth">4</span></div>
+        <div class="chip">🪪 <span id="hudCards">0</span>/6</div>
+        <div class="chip">🔮 <span id="hudBeacons">0</span>/3</div>
+      </div>
 
-      <div id="startScreen" class="overlay">
-        <div class="panel">
-          <p class="panel-kicker">LEVEL 1 • THE NEON OUTSKIRTS</p>
-          <h2>Lord Beige stole the Prism of Pride.</h2>
-          <p class="intro-copy">Collect six prism shards, switch between all three dudes, defeat the Beige Beast, and restore the color.</p>
-          <div class="hero-row" aria-label="Playable characters">
-            <span class="mini-hero will">W<small>SASS</small></span>
-            <span class="plus">+</span>
-            <span class="mini-hero daniel">D<small>SHIELD</small></span>
-            <span class="plus">+</span>
-            <span class="mini-hero caleb">C<small>SMASH</small></span>
-          </div>
-          <div class="control-grid">
-            <span><b>MOVE</b> WASD / ARROWS</span>
-            <span><b>JUMP</b> SPACE</span>
-            <span><b>POWER</b> X</span>
-            <span><b>SWITCH</b> 1 / 2 / 3</span>
-          </div>
-          <button id="startButton" class="primary-button" type="button">START 3DUDES1QUEST</button>
+      <button id="pauseBtn">Ⅱ</button>
+      <div id="message"></div>
+
+      <div id="touchControls">
+        <div class="touchGroup">
+          <button data-action="left">◀</button>
+          <button data-action="right">▶</button>
+        </div>
+        <div class="touchGroup right">
+          <button id="switchBtn" class="mini">SWITCH</button>
+          <button data-action="power" class="power">POWER</button>
+          <button data-action="jump" class="jump">JUMP</button>
         </div>
       </div>
-
-      <div id="message" class="toast" aria-live="polite"></div>
     </section>
 
-    <section class="character-bar" aria-label="Character selection">
-      <button class="character-card active" data-character="0" type="button">
-        <span class="portrait will">W</span><span><b>WILL</b><small>Sass Wave</small></span>
-      </button>
-      <button class="character-card" data-character="1" type="button">
-        <span class="portrait daniel">D</span><span><b>DANIEL</b><small>Prism Shield</small></span>
-      </button>
-      <button class="character-card" data-character="2" type="button">
-        <span class="portrait caleb">C</span><span><b>CALEB</b><small>Power Smash</small></span>
-      </button>
+    <section id="completeScreen" class="screen">
+      <div class="card">
+        <div class="eyebrow">ADVENTURE COMPLETE</div>
+        <h1>SoCal Is Fabulous Again!</h1>
+        <p id="completeStats"></p>
+        <div class="stamp">PASSPORT STAMP<br><b>SOUTHERN CALIFORNIA</b></div>
+        <p>The Rainbow Prism has opened a portal to the next adventure.</p>
+        <button id="portalBtn" class="primary">Enter the Portal</button>
+        <button id="restartBtn" class="secondary">Replay SoCal</button>
+      </div>
     </section>
 
-    <section class="instructions">
-      <p><b>Quest:</b> 6 prism shards + defeat the Beige Beast + rainbow portal.</p>
-      <p><b>New:</b> checkpoint flag, collectible Gay Cards, boss battle, fullscreen and true responsive camera.</p>
+    <section id="portalScreen" class="screen">
+      <div class="portalWrap">
+        <div class="portal"></div>
+        <h1>Adventure 2</h1>
+        <h2>Lake Tahoe</h2>
+        <p>Coming next.</p>
+        <button id="titleBtn" class="secondary">Return to Title</button>
+      </div>
     </section>
   </main>
 
-  <nav class="mobile-controls" aria-label="Touch controls">
-    <div class="dpad">
-      <button data-action="left" aria-label="Move left">◀</button>
-      <button data-action="right" aria-label="Move right">▶</button>
-    </div>
-    <button class="switch-control" data-action="switch" aria-label="Switch character">SWITCH</button>
-    <div class="action-pad">
-      <button data-action="jump" aria-label="Jump">JUMP</button>
-      <button data-action="ability" aria-label="Use power">POWER</button>
-    </div>
-  </nav>
-
-  <script src="game.js"></script>
+  <script type="module" src="js/main.js"></script>
 </body>
 </html>

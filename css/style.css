@@ -1,0 +1,46 @@
+*{box-sizing:border-box}
+:root{--pink:#ff4fb8;--orange:#ff9a3c;--yellow:#ffe66d;--teal:#3ce7d2;--purple:#8d5cff;--ink:#fff}
+html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#0d0924;color:var(--ink);font-family:system-ui,-apple-system,Segoe UI,sans-serif;touch-action:none}
+body{padding:env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left)}
+#app,.screen{position:absolute;inset:0}
+.screen{display:none;align-items:center;justify-content:center}
+.screen.active{display:flex}
+#titleScreen,#helpScreen,#completeScreen,#portalScreen{
+  background:
+  radial-gradient(circle at 18% 20%,rgba(255,79,184,.32),transparent 30%),
+  radial-gradient(circle at 80% 18%,rgba(60,231,210,.24),transparent 32%),
+  linear-gradient(180deg,#22165f,#120b35 62%,#09071a);
+  overflow:auto;padding:20px
+}
+.card{width:min(760px,94vw);max-height:94vh;overflow:auto;text-align:center;background:rgba(20,13,52,.94);border:3px solid rgba(255,255,255,.72);border-radius:28px;padding:28px;box-shadow:0 22px 75px rgba(0,0,0,.5)}
+.card.compact{width:min(560px,94vw)}
+.eyebrow{font-weight:900;letter-spacing:.18em;color:var(--teal);font-size:.78rem}
+h1{font-size:clamp(2.8rem,8vw,5.5rem);line-height:.9;margin:.2em 0;background:linear-gradient(90deg,var(--pink),var(--orange),var(--yellow),var(--teal),var(--purple));-webkit-background-clip:text;color:transparent}
+h2{margin:.8em 0}
+p{line-height:1.48}
+small{display:block;opacity:.7;margin-top:10px}
+button{border:0;border-radius:999px;color:#fff;font-weight:900;font-size:1rem;padding:14px 22px;cursor:pointer}
+.primary{display:block;width:min(420px,100%);margin:10px auto;background:linear-gradient(90deg,var(--pink),var(--orange));box-shadow:0 10px 28px rgba(255,79,184,.28)}
+.secondary{display:block;width:min(420px,100%);margin:10px auto;background:#3d3269}
+#gameScreen{background:#000}
+#gameCanvas{display:block;width:100%;height:100%;object-fit:contain;image-rendering:pixelated;background:#15102f}
+#hud{position:absolute;z-index:5;left:10px;top:10px;display:flex;gap:8px;flex-wrap:wrap;pointer-events:none}
+.chip{background:rgba(14,10,35,.82);border:2px solid rgba(255,255,255,.72);border-radius:999px;padding:7px 12px;font-weight:900;backdrop-filter:blur(6px)}
+#pauseBtn{position:absolute;right:10px;top:10px;z-index:7;width:46px;height:46px;padding:0;background:rgba(14,10,35,.82);border:2px solid rgba(255,255,255,.72)}
+#message{position:absolute;z-index:8;left:50%;top:16%;transform:translateX(-50%);max-width:82%;text-align:center;background:rgba(14,10,35,.92);border:2px solid #fff;border-radius:16px;padding:10px 16px;font-weight:900;opacity:0;transition:.2s;pointer-events:none}
+#message.show{opacity:1}
+#touchControls{position:absolute;z-index:6;left:0;right:0;bottom:max(10px,env(safe-area-inset-bottom));display:flex;justify-content:space-between;padding:0 14px}
+.touchGroup{display:flex;gap:10px;align-items:flex-end}
+.touchGroup button{width:74px;height:74px;padding:0;background:rgba(24,16,58,.8);border:3px solid rgba(255,255,255,.75);box-shadow:0 8px 22px rgba(0,0,0,.28);user-select:none;-webkit-user-select:none}
+.touchGroup:first-child button{font-size:1.55rem}
+.touchGroup .mini{width:64px;height:54px;font-size:.65rem;background:rgba(141,92,255,.85)}
+.touchGroup .power{background:rgba(255,79,184,.85)}
+.touchGroup .jump{background:rgba(60,231,210,.85)}
+.stamp{display:inline-block;border:4px dashed var(--pink);border-radius:18px;padding:18px;margin:18px;transform:rotate(-3deg);color:var(--yellow)}
+.portalWrap{text-align:center}
+.portal{width:min(360px,70vw);aspect-ratio:1;margin:0 auto 20px;border-radius:50%;background:conic-gradient(from 0deg,var(--pink),var(--orange),var(--yellow),var(--teal),#4aa3ff,var(--purple),var(--pink));box-shadow:0 0 35px #fff,0 0 90px var(--pink);animation:spin 2.2s linear infinite}
+.portal::after{content:"";display:block;width:64%;height:64%;margin:18%;border-radius:50%;background:radial-gradient(circle,#fff 0,#9be7ff 18%,#402273 45%,#09071a 70%);box-shadow:inset 0 0 45px #fff}
+@keyframes spin{to{transform:rotate(360deg)}}
+@media (hover:hover) and (pointer:fine){#touchControls{opacity:.35}.touchGroup button:hover{transform:translateY(-2px)}}
+@media (max-width:700px){.card{padding:20px}.touchGroup button{width:64px;height:64px}}
+@media (max-height:520px){.card{padding:16px}h1{font-size:2.7rem}.card p{font-size:.86rem}}

@@ -1,28 +1,46 @@
-# 3Dudes1Quest: Prism Panic — Level 1
+# 3Dudes1Quest v0.5
 
-A mobile-first, original campy retro platformer built with plain HTML, CSS, JavaScript and Canvas.
+This is the new modular foundation for the browser game.
 
-## V2 updates
-
-- Correct title: **3Dudes1Quest**
-- Start button now remains visible on iPhone
-- Responsive camera changes shape for portrait and landscape instead of shrinking one fixed 16:9 game
-- Fullscreen/expand control
-- Larger touch controls and a dedicated character-switch button
-- Will, Daniel and Caleb each have a unique power
-- Six prism shards, eight collectible Gay Cards, a checkpoint and a Beige Beast boss battle
-- Keyboard and touch support
-- No external art, libraries or copyrighted game assets
+## Included
+- Adventure 1: Southern California
+- Will, Daniel, and Caleb character switching
+- Unique character powers
+- 6 Gay Cards
+- 3 Prism Beacons
+- SoCal scenery and freeway sections
+- Los Angeles boss: HOA Queen of Beige
+- Adventure completion screen
+- Rainbow portal to Adventure 2: Lake Tahoe
+- Desktop and mobile controls
+- Modular JavaScript structure
 
 ## Controls
-
-- Move: A/D or arrow keys
-- Jump: Space, W or up arrow
-- Power: X
-- Switch: 1, 2, 3 or the mobile SWITCH button
+- Move: Arrow keys or A/D
+- Jump: Space or W
+- Power: X or F
+- Switch characters: 1, 2, 3
+- Mobile: on-screen buttons
 
 ## GitHub Pages
+Upload the entire folder contents to a repository.
 
-Upload `index.html`, `style.css`, and `game.js` to the repository root. GitHub Pages should publish from the `main` branch and `/ (root)`.
+Then:
+1. Open repository Settings.
+2. Select Pages.
+3. Choose Deploy from a branch.
+4. Select `main` and `/root`.
+5. Save.
 
-Because iPhone Safari sometimes caches GitHub Pages aggressively, refresh after deployment or close and reopen the tab.
+## File structure
+- `index.html`
+- `css/style.css`
+- `js/config.js`
+- `js/input.js`
+- `js/ui.js`
+- `js/level.js`
+- `js/game.js`
+- `js/main.js`
+- `levels/socal.json`
+
+The structure is ready for future destination modules, sprites, music, dialogue, journal pages, and save data.
