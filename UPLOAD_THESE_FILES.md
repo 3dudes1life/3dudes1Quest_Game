@@ -1,18 +1,20 @@
-# 3Dudes1Quest v1.0.8B — Complete Southern California Campaign
+# 3Dudes1Quest v1.0.8C — Adventure 1 Director’s Cut
 
-Upload and replace only these files:
+Upload and replace:
 
 - `index.html`
 - `css/style.css`
-- `js/app108b.js` (new)
-- `UPLOAD_THESE_FILES.md` (optional)
+- `js/app108c.js` (new)
 
-The updated index no longer loads `app108.js`.
+The updated index no longer loads `app108b.js`.
 
-Adventure 1 route:
-Home Base → Hillcrest → PCH → Hollywood → Los Angeles → Queen of Beige → Lake Tahoe portal.
-
-Portal requirements:
-- 6/6 Gay Cards
-- 3/3 Prism Beacons
-- Queen of Beige defeated
+## Fixes
+- Will fires real rainbow projectiles.
+- Rainbow blasts destroy HOA bots and damage the Queen.
+- Daniel reflects Queen projectiles.
+- Caleb throws explosive cookie bombs.
+- Final Gay Card appears on the downtown LA approach.
+- Downtown skyline, moving traffic, palms, LA billboards, freeway, and Los Angeles City Hall.
+- Visible rainbow City Hall gate with requirements.
+- Three-phase Queen of Beige fight.
+- Portal opens only after the Queen is defeated.

@@ -1,8 +1,10 @@
 {
-  "five_zones": true,
-  "six_cards": true,
-  "three_beacons": true,
-  "boss_gate": true,
-  "portal_after_boss": true,
-  "lake_tahoe_only_after_complete": true
+  "rainbow_projectiles": true,
+  "hoa_destruction": true,
+  "shield_reflection": true,
+  "cookie_bombs": true,
+  "three_phases": true,
+  "la_city_hall": true,
+  "final_card_la": true,
+  "portal_after_boss": true
 }
