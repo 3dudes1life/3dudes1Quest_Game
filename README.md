@@ -1,21 +1,18 @@
-# 3Dudes1Quest v1.0.4V — Remastered
+# 3Dudes1Quest v1.0.8V — Combat Feel & Character Identity
 
-This build is the major premium-experience upgrade.
+This is the full repository build for the V update.
 
-## Headline features
+## Headline changes
 
-- Cinematic loading and title screen
-- Enter the Quest start flow
-- Full-screen scene transitions
-- Animated living environments
-- Dynamic time and atmosphere
-- Achievement popups
-- Collectible notifications
-- Ambient pedestrians, vehicles, chickens, butterflies, and ocean mist
-- Improved scene presentation and game-shell polish
+- Will now fires Rainbow Ricochet shots that bounce through groups.
+- Daniel uses Heartfield Burst without a glitter-cloud character entrance.
+- Daniel's Heartfields trap enemies and charge Triangle Power.
+- Caleb throws sticky cookie bombs with visible fuses and delayed explosions.
+- Enemies now flash, recoil, stun, display status icons, and leave power-specific defeat effects.
+- Switching through Will, Daniel, and Caleb within three seconds awards a Triangle Power combo.
+- Mobile combat labels and portrait spacing are tightened.
 
 ## Install
 
 Upload the entire contents of this ZIP to the repository root and replace the existing files.
-
-This is a full build, not a patch.
+The active runtime file is `js/app108v.js`.

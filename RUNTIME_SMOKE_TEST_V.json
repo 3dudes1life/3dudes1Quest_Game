@@ -1,0 +1,10 @@
+{
+  "attempted": true,
+  "passed": null,
+  "details": "System Chromium could not complete a headless screenshot/dump inside the container and timed out because of host DBus/inotify restrictions. This was not treated as a game-code failure.",
+  "fallback_validation": [
+    "Node JavaScript syntax check",
+    "isolated combat logic harness",
+    "ZIP CRC integrity test"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "release": "1.0.8V",
+  "checks": {
+    "version_108v": true,
+    "loads_app108v": true,
+    "no_undefined_enemy_in_projectile_draw": true,
+    "will_ricochet": true,
+    "daniel_clean_switch": true,
+    "heartfield_triangle": true,
+    "sticky_cookie": true,
+    "combat_reactions": true,
+    "switch_combo": true,
+    "legacy_u_save": true,
+    "logic_tests_passed": true,
+    "node_syntax_passed": true
+  }
+}

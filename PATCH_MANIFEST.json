@@ -1,25 +1,21 @@
 {
-  "release": "v1.0.2V Phase 3",
-  "type": "incremental patch",
-  "requires": "v1.0.2V Phase 2",
-  "overwrite": [
+  "release": "v1.0.8V",
+  "type": "full repository build",
+  "base": "v1.0.8U",
+  "critical_files": [
     "index.html",
     "css/style.css",
-    "js/game.js",
-    "js/config.js",
-    "js/input.js",
-    "js/level.js",
-    "js/main.js",
-    "js/ui.js",
+    "js/app108v.js",
     "VERSION.txt",
-    "README.md",
     "CHANGELOG.md"
   ],
-  "new_files": [
-    "assets/effects/beige_bloom.png",
-    "assets/effects/cookie_bloom.png",
-    "assets/effects/prism_bloom.png",
-    "assets/effects/rainbow_bloom.png",
-    "assets/effects/shield_bloom.png"
+  "save_migration": [
+    "v1.0.8U",
+    "v1.0.8T",
+    "v1.0.8S",
+    "v1.0.8R",
+    "v1.0.8Q",
+    "v1.0.8P",
+    "v1.0.8O and earlier"
   ]
 }
