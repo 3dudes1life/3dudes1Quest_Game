@@ -6,13 +6,15 @@
   ctx.imageSmoothingEnabled = false;
 
   const startScreen = document.getElementById("startScreen");
-  const startButton = document.getElementById("startButton");
+  let startButton = document.getElementById("startButton");
   const muteButton = document.getElementById("muteButton");
+  const fullscreenButton = document.getElementById("fullscreenButton");
+  const stageWrap = document.getElementById("stageWrap");
   const messageEl = document.getElementById("message");
   const characterButtons = [...document.querySelectorAll(".character-card")];
   const touchButtons = [...document.querySelectorAll(".mobile-controls button")];
 
-  const W = canvas.width;
+  let W = canvas.width;
   const H = canvas.height;
   const TILE = 48;
   const WORLD_W = 4320;
@@ -80,6 +82,9 @@
     shards: [],
     enemies: [],
     decor: [],
+    cards: [],
+    checkpoints: [],
+    boss: null,
     exit: { x: 4110, y: 300, w: 90, h: 150 },
   };
 
@@ -93,13 +98,16 @@
     onGround: false,
     facing: 1,
     character: 0,
-    health: 3,
+    health: 4,
     invuln: 0,
     shield: 0,
     abilityCooldown: 0,
     coyote: 0,
     jumpBuffer: 0,
     shards: 0,
+    cards: 0,
+    respawnX: 110,
+    respawnY: 300,
     won: false,
     dead: false,
   };
@@ -123,6 +131,14 @@
     level.shards.push({ x, y, w: 24, h: 30, collected: false, bob: Math.random() * Math.PI * 2 });
   }
 
+  function gayCard(x, y) {
+    level.cards.push({ x, y, w: 28, h: 20, collected: false, bob: Math.random() * Math.PI * 2 });
+  }
+
+  function checkpoint(x, y) {
+    level.checkpoints.push({ x, y, w: 34, h: 82, active: false });
+  }
+
   function enemy(x, y, left, right, speed = 75) {
     level.enemies.push({
       x, y, w: 38, h: 38,
@@ -140,6 +156,9 @@
     level.shards.length = 0;
     level.enemies.length = 0;
     level.decor.length = 0;
+    level.cards.length = 0;
+    level.checkpoints.length = 0;
+    level.boss = null;
 
     rect(0, 468, 1100, 100, "ground");
     rect(1240, 468, 690, 100, "ground");
@@ -177,6 +196,18 @@
     shard(2600, 185);
     shard(3650, 200);
 
+    gayCard(280, 420);
+    gayCard(675, 252);
+    gayCard(1450, 302);
+    gayCard(2045, 325);
+    gayCard(2340, 254);
+    gayCard(3075, 420);
+    gayCard(3605, 202);
+    gayCard(4005, 282);
+
+    checkpoint(2110, 386);
+    level.boss = { x: 3890, y: 392, w: 74, h: 76, hp: 5, maxHp: 5, dir: -1, dead: false, hitFlash: 0, cooldown: 0 };
+
     enemy(610, 430, 540, 1000);
     enemy(1390, 312, 1320, 1470, 62);
     enemy(2160, 430, 2070, 2800, 85);
@@ -200,9 +231,9 @@
     Object.assign(player, {
       x: 110, y: 300, vx: 0, vy: 0,
       onGround: false, facing: 1, character: 0,
-      health: 3, invuln: 0, shield: 0,
+      health: 4, invuln: 0, shield: 0,
       abilityCooldown: 0, coyote: 0, jumpBuffer: 0,
-      shards: 0, won: false, dead: false,
+      shards: 0, cards: 0, respawnX: 110, respawnY: 300, won: false, dead: false,
     });
     cameraX = 0;
     updateCharacterUI();
@@ -212,7 +243,7 @@
     resetGame();
     running = true;
     startScreen.classList.add("hidden");
-    showMessage("THE PRISM NEEDS YOU.");
+    showMessage("3DUDES1QUEST BEGINS!");
     blip(520, .08, "square");
   }
 
@@ -238,6 +269,10 @@
     burst(player.x + player.w / 2, player.y + player.h / 2, characters[index].color, 14);
     showMessage(`${characters[index].name}: ${characters[index].ability}`);
     blip(340 + index * 110, .07, "square");
+  }
+
+  function cycleCharacter() {
+    switchCharacter((player.character + 1) % characters.length);
   }
 
   function updateCharacterUI() {
@@ -367,10 +402,48 @@
           smashed = true;
         }
       }
+      if (level.boss && !level.boss.dead && overlap(smashZone, level.boss)) {
+        damageBoss(2);
+        smashed = true;
+      }
       shake = smashed ? 14 : 7;
       burst(player.x + player.w / 2, player.y + player.h, c.color, 14);
       blip(smashed ? 110 : 180, .18, "square");
     }
+  }
+
+  function damageBoss(amount = 1) {
+    const b = level.boss;
+    if (!b || b.dead || b.hitFlash > 0) return;
+    b.hp -= amount;
+    b.hitFlash = .35;
+    shake = 14;
+    burst(b.x + b.w / 2, b.y + b.h / 2, COLORS.yellow, 24);
+    blip(120, .16, "sawtooth");
+    showMessage(`BEIGE BEAST: ${Math.max(0, b.hp)}/${b.maxHp}`);
+    if (b.hp <= 0) {
+      b.dead = true;
+      burst(b.x + b.w / 2, b.y + b.h / 2, COLORS.pink, 60);
+      showMessage("BEIGE BEAST DEFEATED — THE PORTAL IS READY!", 2.2);
+      [440, 660, 880].forEach((f, i) => setTimeout(() => blip(f, .12, "square"), i * 100));
+    }
+  }
+
+  function updateBoss(dt) {
+    const b = level.boss;
+    if (!b || b.dead) return;
+    b.hitFlash = Math.max(0, b.hitFlash - dt);
+    b.cooldown -= dt;
+    if (Math.abs(player.x - b.x) < 620) {
+      b.x += b.dir * 70 * dt;
+      if (b.x < 3790) b.dir = 1;
+      if (b.x > 4010) b.dir = -1;
+      if (b.cooldown <= 0) {
+        b.cooldown = 1.35;
+        projectiles.push({ x:b.x + b.w/2, y:b.y+22, w:22, h:22, vx:(player.x < b.x ? -330 : 330), life:2.6, color:COLORS.beige, hostile:true });
+      }
+    }
+    if (overlap(player,b)) hurtPlayer(b.x + b.w/2);
   }
 
   function update(dt) {
@@ -470,16 +543,40 @@
       }
     }
 
+    for (const card of level.cards) {
+      card.bob += dt * 4;
+      if (!card.collected && overlap(player, card)) {
+        card.collected = true;
+        player.cards += 1;
+        burst(card.x + card.w/2, card.y + card.h/2, COLORS.pink, 16);
+        blip(1180, .08, "square");
+        showMessage(`GAY CARD ${player.cards}/${level.cards.length}`);
+      }
+    }
+
+    for (const cp of level.checkpoints) {
+      if (!cp.active && overlap(player, cp)) {
+        level.checkpoints.forEach(c => c.active = false);
+        cp.active = true;
+        player.respawnX = cp.x + 45;
+        player.respawnY = cp.y - 40;
+        showMessage("CHECKPOINT: YOU SURVIVED THE DISCOURSE.", 2);
+        burst(cp.x + 15, cp.y + 18, COLORS.teal, 26);
+      }
+    }
+
+    updateBoss(dt);
+
     if (player.y > H + 160) {
       hurtPlayer(player.x);
-      player.x = Math.max(90, cameraX + 100);
-      player.y = 150;
+      player.x = player.respawnX;
+      player.y = player.respawnY;
       player.vx = 0;
       player.vy = 0;
     }
 
     if (overlap(player, level.exit)) {
-      if (player.shards >= 6) {
+      if (player.shards >= 6 && level.boss && level.boss.dead) {
         player.won = true;
         running = false;
         burst(level.exit.x + 45, level.exit.y + 75, COLORS.yellow, 80);
@@ -488,7 +585,8 @@
           showEnd("COLOR RESTORED!", "Lord Beige has been defeated by teamwork, impeccable timing, and a completely reasonable amount of glitter.", "PLAY AGAIN");
         }, 850);
       } else {
-        showMessage(`THE PORTAL NEEDS ${6 - player.shards} MORE SHARD${6 - player.shards === 1 ? "" : "S"}.`);
+        if (player.shards < 6) showMessage(`THE PORTAL NEEDS ${6 - player.shards} MORE SHARD${6 - player.shards === 1 ? "" : "S"}.`);
+        else showMessage("DEFEAT THE BEIGE BEAST FIRST!");
       }
     }
 
@@ -542,14 +640,25 @@
       p.life -= dt;
 
       let hit = false;
-      for (const e of level.enemies) {
-        if (!e.dead && overlap(p, e)) {
-          e.stunned = 2.2;
-          e.dir *= -1;
-          burst(e.x + e.w / 2, e.y + e.h / 2, COLORS.pink, 14);
-          blip(740, .08, "square");
+      if (p.hostile) {
+        if (overlap(p, player)) {
+          hurtPlayer(p.x);
           hit = true;
-          break;
+        }
+      } else {
+        for (const e of level.enemies) {
+          if (!e.dead && overlap(p, e)) {
+            e.stunned = 2.2;
+            e.dir *= -1;
+            burst(e.x + e.w / 2, e.y + e.h / 2, COLORS.pink, 14);
+            blip(740, .08, "square");
+            hit = true;
+            break;
+          }
+        }
+        if (!hit && level.boss && !level.boss.dead && overlap(p, level.boss)) {
+          damageBoss(1);
+          hit = true;
         }
       }
 
@@ -667,6 +776,12 @@
       drawPrism(s.x + s.w / 2, bobY + s.h / 2);
     }
 
+    for (const card of level.cards) {
+      if (!card.collected) drawGayCard(card.x, card.y + Math.sin(card.bob) * 5);
+    }
+    for (const cp of level.checkpoints) drawCheckpoint(cp);
+    if (level.boss && !level.boss.dead) drawBoss(level.boss);
+
     for (const e of level.enemies) {
       if (!e.dead) drawEnemy(e);
     }
@@ -713,6 +828,35 @@
     ctx.lineWidth = 3;
     ctx.strokeRect(-12, -12, 24, 24);
     ctx.restore();
+  }
+
+  function drawGayCard(x, y) {
+    ctx.save();
+    ctx.translate(x,y);
+    ctx.fillStyle = COLORS.white; ctx.fillRect(0,0,28,20);
+    ctx.fillStyle = COLORS.pink; ctx.fillRect(3,3,22,14);
+    ctx.fillStyle = COLORS.yellow; ctx.font = "bold 10px Courier New"; ctx.textAlign="center"; ctx.fillText("GAY",14,13);
+    ctx.restore();
+  }
+
+  function drawCheckpoint(cp) {
+    ctx.fillStyle = "#eee7ff"; ctx.fillRect(cp.x, cp.y, 5, cp.h);
+    ctx.fillStyle = cp.active ? COLORS.teal : COLORS.purple;
+    ctx.fillRect(cp.x+5, cp.y+5, 34, 22);
+    ctx.fillStyle = COLORS.white; ctx.font="bold 12px Courier New"; ctx.fillText("3D",cp.x+11,cp.y+21);
+  }
+
+  function drawBoss(b) {
+    ctx.save(); ctx.translate(b.x,b.y);
+    ctx.fillStyle = b.hitFlash > 0 ? COLORS.white : COLORS.beige;
+    ctx.fillRect(8,10,58,55); ctx.fillRect(16,2,42,68);
+    ctx.fillStyle = COLORS.beigeDark; ctx.fillRect(3,18,16,35); ctx.fillRect(55,18,16,35);
+    ctx.fillStyle = "#24152f"; ctx.fillRect(24,20,7,8); ctx.fillRect(44,20,7,8); ctx.fillRect(28,44,20,6);
+    ctx.fillStyle = COLORS.pink; ctx.fillRect(17,0,40,7);
+    ctx.fillStyle = COLORS.white; ctx.font="bold 10px Courier New"; ctx.textAlign="center"; ctx.fillText("BEIGE",37,6);
+    ctx.restore();
+    ctx.fillStyle="rgba(15,7,35,.85)"; ctx.fillRect(b.x-3,b.y-18,80,10);
+    ctx.fillStyle=COLORS.danger; ctx.fillRect(b.x,b.y-15,74*(b.hp/b.maxHp),5);
   }
 
   function drawEnemy(e) {
@@ -785,7 +929,7 @@
   }
 
   function drawExit() {
-    const unlocked = player.shards >= 6;
+    const unlocked = player.shards >= 6 && level.boss && level.boss.dead;
     const e = level.exit;
     ctx.save();
     ctx.translate(e.x + e.w / 2, e.y + e.h / 2);
@@ -813,8 +957,8 @@
       ctx.fillStyle = p.color;
       ctx.fillRect(p.x, p.y, p.w, p.h);
       ctx.fillStyle = COLORS.white;
-      ctx.font = "bold 13px Courier New";
-      ctx.fillText("YAS", p.x + 2, p.y + 14);
+      ctx.font = `bold ${p.hostile ? 10 : 13}px Courier New`;
+      ctx.fillText(p.hostile ? "NO" : "YAS", p.x + 2, p.y + 14);
     }
   }
 
@@ -852,41 +996,28 @@
   }
 
   function drawHUD() {
-    ctx.fillStyle = "rgba(16,8,40,.82)";
-    ctx.fillRect(16, 16, 270, 70);
-    ctx.strokeStyle = COLORS.white;
-    ctx.lineWidth = 3;
-    ctx.strokeRect(16, 16, 270, 70);
+    const compact = W < 620;
+    const pad = compact ? 8 : 16;
+    const h = compact ? 52 : 70;
+    ctx.fillStyle = "rgba(16,8,40,.84)";
+    ctx.fillRect(pad, pad, compact ? W - pad*2 : 300, h);
+    ctx.strokeStyle = COLORS.white; ctx.lineWidth = compact ? 2 : 3;
+    ctx.strokeRect(pad, pad, compact ? W - pad*2 : 300, h);
 
     const c = characters[player.character];
-    ctx.fillStyle = c.color;
-    ctx.fillRect(28, 28, 44, 44);
-    ctx.fillStyle = "#140c2b";
-    ctx.font = "bold 24px Courier New";
-    ctx.textAlign = "center";
-    ctx.fillText(c.name[0], 50, 59);
+    const box = compact ? 32 : 44;
+    ctx.fillStyle = c.color; ctx.fillRect(pad+10,pad+10,box,box);
+    ctx.fillStyle="#140c2b"; ctx.font=`bold ${compact?18:24}px Courier New`; ctx.textAlign="center";
+    ctx.fillText(c.name[0],pad+10+box/2,pad+(compact?34:43));
+    ctx.textAlign="left"; ctx.fillStyle=COLORS.white; ctx.font=`bold ${compact?13:16}px Courier New`;
+    ctx.fillText(c.name,pad+(compact?50:68),pad+(compact?23:24));
+    ctx.font=`${compact?9:12}px Courier New`; ctx.fillStyle="#d6c8ef";
+    ctx.fillText(c.ability,pad+(compact?50:68),pad+(compact?39:44));
 
-    ctx.textAlign = "left";
-    ctx.fillStyle = COLORS.white;
-    ctx.font = "bold 16px Courier New";
-    ctx.fillText(c.name, 84, 40);
-    ctx.font = "13px Courier New";
-    ctx.fillStyle = "#d6c8ef";
-    ctx.fillText(c.ability, 84, 60);
-
-    for (let i = 0; i < 3; i++) {
-      ctx.fillStyle = i < player.health ? COLORS.pink : "#543350";
-      drawPixelHeart(205 + i * 23, 48, 2.2);
-    }
-
-    ctx.fillStyle = "rgba(16,8,40,.82)";
-    ctx.fillRect(W - 172, 16, 156, 52);
-    ctx.strokeStyle = COLORS.white;
-    ctx.strokeRect(W - 172, 16, 156, 52);
-    drawPrism(W - 146, 42);
-    ctx.fillStyle = COLORS.white;
-    ctx.font = "bold 19px Courier New";
-    ctx.fillText(`${player.shards}/6`, W - 118, 49);
+    const heartStart = compact ? W-148 : 202;
+    for (let i=0;i<4;i++) { ctx.fillStyle=i<player.health?COLORS.pink:"#543350"; drawPixelHeart(heartStart+i*(compact?20:22),pad+(compact?27:34),compact?1.7:2); }
+    ctx.fillStyle=COLORS.white; ctx.font=`bold ${compact?12:16}px Courier New`; ctx.textAlign="right";
+    ctx.fillText(`◆ ${player.shards}/6  CARD ${player.cards}/${level.cards.length}`,W-pad-8,pad+h-8);
   }
 
   function drawPixelHeart(x, y, s) {
@@ -928,16 +1059,13 @@
 
   touchButtons.forEach((button) => {
     const action = button.dataset.action;
-    const press = (event) => {
-      event.preventDefault();
-      touch[action] = true;
-      button.classList.add("pressed");
-    };
-    const release = (event) => {
-      event.preventDefault();
-      touch[action] = false;
-      button.classList.remove("pressed");
-    };
+    if (action === "switch") {
+      button.addEventListener("pointerdown", (event) => { event.preventDefault(); button.classList.add("pressed"); cycleCharacter(); });
+      ["pointerup","pointercancel","pointerleave"].forEach(type => button.addEventListener(type, () => button.classList.remove("pressed")));
+      return;
+    }
+    const press = (event) => { event.preventDefault(); touch[action] = true; button.classList.add("pressed"); };
+    const release = (event) => { event.preventDefault(); touch[action] = false; button.classList.remove("pressed"); };
     button.addEventListener("pointerdown", press);
     button.addEventListener("pointerup", release);
     button.addEventListener("pointercancel", release);
@@ -950,8 +1078,28 @@
     if (!muted) blip(540, .08, "square");
   });
 
+  function resizeGameCanvas() {
+    const bounds = stageWrap.getBoundingClientRect();
+    const aspect = Math.max(.72, Math.min(1.8, bounds.width / Math.max(1,bounds.height)));
+    W = Math.round(H * aspect);
+    canvas.width = W;
+    canvas.height = H;
+    ctx.imageSmoothingEnabled = false;
+    cameraX = Math.max(0, Math.min(WORLD_W-W,cameraX));
+  }
+
+  window.addEventListener("resize", resizeGameCanvas);
+  window.addEventListener("orientationchange", () => setTimeout(resizeGameCanvas,180));
+  fullscreenButton.addEventListener("click", async () => {
+    try {
+      if (!document.fullscreenElement) await document.documentElement.requestFullscreen();
+      else await document.exitFullscreen();
+    } catch { showMessage("ROTATE SIDEWAYS FOR ARCADE MODE."); }
+  });
+
   startButton.addEventListener("click", startGame);
 
+  resizeGameCanvas();
   buildLevel();
   requestAnimationFrame(loop);
 })();

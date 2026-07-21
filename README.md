@@ -1,55 +1,28 @@
-# 3Dudes: Prism Panic — Browser Game Demo
+# 3Dudes1Quest: Prism Panic — Level 1
 
-An original, campy, PG-13, 8-bit-style platformer prototype built with plain HTML, CSS, and JavaScript.
+A mobile-first, original campy retro platformer built with plain HTML, CSS, JavaScript and Canvas.
 
-No libraries, build tools, accounts, or paid services are required.
+## V2 updates
 
-## Play locally
-
-Open `index.html` in a modern browser.
-
-For the most reliable local testing, run a small web server from this folder:
-
-```bash
-python3 -m http.server 8000
-```
-
-Then visit `http://localhost:8000`.
+- Correct title: **3Dudes1Quest**
+- Start button now remains visible on iPhone
+- Responsive camera changes shape for portrait and landscape instead of shrinking one fixed 16:9 game
+- Fullscreen/expand control
+- Larger touch controls and a dedicated character-switch button
+- Will, Daniel and Caleb each have a unique power
+- Six prism shards, eight collectible Gay Cards, a checkpoint and a Beige Beast boss battle
+- Keyboard and touch support
+- No external art, libraries or copyrighted game assets
 
 ## Controls
 
-- Move: `A` / `D` or arrow keys
-- Jump: `Space`, `W`, or up arrow
-- Ability: `X`
-- Switch character: `1`, `2`, `3`
-- Touch controls appear automatically on phones and tablets
+- Move: A/D or arrow keys
+- Jump: Space, W or up arrow
+- Power: X
+- Switch: 1, 2, 3 or the mobile SWITCH button
 
-## Character abilities
+## GitHub Pages
 
-- **Will — Sass Wave:** fires a “YAS” wave that stuns enemies.
-- **Daniel — Prism Shield:** temporarily blocks damage.
-- **Caleb — Power Smash:** destroys cracked beige blocks and nearby enemies.
+Upload `index.html`, `style.css`, and `game.js` to the repository root. GitHub Pages should publish from the `main` branch and `/ (root)`.
 
-## Goal
-
-Collect all six prism shards and enter the rainbow portal.
-
-## Publish with GitHub Pages
-
-1. Create a new GitHub repository.
-2. Upload every file from this folder to the repository root.
-3. Open the repository’s **Settings**.
-4. Choose **Pages**.
-5. Under **Build and deployment**, select **Deploy from a branch**.
-6. Select the `main` branch and `/ (root)`.
-7. Save. GitHub will provide the public game URL.
-
-## Project files
-
-- `index.html` — page structure and controls
-- `style.css` — responsive arcade presentation
-- `game.js` — game loop, physics, characters, enemies, level, sound, and pixel-art drawing
-
-## Notes
-
-This is a prototype using original names, mechanics, and programmatically drawn pixel art. It does not use Nintendo, Mario, or other third-party game assets.
+Because iPhone Safari sometimes caches GitHub Pages aggressively, refresh after deployment or close and reopen the tab.
