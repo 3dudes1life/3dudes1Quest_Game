@@ -2366,3 +2366,12 @@ body.touchDevice #gameCanvas{
     -webkit-backdrop-filter:blur(14px);
   }
 }
+
+
+/* =========================================================
+   v1.0.8X — Universal Power Button Label
+   ========================================================= */
+#powerBtn .controlLabel{
+  letter-spacing:.015em!important;
+  font-size:8px!important;
+}

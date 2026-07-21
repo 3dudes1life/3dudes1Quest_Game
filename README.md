@@ -1,4 +1,4 @@
-# 3Dudes1Quest v1.0.8W — Combat Feel & Character Identity
+# 3Dudes1Quest v1.0.8X — Combat Feel & Character Identity
 
 This is the full repository build for the V update.
 
@@ -18,5 +18,9 @@ Upload the entire contents of this ZIP to the repository root and replace the ex
 The active runtime file is `js/app108v.js`.
 
 
-## v1.0.8W
+## v1.0.8X
 Landscape-first mobile controls, clean Daniel casting, and long-range Caleb cookie throws.
+
+
+## v1.0.8X
+The mobile power button now always says POWER while retaining each character's emoji.

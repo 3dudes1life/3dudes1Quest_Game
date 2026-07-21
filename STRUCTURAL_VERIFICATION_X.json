@@ -1,0 +1,15 @@
+{
+  "release": "1.0.8X",
+  "checks": {
+    "version_108x": true,
+    "index_loads_app108x": true,
+    "initial_label_power": true,
+    "runtime_label_power": true,
+    "will_emoji_preserved": true,
+    "daniel_emoji_preserved": true,
+    "caleb_emoji_preserved": true,
+    "accessible_power_names_preserved": true,
+    "legacy_w_save": true,
+    "javascript_syntax": true
+  }
+}

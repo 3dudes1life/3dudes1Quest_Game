@@ -1,11 +1,13 @@
-# Upload v1.0.8W
+# Upload v1.0.8X
 
 This is a full-repository ZIP.
 
-Replace the repository contents with this package. The important runtime files are:
+Replace the repository contents with this package.
+
+Primary runtime files:
 
 - `index.html`
 - `css/style.css`
-- `js/app108w.js`
+- `js/app108x.js`
 
-`index.html` already references the W script and cache-busting stylesheet URL.
+The HTML already references the X script and cache-busting stylesheet URL.
