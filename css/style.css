@@ -715,3 +715,10 @@ body{
   .achievementStack{right:10px;top:10px}
   .achievementCard{width:calc(100vw - 20px)}
 }
+
+
+/* v1.0.5 emergency cleanup */
+.bootSequence{z-index:9999}
+.gameShell::before{display:none!important}
+.sceneCurtainGlow{display:none!important}
+.collectibleToast,.achievementStack{pointer-events:none}

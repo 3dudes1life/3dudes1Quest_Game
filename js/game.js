@@ -555,7 +555,7 @@ export class Game{
     this.drawEnvironmentLayer(t);
     this.drawParallax(t);
     this.drawEnvironmentalAnimation(t);
-    this.drawLivingWorld(t);
+    
     this.drawPrismAtmosphere(t);
     this.drawAmbient(t);c.save();c.translate(-this.cameraX,0);this.drawWorld(t);this.drawPlayer(t);c.restore();
     if(this.state.bossActive&&this.boss.alive)this.drawBossHud();
@@ -1037,7 +1037,7 @@ export class Game{
     if(this.state.rigsby)this.drawRigsby();
     this.drawBossDefeat(t);
     this.drawAbilityLighting(t);
-    this.drawForegroundEnvironment();
+    
     for(const p of this.state.particles){this.ctx.globalAlpha=p.life/60;this.ctx.fillStyle=p.color;this.ctx.fillRect(p.x,p.y,6,6);this.ctx.globalAlpha=1}
   }
 
