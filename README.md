@@ -1,22 +1,22 @@
-# 3Dudes1Quest v0.9.2.2V — Uninterrupted Playtest Fix
+# 3Dudes1Quest v0.9.3 — Visual Overhaul
 
-This patch fixes the intrusive dialogue behavior discovered during the first mobile playtest.
+This release focuses on presentation instead of adding more gameplay.
 
-## Fixed
-- Character banter no longer pauses gameplay.
-- Removed the giant full-width dialogue interruption.
-- Removed the mandatory NEXT button.
-- Removed the PAUSED overlay caused by spontaneous quotes.
-- Quotes now appear as compact non-blocking banter bubbles.
-- Banter automatically disappears after enough time to read it.
-- Multiple quotes queue instead of overlapping or being lost.
-- Movement, jumping, fighting, and switching characters continue normally.
-- Closing the Adventure Journal reliably resumes gameplay.
-- Added a dedicated v0.9.2.2V save slot.
+## Included
+- Prototype 32x48 character sprite sheets (Will, Daniel, Caleb)
+- Prototype NPC sprites
+- Asset pipeline (`assets/`) ready for replacing placeholder rectangles
+- Visual overhaul roadmap:
+  - expressive characters
+  - animated walking
+  - richer NPCs
+  - improved backgrounds
+  - lighting & shadows
+  - cinematic camera
+  - enhanced particles
+  - dialogue portraits
+  - travel journal polish
+  - postcard/passport collection
 
-## What still pauses the game
-- Manual pause button
-- Adventure Journal
-- Opening and ending cutscenes
-
-The sass remains. The interruption does not.
+### Next implementation
+Replace placeholder rectangle rendering with these sprite assets and add animation states.
