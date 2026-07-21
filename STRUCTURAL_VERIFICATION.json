@@ -1,10 +1,11 @@
 {
-  "rainbow_projectiles": true,
-  "hoa_destruction": true,
-  "shield_reflection": true,
-  "cookie_bombs": true,
-  "three_phases": true,
-  "la_city_hall": true,
-  "final_card_la": true,
-  "portal_after_boss": true
+  "no_fullscreen_scene_activation": true,
+  "compact_zone_banner": true,
+  "gameplay_zone_flow": true,
+  "drag_queen_wig": true,
+  "sunglasses": true,
+  "hoa_badge": true,
+  "clipboard": true,
+  "stilettos": true,
+  "three_phase_visuals": true
 }

@@ -1,20 +1,26 @@
-# 3Dudes1Quest v1.0.8C — Adventure 1 Director’s Cut
+# 3Dudes1Quest v1.0.8D — Flow & Queen Upgrade
 
 Upload and replace:
 
 - `index.html`
 - `css/style.css`
-- `js/app108c.js` (new)
+- `js/app108d.js` (new)
+- `UPLOAD_THESE_FILES.md` (optional)
 
-The updated index no longer loads `app108b.js`.
+The updated index no longer loads `app108c.js`.
 
-## Fixes
-- Will fires real rainbow projectiles.
-- Rainbow blasts destroy HOA bots and damage the Queen.
-- Daniel reflects Queen projectiles.
-- Caleb throws explosive cookie bombs.
-- Final Gay Card appears on the downtown LA approach.
-- Downtown skyline, moving traffic, palms, LA billboards, freeway, and Los Angeles City Hall.
-- Visible rainbow City Hall gate with requirements.
-- Three-phase Queen of Beige fight.
-- Portal opens only after the Queen is defeated.
+## Changes
+
+- No more black screen when entering a new zone.
+- Gameplay never pauses for Home, Hillcrest, PCH, Hollywood, or Los Angeles labels.
+- Zone names slide in as compact overlays and fade away while the player keeps moving.
+- Boss introduction happens directly in the City Hall arena.
+- Queen of Beige redesigned as a drag-villain HOA president:
+  - platinum wig
+  - cat-eye sunglasses
+  - beige power suit and shoulder pads
+  - rhinestone HOA badge
+  - clipboard of violations
+  - violation-notice cape
+  - stilettos
+- Her outfit becomes more colorful and chaotic in later phases.
