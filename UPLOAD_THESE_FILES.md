@@ -1,16 +1,12 @@
-# Upload v1.0.9 Gold Master
+# Upload v1.0.10
 
-This ZIP is intentionally a patch, not a full repository.
+This is a patch-only ZIP.
 
-Upload or replace only:
+Replace or add only:
 
 1. `index.html`
-2. `js/app109.js`
-3. `js/gold-master-self-test.js`
-4. `VERSION.txt`
-5. `GOLD_MASTER_CHANGELOG.md`
+2. `css/style.css`
+3. `VERSION.txt`
+4. `TAHOE_REVEAL_CHANGELOG.md`
 
-No assets or CSS files changed.
-
-After GitHub Pages deploys, open the game once with `?qa=1`.
-The report should say `Gold Master QA PASS`.
+Do not delete or replace any JavaScript or asset folders.

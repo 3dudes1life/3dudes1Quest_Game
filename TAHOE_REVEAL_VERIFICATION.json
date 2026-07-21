@@ -1,0 +1,23 @@
+{
+  "release": "1.0.10",
+  "package_type": "patch-only",
+  "changed_files": [
+    "index.html",
+    "css/style.css",
+    "VERSION.txt",
+    "TAHOE_REVEAL_CHANGELOG.md",
+    "UPLOAD_THESE_FILES.md"
+  ],
+  "checks": {
+    "version": true,
+    "new_portal_screen": true,
+    "pine_beetle_story": true,
+    "alaska_tease": true,
+    "same_portal_button_id": true,
+    "same_portal_screen_id": true,
+    "app_runtime_unchanged": true,
+    "responsive_css": true,
+    "reduced_motion": true
+  },
+  "notes": "Adventure 1 and app109.js are unchanged."
+}

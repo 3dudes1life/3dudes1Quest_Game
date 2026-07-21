@@ -7,8 +7,8 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="format-detection" content="telephone=no">
-  <title>3Dudes1Quest v1.0.9 — Adventure 1 Gold Master</title>
-  <link rel="stylesheet" href="css/style.css?v=1.0.8x-power-button">
+  <title>3Dudes1Quest v1.0.10 — Lake Tahoe Reveal</title>
+  <link rel="stylesheet" href="css/style.css?v=1.0.10-tahoe-reveal">
 </head>
 <body>
 <div id="bootSequence" class="bootSequence" aria-live="polite">
@@ -47,7 +47,7 @@
       </div>
       <div class="card titleMenuCard">
         <div class="eyebrow">3DUDES1LIFE CREATIVE PRESENTS</div>
-        <div class="releaseBadge">v1.0.9 • ADVENTURE 1 GOLD MASTER</div>
+        <div class="releaseBadge">v1.0.10 • LAKE TAHOE REVEAL</div>
         <h1>3Dudes1Quest</h1>
         <h2>Adventure 1: Southern California</h2>
         <p>The Queen of Beige is draining the color from SoCal—and she has taken Zoey captive. Follow Rigsby, restore the Prism Beacons, recover every Gay Card, rescue Zoey, and enter the portal together.</p>
@@ -269,16 +269,65 @@
       </div>
     </section>
 
-    <section id="portalScreen" class="screen">
-      <div class="portalWrap">
-        <div class="portal"></div>
-        <div class="portalDudes">
-          <span>W</span><span>D</span><span>C</span><span class="rigsby">🐶</span><span class="zoey">🐶</span>
+    <section id="portalScreen" class="screen tahoeRevealScreen">
+      <div class="tahoeSky" aria-hidden="true">
+        <div class="tahoeMoon"></div>
+        <div class="tahoeStars"></div>
+        <div class="tahoeMountain tahoeMountainBack"></div>
+        <div class="tahoeMountain tahoeMountainFront"></div>
+        <div class="tahoeTreeLine"></div>
+        <div class="tahoeLake"></div>
+        <div class="tahoeMist"></div>
+      </div>
+
+      <div class="portalWrap tahoeReveal">
+        <div class="adventureKicker">THE PORTAL HAS CHOSEN</div>
+
+        <div class="tahoePortalStage" aria-hidden="true">
+          <div class="portal tahoePortal"></div>
+          <div class="portalCore">
+            <span class="portalPine">🌲</span>
+            <span class="portalRipple"></span>
+          </div>
+          <div class="portalDudes tahoePortalDudes">
+            <span>W</span><span>D</span><span>C</span><span class="rigsby">🐶</span><span class="zoey">🐶</span>
+          </div>
         </div>
-        <h1>Adventure 2</h1>
-        <h2>Lake Tahoe</h2>
-        <p>Coming next.</p>
-        <button id="titleBtn" class="secondary">Return to Title</button>
+
+        <div class="tahoeRevealCopy">
+          <small>ADVENTURE 2</small>
+          <h1>Lake Tahoe</h1>
+          <h2>Protect Our Secret Place</h2>
+          <p class="tahoeStory">
+            For sixteen years, Tahoe has been our home away from home. Now the forest is sick.
+            The Pine Beetle is eating its way up the mountain—and the trees cannot fight back alone.
+          </p>
+
+          <div class="tahoeMission">
+            <span class="missionIcon">🥾</span>
+            <div>
+              <small>THE NEXT QUEST</small>
+              <strong>Begin at lake level. Battle up the hiking trail. Save the forest.</strong>
+            </div>
+          </div>
+
+          <div class="tahoeStatus">
+            <span class="statusPulse"></span>
+            <div>
+              <small>ADVENTURE IN DEVELOPMENT</small>
+              <strong>The trail is being prepared.</strong>
+            </div>
+          </div>
+
+          <div class="nextPortalTease">
+            <span>THE JOURNEY CONTINUES</span>
+            <b>LAKE TAHOE</b>
+            <i>→</i>
+            <b>ALASKA</b>
+          </div>
+
+          <button id="titleBtn" class="secondary tahoeReturn">Return to Title</button>
+        </div>
       </div>
     </section>
   </main>
