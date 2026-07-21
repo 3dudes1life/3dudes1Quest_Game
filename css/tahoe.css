@@ -56,7 +56,7 @@ button{color:#fff;border:0;font-weight:950;cursor:pointer}
 #switchBtn{background:rgba(86,89,173,.84)}
 #rotateHint{display:none}
 
-@media(hover:hover) and (pointer:fine){#touchControls{opacity:.25}.touchSide button:hover{transform:translateY(-2px)}}
+@media(hover:hover) and (pointer:fine){#touchControls{opacity:.9}.touchSide button:hover{transform:translateY(-3px);filter:brightness(1.15)}}
 @media(max-width:760px){
   #tahoeHud{right:112px;gap:5px}.tahoeChip{padding:6px 9px;font-size:.78rem}.altitudeChip{display:none}.trailProgress{max-width:none}
   .touchSide button{width:62px;height:62px}
@@ -101,3 +101,30 @@ button{color:#fff;border:0;font-weight:950;cursor:pointer}
 
 /* v2.0.3v — First Playable */
 .playTip{position:absolute;z-index:18;left:50%;bottom:112px;transform:translateX(-50%);width:min(760px,90vw);display:flex;gap:12px;align-items:center;justify-content:center;padding:11px 16px;border:1px solid rgba(255,255,255,.3);border-radius:16px;background:rgba(4,25,36,.9);box-shadow:0 12px 35px rgba(0,0,0,.35);font-size:.88rem;text-align:center}.playTip b{color:#ffe58d;letter-spacing:.1em;white-space:nowrap}.playTip span{opacity:.9}@media(max-width:700px){.playTip{bottom:150px;display:block}.playTip b{display:block;margin-bottom:3px}}
+
+
+/* v2.0.4 — Playable Input Fix */
+#tahoeCanvas{outline:none}
+.touchSide button{
+  touch-action:none;
+  -webkit-tap-highlight-color:transparent;
+  transition:transform .1s,filter .1s,box-shadow .1s;
+}
+.touchSide button.pressed{
+  transform:translateY(3px) scale(.94)!important;
+  filter:brightness(1.3);
+  box-shadow:0 3px 10px rgba(0,0,0,.38),0 0 0 4px rgba(255,255,255,.22);
+}
+.inputStatus{
+  position:absolute;z-index:13;right:18px;bottom:92px;
+  display:grid;grid-template-columns:auto auto;column-gap:7px;align-items:center;
+  padding:8px 12px;border-radius:14px;border:1px solid rgba(255,255,255,.42);
+  background:rgba(4,25,36,.84);backdrop-filter:blur(8px);pointer-events:none;
+  transition:opacity .2s,transform .2s;
+}
+.inputStatus .inputDot{width:9px;height:9px;border-radius:50%;background:#ffe58d;box-shadow:0 0 10px #ffe58d}
+.inputStatus b{font-size:.72rem;letter-spacing:.12em}
+.inputStatus small{grid-column:1/-1;font-size:.62rem;opacity:.7;margin-top:1px}
+.inputStatus.active .inputDot{background:#70f0bd;box-shadow:0 0 14px #70f0bd}
+.inputStatus.active{transform:translateY(-2px)}
+@media(max-width:760px){.inputStatus{display:none}}

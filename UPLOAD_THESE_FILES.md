@@ -1,11 +1,10 @@
-# v2.0.3v Upload
+# v2.0.4 Upload
 
-Use the full repository ZIP for the first play test.
+Upload the contents of the full repository ZIP, replacing matching files.
 
-Patch files:
+Patch-only files:
 - tahoe.html
 - css/tahoe.css
-- js/tahoe203v.js
+- js/tahoe204.js
 - VERSION.txt
-- TAHOE_2.0.3v_CHANGELOG.md
-- TAHOE_2.0.3v_VERIFICATION.json
+- TAHOE_2.0.4_CHANGELOG.md

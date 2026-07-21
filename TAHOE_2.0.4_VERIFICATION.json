@@ -1,0 +1,14 @@
+{
+  "release": "2.0.4",
+  "javascript_syntax": "PASS",
+  "checks": {
+    "safari_capture": true,
+    "key_code_support": true,
+    "mouse_fallback": true,
+    "touch_fallback": true,
+    "input_status": true,
+    "duck_upgrade": true,
+    "no_auto_pause_on_blur": true
+  },
+  "all_pass": true
+}
