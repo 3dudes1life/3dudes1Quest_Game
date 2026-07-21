@@ -1,5 +1,5 @@
-import {CONFIG,DUDES} from './config.js?v=1.0.2p3';
-import {SOCAL_LEVEL} from './level.js?v=1.0.2p3';
+import {CONFIG,DUDES} from './config.js?v=1.0.2p4';
+import {SOCAL_LEVEL} from './level.js?v=1.0.2p4';
 
 export class Game{
   constructor(canvas,ui,input,onComplete){
@@ -53,6 +53,11 @@ export class Game{
       fx_cookie:'assets/effects/cookie_bloom.png',
       fx_beige:'assets/effects/beige_bloom.png',
       fx_prism:'assets/effects/prism_bloom.png',
+      ui_hud:'assets/ui/hud_panel.png',
+      ui_objective:'assets/ui/objective_panel.png',
+      ui_dialogue:'assets/ui/dialogue_panel.png',
+      ui_journal:'assets/ui/journal_panel.png',
+      ui_icons:'assets/ui/ui_icons.png',
       troll:'assets/sprites/enemy_troll.png',
       scooter:'assets/sprites/enemy_scooter.png',
       beigeBot:'assets/sprites/enemy_beigeBot.png',
@@ -121,7 +126,7 @@ export class Game{
 
   getSaveData(){
     return {
-      version:'1.0.2V-P3',
+      version:'1.0.2V-P4',
       player:{x:this.player.x,y:this.player.y,checkpoint:this.player.checkpoint},
       state:{
         health:this.state.health,cards:this.state.cards,beacons:this.state.beacons,
@@ -750,6 +755,38 @@ export class Game{
     g.addColorStop(0,'#ff4fb8');g.addColorStop(.5,'#3ce7d2');g.addColorStop(1,'#ffe05d');
     c.strokeStyle=g;c.beginPath();c.moveTo(...pts[0]);c.lineTo(...pts[1]);c.lineTo(...pts[2]);c.closePath();c.stroke();
     this.drawGlowSprite(this.assets.fx_prism,cx-rad*1.4,cy-rad*1.4,rad*2.8,rad*2.8,.7*p);
+    c.restore();
+  }
+
+
+  drawPremiumHudFrame(t){
+    const c=this.ctx;
+    c.save();
+    // top-left hero card
+    const grad=c.createLinearGradient(18,18,330,135);
+    grad.addColorStop(0,'rgba(25,18,45,.94)');
+    grad.addColorStop(1,'rgba(12,12,28,.82)');
+    c.fillStyle=grad;
+    c.beginPath();c.roundRect(18,18,322,118,22);c.fill();
+    c.strokeStyle='rgba(255,255,255,.13)';c.lineWidth=1.5;c.stroke();
+
+    const accent=this.state.dude===0?'#ff4fb8':this.state.dude===1?'#3ce7d2':'#ffe05d';
+    c.strokeStyle=accent;c.lineWidth=4;c.beginPath();c.roundRect(25,25,308,104,18);c.stroke();
+
+    // subtle animated line
+    const x=35+((t*.08)%260);
+    c.globalCompositeOperation='screen';
+    const lg=c.createLinearGradient(x-50,0,x+50,0);
+    lg.addColorStop(0,'rgba(255,255,255,0)');
+    lg.addColorStop(.5,'rgba(255,255,255,.20)');
+    lg.addColorStop(1,'rgba(255,255,255,0)');
+    c.fillStyle=lg;c.fillRect(35,30,270,2);
+
+    // objective frame
+    c.globalCompositeOperation='source-over';
+    c.fillStyle='rgba(18,15,34,.86)';
+    c.beginPath();c.roundRect(610,20,330,95,18);c.fill();
+    c.strokeStyle='rgba(60,231,210,.25)';c.lineWidth=1.5;c.stroke();
     c.restore();
   }
 

@@ -1,18 +1,19 @@
-# 3Dudes1Quest v1.0.2V — Phase 3 Lighting & Effects
+# 3Dudes1Quest v1.0.2V — Phase 4 Premium UI
 
-This patch adds the premium lighting and effects pass on top of the Phase 2 environment build.
+This patch upgrades the presentation layer on top of Phase 3.
 
-## New presentation systems
-- Dynamic lighting by route zone
-- Sun shafts and environmental glow
-- Cinematic vignette
-- Prism restoration atmosphere
-- Damage flashes and camera shake
-- Boss phase lighting transitions
-- Ability-specific bloom and particles
-- Cinematic Triangle of Support ultimate
+## Included
+- Premium glass HUD
+- Animated hero accents
+- Better objective cards
+- Redesigned dialogue presentation
+- Polished buttons and meters
+- Adventure Journal redesign
+- Toast and notification animations
+- New reusable UI assets
+- GitHub Pages cache busting
 
-## Patch install
-Upload the files and folders in this patch over the matching files in the existing Phase 2 repository.
+## Install
+Upload everything in this patch over the matching files in the existing Phase 3 repository.
 
-No unchanged Phase 1 or Phase 2 assets are included.
+Only updated or newly added files are included.
