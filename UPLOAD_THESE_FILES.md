@@ -1,8 +1,10 @@
-# Upload 1.0.8T
+# Upload 1.0.8U
 
-Full repository ZIP. Replace the repository contents.
+This is a full-repository ZIP. Replace the repository contents with this package.
 
-Runtime files:
-- index.html
-- css/style.css
-- js/app108t.js
+Runtime files changed:
+- `index.html`
+- `css/style.css`
+- `js/app108u.js`
+
+`index.html` already loads `app108u.js`.

@@ -1,0 +1,23 @@
+{
+  "release": "1.0.8U",
+  "source_github_blob": "73f43aae12e1d3e034f61d9b59cfc8ab66abda04",
+  "checks": {
+    "javascript_syntax": true,
+    "version_108u": true,
+    "index_loads_u": true,
+    "heart_projectile": true,
+    "heartfield_spawn": true,
+    "heartfield_explosion": true,
+    "heartfield_absorbs_attacks": true,
+    "daniel_no_passive_heal": true,
+    "dynamic_mobile_power_button": true,
+    "responsive_control_labels": true,
+    "legacy_t_save": true,
+    "absorbed_shots_skip_collision": true
+  },
+  "notes": [
+    "Built from GitHub main blobs app108t.js 73f43aae12e1d3e034f61d9b59cfc8ab66abda04 and index.html 0c7b25c1bc453556cbfec33ff491c7958308718b.",
+    "Node syntax validation passed.",
+    "ZIP integrity validated."
+  ]
+}
