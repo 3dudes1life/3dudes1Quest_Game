@@ -1,5 +1,5 @@
-import {CONFIG,DUDES} from './config.js?v=1.0.3';
-import {SOCAL_LEVEL} from './level.js?v=1.0.3';
+import {CONFIG,DUDES} from './config.js?v=1.0.4';
+import {SOCAL_LEVEL} from './level.js?v=1.0.4';
 
 export class Game{
   constructor(canvas,ui,input,onComplete){
@@ -73,6 +73,25 @@ export class Game{
       shake:0,flash:0,flashColor:'rgba(255,255,255,.65)',
       vignette:0,slowUntil:0,ultimateUntil:0
     };
+    this.remaster={
+      lastZone:null,
+      weatherSeed:Math.random()*1000,
+      ambientNpcs:Array.from({length:14},(_,i)=>({
+        x:460+i*310+Math.random()*120,
+        y:610+(i%3)*14,
+        speed:.10+Math.random()*.16,
+        dir:i%2?1:-1,
+        type:i%5
+      })),
+      ambientCars:Array.from({length:7},(_,i)=>({
+        x:i*430+Math.random()*260,
+        y:634+(i%2)*26,
+        speed:.55+Math.random()*.45,
+        dir:i%2?1:-1
+      })),
+      collectiblesSeen:new Set(),
+      achievementFlags:new Set()
+    };
     this.last=0;
     this.running=false;
     this.reset();
@@ -126,7 +145,7 @@ export class Game{
 
   getSaveData(){
     return {
-      version:'1.0.3V',
+      version:'1.0.4V',
       player:{x:this.player.x,y:this.player.y,checkpoint:this.player.checkpoint},
       state:{
         health:this.state.health,cards:this.state.cards,beacons:this.state.beacons,
@@ -170,6 +189,7 @@ export class Game{
   }
 
   update(dt,t){
+    this.updateRemasterSystems(t);
     if(this.screenFx.shake>0)this.screenFx.shake=Math.max(0,this.screenFx.shake-dt*.04);
     if(this.screenFx.flash>0)this.screenFx.flash=Math.max(0,this.screenFx.flash-dt*.0028);
     this.screenFx.vignette=Math.max(0,this.screenFx.vignette-dt*.0012);
@@ -302,7 +322,7 @@ export class Game{
   updateCollectibles(){
     for(const c of this.cards){
       if(!c.collected&&this.rects(this.player,{x:c.x,y:c.y,w:34,h:44})){
-        c.collected=true;this.state.cards++;this.state.triangle=Math.min(100,this.state.triangle+18);this.burst(c.x,c.y,'#ffe66d',20);
+        c.collected=true;this.state.cards++;window.showCollectible?.('🌈 GAY CARD ACQUIRED');this.state.triangle=Math.min(100,this.state.triangle+18);this.burst(c.x,c.y,'#ffe66d',20);
         const cardNames=[
           'Can correctly identify every IKEA couch.',
           'Automatically detects brunch within five miles.',
@@ -535,6 +555,7 @@ export class Game{
     this.drawEnvironmentLayer(t);
     this.drawParallax(t);
     this.drawEnvironmentalAnimation(t);
+    this.drawLivingWorld(t);
     this.drawPrismAtmosphere(t);
     this.drawAmbient(t);c.save();c.translate(-this.cameraX,0);this.drawWorld(t);this.drawPlayer(t);c.restore();
     if(this.state.bossActive&&this.boss.alive)this.drawBossHud();
@@ -568,6 +589,131 @@ export class Game{
 
   worldViewportWidth(){
     return this.viewportWidth();
+  }
+
+
+  zoneDisplayName(key){
+    return {
+      home:'HOME BASE',
+      hillcrest:'HILLCREST',
+      pch:'PACIFIC COAST HIGHWAY',
+      la:'LOS ANGELES',
+      arena:'HOA HEADQUARTERS'
+    }[key]||'SOUTHERN CALIFORNIA';
+  }
+
+  updateRemasterSystems(t){
+    const zone=this.currentEnvironment();
+    if(this.remaster.lastZone!==zone){
+      if(this.remaster.lastZone!==null&&window.showSceneCurtain){
+        window.showSceneCurtain(this.zoneDisplayName(zone),900);
+      }
+      this.remaster.lastZone=zone;
+    }
+
+    if(this.state?.cards>=1&&!this.remaster.achievementFlags.has('first-card')){
+      this.remaster.achievementFlags.add('first-card');
+      window.showAchievement?.('Gay Card Acquired','🌈');
+    }
+    if(this.state?.beacons?.filter?.(Boolean).length>=1&&!this.remaster.achievementFlags.has('first-beacon')){
+      this.remaster.achievementFlags.add('first-beacon');
+      window.showAchievement?.('Color Restored','🔺');
+    }
+    if(this.state?.bossDefeated&&!this.remaster.achievementFlags.has('boss')){
+      this.remaster.achievementFlags.add('boss');
+      window.showAchievement?.('Beige Has Been Defeated','👑');
+    }
+  }
+
+  drawLivingWorld(t){
+    const c=this.ctx,key=this.currentEnvironment();
+    c.save();
+
+    if(key==='home'){
+      // butterflies
+      for(let i=0;i<7;i++){
+        const x=((i*180+t*.018)%1200)-100;
+        const y=360+Math.sin(t*.004+i*1.7)*70;
+        c.save();c.translate(x,y);c.rotate(Math.sin(t*.01+i)*.25);
+        c.fillStyle=i%2?'rgba(255,79,184,.82)':'rgba(255,224,93,.82)';
+        c.beginPath();c.ellipse(-5,0,6,3,-.6,0,Math.PI*2);c.ellipse(5,0,6,3,.6,0,Math.PI*2);c.fill();
+        c.restore();
+      }
+      // chickens pecking
+      for(let i=0;i<4;i++){
+        const x=470+i*120+Math.sin(t*.0009+i)*18;
+        const y=618+(i%2)*10;
+        c.fillStyle='rgba(248,245,231,.95)';
+        c.beginPath();c.ellipse(x,y,13,9,0,0,Math.PI*2);c.fill();
+        c.beginPath();c.arc(x+10,y-8+Math.sin(t*.008+i)*3,6,0,Math.PI*2);c.fill();
+        c.fillStyle='#e0a441';c.beginPath();c.moveTo(x+16,y-8);c.lineTo(x+23,y-5);c.lineTo(x+16,y-2);c.fill();
+      }
+    }
+
+    if(key==='hillcrest'){
+      for(const n of this.remaster.ambientNpcs){
+        let sx=(n.x-this.cameraX*n.speed)%1900;
+        if(sx<-100)sx+=1900;
+        const walk=Math.sin(t*.01+n.x)*3;
+        const colors=['#ff4fb8','#3ce7d2','#ffe05d','#8e5cff','#ff9456'];
+        c.fillStyle='rgba(20,15,30,.22)';
+        c.beginPath();c.ellipse(sx,n.y+29,13,4,0,0,Math.PI*2);c.fill();
+        c.fillStyle=colors[n.type];
+        c.fillRect(sx-8,n.y-4+walk*.12,16,26);
+        c.fillStyle='#e6b58d';
+        c.beginPath();c.arc(sx,n.y-12+walk*.12,7,0,Math.PI*2);c.fill();
+        c.strokeStyle='#2d2435';c.lineWidth=4;
+        c.beginPath();c.moveTo(sx-5,n.y+22);c.lineTo(sx-7+walk,n.y+34);c.moveTo(sx+5,n.y+22);c.lineTo(sx+7-walk,n.y+34);c.stroke();
+      }
+    }
+
+    if(key==='pch'){
+      // ocean mist
+      for(let i=0;i<6;i++){
+        const x=(i*210+t*.015)%1200-100;
+        const y=500+i*18;
+        const g=c.createRadialGradient(x,y,2,x,y,75);
+        g.addColorStop(0,'rgba(255,255,255,.12)');
+        g.addColorStop(1,'rgba(255,255,255,0)');
+        c.fillStyle=g;c.beginPath();c.arc(x,y,75,0,Math.PI*2);c.fill();
+      }
+    }
+
+    if(key==='la'){
+      for(const car of this.remaster.ambientCars){
+        let x=(car.x+t*car.speed*car.dir)%1800;
+        if(x<-180)x+=1800;
+        c.fillStyle=car.dir>0?'#ff4f72':'#3ce7d2';
+        c.beginPath();c.roundRect(x,car.y,82,26,8);c.fill();
+        c.fillStyle='rgba(255,255,255,.82)';
+        c.fillRect(x+(car.dir>0?64:6),car.y+7,12,5);
+      }
+    }
+
+    c.restore();
+  }
+
+  drawDynamicWeather(t){
+    const c=this.ctx,key=this.currentEnvironment();
+    const vw=this.viewportWidth(),vh=this.viewportHeight();
+    c.save();
+
+    const cycle=(Math.sin(t*.00008+this.remaster.weatherSeed)+1)/2;
+    if(key==='home'||key==='pch'){
+      const warm=.025+.045*cycle;
+      c.fillStyle=`rgba(255,180,105,${warm})`;
+      c.fillRect(0,0,vw,vh);
+    }
+    if(key==='la'){
+      const haze=.03+.035*Math.sin(t*.00015+2);
+      c.fillStyle=`rgba(255,110,150,${Math.max(.02,haze)})`;
+      c.fillRect(0,0,vw,vh);
+    }
+    if(key==='arena'&&!this.state.bossDefeated){
+      c.fillStyle=`rgba(90,65,100,${.035+.025*Math.sin(t*.003)})`;
+      c.fillRect(0,0,vw,vh);
+    }
+    c.restore();
   }
 
   currentEnvironment(){

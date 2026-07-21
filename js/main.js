@@ -1,7 +1,7 @@
-import {CONFIG} from './config.js?v=1.0.3';
-import {createInput} from './input.js?v=1.0.3';
-import {createUI} from './ui.js?v=1.0.3';
-import {Game} from './game.js?v=1.0.3';
+import {CONFIG} from './config.js?v=1.0.4';
+import {createInput} from './input.js?v=1.0.4';
+import {createUI} from './ui.js?v=1.0.4';
+import {Game} from './game.js?v=1.0.4';
 
 const canvas=document.getElementById('gameCanvas');
 canvas.width=CONFIG.width;canvas.height=CONFIG.height;
@@ -70,9 +70,9 @@ window.addEventListener('quest-dialogue',e=>{
     'Coastal Local':'coastal_local.png','LA Local':'la_local.png',
     'HOA Queen':'hoa_queen.png','Rigsby':'will.png'
   };
-  dialoguePortrait.src=`assets/portraits/${portraitMap[e.detail.name]||'will.png'}?v=1.0.3`;
+  dialoguePortrait.src=`assets/portraits/${portraitMap[e.detail.name]||'will.png'}?v=1.0.4`;
   dialoguePortrait.alt=e.detail.name;
-  dialoguePortrait.onerror=()=>{dialoguePortrait.src='assets/portraits/will.png?v=1.0.3'};
+  dialoguePortrait.onerror=()=>{dialoguePortrait.src='assets/portraits/will.png?v=1.0.4'};
   dialogueText.textContent=e.detail.text;
   dialogueBox.classList.remove('hidden');
   dialogueOpen=true;
@@ -240,3 +240,90 @@ window.addEventListener('resize',resizeGameCanvas,{passive:true});
 window.addEventListener('orientationchange',()=>setTimeout(resizeGameCanvas,120),{passive:true});
 document.addEventListener('DOMContentLoaded',resizeGameCanvas);
 setTimeout(resizeGameCanvas,0);
+
+
+function setupBootSequence(){
+  const boot=document.getElementById('bootSequence');
+  if(!boot)return;
+
+  const fill=boot.querySelector('.bootProgressFill');
+  const status=boot.querySelector('.bootStatus');
+  const enter=document.getElementById('enterQuest');
+  const particles=boot.querySelector('.bootParticles');
+
+  if(particles&&!particles.children.length){
+    for(let i=0;i<34;i++){
+      const p=document.createElement('span');
+      p.className='bootParticle';
+      p.style.left=`${Math.random()*100}%`;
+      p.style.animationDuration=`${5+Math.random()*8}s`;
+      p.style.animationDelay=`${-Math.random()*10}s`;
+      p.style.opacity=String(.14+Math.random()*.42);
+      p.style.background=['#ff4fb8','#3ce7d2','#ffe05d','#ffffff'][i%4];
+      particles.appendChild(p);
+    }
+  }
+
+  const steps=[
+    [18,'LOADING THE DUDES...'],
+    [38,'WAKING RIGSBY...'],
+    [58,'RESTORING HILLCREST...'],
+    [78,'CHARGING THE PRISM...'],
+    [100,'QUEST READY']
+  ];
+
+  let i=0;
+  const advance=()=>{
+    const [pct,label]=steps[i];
+    if(fill)fill.style.width=`${pct}%`;
+    if(status)status.textContent=label;
+    i++;
+    if(i<steps.length)setTimeout(advance,260+Math.random()*220);
+    else{
+      setTimeout(()=>{
+        enter?.classList.add('isReady');
+        enter?.focus({preventScroll:true});
+      },350);
+    }
+  };
+  setTimeout(advance,180);
+
+  const dismiss=()=>{
+    boot.classList.add('isHidden');
+    try{localStorage.setItem('3d1q-boot-seen','1')}catch{}
+  };
+  enter?.addEventListener('click',dismiss,{once:true});
+  window.addEventListener('keydown',(e)=>{
+    if(enter?.classList.contains('isReady')&&(e.key==='Enter'||e.key===' '))dismiss();
+  });
+}
+
+window.showSceneCurtain=(title='THE QUEST CONTINUES',duration=850)=>{
+  const curtain=document.getElementById('sceneCurtain');
+  if(!curtain)return;
+  const label=curtain.querySelector('.sceneCurtainTitle');
+  if(label)label.textContent=title;
+  curtain.classList.add('isActive');
+  setTimeout(()=>curtain.classList.remove('isActive'),duration);
+};
+
+window.showAchievement=(title,icon='🏆')=>{
+  const stack=document.getElementById('achievementStack');
+  if(!stack)return;
+  const card=document.createElement('div');
+  card.className='achievementCard';
+  card.innerHTML=`<div class="achievementIcon">${icon}</div><div><div class="achievementLabel">ACHIEVEMENT UNLOCKED</div><div class="achievementTitle">${title}</div></div>`;
+  stack.appendChild(card);
+  setTimeout(()=>card.remove(),4800);
+};
+
+window.showCollectible=(text)=>{
+  const toast=document.getElementById('collectibleToast');
+  if(!toast)return;
+  toast.textContent=text;
+  toast.classList.add('isVisible');
+  clearTimeout(window.__collectibleTimer);
+  window.__collectibleTimer=setTimeout(()=>toast.classList.remove('isVisible'),2200);
+};
+
+setupBootSequence();

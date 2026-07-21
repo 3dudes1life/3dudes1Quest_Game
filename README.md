@@ -1,15 +1,21 @@
-# 3Dudes1Quest v1.0.3V
+# 3Dudes1Quest v1.0.4V — Remastered
 
-This is the full v1.0.3V game build.
+This build is the major premium-experience upgrade.
 
-## Major UX fixes
-- Responsive 16:9 canvas
-- Proper full-width environment rendering
-- No exposed neighboring scene on wide displays
-- Better camera framing
-- Cleaner character scale
-- Responsive HUD placement
-- High-DPI rendering for Retina displays
-- Desktop and mobile layout improvements
+## Headline features
 
-Upload the contents of this ZIP to the repository root, replacing the existing files.
+- Cinematic loading and title screen
+- Enter the Quest start flow
+- Full-screen scene transitions
+- Animated living environments
+- Dynamic time and atmosphere
+- Achievement popups
+- Collectible notifications
+- Ambient pedestrians, vehicles, chickens, butterflies, and ocean mist
+- Improved scene presentation and game-shell polish
+
+## Install
+
+Upload the entire contents of this ZIP to the repository root and replace the existing files.
+
+This is a full build, not a patch.

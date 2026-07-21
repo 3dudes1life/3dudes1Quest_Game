@@ -4,15 +4,41 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
   <meta name="theme-color" content="#15102f">
-  <title>3Dudes1Quest v1.0.3V — Responsive UX Rebuild</title>
-  <link rel="stylesheet" href="css/style.css?v=1.0.3">
+  <title>3Dudes1Quest v1.0.4V — Remastered</title>
+  <link rel="stylesheet" href="css/style.css?v=1.0.4">
 </head>
 <body>
+<div id="bootSequence" class="bootSequence" aria-live="polite">
+  <div class="bootBackdrop"></div>
+  <div class="bootParticles" aria-hidden="true"></div>
+  <div class="bootLogoWrap">
+    <div class="bootEyebrow">3DUDES1LIFE CREATIVE PRESENTS</div>
+    <h1 class="bootLogo">
+      <span>3DUDES</span>
+      <strong>1QUEST</strong>
+    </h1>
+    <div class="bootTagline">A Southern California Adventure</div>
+    <div class="bootProgress" aria-label="Loading game">
+      <div class="bootProgressFill"></div>
+    </div>
+    <div class="bootStatus">RESTORING COLOR...</div>
+    <button id="enterQuest" class="enterQuest" type="button">ENTER THE QUEST</button>
+  </div>
+</div>
+
+<div id="sceneCurtain" class="sceneCurtain" aria-hidden="true">
+  <div class="sceneCurtainGlow"></div>
+  <div class="sceneCurtainTitle">HOME BASE</div>
+</div>
+
+<div id="achievementStack" class="achievementStack" aria-live="polite"></div>
+<div id="collectibleToast" class="collectibleToast" aria-live="polite"></div>
+
   <main id="app">
     <section id="titleScreen" class="screen active">
       <div class="card">
         <div class="eyebrow">3DUDES1LIFE CREATIVE PRESENTS</div>
-        <div class="releaseBadge">v1.0.3V • RESPONSIVE UX REBUILD</div>
+        <div class="releaseBadge">v1.0.4V • REMASTERED</div>
         <h1>3Dudes1Quest</h1>
         <h2>Adventure 1: Southern California</h2>
         <p>Lord Beige is draining the color from SoCal. Restore the Prism Beacons, recover every Gay Card, defeat the HOA Queen of Beige, and enter the portal to the next adventure.</p>
@@ -131,6 +157,7 @@
     </section>
   </main>
 
-  <script type="module" src="js/main.js?v=1.0.3"></script>
+  <script type="module" src="js/main.js?v=1.0.4"></script>
+<script type="module" src="js/remaster.js?v=1.0.4"></script>
 </body>
 </html>
