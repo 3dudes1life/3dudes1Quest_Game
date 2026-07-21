@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#120b2e" />
+  <meta name="description" content="3Dudes: Prism Panic — an original campy 8-bit browser platformer demo." />
+  <title>3Dudes: Prism Panic</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="game-shell">
+    <header class="game-header">
+      <div>
+        <p class="eyebrow">3DUDES1LIFE PRESENTS</p>
+        <h1>PRISM PANIC</h1>
+      </div>
+      <button id="muteButton" class="small-button" type="button" aria-label="Toggle sound">SOUND: ON</button>
+    </header>
+
+    <section class="stage-wrap" aria-label="Game area">
+      <canvas id="game" width="960" height="540">
+        Your browser needs canvas support to play.
+      </canvas>
+
+      <div id="startScreen" class="overlay">
+        <div class="panel">
+          <p class="panel-kicker">AN ORIGINAL 8-BIT DEMO</p>
+          <h2>Lord Beige stole the Prism of Pride.</h2>
+          <p>Switch between Will, Daniel, and Caleb. Collect every prism shard, survive the Shade Brigade, and bring color back to Campy Kingdom.</p>
+          <div class="control-grid">
+            <span><b>MOVE</b> WASD / ARROWS</span>
+            <span><b>JUMP</b> SPACE</span>
+            <span><b>ABILITY</b> X</span>
+            <span><b>SWITCH</b> 1 / 2 / 3</span>
+          </div>
+          <button id="startButton" class="primary-button" type="button">START THE DRAMA</button>
+        </div>
+      </div>
+
+      <div id="message" class="toast" aria-live="polite"></div>
+    </section>
+
+    <section class="character-bar" aria-label="Character selection">
+      <button class="character-card active" data-character="0" type="button">
+        <span class="portrait will">W</span>
+        <span><b>WILL</b><small>Sass Wave</small></span>
+      </button>
+      <button class="character-card" data-character="1" type="button">
+        <span class="portrait daniel">D</span>
+        <span><b>DANIEL</b><small>Prism Shield</small></span>
+      </button>
+      <button class="character-card" data-character="2" type="button">
+        <span class="portrait caleb">C</span>
+        <span><b>CALEB</b><small>Power Smash</small></span>
+      </button>
+    </section>
+
+    <section class="instructions">
+      <p><b>Goal:</b> collect all 6 prism shards, then reach the rainbow portal.</p>
+      <p><b>Tip:</b> Daniel’s shield blocks damage. Caleb can smash cracked beige blocks.</p>
+    </section>
+  </main>
+
+  <div class="mobile-controls" aria-label="Touch controls">
+    <div class="dpad">
+      <button data-action="left" aria-label="Move left">◀</button>
+      <button data-action="right" aria-label="Move right">▶</button>
+    </div>
+    <div class="action-pad">
+      <button data-action="jump" aria-label="Jump">JUMP</button>
+      <button data-action="ability" aria-label="Use ability">POWER</button>
+    </div>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>
