@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
   <meta name="theme-color" content="#15102f">
-  <title>3Dudes1Quest v0.9.1</title>
+  <title>3Dudes1Quest v0.9.2</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -52,6 +52,11 @@
       <div id="message"></div>
       <div id="saveToast" class="saveToast">Quest saved ✓</div>
       <div id="bossPhase" class="bossPhase hidden"></div>
+      <div id="objectiveCard" class="objectiveCard">
+        <small>CURRENT OBJECTIVE</small>
+        <strong id="objectiveTitle">Leave Home Base</strong>
+        <span id="objectiveDetail">Follow Rigsby toward the first Prism trail.</span>
+      </div>
       <div id="cutscene" class="cutscene hidden">
         <div class="cutscenePanel">
           <div class="cutsceneEyebrow">3DUDES1QUEST</div>
@@ -81,7 +86,7 @@
           <button data-tab="dudes">The Dudes</button>
           <button data-tab="passport">Passport</button>
           <button data-tab="memories">Memories</button>
-          <button data-tab="secrets">Secrets</button>
+          <button data-tab="secrets">Secrets</button><button data-tab="objectives">Objectives</button>
         </div>
         <div id="journalContent"></div>
       </aside>

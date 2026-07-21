@@ -19,7 +19,13 @@ export const SOCAL_LEVEL = {
     {x:3310,y:470,w:205,h:24,type:'sign'},
     {x:3610,y:395,w:185,h:24,type:'sign'},
     {x:4090,y:500,w:185,h:24,type:'rock'},
-    {x:4400,y:420,w:175,h:24,type:'rock'}
+    {x:4400,y:420,w:175,h:24,type:'rock'},
+    {x:1520,y:315,w:130,h:20,type:'roof'},
+    {x:1740,y:260,w:130,h:20,type:'roof'},
+    {x:1960,y:300,w:130,h:20,type:'roof'},
+    {x:2910,y:330,w:125,h:20,type:'sign'},
+    {x:3090,y:275,w:125,h:20,type:'sign'},
+    {x:4270,y:325,w:120,h:20,type:'rock'}
   ],
   cards: [
     {x:400,y:450},{x:1120,y:430},{x:1730,y:415},
@@ -40,6 +46,15 @@ export const SOCAL_LEVEL = {
     {x:1480,y:520,name:'Beach Local',line:'The ocean is fighting back. Restore the Prism Beacon and the waves should brighten.'},
     {x:2380,y:550,name:'Taco Oracle',line:'Three beacons. Six Gay Cards. One deeply unpleasant HOA Queen.'},
     {x:4050,y:550,name:'LA Local',line:'She took the murals first. Please bring the city back.'}
+  ],
+  zones:[
+    {id:'home',name:'Home Base',start:0,end:950,objective:'Recover the neighborhood color trail.',detail:'Collect the first Gay Card and restore Beacon 1.',checkpoint:760},
+    {id:'beach',name:'Beach Rescue',start:950,end:2220,objective:'Save the beach from the Beige Brigade.',detail:'Clear the beach enemies and restore Beacon 2.',checkpoint:2040},
+    {id:'pch',name:'PCH Repair',start:2220,end:3890,objective:'Reopen the road to Hollywood.',detail:'Clear traffic enemies and restore Beacon 3.',checkpoint:3510},
+    {id:'la',name:'Los Angeles',start:3890,end:4510,objective:'Restore the final LA mural.',detail:'Clear the last enemies and collect every Gay Card.',checkpoint:4380}
+  ],
+  souvenirs:[
+    {x:1795,y:215,title:'Secret Rooftop Flamingo',icon:'🦩'}
   ],
   selfieSpots:[
     {x:860,y:540,title:'Beach Day Energy',icon:'🏖️'},

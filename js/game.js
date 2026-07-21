@@ -18,7 +18,7 @@ export class Game{
     this.state={
       paused:false,health:4,cards:0,beacons:0,dude:0,
       projectiles:[],traps:[],particles:[],shieldUntil:0,magicReady:0,
-      bossActive:false,bossDefeated:false,bossPhase:1,triangle:0,rigsby:true,storyFlags:{},playTime:0,memories:[],secrets:[],chaosUntil:0,playerX:90
+      bossActive:false,bossDefeated:false,bossPhase:1,triangle:0,rigsby:true,storyFlags:{},playTime:0,memories:[],secrets:[],chaosUntil:0,playerX:90,zones:[],souvenirs:[],currentObjective:null,rigsbyRescue:true,victoryWave:0
     };
     this.player={x:90,y:520,w:44,h:72,vx:0,vy:0,onGround:false,facing:1,invuln:0,checkpoint:90};
     this.cards=SOCAL_LEVEL.cards.map((p,i)=>({...p,id:i,collected:false}));
@@ -27,6 +27,10 @@ export class Game{
     this.boss={...SOCAL_LEVEL.boss,maxHp:SOCAL_LEVEL.boss.hp,vx:-1.2,alive:true,frozen:0,attackTimer:80};
     this.npcs=(SOCAL_LEVEL.npcs||[]).map((n,i)=>({...n,id:i,w:38,h:70,spoken:false}));
     this.hazards=[];
+    this.zones=(SOCAL_LEVEL.zones||[]).map((z,i)=>({...z,index:i,complete:false}));
+    this.souvenirs=(SOCAL_LEVEL.souvenirs||[]).map((v,i)=>({...v,id:i,collected:false}));
+    this.state.zones=this.zones;
+    this.state.currentObjective={title:this.zones[0]?.objective||'Begin the quest',detail:this.zones[0]?.detail||''};
     this.selfieSpots=(SOCAL_LEVEL.selfieSpots||[]).map((v,i)=>({...v,id:i,unlocked:false}));
     this.chaosBowls=(SOCAL_LEVEL.chaosBowls||[]).map((v,i)=>({...v,id:i,unlocked:false}));
     this.ambient={
@@ -62,13 +66,15 @@ export class Game{
       state:{
         health:this.state.health,cards:this.state.cards,beacons:this.state.beacons,
         dude:this.state.dude,triangle:this.state.triangle,storyFlags:this.state.storyFlags,
-        rigsby:this.state.rigsby,playTime:this.state.playTime,memories:this.state.memories,secrets:this.state.secrets
+        rigsby:this.state.rigsby,playTime:this.state.playTime,memories:this.state.memories,secrets:this.state.secrets,rigsbyRescue:this.state.rigsbyRescue
       },
       cards:this.cards.map(c=>c.collected),
       beacons:this.beacons.map(b=>b.active),
       enemies:this.enemies.map(e=>e.alive),
       selfies:this.selfieSpots.map(v=>v.unlocked),
       chaos:this.chaosBowls.map(v=>v.unlocked),
+      zones:this.zones.map(v=>v.complete),
+      souvenirs:this.souvenirs.map(v=>v.collected),
       savedAt:new Date().toISOString()
     };
   }
@@ -84,6 +90,9 @@ export class Game{
     (save.enemies||[]).forEach((v,i)=>{if(this.enemies[i])this.enemies[i].alive=!!v});
     (save.selfies||[]).forEach((v,i)=>{if(this.selfieSpots[i])this.selfieSpots[i].unlocked=!!v});
     (save.chaos||[]).forEach((v,i)=>{if(this.chaosBowls[i])this.chaosBowls[i].unlocked=!!v});
+    (save.zones||[]).forEach((v,i)=>{if(this.zones[i])this.zones[i].complete=!!v});
+    (save.souvenirs||[]).forEach((v,i)=>{if(this.souvenirs[i])this.souvenirs[i].collected=!!v});
+    this.state.zones=this.zones;
     this.cameraX=Math.max(0,this.player.x-360);
   }
 
@@ -139,8 +148,10 @@ export class Game{
     this.updateNPCs();
     this.updateHazards(dt);
     this.updateSoulSystems(dt,t);
+    this.updateZones(t);
     this.updateAmbient(dt);
     this.updateParticles(dt);
+    if(this.state.victoryWave>0)this.state.victoryWave+=dt;
     if(this.player.invuln>0)this.player.invuln-=dt;
     this.state.playerX=this.player.x;
     this.state.triangle=Math.min(100,this.state.triangle+0.012*dt);
@@ -158,11 +169,12 @@ export class Game{
       return;
     }
     if(d.power==='rainbow'){
-      this.state.projectiles.push({x:this.player.x+22,y:this.player.y+30,vx:this.player.facing*11,vy:0,w:34,h:18,type:'rainbow',life:100});
+      this.player.vx=this.player.facing*12;
+      this.state.projectiles.push({x:this.player.x+22,y:this.player.y+30,vx:this.player.facing*12.5,vy:0,w:42,h:18,type:'rainbow',life:115,pierce:2});
       this.ui.flash('Yaaass queen!');
     }else if(d.power==='magic'){
       if(t<this.state.magicReady){this.ui.flash('Magic is recharging!');return}
-      this.state.shieldUntil=t+2200;this.state.magicReady=t+4300;
+      this.state.shieldUntil=t+2400;this.state.magicReady=t+4300;if(this.state.health<4)this.state.health++;
       for(const e of this.enemies)if(e.alive&&Math.abs(e.x-this.player.x)<360)e.frozen=t+2400;
       if(this.state.bossActive&&this.boss.alive&&Math.abs(this.boss.x-this.player.x)<430)this.boss.frozen=t+1400;
       this.burst(this.player.x+22,this.player.y+30,d.color,24);
@@ -178,10 +190,10 @@ export class Game{
     for(const p of this.state.projectiles){
       p.x+=p.vx*dt;p.y+=p.vy*dt;p.vy+=(p.type==='cookie'?.28:0)*dt;p.life-=dt;
       for(const e of this.enemies){
-        if(e.alive&&this.rects(p,e)){e.alive=false;p.life=0;this.burst(e.x,e.y,'#ffe66d',14)}
+        if(e.alive&&this.rects(p,e)){e.alive=false;p.pierce=(p.pierce||1)-1;if(p.pierce<=0)p.life=0;this.burst(e.x,e.y,'#ffe66d',14)}
       }
       if(this.state.bossActive&&this.boss.alive&&this.rects(p,this.boss)){
-        this.boss.hp-=p.type==='rainbow'?2:1;p.life=0;this.burst(p.x,p.y,'#ff4fb8',12)
+        this.boss.hp-=p.type==='rainbow'?2:p.type==='cookie'?2:1;p.life=0;this.burst(p.x,p.y,'#ff4fb8',12)
       }
     }
     this.state.projectiles=this.state.projectiles.filter(p=>p.life>0&&p.y<760);
@@ -199,9 +211,18 @@ export class Game{
   updateEnemies(dt,t){
     for(const e of this.enemies){
       if(!e.alive||e.frozen>t)continue;
-      e.x+=e.vx*dt;
-      if(Math.abs(e.x-SOCAL_LEVEL.enemies[e.id].x)>90)e.vx*=-1;
-      if(this.rects(this.player,e))this.hurt('The Shade Brigade is doing too much.');
+      const origin=SOCAL_LEVEL.enemies[e.id].x;
+      if(e.type==='hoaDrone'){
+        e.x+=e.vx*1.25*dt;e.y=SOCAL_LEVEL.enemies[e.id].y+Math.sin(t*.004+e.id)*28;
+      }else if(e.type==='scooter'){
+        e.x+=e.vx*2.0*dt;
+      }else if(e.type==='troll'&&Math.abs(this.player.x-e.x)<230){
+        e.x+=Math.sign(this.player.x-e.x)*1.7*dt;
+      }else{
+        e.x+=e.vx*dt;
+      }
+      if(Math.abs(e.x-origin)>105)e.vx*=-1;
+      if(this.rects(this.player,e))this.hurt(`${e.type==='hoaDrone'?'HOA drone scan!':e.type==='scooter'?'Scooter menace!':'The Shade Brigade is doing too much.'}`);
     }
   }
 
@@ -250,14 +271,18 @@ export class Game{
       this.boss.x+=this.boss.vx*dt;
       if(this.boss.x<4530||this.boss.x>4790)this.boss.vx*=-1;
       this.boss.attackTimer-=dt;
+      if(this.boss.attackTimer<28&&!this.boss.telegraph){
+        this.boss.telegraph=true;
+        this.ui.flash(nextPhase===1?'INCOMING VIOLATION LETTER!':nextPhase===2?'BEIGE PAINT — MOVE!':'HOA DRONE DROP!');
+      }
       if(this.boss.attackTimer<=0){
-        this.spawnBossAttack(nextPhase);
+        this.spawnBossAttack(nextPhase);this.boss.telegraph=false;
         this.boss.attackTimer=nextPhase===1?105:nextPhase===2?75:48;
       }
     }
     if(this.rects(this.player,this.boss))this.hurt('She cited you for excessive fabulousness.');
     if(this.boss.hp<=0){
-      this.boss.alive=false;this.state.bossDefeated=true;this.burst(this.boss.x,this.boss.y,'#ff4fb8',110);
+      this.boss.alive=false;this.state.bossDefeated=true;this.state.victoryWave=1;this.burst(this.boss.x,this.boss.y,'#ff4fb8',110);
       window.dispatchEvent(new CustomEvent('boss-defeated'));
       setTimeout(()=>{this.stop();this.onComplete(this.state)},1700);
     }
@@ -288,6 +313,12 @@ export class Game{
     if(this.player.invuln>0)return;
     const now=performance.now();
     if(this.state.shieldUntil>now){this.ui.flash('Positivity shield blocked the shade!');this.burst(this.player.x,this.player.y,'#3ce7d2',16);return}
+    if(this.state.rigsbyRescue&&this.state.rigsby){
+      this.state.rigsbyRescue=false;this.player.invuln=100;
+      this.player.x=this.player.checkpoint;this.player.y=500;this.player.vx=0;this.player.vy=0;
+      this.ui.flash('Rigsby rescue! Good boy!');
+      this.burst(this.player.x,this.player.y,'#ffffff',28);return;
+    }
     this.state.health--;this.player.invuln=90;
     this.player.x=this.player.checkpoint;this.player.y=500;this.player.vx=0;this.player.vy=0;
     this.ui.flash(message);
@@ -310,6 +341,44 @@ export class Game{
   rects(a,b){return a.x<b.x+b.w&&a.x+a.w>b.x&&a.y<b.y+b.h&&a.y+a.h>b.y}
 
 
+
+
+  updateZones(t){
+    const zone=this.zones.find(z=>this.player.x>=z.start&&this.player.x<z.end&&!z.complete);
+    if(zone)this.state.currentObjective={title:zone.objective,detail:zone.detail};
+    else if(this.state.bossActive)this.state.currentObjective={title:'Defeat the HOA Queen',detail:'Read her attacks, switch heroes, and unleash Triangle of Support.'};
+
+    for(const z of this.zones){
+      if(z.complete)continue;
+      const enemiesClear=!this.enemies.some(e=>e.alive&&e.x>=z.start&&e.x<z.end);
+      let condition=false;
+      if(z.id==='home')condition=this.cards[0]?.collected&&this.beacons[0]?.active;
+      if(z.id==='beach')condition=enemiesClear&&this.beacons[1]?.active;
+      if(z.id==='pch')condition=enemiesClear&&this.beacons[2]?.active;
+      if(z.id==='la')condition=enemiesClear&&this.state.cards===CONFIG.requiredCards;
+      if(condition){
+        z.complete=true;
+        this.player.checkpoint=z.checkpoint;
+        this.state.health=4;
+        this.state.triangle=Math.min(100,this.state.triangle+30);
+        this.burst(z.checkpoint,520,'#3ce7d2',60);
+        this.canvas.classList.add('zoneComplete');
+        setTimeout(()=>this.canvas.classList.remove('zoneComplete'),750);
+        this.ui.flash(`${z.name.toUpperCase()} RESTORED — CHECKPOINT!`);
+        window.dispatchEvent(new CustomEvent('zone-restored',{detail:{name:z.name}}));
+      }
+    }
+
+    for(const item of this.souvenirs){
+      if(!item.collected&&Math.abs(this.player.x-item.x)<45&&Math.abs(this.player.y-item.y)<90){
+        item.collected=true;
+        this.state.souvenirs.push(item.title);
+        this.state.secrets.push(item.title);
+        this.burst(item.x,item.y,'#ffe66d',55);
+        this.ui.flash(`SECRET SOUVENIR: ${item.title}`);
+      }
+    }
+  }
 
   updateSoulSystems(dt,t){
     for(const spot of this.selfieSpots){
@@ -407,7 +476,8 @@ export class Game{
   }
 
   drawWorld(t){
-    this.drawSigns();this.drawPalms(t);this.drawPlatforms();this.drawDecor(t);
+    this.drawZoneVeils();this.drawSigns();this.drawPalms(t);this.drawPlatforms();this.drawDecor(t);this.drawCheckpoints(t);
+    for(const item of this.souvenirs)if(!item.collected)this.drawSouvenir(item,t);
     for(const card of this.cards)if(!card.collected)this.drawCard(card.x,card.y,t);
     for(const beacon of this.beacons)this.drawBeacon(beacon,t);
     for(const spot of this.selfieSpots)if(!spot.unlocked)this.drawSelfieSpot(spot,t);
@@ -417,9 +487,46 @@ export class Game{
     for(const tr of this.state.traps)this.drawCookie(tr.x,tr.y,1.1);
     for(const p of this.state.projectiles)this.drawProjectile(p);
     for(const h of this.hazards)this.drawHazard(h);
-    if(this.state.bossActive&&this.boss.alive)this.drawBoss(this.boss,t);
+    if(this.state.bossActive&&this.boss.alive){
+      if(this.boss.attackTimer<28){this.ctx.fillStyle='rgba(255,60,90,.18)';this.ctx.fillRect(4510,0,490,620)}
+      this.drawBoss(this.boss,t);
+    }
     if(this.state.rigsby)this.drawRigsby();
     for(const p of this.state.particles){this.ctx.globalAlpha=p.life/60;this.ctx.fillStyle=p.color;this.ctx.fillRect(p.x,p.y,6,6);this.ctx.globalAlpha=1}
+  }
+
+
+  drawZoneVeils(){
+    const c=this.ctx;
+    for(const z of this.zones){
+      if(z.complete)continue;
+      c.fillStyle='rgba(183,165,139,.23)';
+      c.fillRect(z.start,0,z.end-z.start,720);
+      c.fillStyle='rgba(96,82,66,.12)';
+      for(let x=z.start;x<z.end;x+=70)c.fillRect(x,0,28,720);
+    }
+    if(this.state.bossDefeated){
+      c.fillStyle=`rgba(255,255,255,${Math.max(0,.8-this.state.victoryWave/120)})`;
+      c.fillRect(0,0,5000,720);
+    }
+  }
+
+  drawCheckpoints(t){
+    for(const z of this.zones){
+      const x=z.checkpoint;
+      this.ctx.fillStyle=z.complete?'#3ce7d2':'#7d6b96';
+      this.ctx.fillRect(x,520,8,100);
+      this.ctx.beginPath();this.ctx.moveTo(x+8,520);this.ctx.lineTo(x+64,540);this.ctx.lineTo(x+8,560);this.ctx.fill();
+      if(z.complete)this.text('✓',x+30,540,22,'#fff','center');
+    }
+  }
+
+  drawSouvenir(item,t){
+    const bob=Math.sin(t*.006+item.id)*5;
+    this.ctx.save();this.ctx.translate(item.x,item.y+bob);
+    this.ctx.fillStyle='#ff4fb8';this.ctx.beginPath();this.ctx.arc(0,0,24,0,Math.PI*2);this.ctx.fill();
+    this.text(item.icon||'★',0,0,24,'#fff','center');
+    this.ctx.restore();
   }
 
   drawPlatforms(){

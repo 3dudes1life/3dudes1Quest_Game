@@ -15,7 +15,7 @@ game=new Game(canvas,ui,input,state=>{
   ui.show('complete');
 });
 
-const SAVE_KEY='3dudes1quest-save-v091';
+const SAVE_KEY='3dudes1quest-save-v092';
 const continueBtn=document.getElementById('continueBtn');
 const saveStatus=document.getElementById('saveStatus');
 const saveToast=document.getElementById('saveToast');
@@ -110,6 +110,12 @@ function renderJournal(tab='map'){
       <div class="secret ${secrets.length?'unlocked':''}"><span class="icon">🥣</span>${secrets.length?'Super Jump Chaos':'A hidden bowl is waiting somewhere near Hollywood.'}</div>
     </div></div>`;
   }
+  if(tab==='objectives'){
+    const zones=game?.zones||[];
+    journalContent.innerHTML=`<div class="journalPage"><h3>Restoration Missions</h3><div class="objectiveGrid">${
+      zones.map(z=>`<div class="objectiveRow ${z.complete?'done':''}"><b>${z.complete?'✓':'○'}</b><div><strong>${z.name}</strong><br><small>${z.detail}</small></div><b>${z.complete?'RESTORED':'ACTIVE'}</b></div>`).join('')
+    }</div></div>`;
+  }
   if(tab==='passport'){
     journalContent.innerHTML=`<div class="journalPage passportPage"><h3>Adventure Passport</h3>
       <div class="miniStamp">SOUTHERN<br>CALIFORNIA<br>${game?.state.bossDefeated?'RESTORED':'IN PROGRESS'}</div>
@@ -171,3 +177,10 @@ window.addEventListener('boss-defeated',()=>{
 });
 
 setInterval(()=>{if(game?.running&&!game.state.paused&&!game.state.bossDefeated)saveQuest()},30000);
+
+window.addEventListener('zone-restored',e=>{
+  const box=document.getElementById('bossPhase');
+  box.textContent=`${e.detail.name.toUpperCase()} RESTORED`;
+  box.classList.remove('hidden');
+  setTimeout(()=>box.classList.add('hidden'),1800);
+});
