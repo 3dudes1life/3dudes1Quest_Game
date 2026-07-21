@@ -1,10 +1,7 @@
-# Changelog
-
-## v0.8
-- Added persistent browser saves and Continue Adventure.
-- Added opening and victory cutscenes.
-- Added NPC encounters.
-- Added manual and automatic saving.
-- Expanded the boss to three phases.
-- Added boss hazards and Mega Beige.
-- Updated level metadata for the story/save milestone.
+# v0.9
+- Focus shifted from mechanics to immersion.
+- Defined living-world systems.
+- Added collectible expansion concepts.
+- Added travel memories and selfie framework.
+- Added Chaos Bowl challenge framework.
+- Audio intentionally postponed.

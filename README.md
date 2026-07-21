@@ -1,25 +1,25 @@
-# 3Dudes1Quest v0.8 — Story & Save Update
+# 3Dudes1Quest v0.9 — Soul Update
 
-## New in v0.8
-- New Adventure and Continue Adventure title options
-- Browser-based save/load using localStorage
-- Manual save button inside the Adventure Journal
-- Automatic save every 30 seconds during active gameplay
-- Opening story cutscene
-- Four NPC encounters across Southern California
-- Expanded three-phase HOA Queen of Beige battle
-- Violation letters, beige paint, and HOA drone hazards
-- Mega Beige final phase
-- Los Angeles restoration and Rainbow Prism victory cutscene
+## Added Systems
+- Cinematic animated intro framework
+- Living world framework
+  - Birds
+  - Butterflies
+  - Moving clouds
+  - Animated ocean
+  - Traffic system
+  - Walking NPC schedules
+- Selfie Spot framework
+- Memories album in Adventure Journal
+- Funny Gay Card descriptions
+- Smarter Rigsby AI
+  - Sniffs collectibles
+  - Warns of enemies
+  - Finds secrets
+- Pixel portrait dialogue framework
+- Rainbow Prism cinematic sequence
+- Random walking conversations
+- Chaos Bowl hidden challenge system
+- Souvenir & sticker pages in Adventure Journal
 
-## Controls
-- Move: Arrow keys or A/D
-- Jump: Space or W
-- Power: X or F
-- Switch: 1, 2, 3
-- Journal: book button
-- Save: SAVE inside the journal
-- Mobile: on-screen controls
-
-## Deploying
-Upload the entire contents of this folder to the repository root and deploy through GitHub Pages.
+Music intentionally deferred for a later update.
