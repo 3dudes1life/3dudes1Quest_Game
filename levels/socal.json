@@ -1,19 +1,14 @@
 {
   "name": "Southern California",
-  "version": "0.8",
+  "version": "0.9.1",
+  "status": "Polish candidate",
+  "collectibles": {
+    "gayCards": 6,
+    "prismBeacons": 3,
+    "selfieMemories": 3,
+    "chaosBowls": 1
+  },
+  "boss": "HOA Queen of Beige",
   "nextAdventure": "Lake Tahoe",
-  "systems": [
-    "Opening cutscene",
-    "Local save and continue",
-    "Automatic checkpoint saves",
-    "Four NPC encounters",
-    "Three-phase HOA Queen boss",
-    "Boss projectiles and hazards",
-    "Victory Prism cutscene"
-  ],
-  "boss": {
-    "name": "HOA Queen of Beige",
-    "phases": 3,
-    "finalForm": "Mega Beige"
-  }
+  "music": "Deferred"
 }

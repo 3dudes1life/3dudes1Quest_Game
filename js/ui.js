@@ -12,6 +12,8 @@ export function createUI(){
     cards:document.getElementById('hudCards'),
     beacons:document.getElementById('hudBeacons'),
     triangle:document.getElementById('hudTriangle'),
+    routeFill:document.getElementById('routeProgressFill'),
+    routeLabel:document.getElementById('routeLabel'),
     message:document.getElementById('message'),
     completeStats:document.getElementById('completeStats')
   };
@@ -31,6 +33,10 @@ export function createUI(){
     refs.cards.textContent=state.cards;
     refs.beacons.textContent=state.beacons;
     refs.triangle.textContent=Math.floor(state.triangle||0);
+    const progress=Math.max(0,Math.min(100,((state.playerX||0)/4900)*100));
+    refs.routeFill.style.width=`${progress}%`;
+    const x=state.playerX||0;
+    refs.routeLabel.textContent=x<650?'HOME':x<1600?'BEACH':x<2750?'PCH':x<3650?'HOLLYWOOD':x<4510?'LOS ANGELES':'BOSS';
   }
   return {screens,refs,show,flash,hud};
 }

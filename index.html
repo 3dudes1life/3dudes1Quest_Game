@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
   <meta name="theme-color" content="#15102f">
-  <title>3Dudes1Quest v0.5</title>
+  <title>3Dudes1Quest v0.9.1</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -44,6 +44,7 @@
         <div class="chip">🪪 <span id="hudCards">0</span>/6</div>
         <div class="chip">🔮 <span id="hudBeacons">0</span>/3</div>
         <div class="chip triangle">△ <span id="hudTriangle">0</span>%</div>
+        <div class="routeProgress"><span id="routeProgressFill"></span><b id="routeLabel">HOME</b></div>
       </div>
 
       <button id="pauseBtn">Ⅱ</button>
@@ -79,6 +80,8 @@
           <button data-tab="cards">Gay Cards</button>
           <button data-tab="dudes">The Dudes</button>
           <button data-tab="passport">Passport</button>
+          <button data-tab="memories">Memories</button>
+          <button data-tab="secrets">Secrets</button>
         </div>
         <div id="journalContent"></div>
       </aside>
@@ -100,7 +103,7 @@
       <div class="card">
         <div class="eyebrow">ADVENTURE COMPLETE</div>
         <h1>SoCal Is Fabulous Again!</h1>
-        <p id="completeStats"></p>
+        <div id="victoryRank" class="victoryRank">S</div><p id="completeStats"></p>
         <div class="stamp">PASSPORT STAMP<br><b>SOUTHERN CALIFORNIA</b></div>
         <p>The Rainbow Prism has opened a portal to the next adventure.</p>
         <button id="portalBtn" class="primary">Enter the Portal</button>

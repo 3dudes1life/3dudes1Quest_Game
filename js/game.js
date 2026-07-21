@@ -18,7 +18,7 @@ export class Game{
     this.state={
       paused:false,health:4,cards:0,beacons:0,dude:0,
       projectiles:[],traps:[],particles:[],shieldUntil:0,magicReady:0,
-      bossActive:false,bossDefeated:false,bossPhase:1,triangle:0,rigsby:true,storyFlags:{},playTime:0
+      bossActive:false,bossDefeated:false,bossPhase:1,triangle:0,rigsby:true,storyFlags:{},playTime:0,memories:[],secrets:[],chaosUntil:0,playerX:90
     };
     this.player={x:90,y:520,w:44,h:72,vx:0,vy:0,onGround:false,facing:1,invuln:0,checkpoint:90};
     this.cards=SOCAL_LEVEL.cards.map((p,i)=>({...p,id:i,collected:false}));
@@ -27,6 +27,13 @@ export class Game{
     this.boss={...SOCAL_LEVEL.boss,maxHp:SOCAL_LEVEL.boss.hp,vx:-1.2,alive:true,frozen:0,attackTimer:80};
     this.npcs=(SOCAL_LEVEL.npcs||[]).map((n,i)=>({...n,id:i,w:38,h:70,spoken:false}));
     this.hazards=[];
+    this.selfieSpots=(SOCAL_LEVEL.selfieSpots||[]).map((v,i)=>({...v,id:i,unlocked:false}));
+    this.chaosBowls=(SOCAL_LEVEL.chaosBowls||[]).map((v,i)=>({...v,id:i,unlocked:false}));
+    this.ambient={
+      clouds:Array.from({length:7},(_,i)=>({x:i*760+Math.random()*180,y:70+Math.random()*150,s:.35+Math.random()*.45})),
+      birds:Array.from({length:9},(_,i)=>({x:i*560+Math.random()*300,y:90+Math.random()*180,s:1+Math.random()*1.3})),
+      butterflies:Array.from({length:10},(_,i)=>({x:i*470+Math.random()*180,y:430+Math.random()*150,p:Math.random()*6.28}))
+    };
     this.cameraX=0;
     this.rigsby={x:35,y:565,w:38,h:30,vx:0};
     this.jumpLatch=false;
@@ -55,11 +62,13 @@ export class Game{
       state:{
         health:this.state.health,cards:this.state.cards,beacons:this.state.beacons,
         dude:this.state.dude,triangle:this.state.triangle,storyFlags:this.state.storyFlags,
-        rigsby:this.state.rigsby,playTime:this.state.playTime
+        rigsby:this.state.rigsby,playTime:this.state.playTime,memories:this.state.memories,secrets:this.state.secrets
       },
       cards:this.cards.map(c=>c.collected),
       beacons:this.beacons.map(b=>b.active),
       enemies:this.enemies.map(e=>e.alive),
+      selfies:this.selfieSpots.map(v=>v.unlocked),
+      chaos:this.chaosBowls.map(v=>v.unlocked),
       savedAt:new Date().toISOString()
     };
   }
@@ -73,6 +82,8 @@ export class Game{
     (save.cards||[]).forEach((v,i)=>{if(this.cards[i])this.cards[i].collected=!!v});
     (save.beacons||[]).forEach((v,i)=>{if(this.beacons[i])this.beacons[i].active=!!v});
     (save.enemies||[]).forEach((v,i)=>{if(this.enemies[i])this.enemies[i].alive=!!v});
+    (save.selfies||[]).forEach((v,i)=>{if(this.selfieSpots[i])this.selfieSpots[i].unlocked=!!v});
+    (save.chaos||[]).forEach((v,i)=>{if(this.chaosBowls[i])this.chaosBowls[i].unlocked=!!v});
     this.cameraX=Math.max(0,this.player.x-360);
   }
 
@@ -92,7 +103,7 @@ export class Game{
     this.player.vx=Math.max(-d.speed,Math.min(d.speed,this.player.vx));
 
     if(this.input.jump&&!this.jumpLatch&&this.player.onGround){
-      this.player.vy=-d.jump;this.player.onGround=false;
+      this.player.vy=-(t<this.state.chaosUntil?d.jump*1.55:d.jump);this.player.onGround=false;
       this.burst(this.player.x+22,this.player.y+70,d.color,8);
     }
     this.jumpLatch=this.input.jump;
@@ -127,8 +138,11 @@ export class Game{
     this.updateStory();
     this.updateNPCs();
     this.updateHazards(dt);
+    this.updateSoulSystems(dt,t);
+    this.updateAmbient(dt);
     this.updateParticles(dt);
     if(this.player.invuln>0)this.player.invuln-=dt;
+    this.state.playerX=this.player.x;
     this.state.triangle=Math.min(100,this.state.triangle+0.012*dt);
     this.ui.hud(this.state,DUDES[this.state.dude]);
   }
@@ -195,7 +209,15 @@ export class Game{
     for(const c of this.cards){
       if(!c.collected&&this.rects(this.player,{x:c.x,y:c.y,w:34,h:44})){
         c.collected=true;this.state.cards++;this.state.triangle=Math.min(100,this.state.triangle+18);this.burst(c.x,c.y,'#ffe66d',20);
-        this.ui.flash(this.state.cards===CONFIG.requiredCards?'Gay Card collection complete!':'Gay Card secured!');
+        const cardNames=[
+          'Can correctly identify every IKEA couch.',
+          'Automatically detects brunch within five miles.',
+          'Knows the difference between teal and turquoise.',
+          'Immune to one passive-aggressive HOA email.',
+          'Receives +20% dramatic entrance energy.',
+          '+100 Fabulous. Statistically useless. Spiritually essential.'
+        ];
+        this.ui.flash(this.state.cards===CONFIG.requiredCards?'Gay Card collection complete!':`Gay Card: ${cardNames[c.id]}`);
       }
     }
     for(const b of this.beacons){
@@ -288,12 +310,54 @@ export class Game{
   rects(a,b){return a.x<b.x+b.w&&a.x+a.w>b.x&&a.y<b.y+b.h&&a.y+a.h>b.y}
 
 
+
+  updateSoulSystems(dt,t){
+    for(const spot of this.selfieSpots){
+      if(!spot.unlocked&&Math.abs(this.player.x-spot.x)<48&&Math.abs(this.player.y-spot.y)<110){
+        spot.unlocked=true;
+        this.state.memories.push(spot.title);
+        this.burst(spot.x,spot.y,'#ffffff',45);
+        this.ui.flash(`SELFIE MEMORY: ${spot.title}`);
+        this.canvas.classList.add('selfieFlash');
+        setTimeout(()=>this.canvas.classList.remove('selfieFlash'),600);
+      }
+    }
+    for(const bowl of this.chaosBowls){
+      if(!bowl.unlocked&&Math.abs(this.player.x-bowl.x)<50&&Math.abs(this.player.y-bowl.y)<110){
+        bowl.unlocked=true;
+        this.state.secrets.push(bowl.title);
+        this.state.chaosUntil=t+12000;
+        this.burst(bowl.x,bowl.y,'#ff4fb8',65);
+        this.ui.flash('CHAOS BOWL: SUPER JUMP FOR 12 SECONDS!');
+      }
+    }
+    const f=this.state.storyFlags;
+    const banter=[
+      [1180,'banter1','Caleb','Do you think beach calories count?'],
+      [1900,'banter2','Will','Only if the seagull sees you eat them.'],
+      [3000,'banter3','Daniel','Stay positive. We are almost through traffic.'],
+      [3700,'banter4','Caleb','That sentence has never been true in Los Angeles.']
+    ];
+    for(const [x,key,name,line] of banter){
+      if(this.player.x>x&&!f[key]){f[key]=true;this.dispatchDialogue(name,line)}
+    }
+  }
+
+  updateAmbient(dt){
+    for(const c of this.ambient.clouds){c.x+=c.s*dt;if(c.x>5100)c.x=-300}
+    for(const b of this.ambient.birds){b.x+=b.s*dt;if(b.x>5100)b.x=-100}
+    for(const b of this.ambient.butterflies){b.x+=.35*dt;b.p+=.07*dt;if(b.x>5000)b.x=0}
+  }
+
   updateRigsby(dt){
     if(!this.state.rigsby)return;
     const target=this.player.x-62*this.player.facing;
     this.rigsby.x+=(target-this.rigsby.x)*.08*dt;
     this.rigsby.y=this.player.y+42;
-    if(this.player.x>1050)this.state.rigsby=false;
+    const nextCard=this.cards.find(c=>!c.collected&&Math.abs(c.x-this.player.x)<420);
+    this.rigsby.sniff=!!nextCard;
+    if(nextCard)this.rigsby.x+=(Math.sign(nextCard.x-this.rigsby.x)*.45*dt);
+    if(this.player.x>1280)this.state.rigsby=false;
   }
 
   updateStory(){
@@ -323,7 +387,8 @@ export class Game{
 
   draw(t){
     const c=this.ctx;c.clearRect(0,0,CONFIG.width,CONFIG.height);
-    this.drawBackground(t);c.save();c.translate(-this.cameraX,0);this.drawWorld(t);this.drawPlayer(t);c.restore();
+    this.drawBackground(t);
+    this.drawAmbient(t);c.save();c.translate(-this.cameraX,0);this.drawWorld(t);this.drawPlayer(t);c.restore();
     if(this.state.bossActive&&this.boss.alive)this.drawBossHud();
     if(this.state.paused){c.fillStyle='rgba(8,5,24,.72)';c.fillRect(0,0,CONFIG.width,CONFIG.height);this.text('PAUSED',CONFIG.width/2,CONFIG.height/2,64,'#fff','center')}
   }
@@ -345,6 +410,8 @@ export class Game{
     this.drawSigns();this.drawPalms(t);this.drawPlatforms();this.drawDecor(t);
     for(const card of this.cards)if(!card.collected)this.drawCard(card.x,card.y,t);
     for(const beacon of this.beacons)this.drawBeacon(beacon,t);
+    for(const spot of this.selfieSpots)if(!spot.unlocked)this.drawSelfieSpot(spot,t);
+    for(const bowl of this.chaosBowls)if(!bowl.unlocked)this.drawChaosBowl(bowl,t);
     for(const n of this.npcs)this.drawNPC(n,t);
     for(const e of this.enemies)if(e.alive)this.drawEnemy(e,t);
     for(const tr of this.state.traps)this.drawCookie(tr.x,tr.y,1.1);
@@ -383,6 +450,44 @@ export class Game{
     this.ctx.save();this.ctx.translate(b.x,b.y);this.ctx.fillStyle=b.active?'#3ce7d2':'#837e91';this.ctx.fillRect(-24,10,48,60);this.ctx.fillStyle=b.active?'#fff':'#aaa';this.ctx.beginPath();this.ctx.moveTo(0,-25);this.ctx.lineTo(25,12);this.ctx.lineTo(0,30);this.ctx.lineTo(-25,12);this.ctx.closePath();this.ctx.fill();if(b.active){this.ctx.globalAlpha=.35+.25*Math.sin(t*.006);this.ctx.fillStyle='#3ce7d2';this.ctx.beginPath();this.ctx.arc(0,10,50,0,Math.PI*2);this.ctx.fill();this.ctx.globalAlpha=1}this.ctx.restore()
   }
 
+
+
+  drawAmbient(t){
+    const c=this.ctx;
+    c.save();
+    for(const cloud of this.ambient.clouds){
+      c.globalAlpha=.5;c.fillStyle='#fff';
+      c.beginPath();c.ellipse(cloud.x,cloud.y,55,18,0,0,Math.PI*2);c.ellipse(cloud.x+35,cloud.y-8,42,22,0,0,Math.PI*2);c.fill();
+    }
+    c.globalAlpha=.75;c.strokeStyle='#222';c.lineWidth=2;
+    for(const b of this.ambient.birds){
+      c.beginPath();c.arc(b.x,b.y,8,3.5,5.9);c.arc(b.x+15,b.y,8,3.5,5.9);c.stroke();
+    }
+    for(const b of this.ambient.butterflies){
+      c.fillStyle='#ff4fb8';c.globalAlpha=.8;
+      const y=b.y+Math.sin(b.p)*12;
+      c.beginPath();c.ellipse(b.x-4,y,5,3,.4,0,Math.PI*2);c.ellipse(b.x+4,y,5,3,-.4,0,Math.PI*2);c.fill();
+    }
+    c.restore();
+  }
+
+  drawSelfieSpot(s,t){
+    const c=this.ctx,bob=Math.sin(t*.005+s.id)*5;
+    c.save();c.translate(s.x,s.y+bob);
+    c.fillStyle='#fff';c.fillRect(-15,-45,60,42);
+    c.fillStyle='#ff4fb8';c.fillRect(-8,-38,46,28);
+    c.fillStyle='#fff';c.beginPath();c.arc(15,-24,8,0,Math.PI*2);c.fill();
+    this.text('📸',15,-58,24,'#fff','center');
+    c.restore();
+  }
+
+  drawChaosBowl(b,t){
+    const c=this.ctx,glow=.55+.25*Math.sin(t*.01);
+    c.save();c.translate(b.x,b.y);c.globalAlpha=glow;
+    c.fillStyle='#ff4fb8';c.beginPath();c.ellipse(0,0,32,12,0,0,Math.PI*2);c.fill();
+    c.fillStyle='#ffe66d';c.beginPath();c.arc(0,-8,10,0,Math.PI*2);c.fill();
+    this.text('CHAOS',0,28,12,'#fff','center');c.restore();
+  }
 
   drawNPC(n,t){
     const c=this.ctx,bob=Math.sin(t*.004+n.x)*2;
@@ -450,6 +555,7 @@ export class Game{
     c.fillStyle='#111';c.fillRect(18,6,4,4);
     c.fillStyle='#f4f1e8';c.fillRect(4,20,6,10);c.fillRect(27,20,6,10);
     c.strokeStyle='#7a4d32';c.lineWidth=4;c.beginPath();c.moveTo(38,12);c.quadraticCurveTo(51,2,48,-6);c.stroke();
+    if(r.sniff){c.fillStyle='#fff';c.beginPath();c.arc(43,-16,7,0,Math.PI*2);c.arc(55,-27,5,0,Math.PI*2);c.fill();this.text('!',66,-38,18,'#ff4fb8','center')}
     c.restore()
   }
 

@@ -15,7 +15,7 @@ game=new Game(canvas,ui,input,state=>{
   ui.show('complete');
 });
 
-const SAVE_KEY='3dudes1quest-save-v08';
+const SAVE_KEY='3dudes1quest-save-v091';
 const continueBtn=document.getElementById('continueBtn');
 const saveStatus=document.getElementById('saveStatus');
 const saveToast=document.getElementById('saveToast');
@@ -95,6 +95,19 @@ function renderJournal(tab='map'){
       <div class="bio"><h3>Will</h3><p>Sassy rainbow rogue.</p><b>Rainbow Toss</b></div>
       <div class="bio"><h3>Daniel</h3><p>Magical and loving.</p><b>Shield + Freeze</b></div>
       <div class="bio"><h3>Caleb</h3><p>Chaotic cookie agent.</p><b>Cookie Bombs + Traps</b></div>
+    </div></div>`;
+  }
+  if(tab==='memories'){
+    const memories=game?.state.memories||[];
+    const all=['Beach Day Energy','Pacific Coast Slay','Hollywood Dudes'];
+    journalContent.innerHTML=`<div class="journalPage"><h3>Travel Memories</h3><div class="memoryGrid">${
+      all.map((m,i)=>`<div class="memory ${memories.includes(m)?'unlocked':''}"><span class="icon">${['🏖️','🚗','🎬'][i]}</span>${memories.includes(m)?m:'Undiscovered Selfie Spot'}</div>`).join('')
+    }</div></div>`;
+  }
+  if(tab==='secrets'){
+    const secrets=game?.state.secrets||[];
+    journalContent.innerHTML=`<div class="journalPage"><h3>Hidden Chaos</h3><div class="secretGrid">
+      <div class="secret ${secrets.length?'unlocked':''}"><span class="icon">🥣</span>${secrets.length?'Super Jump Chaos':'A hidden bowl is waiting somewhere near Hollywood.'}</div>
     </div></div>`;
   }
   if(tab==='passport'){

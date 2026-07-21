@@ -96,3 +96,15 @@ rgba(8,5,24,.9);padding:20px}
 .journalActions{display:flex;gap:8px}
 #saveBtn{height:44px;padding:0 16px;background:#287963}
 .npcLabel{font-weight:950}
+
+.routeProgress{position:absolute;left:50%;top:58px;transform:translateX(-50%);width:min(420px,52vw);height:26px;border:2px solid rgba(255,255,255,.78);border-radius:999px;background:rgba(10,7,30,.75);overflow:hidden;text-align:center}
+.routeProgress span{position:absolute;inset:0 auto 0 0;width:0;background:linear-gradient(90deg,#ff4fb8,#ffe66d,#3ce7d2);transition:width .2s}
+.routeProgress b{position:relative;z-index:2;font-size:.7rem;line-height:22px;letter-spacing:.14em;text-shadow:0 1px 3px #000}
+.memoryGrid,.secretGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.memory,.secret{min-height:110px;border:2px dashed #7d6b96;border-radius:14px;background:rgba(255,255,255,.65);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:10px;font-weight:900}
+.memory.unlocked,.secret.unlocked{background:linear-gradient(135deg,#fff,#ffd6f0,#d8fff8);border-style:solid}
+.memory .icon,.secret .icon{font-size:2rem}
+.victoryRank{width:90px;height:90px;margin:10px auto;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:3.3rem;font-weight:1000;background:linear-gradient(135deg,#ff4fb8,#ffe66d,#3ce7d2);color:#17102f;border:5px solid #fff;box-shadow:0 0 35px rgba(255,230,109,.55)}
+.selfieFlash{animation:selfieFlash .55s ease both}
+@keyframes selfieFlash{0%{filter:brightness(1)}35%{filter:brightness(3)}100%{filter:brightness(1)}}
+@media(max-width:760px){.routeProgress{top:62px;width:58vw}.memoryGrid,.secretGrid{grid-template-columns:1fr 1fr}}

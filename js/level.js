@@ -41,5 +41,13 @@ export const SOCAL_LEVEL = {
     {x:2380,y:550,name:'Taco Oracle',line:'Three beacons. Six Gay Cards. One deeply unpleasant HOA Queen.'},
     {x:4050,y:550,name:'LA Local',line:'She took the murals first. Please bring the city back.'}
   ],
+  selfieSpots:[
+    {x:860,y:540,title:'Beach Day Energy',icon:'🏖️'},
+    {x:2860,y:520,title:'Pacific Coast Slay',icon:'🚗'},
+    {x:3920,y:520,title:'Hollywood Dudes',icon:'🎬'}
+  ],
+  chaosBowls:[
+    {x:3360,y:535,title:'Super Jump Chaos',modifier:'superJump'}
+  ],
   boss: {x:4720,y:505,w:120,h:115,hp:18}
 };
