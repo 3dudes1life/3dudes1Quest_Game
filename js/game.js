@@ -18,7 +18,7 @@ export class Game{
     this.state={
       paused:false,health:4,cards:0,beacons:0,dude:0,
       projectiles:[],traps:[],particles:[],shieldUntil:0,magicReady:0,
-      bossActive:false,bossDefeated:false
+      bossActive:false,bossDefeated:false,triangle:0,rigsby:true,storyFlags:{}
     };
     this.player={x:90,y:520,w:44,h:72,vx:0,vy:0,onGround:false,facing:1,invuln:0,checkpoint:90};
     this.cards=SOCAL_LEVEL.cards.map((p,i)=>({...p,id:i,collected:false}));
@@ -26,6 +26,7 @@ export class Game{
     this.enemies=SOCAL_LEVEL.enemies.map((e,i)=>({...e,id:i,w:46,h:46,vx:i%2?1.15:-1.15,alive:true,frozen:0}));
     this.boss={...SOCAL_LEVEL.boss,maxHp:SOCAL_LEVEL.boss.hp,vx:-1.2,alive:true,frozen:0};
     this.cameraX=0;
+    this.rigsby={x:35,y:565,w:38,h:30,vx:0};
     this.jumpLatch=false;
     this.powerLatch=false;
   }
@@ -90,13 +91,24 @@ export class Game{
     this.updateEnemies(dt,t);
     this.updateCollectibles();
     this.updateBoss(dt,t);
+    this.updateRigsby(dt);
+    this.updateStory();
     this.updateParticles(dt);
     if(this.player.invuln>0)this.player.invuln-=dt;
+    this.state.triangle=Math.min(100,this.state.triangle+0.012*dt);
     this.ui.hud(this.state,DUDES[this.state.dude]);
   }
 
   usePower(t){
     const d=DUDES[this.state.dude];
+    if(this.state.triangle>=100){
+      this.state.triangle=0;
+      for(const e of this.enemies){if(e.alive&&Math.abs(e.x-this.player.x)<650){e.alive=false;this.burst(e.x,e.y,'#ffe66d',20)}}
+      if(this.state.bossActive&&this.boss.alive){this.boss.hp-=4}
+      this.burst(this.player.x,this.player.y,'#ff4fb8',70);
+      this.ui.flash('TRIANGLE OF SUPPORT!');
+      return;
+    }
     if(d.power==='rainbow'){
       this.state.projectiles.push({x:this.player.x+22,y:this.player.y+30,vx:this.player.facing*11,vy:0,w:34,h:18,type:'rainbow',life:100});
       this.ui.flash('Yaaass queen!');
@@ -148,13 +160,13 @@ export class Game{
   updateCollectibles(){
     for(const c of this.cards){
       if(!c.collected&&this.rects(this.player,{x:c.x,y:c.y,w:34,h:44})){
-        c.collected=true;this.state.cards++;this.burst(c.x,c.y,'#ffe66d',20);
+        c.collected=true;this.state.cards++;this.state.triangle=Math.min(100,this.state.triangle+18);this.burst(c.x,c.y,'#ffe66d',20);
         this.ui.flash(this.state.cards===CONFIG.requiredCards?'Gay Card collection complete!':'Gay Card secured!');
       }
     }
     for(const b of this.beacons){
       if(!b.active&&this.rects(this.player,{x:b.x,y:b.y,w:54,h:70})){
-        b.active=true;this.state.beacons++;this.player.checkpoint=b.x-80;this.burst(b.x,b.y,'#3ce7d2',28);
+        b.active=true;this.state.beacons++;this.state.triangle=Math.min(100,this.state.triangle+25);this.player.checkpoint=b.x-80;this.burst(b.x,b.y,'#3ce7d2',28);
         this.ui.flash('Prism Beacon restored!');
       }
     }
@@ -198,11 +210,36 @@ export class Game{
   }
 
   updateParticles(dt){
+    if(this.state.rigsby)this.drawRigsby();
     for(const p of this.state.particles){p.x+=p.vx*dt;p.y+=p.vy*dt;p.vy+=.25*dt;p.life-=dt}
     this.state.particles=this.state.particles.filter(p=>p.life>0);
   }
 
   rects(a,b){return a.x<b.x+b.w&&a.x+a.w>b.x&&a.y<b.y+b.h&&a.y+a.h>b.y}
+
+
+  updateRigsby(dt){
+    if(!this.state.rigsby)return;
+    const target=this.player.x-62*this.player.facing;
+    this.rigsby.x+=(target-this.rigsby.x)*.08*dt;
+    this.rigsby.y=this.player.y+42;
+    if(this.player.x>1050)this.state.rigsby=false;
+  }
+
+  updateStory(){
+    const f=this.state.storyFlags;
+    const x=this.player.x;
+    if(x>120&&!f.home){f.home=true;this.dispatchDialogue('Will','Okay, team—SoCal is losing color, and beige is absolutely not our season.')}
+    if(x>520&&!f.rigsby){f.rigsby=true;this.dispatchDialogue('Rigsby','WOOF! (Translation: I found the first trail of Prism energy.)')}
+    if(x>980&&!f.beach){f.beach=true;this.dispatchDialogue('Daniel','I can feel the Prism nearby. Spread positivity to clear the path!')}
+    if(x>2250&&!f.neighborhood){f.neighborhood=true;this.dispatchDialogue('Caleb','Cookie traps are armed. This neighborhood is about to get crumbs everywhere.')}
+    if(x>3150&&!f.freeway){f.freeway=true;this.dispatchDialogue('Will','The I-5? Lord Beige really is evil.')}
+    if(x>4020&&!f.la){f.la=true;this.dispatchDialogue('Daniel','Los Angeles is almost completely drained. Stay together.')}
+  }
+
+  dispatchDialogue(name,text){
+    window.dispatchEvent(new CustomEvent('quest-dialogue',{detail:{name,text}}));
+  }
 
   draw(t){
     const c=this.ctx;c.clearRect(0,0,CONFIG.width,CONFIG.height);
@@ -232,6 +269,7 @@ export class Game{
     for(const tr of this.state.traps)this.drawCookie(tr.x,tr.y,1.1);
     for(const p of this.state.projectiles)this.drawProjectile(p);
     if(this.state.bossActive&&this.boss.alive)this.drawBoss(this.boss,t);
+    if(this.state.rigsby)this.drawRigsby();
     for(const p of this.state.particles){this.ctx.globalAlpha=p.life/60;this.ctx.fillStyle=p.color;this.ctx.fillRect(p.x,p.y,6,6);this.ctx.globalAlpha=1}
   }
 
@@ -276,7 +314,32 @@ export class Game{
   }
 
   drawPlayer(t){
-    const d=DUDES[this.state.dude];this.ctx.save();this.ctx.translate(this.player.x,this.player.y);if(this.player.invuln>0&&Math.floor(this.player.invuln/5)%2===0)this.ctx.globalAlpha=.35;if(this.state.shieldUntil>t){this.ctx.strokeStyle='#3ce7d2';this.ctx.lineWidth=6;this.ctx.beginPath();this.ctx.arc(22,35,50,0,Math.PI*2);this.ctx.stroke()}this.ctx.fillStyle='#222';this.ctx.fillRect(8,54,10,18);this.ctx.fillRect(28,54,10,18);this.ctx.fillStyle=d.color;this.ctx.fillRect(5,18,34,40);this.ctx.fillStyle='#d8a57d';this.ctx.fillRect(9,0,26,24);this.ctx.fillStyle='#2b1a18';this.ctx.fillRect(9,0,26,7);this.ctx.fillStyle='#111';this.ctx.fillRect(this.player.facing>0?27:13,9,4,4);this.ctx.fillStyle=d.accent;this.ctx.fillRect(7,30,30,7);this.text(d.name[0],22,49,16,'#111','center');this.ctx.restore()
+    const d=DUDES[this.state.dude],c=this.ctx;
+    c.save();c.translate(this.player.x,this.player.y);
+    if(this.player.invuln>0&&Math.floor(this.player.invuln/5)%2===0)c.globalAlpha=.35;
+    if(this.state.shieldUntil>t){c.strokeStyle='#3ce7d2';c.lineWidth=6;c.beginPath();c.arc(22,35,50,0,Math.PI*2);c.stroke()}
+    const walk=Math.sin(performance.now()*.012*Math.abs(this.player.vx))*(Math.abs(this.player.vx)>.5?4:0);
+    c.fillStyle='#242034';c.fillRect(7,55+walk,11,18);c.fillRect(28,55-walk,11,18);
+    c.fillStyle=d.color;c.beginPath();c.roundRect(3,19,38,42,10);c.fill();
+    c.fillStyle=d.accent;c.fillRect(5,39,34,7);
+    c.fillStyle='#d8a57d';c.beginPath();c.roundRect(8,0,28,26,10);c.fill();
+    c.fillStyle='#2b1a18';c.beginPath();c.roundRect(8,0,28,9,8);c.fill();
+    c.fillStyle='#111';c.fillRect(this.player.facing>0?27:13,11,4,4);
+    c.fillStyle='#fff';c.fillRect(11,28,8,5);c.fillRect(27,28,8,5);
+    this.text(d.name[0],22,49,15,'#111','center');
+    c.restore()
+  }
+
+  drawRigsby(){
+    const c=this.ctx,r=this.rigsby;
+    c.save();c.translate(r.x,r.y);
+    c.fillStyle='#f4f1e8';c.beginPath();c.ellipse(18,12,24,14,0,0,Math.PI*2);c.fill();
+    c.fillStyle='#7a4d32';c.beginPath();c.ellipse(7,7,9,12,-.3,0,Math.PI*2);c.fill();
+    c.beginPath();c.ellipse(31,7,9,12,.3,0,Math.PI*2);c.fill();
+    c.fillStyle='#111';c.fillRect(18,6,4,4);
+    c.fillStyle='#f4f1e8';c.fillRect(4,20,6,10);c.fillRect(27,20,6,10);
+    c.strokeStyle='#7a4d32';c.lineWidth=4;c.beginPath();c.moveTo(38,12);c.quadraticCurveTo(51,2,48,-6);c.stroke();
+    c.restore()
   }
 
   drawBoss(b,t){

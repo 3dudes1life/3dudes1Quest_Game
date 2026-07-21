@@ -41,10 +41,35 @@
         <div class="chip">❤️ <span id="hudHealth">4</span></div>
         <div class="chip">🪪 <span id="hudCards">0</span>/6</div>
         <div class="chip">🔮 <span id="hudBeacons">0</span>/3</div>
+        <div class="chip triangle">△ <span id="hudTriangle">0</span>%</div>
       </div>
 
       <button id="pauseBtn">Ⅱ</button>
+      <button id="journalBtn">📖</button>
       <div id="message"></div>
+
+      <div id="dialogueBox" class="dialogue hidden">
+        <div id="dialoguePortrait" class="portrait"></div>
+        <div class="dialogueCopy">
+          <div id="dialogueName" class="dialogueName"></div>
+          <div id="dialogueText"></div>
+        </div>
+        <button id="dialogueNext">NEXT</button>
+      </div>
+
+      <aside id="journal" class="journal hidden" aria-label="Adventure Journal">
+        <div class="journalTop">
+          <h2>Adventure Journal</h2>
+          <button id="journalClose">✕</button>
+        </div>
+        <div class="journalTabs">
+          <button data-tab="map" class="active">Map</button>
+          <button data-tab="cards">Gay Cards</button>
+          <button data-tab="dudes">The Dudes</button>
+          <button data-tab="passport">Passport</button>
+        </div>
+        <div id="journalContent"></div>
+      </aside>
 
       <div id="touchControls">
         <div class="touchGroup">
@@ -74,6 +99,9 @@
     <section id="portalScreen" class="screen">
       <div class="portalWrap">
         <div class="portal"></div>
+        <div class="portalDudes">
+          <span>W</span><span>D</span><span>C</span><span class="rigsby">🐶</span>
+        </div>
         <h1>Adventure 2</h1>
         <h2>Lake Tahoe</h2>
         <p>Coming next.</p>

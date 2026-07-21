@@ -11,6 +11,7 @@ export function createUI(){
     health:document.getElementById('hudHealth'),
     cards:document.getElementById('hudCards'),
     beacons:document.getElementById('hudBeacons'),
+    triangle:document.getElementById('hudTriangle'),
     message:document.getElementById('message'),
     completeStats:document.getElementById('completeStats')
   };
@@ -29,6 +30,7 @@ export function createUI(){
     refs.health.textContent=state.health;
     refs.cards.textContent=state.cards;
     refs.beacons.textContent=state.beacons;
+    refs.triangle.textContent=Math.floor(state.triangle||0);
   }
   return {screens,refs,show,flash,hud};
 }

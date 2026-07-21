@@ -1,28 +1,26 @@
-# 3Dudes1Quest v0.6 Roadmap
+# 3Dudes1Quest v0.7 — Vertical Slice Update
 
-## New Foundation Added
+## Playable additions
+- Story dialogue triggered throughout the SoCal route
+- Rigsby accompanies the team during the opening area
+- Adventure Journal pause interface
+- Journal map, Gay Card wallet, character bios, and passport
+- Triangle of Support meter and ultimate attack
+- Improved animated character rendering
+- Expanded post-boss rainbow portal presentation
+- Lake Tahoe reveal remains the next adventure
 
-### Adventure Journal
-- Travel journal replaces traditional pause menu.
-- Passport stamps
-- Gay Card collection
-- Postcards
-- Character bios
+## Controls
+- Move: Arrow keys or A/D
+- Jump: Space or W
+- Power: X or F
+- Switch: 1, 2, 3
+- Journal: book button
+- Mobile: on-screen controls
 
-### Story Flow
-Home -> Neighborhood -> Beach -> Pacific Coast Highway -> Hollywood -> Downtown LA -> HOA Queen -> Rainbow Prism -> Portal -> Lake Tahoe
+## Triangle of Support
+The meter fills over time and gains large boosts from Gay Cards and Prism Beacons.
+Use the Power button at 100% to trigger the team ultimate.
 
-### Planned Systems
-- NPC dialogue
-- Save system
-- Quest triggers
-- Sprite animation state machine
-- Tile map loader
-- Music manager
-- Cutscene engine
-
-## Next milestone (v0.7)
-- Pixel sprites
-- Animated portal
-- Dialogue boxes
-- Rigsby companion
+## GitHub Pages
+Upload all folder contents to the repository root and deploy the `main` branch through GitHub Pages.

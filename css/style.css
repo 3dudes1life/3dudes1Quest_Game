@@ -44,3 +44,38 @@ button{border:0;border-radius:999px;color:#fff;font-weight:900;font-size:1rem;pa
 @media (hover:hover) and (pointer:fine){#touchControls{opacity:.35}.touchGroup button:hover{transform:translateY(-2px)}}
 @media (max-width:700px){.card{padding:20px}.touchGroup button{width:64px;height:64px}}
 @media (max-height:520px){.card{padding:16px}h1{font-size:2.7rem}.card p{font-size:.86rem}}
+
+
+#journalBtn{position:absolute;right:64px;top:10px;z-index:7;width:46px;height:46px;padding:0;background:rgba(14,10,35,.82);border:2px solid rgba(255,255,255,.72)}
+.chip.triangle{color:#ffe66d}
+.dialogue{position:absolute;z-index:12;left:50%;bottom:100px;transform:translateX(-50%);width:min(820px,92vw);display:grid;grid-template-columns:84px 1fr auto;gap:14px;align-items:center;background:rgba(15,10,38,.96);border:3px solid #fff;border-radius:20px;padding:14px;box-shadow:0 15px 50px rgba(0,0,0,.5)}
+.dialogue.hidden,.journal.hidden{display:none}
+.portrait{width:72px;height:72px;border-radius:18px;border:3px solid #fff;background:linear-gradient(135deg,#ff4fb8,#8d5cff);position:relative}
+.portrait::after{content:"";position:absolute;left:18px;top:12px;width:36px;height:45px;background:#d8a57d;border-radius:14px 14px 12px 12px;box-shadow:inset 0 8px #2b1a18}
+.dialogueName{font-weight:950;color:#3ce7d2;margin-bottom:4px}
+.dialogueCopy{line-height:1.35}
+#dialogueNext{padding:10px 16px;background:linear-gradient(90deg,#ff4fb8,#ff9a3c)}
+.journal{position:absolute;z-index:15;inset:5% 6%;background:#efe0b9;color:#2d2545;border:10px solid #6d3f2d;border-radius:18px;box-shadow:0 25px 80px rgba(0,0,0,.7);padding:18px;overflow:auto;background-image:linear-gradient(rgba(255,255,255,.28),rgba(255,255,255,.28)),repeating-linear-gradient(0deg,transparent 0 30px,rgba(88,75,120,.12) 31px 32px)}
+.journalTop{display:flex;justify-content:space-between;align-items:center}
+.journalTop h2{margin:0;font-family:Georgia,serif;font-size:2rem}
+#journalClose{width:44px;height:44px;padding:0;background:#4d3b63}
+.journalTabs{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0}
+.journalTabs button{background:#7d6b96;padding:9px 14px}
+.journalTabs button.active{background:#ff4fb8}
+.journalPage{background:rgba(255,255,255,.55);border:2px dashed #6d557c;border-radius:14px;padding:18px;min-height:260px}
+.route{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;text-align:center}
+.route div{padding:14px 6px;border-radius:12px;background:#fff;box-shadow:0 5px 0 rgba(67,52,86,.16)}
+.cardGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.journalCard{aspect-ratio:1.3;border-radius:12px;background:linear-gradient(135deg,#fff,#ead9ff);display:flex;align-items:center;justify-content:center;font-weight:900;border:2px solid #7d6b96}
+.journalCard.found{background:linear-gradient(135deg,#ff4fb8,#ffe66d,#3ce7d2)}
+.bioGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.bio{background:#fff;border-radius:12px;padding:14px;text-align:center}
+.passportPage{text-align:center}
+.miniStamp{display:inline-block;border:4px dashed #ff4fb8;border-radius:50%;padding:34px 20px;transform:rotate(-5deg);font-weight:950;color:#8d2a6a}
+.portalDudes{display:flex;justify-content:center;gap:8px;margin-top:-58px;margin-bottom:22px;position:relative;z-index:3}
+.portalDudes span{display:flex;align-items:center;justify-content:center;width:46px;height:58px;border-radius:18px 18px 10px 10px;background:#ff4fb8;border:3px solid #fff;font-weight:950}
+.portalDudes span:nth-child(2){background:#8d5cff}.portalDudes span:nth-child(3){background:#ff9a3c}.portalDudes .rigsby{background:#fff;font-size:1.5rem}
+@media(max-width:760px){
+  .dialogue{grid-template-columns:60px 1fr;bottom:88px}.portrait{width:56px;height:56px}.portrait::after{left:12px;top:9px;width:30px;height:36px}#dialogueNext{grid-column:1/-1;width:100%}
+  .route{grid-template-columns:repeat(2,1fr)}.bioGrid{grid-template-columns:1fr}.journal{inset:3%}.cardGrid{grid-template-columns:repeat(2,1fr)}
+}

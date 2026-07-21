@@ -1,6 +1,10 @@
-# v0.6
-- Established long-term architecture.
-- Added Adventure Journal design.
-- Defined story progression.
-- Locked first-world flow.
-- Prepared roadmap for dialogue, NPCs, sprites, save system, and tile maps.
+# Changelog
+
+## v0.7
+- Added Adventure Journal.
+- Added story dialogue system.
+- Added Rigsby companion.
+- Added Triangle of Support meter and ultimate.
+- Improved player sprites and walking motion.
+- Enhanced rainbow portal ending.
+- Preserved modular v0.5 gameplay foundation.

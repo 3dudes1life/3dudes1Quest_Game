@@ -1,11 +1,17 @@
 {
   "name": "Southern California",
-  "version": "0.5",
+  "version": "0.7",
   "nextAdventure": "Lake Tahoe",
   "requirements": {
     "gayCards": 6,
     "prismBeacons": 3
   },
   "boss": "HOA Queen of Beige",
-  "ending": "Rainbow portal opens after Los Angeles is restored."
+  "newSystems": [
+    "Adventure Journal",
+    "Story dialogue",
+    "Rigsby companion",
+    "Triangle of Support meter",
+    "Portal reveal"
+  ]
 }
