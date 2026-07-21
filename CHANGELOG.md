@@ -1,24 +1,25 @@
-# 3Dudes1Quest v1.0.8R — Cinematic Finale Update
+# 3Dudes1Quest v1.0.8S — Superman Finale Rebuild
 
-## Final boss overhaul
-- Faster and more aggressive Queen phases
-- Phase 3 teleporting
-- Beige rain attacks
-- Stronger arena effects and desaturation
-- Triangle Power ultimate attack (Q or on-screen button)
+## Critical fixes
 
-## Zoey rescue finale
-- Portal no longer opens immediately
-- Queen defeat cinematic
-- Cage-shake beat
-- Zoey reveal
-- Rigsby and Zoey reunion with hearts
-- Color-restoration celebration
-- Cheering NPC crowd and confetti
-- Portal opens only after the reunion and celebration
-- Player control returns for one final walk into Lake Tahoe
+- Removed duplicate Zoey rendering during and after the rescue.
+- Rigsby now follows throughout the full level, including Los Angeles and after the rescue.
+- After the reunion tableau, both Rigsby and Zoey resume following the player toward the portal.
+- The finale cinematic owns both dog positions so normal companion logic cannot create extra copies.
 
-## Compatibility
-- Includes all Q combat and protest-wave work
-- Save migration from Q, P, O, N, and earlier
-- Safari/mobile input protections retained
+## City Hall destruction
+
+- City Hall now visibly cracks as Queen health falls.
+- Three structural damage stages at roughly 80%, 55%, and 25% boss health.
+- Cracks spread across the façade.
+- Roofline sags.
+- Wall and column chunks disappear.
+- Masonry debris falls during battle.
+- Major collapse burst triggers when the Queen is defeated.
+- Rainbow restoration remains visible underneath the battle damage.
+
+## Finale polish
+
+- Cleaner dog reunion staging.
+- Temporary victory tableau before companions resume following.
+- Save migration from 1.0.8R and earlier.

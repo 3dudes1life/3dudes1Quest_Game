@@ -1985,3 +1985,18 @@ body.touchDevice #gameCanvas{
 @keyframes finaleCardR{0%{opacity:0;transform:translate(-50%,-43%) scale(.92)}13%,78%{opacity:1;transform:translate(-50%,-50%) scale(1)}100%{opacity:0;transform:translate(-50%,-56%) scale(.98)}}
 @media(max-width:760px){.triangleUltimateBtn{top:68px;padding:10px 15px;font-size:10px}.finaleCard{padding:18px 20px}}
 @media(prefers-reduced-motion:reduce){.triangleUltimateBtn,.finaleCard.show{animation:none}}
+
+
+/* =========================================================
+   v1.0.8S — Superman Finale Rebuild
+   ========================================================= */
+.releaseBadge{
+  box-shadow:0 0 24px rgba(255,79,184,.18),inset 0 1px rgba(255,255,255,.12);
+}
+#finaleCard{
+  backdrop-filter:blur(20px) saturate(1.2);
+  -webkit-backdrop-filter:blur(20px) saturate(1.2);
+}
+#gameCanvas{
+  filter:saturate(1.04) contrast(1.02);
+}
