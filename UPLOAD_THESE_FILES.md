@@ -1,12 +1,13 @@
-# Upload v1.0.10
+# Upload These Files
 
-This is a patch-only ZIP.
+This ZIP is patch-only. Upload or replace:
 
-Replace or add only:
+- `index.html`
+- `tahoe.html`
+- `css/style.css`
+- `css/tahoe.css`
+- `js/tahoe200.js`
+- `VERSION.txt`
+- `TAHOE_2.0.0_CHANGELOG.md`
 
-1. `index.html`
-2. `css/style.css`
-3. `VERSION.txt`
-4. `TAHOE_REVEAL_CHANGELOG.md`
-
-Do not delete or replace any JavaScript or asset folders.
+Keep all existing `assets/` files. The Tahoe preview reuses the existing character, portrait, and Rigsby artwork.

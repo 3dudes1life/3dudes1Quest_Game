@@ -1,0 +1,27 @@
+{
+  "release": "2.0.0",
+  "package_type": "patch-only",
+  "javascript_syntax": "PASS",
+  "static_checks": {
+    "direct_title_launch": true,
+    "standalone_page": true,
+    "version_2_0_0": true,
+    "three_dudes": true,
+    "rigsby": true,
+    "memory": true,
+    "mobile_controls": true,
+    "trailhead_finish": true,
+    "no_combat": true
+  },
+  "runtime_note": "Static and syntax validation passed. Browser gameplay should be verified after GitHub upload on desktop and mobile landscape.",
+  "changed_or_new_files": [
+    "index.html",
+    "tahoe.html",
+    "css/style.css",
+    "css/tahoe.css",
+    "js/tahoe200.js",
+    "VERSION.txt",
+    "TAHOE_2.0.0_CHANGELOG.md",
+    "UPLOAD_THESE_FILES.md"
+  ]
+}

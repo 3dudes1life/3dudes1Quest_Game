@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,viewport-fit=cover,user-scalable=no">
+  <meta name="theme-color" content="#071b28">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title>3Dudes1Quest v2.0.0 — Adventure 2: Lake Tahoe</title>
+  <link rel="stylesheet" href="css/tahoe.css?v=2.0.0">
+</head>
+<body>
+  <main id="tahoeApp">
+    <canvas id="tahoeCanvas" width="1280" height="720" tabindex="0" aria-label="Adventure 2 Lake Tahoe playable preview"></canvas>
+
+    <header id="tahoeHud">
+      <div class="tahoeChip dudeChip"><span id="hudPortrait">W</span><b id="hudDude">Will</b></div>
+      <div class="tahoeChip">📸 <b id="hudMemories">0</b>/1</div>
+      <div class="tahoeChip altitudeChip">⛰️ <b id="hudAltitude">Lake Level</b></div>
+      <div class="trailProgress"><span id="trailProgressFill"></span><b>LAKESHORE → TRAILHEAD</b></div>
+    </header>
+
+    <button id="pauseBtn" aria-label="Pause">Ⅱ</button>
+    <a id="returnBtn" href="index.html" aria-label="Return to title">⌂</a>
+
+    <section id="openingCard" class="storyCard">
+      <small>ADVENTURE 2</small>
+      <h1>Lake Tahoe</h1>
+      <h2>Save Our Secret Place</h2>
+      <p>Walk the peaceful lakeshore, find the first Tahoe Memory, and reach the trailhead.</p>
+      <button id="beginTahoe">Begin at Lake Level</button>
+    </section>
+
+    <section id="dialogue" class="dialogue hidden" aria-live="polite">
+      <img id="dialoguePortrait" src="assets/portraits/will.png" alt="">
+      <div>
+        <small id="dialogueName">Will</small>
+        <p id="dialogueText">We made it...</p>
+      </div>
+      <button id="dialogueNext">NEXT</button>
+    </section>
+
+    <section id="memoryCard" class="memoryCard hidden" aria-live="polite">
+      <span>📸</span>
+      <small>TAHOE MEMORY FOUND</small>
+      <strong>Sixteen Summers</strong>
+      <p>A place can become part of your family.</p>
+    </section>
+
+    <section id="trailheadCard" class="trailheadCard hidden" aria-live="polite">
+      <small>FOUNDATION PREVIEW COMPLETE</small>
+      <h2>The Trail Begins Here</h2>
+      <p>The forest grows darker beyond this point. The Pine Beetle is waiting farther up the mountain.</p>
+      <button id="replayTahoe">Explore Again</button>
+      <a href="index.html">Return to Title</a>
+    </section>
+
+    <section id="pauseMenu" class="pauseMenu hidden">
+      <small>ADVENTURE PAUSED</small>
+      <h2>Lake Tahoe</h2>
+      <button id="resumeTahoe">Resume</button>
+      <button id="restartTahoe">Restart Preview</button>
+      <a href="index.html">Return to Title</a>
+    </section>
+
+    <div id="objective">
+      <small>CURRENT OBJECTIVE</small>
+      <strong id="objectiveTitle">Take in the lake</strong>
+      <span id="objectiveText">Walk right and explore the shoreline.</span>
+    </div>
+
+    <div id="touchControls">
+      <div class="touchSide">
+        <button data-action="left" aria-label="Move left">◀</button>
+        <button data-action="right" aria-label="Move right">▶</button>
+      </div>
+      <div class="touchSide right">
+        <button id="switchBtn"><span>↻</span><small>SWITCH</small></button>
+        <button data-action="jump" class="jump"><span>↑</span><small>JUMP</small></button>
+      </div>
+    </div>
+
+    <div id="rotateHint">Rotate your device for the full Tahoe view 🌲</div>
+  </main>
+  <script src="js/tahoe200.js?v=2.0.0"></script>
+</body>
+</html>

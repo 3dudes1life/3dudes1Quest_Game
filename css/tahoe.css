@@ -1,0 +1,73 @@
+*{box-sizing:border-box}
+:root{--lake:#69d9f1;--pine:#31bb82;--snow:#eaf8ff;--night:#061522;--gold:#ffe58d}
+html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#061522;color:#fff;font-family:system-ui,-apple-system,Segoe UI,sans-serif;touch-action:none}
+body{padding:env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left)}
+#tahoeApp{position:fixed;inset:0;background:#061522;overflow:hidden}
+#tahoeCanvas{display:block;width:100%;height:100%;object-fit:contain;background:#071b28;image-rendering:auto}
+button,a{font:inherit}
+button{color:#fff;border:0;font-weight:950;cursor:pointer}
+.hidden{display:none!important}
+
+#tahoeHud{position:absolute;z-index:8;top:10px;left:12px;right:126px;display:flex;gap:8px;align-items:center;pointer-events:none}
+.tahoeChip{min-height:42px;display:flex;align-items:center;gap:7px;padding:7px 12px;border:2px solid rgba(255,255,255,.72);border-radius:999px;background:rgba(5,25,38,.78);box-shadow:0 8px 20px rgba(0,0,0,.22);backdrop-filter:blur(8px)}
+.dudeChip span{width:27px;height:27px;display:grid;place-items:center;border-radius:50%;background:linear-gradient(135deg,#ff54bd,#7b72ff);border:2px solid white}
+.altitudeChip{color:var(--gold)}
+.trailProgress{position:relative;flex:1;max-width:380px;height:28px;border:2px solid rgba(255,255,255,.72);border-radius:999px;overflow:hidden;background:rgba(5,25,38,.78);text-align:center}
+.trailProgress span{position:absolute;inset:0 auto 0 0;width:0;background:linear-gradient(90deg,#52dce7,#48d596,#ffe58d);transition:width .18s}
+.trailProgress b{position:relative;z-index:2;line-height:24px;font-size:.64rem;letter-spacing:.09em;text-shadow:0 1px 3px #000}
+
+#pauseBtn,#returnBtn{position:absolute;z-index:10;top:10px;width:46px;height:46px;border:2px solid rgba(255,255,255,.72);border-radius:50%;display:grid;place-items:center;background:rgba(5,25,38,.82);text-decoration:none;color:#fff}
+#pauseBtn{right:64px}
+#returnBtn{right:10px;font-size:1.35rem}
+
+.storyCard,.pauseMenu,.trailheadCard{position:absolute;z-index:20;left:50%;top:50%;transform:translate(-50%,-50%);width:min(650px,92vw);text-align:center;padding:32px;border:2px solid rgba(255,255,255,.65);border-radius:30px;background:linear-gradient(145deg,rgba(5,25,38,.95),rgba(13,50,67,.94));box-shadow:0 30px 100px rgba(0,0,0,.62);backdrop-filter:blur(15px)}
+.storyCard small,.pauseMenu small,.trailheadCard small{color:#7ff0d2;letter-spacing:.22em;font-weight:1000}
+.storyCard h1{margin:.08em 0;font-size:clamp(3.2rem,10vw,6.2rem);line-height:.9;background:linear-gradient(100deg,#fff,#81eaff,#6ef0ac);-webkit-background-clip:text;color:transparent}
+.storyCard h2{margin:.55rem 0;color:#ffe58d}
+.storyCard p,.trailheadCard p{line-height:1.5;color:rgba(255,255,255,.85)}
+.storyCard button,.pauseMenu button,.trailheadCard button{display:block;width:min(390px,100%);margin:12px auto 0;padding:14px 20px;border-radius:999px;background:linear-gradient(90deg,#27b686,#2787b6);box-shadow:0 10px 30px rgba(39,182,134,.28)}
+.pauseMenu a,.trailheadCard a{display:block;width:min(390px,100%);margin:10px auto 0;padding:13px 20px;border-radius:999px;background:#334b64;color:#fff;text-decoration:none;font-weight:950}
+.pauseMenu h2,.trailheadCard h2{font-size:2.3rem;margin:.35em 0}
+
+.dialogue{position:absolute;z-index:16;left:50%;bottom:100px;transform:translateX(-50%);width:min(830px,92vw);display:grid;grid-template-columns:76px 1fr auto;gap:14px;align-items:center;padding:13px 15px;border:3px solid rgba(255,255,255,.9);border-radius:20px;background:rgba(4,21,34,.95);box-shadow:0 15px 55px rgba(0,0,0,.55)}
+.dialogue img{width:68px;height:68px;object-fit:cover;border:3px solid #fff;border-radius:17px;background:#305970}
+.dialogue small{color:#75ecd4;font-weight:1000;margin:0}
+.dialogue p{margin:3px 0;line-height:1.35}
+.dialogue button{padding:11px 16px;border-radius:999px;background:linear-gradient(90deg,#27b686,#2787b6)}
+
+.memoryCard{position:absolute;z-index:18;left:50%;top:16%;transform:translateX(-50%);width:min(470px,88vw);display:grid;grid-template-columns:auto 1fr;gap:4px 12px;align-items:center;padding:15px 20px;border:2px solid #ffe58d;border-radius:20px;background:rgba(5,31,43,.95);box-shadow:0 18px 65px rgba(0,0,0,.55)}
+.memoryCard>span{grid-row:1/4;font-size:2.7rem}
+.memoryCard small{letter-spacing:.16em;color:#73e6ce;font-weight:1000}
+.memoryCard strong{font-size:1.35rem}
+.memoryCard p{margin:0;opacity:.78}
+
+#objective{position:absolute;z-index:9;left:15px;bottom:94px;max-width:min(430px,65vw);padding:11px 15px;border-left:4px solid #69e3c0;border-radius:5px 14px 14px 5px;background:rgba(4,24,37,.82);backdrop-filter:blur(8px);pointer-events:none}
+#objective small{display:block;color:#73e6ce;font-size:.62rem;letter-spacing:.16em;font-weight:1000}
+#objective strong{display:block;margin:2px 0}
+#objective span{font-size:.8rem;opacity:.78}
+
+#touchControls{position:absolute;z-index:12;left:0;right:0;bottom:max(10px,env(safe-area-inset-bottom));display:flex;justify-content:space-between;padding:0 14px;pointer-events:none}
+.touchSide{display:flex;gap:10px;align-items:flex-end;pointer-events:auto}
+.touchSide button{width:72px;height:72px;padding:0;border:3px solid rgba(255,255,255,.74);border-radius:50%;background:rgba(5,35,52,.75);box-shadow:0 8px 25px rgba(0,0,0,.32);user-select:none;-webkit-user-select:none}
+.touchSide.right button{display:flex;flex-direction:column;align-items:center;justify-content:center}
+.touchSide button span{font-size:1.3rem}
+.touchSide button small{font-size:.56rem}
+.touchSide .jump{background:rgba(35,151,132,.84)}
+#switchBtn{background:rgba(86,89,173,.84)}
+#rotateHint{display:none}
+
+@media(hover:hover) and (pointer:fine){#touchControls{opacity:.25}.touchSide button:hover{transform:translateY(-2px)}}
+@media(max-width:760px){
+  #tahoeHud{right:112px;gap:5px}.tahoeChip{padding:6px 9px;font-size:.78rem}.altitudeChip{display:none}.trailProgress{max-width:none}
+  .touchSide button{width:62px;height:62px}
+  #objective{bottom:82px}
+  .dialogue{bottom:82px;grid-template-columns:58px 1fr}.dialogue img{width:54px;height:54px}.dialogue button{grid-column:1/-1;width:100%;padding:8px}
+}
+@media(max-height:520px) and (orientation:landscape){
+  .storyCard{padding:18px 26px}.storyCard h1{font-size:3.4rem}.storyCard p{font-size:.82rem;margin:.5em 0}.storyCard button{padding:10px}
+  .dialogue{bottom:70px}.touchSide button{width:56px;height:56px}
+  #objective{bottom:68px;padding:8px 12px}
+}
+@media(orientation:portrait) and (max-width:600px){
+  #rotateHint{display:block;position:absolute;z-index:30;left:50%;bottom:18px;transform:translateX(-50%);width:90%;padding:12px;text-align:center;border-radius:999px;background:rgba(3,18,29,.92);font-weight:900}
+}
