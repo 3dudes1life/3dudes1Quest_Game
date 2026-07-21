@@ -1,21 +1,43 @@
-import {CONFIG,DUDES} from './config.js?v=1.0.1';
-import {SOCAL_LEVEL} from './level.js?v=1.0.1';
+import {CONFIG,DUDES} from './config.js?v=1.0.2';
+import {SOCAL_LEVEL} from './level.js?v=1.0.2';
 
 export class Game{
   constructor(canvas,ui,input,onComplete){
     this.canvas=canvas;
     this.ctx=canvas.getContext('2d');
-    this.ctx.imageSmoothingEnabled=false;
+    this.ctx.imageSmoothingEnabled=true;
+    this.ctx.imageSmoothingQuality='high';
     this.ui=ui;
     this.input=input;
     this.onComplete=onComplete;
     this.assets={};
     const files={
-      will:'assets/sprites/will_walk.png',
-      daniel:'assets/sprites/daniel_walk.png',
-      caleb:'assets/sprites/caleb_walk.png',
-      rigsby:'assets/sprites/rigsby_walk.png',
-      boss:'assets/sprites/hoa_queen_boss.png',
+      will_idle:'assets/sprites_hd/will_idle.png',
+      will_walk:'assets/sprites_hd/will_walk.png',
+      will_attack:'assets/sprites_hd/will_attack.png',
+      will_hurt:'assets/sprites_hd/will_hurt.png',
+      will_jump:'assets/sprites_hd/will_jump.png',
+      will_celebrate:'assets/sprites_hd/will_celebrate.png',
+      daniel_idle:'assets/sprites_hd/daniel_idle.png',
+      daniel_walk:'assets/sprites_hd/daniel_walk.png',
+      daniel_attack:'assets/sprites_hd/daniel_attack.png',
+      daniel_hurt:'assets/sprites_hd/daniel_hurt.png',
+      daniel_jump:'assets/sprites_hd/daniel_jump.png',
+      daniel_celebrate:'assets/sprites_hd/daniel_celebrate.png',
+      caleb_idle:'assets/sprites_hd/caleb_idle.png',
+      caleb_walk:'assets/sprites_hd/caleb_walk.png',
+      caleb_attack:'assets/sprites_hd/caleb_attack.png',
+      caleb_hurt:'assets/sprites_hd/caleb_hurt.png',
+      caleb_jump:'assets/sprites_hd/caleb_jump.png',
+      caleb_celebrate:'assets/sprites_hd/caleb_celebrate.png',
+      rigsby_idle:'assets/sprites_hd/rigsby_idle.png',
+      rigsby_walk:'assets/sprites_hd/rigsby_walk.png',
+      rigsby_bark:'assets/sprites_hd/rigsby_bark.png',
+      rigsby_rescue:'assets/sprites_hd/rigsby_rescue.png',
+      boss_idle:'assets/sprites_hd/hoa_queen_idle.png',
+      boss_attack:'assets/sprites_hd/hoa_queen_attack.png',
+      boss_rage:'assets/sprites_hd/hoa_queen_rage.png',
+      boss_defeat:'assets/sprites_hd/hoa_queen_defeat.png',
       troll:'assets/sprites/enemy_troll.png',
       scooter:'assets/sprites/enemy_scooter.png',
       beigeBot:'assets/sprites/enemy_beigeBot.png',
@@ -38,7 +60,8 @@ export class Game{
       projectiles:[],traps:[],particles:[],shieldUntil:0,magicReady:0,
       bossActive:false,bossDefeated:false,bossPhase:1,triangle:0,rigsby:true,storyFlags:{},playTime:0,memories:[],secrets:[],chaosUntil:0,playerX:90,zones:[],souvenirs:[],currentObjective:null,rigsbyRescue:true,victoryWave:0
     };
-    this.player={x:90,y:520,w:44,h:72,vx:0,vy:0,onGround:false,facing:1,invuln:0,checkpoint:90};
+    this.player={x:90,y:520,w:44,h:72,vx:0,vy:0,onGround:false,facing:1,invuln:0,checkpoint:90,
+      animState:'idle',animUntil:0,lastPower:0};
     this.cards=SOCAL_LEVEL.cards.map((p,i)=>({...p,id:i,collected:false}));
     this.beacons=SOCAL_LEVEL.beacons.map((p,i)=>({...p,id:i,active:false}));
     this.enemies=SOCAL_LEVEL.enemies.map((e,i)=>({...e,id:i,w:46,h:46,vx:i%2?1.15:-1.15,alive:true,frozen:0}));
@@ -79,7 +102,7 @@ export class Game{
 
   getSaveData(){
     return {
-      version:'1.0',
+      version:'1.0.2V',
       player:{x:this.player.x,y:this.player.y,checkpoint:this.player.checkpoint},
       state:{
         health:this.state.health,cards:this.state.cards,beacons:this.state.beacons,
@@ -179,6 +202,7 @@ export class Game{
 
   usePower(t){
     const d=DUDES[this.state.dude];
+    this.player.animState='attack';this.player.animUntil=t+520;this.player.lastPower=t;
     if(this.state.triangle>=100){
       this.state.triangle=0;
       for(const e of this.enemies){if(e.alive&&Math.abs(e.x-this.player.x)<650){e.alive=false;this.burst(e.x,e.y,'#ffe66d',20)}}
@@ -301,7 +325,7 @@ export class Game{
     }
     if(this.rects(this.player,this.boss))this.hurt('She cited you for excessive fabulousness.');
     if(this.boss.hp<=0){
-      this.boss.alive=false;this.state.bossDefeated=true;this.state.victoryWave=1;this.burst(this.boss.x,this.boss.y,'#ff4fb8',110);
+      this.boss.alive=false;this.state.bossDefeated=true;this.state.victoryWave=1;this.boss.defeatAt=t;this.player.animState='celebrate';this.player.animUntil=t+1800;this.burst(this.boss.x,this.boss.y,'#ff4fb8',110);
       window.dispatchEvent(new CustomEvent('boss-defeated'));
       setTimeout(()=>{this.stop();this.onComplete(this.state)},1700);
     }
@@ -338,7 +362,7 @@ export class Game{
       this.ui.flash('Rigsby rescue! Good boy!');
       this.burst(this.player.x,this.player.y,'#ffffff',28);return;
     }
-    this.state.health--;this.player.invuln=90;
+    this.state.health--;this.player.invuln=90;this.player.animState='hurt';this.player.animUntil=performance.now()+520;
     this.player.x=this.player.checkpoint;this.player.y=500;this.player.vx=0;this.player.vy=0;
     this.ui.flash(message);
     if(this.state.health<=0){
@@ -548,6 +572,7 @@ export class Game{
       this.drawBoss(this.boss,t);
     }
     if(this.state.rigsby)this.drawRigsby();
+    this.drawBossDefeat(t);
     for(const p of this.state.particles){this.ctx.globalAlpha=p.life/60;this.ctx.fillStyle=p.color;this.ctx.fillRect(p.x,p.y,6,6);this.ctx.globalAlpha=1}
   }
 
@@ -660,8 +685,8 @@ export class Game{
     c.drawImage(img,frame*fw,0,fw,fh,0,0,w,h);c.restore();return true;
   }
 
-  animationFrame(t,speed=130){
-    return Math.floor(t/speed)%4;
+  animationFrame(t,speed=130,count=4){
+    return Math.floor(t/speed)%count;
   }
 
   drawNPC(n,t){
@@ -716,49 +741,81 @@ export class Game{
 
   drawPlayer(t){
     const d=DUDES[this.state.dude],c=this.ctx;
-    const keys=['will','daniel','caleb'];
-    const moving=Math.abs(this.player.vx)>.45;
-    const frame=moving?this.animationFrame(t,95):0;
+    const heroes=['will','daniel','caleb'];
+    const hero=heroes[this.state.dude];
+    let state='idle',count=6,speed=170;
+    if(this.player.animUntil>t){state=this.player.animState}
+    else if(!this.player.onGround){state='jump';count=4;speed=150}
+    else if(Math.abs(this.player.vx)>.45){state='walk';count=8;speed=82}
+    if(state==='attack'){count=6;speed=82}
+    if(state==='hurt'){count=4;speed=105}
+    if(state==='celebrate'){count=8;speed=100}
+    const frame=this.animationFrame(t,speed,count);
+    const rw=96,rh=144,dx=this.player.x-26,dy=this.player.y+this.player.h-rh;
     c.save();
-    if(this.player.invuln>0&&Math.floor(this.player.invuln/5)%2===0)c.globalAlpha=.35;
+    if(this.player.invuln>0&&Math.floor(this.player.invuln/5)%2===0)c.globalAlpha=.38;
     if(this.state.shieldUntil>t){
-      c.strokeStyle='#3ce7d2';c.lineWidth=6;c.beginPath();c.arc(this.player.x+22,this.player.y+35,50,0,Math.PI*2);c.stroke();
-      c.globalAlpha=.12;c.fillStyle='#3ce7d2';c.beginPath();c.arc(this.player.x+22,this.player.y+35,47,0,Math.PI*2);c.fill();c.globalAlpha=1;
+      const pulse=1+Math.sin(t*.012)*.05;
+      c.save();c.translate(this.player.x+22,this.player.y+34);c.scale(pulse,pulse);
+      const grad=c.createRadialGradient(0,0,18,0,0,62);
+      grad.addColorStop(0,'rgba(255,255,255,.08)');grad.addColorStop(.72,'rgba(60,231,210,.15)');grad.addColorStop(1,'rgba(60,231,210,.02)');
+      c.fillStyle=grad;c.beginPath();c.arc(0,0,62,0,Math.PI*2);c.fill();
+      c.strokeStyle='rgba(175,255,245,.9)';c.lineWidth=4;c.stroke();c.restore();
     }
-    // grounded contact shadow
-    c.fillStyle='rgba(0,0,0,.22)';c.beginPath();c.ellipse(this.player.x+22,this.player.y+69,23,7,0,0,Math.PI*2);c.fill();
-    const ok=this.drawSprite(this.assets[keys[this.state.dude]],this.player.x-2,this.player.y,frame,48,72,48,72,this.player.facing<0);
+    c.shadowColor='rgba(20,10,40,.30)';c.shadowBlur=10;c.shadowOffsetY=5;
+    const ok=this.drawSprite(this.assets[`${hero}_${state}`],dx,dy,frame,128,192,rw,rh,this.player.facing<0);
+    c.shadowColor='transparent';
     if(!ok){c.fillStyle=d.color;c.fillRect(this.player.x,this.player.y,this.player.w,this.player.h)}
-    if(moving&&this.player.onGround&&Math.floor(t/100)%2===0){
-      c.fillStyle='rgba(230,220,200,.65)';c.beginPath();c.arc(this.player.x+(this.player.facing<0?42:3),this.player.y+67,5,0,Math.PI*2);c.fill();
+    if(state==='walk'&&this.player.onGround&&Math.floor(t/80)%2===0){
+      c.fillStyle='rgba(244,232,213,.6)';c.beginPath();c.ellipse(this.player.x+(this.player.facing<0?42:2),this.player.y+70,8,4,0,0,Math.PI*2);c.fill();
     }
     c.restore();
   }
 
   drawRigsby(){
-    const r=this.rigsby,c=this.ctx;
-    const frame=Math.floor(performance.now()/110)%4;
-    this.drawSprite(this.assets.rigsby,r.x-6,r.y-12,frame,64,48,64,48,this.player.facing<0);
+    const r=this.rigsby,c=this.ctx,t=performance.now();
+    let state='idle',count=6,speed=155;
+    if(r.sniff){state='bark';count=5;speed=120}
+    else if(Math.abs(r.vx)>.25){state='walk';count=8;speed=90}
+    if(!this.state.rigsbyRescue){state='rescue';count=8;speed=95}
+    const frame=this.animationFrame(t,speed,count);
+    c.save();c.shadowColor='rgba(15,10,30,.28)';c.shadowBlur=8;c.shadowOffsetY=4;
+    this.drawSprite(this.assets[`rigsby_${state}`],r.x-28,r.y-48,frame,128,96,96,72,this.player.facing<0);
+    c.restore();
     if(r.sniff){
-      c.fillStyle='#fff';c.beginPath();c.arc(r.x+49,r.y-19,7,0,Math.PI*2);c.arc(r.x+60,r.y-30,5,0,Math.PI*2);c.fill();
-      this.text('!',r.x+71,r.y-41,18,'#ff4fb8','center');
+      c.fillStyle='#fff';c.beginPath();c.arc(r.x+49,r.y-24,7,0,Math.PI*2);c.arc(r.x+62,r.y-38,5,0,Math.PI*2);c.fill();
+      this.text('!',r.x+74,r.y-51,20,'#ff4fb8','center');
     }
   }
 
   drawBoss(b,t){
     const c=this.ctx;
-    const frame=this.animationFrame(t,this.state.bossPhase===3?75:130);
+    let state='idle',count=6,speed=145;
+    if(b.attackTimer<32){state='attack';count=6;speed=85}
+    if(this.state.bossPhase===3){state='rage';count=8;speed=75}
+    const frame=this.animationFrame(t,speed,count);
     c.save();
     if(b.frozen>t){
-      c.globalAlpha=.5;c.fillStyle='#9be7ff';c.beginPath();c.roundRect(b.x-12,b.y-12,b.w+24,b.h+24,16);c.fill();c.globalAlpha=1;
+      c.globalAlpha=.66;c.filter='hue-rotate(145deg) saturate(1.5)';
     }
-    if(this.state.bossPhase===3){
-      c.save();c.translate(b.x+60,b.y+58);c.scale(1.08,1.08);c.translate(-(b.x+60),-(b.y+58));
-    }
-    const ok=this.drawSprite(this.assets.boss,b.x-4,b.y-18,frame,128,144,128,144,b.vx<0);
-    if(this.state.bossPhase===3)c.restore();
+    const scale=this.state.bossPhase===3?1.12:1;
+    const rw=154*scale,rh=182*scale;
+    c.shadowColor='rgba(15,8,25,.36)';c.shadowBlur=18;c.shadowOffsetY=8;
+    const ok=this.drawSprite(this.assets[`boss_${state}`],b.x+60-rw/2,b.y+b.h-rh,frame,220,260,rw,rh,b.vx<0);
+    c.filter='none';c.shadowColor='transparent';
     if(!ok){c.fillStyle='#d5c4ae';c.fillRect(b.x,b.y,b.w,b.h)}
     c.restore();
+  }
+
+  drawBossDefeat(t){
+    if(!this.state.bossDefeated||!this.boss.defeatAt)return;
+    const elapsed=t-this.boss.defeatAt;
+    if(elapsed>1650)return;
+    const frame=this.animationFrame(elapsed,95,8);
+    const fade=Math.max(0,1-elapsed/1750);
+    this.ctx.save();this.ctx.globalAlpha=fade;
+    this.drawSprite(this.assets.boss_defeat,this.boss.x-15,this.boss.y-95,frame,220,260,176,208,false);
+    this.ctx.restore();
   }
 
   drawBossHud(){

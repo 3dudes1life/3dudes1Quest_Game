@@ -1,7 +1,7 @@
-import {CONFIG} from './config.js?v=1.0.1';
-import {createInput} from './input.js?v=1.0.1';
-import {createUI} from './ui.js?v=1.0.1';
-import {Game} from './game.js?v=1.0.1';
+import {CONFIG} from './config.js?v=1.0.2';
+import {createInput} from './input.js?v=1.0.2';
+import {createUI} from './ui.js?v=1.0.2';
+import {Game} from './game.js?v=1.0.2';
 
 const canvas=document.getElementById('gameCanvas');
 canvas.width=CONFIG.width;canvas.height=CONFIG.height;
@@ -70,9 +70,9 @@ window.addEventListener('quest-dialogue',e=>{
     'Coastal Local':'coastal_local.png','LA Local':'la_local.png',
     'HOA Queen':'hoa_queen.png','Rigsby':'will.png'
   };
-  dialoguePortrait.src=`assets/portraits/${portraitMap[e.detail.name]||'will.png'}?v=1.0.1`;
+  dialoguePortrait.src=`assets/portraits/${portraitMap[e.detail.name]||'will.png'}?v=1.0.2`;
   dialoguePortrait.alt=e.detail.name;
-  dialoguePortrait.onerror=()=>{dialoguePortrait.src='assets/portraits/will.png?v=1.0.1'};
+  dialoguePortrait.onerror=()=>{dialoguePortrait.src='assets/portraits/will.png?v=1.0.2'};
   dialogueText.textContent=e.detail.text;
   dialogueBox.classList.remove('hidden');
   dialogueOpen=true;

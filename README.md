@@ -1,40 +1,34 @@
-# 3Dudes1Quest v1.0 — Complete Southern California
+# 3Dudes1Quest v1.0.2V — Phase 1 HD Character Overhaul
 
-This is the complete first-adventure release.
+This build starts the premium visual-production pipeline.
 
-## Route
-Home Base → Hillcrest → Pacific Coast Highway → Los Angeles → HOA Queen of Beige
+## Fully integrated in this build
 
-## Visual overhaul implemented
-- Animated 4-frame sprite sheets for Will, Daniel, Caleb, Rigsby, NPCs, enemies, and the HOA Queen
-- Recognizable clothing, hair, faces, accessories, and character-specific details
-- Animated dialogue portraits
-- NPC variety across every destination
-- Character and enemy shadows
-- Walking dust and movement animation
-- Smooth camera look-ahead
-- Multi-layer parallax mountains and Los Angeles skyline
-- Animated PCH ocean waves
-- Improved boss animation and Mega Beige scaling
-- Sprite fallback rendering for browser compatibility
-- Sharper saturation and contrast treatment
+### Will
+- HD illustrated character design
+- Hawaiian shirt details, beard, and rainbow sunglasses
+- Idle, walk, jump, rainbow attack, hurt, and celebration animations
 
-## Full Level 1 systems retained
-- Four zone restoration missions
-- Visible beige-to-color restoration
-- Six Gay Cards
-- Three Prism Beacons
-- Selfie Memories
-- Chaos Bowl
-- Secret Hillcrest souvenir
-- Character switching and unique powers
-- Triangle of Support ultimate
-- Rigsby rescue
-- Save and Continue
-- Adventure Journal
-- Three-phase HOA Queen boss fight
-- Completion ranking
-- Rainbow Portal to Lake Tahoe
+### Daniel
+- HD illustrated character design
+- Long hair, positivity shirt, dimensional magic shield
+- Idle, walk, jump, magic attack, hurt, and celebration animations
 
-## Playtesting
-Open `index.html` in a modern browser. Test keyboard and mobile controls, save/continue, all collectibles, every restoration mission, sprite loading, dialogue portraits, boss phases, and the completion screen.
+### Caleb
+- HD illustrated character design
+- Hat, beard, cookie shirt, and cookie attack pose
+- Idle, walk, jump, attack, hurt, and celebration animations
+
+### Rigsby
+- HD beagle design
+- Idle, walk, bark/sniff, and rescue animation sets
+
+### HOA Queen
+- Larger HD villain design
+- Idle finger-wagging, violation attack, Phase 3 rage, and defeat animation sets
+
+## Technical upgrade
+The game now selects animated sprite states from actual gameplay:
+movement, jumping, powers, damage, Rigsby interactions, boss phases, and victory.
+
+This is Phase 1 only. Phase 2 will rebuild the Southern California environments.
