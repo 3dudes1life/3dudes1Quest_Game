@@ -83,3 +83,18 @@ button{color:#fff;border:0;font-weight:950;cursor:pointer}
 .postcard small{letter-spacing:.25em;font-weight:1000}.postcard strong{font-size:clamp(2.4rem,7vw,5rem);line-height:.9}.postcard p{font-size:1.05rem;font-weight:800}
 @keyframes flashAway{0%{opacity:0}8%{opacity:1}72%{opacity:1}100%{opacity:0}}
 @media(max-height:520px){.cinematicCaption{bottom:8px;padding:9px 13px}.missionReveal{top:30%;padding:13px}.photoFrame .postcard{height:75vh;padding:16px}.postcard strong{font-size:2.5rem}}
+
+
+/* v2.0.2 — Trail Climb */
+.checkpointCard{
+  position:absolute;z-index:19;left:50%;top:18%;transform:translateX(-50%);
+  width:min(480px,88vw);display:grid;grid-template-columns:auto 1fr;gap:8px 14px;
+  align-items:center;padding:15px 20px;border:2px solid #8ff3c8;border-radius:20px;
+  background:rgba(5,31,43,.96);box-shadow:0 18px 65px rgba(0,0,0,.55)
+}
+.checkpointCard>span{font-size:2.7rem}
+.checkpointCard small{display:block;color:#8ff3c8;letter-spacing:.16em;font-weight:1000}
+.checkpointCard strong{display:block;font-size:1.35rem}
+.checkpointCard p{margin:2px 0 0;opacity:.78}
+.damageFlash{position:absolute;z-index:40;inset:0;background:rgba(255,58,72,.42);pointer-events:none;animation:damagePulse .35s ease-out}
+@keyframes damagePulse{from{opacity:1}to{opacity:0}}
