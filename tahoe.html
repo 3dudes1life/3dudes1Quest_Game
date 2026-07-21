@@ -6,8 +6,8 @@
   <meta name="theme-color" content="#071b28">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <title>3Dudes1Quest v2.0.2 — Adventure 2: Lake Tahoe</title>
-  <link rel="stylesheet" href="css/tahoe.css?v=2.0.2">
+  <title>3Dudes1Quest v2.0.3v — Adventure 2: Lake Tahoe</title>
+  <link rel="stylesheet" href="css/tahoe.css?v=2.0.3v">
 </head>
 <body>
   <main id="tahoeApp">
@@ -15,7 +15,7 @@
 
     <header id="tahoeHud">
       <div class="tahoeChip dudeChip"><span id="hudPortrait">W</span><b id="hudDude">Will</b></div>
-      <div class="tahoeChip">❤️ <b id="hudHealth">3</b></div>
+      <div class="tahoeChip">❤️ <b id="hudHealth">5</b></div>
       <div class="tahoeChip">🪲 <b id="hudBeetles">0</b>/5</div>
       <div class="tahoeChip">📸 <b id="hudMemories">0</b>/1</div>
       <div class="tahoeChip altitudeChip">⛰️ <b id="hudAltitude">Lake Level</b></div>
@@ -60,6 +60,8 @@
     </section>
 
 
+    <section id="playTip" class="playTip hidden" aria-live="polite"><b>PLAY TIP</b><span>Run with ← → or A D · Jump with ↑, W, Space, or the on-screen button · Stomp beetles from above</span></section>
+
     <section id="checkpointCard" class="checkpointCard hidden" aria-live="polite">
       <span>🚩</span>
       <div><small>CHECKPOINT</small><strong>Granite Overlook</strong><p>Progress restored here after a fall or beetle hit.</p></div>
@@ -68,9 +70,9 @@
     <section id="damageFlash" class="damageFlash hidden" aria-hidden="true"></section>
 
     <section id="trailheadCard" class="trailheadCard hidden" aria-live="polite">
-      <small>TRAIL CLIMB COMPLETE</small>
+      <small>FIRST PLAYABLE COMPLETE</small>
       <h2>The Trail Begins Here</h2>
-      <p>You cleared the first beetle cluster and reached the upper trail. The infestation is much larger than it looked from the lake.</p>
+      <p>You reached the overlook. Across the mountain, thousands of pines are turning brown—and something enormous moves beneath the canopy.</p>
       <button id="replayTahoe">Explore Again</button>
       <a href="index.html">Return to Title</a>
     </section>
@@ -102,6 +104,6 @@
 
     <div id="rotateHint">Rotate your device for the full Tahoe view 🌲</div>
   </main>
-  <script src="js/tahoe202.js?v=2.0.2"></script>
+  <script src="js/tahoe203v.js?v=2.0.3v"></script>
 </body>
 </html>

@@ -1,0 +1,18 @@
+{
+  "release": "2.0.3v",
+  "name": "First Playable",
+  "base": "2.0.2 Trail Climb",
+  "public_dev_shortcuts": false,
+  "checks": {
+    "script_loaded": true,
+    "five_hearts": true,
+    "coyote_time": true,
+    "jump_buffer": true,
+    "play_tip": true,
+    "no_public_dev_shortcuts": true,
+    "five_beetles": true,
+    "completion_gate": true
+  },
+  "javascript_syntax": "PASS",
+  "all_checks_pass": true
+}

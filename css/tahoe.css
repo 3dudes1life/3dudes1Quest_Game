@@ -98,3 +98,6 @@ button{color:#fff;border:0;font-weight:950;cursor:pointer}
 .checkpointCard p{margin:2px 0 0;opacity:.78}
 .damageFlash{position:absolute;z-index:40;inset:0;background:rgba(255,58,72,.42);pointer-events:none;animation:damagePulse .35s ease-out}
 @keyframes damagePulse{from{opacity:1}to{opacity:0}}
+
+/* v2.0.3v — First Playable */
+.playTip{position:absolute;z-index:18;left:50%;bottom:112px;transform:translateX(-50%);width:min(760px,90vw);display:flex;gap:12px;align-items:center;justify-content:center;padding:11px 16px;border:1px solid rgba(255,255,255,.3);border-radius:16px;background:rgba(4,25,36,.9);box-shadow:0 12px 35px rgba(0,0,0,.35);font-size:.88rem;text-align:center}.playTip b{color:#ffe58d;letter-spacing:.1em;white-space:nowrap}.playTip span{opacity:.9}@media(max-width:700px){.playTip{bottom:150px;display:block}.playTip b{display:block;margin-bottom:3px}}

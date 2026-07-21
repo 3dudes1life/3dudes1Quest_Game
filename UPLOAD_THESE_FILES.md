@@ -1,11 +1,11 @@
-# v2.0.2 Upload
+# v2.0.3v Upload
 
-For the easiest update, upload the contents of the full repository ZIP.
+Use the full repository ZIP for the first play test.
 
-Patch-only files:
+Patch files:
 - tahoe.html
 - css/tahoe.css
-- js/tahoe202.js
+- js/tahoe203v.js
 - VERSION.txt
-- TAHOE_2.0.2_CHANGELOG.md
-- TAHOE_2.0.2_VERIFICATION.json
+- TAHOE_2.0.3v_CHANGELOG.md
+- TAHOE_2.0.3v_VERIFICATION.json
