@@ -1,34 +1,28 @@
-# 3Dudes1Quest v1.0.2V — Phase 1 HD Character Overhaul
+# 3Dudes1Quest v1.0.2V — Phase 2 HD Environment Art Pass
 
-This build starts the premium visual-production pipeline.
+Phase 2 rebuilds the entire Southern California road trip around the HD character system from Phase 1.
 
-## Fully integrated in this build
+## Custom environments
 
-### Will
-- HD illustrated character design
-- Hawaiian shirt details, beard, and rainbow sunglasses
-- Idle, walk, jump, rainbow attack, hurt, and celebration animations
+### Home Base
+House, deck, pool, plumerias, hills, chickens, moving pool shimmer, and warm morning light.
 
-### Daniel
-- HD illustrated character design
-- Long hair, positivity shirt, dimensional magic shield
-- Idle, walk, jump, magic attack, hurt, and celebration animations
+### Hillcrest
+Colorful storefronts, Pride flags, rainbow crosswalk, café seating, mural art, neon pulse, and drifting confetti.
 
-### Caleb
-- HD illustrated character design
-- Hat, beard, cookie shirt, and cookie attack pose
-- Idle, walk, jump, attack, hurt, and celebration animations
+### Pacific Coast Highway
+Layered ocean, cliffs, roadway, palms, moving wave highlights, sun glare, and animated seabirds.
 
-### Rigsby
-- HD beagle design
-- Idle, walk, bark/sniff, and rescue animation sets
+### Los Angeles
+Detailed skyline, atmospheric haze, lit windows, streetlights, billboards, and moving traffic light streaks.
 
-### HOA Queen
-- Larger HD villain design
-- Idle finger-wagging, violation attack, Phase 3 rage, and defeat animation sets
+### HOA Queen Arena
+Beige fortress, oversized HOA seal, dramatic spotlights, arena floor, and floating beige dust.
 
-## Technical upgrade
-The game now selects animated sprite states from actual gameplay:
-movement, jumping, powers, damage, Rigsby interactions, boss phases, and victory.
-
-This is Phase 1 only. Phase 2 will rebuild the Southern California environments.
+## Rendering upgrades
+- Custom background artwork for every zone
+- Separate foreground overlays
+- Parallax depth
+- Zone-specific lighting and color grading
+- Environmental animations
+- Existing HD character animations fully retained

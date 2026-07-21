@@ -1,5 +1,5 @@
-import {CONFIG,DUDES} from './config.js?v=1.0.2';
-import {SOCAL_LEVEL} from './level.js?v=1.0.2';
+import {CONFIG,DUDES} from './config.js?v=1.0.2p2';
+import {SOCAL_LEVEL} from './level.js?v=1.0.2p2';
 
 export class Game{
   constructor(canvas,ui,input,onComplete){
@@ -38,6 +38,16 @@ export class Game{
       boss_attack:'assets/sprites_hd/hoa_queen_attack.png',
       boss_rage:'assets/sprites_hd/hoa_queen_rage.png',
       boss_defeat:'assets/sprites_hd/hoa_queen_defeat.png',
+      env_home:'assets/environments/home_base_hd.png',
+      env_hillcrest:'assets/environments/hillcrest_hd.png',
+      env_pch:'assets/environments/pch_hd.png',
+      env_la:'assets/environments/los_angeles_hd.png',
+      env_arena:'assets/environments/hoa_arena_hd.png',
+      env_home_fg:'assets/environments/home_base_fg.png',
+      env_hillcrest_fg:'assets/environments/hillcrest_fg.png',
+      env_pch_fg:'assets/environments/pch_fg.png',
+      env_la_fg:'assets/environments/los_angeles_fg.png',
+      env_arena_fg:'assets/environments/hoa_arena_fg.png',
       troll:'assets/sprites/enemy_troll.png',
       scooter:'assets/sprites/enemy_scooter.png',
       beigeBot:'assets/sprites/enemy_beigeBot.png',
@@ -102,7 +112,7 @@ export class Game{
 
   getSaveData(){
     return {
-      version:'1.0.2V',
+      version:'1.0.2V-P2',
       player:{x:this.player.x,y:this.player.y,checkpoint:this.player.checkpoint},
       state:{
         health:this.state.health,cards:this.state.cards,beacons:this.state.beacons,
@@ -500,13 +510,16 @@ export class Game{
   draw(t){
     const c=this.ctx;c.clearRect(0,0,CONFIG.width,CONFIG.height);
     this.drawBackground(t);
+    this.drawEnvironmentLayer(t);
     this.drawParallax(t);
+    this.drawEnvironmentalAnimation(t);
     this.drawAmbient(t);c.save();c.translate(-this.cameraX,0);this.drawWorld(t);this.drawPlayer(t);c.restore();
     if(this.state.bossActive&&this.boss.alive)this.drawBossHud();
     if(this.state.paused){c.fillStyle='rgba(8,5,24,.72)';c.fillRect(0,0,CONFIG.width,CONFIG.height);this.text('PAUSED',CONFIG.width/2,CONFIG.height/2,64,'#fff','center')}
   }
 
   drawBackground(t){
+    this.ctx.save();this.ctx.globalAlpha=.35;
     const c=this.ctx,g=c.createLinearGradient(0,0,0,CONFIG.height);
     g.addColorStop(0,'#4a2f9f');g.addColorStop(.45,'#ff6f91');g.addColorStop(.7,'#ffb55a');g.addColorStop(1,'#22305f');
     c.fillStyle=g;c.fillRect(0,0,CONFIG.width,CONFIG.height);
@@ -519,6 +532,103 @@ export class Game{
     for(let i=0;i<18;i++){const x=i*90-(this.cameraX*.3%90),h=50+(i%5)*22;c.fillRect(x,470-h,62,h)}
   }
 
+
+
+  currentEnvironment(){
+    const x=this.player.x;
+    if(x<1150)return 'home';
+    if(x<2450)return 'hillcrest';
+    if(x<3900)return 'pch';
+    if(x<5150)return 'la';
+    return 'arena';
+  }
+
+  drawEnvironmentLayer(t){
+    const key=this.currentEnvironment();
+    const map={home:'env_home',hillcrest:'env_hillcrest',pch:'env_pch',la:'env_la',arena:'env_arena'};
+    const img=this.assets[map[key]];
+    if(!img||!img.complete||!img.naturalWidth)return;
+    const c=this.ctx;
+    c.save();
+    const cropX=Math.max(0,Math.min(img.naturalWidth-960,(this.cameraX*.12)%640));
+    c.globalAlpha=.98;
+    c.drawImage(img,cropX,0,960,720,0,0,960,720);
+    // zone lighting
+    const grad=c.createLinearGradient(0,0,0,720);
+    if(key==='home'){grad.addColorStop(0,'rgba(255,206,150,.08)');grad.addColorStop(1,'rgba(255,255,255,0)')}
+    if(key==='hillcrest'){grad.addColorStop(0,'rgba(255,72,170,.10)');grad.addColorStop(1,'rgba(80,220,210,.04)')}
+    if(key==='pch'){grad.addColorStop(0,'rgba(80,190,255,.08)');grad.addColorStop(1,'rgba(255,210,120,.05)')}
+    if(key==='la'){grad.addColorStop(0,'rgba(160,80,220,.08)');grad.addColorStop(1,'rgba(255,115,95,.06)')}
+    if(key==='arena'){grad.addColorStop(0,'rgba(90,60,100,.12)');grad.addColorStop(1,'rgba(190,160,120,.08)')}
+    c.fillStyle=grad;c.fillRect(0,0,960,720);
+    c.restore();
+  }
+
+  drawForegroundEnvironment(){
+    const key=this.currentEnvironment();
+    const map={home:'env_home_fg',hillcrest:'env_hillcrest_fg',pch:'env_pch_fg',la:'env_la_fg',arena:'env_arena_fg'};
+    const img=this.assets[map[key]];
+    if(!img||!img.complete||!img.naturalWidth)return;
+    this.ctx.save();
+    this.ctx.globalAlpha=.92;
+    const shift=(this.cameraX*.28)%640;
+    this.ctx.drawImage(img,shift,0,960,720,0,0,960,720);
+    this.ctx.restore();
+  }
+
+  drawEnvironmentalAnimation(t){
+    const c=this.ctx,key=this.currentEnvironment();
+    c.save();
+    if(key==='home'){
+      // pool shimmer and drifting plumeria petals
+      for(let i=0;i<14;i++){
+        const x=(i*97+t*.018)%960;
+        const y=540+Math.sin(t*.004+i)*28;
+        c.fillStyle='rgba(255,255,255,.25)';
+        c.beginPath();c.ellipse(x,y,30,4,0,0,Math.PI*2);c.fill();
+      }
+    }
+    if(key==='hillcrest'){
+      // neon pulse and floating confetti
+      c.shadowColor='#ff4fb8';c.shadowBlur=18;
+      c.fillStyle=`rgba(255,79,184,${.18+.08*Math.sin(t*.006)})`;
+      c.fillRect(90,190,170,12);
+      c.shadowBlur=0;
+      for(let i=0;i<18;i++){
+        const x=(i*73+t*.025)%960;
+        const y=(i*91+t*.017)%560;
+        c.save();c.translate(x,y);c.rotate(t*.002+i);c.fillStyle=['#ff4fb8','#3ce7d2','#ffe05d'][i%3];c.fillRect(-3,-7,6,14);c.restore();
+      }
+    }
+    if(key==='pch'){
+      // sun glare and seabirds
+      const rg=c.createRadialGradient(790,120,5,790,120,180);
+      rg.addColorStop(0,'rgba(255,255,220,.32)');rg.addColorStop(1,'rgba(255,255,220,0)');
+      c.fillStyle=rg;c.fillRect(600,0,360,340);
+      c.strokeStyle='rgba(255,255,255,.9)';c.lineWidth=2;
+      for(let i=0;i<5;i++){
+        const x=(i*210+t*.035)%1100-80,y=120+i*34+Math.sin(t*.004+i)*14;
+        c.beginPath();c.arc(x,y,12,Math.PI,Math.PI*2);c.arc(x+24,y,12,Math.PI,Math.PI*2);c.stroke();
+      }
+    }
+    if(key==='la'){
+      // moving headlight streaks
+      for(let i=0;i<8;i++){
+        const x=(i*170+t*.12)%1100-100;
+        c.fillStyle=i%2?'rgba(255,80,90,.35)':'rgba(255,240,170,.38)';
+        c.fillRect(x,635,90,4);
+      }
+    }
+    if(key==='arena'){
+      // beige dust and dramatic spot flicker
+      for(let i=0;i<26;i++){
+        const x=(i*83+t*.013)%960,y=180+(i*47+t*.01)%420;
+        c.fillStyle='rgba(220,205,180,.15)';
+        c.beginPath();c.arc(x,y,3+(i%3),0,Math.PI*2);c.fill();
+      }
+    }
+    c.restore();
+  }
 
   drawParallax(t){
     const c=this.ctx;
@@ -573,6 +683,7 @@ export class Game{
     }
     if(this.state.rigsby)this.drawRigsby();
     this.drawBossDefeat(t);
+    this.drawForegroundEnvironment();
     for(const p of this.state.particles){this.ctx.globalAlpha=p.life/60;this.ctx.fillStyle=p.color;this.ctx.fillRect(p.x,p.y,6,6);this.ctx.globalAlpha=1}
   }
 
