@@ -1,0 +1,12 @@
+{
+  "runtime_test": "Node-based engine test with mocked browser canvas",
+  "game_started": true,
+  "player_x_before": 145,
+  "player_x_after_holding_right": 472.52,
+  "movement_verified": true,
+  "player_y_before_jump": 548,
+  "player_y_during_jump": 473.66,
+  "jump_verified": true,
+  "player_within_visible_logical_viewport": true,
+  "draw_loop_completed_without_runtime_error": true
+}
