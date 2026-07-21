@@ -1,20 +1,24 @@
-# Changelog
+# 3Dudes1Quest v1.0.8R — Cinematic Finale Update
 
-## v1.0.4V — Remastered
+## Final boss overhaul
+- Faster and more aggressive Queen phases
+- Phase 3 teleporting
+- Beige rain attacks
+- Stronger arena effects and desaturation
+- Triangle Power ultimate attack (Q or on-screen button)
 
-- Added a cinematic animated loading/title sequence.
-- Added an Enter the Quest start flow.
-- Added full-screen scene transition curtains with zone titles.
-- Added animated title particles and loading progress.
-- Added achievement popups and collectible toast notifications.
-- Added dynamic time-of-day and weather color overlays.
-- Added living Home Base butterflies and chickens.
-- Added ambient Hillcrest pedestrian movement.
-- Added Pacific Coast Highway ocean mist.
-- Added Los Angeles traffic movement.
-- Added richer environmental animation layering.
-- Added zone-change detection and cinematic location reveals.
-- Added achievements for the first Gay Card, first restored beacon, and defeating the HOA Queen.
-- Added collectible notifications for Gay Cards, prism shards, and cookies.
-- Added remastered game-shell hover polish and pressed button feedback.
-- Added v1.0.4 cache busting.
+## Zoey rescue finale
+- Portal no longer opens immediately
+- Queen defeat cinematic
+- Cage-shake beat
+- Zoey reveal
+- Rigsby and Zoey reunion with hearts
+- Color-restoration celebration
+- Cheering NPC crowd and confetti
+- Portal opens only after the reunion and celebration
+- Player control returns for one final walk into Lake Tahoe
+
+## Compatibility
+- Includes all Q combat and protest-wave work
+- Save migration from Q, P, O, N, and earlier
+- Safari/mobile input protections retained
