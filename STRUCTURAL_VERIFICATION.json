@@ -1,11 +1,13 @@
 {
-  "living_canvas": true,
-  "renderer": true,
-  "three_heroes": true,
-  "rigsby": true,
-  "queen": true,
-  "parallax": true,
-  "hero_selection_hook": true,
-  "glass_menu": true,
-  "new_script": true
+  "new_app_loaded": true,
+  "coyote_time": true,
+  "jump_buffer": true,
+  "cinematic_camera": true,
+  "dynamic_lighting": true,
+  "foreground_depth": true,
+  "boss_taunts": true,
+  "hero_switch_lines": true,
+  "save_version": true,
+  "selector_preserved": true,
+  "space_power_preserved": true
 }

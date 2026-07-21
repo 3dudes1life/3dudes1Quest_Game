@@ -1,21 +1,33 @@
-# 3Dudes1Quest v1.0.8G — Living Title World
+# 3Dudes1Quest v1.0.8H — AAA Polish Update
 
 Upload and replace:
 
 - `index.html`
 - `css/style.css`
-- `js/app108g.js` (new)
+- `js/app108h.js` (new)
 - `UPLOAD_THESE_FILES.md` (optional)
+- `STRUCTURAL_VERIFICATION.json` (optional)
 
-The older app scripts can remain in the repository. The updated index loads `app108g.js`.
+The updated `index.html` loads `js/app108h.js`.
 
-## Changes
+## What changed
 
-- Fully animated Southern California title environment
-- Layered sky, hills, skyline, ocean, highway, traffic, palms, birds, and rainbow particles
-- All three heroes visible together as equal leads
-- Rigsby walks between the heroes
-- Queen of Beige spies from a rooftop
-- Selecting a character moves the world spotlight and changes the menu accent
-- Premium translucent game-menu presentation
-- Existing gameplay and controls remain unchanged
+- Cinematic camera look-ahead and boss framing
+- Speed-sensitive camera zoom
+- Coyote time and jump buffering
+- Stronger landing feedback and dust
+- Hero-specific lighting and UI colors
+- Prism Beacon, portal, and boss glow
+- Foreground scenery for added depth
+- Stronger power particles and impact shake
+- Character-specific switch dialogue
+- Queen of Beige combat taunts
+- New ridiculous HOA violation labels
+
+## Preserved
+
+- Choose Your Starting Dude
+- All existing levels and objectives
+- Save and continue
+- Keyboard and mobile controls
+- Switching between all three dudes

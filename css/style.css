@@ -1089,3 +1089,47 @@ body{
   .titleWorldHint b{font-size:1.12rem}
 }
 @media(prefers-reduced-motion:reduce){#titleWorldCanvas{filter:saturate(1.05)}}
+
+
+/* v1.0.8H — AAA Polish Update */
+:root{
+  --active-hero:#ff4fb8;
+  --active-accent:#ffe66d;
+}
+
+#hud .chip:first-child{
+  border-color:color-mix(in srgb,var(--active-hero) 58%,rgba(255,255,255,.16));
+  box-shadow:
+    0 8px 22px rgba(0,0,0,.24),
+    0 0 20px color-mix(in srgb,var(--active-hero) 24%,transparent);
+  transition:border-color .25s ease,box-shadow .25s ease;
+}
+
+#message{
+  border-color:color-mix(in srgb,var(--active-hero) 42%,rgba(255,255,255,.15));
+  box-shadow:
+    0 18px 40px rgba(0,0,0,.3),
+    0 0 30px color-mix(in srgb,var(--active-hero) 18%,transparent);
+}
+
+.routeProgress span{
+  background:linear-gradient(90deg,var(--active-hero),var(--active-accent),#3ce7d2);
+  box-shadow:0 0 16px color-mix(in srgb,var(--active-hero) 45%,transparent);
+}
+
+#gameCanvas{
+  filter:saturate(1.08) contrast(1.025);
+}
+
+.bossPhase{
+  animation:bossPulse108h 1.6s ease-in-out infinite;
+}
+
+@keyframes bossPulse108h{
+  0%,100%{transform:translateX(-50%) scale(1);filter:brightness(1)}
+  50%{transform:translateX(-50%) scale(1.025);filter:brightness(1.15)}
+}
+
+@media(prefers-reduced-motion:reduce){
+  .bossPhase{animation:none}
+}
