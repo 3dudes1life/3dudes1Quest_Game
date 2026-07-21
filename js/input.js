@@ -7,6 +7,9 @@ export function createInput(onSwitch){
     if(['x','X','f','F'].includes(key)) keys.power=val;
   };
   addEventListener('keydown',e=>{
+    if(['ArrowLeft','ArrowRight','ArrowUp',' ','a','A','d','D','w','W','x','X','f','F'].includes(e.key)){
+      e.preventDefault();
+    }
     map(e.key,true);
     if(['ArrowUp','w','W',' '].includes(e.key)) e.preventDefault();
     if(e.key==='1') onSwitch(0);
@@ -22,6 +25,7 @@ export function createInput(onSwitch){
     btn.addEventListener('pointerup',set(false));
     btn.addEventListener('pointercancel',set(false));
     btn.addEventListener('pointerleave',set(false));
+    btn.addEventListener('contextmenu',e=>e.preventDefault());
   });
   return keys;
 }

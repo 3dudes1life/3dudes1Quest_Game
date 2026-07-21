@@ -1,22 +1,25 @@
-# 3Dudes1Quest v1.0.5V — Level 1 Remake Patch
+# 3Dudes1Quest v1.0.6V — Playable Level 1 Patch
 
-This ZIP intentionally contains only updated/new files.
+This ZIP includes only 6 updated files.
 
-Upload each file into the matching repository folder and replace files when asked:
+Upload them to the matching repository paths and replace the existing files:
 
 - `index.html`
-- `js/game.js`
+- `css/style.css`
 - `js/main.js`
-- `assets/environments/home_base_remastered.svg`
+- `js/game.js`
+- `js/input.js`
+- `UPLOAD_THESE_FILES.md` (optional documentation)
 
-Do not upload the outer ZIP folder itself.
+## Critical fixes
 
-## What was fixed
-
-- Rebuilt from the working v1.0.4 project instead of the broken cleanup ZIP.
-- Removed the nested-folder packaging problem that could prevent GitHub Pages from finding `index.html`.
-- Removed stacked legacy Level 1 background, parallax, foreground, weather, palms, generic platforms, and decorative overlays.
-- Added one cohesive Home Base environment.
-- Added restrained pool shimmer, petals, birds, and vignette.
-- Kept gameplay characters, NPCs, enemies, cards, beacon, and collision logic.
-- Updated cache version to v1.0.5.
+- Restored a fixed 1280×720 logical game resolution.
+- Browser responsiveness now scales only the visible canvas, not the physics engine.
+- Re-aligned player, camera, collision floor, environment, and controls.
+- Added a guaranteed visible player spawn.
+- Added a sprite-frame validator and polished fallback player renderer.
+- Reset accidental pause state on every new adventure.
+- Added deterministic Level 1 ground collision.
+- Added a brief Home Base location intro without pausing gameplay.
+- Added clear keyboard instructions and reliable touch controls.
+- Updated GitHub Pages cache references to v1.0.6.

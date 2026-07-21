@@ -1,7 +1,7 @@
-import {CONFIG} from './config.js?v=1.0.5';
-import {createInput} from './input.js?v=1.0.5';
-import {createUI} from './ui.js?v=1.0.5';
-import {Game} from './game.js?v=1.0.5';
+import {CONFIG} from './config.js?v=1.0.6';
+import {createInput} from './input.js?v=1.0.6';
+import {createUI} from './ui.js?v=1.0.6';
+import {Game} from './game.js?v=1.0.6';
 
 const canvas=document.getElementById('gameCanvas');
 canvas.width=CONFIG.width;canvas.height=CONFIG.height;
@@ -38,6 +38,10 @@ function saveQuest(){
 }
 document.getElementById('startBtn').onclick=()=>{
   localStorage.removeItem(SAVE_KEY);refreshSaveUI();ui.show('game');game.start();
+  game.state.paused=false;
+  game.player.x=150;
+  game.player.y=500;
+  game.cameraX=0;
   playCutscene([
     {title:'The Southern California Road Trip',text:'A strange beige wave is draining the color from Home Base, Hillcrest, the coast, and Los Angeles.'},
     {title:'The Route',text:'Travel from Home Base through Hillcrest and Pacific Coast Highway before confronting the HOA Queen in Los Angeles.'},
@@ -70,9 +74,9 @@ window.addEventListener('quest-dialogue',e=>{
     'Coastal Local':'coastal_local.png','LA Local':'la_local.png',
     'HOA Queen':'hoa_queen.png','Rigsby':'will.png'
   };
-  dialoguePortrait.src=`assets/portraits/${portraitMap[e.detail.name]||'will.png'}?v=1.0.5`;
+  dialoguePortrait.src=`assets/portraits/${portraitMap[e.detail.name]||'will.png'}?v=1.0.6`;
   dialoguePortrait.alt=e.detail.name;
-  dialoguePortrait.onerror=()=>{dialoguePortrait.src='assets/portraits/will.png?v=1.0.5'};
+  dialoguePortrait.onerror=()=>{dialoguePortrait.src='assets/portraits/will.png?v=1.0.6'};
   dialogueText.textContent=e.detail.text;
   dialogueBox.classList.remove('hidden');
   dialogueOpen=true;
@@ -201,39 +205,28 @@ window.addEventListener('zone-restored',e=>{
 
 
 function resizeGameCanvas(){
-  const canvas=document.querySelector('canvas');
+  const canvas=document.getElementById('gameCanvas');
   if(!canvas)return;
 
-  const shell=canvas.closest('.gameShell') || canvas.parentElement;
-  const maxW=Math.min(window.innerWidth-24,1440);
-  const maxH=Math.min(window.innerHeight-110,900);
+  // Keep the engine, physics, camera, and collision system on one stable
+  // logical coordinate space. Only the CSS display size is responsive.
+  if(canvas.width!==1280)canvas.width=1280;
+  if(canvas.height!==720)canvas.height=720;
 
+  const availableW=Math.max(320,window.innerWidth);
+  const availableH=Math.max(240,window.innerHeight);
   const aspect=16/9;
-  let cssW=maxW;
-  let cssH=cssW/aspect;
 
-  if(cssH>maxH){
-    cssH=maxH;
-    cssW=cssH*aspect;
+  let displayW=availableW;
+  let displayH=displayW/aspect;
+
+  if(displayH>availableH){
+    displayH=availableH;
+    displayW=displayH*aspect;
   }
 
-  const dpr=Math.min(window.devicePixelRatio||1,2);
-
-  canvas.style.width=`${Math.floor(cssW)}px`;
-  canvas.style.height=`${Math.floor(cssH)}px`;
-
-  const targetW=Math.floor(cssW*dpr);
-  const targetH=Math.floor(cssH*dpr);
-
-  if(canvas.width!==targetW||canvas.height!==targetH){
-    canvas.width=targetW;
-    canvas.height=targetH;
-  }
-
-  if(shell){
-    shell.style.width=`${Math.floor(cssW)}px`;
-    shell.style.height=`${Math.floor(cssH)}px`;
-  }
+  canvas.style.width=`${Math.floor(displayW)}px`;
+  canvas.style.height=`${Math.floor(displayH)}px`;
 }
 
 window.addEventListener('resize',resizeGameCanvas,{passive:true});

@@ -1,5 +1,5 @@
-import {CONFIG,DUDES} from './config.js?v=1.0.5';
-import {SOCAL_LEVEL} from './level.js?v=1.0.5';
+import {CONFIG,DUDES} from './config.js?v=1.0.6';
+import {SOCAL_LEVEL} from './level.js?v=1.0.6';
 
 export class Game{
   constructor(canvas,ui,input,onComplete){
@@ -103,7 +103,7 @@ export class Game{
       projectiles:[],traps:[],particles:[],shieldUntil:0,magicReady:0,
       bossActive:false,bossDefeated:false,bossPhase:1,triangle:0,rigsby:true,storyFlags:{},playTime:0,memories:[],secrets:[],chaosUntil:0,playerX:90,zones:[],souvenirs:[],currentObjective:null,rigsbyRescue:true,victoryWave:0
     };
-    this.player={x:90,y:520,w:44,h:72,vx:0,vy:0,onGround:false,facing:1,invuln:0,checkpoint:90,
+    this.player={x:150,y:500,w:44,h:72,vx:0,vy:0,onGround:false,facing:1,invuln:0,checkpoint:90,
       animState:'idle',animUntil:0,lastPower:0};
     this.cards=SOCAL_LEVEL.cards.map((p,i)=>({...p,id:i,collected:false}));
     this.beacons=SOCAL_LEVEL.beacons.map((p,i)=>({...p,id:i,active:false}));
@@ -114,7 +114,7 @@ export class Game{
     this.zones=(SOCAL_LEVEL.zones||[]).map((z,i)=>({...z,index:i,complete:false}));
     this.souvenirs=(SOCAL_LEVEL.souvenirs||[]).map((v,i)=>({...v,id:i,collected:false}));
     this.state.zones=this.zones;
-    this.state.currentObjective={title:this.zones[0]?.objective||'Begin the quest',detail:this.zones[0]?.detail||''};
+    this.state.currentObjective={title:'Leave Home Base',detail:'Move right with D or →. Jump with Space. Follow Rigsby.'};
     this.selfieSpots=(SOCAL_LEVEL.selfieSpots||[]).map((v,i)=>({...v,id:i,unlocked:false}));
     this.chaosBowls=(SOCAL_LEVEL.chaosBowls||[]).map((v,i)=>({...v,id:i,unlocked:false}));
     this.ambient={
@@ -123,15 +123,27 @@ export class Game{
       butterflies:Array.from({length:10},(_,i)=>({x:i*470+Math.random()*180,y:430+Math.random()*150,p:Math.random()*6.28}))
     };
     this.cameraX=0;
-    this.rigsby={x:35,y:565,w:38,h:30,vx:0};
+    this.rigsby={x:245,y:566,w:38,h:30,vx:0};
     this.jumpLatch=false;
     this.powerLatch=false;
+    this.homeIntro={
+      active:true,
+      startedAt:performance.now(),
+      finished:false
+    };
   }
 
   start(saved=null){
     this.reset();
     if(saved)this.applySave(saved);
+    this.state.paused=false;
     this.running=true;
+    this.last=performance.now();
+    this.player.x=Math.max(150,this.player.x||150);
+    this.player.y=500;
+    this.player.vx=0;
+    this.player.vy=0;
+    this.cameraX=0;
     this.ui.flash(saved?'Welcome back to Southern California!':'Adventure 1: Southern California');
     requestAnimationFrame(t=>this.loop(t));
   }
@@ -145,7 +157,7 @@ export class Game{
 
   getSaveData(){
     return {
-      version:'1.0.5V',
+      version:'1.0.6V',
       player:{x:this.player.x,y:this.player.y,checkpoint:this.player.checkpoint},
       state:{
         health:this.state.health,cards:this.state.cards,beacons:this.state.beacons,
@@ -190,6 +202,7 @@ export class Game{
 
   update(dt,t){
     this.updateRemasterSystems(t);
+    this.updateHomeIntro(t);
     if(this.screenFx.shake>0)this.screenFx.shake=Math.max(0,this.screenFx.shake-dt*.04);
     if(this.screenFx.flash>0)this.screenFx.flash=Math.max(0,this.screenFx.flash-dt*.0028);
     this.screenFx.vignette=Math.max(0,this.screenFx.vignette-dt*.0012);
@@ -213,6 +226,17 @@ export class Game{
     this.player.y+=this.player.vy*dt;
     this.player.onGround=false;
 
+    // Level 1 has a deterministic walkable floor aligned to the new art.
+    if(this.currentEnvironment()==='home'&&
+       this.player.x<1120&&
+       this.player.y+this.player.h>=620&&
+       this.player.y+this.player.h<=650&&
+       this.player.vy>=0){
+      this.player.y=620-this.player.h;
+      this.player.vy=0;
+      this.player.onGround=true;
+    }
+
     for(const p of SOCAL_LEVEL.platforms){
       if(this.player.x+this.player.w>p.x&&this.player.x<p.x+p.w&&
          this.player.y+this.player.h>=p.y&&this.player.y+this.player.h<=p.y+26&&
@@ -225,7 +249,7 @@ export class Game{
     this.player.x=Math.max(0,Math.min(CONFIG.worldWidth-this.player.w,this.player.x));
     const lookAhead=this.player.facing*85+this.player.vx*9;
     this.cameraX+=(this.player.x-360+lookAhead-this.cameraX)*.065;
-    this.cameraX=Math.max(0,Math.min(CONFIG.worldWidth-CONFIG.width,this.cameraX));
+    this.cameraX=Math.max(0,Math.min(CONFIG.worldWidth-1280,this.cameraX));
 
     this.state.playTime+=dt;
     this.updateProjectiles(dt,t);
@@ -576,8 +600,11 @@ export class Game{
     c.save();
     c.translate(-this.cameraX,0);
     this.drawWorld(t);
+    if(env==='home')this.drawSpawnGuide(t);
     this.drawPlayer(t);
     c.restore();
+
+    if(env==='home')this.drawHomeIntro(t);
 
     if(this.state.bossActive&&this.boss.alive)this.drawBossHud();
     if(this.state.paused){
@@ -1185,9 +1212,15 @@ export class Game{
 
   drawSprite(img,x,y,frame,fw,fh,w=fw,h=fh,flip=false){
     const c=this.ctx;
-    if(!img||!img.complete||!img.naturalWidth)return false;
-    c.save();c.translate(x+(flip?w:0),y);c.scale(flip?-1:1,1);
-    c.drawImage(img,frame*fw,0,fw,fh,0,0,w,h);c.restore();return true;
+    if(!img||!img.complete||!img.naturalWidth||!img.naturalHeight)return false;
+    const sx=frame*fw;
+    if(sx<0||sx+fw>img.naturalWidth||fh>img.naturalHeight)return false;
+    c.save();
+    c.translate(x+(flip?w:0),y);
+    c.scale(flip?-1:1,1);
+    c.drawImage(img,sx,0,fw,fh,0,0,w,h);
+    c.restore();
+    return true;
   }
 
   animationFrame(t,speed=130,count=4){
@@ -1270,7 +1303,39 @@ export class Game{
     c.shadowColor='rgba(20,10,40,.30)';c.shadowBlur=10;c.shadowOffsetY=5;
     const ok=this.drawSprite(this.assets[`${hero}_${state}`],dx,dy,frame,128,192,rw,rh,this.player.facing<0);
     c.shadowColor='transparent';
-    if(!ok){c.fillStyle=d.color;c.fillRect(this.player.x,this.player.y,this.player.w,this.player.h)}
+    if(!ok){
+      const px=this.player.x,py=this.player.y;
+      c.save();
+      c.shadowColor='rgba(10,5,25,.35)';
+      c.shadowBlur=12;
+      c.shadowOffsetY=6;
+      c.fillStyle='rgba(20,12,36,.28)';
+      c.beginPath();c.ellipse(px+22,py+70,27,8,0,0,Math.PI*2);c.fill();
+      c.shadowColor='transparent';
+
+      c.fillStyle='#b87855';
+      c.beginPath();c.arc(px+22,py+15,15,0,Math.PI*2);c.fill();
+
+      c.fillStyle='#1d1630';
+      c.fillRect(px+7,py+8,30,8);
+      c.fillStyle='#3ce7d2';
+      c.fillRect(px+10,py+10,10,5);
+      c.fillStyle='#ff4fb8';
+      c.fillRect(px+24,py+10,10,5);
+
+      c.fillStyle=d.color;
+      c.beginPath();c.roundRect(px+5,py+28,34,37,9);c.fill();
+      c.fillStyle=d.accent||'#ffe66d';
+      c.fillRect(px+18,py+31,7,30);
+
+      c.fillStyle='#2b2341';
+      c.fillRect(px+8,py+63,11,17);
+      c.fillRect(px+26,py+63,11,17);
+      c.fillStyle='#fff';
+      c.fillRect(px+5,py+77,16,7);
+      c.fillRect(px+24,py+77,16,7);
+      c.restore();
+    }
     if(state==='walk'&&this.player.onGround&&Math.floor(t/80)%2===0){
       c.fillStyle='rgba(244,232,213,.6)';c.beginPath();c.ellipse(this.player.x+(this.player.facing<0?42:2),this.player.y+70,8,4,0,0,Math.PI*2);c.fill();
     }
