@@ -1,4 +1,4 @@
-# 3Dudes1Quest v1.0.8V — Combat Feel & Character Identity
+# 3Dudes1Quest v1.0.8W — Combat Feel & Character Identity
 
 This is the full repository build for the V update.
 
@@ -16,3 +16,7 @@ This is the full repository build for the V update.
 
 Upload the entire contents of this ZIP to the repository root and replace the existing files.
 The active runtime file is `js/app108v.js`.
+
+
+## v1.0.8W
+Landscape-first mobile controls, clean Daniel casting, and long-range Caleb cookie throws.

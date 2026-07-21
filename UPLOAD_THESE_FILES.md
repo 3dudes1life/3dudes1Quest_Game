@@ -1,10 +1,11 @@
-# Upload v1.0.8V
+# Upload v1.0.8W
 
-This is a full-repository ZIP. Replace the repository contents with this package.
+This is a full-repository ZIP.
 
-Critical runtime files:
+Replace the repository contents with this package. The important runtime files are:
+
 - `index.html`
 - `css/style.css`
-- `js/app108v.js`
+- `js/app108w.js`
 
-`index.html` already loads `app108v.js` with a versioned cache-busting query.
+`index.html` already references the W script and cache-busting stylesheet URL.

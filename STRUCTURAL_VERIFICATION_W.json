@@ -1,0 +1,25 @@
+{
+  "release": "1.0.8W",
+  "source": "v1.0.8V cumulative build based on the current GitHub U lineage",
+  "projectile_range_estimate": {
+    "previous_pixels": 260.8,
+    "new_pixels": 423.4,
+    "increase_percent": 62.4
+  },
+  "checks": {
+    "version_108w": true,
+    "index_loads_app108w": true,
+    "daniel_body_burst_removed": true,
+    "daniel_switch_ring_removed": true,
+    "daniel_clean_hand_heart": true,
+    "combo_body_burst_removed": true,
+    "caleb_velocity_increased": true,
+    "caleb_flatter_gravity": true,
+    "caleb_crumb_trail": true,
+    "mobile_landscape_dynamic_viewport": true,
+    "short_landscape_layout": true,
+    "legacy_v_save": true,
+    "javascript_syntax": true,
+    "range_increase_over_60_percent": true
+  }
+}
