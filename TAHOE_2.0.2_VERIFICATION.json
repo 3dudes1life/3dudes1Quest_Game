@@ -1,0 +1,16 @@
+{
+  "release": "2.0.2",
+  "name": "Trail Climb",
+  "base": "user-approved v2.0.1 full repository",
+  "checks": {
+    "standalone_tahoe_launch": true,
+    "new_script_loaded": true,
+    "health_hud": true,
+    "five_beetles": true,
+    "stomp_combat": true,
+    "checkpoint": true,
+    "completion_gate": true
+  },
+  "all_static_checks_pass": true,
+  "javascript_syntax": "PASS"
+}
