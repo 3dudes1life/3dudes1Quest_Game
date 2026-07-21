@@ -766,3 +766,8 @@ body{
   #touchControls{opacity:.48}
   #touchControls:hover{opacity:.95}
 }
+
+/* v1.0.8V — self-contained runtime and boot failsafe */
+.bootSequence.isHidden{opacity:0!important;visibility:hidden!important;pointer-events:none!important}
+.enterQuest.isReady{display:block!important;cursor:pointer!important}
+#titleScreen.active,#gameScreen.active,#helpScreen.active,#completeScreen.active,#portalScreen.active{display:flex}

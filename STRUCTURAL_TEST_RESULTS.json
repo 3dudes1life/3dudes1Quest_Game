@@ -1,0 +1,10 @@
+{
+  "single_runtime_bundle": true,
+  "module_imports_removed": true,
+  "boot_auto_dismiss_seconds": 3.2,
+  "enter_button_enabled": true,
+  "game_instance_exposed": true,
+  "keyboard_input_included": true,
+  "touch_input_included": true,
+  "javascript_syntax_passed": true
+}
