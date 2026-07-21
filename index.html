@@ -15,7 +15,9 @@
         <h1>3Dudes1Quest</h1>
         <h2>Adventure 1: Southern California</h2>
         <p>Lord Beige is draining the color from SoCal. Restore the Prism Beacons, recover every Gay Card, defeat the HOA Queen of Beige, and enter the portal to the next adventure.</p>
-        <button id="startBtn" class="primary">Start Adventure</button>
+        <button id="startBtn" class="primary">New Adventure</button>
+        <button id="continueBtn" class="primary continue hidden">Continue Adventure</button>
+        <div id="saveStatus" class="saveStatus">No saved quest yet.</div>
         <button id="helpBtn" class="secondary">How to Play</button>
         <small>Best played in landscape on mobile.</small>
       </div>
@@ -47,6 +49,16 @@
       <button id="pauseBtn">Ⅱ</button>
       <button id="journalBtn">📖</button>
       <div id="message"></div>
+      <div id="saveToast" class="saveToast">Quest saved ✓</div>
+      <div id="bossPhase" class="bossPhase hidden"></div>
+      <div id="cutscene" class="cutscene hidden">
+        <div class="cutscenePanel">
+          <div class="cutsceneEyebrow">3DUDES1QUEST</div>
+          <h2 id="cutsceneTitle"></h2>
+          <p id="cutsceneText"></p>
+          <button id="cutsceneNext" class="primary">Continue</button>
+        </div>
+      </div>
 
       <div id="dialogueBox" class="dialogue hidden">
         <div id="dialoguePortrait" class="portrait"></div>
@@ -60,7 +72,7 @@
       <aside id="journal" class="journal hidden" aria-label="Adventure Journal">
         <div class="journalTop">
           <h2>Adventure Journal</h2>
-          <button id="journalClose">✕</button>
+          <div class="journalActions"><button id="saveBtn">SAVE</button><button id="journalClose">✕</button></div>
         </div>
         <div class="journalTabs">
           <button data-tab="map" class="active">Map</button>

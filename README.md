@@ -1,14 +1,16 @@
-# 3Dudes1Quest v0.7 — Vertical Slice Update
+# 3Dudes1Quest v0.8 — Story & Save Update
 
-## Playable additions
-- Story dialogue triggered throughout the SoCal route
-- Rigsby accompanies the team during the opening area
-- Adventure Journal pause interface
-- Journal map, Gay Card wallet, character bios, and passport
-- Triangle of Support meter and ultimate attack
-- Improved animated character rendering
-- Expanded post-boss rainbow portal presentation
-- Lake Tahoe reveal remains the next adventure
+## New in v0.8
+- New Adventure and Continue Adventure title options
+- Browser-based save/load using localStorage
+- Manual save button inside the Adventure Journal
+- Automatic save every 30 seconds during active gameplay
+- Opening story cutscene
+- Four NPC encounters across Southern California
+- Expanded three-phase HOA Queen of Beige battle
+- Violation letters, beige paint, and HOA drone hazards
+- Mega Beige final phase
+- Los Angeles restoration and Rainbow Prism victory cutscene
 
 ## Controls
 - Move: Arrow keys or A/D
@@ -16,11 +18,8 @@
 - Power: X or F
 - Switch: 1, 2, 3
 - Journal: book button
+- Save: SAVE inside the journal
 - Mobile: on-screen controls
 
-## Triangle of Support
-The meter fills over time and gains large boosts from Gay Cards and Prism Beacons.
-Use the Power button at 100% to trigger the team ultimate.
-
-## GitHub Pages
-Upload all folder contents to the repository root and deploy the `main` branch through GitHub Pages.
+## Deploying
+Upload the entire contents of this folder to the repository root and deploy through GitHub Pages.

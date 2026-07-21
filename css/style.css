@@ -79,3 +79,20 @@ button{border:0;border-radius:999px;color:#fff;font-weight:900;font-size:1rem;pa
   .dialogue{grid-template-columns:60px 1fr;bottom:88px}.portrait{width:56px;height:56px}.portrait::after{left:12px;top:9px;width:30px;height:36px}#dialogueNext{grid-column:1/-1;width:100%}
   .route{grid-template-columns:repeat(2,1fr)}.bioGrid{grid-template-columns:1fr}.journal{inset:3%}.cardGrid{grid-template-columns:repeat(2,1fr)}
 }
+
+.hidden{display:none!important}
+.continue{background:linear-gradient(90deg,#3ce7d2,#8d5cff)}
+.saveStatus{font-size:.85rem;opacity:.75;margin:8px 0 14px}
+.saveToast{position:absolute;z-index:18;right:18px;top:72px;background:#173f38;border:2px solid #3ce7d2;border-radius:999px;padding:9px 14px;font-weight:950;opacity:0;transform:translateY(-8px);transition:.22s;pointer-events:none}
+.saveToast.show{opacity:1;transform:translateY(0)}
+.bossPhase{position:absolute;z-index:10;left:50%;top:100px;transform:translateX(-50%);padding:12px 22px;border:3px solid #fff;border-radius:16px;background:rgba(92,73,53,.94);font-size:1.2rem;font-weight:1000;text-align:center}
+.cutscene{position:absolute;z-index:30;inset:0;display:flex;align-items:center;justify-content:center;background:
+radial-gradient(circle at center,rgba(255,79,184,.34),transparent 42%),
+rgba(8,5,24,.9);padding:20px}
+.cutscenePanel{width:min(700px,94vw);text-align:center;border:3px solid #fff;border-radius:26px;padding:28px;background:rgba(18,11,50,.97);box-shadow:0 20px 80px #000}
+.cutscenePanel h2{font-size:clamp(2rem,6vw,4rem);margin:.25em 0;background:linear-gradient(90deg,#ff4fb8,#ffe66d,#3ce7d2);-webkit-background-clip:text;color:transparent}
+.cutscenePanel p{font-size:1.08rem}
+.cutsceneEyebrow{letter-spacing:.22em;color:#3ce7d2;font-weight:950;font-size:.75rem}
+.journalActions{display:flex;gap:8px}
+#saveBtn{height:44px;padding:0 16px;background:#287963}
+.npcLabel{font-weight:950}

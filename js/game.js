@@ -18,23 +18,26 @@ export class Game{
     this.state={
       paused:false,health:4,cards:0,beacons:0,dude:0,
       projectiles:[],traps:[],particles:[],shieldUntil:0,magicReady:0,
-      bossActive:false,bossDefeated:false,triangle:0,rigsby:true,storyFlags:{}
+      bossActive:false,bossDefeated:false,bossPhase:1,triangle:0,rigsby:true,storyFlags:{},playTime:0
     };
     this.player={x:90,y:520,w:44,h:72,vx:0,vy:0,onGround:false,facing:1,invuln:0,checkpoint:90};
     this.cards=SOCAL_LEVEL.cards.map((p,i)=>({...p,id:i,collected:false}));
     this.beacons=SOCAL_LEVEL.beacons.map((p,i)=>({...p,id:i,active:false}));
     this.enemies=SOCAL_LEVEL.enemies.map((e,i)=>({...e,id:i,w:46,h:46,vx:i%2?1.15:-1.15,alive:true,frozen:0}));
-    this.boss={...SOCAL_LEVEL.boss,maxHp:SOCAL_LEVEL.boss.hp,vx:-1.2,alive:true,frozen:0};
+    this.boss={...SOCAL_LEVEL.boss,maxHp:SOCAL_LEVEL.boss.hp,vx:-1.2,alive:true,frozen:0,attackTimer:80};
+    this.npcs=(SOCAL_LEVEL.npcs||[]).map((n,i)=>({...n,id:i,w:38,h:70,spoken:false}));
+    this.hazards=[];
     this.cameraX=0;
     this.rigsby={x:35,y:565,w:38,h:30,vx:0};
     this.jumpLatch=false;
     this.powerLatch=false;
   }
 
-  start(){
+  start(saved=null){
     this.reset();
+    if(saved)this.applySave(saved);
     this.running=true;
-    this.ui.flash('Adventure 1: Southern California');
+    this.ui.flash(saved?'Welcome back to Southern California!':'Adventure 1: Southern California');
     requestAnimationFrame(t=>this.loop(t));
   }
 
@@ -43,6 +46,34 @@ export class Game{
   switchDude(index=null){
     this.state.dude=index===null?(this.state.dude+1)%3:index;
     this.ui.flash(DUDES[this.state.dude].line);
+  }
+
+  getSaveData(){
+    return {
+      version:'0.8',
+      player:{x:this.player.x,y:this.player.y,checkpoint:this.player.checkpoint},
+      state:{
+        health:this.state.health,cards:this.state.cards,beacons:this.state.beacons,
+        dude:this.state.dude,triangle:this.state.triangle,storyFlags:this.state.storyFlags,
+        rigsby:this.state.rigsby,playTime:this.state.playTime
+      },
+      cards:this.cards.map(c=>c.collected),
+      beacons:this.beacons.map(b=>b.active),
+      enemies:this.enemies.map(e=>e.alive),
+      savedAt:new Date().toISOString()
+    };
+  }
+
+  applySave(save){
+    if(!save||!save.player||!save.state)return;
+    Object.assign(this.state,save.state,{paused:false,bossActive:false,bossDefeated:false,bossPhase:1});
+    this.player.x=save.player.x??90;
+    this.player.y=save.player.y??500;
+    this.player.checkpoint=save.player.checkpoint??90;
+    (save.cards||[]).forEach((v,i)=>{if(this.cards[i])this.cards[i].collected=!!v});
+    (save.beacons||[]).forEach((v,i)=>{if(this.beacons[i])this.beacons[i].active=!!v});
+    (save.enemies||[]).forEach((v,i)=>{if(this.enemies[i])this.enemies[i].alive=!!v});
+    this.cameraX=Math.max(0,this.player.x-360);
   }
 
   loop(t){
@@ -87,12 +118,15 @@ export class Game{
     this.cameraX+=(this.player.x-360-this.cameraX)*.08;
     this.cameraX=Math.max(0,Math.min(CONFIG.worldWidth-CONFIG.width,this.cameraX));
 
+    this.state.playTime+=dt;
     this.updateProjectiles(dt,t);
     this.updateEnemies(dt,t);
     this.updateCollectibles();
     this.updateBoss(dt,t);
     this.updateRigsby(dt);
     this.updateStory();
+    this.updateNPCs();
+    this.updateHazards(dt);
     this.updateParticles(dt);
     if(this.player.invuln>0)this.player.invuln-=dt;
     this.state.triangle=Math.min(100,this.state.triangle+0.012*dt);
@@ -182,14 +216,50 @@ export class Game{
 
   updateBoss(dt,t){
     if(!this.state.bossActive||!this.boss.alive)return;
-    if(this.boss.frozen>t)return;
-    this.boss.x+=this.boss.vx*dt;
-    if(this.boss.x<4540||this.boss.x>4780)this.boss.vx*=-1;
+    const ratio=this.boss.hp/this.boss.maxHp;
+    const nextPhase=ratio>.66?1:ratio>.33?2:3;
+    if(nextPhase!==this.state.bossPhase){
+      this.state.bossPhase=nextPhase;
+      window.dispatchEvent(new CustomEvent('boss-phase',{detail:{phase:nextPhase}}));
+      this.burst(this.boss.x+60,this.boss.y+50,nextPhase===2?'#d5c4ae':'#ff4fb8',36);
+    }
+    if(this.boss.frozen<=t){
+      this.boss.vx=Math.sign(this.boss.vx)*(1.15+nextPhase*.32);
+      this.boss.x+=this.boss.vx*dt;
+      if(this.boss.x<4530||this.boss.x>4790)this.boss.vx*=-1;
+      this.boss.attackTimer-=dt;
+      if(this.boss.attackTimer<=0){
+        this.spawnBossAttack(nextPhase);
+        this.boss.attackTimer=nextPhase===1?105:nextPhase===2?75:48;
+      }
+    }
     if(this.rects(this.player,this.boss))this.hurt('She cited you for excessive fabulousness.');
     if(this.boss.hp<=0){
-      this.boss.alive=false;this.state.bossDefeated=true;this.burst(this.boss.x,this.boss.y,'#ff4fb8',90);
-      setTimeout(()=>{this.stop();this.onComplete(this.state)},900);
+      this.boss.alive=false;this.state.bossDefeated=true;this.burst(this.boss.x,this.boss.y,'#ff4fb8',110);
+      window.dispatchEvent(new CustomEvent('boss-defeated'));
+      setTimeout(()=>{this.stop();this.onComplete(this.state)},1700);
     }
+  }
+
+  spawnBossAttack(phase){
+    if(phase===1){
+      this.hazards.push({x:this.boss.x-20,y:this.boss.y+38,w:34,h:22,vx:-7,vy:-1,type:'letter',life:180});
+    }else if(phase===2){
+      for(const vx of [-7,-5.2])this.hazards.push({x:this.boss.x,y:this.boss.y+30,w:30,h:30,vx,vy:-4.5,type:'paint',life:190});
+    }else{
+      this.hazards.push({x:this.player.x+Math.random()*180-90,y:-30,w:42,h:42,vx:0,vy:6.4,type:'drone',life:150});
+      this.hazards.push({x:this.boss.x,y:this.boss.y+55,w:38,h:20,vx:-8.5,vy:0,type:'letter',life:170});
+    }
+  }
+
+  updateHazards(dt){
+    for(const h of this.hazards){
+      h.x+=h.vx*dt;h.y+=h.vy*dt;
+      if(h.type==='paint')h.vy+=.25*dt;
+      h.life-=dt;
+      if(this.rects(this.player,h)){h.life=0;this.hurt(h.type==='letter'?'Violation letter delivered. Rude.':h.type==='paint'?'Beige paint is not your color.':'HOA drone attack!')}
+    }
+    this.hazards=this.hazards.filter(h=>h.life>0&&h.y<760);
   }
 
   hurt(message){
@@ -237,6 +307,16 @@ export class Game{
     if(x>4020&&!f.la){f.la=true;this.dispatchDialogue('Daniel','Los Angeles is almost completely drained. Stay together.')}
   }
 
+
+  updateNPCs(){
+    for(const n of this.npcs){
+      if(!n.spoken&&Math.abs(this.player.x-n.x)<62&&Math.abs(this.player.y-n.y)<100){
+        n.spoken=true;
+        this.dispatchDialogue(n.name,n.line);
+      }
+    }
+  }
+
   dispatchDialogue(name,text){
     window.dispatchEvent(new CustomEvent('quest-dialogue',{detail:{name,text}}));
   }
@@ -265,9 +345,11 @@ export class Game{
     this.drawSigns();this.drawPalms(t);this.drawPlatforms();this.drawDecor(t);
     for(const card of this.cards)if(!card.collected)this.drawCard(card.x,card.y,t);
     for(const beacon of this.beacons)this.drawBeacon(beacon,t);
+    for(const n of this.npcs)this.drawNPC(n,t);
     for(const e of this.enemies)if(e.alive)this.drawEnemy(e,t);
     for(const tr of this.state.traps)this.drawCookie(tr.x,tr.y,1.1);
     for(const p of this.state.projectiles)this.drawProjectile(p);
+    for(const h of this.hazards)this.drawHazard(h);
     if(this.state.bossActive&&this.boss.alive)this.drawBoss(this.boss,t);
     if(this.state.rigsby)this.drawRigsby();
     for(const p of this.state.particles){this.ctx.globalAlpha=p.life/60;this.ctx.fillStyle=p.color;this.ctx.fillRect(p.x,p.y,6,6);this.ctx.globalAlpha=1}
@@ -299,6 +381,35 @@ export class Game{
 
   drawBeacon(b,t){
     this.ctx.save();this.ctx.translate(b.x,b.y);this.ctx.fillStyle=b.active?'#3ce7d2':'#837e91';this.ctx.fillRect(-24,10,48,60);this.ctx.fillStyle=b.active?'#fff':'#aaa';this.ctx.beginPath();this.ctx.moveTo(0,-25);this.ctx.lineTo(25,12);this.ctx.lineTo(0,30);this.ctx.lineTo(-25,12);this.ctx.closePath();this.ctx.fill();if(b.active){this.ctx.globalAlpha=.35+.25*Math.sin(t*.006);this.ctx.fillStyle='#3ce7d2';this.ctx.beginPath();this.ctx.arc(0,10,50,0,Math.PI*2);this.ctx.fill();this.ctx.globalAlpha=1}this.ctx.restore()
+  }
+
+
+  drawNPC(n,t){
+    const c=this.ctx,bob=Math.sin(t*.004+n.x)*2;
+    c.save();c.translate(n.x,n.y+bob);
+    c.fillStyle='#2a2342';c.fillRect(8,53,9,17);c.fillRect(25,53,9,17);
+    c.fillStyle='#3ce7d2';c.beginPath();c.roundRect(3,19,36,40,9);c.fill();
+    c.fillStyle='#c98f6e';c.beginPath();c.roundRect(8,0,27,25,9);c.fill();
+    c.fillStyle='#2b1a18';c.fillRect(8,0,27,8);
+    c.fillStyle='#fff';c.fillRect(12,-25,74,22);
+    c.fillStyle='#2d2545';c.beginPath();c.moveTo(18,-3);c.lineTo(25,-25);c.lineTo(34,-3);c.fill();
+    this.text('!',49,-14,17,'#ff4fb8','center');
+    c.restore();
+  }
+
+  drawHazard(h){
+    const c=this.ctx;c.save();c.translate(h.x,h.y);
+    if(h.type==='letter'){
+      c.fillStyle='#fff';c.fillRect(0,0,h.w,h.h);c.strokeStyle='#b9a78f';c.strokeRect(0,0,h.w,h.h);
+      c.fillStyle='#d33';c.fillRect(4,4,h.w-8,4);
+    }else if(h.type==='paint'){
+      c.fillStyle='#cbbba5';c.beginPath();c.arc(15,15,15,0,Math.PI*2);c.fill();
+      c.fillStyle='#8f806d';c.fillRect(10,3,10,24);
+    }else{
+      c.fillStyle='#8b7b6d';c.fillRect(0,8,h.w,h.h-8);c.fillStyle='#fff';c.fillRect(8,16,8,8);c.fillRect(26,16,8,8);
+      c.fillStyle='#111';this.text('HOA',21,34,10,'#111','center');
+    }
+    c.restore();
   }
 
   drawEnemy(e,t){
@@ -343,11 +454,11 @@ export class Game{
   }
 
   drawBoss(b,t){
-    this.ctx.save();this.ctx.translate(b.x,b.y);if(b.frozen>t){this.ctx.fillStyle='#9be7ff';this.ctx.fillRect(-10,-10,b.w+20,b.h+20)}this.ctx.fillStyle='#d5c4ae';this.ctx.fillRect(0,0,b.w,b.h);this.ctx.fillStyle='#9e8f7e';this.ctx.fillRect(12,10,96,20);this.ctx.fillStyle='#fff';this.ctx.fillRect(22,40,18,18);this.ctx.fillRect(78,40,18,18);this.ctx.fillStyle='#111';this.ctx.fillRect(28,46,6,6);this.ctx.fillRect(84,46,6,6);this.ctx.fillStyle='#8a1f3d';this.ctx.fillRect(28,80,65,10);this.text('HOA',60,25,15,'#fff','center');this.text('QUEEN',60,110,13,'#3d2f25','center');this.ctx.restore()
+    this.ctx.save();this.ctx.translate(b.x,b.y);if(b.frozen>t){this.ctx.fillStyle='#9be7ff';this.ctx.fillRect(-10,-10,b.w+20,b.h+20)}this.ctx.fillStyle=this.state.bossPhase===3?'#b89b78':'#d5c4ae';this.ctx.fillRect(0,0,b.w,b.h);this.ctx.fillStyle='#9e8f7e';this.ctx.fillRect(12,10,96,20);this.ctx.fillStyle='#fff';this.ctx.fillRect(22,40,18,18);this.ctx.fillRect(78,40,18,18);this.ctx.fillStyle='#111';this.ctx.fillRect(28,46,6,6);this.ctx.fillRect(84,46,6,6);this.ctx.fillStyle='#8a1f3d';this.ctx.fillRect(28,80,65,10);this.text('HOA',60,25,15,'#fff','center');this.text(this.state.bossPhase===3?'MEGA BEIGE':'QUEEN',60,110,13,'#3d2f25','center');this.ctx.restore()
   }
 
   drawBossHud(){
-    this.ctx.fillStyle='rgba(18,12,48,.9)';this.ctx.fillRect(370,18,540,34);this.ctx.fillStyle='#fff';this.ctx.fillRect(380,28,520,14);this.ctx.fillStyle='#ff4fb8';this.ctx.fillRect(380,28,520*(this.boss.hp/this.boss.maxHp),14);this.text('HOA QUEEN OF BEIGE',640,73,18,'#fff','center')
+    this.ctx.fillStyle='rgba(18,12,48,.9)';this.ctx.fillRect(370,18,540,34);this.ctx.fillStyle='#fff';this.ctx.fillRect(380,28,520,14);this.ctx.fillStyle='#ff4fb8';this.ctx.fillRect(380,28,520*(this.boss.hp/this.boss.maxHp),14);this.text(`HOA QUEEN OF BEIGE — PHASE ${this.state.bossPhase}`,640,73,18,'#fff','center')
   }
 
   text(s,x,y,size,color,align='left'){this.ctx.font=`900 ${size}px system-ui`;this.ctx.fillStyle=color;this.ctx.textAlign=align;this.ctx.textBaseline='middle';this.ctx.fillText(s,x,y)}

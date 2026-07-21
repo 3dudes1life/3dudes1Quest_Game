@@ -15,7 +15,37 @@ game=new Game(canvas,ui,input,state=>{
   ui.show('complete');
 });
 
-document.getElementById('startBtn').onclick=()=>{ui.show('game');game.start()};
+const SAVE_KEY='3dudes1quest-save-v08';
+const continueBtn=document.getElementById('continueBtn');
+const saveStatus=document.getElementById('saveStatus');
+const saveToast=document.getElementById('saveToast');
+
+function readSave(){
+  try{return JSON.parse(localStorage.getItem(SAVE_KEY)||'null')}catch{return null}
+}
+function refreshSaveUI(){
+  const save=readSave();
+  continueBtn.classList.toggle('hidden',!save);
+  saveStatus.textContent=save?`Saved quest available • ${new Date(save.savedAt).toLocaleString()}`:'No saved quest yet.';
+}
+function saveQuest(){
+  if(!game?.running)return;
+  localStorage.setItem(SAVE_KEY,JSON.stringify(game.getSaveData()));
+  refreshSaveUI();
+  saveToast.classList.add('show');
+  clearTimeout(saveQuest.timer);
+  saveQuest.timer=setTimeout(()=>saveToast.classList.remove('show'),1400);
+}
+document.getElementById('startBtn').onclick=()=>{
+  localStorage.removeItem(SAVE_KEY);refreshSaveUI();ui.show('game');game.start();
+  playCutscene([
+    {title:'Southern California',text:'A strange beige wave is draining the color from the coast.'},
+    {title:'The Mission',text:'Recover six Gay Cards, awaken three Prism Beacons, and restore Los Angeles.'},
+    {title:'Triangle of Support',text:'Switch between Will, Daniel, and Caleb. Together, their power is stronger.'}
+  ]);
+};
+continueBtn.onclick=()=>{const save=readSave();ui.show('game');game.start(save)};
+refreshSaveUI();
 document.getElementById('helpBtn').onclick=()=>ui.show('help');
 document.getElementById('backBtn').onclick=()=>ui.show('title');
 document.getElementById('pauseBtn').onclick=()=>game.togglePause();
@@ -80,3 +110,51 @@ document.getElementById('journalClose').onclick=()=>{
   journal.classList.add('hidden');if(game&&!dialogueOpen)game.state.paused=false;
 };
 document.querySelectorAll('.journalTabs button').forEach(b=>b.onclick=()=>renderJournal(b.dataset.tab));
+
+
+document.getElementById('saveBtn').onclick=saveQuest;
+
+const cutscene=document.getElementById('cutscene');
+const cutsceneTitle=document.getElementById('cutsceneTitle');
+const cutsceneText=document.getElementById('cutsceneText');
+const cutsceneNext=document.getElementById('cutsceneNext');
+let cutsceneQueue=[];
+function playCutscene(slides){
+  cutsceneQueue=[...slides];
+  if(game)game.state.paused=true;
+  showNextCutscene();
+}
+function showNextCutscene(){
+  const slide=cutsceneQueue.shift();
+  if(!slide){
+    cutscene.classList.add('hidden');
+    if(game)game.state.paused=false;
+    return;
+  }
+  cutsceneTitle.textContent=slide.title;
+  cutsceneText.textContent=slide.text;
+  cutscene.classList.remove('hidden');
+}
+cutsceneNext.onclick=showNextCutscene;
+
+window.addEventListener('boss-phase',e=>{
+  const box=document.getElementById('bossPhase');
+  const copy={
+    2:'PHASE 2 — BEIGE PAINT PANIC',
+    3:'FINAL PHASE — MEGA BEIGE'
+  };
+  box.textContent=copy[e.detail.phase]||'';
+  box.classList.remove('hidden');
+  setTimeout(()=>box.classList.add('hidden'),1800);
+});
+window.addEventListener('boss-defeated',()=>{
+  localStorage.removeItem(SAVE_KEY);
+  refreshSaveUI();
+  playCutscene([
+    {title:'Los Angeles Restored',text:'Murals return, music fills the streets, and the skyline explodes back into color.'},
+    {title:'The Rainbow Prism',text:'The restored Prism rises above the city and tears open a portal through space.'},
+    {title:'Next Stop',text:'Lake Tahoe is calling.'}
+  ]);
+});
+
+setInterval(()=>{if(game?.running&&!game.state.paused&&!game.state.bossDefeated)saveQuest()},30000);

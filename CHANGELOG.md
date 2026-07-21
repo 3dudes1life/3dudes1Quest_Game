@@ -1,10 +1,10 @@
 # Changelog
 
-## v0.7
-- Added Adventure Journal.
-- Added story dialogue system.
-- Added Rigsby companion.
-- Added Triangle of Support meter and ultimate.
-- Improved player sprites and walking motion.
-- Enhanced rainbow portal ending.
-- Preserved modular v0.5 gameplay foundation.
+## v0.8
+- Added persistent browser saves and Continue Adventure.
+- Added opening and victory cutscenes.
+- Added NPC encounters.
+- Added manual and automatic saving.
+- Expanded the boss to three phases.
+- Added boss hazards and Mega Beige.
+- Updated level metadata for the story/save milestone.

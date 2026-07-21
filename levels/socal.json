@@ -1,17 +1,19 @@
 {
   "name": "Southern California",
-  "version": "0.7",
+  "version": "0.8",
   "nextAdventure": "Lake Tahoe",
-  "requirements": {
-    "gayCards": 6,
-    "prismBeacons": 3
-  },
-  "boss": "HOA Queen of Beige",
-  "newSystems": [
-    "Adventure Journal",
-    "Story dialogue",
-    "Rigsby companion",
-    "Triangle of Support meter",
-    "Portal reveal"
-  ]
+  "systems": [
+    "Opening cutscene",
+    "Local save and continue",
+    "Automatic checkpoint saves",
+    "Four NPC encounters",
+    "Three-phase HOA Queen boss",
+    "Boss projectiles and hazards",
+    "Victory Prism cutscene"
+  ],
+  "boss": {
+    "name": "HOA Queen of Beige",
+    "phases": 3,
+    "finalForm": "Mega Beige"
+  }
 }

@@ -35,5 +35,11 @@ export const SOCAL_LEVEL = {
     {x:3400,y:420,type:'scooter'},{x:3720,y:345,type:'hoaDrone'},
     {x:4200,y:560,type:'beigeBot'}
   ],
-  boss: {x:4720,y:505,w:120,h:115,hp:12}
+  npcs: [
+    {x:610,y:550,name:'Neighbor',line:'Something drained the color from every yard overnight. Even the flamingos are beige!'},
+    {x:1480,y:520,name:'Beach Local',line:'The ocean is fighting back. Restore the Prism Beacon and the waves should brighten.'},
+    {x:2380,y:550,name:'Taco Oracle',line:'Three beacons. Six Gay Cards. One deeply unpleasant HOA Queen.'},
+    {x:4050,y:550,name:'LA Local',line:'She took the murals first. Please bring the city back.'}
+  ],
+  boss: {x:4720,y:505,w:120,h:115,hp:18}
 };
