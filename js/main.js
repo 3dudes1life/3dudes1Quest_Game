@@ -15,7 +15,7 @@ game=new Game(canvas,ui,input,state=>{
   ui.show('complete');
 });
 
-const SAVE_KEY='3dudes1quest-save-v0921';
+const SAVE_KEY='3dudes1quest-save-v100';
 const continueBtn=document.getElementById('continueBtn');
 const saveStatus=document.getElementById('saveStatus');
 const saveToast=document.getElementById('saveToast');
@@ -57,12 +57,22 @@ document.getElementById('titleBtn').onclick=()=>ui.show('title');
 
 const dialogueBox=document.getElementById('dialogueBox');
 const dialogueName=document.getElementById('dialogueName');
+const dialoguePortrait=document.getElementById('dialoguePortrait');
 const dialogueText=document.getElementById('dialogueText');
 const dialogueNext=document.getElementById('dialogueNext');
 let dialogueOpen=false;
 
 window.addEventListener('quest-dialogue',e=>{
   dialogueName.textContent=e.detail.name;
+  const portraitMap={
+    'Will':'will','Daniel':'daniel','Caleb':'caleb','Neighbor':'neighbor',
+    'Hillcrest Local':'hillcrest local','Café Regular':'café regular',
+    'Coastal Local':'coastal local','LA Local':'la local',
+    'HOA Queen':'hoa queen','Rigsby':'will'
+  };
+  const key=(portraitMap[e.detail.name]||e.detail.name).toLowerCase().replaceAll(' ','_').replaceAll('é','e');
+  dialoguePortrait.src=`assets/portraits/${key}.png`;
+  dialoguePortrait.alt=e.detail.name;
   dialogueText.textContent=e.detail.text;
   dialogueBox.classList.remove('hidden');
   dialogueOpen=true;

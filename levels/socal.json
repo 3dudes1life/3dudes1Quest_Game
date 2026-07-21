@@ -1,7 +1,6 @@
 {
-  "name": "The Southern California Road Trip",
-  "version": "0.9.2.1V",
-  "status": "Route-locked playtest candidate",
+  "title": "3Dudes1Quest",
+  "release": "v1.0 \u2014 Complete Southern California",
   "route": [
     "Home Base",
     "Hillcrest",
@@ -9,15 +8,21 @@
     "Los Angeles",
     "HOA Queen of Beige"
   ],
-  "zones": 4,
-  "collectibles": {
-    "gayCards": 6,
-    "prismBeacons": 3,
-    "selfieMemories": 3,
-    "chaosBowls": 1,
-    "souvenirs": 1
+  "rendering": "Animated sprite-based canvas graphics",
+  "spriteSheets": {
+    "heroes": 3,
+    "npcs": 5,
+    "enemies": 4,
+    "companions": 1,
+    "bosses": 1
   },
-  "nextAdventure": "Lake Tahoe",
-  "music": "Deferred",
-  "nextStep": "User playtest and bug report"
+  "features": {
+    "parallax": true,
+    "animatedOcean": true,
+    "dialoguePortraits": true,
+    "cameraLookAhead": true,
+    "saveContinue": true,
+    "mobileControls": true
+  },
+  "nextAdventure": "Lake Tahoe"
 }

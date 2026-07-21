@@ -120,3 +120,11 @@ rgba(8,5,24,.9);padding:20px}
 .zoneComplete{animation:zoneComplete .7s ease both}
 @keyframes zoneComplete{0%{filter:saturate(.2)}45%{filter:saturate(2.4) brightness(1.6)}100%{filter:none}}
 @media(max-width:760px){.objectiveCard{top:95px;left:8px;width:210px;padding:8px 10px}.objectiveCard span{display:none}.objectiveCard strong{font-size:.78rem}}
+
+.dialogueBox{display:grid!important;grid-template-columns:92px 1fr;gap:14px;align-items:center}
+.dialogueBox.hidden{display:none!important}
+.dialoguePortrait{width:88px;height:88px;object-fit:cover;border-radius:18px;border:3px solid #fff;box-shadow:0 6px 18px rgba(0,0,0,.28);background:#17102f}
+#dialogueName,#dialogueText{grid-column:2}
+#dialogueName{align-self:end}
+#dialogueText{align-self:start}
+canvas{filter:saturate(1.08) contrast(1.02)}
