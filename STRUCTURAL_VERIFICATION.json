@@ -1,11 +1,9 @@
 {
-  "no_fullscreen_scene_activation": true,
-  "compact_zone_banner": true,
-  "gameplay_zone_flow": true,
-  "drag_queen_wig": true,
-  "sunglasses": true,
-  "hoa_badge": true,
-  "clipboard": true,
-  "stilettos": true,
-  "three_phase_visuals": true
+  "space_is_power": true,
+  "space_not_jump": true,
+  "up_is_jump": true,
+  "w_is_jump": true,
+  "mobile_controls_preserved": true,
+  "help_text_updated": true,
+  "new_script_loaded": true
 }
