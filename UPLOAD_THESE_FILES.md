@@ -1,13 +1,16 @@
-# Upload v1.0.8X
+# Upload v1.0.9 Gold Master
 
-This is a full-repository ZIP.
+This ZIP is intentionally a patch, not a full repository.
 
-Replace the repository contents with this package.
+Upload or replace only:
 
-Primary runtime files:
+1. `index.html`
+2. `js/app109.js`
+3. `js/gold-master-self-test.js`
+4. `VERSION.txt`
+5. `GOLD_MASTER_CHANGELOG.md`
 
-- `index.html`
-- `css/style.css`
-- `js/app108x.js`
+No assets or CSS files changed.
 
-The HTML already references the X script and cache-busting stylesheet URL.
+After GitHub Pages deploys, open the game once with `?qa=1`.
+The report should say `Gold Master QA PASS`.

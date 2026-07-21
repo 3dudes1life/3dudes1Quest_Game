@@ -1,0 +1,37 @@
+{
+  "release": "1.0.9",
+  "package_type": "patch-only",
+  "files_included": [
+    "index.html",
+    "js/app109.js",
+    "js/gold-master-self-test.js",
+    "VERSION.txt",
+    "GOLD_MASTER_CHANGELOG.md",
+    "UPLOAD_THESE_FILES.md"
+  ],
+  "static_checks": {
+    "version_109": true,
+    "new_save_key": true,
+    "legacy_x_migration": true,
+    "migration_version_fixed": true,
+    "transient_finale_clear_removed": true,
+    "portal_uses_stable_requirements": true,
+    "finale_state_saved": true,
+    "interrupted_finale_recovery": true,
+    "old_completed_save_recovery": true,
+    "correct_zone_resume": true,
+    "clear_all_saves": true,
+    "pagehide_save": true,
+    "hidden_save": true,
+    "daniel_body_light_removed": true,
+    "qa_script_loaded": true,
+    "release_metadata": true,
+    "main_syntax": true,
+    "qa_syntax": true
+  },
+  "browser_smoke_test": {
+    "attempted": true,
+    "passed": false,
+    "detail": "Chromium returned -5; QA marker was not found"
+  }
+}
