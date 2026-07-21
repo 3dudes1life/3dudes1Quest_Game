@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
   <meta name="theme-color" content="#15102f">
-  <title>3Dudes1Quest v1.0.8F — Choose Your Dude</title>
-  <link rel="stylesheet" href="css/style.css?v=1.0.8f">
+  <title>3Dudes1Quest v1.0.8G — Living Title World</title>
+  <link rel="stylesheet" href="css/style.css?v=1.0.8g">
 </head>
 <body>
 <div id="bootSequence" class="bootSequence" aria-live="polite">
@@ -35,10 +35,16 @@
 <div id="collectibleToast" class="collectibleToast" aria-live="polite"></div>
 
   <main id="app">
-    <section id="titleScreen" class="screen active">
-      <div class="card">
+    <section id="titleScreen" class="screen active" data-hero="0">
+      <canvas id="titleWorldCanvas" width="1280" height="720" aria-hidden="true"></canvas>
+      <div class="titleWorldVignette" aria-hidden="true"></div>
+      <div class="titleWorldHint" aria-hidden="true">
+        <span>🌴 SOUTHERN CALIFORNIA</span>
+        <b>THE QUEST IS ALREADY MOVING</b>
+      </div>
+      <div class="card titleMenuCard">
         <div class="eyebrow">3DUDES1LIFE CREATIVE PRESENTS</div>
-        <div class="releaseBadge">v1.0.8F • CHOOSE YOUR DUDE</div>
+        <div class="releaseBadge">v1.0.8G • LIVING TITLE WORLD</div>
         <h1>3Dudes1Quest</h1>
         <h2>Adventure 1: Southern California</h2>
         <p>Lord Beige is draining the color from SoCal. Restore the Prism Beacons, recover every Gay Card, defeat the HOA Queen of Beige, and enter the portal to the next adventure.</p>
@@ -208,7 +214,7 @@
       </div>
     </section>
   </main>
-  <script src="js/app108f.js?v=1.0.8f"></script>
-  <script src="js/remaster.js?v=1.0.8f"></script>
+  <script src="js/app108g.js?v=1.0.8g"></script>
+  <script src="js/remaster.js?v=1.0.8g"></script>
 </body>
 </html>

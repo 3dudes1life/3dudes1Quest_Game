@@ -1,11 +1,11 @@
 {
-  "three_start_cards": true,
-  "all_three_names": true,
-  "selected_dude_passed_to_game": true,
-  "reset_uses_starting_dude": true,
-  "saved_game_overrides_selection": true,
-  "switching_preserved": true,
-  "dynamic_start_button": true,
-  "selector_css_present": true,
-  "new_script_loaded": true
+  "living_canvas": true,
+  "renderer": true,
+  "three_heroes": true,
+  "rigsby": true,
+  "queen": true,
+  "parallax": true,
+  "hero_selection_hook": true,
+  "glass_menu": true,
+  "new_script": true
 }
