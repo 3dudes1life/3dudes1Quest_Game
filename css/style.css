@@ -1392,3 +1392,54 @@ body.touchDevice #gameCanvas{
     will-change:transform;
   }
 }
+
+
+/* =========================================================
+   v1.0.8L — Living World Update
+   ========================================================= */
+
+#gameCanvas{
+  transition:filter .6s ease;
+}
+
+.collectibleToast{
+  background:
+    linear-gradient(135deg,rgba(255,79,184,.84),rgba(141,92,255,.82) 56%,rgba(60,231,210,.78));
+  border-color:rgba(255,255,255,.34);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.26),
+    0 16px 40px rgba(0,0,0,.36),
+    0 0 32px rgba(255,79,184,.24);
+}
+
+.achievementCard{
+  border-color:rgba(60,231,210,.32);
+  background:
+    linear-gradient(145deg,rgba(20,16,48,.90),rgba(31,27,70,.84));
+}
+
+.achievementIcon{
+  background:
+    linear-gradient(145deg,#ffe66d,#ff8f5c 48%,#ff4fb8);
+}
+
+@media (hover:none), (pointer:coarse){
+  .collectibleToast{
+    font-weight:950;
+    letter-spacing:.015em;
+  }
+
+  .achievementCard{
+    animation:achievement108l 3s cubic-bezier(.2,.8,.2,1) both;
+  }
+}
+
+@keyframes achievement108l{
+  0%{opacity:0;transform:translateY(-14px) scale(.96)}
+  12%,82%{opacity:1;transform:translateY(0) scale(1)}
+  100%{opacity:0;transform:translateY(-10px) scale(.98)}
+}
+
+@media(prefers-reduced-motion:reduce){
+  .achievementCard{animation:none}
+}
