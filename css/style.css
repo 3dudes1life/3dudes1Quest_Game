@@ -325,3 +325,72 @@ button:active,.button:active{transform:translateY(0) scale(.985)}
   to{opacity:1;transform:none}
 }
 canvas{border-radius:22px}
+
+/* v1.0.3V — Responsive UX Rebuild */
+html,body{
+  width:100%;
+  min-height:100%;
+  margin:0;
+  overflow-x:hidden;
+}
+body{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:12px;
+  box-sizing:border-box;
+}
+.gameShell{
+  width:min(1440px,calc(100vw - 24px));
+  height:auto;
+  aspect-ratio:16/9;
+  max-height:calc(100vh - 24px);
+  margin:auto;
+  border-radius:24px;
+  overflow:hidden;
+  position:relative;
+}
+canvas{
+  display:block;
+  width:100%!important;
+  height:100%!important;
+  max-width:100%;
+  max-height:100%;
+  object-fit:contain;
+  border-radius:20px;
+}
+.hud,.topHud,.statusBar{
+  max-width:calc(100% - 24px);
+}
+.objective,.objectiveCard{
+  max-width:min(320px,calc(100vw - 48px));
+}
+.dialogue{
+  left:18px!important;
+  right:18px!important;
+  width:auto!important;
+  max-width:none!important;
+}
+.mobileControls,
+.touchControls{
+  opacity:.78;
+}
+@media (max-width:900px){
+  body{padding:0}
+  .gameShell{
+    width:100vw;
+    max-height:none;
+    border-radius:0;
+  }
+  canvas{border-radius:0}
+  .releaseBadge{font-size:.72rem}
+  .objective,.objectiveCard{
+    transform:scale(.9);
+    transform-origin:top left;
+  }
+}
+@media (min-width:1200px){
+  .mobileControls,.touchControls{
+    opacity:.38;
+  }
+}

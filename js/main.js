@@ -1,7 +1,7 @@
-import {CONFIG} from './config.js?v=1.0.2p4';
-import {createInput} from './input.js?v=1.0.2p4';
-import {createUI} from './ui.js?v=1.0.2p4';
-import {Game} from './game.js?v=1.0.2p4';
+import {CONFIG} from './config.js?v=1.0.3';
+import {createInput} from './input.js?v=1.0.3';
+import {createUI} from './ui.js?v=1.0.3';
+import {Game} from './game.js?v=1.0.3';
 
 const canvas=document.getElementById('gameCanvas');
 canvas.width=CONFIG.width;canvas.height=CONFIG.height;
@@ -70,9 +70,9 @@ window.addEventListener('quest-dialogue',e=>{
     'Coastal Local':'coastal_local.png','LA Local':'la_local.png',
     'HOA Queen':'hoa_queen.png','Rigsby':'will.png'
   };
-  dialoguePortrait.src=`assets/portraits/${portraitMap[e.detail.name]||'will.png'}?v=1.0.2p4`;
+  dialoguePortrait.src=`assets/portraits/${portraitMap[e.detail.name]||'will.png'}?v=1.0.3`;
   dialoguePortrait.alt=e.detail.name;
-  dialoguePortrait.onerror=()=>{dialoguePortrait.src='assets/portraits/will.png?v=1.0.2p4'};
+  dialoguePortrait.onerror=()=>{dialoguePortrait.src='assets/portraits/will.png?v=1.0.3'};
   dialogueText.textContent=e.detail.text;
   dialogueBox.classList.remove('hidden');
   dialogueOpen=true;
@@ -198,3 +198,45 @@ window.addEventListener('zone-restored',e=>{
   box.classList.remove('hidden');
   setTimeout(()=>box.classList.add('hidden'),1800);
 });
+
+
+function resizeGameCanvas(){
+  const canvas=document.querySelector('canvas');
+  if(!canvas)return;
+
+  const shell=canvas.closest('.gameShell') || canvas.parentElement;
+  const maxW=Math.min(window.innerWidth-24,1440);
+  const maxH=Math.min(window.innerHeight-110,900);
+
+  const aspect=16/9;
+  let cssW=maxW;
+  let cssH=cssW/aspect;
+
+  if(cssH>maxH){
+    cssH=maxH;
+    cssW=cssH*aspect;
+  }
+
+  const dpr=Math.min(window.devicePixelRatio||1,2);
+
+  canvas.style.width=`${Math.floor(cssW)}px`;
+  canvas.style.height=`${Math.floor(cssH)}px`;
+
+  const targetW=Math.floor(cssW*dpr);
+  const targetH=Math.floor(cssH*dpr);
+
+  if(canvas.width!==targetW||canvas.height!==targetH){
+    canvas.width=targetW;
+    canvas.height=targetH;
+  }
+
+  if(shell){
+    shell.style.width=`${Math.floor(cssW)}px`;
+    shell.style.height=`${Math.floor(cssH)}px`;
+  }
+}
+
+window.addEventListener('resize',resizeGameCanvas,{passive:true});
+window.addEventListener('orientationchange',()=>setTimeout(resizeGameCanvas,120),{passive:true});
+document.addEventListener('DOMContentLoaded',resizeGameCanvas);
+setTimeout(resizeGameCanvas,0);

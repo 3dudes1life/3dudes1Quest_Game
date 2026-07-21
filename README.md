@@ -1,19 +1,15 @@
-# 3Dudes1Quest v1.0.2V — Phase 4 Premium UI
+# 3Dudes1Quest v1.0.3V
 
-This patch upgrades the presentation layer on top of Phase 3.
+This is the full v1.0.3V game build.
 
-## Included
-- Premium glass HUD
-- Animated hero accents
-- Better objective cards
-- Redesigned dialogue presentation
-- Polished buttons and meters
-- Adventure Journal redesign
-- Toast and notification animations
-- New reusable UI assets
-- GitHub Pages cache busting
+## Major UX fixes
+- Responsive 16:9 canvas
+- Proper full-width environment rendering
+- No exposed neighboring scene on wide displays
+- Better camera framing
+- Cleaner character scale
+- Responsive HUD placement
+- High-DPI rendering for Retina displays
+- Desktop and mobile layout improvements
 
-## Install
-Upload everything in this patch over the matching files in the existing Phase 3 repository.
-
-Only updated or newly added files are included.
+Upload the contents of this ZIP to the repository root, replacing the existing files.

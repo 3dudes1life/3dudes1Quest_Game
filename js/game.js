@@ -1,5 +1,5 @@
-import {CONFIG,DUDES} from './config.js?v=1.0.2p4';
-import {SOCAL_LEVEL} from './level.js?v=1.0.2p4';
+import {CONFIG,DUDES} from './config.js?v=1.0.3';
+import {SOCAL_LEVEL} from './level.js?v=1.0.3';
 
 export class Game{
   constructor(canvas,ui,input,onComplete){
@@ -126,7 +126,7 @@ export class Game{
 
   getSaveData(){
     return {
-      version:'1.0.2V-P4',
+      version:'1.0.3V',
       player:{x:this.player.x,y:this.player.y,checkpoint:this.player.checkpoint},
       state:{
         health:this.state.health,cards:this.state.cards,beacons:this.state.beacons,
@@ -158,7 +158,7 @@ export class Game{
     (save.zones||[]).forEach((v,i)=>{if(this.zones[i])this.zones[i].complete=!!v});
     (save.souvenirs||[]).forEach((v,i)=>{if(this.souvenirs[i])this.souvenirs[i].collected=!!v});
     this.state.zones=this.zones;
-    this.cameraX=Math.max(0,this.player.x-360);
+    this.cameraX=Math.max(0,this.player.x-this.viewportWidth()*.38);
   }
 
   loop(t){
@@ -557,6 +557,19 @@ export class Game{
 
 
 
+
+  viewportWidth(){
+    return this.canvas?.width || 960;
+  }
+
+  viewportHeight(){
+    return this.canvas?.height || 540;
+  }
+
+  worldViewportWidth(){
+    return this.viewportWidth();
+  }
+
   currentEnvironment(){
     const x=this.player.x;
     if(x<1150)return 'home';
@@ -571,19 +584,35 @@ export class Game{
     const map={home:'env_home',hillcrest:'env_hillcrest',pch:'env_pch',la:'env_la',arena:'env_arena'};
     const img=this.assets[map[key]];
     if(!img||!img.complete||!img.naturalWidth)return;
+
     const c=this.ctx;
+    const vw=this.viewportWidth();
+    const vh=this.viewportHeight();
+
     c.save();
-    const cropX=Math.max(0,Math.min(img.naturalWidth-960,(this.cameraX*.12)%640));
-    c.globalAlpha=.98;
-    c.drawImage(img,cropX,0,960,720,0,0,960,720);
-    // zone lighting
-    const grad=c.createLinearGradient(0,0,0,720);
-    if(key==='home'){grad.addColorStop(0,'rgba(255,206,150,.08)');grad.addColorStop(1,'rgba(255,255,255,0)')}
-    if(key==='hillcrest'){grad.addColorStop(0,'rgba(255,72,170,.10)');grad.addColorStop(1,'rgba(80,220,210,.04)')}
-    if(key==='pch'){grad.addColorStop(0,'rgba(80,190,255,.08)');grad.addColorStop(1,'rgba(255,210,120,.05)')}
-    if(key==='la'){grad.addColorStop(0,'rgba(160,80,220,.08)');grad.addColorStop(1,'rgba(255,115,95,.06)')}
-    if(key==='arena'){grad.addColorStop(0,'rgba(90,60,100,.12)');grad.addColorStop(1,'rgba(190,160,120,.08)')}
-    c.fillStyle=grad;c.fillRect(0,0,960,720);
+
+    // Cover the entire canvas while preserving aspect ratio.
+    const scale=Math.max(vw/img.naturalWidth, vh/img.naturalHeight);
+    const drawW=img.naturalWidth*scale;
+    const drawH=img.naturalHeight*scale;
+
+    // Use light parallax without revealing neighboring environments.
+    const maxOffset=Math.max(0,drawW-vw);
+    const progress=Math.max(0,Math.min(1,(this.cameraX%1400)/1400));
+    const offsetX=maxOffset*progress*.45;
+
+    c.globalAlpha=1;
+    c.drawImage(img,-offsetX,(vh-drawH)*.5,drawW,drawH);
+
+    const grad=c.createLinearGradient(0,0,0,vh);
+    if(key==='home'){grad.addColorStop(0,'rgba(255,205,155,.05)');grad.addColorStop(1,'rgba(255,255,255,0)')}
+    if(key==='hillcrest'){grad.addColorStop(0,'rgba(255,72,170,.07)');grad.addColorStop(1,'rgba(80,220,210,.025)')}
+    if(key==='pch'){grad.addColorStop(0,'rgba(80,190,255,.05)');grad.addColorStop(1,'rgba(255,210,120,.035)')}
+    if(key==='la'){grad.addColorStop(0,'rgba(160,80,220,.055)');grad.addColorStop(1,'rgba(255,115,95,.04)')}
+    if(key==='arena'){grad.addColorStop(0,'rgba(90,60,100,.085)');grad.addColorStop(1,'rgba(190,160,120,.055)')}
+    c.fillStyle=grad;
+    c.fillRect(0,0,vw,vh);
+
     c.restore();
   }
 
@@ -592,11 +621,23 @@ export class Game{
     const map={home:'env_home_fg',hillcrest:'env_hillcrest_fg',pch:'env_pch_fg',la:'env_la_fg',arena:'env_arena_fg'};
     const img=this.assets[map[key]];
     if(!img||!img.complete||!img.naturalWidth)return;
-    this.ctx.save();
-    this.ctx.globalAlpha=.92;
-    const shift=(this.cameraX*.28)%640;
-    this.ctx.drawImage(img,shift,0,960,720,0,0,960,720);
-    this.ctx.restore();
+
+    const c=this.ctx;
+    const vw=this.viewportWidth();
+    const vh=this.viewportHeight();
+
+    c.save();
+    c.globalAlpha=key==='home'?.42:.58;
+
+    const scale=Math.max(vw/img.naturalWidth, vh/img.naturalHeight);
+    const drawW=img.naturalWidth*scale;
+    const drawH=img.naturalHeight*scale;
+
+    const maxOffset=Math.max(0,drawW-vw);
+    const offsetX=maxOffset*.22;
+
+    c.drawImage(img,-offsetX,(vh-drawH)*.5,drawW,drawH);
+    c.restore();
   }
 
   drawEnvironmentalAnimation(t){
@@ -740,15 +781,15 @@ export class Game{
     grad.addColorStop(.5,'rgba(60,231,210,.55)');
     grad.addColorStop(.7,'rgba(255,225,90,.55)');
     grad.addColorStop(1,'rgba(255,225,90,0)');
-    c.fillStyle=grad;c.fillRect(0,0,960,720);c.restore();
+    c.fillStyle=grad;c.fillRect(0,0,this.viewportWidth(),this.viewportHeight());c.restore();
   }
 
   drawUltimateCinematic(t){
     if(this.screenFx.ultimateUntil<=t)return;
     const c=this.ctx,p=Math.max(0,(this.screenFx.ultimateUntil-t)/1500);
     c.save();
-    c.fillStyle=`rgba(18,8,38,${.62*p})`;c.fillRect(0,0,960,720);
-    const cx=480,cy=345,rad=115+(1-p)*220;
+    c.fillStyle=`rgba(18,8,38,${.62*p})`;c.fillRect(0,0,this.viewportWidth(),this.viewportHeight());
+    const cx=this.viewportWidth()/2,cy=this.viewportHeight()*.48,rad=115+(1-p)*220;
     const pts=[[-.5*Math.PI],[-.5*Math.PI+2*Math.PI/3],[-.5*Math.PI+4*Math.PI/3]].map(a=>[cx+Math.cos(a)*rad,cy+Math.sin(a)*rad]);
     c.lineWidth=10;c.lineJoin='round';c.shadowBlur=30;c.shadowColor='#fff';
     const g=c.createLinearGradient(pts[0][0],pts[0][1],pts[2][0],pts[2][1]);
@@ -761,32 +802,39 @@ export class Game{
 
   drawPremiumHudFrame(t){
     const c=this.ctx;
+    const vw=this.viewportWidth();
+
     c.save();
-    // top-left hero card
-    const grad=c.createLinearGradient(18,18,330,135);
+
+    const leftW=Math.min(330,Math.max(260,vw*.33));
+    const rightW=Math.min(330,Math.max(250,vw*.30));
+    const rightX=vw-rightW-18;
+
+    const grad=c.createLinearGradient(18,18,18+leftW,135);
     grad.addColorStop(0,'rgba(25,18,45,.94)');
     grad.addColorStop(1,'rgba(12,12,28,.82)');
+
     c.fillStyle=grad;
-    c.beginPath();c.roundRect(18,18,322,118,22);c.fill();
-    c.strokeStyle='rgba(255,255,255,.13)';c.lineWidth=1.5;c.stroke();
+    c.beginPath();c.roundRect(18,18,leftW,112,18);c.fill();
+    c.strokeStyle='rgba(255,255,255,.12)';c.lineWidth=1.25;c.stroke();
 
     const accent=this.state.dude===0?'#ff4fb8':this.state.dude===1?'#3ce7d2':'#ffe05d';
-    c.strokeStyle=accent;c.lineWidth=4;c.beginPath();c.roundRect(25,25,308,104,18);c.stroke();
+    c.strokeStyle=accent;c.lineWidth=3;
+    c.beginPath();c.roundRect(25,25,leftW-14,98,15);c.stroke();
 
-    // subtle animated line
-    const x=35+((t*.08)%260);
+    const x=35+((t*.08)%Math.max(80,leftW-70));
     c.globalCompositeOperation='screen';
-    const lg=c.createLinearGradient(x-50,0,x+50,0);
+    const lg=c.createLinearGradient(x-45,0,x+45,0);
     lg.addColorStop(0,'rgba(255,255,255,0)');
-    lg.addColorStop(.5,'rgba(255,255,255,.20)');
+    lg.addColorStop(.5,'rgba(255,255,255,.18)');
     lg.addColorStop(1,'rgba(255,255,255,0)');
-    c.fillStyle=lg;c.fillRect(35,30,270,2);
+    c.fillStyle=lg;c.fillRect(35,30,leftW-50,2);
 
-    // objective frame
     c.globalCompositeOperation='source-over';
-    c.fillStyle='rgba(18,15,34,.86)';
-    c.beginPath();c.roundRect(610,20,330,95,18);c.fill();
-    c.strokeStyle='rgba(60,231,210,.25)';c.lineWidth=1.5;c.stroke();
+    c.fillStyle='rgba(18,15,34,.84)';
+    c.beginPath();c.roundRect(rightX,20,rightW,90,16);c.fill();
+    c.strokeStyle='rgba(60,231,210,.22)';c.lineWidth=1.25;c.stroke();
+
     c.restore();
   }
 
@@ -794,11 +842,12 @@ export class Game{
     const c=this.ctx,key=this.currentEnvironment();
     c.save();
     // cinematic vignette
-    const vg=c.createRadialGradient(480,330,180,480,350,610);
+    const vw=this.viewportWidth(),vh=this.viewportHeight();
+    const vg=c.createRadialGradient(vw/2,vh*.46,Math.min(vw,vh)*.22,vw/2,vh*.48,Math.max(vw,vh)*.72);
     const base=key==='arena'?.34:key==='la'?.20:.13;
     vg.addColorStop(0,'rgba(0,0,0,0)');
     vg.addColorStop(1,`rgba(16,8,28,${base+this.screenFx.vignette*.35})`);
-    c.fillStyle=vg;c.fillRect(0,0,960,720);
+    c.fillStyle=vg;c.fillRect(0,0,this.viewportWidth(),this.viewportHeight());
 
     // moving sunlight shafts
     if(key==='home'||key==='pch'){
@@ -813,12 +862,12 @@ export class Game{
     if(key==='arena'&&this.state.bossPhase>=2&&!this.state.bossDefeated){
       const a=.05+.035*Math.sin(t*.01);
       c.fillStyle=this.state.bossPhase===3?`rgba(255,45,110,${a})`:`rgba(210,190,160,${a})`;
-      c.fillRect(0,0,960,720);
+      c.fillRect(0,0,this.viewportWidth(),this.viewportHeight());
     }
 
     if(this.screenFx.flash>0){
       c.fillStyle=this.screenFx.flashColor.replace(/[\d.]+\)$/,(this.screenFx.flash)+')');
-      c.fillRect(0,0,960,720);
+      c.fillRect(0,0,this.viewportWidth(),this.viewportHeight());
     }
     c.restore();
   }
@@ -1021,7 +1070,7 @@ export class Game{
     if(state==='hurt'){count=4;speed=105}
     if(state==='celebrate'){count=8;speed=100}
     const frame=this.animationFrame(t,speed,count);
-    const rw=96,rh=144,dx=this.player.x-26,dy=this.player.y+this.player.h-rh;
+    const rw=82,rh=123,dx=this.player.x-19,dy=this.player.y+this.player.h-rh+2;
     c.save();
     if(this.player.invuln>0&&Math.floor(this.player.invuln/5)%2===0)c.globalAlpha=.38;
     if(this.state.shieldUntil>t){
@@ -1050,7 +1099,7 @@ export class Game{
     if(!this.state.rigsbyRescue){state='rescue';count=8;speed=95}
     const frame=this.animationFrame(t,speed,count);
     c.save();c.shadowColor='rgba(15,10,30,.28)';c.shadowBlur=8;c.shadowOffsetY=4;
-    this.drawSprite(this.assets[`rigsby_${state}`],r.x-28,r.y-48,frame,128,96,96,72,this.player.facing<0);
+    this.drawSprite(this.assets[`rigsby_${state}`],r.x-20,r.y-34,frame,128,96,72,54,this.player.facing<0);
     c.restore();
     if(r.sniff){
       c.fillStyle='#fff';c.beginPath();c.arc(r.x+49,r.y-24,7,0,Math.PI*2);c.arc(r.x+62,r.y-38,5,0,Math.PI*2);c.fill();
@@ -1069,7 +1118,7 @@ export class Game{
       c.globalAlpha=.66;c.filter='hue-rotate(145deg) saturate(1.5)';
     }
     const scale=this.state.bossPhase===3?1.12:1;
-    const rw=154*scale,rh=182*scale;
+    const rw=138*scale,rh=164*scale;
     c.shadowColor='rgba(15,8,25,.36)';c.shadowBlur=18;c.shadowOffsetY=8;
     const ok=this.drawSprite(this.assets[`boss_${state}`],b.x+60-rw/2,b.y+b.h-rh,frame,220,260,rw,rh,b.vx<0);
     c.filter='none';c.shadowColor='transparent';
