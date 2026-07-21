@@ -7,8 +7,8 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="format-detection" content="telephone=no">
-  <title>3Dudes1Quest v1.0.8L — Living World Update</title>
-  <link rel="stylesheet" href="css/style.css?v=1.0.8l-living">
+  <title>3Dudes1Quest v1.0.8M — Cinematic Adventure Update</title>
+  <link rel="stylesheet" href="css/style.css?v=1.0.8m-cinematic">
 </head>
 <body>
 <div id="bootSequence" class="bootSequence" aria-live="polite">
@@ -47,7 +47,7 @@
       </div>
       <div class="card titleMenuCard">
         <div class="eyebrow">3DUDES1LIFE CREATIVE PRESENTS</div>
-        <div class="releaseBadge">v1.0.8L • LIVING WORLD UPDATE</div>
+        <div class="releaseBadge">v1.0.8M • CINEMATIC ADVENTURE</div>
         <h1>3Dudes1Quest</h1>
         <h2>Adventure 1: Southern California</h2>
         <p>Lord Beige is draining the color from SoCal. Restore the Prism Beacons, recover every Gay Card, defeat the HOA Queen of Beige, and enter the portal to the next adventure.</p>
@@ -136,10 +136,20 @@
       </div>
 
       <button id="pauseBtn">Ⅱ</button>
-      <button id="journalBtn">📖</button>
+      <button id="journalBtn" aria-label="Open adventure menu">☰</button>
+      <button id="photoBtn" aria-label="Photo mode">📸</button>
       <div id="message"></div>
       <div id="saveToast" class="saveToast">Quest saved ✓</div>
       <div id="bossPhase" class="bossPhase hidden"></div>
+      <div id="cinematicZoneCard" class="cinematicZoneCard hidden" aria-live="polite">
+        <small id="cinematicZoneEyebrow">ADVENTURE 1</small>
+        <strong id="cinematicZoneTitle">HOME BASE</strong>
+        <span id="cinematicZoneSubtitle">THE QUEST BEGINS</span>
+      </div>
+      <div id="petMoment" class="petMoment hidden" aria-live="polite">
+        <span id="petMomentIcon">🐾</span>
+        <div><b id="petMomentTitle">Rigsby found something!</b><small id="petMomentText">Follow the paw prints.</small></div>
+      </div>
       <div id="objectiveCard" class="objectiveCard">
         <small>CURRENT OBJECTIVE</small>
         <strong id="objectiveTitle">Leave Home Base</strong>
@@ -163,10 +173,19 @@
         <button id="dialogueNext">NEXT</button>
       </div>
 
-      <aside id="journal" class="journal hidden" aria-label="Adventure Journal">
+      <aside id="journal" class="journal hidden adventureHub" aria-label="Adventure menu">
         <div class="journalTop">
-          <h2>Adventure Journal</h2>
+          <div>
+            <small class="hubEyebrow">PAUSED</small>
+            <h2>Adventure Menu</h2>
+          </div>
           <div class="journalActions"><button id="saveBtn">SAVE</button><button id="journalClose">✕</button></div>
+        </div>
+        <div class="hubPrimaryActions">
+          <button id="resumeBtn" class="hubPrimary">▶ Resume Adventure</button>
+          <button id="mapBtn">🗺 World Map</button>
+          <button id="passportBtn">📖 Passport</button>
+          <button id="photoHubBtn">📸 Photo Mode</button>
         </div>
         <div class="journalTabs">
           <button data-tab="map" class="active">Map</button>
@@ -174,10 +193,48 @@
           <button data-tab="dudes">The Dudes</button>
           <button data-tab="passport">Passport</button>
           <button data-tab="memories">Memories</button>
-          <button data-tab="secrets">Secrets</button><button data-tab="objectives">Objectives</button>
+          <button data-tab="secrets">Secrets</button>
+          <button data-tab="objectives">Objectives</button>
         </div>
         <div id="journalContent"></div>
       </aside>
+
+      <div id="worldMapOverlay" class="featureOverlay hidden" aria-label="Southern California adventure map">
+        <div class="featurePanel mapPanel">
+          <button id="worldMapClose" class="featureClose">✕</button>
+          <small>ADVENTURE 1</small>
+          <h2>Southern California</h2>
+          <div id="worldMapRoute" class="worldMapRoute"></div>
+          <div id="mapProgressCopy" class="mapProgressCopy"></div>
+        </div>
+      </div>
+
+      <div id="passportOverlay" class="featureOverlay hidden" aria-label="Adventure passport">
+        <div class="featurePanel passportBook">
+          <button id="passportClose" class="featureClose">✕</button>
+          <div class="passportPage">
+            <small>3DUDES1QUEST</small>
+            <h2>Adventure Passport</h2>
+            <div class="passportDestination">
+              <span>01</span>
+              <div><b>SOUTHERN CALIFORNIA</b><small>COLOR RESTORATION EXPEDITION</small></div>
+            </div>
+            <div id="passportStampM" class="passportStampM">
+              <strong>SOCAL</strong><span>IN PROGRESS</span>
+            </div>
+            <div id="passportStatsM" class="passportStatsM"></div>
+          </div>
+        </div>
+      </div>
+
+      <div id="photoMode" class="photoMode hidden" aria-label="Photo mode">
+        <div class="photoModeTop"><b>PHOTO MODE</b><span>HUD hidden • frame the moment</span></div>
+        <div class="photoFrame"></div>
+        <div class="photoModeBottom">
+          <button id="photoCapture">📸 Save Screenshot</button>
+          <button id="photoExit">Return to Game</button>
+        </div>
+      </div>
 
       <div id="touchControls">
         <div class="touchGroup">
@@ -208,7 +265,7 @@
       <div class="portalWrap">
         <div class="portal"></div>
         <div class="portalDudes">
-          <span>W</span><span>D</span><span>C</span><span class="rigsby">🐶</span>
+          <span>W</span><span>D</span><span>C</span><span class="rigsby">🐶</span><span class="zoey">🐶</span>
         </div>
         <h1>Adventure 2</h1>
         <h2>Lake Tahoe</h2>
@@ -217,7 +274,7 @@
       </div>
     </section>
   </main>
-  <script src="js/app108l.js?v=1.0.8l-living"></script>
-  <script src="js/remaster.js?v=1.0.8l-living"></script>
+  <script src="js/app108m.js?v=1.0.8m-cinematic"></script>
+  <script src="js/remaster.js?v=1.0.8m-cinematic"></script>
 </body>
 </html>

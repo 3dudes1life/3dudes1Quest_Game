@@ -1443,3 +1443,278 @@ body.touchDevice #gameCanvas{
 @media(prefers-reduced-motion:reduce){
   .achievementCard{animation:none}
 }
+
+
+/* =========================================================
+   v1.0.8M — Cinematic Adventure Update
+   ========================================================= */
+
+#photoBtn{
+  position:absolute;
+  top:max(72px,calc(env(safe-area-inset-top) + 58px));
+  right:max(14px,calc(env(safe-area-inset-right) + 14px));
+  z-index:24;
+  width:44px;
+  height:44px;
+  border-radius:15px;
+  border:1px solid rgba(255,255,255,.24);
+  background:rgba(18,14,45,.72);
+  color:#fff;
+  backdrop-filter:blur(18px);
+  -webkit-backdrop-filter:blur(18px);
+  box-shadow:0 10px 30px rgba(0,0,0,.3),inset 0 1px rgba(255,255,255,.18);
+}
+
+.cinematicZoneCard{
+  position:absolute;
+  left:50%;
+  top:16%;
+  z-index:22;
+  width:min(560px,72vw);
+  padding:20px 28px 22px;
+  transform:translate(-50%,-20px);
+  text-align:center;
+  color:#fff;
+  border:1px solid rgba(255,255,255,.22);
+  border-radius:24px;
+  background:
+    radial-gradient(circle at 50% 0,rgba(255,79,184,.24),transparent 55%),
+    rgba(12,9,35,.82);
+  box-shadow:0 24px 65px rgba(0,0,0,.42),inset 0 1px rgba(255,255,255,.18);
+  backdrop-filter:blur(20px);
+  -webkit-backdrop-filter:blur(20px);
+  pointer-events:none;
+}
+.cinematicZoneCard.play{animation:zoneCinemaM 2.55s cubic-bezier(.2,.8,.2,1) both}
+.cinematicZoneCard small{display:block;color:#3ce7d2;font-weight:950;letter-spacing:.2em;font-size:11px}
+.cinematicZoneCard strong{display:block;margin:5px 0 2px;font-size:clamp(28px,4vw,50px);font-weight:1000;letter-spacing:.02em;text-shadow:0 7px 30px rgba(255,79,184,.38)}
+.cinematicZoneCard span{font-size:12px;font-weight:900;letter-spacing:.14em;color:rgba(255,255,255,.72)}
+@keyframes zoneCinemaM{
+  0%{opacity:0;transform:translate(-50%,-26px) scale(.94);filter:blur(6px)}
+  15%,72%{opacity:1;transform:translate(-50%,0) scale(1);filter:blur(0)}
+  100%{opacity:0;transform:translate(-50%,14px) scale(1.02);filter:blur(3px)}
+}
+
+.petMoment{
+  position:absolute;
+  z-index:25;
+  left:50%;
+  bottom:150px;
+  width:min(410px,70vw);
+  transform:translateX(-50%);
+  display:flex;
+  align-items:center;
+  gap:14px;
+  padding:13px 18px;
+  border-radius:22px;
+  color:#fff;
+  border:1px solid rgba(255,255,255,.24);
+  background:rgba(20,14,45,.88);
+  box-shadow:0 18px 50px rgba(0,0,0,.38),0 0 28px rgba(255,230,109,.13);
+  backdrop-filter:blur(18px);
+  -webkit-backdrop-filter:blur(18px);
+  pointer-events:none;
+}
+.petMoment.show{animation:petMomentM 2.55s ease both}
+.petMoment>span{font-size:31px}
+.petMoment b,.petMoment small{display:block}
+.petMoment b{font-size:15px}
+.petMoment small{margin-top:2px;color:rgba(255,255,255,.68)}
+@keyframes petMomentM{
+  0%{opacity:0;transform:translate(-50%,18px) scale(.96)}
+  12%,82%{opacity:1;transform:translate(-50%,0) scale(1)}
+  100%{opacity:0;transform:translate(-50%,-10px) scale(.98)}
+}
+
+.adventureHub{
+  width:min(760px,92vw)!important;
+  max-height:min(620px,88dvh);
+  border-radius:28px!important;
+  background:
+    radial-gradient(circle at 14% 0,rgba(255,79,184,.19),transparent 35%),
+    radial-gradient(circle at 90% 15%,rgba(60,231,210,.14),transparent 32%),
+    rgba(15,11,38,.95)!important;
+}
+.hubEyebrow{color:#3ce7d2;font-weight:950;letter-spacing:.2em}
+.hubPrimaryActions{
+  display:grid;
+  grid-template-columns:2fr 1fr 1fr 1fr;
+  gap:10px;
+  padding:4px 0 18px;
+}
+.hubPrimaryActions button{
+  min-height:64px;
+  border-radius:18px;
+  border:1px solid rgba(255,255,255,.18);
+  background:rgba(255,255,255,.075);
+  color:#fff;
+  font-weight:900;
+}
+.hubPrimaryActions .hubPrimary{
+  background:linear-gradient(135deg,#ff4fb8,#8d5cff);
+  box-shadow:0 14px 35px rgba(255,79,184,.24);
+}
+
+.featureOverlay{
+  position:absolute;
+  inset:0;
+  z-index:70;
+  display:grid;
+  place-items:center;
+  padding:24px;
+  background:rgba(6,4,20,.78);
+  backdrop-filter:blur(14px);
+  -webkit-backdrop-filter:blur(14px);
+}
+.featurePanel{
+  position:relative;
+  width:min(900px,94vw);
+  max-height:88dvh;
+  overflow:auto;
+  padding:32px;
+  border-radius:30px;
+  color:#fff;
+  border:1px solid rgba(255,255,255,.2);
+  background:
+    radial-gradient(circle at 20% 0,rgba(255,79,184,.18),transparent 38%),
+    linear-gradient(145deg,rgba(25,18,59,.98),rgba(12,9,32,.98));
+  box-shadow:0 35px 90px rgba(0,0,0,.55);
+}
+.featureClose{
+  position:absolute;
+  top:15px;
+  right:15px;
+  width:42px;height:42px;border-radius:14px;
+  border:1px solid rgba(255,255,255,.18);
+  background:rgba(255,255,255,.08);color:#fff;font-weight:900;
+}
+.mapPanel>small,.passportPage>small{color:#3ce7d2;font-weight:950;letter-spacing:.18em}
+.mapPanel h2,.passportPage h2{font-size:clamp(32px,5vw,58px);margin:4px 0 24px}
+.worldMapRoute{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  min-width:700px;
+  padding:34px 10px 26px;
+}
+.worldMapRoute i{height:4px;flex:1;background:rgba(255,255,255,.14)}
+.mapStop{
+  min-width:110px;
+  text-align:center;
+  opacity:.35;
+}
+.mapStop span{
+  display:grid;place-items:center;
+  width:68px;height:68px;margin:auto auto 10px;
+  border-radius:24px;
+  font-size:30px;
+  background:rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.12);
+}
+.mapStop b,.mapStop small{display:block}
+.mapStop b{font-size:12px}
+.mapStop small{font-size:9px;color:rgba(255,255,255,.55);margin-top:3px}
+.mapStop.reached{opacity:1}
+.mapStop.reached span{background:linear-gradient(145deg,rgba(255,79,184,.3),rgba(60,231,210,.22))}
+.mapStop.active span{box-shadow:0 0 0 5px rgba(255,230,109,.16),0 0 32px rgba(255,230,109,.42);transform:scale(1.08)}
+.mapProgressCopy{text-align:center;font-weight:850;color:rgba(255,255,255,.7)}
+
+.passportBook{
+  width:min(720px,92vw);
+  background:#e7d7bb!important;
+  color:#322437;
+  border:12px solid #3b2551;
+  box-shadow:0 40px 100px rgba(0,0,0,.62),inset 0 0 0 2px rgba(255,255,255,.42);
+}
+.passportPage{
+  padding:24px;
+  border:2px dashed rgba(74,49,67,.28);
+  min-height:470px;
+}
+.passportPage>small{color:#8d3d72}
+.passportDestination{
+  display:flex;align-items:center;gap:16px;
+  border-top:1px solid rgba(70,45,63,.2);
+  border-bottom:1px solid rgba(70,45,63,.2);
+  padding:18px 0;
+}
+.passportDestination>span{font-size:34px;font-weight:1000;color:#8d3d72}
+.passportDestination b,.passportDestination small{display:block}
+.passportDestination small{font-size:10px;letter-spacing:.12em;margin-top:3px}
+.passportStampM{
+  width:210px;height:142px;margin:28px auto;
+  display:grid;place-content:center;text-align:center;
+  border:7px double #9b4d67;border-radius:50%;
+  color:#9b4d67;transform:rotate(-7deg);
+  opacity:.68;
+}
+.passportStampM strong{font-size:40px}
+.passportStampM span{font-weight:1000;letter-spacing:.14em;font-size:11px}
+.passportStampM.complete{color:#297c6e;border-color:#297c6e;opacity:1;animation:stampSlamM .6s cubic-bezier(.15,.9,.2,1.2)}
+@keyframes stampSlamM{0%{transform:rotate(-7deg) scale(2.2);opacity:0}100%{transform:rotate(-7deg) scale(1);opacity:1}}
+.passportStatsM{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.passportStatsM div{padding:14px;text-align:center;background:rgba(255,255,255,.35);border-radius:14px}
+.passportStatsM b,.passportStatsM span{display:block}
+.passportStatsM b{font-size:24px}
+.passportStatsM span{font-size:10px;font-weight:850}
+
+.photoMode{
+  position:absolute;inset:0;z-index:80;
+  pointer-events:none;
+}
+.photoModeTop,.photoModeBottom{
+  position:absolute;left:50%;transform:translateX(-50%);
+  display:flex;align-items:center;gap:12px;
+  padding:10px 15px;border-radius:16px;
+  color:#fff;background:rgba(8,6,24,.72);
+  border:1px solid rgba(255,255,255,.18);
+  backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  pointer-events:auto;
+}
+.photoModeTop{top:max(18px,env(safe-area-inset-top));}
+.photoModeTop span{font-size:11px;color:rgba(255,255,255,.6)}
+.photoModeBottom{bottom:max(22px,env(safe-area-inset-bottom))}
+.photoModeBottom button{border:0;border-radius:12px;padding:10px 14px;font-weight:900}
+.photoFrame{
+  position:absolute;inset:6%;
+  border:1px solid rgba(255,255,255,.42);
+  border-radius:18px;
+  box-shadow:inset 0 0 0 1px rgba(0,0,0,.2);
+}
+.photoModeActive #hud,
+.photoModeActive #pauseBtn,
+.photoModeActive #journalBtn,
+.photoModeActive #photoBtn,
+.photoModeActive #objectiveCard,
+.photoModeActive #touchControls,
+.photoModeActive #message,
+.photoModeActive #bossPhase{opacity:0!important;pointer-events:none!important}
+
+#photoBtn,#photoBtn *,
+.featureOverlay,.featureOverlay *,
+#photoMode,#photoMode *{
+  touch-action:none!important;
+  -webkit-user-select:none!important;
+  user-select:none!important;
+  -webkit-touch-callout:none!important;
+  -webkit-tap-highlight-color:transparent!important;
+}
+
+.portalDudes .zoey{transform:translateY(4px) scale(.9)}
+
+@media(max-width:760px){
+  #photoBtn{top:max(60px,calc(env(safe-area-inset-top) + 50px));width:39px;height:39px}
+  .cinematicZoneCard{top:12%;width:68vw;padding:13px 16px}
+  .cinematicZoneCard strong{font-size:25px}
+  .petMoment{bottom:125px;width:62vw;padding:10px 13px}
+  .hubPrimaryActions{grid-template-columns:1fr 1fr}
+  .hubPrimaryActions .hubPrimary{grid-column:1/-1}
+  .featurePanel{padding:24px 18px}
+  .worldMapRoute{min-width:610px}
+  .passportStatsM{grid-template-columns:1fr 1fr}
+  .photoModeTop span{display:none}
+}
+
+@media(prefers-reduced-motion:reduce){
+  .cinematicZoneCard.play,.petMoment.show,.passportStampM.complete{animation:none}
+}
