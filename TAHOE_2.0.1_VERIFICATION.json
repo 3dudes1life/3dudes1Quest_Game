@@ -1,0 +1,14 @@
+{
+  "release": "2.0.1",
+  "checks": {
+    "node_syntax": true,
+    "html_uses_201": true,
+    "portal": true,
+    "wildlife": true,
+    "zoey": true,
+    "mission": true,
+    "memory_postcard": true,
+    "beetle_teaser": true
+  },
+  "node_stderr": ""
+}

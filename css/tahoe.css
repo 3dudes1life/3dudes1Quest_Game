@@ -71,3 +71,15 @@ button{color:#fff;border:0;font-weight:950;cursor:pointer}
 @media(orientation:portrait) and (max-width:600px){
   #rotateHint{display:block;position:absolute;z-index:30;left:50%;bottom:18px;transform:translateX(-50%);width:90%;padding:12px;text-align:center;border-radius:999px;background:rgba(3,18,29,.92);font-weight:900}
 }
+
+
+/* v2.0.1 — The Arrival */
+.missionReveal{position:absolute;z-index:24;left:50%;top:34%;transform:translate(-50%,-50%);width:min(650px,90vw);padding:25px 30px;text-align:center;border-top:2px solid rgba(255,255,255,.8);border-bottom:2px solid rgba(255,255,255,.8);background:linear-gradient(90deg,transparent,rgba(3,27,38,.92) 18%,rgba(3,27,38,.92) 82%,transparent);text-shadow:0 3px 18px #000;animation:missionIn .65s both}
+.missionReveal small{color:#82efd1;letter-spacing:.28em;font-weight:1000}.missionReveal h2{font-size:clamp(2rem,6vw,4.2rem);margin:.1em 0;color:#fff}.missionReveal p{margin:.25em 0;color:#ffe899;font-weight:850}
+@keyframes missionIn{from{opacity:0;transform:translate(-50%,-40%) scale(.92)}to{opacity:1;transform:translate(-50%,-50%) scale(1)}}
+.cinematicCaption{position:absolute;z-index:23;left:50%;bottom:28px;transform:translateX(-50%);width:min(760px,92vw);display:grid;grid-template-columns:1fr auto;gap:4px 18px;padding:15px 18px;border-radius:18px;background:rgba(3,21,33,.88);border:1px solid rgba(255,255,255,.5);backdrop-filter:blur(10px)}
+.cinematicCaption small{grid-column:1;color:#77eccd;letter-spacing:.2em;font-weight:1000}.cinematicCaption strong{font-size:1.05rem}.cinematicCaption button{grid-column:2;grid-row:1/3;padding:9px 15px;border-radius:999px;background:#3a5871}
+.photoFrame{position:absolute;z-index:27;inset:0;display:grid;place-items:center;background:rgba(255,255,255,.88);animation:flashAway 1.8s both;pointer-events:none}.postcard{width:min(680px,86vw);height:min(420px,65vh);display:flex;flex-direction:column;justify-content:flex-end;padding:28px;border:13px solid #fff;background:linear-gradient(180deg,rgba(48,170,209,.2),rgba(20,79,76,.6)),radial-gradient(circle at 70% 15%,#fff4b0 0 7%,transparent 8%),linear-gradient(160deg,#83d7eb 0 45%,#2e9db6 46% 63%,#557658 64%);box-shadow:0 25px 90px rgba(0,0,0,.55);transform:rotate(-1deg);color:white;text-shadow:0 3px 10px #000}
+.postcard small{letter-spacing:.25em;font-weight:1000}.postcard strong{font-size:clamp(2.4rem,7vw,5rem);line-height:.9}.postcard p{font-size:1.05rem;font-weight:800}
+@keyframes flashAway{0%{opacity:0}8%{opacity:1}72%{opacity:1}100%{opacity:0}}
+@media(max-height:520px){.cinematicCaption{bottom:8px;padding:9px 13px}.missionReveal{top:30%;padding:13px}.photoFrame .postcard{height:75vh;padding:16px}.postcard strong{font-size:2.5rem}}

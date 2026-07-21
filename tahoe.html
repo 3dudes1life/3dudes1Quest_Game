@@ -6,8 +6,8 @@
   <meta name="theme-color" content="#071b28">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <title>3Dudes1Quest v2.0.0 — Adventure 2: Lake Tahoe</title>
-  <link rel="stylesheet" href="css/tahoe.css?v=2.0.0">
+  <title>3Dudes1Quest v2.0.1 — Adventure 2: Lake Tahoe</title>
+  <link rel="stylesheet" href="css/tahoe.css?v=2.0.1">
 </head>
 <body>
   <main id="tahoeApp">
@@ -28,8 +28,18 @@
       <h1>Lake Tahoe</h1>
       <h2>Save Our Secret Place</h2>
       <p>Walk the peaceful lakeshore, find the first Tahoe Memory, and reach the trailhead.</p>
-      <button id="beginTahoe">Begin at Lake Level</button>
+      <button id="beginTahoe">Enter the Portal</button>
     </section>
+
+
+    <section id="missionCard" class="missionReveal hidden" aria-live="polite">
+      <small>NEW MISSION</small><h2>Save Our Secret Place</h2>
+      <p>The Pine Beetle is spreading. Reach the trailhead.</p>
+    </section>
+
+    <section id="cinematicCaption" class="cinematicCaption hidden"><small>ADVENTURE 2</small><strong id="cinematicText">The portal is opening...</strong><button id="skipCinematic">SKIP</button></section>
+
+    <section id="photoFrame" class="photoFrame hidden"><div class="postcard"><small>LAKE TAHOE</small><strong>Sixteen Summers</strong><p>Some places become part of your family.</p></div></section>
 
     <section id="dialogue" class="dialogue hidden" aria-live="polite">
       <img id="dialoguePortrait" src="assets/portraits/will.png" alt="">
@@ -48,9 +58,9 @@
     </section>
 
     <section id="trailheadCard" class="trailheadCard hidden" aria-live="polite">
-      <small>FOUNDATION PREVIEW COMPLETE</small>
+      <small>THE ARRIVAL COMPLETE</small>
       <h2>The Trail Begins Here</h2>
-      <p>The forest grows darker beyond this point. The Pine Beetle is waiting farther up the mountain.</p>
+      <p>A beetle disappears beneath the bark of a dying pine. Something is spreading through the forest.</p>
       <button id="replayTahoe">Explore Again</button>
       <a href="index.html">Return to Title</a>
     </section>
@@ -82,6 +92,6 @@
 
     <div id="rotateHint">Rotate your device for the full Tahoe view 🌲</div>
   </main>
-  <script src="js/tahoe200.js?v=2.0.0"></script>
+  <script src="js/tahoe201.js?v=2.0.1"></script>
 </body>
 </html>
