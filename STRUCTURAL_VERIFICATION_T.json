@@ -1,0 +1,11 @@
+{
+  "version": true,
+  "index_script": true,
+  "old_marker_cracks_removed": true,
+  "branching_fractures": true,
+  "post_rescue_repair": true,
+  "legacy_s": true,
+  "single_zoey": true,
+  "rigsby_follow": true,
+  "syntax": true
+}

@@ -1,11 +1,8 @@
-# Upload 1.0.8S
+# Upload 1.0.8T
 
-This is a full-repository ZIP. Replace the repository contents with this package.
+Full repository ZIP. Replace the repository contents.
 
-Critical runtime files:
-
-- `index.html`
-- `css/style.css`
-- `js/app108s.js`
-
-The HTML already references `app108s.js`.
+Runtime files:
+- index.html
+- css/style.css
+- js/app108t.js
