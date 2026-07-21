@@ -771,3 +771,10 @@ body{
 .bootSequence.isHidden{opacity:0!important;visibility:hidden!important;pointer-events:none!important}
 .enterQuest.isReady{display:block!important;cursor:pointer!important}
 #titleScreen.active,#gameScreen.active,#helpScreen.active,#completeScreen.active,#portalScreen.active{display:flex}
+
+/* v1.0.8B complete campaign polish */
+#bossPhase{position:absolute;top:72px;left:50%;transform:translateX(-50%);z-index:45;padding:10px 24px;border-radius:999px;background:linear-gradient(90deg,#a99480,#e9dccb,#a99480);color:#3d3130;font-weight:950;letter-spacing:.08em;box-shadow:0 16px 42px rgba(0,0,0,.34)}
+#gameCanvas{image-rendering:auto!important}
+.routeProgress{min-width:270px}
+.objectiveCard{backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.13);box-shadow:0 18px 45px rgba(0,0,0,.28)}
+@media(max-width:760px){.routeProgress{min-width:170px}.objectiveCard{max-width:290px}}

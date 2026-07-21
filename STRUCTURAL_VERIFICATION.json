@@ -1,0 +1,8 @@
+{
+  "five_zones": true,
+  "six_cards": true,
+  "three_beacons": true,
+  "boss_gate": true,
+  "portal_after_boss": true,
+  "lake_tahoe_only_after_complete": true
+}

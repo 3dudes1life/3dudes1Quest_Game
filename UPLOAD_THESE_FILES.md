@@ -1,10 +1,18 @@
-# v1.0.8V Self-Contained Playable Patch
+# 3Dudes1Quest v1.0.8B — Complete Southern California Campaign
 
-Upload and replace:
+Upload and replace only these files:
 
-- index.html
-- css/style.css
-- js/app108.js (new)
-- js/remaster.js
+- `index.html`
+- `css/style.css`
+- `js/app108b.js` (new)
+- `UPLOAD_THESE_FILES.md` (optional)
 
-The old module scripts remain in the repository but are no longer loaded. This version bundles the configuration, UI, controls, game engine, save logic, and startup into one browser script so a missing module or cache mismatch cannot strand the loading screen. The boot screen now also auto-dismisses.
+The updated index no longer loads `app108.js`.
+
+Adventure 1 route:
+Home Base → Hillcrest → PCH → Hollywood → Los Angeles → Queen of Beige → Lake Tahoe portal.
+
+Portal requirements:
+- 6/6 Gay Cards
+- 3/3 Prism Beacons
+- Queen of Beige defeated
