@@ -353,7 +353,7 @@ export class Game{
       const enemiesClear=!this.enemies.some(e=>e.alive&&e.x>=z.start&&e.x<z.end);
       let condition=false;
       if(z.id==='home')condition=this.cards[0]?.collected&&this.beacons[0]?.active;
-      if(z.id==='beach')condition=enemiesClear&&this.beacons[1]?.active;
+      if(z.id==='hillcrest')condition=enemiesClear&&this.beacons[1]?.active;
       if(z.id==='pch')condition=enemiesClear&&this.beacons[2]?.active;
       if(z.id==='la')condition=enemiesClear&&this.state.cards===CONFIG.requiredCards;
       if(condition){
@@ -402,10 +402,11 @@ export class Game{
     }
     const f=this.state.storyFlags;
     const banter=[
-      [1180,'banter1','Caleb','Do you think beach calories count?'],
-      [1900,'banter2','Will','Only if the seagull sees you eat them.'],
-      [3000,'banter3','Daniel','Stay positive. We are almost through traffic.'],
-      [3700,'banter4','Caleb','That sentence has never been true in Los Angeles.']
+      [1180,'banter1','Caleb','If brunch is still beige, I am filing a complaint.'],
+      [1780,'banter2','Will','Hillcrest without color is deeply offensive.'],
+      [2750,'banter3','Daniel','The ocean is returning. Keep moving together.'],
+      [3350,'banter4','Caleb','Do coastal calories count if the seagulls approve?'],
+      [3970,'banter5','Will','Los Angeles is next. Let’s make it dramatic.']
     ];
     for(const [x,key,name,line] of banter){
       if(this.player.x>x&&!f[key]){f[key]=true;this.dispatchDialogue(name,line)}
@@ -434,9 +435,9 @@ export class Game{
     const x=this.player.x;
     if(x>120&&!f.home){f.home=true;this.dispatchDialogue('Will','Okay, team—SoCal is losing color, and beige is absolutely not our season.')}
     if(x>520&&!f.rigsby){f.rigsby=true;this.dispatchDialogue('Rigsby','WOOF! (Translation: I found the first trail of Prism energy.)')}
-    if(x>980&&!f.beach){f.beach=true;this.dispatchDialogue('Daniel','I can feel the Prism nearby. Spread positivity to clear the path!')}
-    if(x>2250&&!f.neighborhood){f.neighborhood=true;this.dispatchDialogue('Caleb','Cookie traps are armed. This neighborhood is about to get crumbs everywhere.')}
-    if(x>3150&&!f.freeway){f.freeway=true;this.dispatchDialogue('Will','The I-5? Lord Beige really is evil.')}
+    if(x>980&&!f.hillcrest){f.hillcrest=true;this.dispatchDialogue('Daniel','Hillcrest should never be beige. Spread positivity and bring the rainbow back!')}
+    if(x>2250&&!f.pchStart){f.pchStart=true;this.dispatchDialogue('Caleb','Hillcrest restored. Cookie traps are packed. Next stop: the coast!')}
+    if(x>3150&&!f.freeway){f.freeway=true;this.dispatchDialogue('Will','PCH traffic and beige energy? Lord Beige really is evil.')}
     if(x>4020&&!f.la){f.la=true;this.dispatchDialogue('Daniel','Los Angeles is almost completely drained. Stay together.')}
   }
 

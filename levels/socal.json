@@ -1,14 +1,15 @@
 {
-  "name": "Southern California",
-  "version": "0.9.2V",
-  "status": "Playtest candidate",
-  "zones": 4,
-  "restorationMissions": [
+  "name": "The Southern California Road Trip",
+  "version": "0.9.2.1V",
+  "status": "Route-locked playtest candidate",
+  "route": [
     "Home Base",
-    "Beach Rescue",
-    "PCH Repair",
-    "Los Angeles"
+    "Hillcrest",
+    "Pacific Coast Highway",
+    "Los Angeles",
+    "HOA Queen of Beige"
   ],
+  "zones": 4,
   "collectibles": {
     "gayCards": 6,
     "prismBeacons": 3,
@@ -16,11 +17,7 @@
     "chaosBowls": 1,
     "souvenirs": 1
   },
-  "boss": {
-    "name": "HOA Queen of Beige",
-    "phases": 3,
-    "telegraphedAttacks": true
-  },
+  "nextAdventure": "Lake Tahoe",
   "music": "Deferred",
-  "nextStep": "User bug playtest"
+  "nextStep": "User playtest and bug report"
 }

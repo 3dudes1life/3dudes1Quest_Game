@@ -1,11 +1,10 @@
-# v0.9.2
-- Rebuilt Level 1 around four restoration missions.
-- Added visible zone restoration.
-- Added objective HUD and Journal mission tracking.
-- Expanded platform routes and secrets.
-- Differentiated enemy movement.
-- Strengthened all three heroes.
-- Added one-time Rigsby rescue.
-- Improved checkpoint rewards.
-- Added boss attack telegraphs.
-- Expanded completion scoring for playtesting.
+# Changelog
+
+## v0.9.2.1V
+- Locked the final Level 1 road-trip order.
+- Added Hillcrest as a major zone.
+- Merged Beach into Pacific Coast Highway.
+- Updated zone boundaries and mission requirements.
+- Rewrote NPC dialogue and character banter.
+- Updated selfie memories and secret souvenir.
+- Updated route HUD, opening cutscene, Adventure Journal, and save version.

@@ -42,24 +42,31 @@ export const SOCAL_LEVEL = {
     {x:4200,y:560,type:'beigeBot'}
   ],
   npcs: [
-    {x:610,y:550,name:'Neighbor',line:'Something drained the color from every yard overnight. Even the flamingos are beige!'},
-    {x:1480,y:520,name:'Beach Local',line:'The ocean is fighting back. Restore the Prism Beacon and the waves should brighten.'},
-    {x:2380,y:550,name:'Taco Oracle',line:'Three beacons. Six Gay Cards. One deeply unpleasant HOA Queen.'},
-    {x:4050,y:550,name:'LA Local',line:'She took the murals first. Please bring the city back.'}
-  ],
-  zones:[
-    {id:'home',name:'Home Base',start:0,end:950,objective:'Recover the neighborhood color trail.',detail:'Collect the first Gay Card and restore Beacon 1.',checkpoint:760},
-    {id:'beach',name:'Beach Rescue',start:950,end:2220,objective:'Save the beach from the Beige Brigade.',detail:'Clear the beach enemies and restore Beacon 2.',checkpoint:2040},
-    {id:'pch',name:'PCH Repair',start:2220,end:3890,objective:'Reopen the road to Hollywood.',detail:'Clear traffic enemies and restore Beacon 3.',checkpoint:3510},
-    {id:'la',name:'Los Angeles',start:3890,end:4510,objective:'Restore the final LA mural.',detail:'Clear the last enemies and collect every Gay Card.',checkpoint:4380}
-  ],
-  souvenirs:[
-    {x:1795,y:215,title:'Secret Rooftop Flamingo',icon:'🦩'}
+    {
+      x:610,y:550,name:'Neighbor',
+      line:'The whole neighborhood turned beige overnight. Even the flamingos look emotionally unavailable.'
+    },
+    {
+      x:1260,y:550,name:'Hillcrest Local',
+      line:'She drained the rainbow crosswalk first. Honestly, that felt personal.'
+    },
+    {
+      x:1900,y:520,name:'Café Regular',
+      line:'The Beige Brigade shut down brunch. This is officially a crisis.'
+    },
+    {
+      x:2870,y:550,name:'Coastal Local',
+      line:'PCH is blocked ahead. Restore the Prism Beacon and bring the ocean color back.'
+    },
+    {
+      x:4050,y:550,name:'LA Local',
+      line:'She took the murals and the skyline. Please make Los Angeles loud again.'
+    }
   ],
   selfieSpots:[
-    {x:860,y:540,title:'Beach Day Energy',icon:'🏖️'},
-    {x:2860,y:520,title:'Pacific Coast Slay',icon:'🚗'},
-    {x:3920,y:520,title:'Hollywood Dudes',icon:'🎬'}
+    {x:1480,y:520,title:'Hillcrest Rainbow Crosswalk',icon:'🌈'},
+    {x:2860,y:520,title:'Pacific Coast Slay',icon:'🌊'},
+    {x:4020,y:520,title:'Los Angeles in Color',icon:'🎬'}
   ],
   chaosBowls:[
     {x:3360,y:535,title:'Super Jump Chaos',modifier:'superJump'}

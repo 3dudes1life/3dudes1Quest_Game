@@ -15,7 +15,7 @@ game=new Game(canvas,ui,input,state=>{
   ui.show('complete');
 });
 
-const SAVE_KEY='3dudes1quest-save-v092';
+const SAVE_KEY='3dudes1quest-save-v0921';
 const continueBtn=document.getElementById('continueBtn');
 const saveStatus=document.getElementById('saveStatus');
 const saveToast=document.getElementById('saveToast');
@@ -39,8 +39,8 @@ function saveQuest(){
 document.getElementById('startBtn').onclick=()=>{
   localStorage.removeItem(SAVE_KEY);refreshSaveUI();ui.show('game');game.start();
   playCutscene([
-    {title:'Southern California',text:'A strange beige wave is draining the color from the coast.'},
-    {title:'The Mission',text:'Recover six Gay Cards, awaken three Prism Beacons, and restore Los Angeles.'},
+    {title:'The Southern California Road Trip',text:'A strange beige wave is draining the color from Home Base, Hillcrest, the coast, and Los Angeles.'},
+    {title:'The Route',text:'Travel from Home Base through Hillcrest and Pacific Coast Highway before confronting the HOA Queen in Los Angeles.'},
     {title:'Triangle of Support',text:'Switch between Will, Daniel, and Caleb. Together, their power is stronger.'}
   ]);
 };
@@ -79,10 +79,14 @@ const journalContent=document.getElementById('journalContent');
 function renderJournal(tab='map'){
   document.querySelectorAll('.journalTabs button').forEach(b=>b.classList.toggle('active',b.dataset.tab===tab));
   if(tab==='map'){
-    journalContent.innerHTML=`<div class="journalPage"><h3>Southern California Route</h3><div class="route">
-      <div>🏠<br>Home</div><div>🌴<br>Neighborhood</div><div>🏖️<br>Beach</div>
-      <div>🚗<br>PCH / I-5</div><div>🎬<br>Hollywood</div><div>🌆<br>Los Angeles</div>
-    </div><p>Restore every Prism Beacon before confronting the HOA Queen of Beige.</p></div>`;
+    journalContent.innerHTML=`<div class="journalPage"><h3>The Southern California Road Trip</h3><div class="route">
+      <div>🏠<br>Home Base</div>
+      <div>🌈<br>Hillcrest</div>
+      <div>🌊<br>Pacific Coast Highway</div>
+      <div>🎬<br>Los Angeles</div>
+      <div>👑<br>HOA Queen</div>
+      <div>🌀<br>Lake Tahoe Portal</div>
+    </div><p>Restore color from Escondido to Los Angeles before entering the Rainbow Portal.</p></div>`;
   }
   if(tab==='cards'){
     const found=game?.state.cards||0;
@@ -99,9 +103,9 @@ function renderJournal(tab='map'){
   }
   if(tab==='memories'){
     const memories=game?.state.memories||[];
-    const all=['Beach Day Energy','Pacific Coast Slay','Hollywood Dudes'];
+    const all=['Hillcrest Rainbow Crosswalk','Pacific Coast Slay','Los Angeles in Color'];
     journalContent.innerHTML=`<div class="journalPage"><h3>Travel Memories</h3><div class="memoryGrid">${
-      all.map((m,i)=>`<div class="memory ${memories.includes(m)?'unlocked':''}"><span class="icon">${['🏖️','🚗','🎬'][i]}</span>${memories.includes(m)?m:'Undiscovered Selfie Spot'}</div>`).join('')
+      all.map((m,i)=>`<div class="memory ${memories.includes(m)?'unlocked':''}"><span class="icon">${['🌈','🌊','🎬'][i]}</span>${memories.includes(m)?m:'Undiscovered Selfie Spot'}</div>`).join('')
     }</div></div>`;
   }
   if(tab==='secrets'){

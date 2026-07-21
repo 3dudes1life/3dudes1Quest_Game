@@ -38,7 +38,7 @@ export function createUI(){
     const progress=Math.max(0,Math.min(100,((state.playerX||0)/4900)*100));
     refs.routeFill.style.width=`${progress}%`;
     const x=state.playerX||0;
-    refs.routeLabel.textContent=x<650?'HOME':x<1600?'BEACH':x<2750?'PCH':x<3650?'HOLLYWOOD':x<4510?'LOS ANGELES':'BOSS';
+    refs.routeLabel.textContent=x<950?'HOME BASE':x<2450?'HILLCREST':x<3890?'PCH':x<4510?'LOS ANGELES':'BOSS';
     if(state.currentObjective){
       refs.objectiveTitle.textContent=state.currentObjective.title;
       refs.objectiveDetail.textContent=state.currentObjective.detail;
