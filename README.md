@@ -1,24 +1,22 @@
-# 3Dudes1Quest v0.9.2.1V — Final Route Lock
+# 3Dudes1Quest v0.9.2.2V — Uninterrupted Playtest Fix
 
-This build changes the first adventure into a clear Southern California road trip:
+This patch fixes the intrusive dialogue behavior discovered during the first mobile playtest.
 
-1. Home Base
-2. Hillcrest
-3. Pacific Coast Highway
-4. Los Angeles
-5. HOA Queen of Beige
+## Fixed
+- Character banter no longer pauses gameplay.
+- Removed the giant full-width dialogue interruption.
+- Removed the mandatory NEXT button.
+- Removed the PAUSED overlay caused by spontaneous quotes.
+- Quotes now appear as compact non-blocking banter bubbles.
+- Banter automatically disappears after enough time to read it.
+- Multiple quotes queue instead of overlapping or being lost.
+- Movement, jumping, fighting, and switching characters continue normally.
+- Closing the Adventure Journal reliably resumes gameplay.
+- Added a dedicated v0.9.2.2V save slot.
 
-## Changes
-- Removed Beach as a separate restoration zone.
-- Folded beach and ocean gameplay into Pacific Coast Highway.
-- Added Hillcrest as a full personality-driven zone.
-- Updated objectives, checkpoints, NPCs, dialogue, banter, memories, and journal map.
-- Added Hillcrest Rainbow Crosswalk selfie memory.
-- Added Hillcrest Pride Flamingo secret souvenir.
-- Updated the opening cutscene and route HUD.
-- Added a dedicated v0.9.2.1V save slot.
-- Preserved all v0.9.2 gameplay systems and boss mechanics.
-- Music remains deferred.
+## What still pauses the game
+- Manual pause button
+- Adventure Journal
+- Opening and ending cutscenes
 
-## Playtest route
-Home Base → Hillcrest → Pacific Coast Highway → Los Angeles → HOA Queen → Rainbow Portal
+The sass remains. The interruption does not.

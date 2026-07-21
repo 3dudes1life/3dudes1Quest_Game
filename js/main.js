@@ -15,7 +15,7 @@ game=new Game(canvas,ui,input,state=>{
   ui.show('complete');
 });
 
-const SAVE_KEY='3dudes1quest-save-v0921';
+const SAVE_KEY='3dudes1quest-save-v0922';
 const continueBtn=document.getElementById('continueBtn');
 const saveStatus=document.getElementById('saveStatus');
 const saveToast=document.getElementById('saveToast');
@@ -59,20 +59,36 @@ const dialogueBox=document.getElementById('dialogueBox');
 const dialogueName=document.getElementById('dialogueName');
 const dialogueText=document.getElementById('dialogueText');
 const dialogueNext=document.getElementById('dialogueNext');
-let dialogueOpen=false;
 
-window.addEventListener('quest-dialogue',e=>{
-  dialogueName.textContent=e.detail.name;
-  dialogueText.textContent=e.detail.text;
-  dialogueBox.classList.remove('hidden');
-  dialogueOpen=true;
-  if(game) game.state.paused=true;
-});
-dialogueNext.onclick=()=>{
+const dialogueQueue=[];
+let dialogueOpen=false;
+let dialogueTimer=null;
+
+function hideBanter(){
+  clearTimeout(dialogueTimer);
   dialogueBox.classList.add('hidden');
   dialogueOpen=false;
-  if(game) game.state.paused=false;
-};
+  dialogueTimer=setTimeout(showNextBanter,180);
+}
+
+function showNextBanter(){
+  if(dialogueOpen||!dialogueQueue.length)return;
+  const next=dialogueQueue.shift();
+  dialogueName.textContent=next.name;
+  dialogueText.textContent=next.text;
+  dialogueBox.classList.remove('hidden');
+  dialogueOpen=true;
+
+  // Banter is flavor, not a cutscene: gameplay always continues.
+  dialogueTimer=setTimeout(hideBanter,Math.min(4800,2600+next.text.length*18));
+}
+
+window.addEventListener('quest-dialogue',e=>{
+  dialogueQueue.push(e.detail);
+  showNextBanter();
+});
+
+dialogueNext.onclick=hideBanter;
 
 const journal=document.getElementById('journal');
 const journalContent=document.getElementById('journalContent');
@@ -130,7 +146,7 @@ document.getElementById('journalBtn').onclick=()=>{
   journal.classList.remove('hidden');renderJournal('map');if(game)game.state.paused=true;
 };
 document.getElementById('journalClose').onclick=()=>{
-  journal.classList.add('hidden');if(game&&!dialogueOpen)game.state.paused=false;
+  journal.classList.add('hidden');if(game)game.state.paused=false;
 };
 document.querySelectorAll('.journalTabs button').forEach(b=>b.onclick=()=>renderJournal(b.dataset.tab));
 
