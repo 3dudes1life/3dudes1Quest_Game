@@ -1,28 +1,18 @@
-# 3Dudes1Quest v1.0.2V — Phase 2 HD Environment Art Pass
+# 3Dudes1Quest v1.0.2V — Phase 3 Lighting & Effects
 
-Phase 2 rebuilds the entire Southern California road trip around the HD character system from Phase 1.
+This patch adds the premium lighting and effects pass on top of the Phase 2 environment build.
 
-## Custom environments
+## New presentation systems
+- Dynamic lighting by route zone
+- Sun shafts and environmental glow
+- Cinematic vignette
+- Prism restoration atmosphere
+- Damage flashes and camera shake
+- Boss phase lighting transitions
+- Ability-specific bloom and particles
+- Cinematic Triangle of Support ultimate
 
-### Home Base
-House, deck, pool, plumerias, hills, chickens, moving pool shimmer, and warm morning light.
+## Patch install
+Upload the files and folders in this patch over the matching files in the existing Phase 2 repository.
 
-### Hillcrest
-Colorful storefronts, Pride flags, rainbow crosswalk, café seating, mural art, neon pulse, and drifting confetti.
-
-### Pacific Coast Highway
-Layered ocean, cliffs, roadway, palms, moving wave highlights, sun glare, and animated seabirds.
-
-### Los Angeles
-Detailed skyline, atmospheric haze, lit windows, streetlights, billboards, and moving traffic light streaks.
-
-### HOA Queen Arena
-Beige fortress, oversized HOA seal, dramatic spotlights, arena floor, and floating beige dust.
-
-## Rendering upgrades
-- Custom background artwork for every zone
-- Separate foreground overlays
-- Parallax depth
-- Zone-specific lighting and color grading
-- Environmental animations
-- Existing HD character animations fully retained
+No unchanged Phase 1 or Phase 2 assets are included.

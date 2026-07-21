@@ -140,3 +140,32 @@ canvas{image-rendering:auto!important;filter:saturate(1.12) contrast(1.035) brig
 /* Phase 2 — HD Southern California environments */
 canvas{filter:saturate(1.16) contrast(1.04) brightness(1.015)}
 .gameShell{box-shadow:0 35px 90px rgba(20,8,45,.34),0 0 0 1px rgba(255,255,255,.08)}
+
+/* Phase 3 — Lighting & Effects */
+canvas{
+  filter:saturate(1.2) contrast(1.055) brightness(1.02);
+  transition:filter .25s ease;
+}
+.gameShell{
+  position:relative;
+  overflow:hidden;
+  box-shadow:
+    0 40px 100px rgba(18,7,42,.42),
+    0 0 70px rgba(255,79,184,.10),
+    inset 0 0 0 1px rgba(255,255,255,.08);
+}
+.gameShell::after{
+  content:"";
+  pointer-events:none;
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(115deg,rgba(255,255,255,.045),transparent 28%),
+    radial-gradient(circle at 50% -10%,rgba(255,255,255,.08),transparent 42%);
+  mix-blend-mode:screen;
+}
+.releaseBadge{
+  box-shadow:
+    0 10px 35px rgba(255,79,184,.2),
+    0 0 24px rgba(60,231,210,.1);
+}

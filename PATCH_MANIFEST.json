@@ -1,0 +1,25 @@
+{
+  "release": "v1.0.2V Phase 3",
+  "type": "incremental patch",
+  "requires": "v1.0.2V Phase 2",
+  "overwrite": [
+    "index.html",
+    "css/style.css",
+    "js/game.js",
+    "js/config.js",
+    "js/input.js",
+    "js/level.js",
+    "js/main.js",
+    "js/ui.js",
+    "VERSION.txt",
+    "README.md",
+    "CHANGELOG.md"
+  ],
+  "new_files": [
+    "assets/effects/beige_bloom.png",
+    "assets/effects/cookie_bloom.png",
+    "assets/effects/prism_bloom.png",
+    "assets/effects/rainbow_bloom.png",
+    "assets/effects/shield_bloom.png"
+  ]
+}
