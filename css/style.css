@@ -2000,3 +2000,7 @@ body.touchDevice #gameCanvas{
 #gameCanvas{
   filter:saturate(1.04) contrast(1.02);
 }
+
+/* v1.0.8T Finale UX Remaster */
+#gameCanvas{filter:saturate(1.06) contrast(1.025) brightness(1.01)}
+#bossPhase{backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
