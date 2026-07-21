@@ -1754,3 +1754,61 @@ body.touchDevice #gameCanvas{
     font-size:.88em;
   }
 }
+
+
+/* =========================================================
+   v1.0.8O — Boss Input & Graphics Update
+   ========================================================= */
+
+#bossPhase{
+  overflow:hidden;
+  background:
+    linear-gradient(90deg,rgba(215,198,176,.95),rgba(157,136,119,.92));
+  border:1px solid rgba(255,255,255,.55);
+  box-shadow:
+    inset 0 1px rgba(255,255,255,.55),
+    0 10px 30px rgba(0,0,0,.38),
+    0 0 32px rgba(215,198,176,.14);
+}
+
+#bossPhase::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    repeating-linear-gradient(115deg,transparent 0 18px,rgba(255,255,255,.08) 18px 20px);
+  animation:bossBarSheenO 3.4s linear infinite;
+  pointer-events:none;
+}
+
+@keyframes bossBarSheenO{
+  from{transform:translateX(-12%)}
+  to{transform:translateX(12%)}
+}
+
+#dialogueBox{
+  border-color:rgba(255,230,109,.28);
+  background:
+    radial-gradient(circle at 12% 20%,rgba(255,79,184,.14),transparent 30%),
+    linear-gradient(145deg,rgba(14,10,38,.97),rgba(8,6,25,.98));
+  box-shadow:
+    0 24px 70px rgba(0,0,0,.58),
+    inset 0 1px rgba(255,255,255,.12),
+    0 0 35px rgba(141,92,255,.12);
+}
+
+#dialogueNext:focus-visible,
+#pauseBtn:focus-visible,
+#journalBtn:focus-visible{
+  outline:3px solid #ffe66d;
+  outline-offset:3px;
+}
+
+/* Buttons should never retain a hidden Space-trigger focus state during play. */
+#gameScreen:not(:has(.journal:not(.hidden))):not(:has(.dialogue:not(.hidden))) button{
+  -webkit-tap-highlight-color:transparent;
+}
+
+@media(prefers-reduced-motion:reduce){
+  #bossPhase::before{animation:none}
+}
