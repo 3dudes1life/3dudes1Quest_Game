@@ -1,5 +1,5 @@
-import {CONFIG,DUDES} from './config.js?v=1.0.4';
-import {SOCAL_LEVEL} from './level.js?v=1.0.4';
+import {CONFIG,DUDES} from './config.js?v=1.0.5';
+import {SOCAL_LEVEL} from './level.js?v=1.0.5';
 
 export class Game{
   constructor(canvas,ui,input,onComplete){
@@ -38,7 +38,7 @@ export class Game{
       boss_attack:'assets/sprites_hd/hoa_queen_attack.png',
       boss_rage:'assets/sprites_hd/hoa_queen_rage.png',
       boss_defeat:'assets/sprites_hd/hoa_queen_defeat.png',
-      env_home:'assets/environments/home_base_hd.png',
+      env_home:'assets/environments/home_base_remastered.svg',
       env_hillcrest:'assets/environments/hillcrest_hd.png',
       env_pch:'assets/environments/pch_hd.png',
       env_la:'assets/environments/los_angeles_hd.png',
@@ -145,7 +145,7 @@ export class Game{
 
   getSaveData(){
     return {
-      version:'1.0.4V',
+      version:'1.0.5V',
       player:{x:this.player.x,y:this.player.y,checkpoint:this.player.checkpoint},
       state:{
         health:this.state.health,cards:this.state.cards,beacons:this.state.beacons,
@@ -444,6 +444,7 @@ export class Game{
 
     for(const z of this.zones){
       if(z.complete)continue;
+      if(this.currentEnvironment()==='home'&&z.start<1150)continue;
       const enemiesClear=!this.enemies.some(e=>e.alive&&e.x>=z.start&&e.x<z.end);
       let condition=false;
       if(z.id==='home')condition=this.cards[0]?.collected&&this.beacons[0]?.active;
@@ -550,16 +551,40 @@ export class Game{
   }
 
   draw(t){
-    const c=this.ctx;c.clearRect(0,0,CONFIG.width,CONFIG.height);
-    this.drawBackground(t);
-    this.drawEnvironmentLayer(t);
-    this.drawParallax(t);
-    this.drawEnvironmentalAnimation(t);
-    
-    this.drawPrismAtmosphere(t);
-    this.drawAmbient(t);c.save();c.translate(-this.cameraX,0);this.drawWorld(t);this.drawPlayer(t);c.restore();
+    const c=this.ctx;
+    const vw=this.viewportWidth();
+    const vh=this.viewportHeight();
+    c.clearRect(0,0,vw,vh);
+
+    const env=this.currentEnvironment();
+
+    if(env==='home'){
+      // Level 1 uses one cohesive environment. No stacked legacy background,
+      // parallax mountain, foreground PNG, weather wash, or generic palm layers.
+      this.drawEnvironmentLayer(t);
+      this.drawHomeAtmosphere(t);
+    }else{
+      this.drawBackground(t);
+      this.drawEnvironmentLayer(t);
+      this.drawParallax(t);
+      this.drawEnvironmentalAnimation(t);
+      this.drawLivingWorld(t);
+      this.drawPrismAtmosphere(t);
+      this.drawAmbient(t);
+    }
+
+    c.save();
+    c.translate(-this.cameraX,0);
+    this.drawWorld(t);
+    this.drawPlayer(t);
+    c.restore();
+
     if(this.state.bossActive&&this.boss.alive)this.drawBossHud();
-    if(this.state.paused){c.fillStyle='rgba(8,5,24,.72)';c.fillRect(0,0,CONFIG.width,CONFIG.height);this.text('PAUSED',CONFIG.width/2,CONFIG.height/2,64,'#fff','center')}
+    if(this.state.paused){
+      c.fillStyle='rgba(8,5,24,.72)';
+      c.fillRect(0,0,vw,vh);
+      this.text('PAUSED',vw/2,vh/2,64,'#fff','center');
+    }
   }
 
   drawBackground(t){
@@ -629,8 +654,8 @@ export class Game{
     const c=this.ctx,key=this.currentEnvironment();
     c.save();
 
-    if(key==='home'){
-      // butterflies
+    if(key==='home'&&false){
+      // legacy home ambience disabled
       for(let i=0;i<7;i++){
         const x=((i*180+t*.018)%1200)-100;
         const y=360+Math.sin(t*.004+i*1.7)*70;
@@ -742,10 +767,9 @@ export class Game{
     const drawW=img.naturalWidth*scale;
     const drawH=img.naturalHeight*scale;
 
-    // Use light parallax without revealing neighboring environments.
     const maxOffset=Math.max(0,drawW-vw);
     const progress=Math.max(0,Math.min(1,(this.cameraX%1400)/1400));
-    const offsetX=maxOffset*progress*.45;
+    const offsetX=key==='home' ? 0 : maxOffset*progress*.45;
 
     c.globalAlpha=1;
     c.drawImage(img,-offsetX,(vh-drawH)*.5,drawW,drawH);
@@ -764,6 +788,7 @@ export class Game{
 
   drawForegroundEnvironment(){
     const key=this.currentEnvironment();
+    if(key==='home')return;
     const map={home:'env_home_fg',hillcrest:'env_hillcrest_fg',pch:'env_pch_fg',la:'env_la_fg',arena:'env_arena_fg'};
     const img=this.assets[map[key]];
     if(!img||!img.complete||!img.naturalWidth)return;
@@ -1019,7 +1044,17 @@ export class Game{
   }
 
   drawWorld(t){
-    this.drawZoneVeils();this.drawSigns();this.drawPalms(t);this.drawPlatforms();this.drawDecor(t);this.drawCheckpoints(t);
+    const home=this.currentEnvironment()==='home';
+    this.drawZoneVeils();
+    if(home){
+      this.drawHomeGround();
+    }else{
+      this.drawSigns();
+      this.drawPalms(t);
+      this.drawPlatforms();
+      this.drawDecor(t);
+    }
+    this.drawCheckpoints(t);
     for(const item of this.souvenirs)if(!item.collected)this.drawSouvenir(item,t);
     for(const card of this.cards)if(!card.collected)this.drawCard(card.x,card.y,t);
     for(const beacon of this.beacons)this.drawBeacon(beacon,t);
@@ -1037,7 +1072,7 @@ export class Game{
     if(this.state.rigsby)this.drawRigsby();
     this.drawBossDefeat(t);
     this.drawAbilityLighting(t);
-    
+    this.drawForegroundEnvironment();
     for(const p of this.state.particles){this.ctx.globalAlpha=p.life/60;this.ctx.fillStyle=p.color;this.ctx.fillRect(p.x,p.y,6,6);this.ctx.globalAlpha=1}
   }
 
@@ -1046,6 +1081,7 @@ export class Game{
     const c=this.ctx;
     for(const z of this.zones){
       if(z.complete)continue;
+      if(this.currentEnvironment()==='home'&&z.start<1150)continue;
       c.fillStyle='rgba(183,165,139,.23)';
       c.fillRect(z.start,0,z.end-z.start,720);
       c.fillStyle='rgba(96,82,66,.12)';
@@ -1077,7 +1113,9 @@ export class Game{
 
   drawPlatforms(){
     const colors={sand:'#e4b86c',boardwalk:'#b97945',city:'#6b637d',suburb:'#7dbb67',freeway:'#5e6574',hills:'#66834a',pier:'#8d5d3c',neon:'#6d3dad',roof:'#4b4560',lawn:'#72b95d',sign:'#3f784f',rock:'#7f6f76'};
-    for(const p of SOCAL_LEVEL.platforms){this.ctx.fillStyle=colors[p.type]||'#666';this.ctx.fillRect(p.x,p.y,p.w,p.h);this.ctx.fillStyle='rgba(255,255,255,.18)';this.ctx.fillRect(p.x,p.y,p.w,7)}
+    for(const p of SOCAL_LEVEL.platforms){
+      if(this.currentEnvironment()==='home'&&p.x<1150)continue;
+      this.ctx.fillStyle=colors[p.type]||'#666';this.ctx.fillRect(p.x,p.y,p.w,p.h);this.ctx.fillStyle='rgba(255,255,255,.18)';this.ctx.fillRect(p.x,p.y,p.w,7)}
   }
 
   drawSigns(){
@@ -1086,7 +1124,9 @@ export class Game{
   }
 
   drawPalms(t){
-    for(const x of [160,520,980,1390,2200,3090,3890,4320]){const y=620;this.ctx.fillStyle='#8b5a3c';this.ctx.fillRect(x,y-150,18,150);this.ctx.save();this.ctx.translate(x+9,y-150);this.ctx.rotate(Math.sin(t*.002+x)*.12);this.ctx.fillStyle='#226b4c';for(let i=0;i<7;i++){this.ctx.save();this.ctx.rotate(Math.PI*2/7*i);this.ctx.beginPath();this.ctx.ellipse(0,-34,12,42,0,0,Math.PI*2);this.ctx.fill();this.ctx.restore()}this.ctx.restore()}
+    for(const x of [160,520,980,1390,2200,3090,3890,4320]){
+      if(this.currentEnvironment()==='home'&&x<1150)continue;
+      const y=620;this.ctx.fillStyle='#8b5a3c';this.ctx.fillRect(x,y-150,18,150);this.ctx.save();this.ctx.translate(x+9,y-150);this.ctx.rotate(Math.sin(t*.002+x)*.12);this.ctx.fillStyle='#226b4c';for(let i=0;i<7;i++){this.ctx.save();this.ctx.rotate(Math.PI*2/7*i);this.ctx.beginPath();this.ctx.ellipse(0,-34,12,42,0,0,Math.PI*2);this.ctx.fill();this.ctx.restore()}this.ctx.restore()}
   }
 
   drawDecor(t){
