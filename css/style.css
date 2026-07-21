@@ -798,3 +798,217 @@ body{
 #bossPhase{
   transition:opacity .28s ease,transform .28s ease;
 }
+
+
+/* v1.0.8F — Choose Your Starting Dude */
+#titleScreen .card{
+  width:min(850px,calc(100vw - 28px));
+  max-width:850px;
+}
+
+.startingDudePicker{
+  margin:20px 0 16px;
+  padding:16px;
+  border-radius:22px;
+  border:1px solid rgba(255,255,255,.12);
+  background:
+    radial-gradient(circle at 50% 0,rgba(255,255,255,.07),transparent 50%),
+    rgba(8,8,25,.32);
+}
+
+.chooseDudeHeader{
+  display:flex;
+  align-items:baseline;
+  justify-content:space-between;
+  gap:16px;
+  margin-bottom:12px;
+  text-align:left;
+}
+
+.chooseDudeHeader small{
+  color:#3ce7d2;
+  font-weight:900;
+  letter-spacing:.13em;
+}
+
+.chooseDudeHeader strong{
+  color:#fff;
+  font-size:.95rem;
+}
+
+.dudeSelectGrid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:12px;
+}
+
+.dudeSelectCard{
+  position:relative;
+  min-width:0;
+  display:grid;
+  grid-template-columns:62px minmax(0,1fr);
+  gap:12px;
+  align-items:center;
+  min-height:102px;
+  padding:12px;
+  border:1px solid rgba(255,255,255,.13);
+  border-radius:18px;
+  color:#fff;
+  text-align:left;
+  background:linear-gradient(150deg,rgba(30,23,51,.94),rgba(13,16,32,.9));
+  box-shadow:0 14px 28px rgba(0,0,0,.2);
+  cursor:pointer;
+  overflow:hidden;
+  transition:
+    transform .18s ease,
+    border-color .18s ease,
+    box-shadow .18s ease,
+    filter .18s ease;
+}
+
+.dudeSelectCard::before{
+  content:"";
+  position:absolute;
+  inset:auto 0 0;
+  height:4px;
+  opacity:.55;
+}
+
+.dudeSelectCard.will::before{background:linear-gradient(90deg,#ff4fb8,#ffe66d)}
+.dudeSelectCard.daniel::before{background:linear-gradient(90deg,#8d5cff,#3ce7d2)}
+.dudeSelectCard.caleb::before{background:linear-gradient(90deg,#ff9a3c,#fff)}
+
+.dudeSelectCard:hover,
+.dudeSelectCard:focus-visible{
+  transform:translateY(-3px);
+  filter:brightness(1.1);
+  outline:none;
+}
+
+.dudeSelectCard.selected{
+  transform:translateY(-4px);
+  border-color:rgba(255,255,255,.64);
+  box-shadow:
+    0 18px 38px rgba(0,0,0,.3),
+    0 0 30px rgba(255,79,184,.12),
+    inset 0 0 0 2px rgba(255,255,255,.08);
+}
+
+.dudeSelectCard.daniel.selected{
+  box-shadow:0 18px 38px rgba(0,0,0,.3),0 0 30px rgba(60,231,210,.14),inset 0 0 0 2px rgba(255,255,255,.08);
+}
+
+.dudeSelectCard.caleb.selected{
+  box-shadow:0 18px 38px rgba(0,0,0,.3),0 0 30px rgba(255,154,60,.14),inset 0 0 0 2px rgba(255,255,255,.08);
+}
+
+.dudePortraitWrap{
+  width:62px;
+  height:76px;
+  display:grid;
+  place-items:end center;
+  overflow:hidden;
+  border-radius:15px;
+  background:linear-gradient(180deg,rgba(255,255,255,.11),rgba(255,255,255,.025));
+}
+
+.dudePortraitWrap img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:top center;
+}
+
+.dudeSelectCopy{
+  min-width:0;
+  display:flex;
+  flex-direction:column;
+  gap:3px;
+}
+
+.dudeSelectCopy b{
+  font-size:1.08rem;
+}
+
+.dudeSelectCopy small{
+  color:#ffe66d;
+  font-size:.66rem;
+  font-weight:950;
+  letter-spacing:.08em;
+}
+
+.dudeSelectCopy em{
+  color:rgba(255,255,255,.68);
+  font-size:.72rem;
+  font-style:normal;
+  line-height:1.25;
+}
+
+.selectedCheck{
+  position:absolute;
+  right:9px;
+  top:8px;
+  width:22px;
+  height:22px;
+  display:grid;
+  place-items:center;
+  border-radius:50%;
+  color:#101126;
+  background:#3ce7d2;
+  font-size:.75rem;
+  font-weight:950;
+  opacity:0;
+  transform:scale(.6);
+  transition:opacity .18s ease,transform .18s ease;
+}
+
+.dudeSelectCard.selected .selectedCheck{
+  opacity:1;
+  transform:scale(1);
+}
+
+.selectedDudeSummary{
+  margin-top:12px;
+  color:rgba(255,255,255,.72);
+  font-size:.82rem;
+}
+
+.selectedDudeSummary b{
+  color:#fff;
+}
+
+.selectedDudeSummary span{
+  margin:0 7px;
+  color:#3ce7d2;
+}
+
+@media(max-width:760px){
+  #titleScreen{
+    overflow:auto;
+    align-items:flex-start;
+    padding:18px 10px;
+  }
+
+  .chooseDudeHeader{
+    display:block;
+  }
+
+  .chooseDudeHeader strong{
+    display:block;
+    margin-top:3px;
+  }
+
+  .dudeSelectGrid{
+    grid-template-columns:1fr;
+  }
+
+  .dudeSelectCard{
+    min-height:86px;
+    grid-template-columns:54px minmax(0,1fr);
+  }
+
+  .dudePortraitWrap{
+    width:54px;
+    height:62px;
+  }
+}

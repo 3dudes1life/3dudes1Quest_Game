@@ -1,18 +1,19 @@
-# 3Dudes1Quest v1.0.8E — Easy Power Controls
+# 3Dudes1Quest v1.0.8F — Choose Your Dude
 
 Upload and replace:
 
 - `index.html`
-- `js/app108e.js` (new)
+- `css/style.css`
+- `js/app108f.js` (new)
 - `UPLOAD_THESE_FILES.md` (optional)
 
-The updated index loads `app108e.js`; the older `app108d.js` can remain in the repository.
+The updated index loads `app108f.js`; older app scripts can remain in GitHub.
 
-## New controls
+## New title-screen flow
 
-- Move: A / D or Left / Right arrows
-- Jump: W or Up arrow
-- Power: Space, X, or F
-- Switch dudes: 1, 2, 3 or the Switch button
-
-Mobile controls are unchanged.
+- Choose Will, Daniel, or Caleb before starting a new adventure.
+- Each character has an equal featured card with portrait, power, and play style.
+- The Start button changes to “Start as Will,” “Start as Daniel,” or “Start as Caleb.”
+- The selected dude becomes the active character at spawn.
+- Switching during gameplay still rotates normally through all three.
+- Continue Adventure preserves the character stored in the save.

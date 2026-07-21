@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
   <meta name="theme-color" content="#15102f">
-  <title>3Dudes1Quest v1.0.8E — Easy Power Controls</title>
-  <link rel="stylesheet" href="css/style.css?v=1.0.8e">
+  <title>3Dudes1Quest v1.0.8F — Choose Your Dude</title>
+  <link rel="stylesheet" href="css/style.css?v=1.0.8f">
 </head>
 <body>
 <div id="bootSequence" class="bootSequence" aria-live="polite">
@@ -38,11 +38,63 @@
     <section id="titleScreen" class="screen active">
       <div class="card">
         <div class="eyebrow">3DUDES1LIFE CREATIVE PRESENTS</div>
-        <div class="releaseBadge">v1.0.8E • EASY POWER CONTROLS</div>
+        <div class="releaseBadge">v1.0.8F • CHOOSE YOUR DUDE</div>
         <h1>3Dudes1Quest</h1>
         <h2>Adventure 1: Southern California</h2>
         <p>Lord Beige is draining the color from SoCal. Restore the Prism Beacons, recover every Gay Card, defeat the HOA Queen of Beige, and enter the portal to the next adventure.</p>
-        <button id="startBtn" class="primary">New Adventure</button>
+
+        <section class="startingDudePicker" aria-labelledby="chooseDudeTitle">
+          <div class="chooseDudeHeader">
+            <small>CHOOSE YOUR STARTING DUDE</small>
+            <strong id="chooseDudeTitle">Who leads the quest?</strong>
+          </div>
+
+          <div class="dudeSelectGrid">
+            <button class="dudeSelectCard selected will" type="button" aria-pressed="true">
+              <span class="dudePortraitWrap">
+                <img src="assets/portraits/will.png" alt="Will">
+              </span>
+              <span class="dudeSelectCopy">
+                <b>Will</b>
+                <small>RAINBOW TOSS</small>
+                <em>Fast, flashy ranged attacks</em>
+              </span>
+              <span class="selectedCheck">✓</span>
+            </button>
+
+            <button class="dudeSelectCard daniel" type="button" aria-pressed="false">
+              <span class="dudePortraitWrap">
+                <img src="assets/portraits/daniel.png" alt="Daniel">
+              </span>
+              <span class="dudeSelectCopy">
+                <b>Daniel</b>
+                <small>POSITIVE SHIELD</small>
+                <em>Healing and reflected attacks</em>
+              </span>
+              <span class="selectedCheck">✓</span>
+            </button>
+
+            <button class="dudeSelectCard caleb" type="button" aria-pressed="false">
+              <span class="dudePortraitWrap">
+                <img src="assets/portraits/caleb.png" alt="Caleb">
+              </span>
+              <span class="dudeSelectCopy">
+                <b>Caleb</b>
+                <small>COOKIE CHAOS</small>
+                <em>Explosive area damage</em>
+              </span>
+              <span class="selectedCheck">✓</span>
+            </button>
+          </div>
+
+          <div class="selectedDudeSummary">
+            Starting as <b id="selectedDudeName">Will</b>
+            <span>•</span>
+            Power: <b id="selectedDudePower">Rainbow Toss</b>
+          </div>
+        </section>
+
+        <button id="startBtn" class="primary">Start as Will</button>
         <button id="continueBtn" class="primary continue hidden">Continue Adventure</button>
         <div id="saveStatus" class="saveStatus">No saved quest yet.</div>
         <button id="helpBtn" class="secondary">How to Play</button>
@@ -156,7 +208,7 @@
       </div>
     </section>
   </main>
-  <script src="js/app108e.js?v=1.0.8e"></script>
-  <script src="js/remaster.js?v=1.0.8e"></script>
+  <script src="js/app108f.js?v=1.0.8f"></script>
+  <script src="js/remaster.js?v=1.0.8f"></script>
 </body>
 </html>

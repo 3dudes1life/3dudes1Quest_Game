@@ -1,9 +1,11 @@
 {
-  "space_is_power": true,
-  "space_not_jump": true,
-  "up_is_jump": true,
-  "w_is_jump": true,
-  "mobile_controls_preserved": true,
-  "help_text_updated": true,
+  "three_start_cards": true,
+  "all_three_names": true,
+  "selected_dude_passed_to_game": true,
+  "reset_uses_starting_dude": true,
+  "saved_game_overrides_selection": true,
+  "switching_preserved": true,
+  "dynamic_start_button": true,
+  "selector_css_present": true,
   "new_script_loaded": true
 }
