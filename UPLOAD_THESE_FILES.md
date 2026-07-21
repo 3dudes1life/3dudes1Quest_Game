@@ -1,36 +1,38 @@
-# 3Dudes1Quest v1.0.8O — Boss Input & Graphics Update
+# 3Dudes1Quest v1.0.8Q — Superman Combat & Graphics
 
-Upload and replace:
+This ZIP is the complete repository built from the uploaded 1.0.8O source.
 
-- index.html
-- css/style.css
-- js/app108o.js
-- js/remaster.js
+## Critical combat repair
 
-## Boss input repair
+- The real Queen soft-lock was automatic blocking dialogue at 7/10 and 3/10 health.
+- Queen phase dialogue is now a non-blocking taunt banner.
+- Space is captured at the window level and belongs exclusively to Power during gameplay.
+- `preventDefault`, `stopPropagation`, and `stopImmediatePropagation` prevent focused buttons from stealing Space.
+- Escape or P deliberately opens Pause. Space cannot open or dismiss Pause.
+- Resume clears held inputs and returns keyboard focus to the canvas.
 
-- Space is consumed at the capture phase and can only trigger Power during PLAYING mode
-- Focused buttons can no longer receive gameplay Space presses
-- Explicit modes: PLAYING, PAUSED, DIALOGUE, PHOTO_MODE, and OVERLAY
-- Gameplay keys are ignored and cleared while menus/dialogue are open
-- Closing Resume, dialogue, cutscenes, maps, passport, or photo mode restores canvas focus
-- Mobile touch controls remain pointer-driven
-- Character switching is disabled outside active gameplay
+## New enemies and combat
 
-## Graphics improvements
+- More HOA Bots throughout Southern California.
+- Five hate-sign protest enemies on the Los Angeles approach.
+- Satirical villain signs, including QUEER IS A SIN, NO PRIDE ALLOWED, and LOVE NEEDS A PERMIT.
+- Signs act as shields and visually crack before breaking.
+- Protesters throw hostile pamphlets.
+- Hate-Sign Captain mini-boss blocks City Hall.
+- New combat banners, paper debris, particles, achievement, and objective flow.
 
-- Animated Queen health-bar sheen
-- Dynamic City Hall reflections
-- Boss spotlight and rotating HOA warning ring
-- Stronger boss hit flashes and screen pulses
-- Improved dialogue panel lighting
-- More dramatic boss impact feedback
+## Graphics
 
-## Preserved
+- Live City Hall color restoration as the Queen loses health.
+- Rainbow-lit columns, windows, spotlight, warning rings, impact flashes, and phase-aware boss health bar.
+- Animated protesters, signs, shadows, distant crowd silhouettes, and improved HUD glow.
+- Non-blocking cinematic Queen taunts and stronger combat feedback.
 
-- Zoey captivity and rescue storyline
-- Single Rigsby before the rescue
-- Both beagles after the Queen is defeated
-- Cinematic and Living World features
-- Safari zoom protections
-- Save migration from 1.0.8N and earlier
+## Story and compatibility
+
+- Zoey remains captive until the Queen is defeated.
+- One Rigsby before rescue; both beagles after rescue.
+- Save key is 1.0.8Q and migrates from 1.0.8P, O, N, and older versions.
+- Safari/mobile protections remain included.
+
+Upload the contents of this repository to GitHub, preserving the folder structure.

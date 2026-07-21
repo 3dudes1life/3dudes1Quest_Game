@@ -7,8 +7,8 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="format-detection" content="telephone=no">
-  <title>3Dudes1Quest v1.0.8O — Boss Input & Graphics Update</title>
-  <link rel="stylesheet" href="css/style.css?v=1.0.8o-boss-input">
+  <title>3Dudes1Quest v1.0.8Q — Superman Combat & Graphics</title>
+  <link rel="stylesheet" href="css/style.css?v=1.0.8q-superman">
 </head>
 <body>
 <div id="bootSequence" class="bootSequence" aria-live="polite">
@@ -47,7 +47,7 @@
       </div>
       <div class="card titleMenuCard">
         <div class="eyebrow">3DUDES1LIFE CREATIVE PRESENTS</div>
-        <div class="releaseBadge">v1.0.8O • BOSS INPUT + GRAPHICS</div>
+        <div class="releaseBadge">v1.0.8Q • SUPERMAN UPDATE</div>
         <h1>3Dudes1Quest</h1>
         <h2>Adventure 1: Southern California</h2>
         <p>The Queen of Beige is draining the color from SoCal—and she has taken Zoey captive. Follow Rigsby, restore the Prism Beacons, recover every Gay Card, rescue Zoey, and enter the portal together.</p>
@@ -116,7 +116,7 @@
         <h2>How to Play</h2>
         <p><b>Move:</b> Arrow keys or A / D</p>
         <p><b>Jump:</b> W or ↑</p>
-        <p><b>Power:</b> Space, X, or F</p>
+        <p><b>Power:</b> Space, X, or F — Space never pauses combat</p>
         <p><b>Switch dudes:</b> 1, 2, 3 or the Switch button</p>
         <p><b>Goal:</b> Collect 6 Gay Cards, activate 3 Prism Beacons, then beat the boss in Los Angeles.</p>
         <button id="backBtn" class="primary">Back</button>
@@ -141,6 +141,11 @@
       <div id="message"></div>
       <div id="saveToast" class="saveToast">Quest saved ✓</div>
       <div id="bossPhase" class="bossPhase hidden"></div>
+      <div id="bossTaunt" class="bossTaunt hidden" aria-live="polite">
+        <small id="bossTauntName">QUEEN OF BEIGE</small>
+        <strong id="bossTauntText">Absolutely not.</strong>
+      </div>
+      <div id="combatStatus" class="combatStatus hidden" aria-live="polite"></div>
       <div id="cinematicZoneCard" class="cinematicZoneCard hidden" aria-live="polite">
         <small id="cinematicZoneEyebrow">ADVENTURE 1</small>
         <strong id="cinematicZoneTitle">HOME BASE</strong>
@@ -274,7 +279,7 @@
       </div>
     </section>
   </main>
-  <script src="js/app108o.js?v=1.0.8o-boss-input"></script>
+  <script src="js/app108q.js?v=1.0.8q-superman"></script>
   <script src="js/remaster.js?v=1.0.8o-boss-input"></script>
 </body>
 </html>
