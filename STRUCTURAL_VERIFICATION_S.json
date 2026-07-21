@@ -1,0 +1,22 @@
+{
+  "release": "1.0.8S",
+  "checks": {
+    "version_is_108s": true,
+    "index_loads_app108s": true,
+    "duplicate_zoey_suppressed": true,
+    "rigsby_no_la_cutoff": true,
+    "finale_owns_dogs": true,
+    "post_finale_follow_resume": true,
+    "city_hall_damage_method": true,
+    "city_hall_cracks_drawn": true,
+    "collapse_debris": true,
+    "legacy_r_save": true,
+    "syntax_passed": true
+  },
+  "notes": [
+    "Static JavaScript syntax validation passed.",
+    "Duplicate Zoey render path removed during finale.",
+    "Rigsby Los Angeles cutoff removed.",
+    "Three-stage City Hall destruction code present."
+  ]
+}
