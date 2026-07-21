@@ -1,7 +1,7 @@
-import {CONFIG} from './config.js';
-import {createInput} from './input.js';
-import {createUI} from './ui.js';
-import {Game} from './game.js';
+import {CONFIG} from './config.js?v=1.0.1';
+import {createInput} from './input.js?v=1.0.1';
+import {createUI} from './ui.js?v=1.0.1';
+import {Game} from './game.js?v=1.0.1';
 
 const canvas=document.getElementById('gameCanvas');
 canvas.width=CONFIG.width;canvas.height=CONFIG.height;
@@ -65,14 +65,14 @@ let dialogueOpen=false;
 window.addEventListener('quest-dialogue',e=>{
   dialogueName.textContent=e.detail.name;
   const portraitMap={
-    'Will':'will','Daniel':'daniel','Caleb':'caleb','Neighbor':'neighbor',
-    'Hillcrest Local':'hillcrest local','Café Regular':'café regular',
-    'Coastal Local':'coastal local','LA Local':'la local',
-    'HOA Queen':'hoa queen','Rigsby':'will'
+    'Will':'will.png','Daniel':'daniel.png','Caleb':'caleb.png','Neighbor':'neighbor.png',
+    'Hillcrest Local':'hillcrest_local.png','Café Regular':'cafe_regular.png',
+    'Coastal Local':'coastal_local.png','LA Local':'la_local.png',
+    'HOA Queen':'hoa_queen.png','Rigsby':'will.png'
   };
-  const key=(portraitMap[e.detail.name]||e.detail.name).toLowerCase().replaceAll(' ','_').replaceAll('é','e');
-  dialoguePortrait.src=`assets/portraits/${key}.png`;
+  dialoguePortrait.src=`assets/portraits/${portraitMap[e.detail.name]||'will.png'}?v=1.0.1`;
   dialoguePortrait.alt=e.detail.name;
+  dialoguePortrait.onerror=()=>{dialoguePortrait.src='assets/portraits/will.png?v=1.0.1'};
   dialogueText.textContent=e.detail.text;
   dialogueBox.classList.remove('hidden');
   dialogueOpen=true;

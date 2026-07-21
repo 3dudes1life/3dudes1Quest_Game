@@ -1,5 +1,5 @@
-import {CONFIG,DUDES} from './config.js';
-import {SOCAL_LEVEL} from './level.js';
+import {CONFIG,DUDES} from './config.js?v=1.0.1';
+import {SOCAL_LEVEL} from './level.js?v=1.0.1';
 
 export class Game{
   constructor(canvas,ui,input,onComplete){

@@ -1,5 +1,13 @@
 # Changelog
 
+## v1.0.1 — GitHub Pages Fix
+- Corrected the browser title from v0.9.2.1V to v1.0.
+- Replaced the dialogue portrait placeholder div with a real image element.
+- Normalized portrait filenames and repaired every portrait URL.
+- Added asset cache-busting for GitHub Pages.
+- Removed unused legacy root game.js and style.css files.
+- Added a visible v1.0 release badge and `.nojekyll`.
+
 ## v1.0 — Complete Southern California
 - Integrated a full animated sprite rendering system.
 - Replaced block-style heroes, NPCs, enemies, Rigsby, and boss visuals.

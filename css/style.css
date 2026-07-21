@@ -128,3 +128,6 @@ rgba(8,5,24,.9);padding:20px}
 #dialogueName{align-self:end}
 #dialogueText{align-self:start}
 canvas{filter:saturate(1.08) contrast(1.02)}
+.releaseBadge{display:inline-block;margin:8px auto 14px;padding:7px 12px;border:1px solid rgba(255,255,255,.55);border-radius:999px;background:rgba(60,231,210,.14);color:#fff;font-size:.75rem;font-weight:900;letter-spacing:.08em}
+#dialoguePortrait.portrait{display:block;object-fit:cover;background:#17102f;position:relative}
+#dialoguePortrait.portrait::after{content:none}
