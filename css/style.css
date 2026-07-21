@@ -2004,3 +2004,83 @@ body.touchDevice #gameCanvas{
 /* v1.0.8T Finale UX Remaster */
 #gameCanvas{filter:saturate(1.06) contrast(1.025) brightness(1.01)}
 #bossPhase{backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
+
+
+/* =========================================================
+   v1.0.8U — Mobile Combat & Heartfield Update
+   ========================================================= */
+#touchControls button{
+  overflow:hidden;
+  container-type:inline-size;
+}
+#touchControls button span{max-width:100%}
+#touchControls .controlIcon,
+#touchControls .controlLabel{display:block;pointer-events:none}
+#touchControls .controlIcon{font-size:20px;line-height:1;margin-bottom:3px;filter:drop-shadow(0 2px 5px rgba(0,0,0,.25))}
+#touchControls .controlLabel{
+  font:1000 clamp(8px,22cqw,11px)/1 system-ui,-apple-system,sans-serif;
+  letter-spacing:-.045em;
+  white-space:nowrap;
+  text-align:center;
+}
+#powerBtn[data-hero="will"]{background:linear-gradient(155deg,#ff64bf,#8d5cff)}
+#powerBtn[data-hero="daniel"]{background:linear-gradient(155deg,#ff68b8,#7b5ff0 56%,#33cdbf)}
+#powerBtn[data-hero="caleb"]{background:linear-gradient(155deg,#ffad4d,#d45c84)}
+
+@media (hover:none), (pointer:coarse){
+  #touchControls{
+    left:max(8px,env(safe-area-inset-left));
+    right:max(8px,env(safe-area-inset-right));
+    bottom:max(8px,env(safe-area-inset-bottom));
+  }
+  #touchControls button,#touchControls .mini{
+    display:grid;
+    place-content:center;
+    grid-auto-flow:row;
+    gap:0;
+    padding:4px!important;
+    line-height:1;
+  }
+  #touchControls .touchGroup.right{flex-shrink:0}
+  #message{
+    width:max-content;
+    max-width:min(420px,76vw);
+    white-space:normal;
+    text-align:center;
+    line-height:1.2;
+  }
+}
+
+@media (hover:none) and (pointer:coarse) and (orientation:portrait){
+  #hud{gap:4px}
+  #hud .chip{font-size:10px;padding:5px 3px}
+  .routeProgress{height:14px}
+  #pauseBtn,#journalBtn{width:42px;height:42px}
+  .objectiveCard{max-width:48vw;padding:7px 9px}
+  .cinematicZoneCard{
+    top:22%;
+    width:min(390px,74vw);
+    padding:14px 16px 16px;
+    border-radius:21px;
+  }
+  .cinematicZoneCard small{font-size:9px;letter-spacing:.16em}
+  .cinematicZoneCard strong{font-size:clamp(22px,7vw,31px);line-height:1.02;white-space:normal}
+  .cinematicZoneCard span{font-size:10px;letter-spacing:.12em}
+  #touchControls{gap:5px}
+  .touchGroup{gap:4px;padding:5px;border-radius:20px}
+  #touchControls button,#touchControls .mini{
+    width:52px;height:58px;min-width:52px;border-radius:16px;
+  }
+  #touchControls .mini{width:52px;min-width:52px}
+  #touchControls .controlIcon{font-size:18px;margin-bottom:2px}
+  #touchControls .controlLabel{font-size:9px;letter-spacing:-.05em}
+  .touchGroup:first-child button{width:54px;min-width:54px}
+  #message,.collectibleToast{bottom:calc(max(8px,env(safe-area-inset-bottom)) + 78px)}
+}
+
+@media (hover:none) and (pointer:coarse) and (max-width:390px){
+  #touchControls button,#touchControls .mini{width:48px;min-width:48px;height:55px}
+  .touchGroup:first-child button{width:50px;min-width:50px}
+  #touchControls .controlLabel{font-size:8px}
+  #touchControls .controlIcon{font-size:17px}
+}
