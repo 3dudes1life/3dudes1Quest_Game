@@ -1282,3 +1282,113 @@ body{
   #touchControls .mini{width:48px;min-width:48px}
   .collectibleToast,#message{bottom:calc(var(--safe-b) + 75px)}
 }
+
+
+/* =========================================================
+   v1.0.8K — Safari Game Mode
+   Stops iOS Safari from zooming, selecting, or hijacking taps.
+   ========================================================= */
+
+html{
+  -webkit-text-size-adjust:100%;
+  text-size-adjust:100%;
+}
+
+html,body,#app,.screen,#gameScreen,#gameCanvas{
+  overscroll-behavior:none;
+  -webkit-overflow-scrolling:auto;
+}
+
+#gameScreen,
+#gameCanvas,
+#touchControls,
+#touchControls *,
+#pauseBtn,
+#journalBtn,
+#dialogueNext,
+#cutsceneNext,
+#journal,
+#journal *{
+  touch-action:none!important;
+  -ms-touch-action:none!important;
+  -webkit-user-select:none!important;
+  user-select:none!important;
+  -webkit-touch-callout:none!important;
+  -webkit-tap-highlight-color:transparent!important;
+}
+
+#touchControls button,
+#touchControls button *,
+#pauseBtn,
+#pauseBtn *,
+#journalBtn,
+#journalBtn *{
+  cursor:pointer;
+  font-size:16px; /* avoids Safari's small-control zoom heuristics */
+  line-height:1;
+  appearance:none;
+  -webkit-appearance:none;
+  transform-origin:center;
+}
+
+#touchControls .mini,
+#touchControls .mini *{
+  font-size:10px;
+}
+
+#touchControls button.isPressed,
+#switchBtn.isPressed{
+  transform:scale(.91)!important;
+  filter:brightness(1.24)!important;
+}
+
+body.touchDevice #gameScreen.active{
+  position:fixed;
+  inset:0;
+  width:100%;
+  height:100%;
+  overflow:hidden;
+}
+
+body.touchDevice #gameCanvas{
+  display:block;
+  max-width:none;
+  max-height:none;
+}
+
+/* Ensure button labels cannot become their own Safari tap target. */
+#touchControls button span,
+#pauseBtn span,
+#journalBtn span{
+  pointer-events:none;
+}
+
+/* Keep controls inside the visual viewport when Safari chrome changes size. */
+@supports (height:100dvh){
+  body.touchDevice #gameScreen.active{
+    height:100dvh;
+  }
+  body.touchDevice.landscapeGame #gameCanvas{
+    width:100dvw!important;
+    height:100dvh!important;
+  }
+}
+
+@media (hover:none), (pointer:coarse){
+  body{
+    position:fixed;
+    inset:0;
+    width:100%;
+    height:100%;
+    overflow:hidden;
+  }
+
+  #touchControls{
+    z-index:40;
+    isolation:isolate;
+  }
+
+  #touchControls button{
+    will-change:transform;
+  }
+}

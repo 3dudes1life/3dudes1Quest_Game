@@ -1,12 +1,17 @@
 {
-  "index_loads_app108j": true,
-  "index_loads_included_remaster": true,
-  "remaster_file_included": true,
-  "no_orientation_gate": true,
-  "save_migration": true,
-  "duplicate_card_banner_removed": true,
-  "safe_area_css": true,
-  "toast_above_controls": true,
-  "desktop_controls_preserved": true,
-  "version_108j": true
+  "viewport_scale_locked": true,
+  "loads_app108k": true,
+  "remaster_included": true,
+  "touch_action_locked": true,
+  "tap_highlight_disabled": true,
+  "callout_disabled": true,
+  "gesture_zoom_blocked": true,
+  "double_tap_blocked": true,
+  "dblclick_blocked": true,
+  "touchmove_blocked": true,
+  "direct_pointer_controls": true,
+  "switch_pointer_driven": true,
+  "save_migrates_from_j": true,
+  "version_108k": true,
+  "javascript_syntax_passed": true
 }
