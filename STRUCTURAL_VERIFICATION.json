@@ -1,10 +1,15 @@
 {
-  "foreground_removed": true,
-  "camera_zoom_disabled": true,
-  "global_pointer_release": true,
-  "lost_capture_reset": true,
-  "visibility_reset": true,
-  "desktop_touch_hidden": true,
-  "new_cache_bust": true,
-  "same_release_version": true
+  "loads_app108i": true,
+  "orientation_gate_exists": true,
+  "portrait_override_exists": true,
+  "duplicate_card_message_removed": true,
+  "duplicate_beacon_message_removed": true,
+  "mobile_safe_area_css": true,
+  "toast_above_controls": true,
+  "apple_glass_controls": true,
+  "landscape_layout": true,
+  "portrait_fallback": true,
+  "save_migration": true,
+  "version_108i": true,
+  "space_power_preserved": true
 }

@@ -1158,3 +1158,465 @@ body{
   #touchControls button{width:54px;height:54px;font-size:12px;opacity:.78}
   #touchControls .mini{width:48px;height:48px;font-size:9px}
 }
+
+
+/* =========================================================
+   v1.0.8I — Mobile Apple UX Update
+   ========================================================= */
+
+:root{
+  --mobile-safe-top:max(10px,env(safe-area-inset-top));
+  --mobile-safe-right:max(10px,env(safe-area-inset-right));
+  --mobile-safe-bottom:max(10px,env(safe-area-inset-bottom));
+  --mobile-safe-left:max(10px,env(safe-area-inset-left));
+}
+
+/* Apple-style mobile glass */
+@media (hover:none), (pointer:coarse){
+  #gameScreen{
+    background:#09071a;
+    -webkit-user-select:none;
+    user-select:none;
+  }
+
+  #touchControls{
+    left:var(--mobile-safe-left);
+    right:var(--mobile-safe-right);
+    bottom:var(--mobile-safe-bottom);
+    padding:0;
+    align-items:flex-end;
+    gap:12px;
+    filter:drop-shadow(0 14px 28px rgba(0,0,0,.35));
+  }
+
+  .touchGroup{
+    gap:9px;
+    padding:7px;
+    border:1px solid rgba(255,255,255,.18);
+    border-radius:24px;
+    background:rgba(16,12,39,.52);
+    box-shadow:
+      inset 0 1px 0 rgba(255,255,255,.16),
+      0 12px 30px rgba(0,0,0,.28);
+    backdrop-filter:blur(22px) saturate(1.45);
+    -webkit-backdrop-filter:blur(22px) saturate(1.45);
+  }
+
+  #touchControls button,
+  #touchControls .mini{
+    width:62px;
+    height:62px;
+    min-width:62px;
+    padding:0;
+    border-radius:19px;
+    border:1px solid rgba(255,255,255,.34);
+    background:linear-gradient(180deg,rgba(255,255,255,.20),rgba(255,255,255,.09));
+    box-shadow:
+      inset 0 1px 0 rgba(255,255,255,.30),
+      0 8px 18px rgba(0,0,0,.24);
+    color:#fff;
+    opacity:1;
+    font-size:14px;
+    font-weight:900;
+    letter-spacing:.01em;
+    -webkit-tap-highlight-color:transparent;
+    transition:transform .08s ease,filter .08s ease,background .15s ease;
+  }
+
+  #touchControls button:active{
+    transform:scale(.92);
+    filter:brightness(1.25);
+  }
+
+  #touchControls .power{
+    background:linear-gradient(155deg,rgba(255,79,184,.92),rgba(183,63,214,.80));
+  }
+
+  #touchControls .jump{
+    background:linear-gradient(155deg,rgba(60,231,210,.92),rgba(39,154,193,.82));
+  }
+
+  #touchControls .mini{
+    width:56px;
+    min-width:56px;
+    font-size:9px;
+    background:linear-gradient(155deg,rgba(141,92,255,.90),rgba(81,70,190,.82));
+  }
+
+  /* Collectibles now live in the safe lane ABOVE controls. */
+  .collectibleToast{
+    left:50%;
+    bottom:calc(var(--mobile-safe-bottom) + 86px);
+    width:auto;
+    min-width:0;
+    max-width:calc(100vw - 32px);
+    padding:10px 18px;
+    border-radius:18px;
+    transform:translate(-50%,12px) scale(.96);
+    background:rgba(26,19,61,.78);
+    border:1px solid rgba(255,255,255,.22);
+    box-shadow:
+      inset 0 1px 0 rgba(255,255,255,.16),
+      0 12px 32px rgba(0,0,0,.30),
+      0 0 26px color-mix(in srgb,var(--active-hero) 20%,transparent);
+    backdrop-filter:blur(22px) saturate(1.45);
+    -webkit-backdrop-filter:blur(22px) saturate(1.45);
+    font-size:15px;
+    letter-spacing:0;
+    white-space:nowrap;
+  }
+
+  .collectibleToast.isVisible{
+    transform:translate(-50%,0) scale(1);
+  }
+
+  /* General game messages share the same safe notification lane. */
+  #message{
+    top:auto;
+    bottom:calc(var(--mobile-safe-bottom) + 88px);
+    max-width:min(360px,calc(100vw - 36px));
+    padding:9px 14px;
+    border-radius:17px;
+    border:1px solid rgba(255,255,255,.22);
+    background:rgba(20,15,48,.78);
+    backdrop-filter:blur(20px) saturate(1.35);
+    -webkit-backdrop-filter:blur(20px) saturate(1.35);
+    font-size:13px;
+    box-shadow:0 12px 30px rgba(0,0,0,.30);
+  }
+
+  /* Compact Apple-style achievement island. */
+  .achievementStack{
+    position:absolute;
+    top:calc(var(--mobile-safe-top) + 58px);
+    left:50%;
+    right:auto;
+    width:min(360px,calc(100vw - 28px));
+    transform:translateX(-50%);
+    gap:8px;
+  }
+
+  .achievementCard{
+    width:100%;
+    min-height:58px;
+    grid-template-columns:42px 1fr;
+    gap:10px;
+    padding:9px 12px;
+    border-radius:19px;
+    background:rgba(18,14,40,.82);
+    border:1px solid rgba(255,255,255,.18);
+    box-shadow:0 14px 36px rgba(0,0,0,.34);
+    backdrop-filter:blur(24px) saturate(1.4);
+    -webkit-backdrop-filter:blur(24px) saturate(1.4);
+    animation-duration:3s;
+  }
+
+  .achievementIcon{
+    width:42px;
+    height:42px;
+    border-radius:13px;
+    font-size:1.15rem;
+  }
+
+  .achievementLabel{
+    font-size:.56rem;
+    letter-spacing:.12em;
+  }
+
+  .achievementTitle{
+    margin-top:2px;
+    font-size:.88rem;
+  }
+
+  /* Top controls are true safe-area circles and no longer collide. */
+  #pauseBtn,#journalBtn{
+    top:var(--mobile-safe-top);
+    width:42px;
+    height:42px;
+    border-radius:15px;
+    border:1px solid rgba(255,255,255,.22);
+    background:rgba(18,14,40,.68);
+    box-shadow:
+      inset 0 1px 0 rgba(255,255,255,.15),
+      0 8px 20px rgba(0,0,0,.26);
+    backdrop-filter:blur(18px);
+    -webkit-backdrop-filter:blur(18px);
+  }
+
+  #pauseBtn{right:var(--mobile-safe-right)}
+  #journalBtn{right:calc(var(--mobile-safe-right) + 50px)}
+
+  /* HUD makes room for pause/journal and uses an Apple status-strip rhythm. */
+  #hud{
+    top:var(--mobile-safe-top);
+    left:var(--mobile-safe-left);
+    right:calc(var(--mobile-safe-right) + 102px);
+    padding:0;
+    gap:6px;
+    display:grid;
+    grid-template-columns:repeat(5,max-content);
+    align-items:center;
+    pointer-events:none;
+  }
+
+  #hud .chip{
+    min-height:36px;
+    padding:6px 10px;
+    border:1px solid rgba(255,255,255,.28);
+    border-radius:14px;
+    background:rgba(18,14,40,.66);
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.13);
+    backdrop-filter:blur(18px) saturate(1.35);
+    -webkit-backdrop-filter:blur(18px) saturate(1.35);
+    font-size:12px;
+    white-space:nowrap;
+  }
+
+  .routeProgress{
+    grid-column:1/-1;
+    min-width:0;
+    width:100%;
+    height:17px;
+    margin-top:0;
+    border-width:1px;
+    background:rgba(18,14,40,.64);
+    backdrop-filter:blur(14px);
+    -webkit-backdrop-filter:blur(14px);
+  }
+
+  .routeProgress b{
+    font-size:9px;
+    letter-spacing:.16em;
+  }
+
+  .objectiveCard{
+    top:calc(var(--mobile-safe-top) + 64px);
+    left:var(--mobile-safe-left);
+    width:auto;
+    max-width:min(250px,58vw);
+    padding:8px 11px;
+    border-radius:15px;
+    border:1px solid rgba(255,255,255,.18);
+    background:rgba(18,14,40,.68);
+    box-shadow:0 10px 28px rgba(0,0,0,.24);
+    backdrop-filter:blur(20px) saturate(1.35);
+    -webkit-backdrop-filter:blur(20px) saturate(1.35);
+  }
+
+  .objectiveCard small{
+    margin:0;
+    font-size:8px;
+    letter-spacing:.14em;
+  }
+
+  .objectiveCard strong{
+    margin:2px 0 0;
+    font-size:12px;
+  }
+
+  .objectiveCard span{display:none}
+
+  .dialogue{
+    bottom:calc(var(--mobile-safe-bottom) + 88px);
+  }
+
+  .bossPhase{
+    top:calc(var(--mobile-safe-top) + 66px);
+    max-width:60vw;
+    padding:8px 14px;
+    font-size:.86rem;
+  }
+}
+
+/* Landscape phone layout: primary supported mobile mode. */
+@media (hover:none) and (pointer:coarse) and (orientation:landscape){
+  #gameCanvas{
+    width:100vw!important;
+    height:100vh!important;
+    max-width:none!important;
+    max-height:none!important;
+  }
+
+  #hud{
+    grid-template-columns:repeat(5,max-content);
+    max-width:calc(100vw - 130px);
+  }
+
+  .routeProgress{
+    width:min(330px,42vw);
+    grid-column:1/-1;
+  }
+
+  #touchControls button,
+  #touchControls .mini{
+    width:64px;
+    height:64px;
+    min-width:64px;
+  }
+
+  #touchControls .mini{
+    width:56px;
+    min-width:56px;
+  }
+
+  .collectibleToast,#message{
+    bottom:calc(var(--mobile-safe-bottom) + 91px);
+  }
+}
+
+/* Portrait fallback after "Play portrait anyway." */
+@media (hover:none) and (pointer:coarse) and (orientation:portrait){
+  body.mobilePortraitPlaying #hud{
+    right:var(--mobile-safe-right);
+    grid-template-columns:repeat(5,1fr);
+    gap:5px;
+  }
+
+  body.mobilePortraitPlaying #hud .chip{
+    min-width:0;
+    padding:6px 5px;
+    text-align:center;
+    overflow:hidden;
+    font-size:11px;
+  }
+
+  body.mobilePortraitPlaying #hud .chip:first-child{
+    max-width:62px;
+  }
+
+  body.mobilePortraitPlaying .routeProgress{
+    grid-column:1/-1;
+  }
+
+  body.mobilePortraitPlaying #pauseBtn,
+  body.mobilePortraitPlaying #journalBtn{
+    top:calc(var(--mobile-safe-top) + 58px);
+  }
+
+  body.mobilePortraitPlaying #objectiveCard{
+    top:calc(var(--mobile-safe-top) + 110px);
+    max-width:44vw;
+  }
+
+  body.mobilePortraitPlaying .achievementStack{
+    top:calc(var(--mobile-safe-top) + 154px);
+  }
+
+  body.mobilePortraitPlaying #touchControls{
+    gap:8px;
+  }
+
+  body.mobilePortraitPlaying .touchGroup{
+    gap:6px;
+    padding:6px;
+  }
+
+  body.mobilePortraitPlaying #touchControls button,
+  body.mobilePortraitPlaying #touchControls .mini{
+    width:56px;
+    height:56px;
+    min-width:56px;
+    border-radius:17px;
+  }
+
+  body.mobilePortraitPlaying #touchControls .mini{
+    width:50px;
+    min-width:50px;
+  }
+
+  body.mobilePortraitPlaying .collectibleToast,
+  body.mobilePortraitPlaying #message{
+    bottom:calc(var(--mobile-safe-bottom) + 82px);
+  }
+}
+
+/* Polished portrait orientation gate */
+.mobileOrientationGate{
+  position:absolute;
+  inset:0;
+  z-index:10050;
+  display:grid;
+  place-items:center;
+  padding:
+    calc(env(safe-area-inset-top) + 24px)
+    calc(env(safe-area-inset-right) + 22px)
+    calc(env(safe-area-inset-bottom) + 24px)
+    calc(env(safe-area-inset-left) + 22px);
+  background:
+    radial-gradient(circle at 50% 30%,rgba(141,92,255,.25),transparent 38%),
+    rgba(7,7,20,.82);
+  backdrop-filter:blur(18px) saturate(1.25);
+  -webkit-backdrop-filter:blur(18px) saturate(1.25);
+}
+
+.orientationGlass{
+  width:min(390px,100%);
+  padding:28px 24px 22px;
+  text-align:center;
+  border-radius:30px;
+  border:1px solid rgba(255,255,255,.20);
+  background:linear-gradient(160deg,rgba(35,27,72,.88),rgba(14,12,35,.82));
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.16),
+    0 28px 70px rgba(0,0,0,.48);
+}
+
+.orientationPhone{
+  width:82px;
+  height:128px;
+  margin:0 auto 20px;
+  padding:7px;
+  border:4px solid rgba(255,255,255,.88);
+  border-radius:22px;
+  transform:rotate(-90deg);
+  animation:phoneRotate108i 1.8s ease-in-out infinite alternate;
+}
+
+.orientationPhone span{
+  display:block;
+  width:100%;
+  height:100%;
+  border-radius:14px;
+  background:
+    linear-gradient(145deg,rgba(255,79,184,.86),rgba(141,92,255,.86) 48%,rgba(60,231,210,.82));
+}
+
+.orientationEyebrow{
+  color:#8ff3e7;
+  font-size:.68rem;
+  font-weight:950;
+  letter-spacing:.16em;
+}
+
+.orientationGlass h2{
+  margin:7px 0 8px;
+  font-size:1.75rem;
+}
+
+.orientationGlass p{
+  margin:0 auto 18px;
+  max-width:310px;
+  color:rgba(255,255,255,.78);
+  font-size:.96rem;
+}
+
+.orientationSecondary{
+  width:100%;
+  padding:13px 16px;
+  border:1px solid rgba(255,255,255,.18);
+  background:rgba(255,255,255,.10);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.12);
+}
+
+@keyframes phoneRotate108i{
+  from{transform:rotate(-90deg) scale(.96)}
+  to{transform:rotate(-90deg) scale(1.04)}
+}
+
+@media (hover:hover) and (pointer:fine){
+  .mobileOrientationGate{display:none!important}
+}
+
+@media(prefers-reduced-motion:reduce){
+  .orientationPhone{animation:none}
+}

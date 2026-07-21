@@ -1,20 +1,31 @@
-# 3Dudes1Quest v1.0.8H — Superman Rebuild
+# 3Dudes1Quest v1.0.8I — Mobile Apple UX Update
 
-Replace these three files in the GitHub repository:
+Upload and replace:
 
 - `index.html`
 - `css/style.css`
-- `js/app108h.js`
+- `js/app108i.js` (new)
+- `UPLOAD_THESE_FILES.md` (optional)
+- `STRUCTURAL_VERIFICATION.json` (optional)
 
-## Fixed
+## Mobile improvements
 
-- Removed the giant foreground bushes that covered the player and platforms.
-- Removed constant gameplay zooming and aggressive cinematic camera movement.
-- Fixed the right/left touch controls becoming stuck after a press.
-- Added global pointer release, lost-pointer-capture, tab-hidden, and window-blur safety resets.
-- Added stronger movement friction so releasing a direction stops the character quickly.
-- Hid mobile controls on desktop computers.
-- Reduced HUD, objective, achievement, and message obstruction.
-- Kept jump buffering, coyote time, improved power impacts, hero themes, and Queen dialogue.
+- Apple-style glass touch controls
+- Larger, cleaner tap targets
+- Safe-area support for iPhone notches and browser chrome
+- Collectible notices moved above the controls
+- Duplicate collectible messages removed
+- Compact achievements that do not cover gameplay
+- Responsive HUD that leaves room for pause and journal
+- Cleaner portrait fallback
+- Polished rotate-to-landscape prompt
+- Existing 1.0.8H saves automatically migrate to 1.0.8I
 
-This intentionally replaces the previous 1.0.8H files.
+## Preserved
+
+- Desktop keyboard controls
+- Choose Your Starting Dude
+- Character switching
+- Existing levels, boss, collectibles, and objectives
+- Coyote time and jump buffering
+- 1.0.8H gameplay-first camera
