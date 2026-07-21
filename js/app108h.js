@@ -119,9 +119,30 @@ function createInput(switcher){
     if(['ArrowUp','w','W'].includes(key))k.jump=v;
     if([' ','Spacebar','x','X','f','F'].includes(key))k.power=v;
   };
+  const releaseAll=()=>{k.left=false;k.right=false;k.jump=false;k.power=false};
   addEventListener('keydown',e=>{if(['ArrowLeft','ArrowRight','ArrowUp',' ','Spacebar','a','A','d','D','w','W','x','X','f','F'].includes(e.key))e.preventDefault();set(e.key,true);if(e.key==='1')switcher(0);if(e.key==='2')switcher(1);if(e.key==='3')switcher(2)},{passive:false});
-  addEventListener('keyup',e=>set(e.key,false));addEventListener('blur',()=>k.left=k.right=k.jump=k.power=false);
-  document.querySelectorAll('[data-action]').forEach(b=>{const a=b.dataset.action;const fn=v=>e=>{e.preventDefault();k[a]=v};b.addEventListener('pointerdown',fn(true),{passive:false});['pointerup','pointercancel','pointerleave'].forEach(ev=>b.addEventListener(ev,fn(false),{passive:false}))});
+  addEventListener('keyup',e=>set(e.key,false));
+  addEventListener('blur',releaseAll);
+  addEventListener('pointerup',releaseAll,{passive:true});
+  addEventListener('pointercancel',releaseAll,{passive:true});
+  document.addEventListener('visibilitychange',()=>{if(document.hidden)releaseAll()});
+  document.querySelectorAll('[data-action]').forEach(b=>{
+    const a=b.dataset.action;
+    b.addEventListener('pointerdown',e=>{
+      e.preventDefault();
+      releaseAll();
+      k[a]=true;
+      try{b.setPointerCapture(e.pointerId)}catch(_){}
+    },{passive:false});
+    const release=e=>{
+      e.preventDefault();
+      k[a]=false;
+      try{if(b.hasPointerCapture(e.pointerId))b.releasePointerCapture(e.pointerId)}catch(_){}
+    };
+    b.addEventListener('pointerup',release,{passive:false});
+    b.addEventListener('pointercancel',release,{passive:false});
+    b.addEventListener('lostpointercapture',()=>{k[a]=false});
+  });
   return k;
 }
 
@@ -187,7 +208,7 @@ class Adventure{
     const d=DUDES[this.state.dude];
     if(this.input.left){this.player.vx-=.82*dt;this.player.facing=-1}
     if(this.input.right){this.player.vx+=.82*dt;this.player.facing=1}
-    if(!this.input.left&&!this.input.right)this.player.vx*=Math.pow(.74,dt);
+    if(!this.input.left&&!this.input.right)this.player.vx*=Math.pow(.58,dt);if(Math.abs(this.player.vx)<.08)this.player.vx=0;
     this.player.vx=clamp(this.player.vx,-d.speed,d.speed);
 
     if(this.input.jump&&!this.jumpHeld)this.jumpBufferFrames=9;
@@ -249,14 +270,12 @@ class Adventure{
     }
 
     const speedRatio=Math.abs(this.player.vx)/Math.max(1,d.speed);
-    const bossFocus=this.boss.active&&this.boss.alive;
-    const lookAhead=this.player.facing*(80+speedRatio*120);
+    const lookAhead=this.player.facing*(56+speedRatio*38);
     this.cameraTarget=this.player.x-350+lookAhead;
-    if(bossFocus)this.cameraTarget=(this.player.x+this.boss.x)/2-W/2;
-    this.camera+=(clamp(this.cameraTarget,0,WORLD-W)-this.camera)*(bossFocus?.045:.065);
+    this.camera+=(clamp(this.cameraTarget,0,WORLD-W)-this.camera)*.11;
     this.camera=clamp(this.camera,0,WORLD-W);
-    this.cameraZoomTarget=bossFocus?.93:(speedRatio>.82?.965:1);
-    this.cameraZoom+=(this.cameraZoomTarget-this.cameraZoom)*.04;
+    this.cameraZoomTarget=1;
+    this.cameraZoom+=(1-this.cameraZoom)*.18;
 
     const z=this.zone();
     this.setZone(z);
@@ -456,7 +475,6 @@ class Adventure{
     this.drawRigsby(t);
     this.drawPlayer(t);
     this.drawParticles();
-    this.drawForeground(t);
     c.restore();
 
     this.drawDynamicLighting(t);
@@ -474,84 +492,30 @@ class Adventure{
   }
   drawDynamicLighting(t){
     const c=this.ctx;
-    const hero=DUDES[this.state.dude];
-    const px=(this.player.x-this.camera)+this.player.w/2;
-    const py=this.player.y+this.player.h/2;
+    if(this.powerFlash<=0&&!this.portal.open)return;
     c.save();
     c.globalCompositeOperation='screen';
-
-    const heroGlow=c.createRadialGradient(px,py,8,px,py,180+(this.powerFlash>0?85:0));
-    heroGlow.addColorStop(0,this.hexAlpha(hero.color,this.powerFlash>0?.34:.17));
-    heroGlow.addColorStop(.5,this.hexAlpha(hero.accent,.07));
-    heroGlow.addColorStop(1,'rgba(0,0,0,0)');
-    c.fillStyle=heroGlow;
-    c.fillRect(0,0,W,H);
-
-    for(const b of this.beacons){
-      if(!b.on)continue;
-      const bx=b.x-this.camera+27,by=b.y+46;
-      if(bx<-180||bx>W+180)continue;
-      const glow=c.createRadialGradient(bx,by,5,bx,by,155);
-      glow.addColorStop(0,'rgba(60,231,210,.42)');
+    if(this.powerFlash>0){
+      const hero=DUDES[this.state.dude];
+      const px=(this.player.x-this.camera)+this.player.w/2;
+      const py=this.player.y+this.player.h/2;
+      const radius=90+this.powerFlash*4;
+      const glow=c.createRadialGradient(px,py,8,px,py,radius);
+      glow.addColorStop(0,this.hexAlpha(hero.color,.22));
       glow.addColorStop(1,'rgba(0,0,0,0)');
-      c.fillStyle=glow;c.fillRect(bx-160,by-160,320,320);
+      c.fillStyle=glow;c.fillRect(px-radius,py-radius,radius*2,radius*2);
     }
-
     if(this.portal.open){
-      const px2=this.portal.x-this.camera+75,py2=this.portal.y+82;
-      const glow=c.createRadialGradient(px2,py2,10,px2,py2,210);
-      glow.addColorStop(0,'rgba(255,79,184,.38)');
-      glow.addColorStop(.45,'rgba(60,231,210,.19)');
+      const px=this.portal.x-this.camera+75,py=this.portal.y+82;
+      const glow=c.createRadialGradient(px,py,8,px,py,120);
+      glow.addColorStop(0,'rgba(255,79,184,.18)');
       glow.addColorStop(1,'rgba(0,0,0,0)');
-      c.fillStyle=glow;c.fillRect(px2-220,py2-220,440,440);
-    }
-
-    if(this.boss.active&&this.boss.alive){
-      const bx=this.boss.x-this.camera+60,by=this.boss.y+70;
-      const glow=c.createRadialGradient(bx,by,10,bx,by,230);
-      glow.addColorStop(0,'rgba(220,196,165,.26)');
-      glow.addColorStop(1,'rgba(0,0,0,0)');
-      c.fillStyle=glow;c.fillRect(bx-240,by-240,480,480);
+      c.fillStyle=glow;c.fillRect(px-125,py-125,250,250);
     }
     c.restore();
   }
 
-  drawForeground(t){
-    const c=this.ctx;
-    const zone=this.zone().id;
-    c.save();
-    c.globalAlpha=.9;
-
-    const leafColor=zone==='pch'?'#075f55':zone==='la'?'#161b35':'#173b3b';
-    c.fillStyle=leafColor;
-    for(let i=0;i<7;i++){
-      const baseX=this.camera-120+i*245+Math.sin(t*.0008+i)*18;
-      const side=i%2===0?-1:1;
-      c.save();
-      c.translate(baseX,FLOOR+70);
-      c.rotate(side*.2+Math.sin(t*.0012+i)*.035);
-      for(let j=0;j<5;j++){
-        c.save();
-        c.rotate(side*(-.7+j*.25));
-        c.beginPath();
-        c.ellipse(0,-72-j*5,14,90,0,0,Math.PI*2);
-        c.fill();
-        c.restore();
-      }
-      c.restore();
-    }
-
-    if(zone==='hillcrest'||zone==='hollywood'||zone==='la'){
-      for(let i=0;i<5;i++){
-        const x=this.camera+130+i*310;
-        c.fillStyle='rgba(22,18,42,.82)';
-        c.fillRect(x,FLOOR-150,10,150);
-        c.fillStyle='rgba(255,255,255,.15)';
-        c.beginPath();c.ellipse(x+5,FLOOR-155,42,18,0,0,Math.PI*2);c.fill();
-      }
-    }
-    c.restore();
-  }
+  drawForeground(t){}
 
   hexAlpha(hex,alpha){
     if(!hex||hex[0]!=='#')return hex;
