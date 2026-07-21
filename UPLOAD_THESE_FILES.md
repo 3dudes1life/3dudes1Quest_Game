@@ -1,31 +1,22 @@
-# 3Dudes1Quest v1.0.8I — Mobile Apple UX Update
+# 3Dudes1Quest v1.0.8J — Mobile Stable Rebuild
 
-Upload and replace:
+Upload and replace all four runtime files:
 
 - `index.html`
 - `css/style.css`
-- `js/app108i.js` (new)
-- `UPLOAD_THESE_FILES.md` (optional)
-- `STRUCTURAL_VERIFICATION.json` (optional)
+- `js/app108j.js`
+- `js/remaster.js`
 
-## Mobile improvements
+The previous 1.0.8I package referenced `js/remaster.js` without including it. Version 1.0.8J is self-contained for every file it newly references.
 
-- Apple-style glass touch controls
-- Larger, cleaner tap targets
-- Safe-area support for iPhone notches and browser chrome
-- Collectible notices moved above the controls
-- Duplicate collectible messages removed
-- Compact achievements that do not cover gameplay
-- Responsive HUD that leaves room for pause and journal
-- Cleaner portrait fallback
-- Polished rotate-to-landscape prompt
-- Existing 1.0.8H saves automatically migrate to 1.0.8I
+## Improvements
 
-## Preserved
-
-- Desktop keyboard controls
-- Choose Your Starting Dude
-- Character switching
-- Existing levels, boss, collectibles, and objectives
-- Coyote time and jump buffering
-- 1.0.8H gameplay-first camera
+- Stable boot with no blocking orientation gate
+- No MutationObserver or sessionStorage dependency during startup
+- Existing 1.0.8I, H, and G saves migrate forward
+- Apple-inspired touch controls with larger tap targets
+- Mobile safe-area support
+- Collectible and action messages remain above buttons
+- Compact achievements and HUD
+- Portrait remains playable; landscape expands to full screen
+- Desktop keyboard controls remain unchanged

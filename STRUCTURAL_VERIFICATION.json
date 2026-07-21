@@ -1,15 +1,12 @@
 {
-  "loads_app108i": true,
-  "orientation_gate_exists": true,
-  "portrait_override_exists": true,
-  "duplicate_card_message_removed": true,
-  "duplicate_beacon_message_removed": true,
-  "mobile_safe_area_css": true,
-  "toast_above_controls": true,
-  "apple_glass_controls": true,
-  "landscape_layout": true,
-  "portrait_fallback": true,
+  "index_loads_app108j": true,
+  "index_loads_included_remaster": true,
+  "remaster_file_included": true,
+  "no_orientation_gate": true,
   "save_migration": true,
-  "version_108i": true,
-  "space_power_preserved": true
+  "duplicate_card_banner_removed": true,
+  "safe_area_css": true,
+  "toast_above_controls": true,
+  "desktop_controls_preserved": true,
+  "version_108j": true
 }
