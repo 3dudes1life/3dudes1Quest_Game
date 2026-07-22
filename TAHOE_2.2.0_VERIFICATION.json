@@ -1,0 +1,17 @@
+{
+  "release": "2.2.0",
+  "checks": {
+    "html_loads_220": true,
+    "charged_power": true,
+    "stomp_combat": true,
+    "blast_combat": true,
+    "combo": true,
+    "enemy_types": true,
+    "drops": true,
+    "camera_shake": true,
+    "game_loop": true,
+    "adventure1_untouched": true
+  },
+  "all_passed": true,
+  "javascript_syntax": "PASS"
+}

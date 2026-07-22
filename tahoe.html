@@ -6,8 +6,8 @@
   <meta name="theme-color" content="#071b28">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <title>3Dudes1Quest v2.1.1 — Lake Tahoe Playable Fix</title>
-  <link rel="stylesheet" href="css/tahoe.css?v=2.1.1">
+  <title>3Dudes1Quest v2.2 — Superman Combat</title>
+  <link rel="stylesheet" href="css/tahoe.css?v=2.2.0">
 </head>
 <body>
   <main id="tahoeApp">
@@ -15,7 +15,8 @@
     <header id="tahoeHud">
       <div class="tahoeChip dudeChip"><span id="hudPortrait">W</span><b id="hudDude">Will</b></div>
       <div class="tahoeChip">❤️ <b id="hudHealth">5</b></div>
-      <div class="tahoeChip">🪲 <b id="hudBeetles">0</b>/5</div>
+      <div class="tahoeChip">🪲 <b id="hudBeetles">0</b>/12</div>
+      <div class="tahoeChip">⭐ <b id="hudScore">0</b></div>
       <div class="tahoeChip">📸 <b id="hudMemories">0</b>/4</div>
       <div class="tahoeChip altitudeChip">⛰️ <b id="hudAltitude">Emerald Shore</b></div>
       <div class="trailProgress"><span id="trailProgressFill"></span><b>LAKESHORE → TRAILHEAD</b></div>
@@ -24,11 +25,11 @@
     <a id="returnBtn" href="index.html" aria-label="Return to title">⌂</a>
     <section id="openingCard" class="storyCard">
       <small>ADVENTURE 2</small><h1>Lake Tahoe</h1><h2>Save Our Secret Place</h2>
-      <p>Cross the lakeshore, clear five Pine Beetles, recover Tahoe memories, and open the portal to Alaska.</p>
+      <p>Fight through Tahoe with stomp attacks, charged Rainbow Blasts, combos, and Superman Power.</p>
       <button id="beginTahoe">Play Tahoe</button>
     </section>
     <section id="missionCard" class="missionReveal hidden" aria-live="polite">
-      <small>NEW MISSION</small><h2>Save Our Secret Place</h2><p>Clear five Pine Beetles and reach the summit.</p>
+      <small>COMBAT UPGRADE</small><h2>Superman Mode</h2><p>Jump on bugs or hold Power and release a charged Rainbow Blast.</p>
     </section>
     <section id="cinematicCaption" class="cinematicCaption hidden"><small>ADVENTURE 2</small><strong id="cinematicText">Welcome back to Tahoe.</strong><button id="skipCinematic">SKIP</button></section>
     <section id="photoFrame" class="photoFrame hidden"><div class="postcard"><small>LAKE TAHOE</small><strong>Sixteen Summers</strong><p>Some places become part of your family.</p></div></section>
@@ -38,7 +39,7 @@
     <section id="memoryCard" class="memoryCard hidden" aria-live="polite">
       <span>📸</span><small>TAHOE MEMORY FOUND</small><strong id="memoryCardTitle">Sixteen Summers</strong><p id="memoryCardText">A place can become part of your family.</p>
     </section>
-    <section id="playTip" class="playTip hidden" aria-live="polite"><b>CONTROLS ACTIVE</b><span>Move ← → or A D · Jump ↑, W, or Space · Blast X or F</span></section>
+    <section id="playTip" class="playTip hidden" aria-live="polite"><b>CONTROLS ACTIVE</b><span>Move ← → or A D · Jump ↑, W, or Space · HOLD X/F or Power, then release</span></section>
     <div id="inputStatus" class="inputStatus" aria-live="polite"><span class="inputDot"></span><b>READY</b><small>Keyboard or screen buttons</small></div>
     <section id="checkpointCard" class="checkpointCard hidden" aria-live="polite"><span>🚩</span><div><small>CHECKPOINT</small><strong>Granite Overlook</strong><p>Progress saved.</p></div></section>
     <section id="damageFlash" class="damageFlash hidden" aria-hidden="true"></section>
@@ -54,12 +55,14 @@
       <div class="touchGroup"><button data-action="left" aria-label="Move left"><span>◀</span></button><button data-action="right" aria-label="Move right"><span>▶</span></button></div>
       <div class="touchGroup right">
         <button id="switchBtn" class="mini" aria-label="Switch character"><span class="controlIcon">↻</span><span class="controlLabel">SWITCH</span></button>
-        <button id="powerBtn" data-action="power" class="power" aria-label="Blast Pine Beetles"><span class="controlIcon">🌈</span><span class="controlLabel">POWER</span></button>
+        <button id="powerBtn" data-action="power" class="power" aria-label="Charge and release Rainbow Blast"><span class="controlIcon">🌈</span><span class="controlLabel">POWER</span></button>
         <button data-action="jump" class="jump" aria-label="Jump"><span class="controlIcon">↑</span><span class="controlLabel">JUMP</span></button>
       </div>
     </div>
+    <div id="comboHud" aria-live="polite"></div>
+    <div id="powerCharge"><span id="powerChargeFill"></span><b id="powerChargeLabel">READY</b></div>
     <div id="rotateHint">Rotate your device for the full Tahoe view 🌲</div>
   </main>
-  <script src="js/tahoe211.js?v=2.1.1"></script>
+  <script src="js/tahoe220.js?v=2.2.0"></script>
 </body>
 </html>
