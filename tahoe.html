@@ -6,8 +6,8 @@
   <meta name="theme-color" content="#071b28">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <title>3Dudes1Quest v2.0.5v — Adventure 2: Lake Tahoe</title>
-  <link rel="stylesheet" href="css/tahoe.css?v=2.0.5v">
+  <title>3Dudes1Quest v2.0.6 — Adventure 2: Lake Tahoe</title>
+  <link rel="stylesheet" href="css/tahoe.css?v=2.0.6">
 </head>
 <body>
   <main id="tahoeApp">
@@ -60,7 +60,7 @@
     </section>
 
 
-    <section id="playTip" class="playTip hidden" aria-live="polite"><b>CONTROLS ACTIVE</b><span>Hold ← → or A D to run · ↑, W, Space, or J to jump · The on-screen buttons work with mouse, trackpad, and touch</span></section>
+    <section id="playTip" class="playTip hidden" aria-live="polite"><b>CONTROLS ACTIVE</b><span>Move with ← → or A D · Jump with ↑, W, or Space · Blast with X or F · Stomp or blast the beetles</span></section>
     <div id="inputStatus" class="inputStatus" aria-live="polite"><span class="inputDot"></span><b>READY</b><small>Use keyboard or hold the buttons</small></div>
 
     <section id="checkpointCard" class="checkpointCard hidden" aria-live="polite">
@@ -92,19 +92,20 @@
       <span id="objectiveText">Walk right and explore the shoreline.</span>
     </div>
 
-    <div id="touchControls">
-      <div class="touchSide">
-        <button data-action="left" aria-label="Move left">◀</button>
-        <button data-action="right" aria-label="Move right">▶</button>
+    <div id="touchControls" aria-label="Game controls">
+      <div class="touchGroup">
+        <button data-action="left" aria-label="Move left"><span aria-hidden="true">◀</span></button>
+        <button data-action="right" aria-label="Move right"><span aria-hidden="true">▶</span></button>
       </div>
-      <div class="touchSide right">
-        <button id="switchBtn"><span>↻</span><small>SWITCH</small></button>
-        <button data-action="jump" class="jump"><span>↑</span><small>JUMP</small></button>
+      <div class="touchGroup right">
+        <button id="switchBtn" class="mini" aria-label="Switch character"><span class="controlIcon" aria-hidden="true">↻</span><span class="controlLabel">SWITCH</span></button>
+        <button id="powerBtn" data-action="power" class="power" aria-label="Blast Pine Beetles"><span id="powerIcon" class="controlIcon" aria-hidden="true">🌈</span><span class="controlLabel">POWER</span></button>
+        <button data-action="jump" class="jump" aria-label="Jump"><span class="controlIcon" aria-hidden="true">↑</span><span class="controlLabel">JUMP</span></button>
       </div>
     </div>
 
     <div id="rotateHint">Rotate your device for the full Tahoe view 🌲</div>
   </main>
-  <script src="js/tahoe205v.js?v=2.0.5v"></script>
+  <script src="js/tahoe206.js?v=2.0.6"></script>
 </body>
 </html>

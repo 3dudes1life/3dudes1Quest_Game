@@ -1,10 +1,10 @@
-# Upload only these changed/new files
+# v2.0.6 — Upload only these files
 
 - tahoe.html
 - css/tahoe.css
-- js/tahoe205v.js
+- js/tahoe206.js
 - VERSION.txt
-- TAHOE_2.0.5v_CHANGELOG.md
-- TAHOE_2.0.5v_VERIFICATION.json
+- TAHOE_2.0.6_CHANGELOG.md
+- TAHOE_2.0.6_VERIFICATION.json
 
-You do not need to upload the rest of the repository.
+Delete nothing else. Existing Adventure 1 files remain untouched.

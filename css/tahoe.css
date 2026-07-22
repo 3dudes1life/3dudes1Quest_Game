@@ -46,76 +46,49 @@ button{color:#fff;border:0;font-weight:950;cursor:pointer}
 #objective strong{display:block;margin:2px 0}
 #objective span{font-size:.8rem;opacity:.78}
 
-#touchControls{position:absolute;z-index:12;left:0;right:0;bottom:max(10px,env(safe-area-inset-bottom));display:flex;justify-content:space-between;padding:0 14px;pointer-events:none}
-.touchSide{display:flex;gap:10px;align-items:flex-end;pointer-events:auto}
-.touchSide button{width:72px;height:72px;padding:0;border:3px solid rgba(255,255,255,.74);border-radius:50%;background:rgba(5,35,52,.75);box-shadow:0 8px 25px rgba(0,0,0,.32);user-select:none;-webkit-user-select:none}
-.touchSide.right button{display:flex;flex-direction:column;align-items:center;justify-content:center}
-.touchSide button span{font-size:1.3rem}
-.touchSide button small{font-size:.56rem}
-.touchSide .jump{background:rgba(35,151,132,.84)}
-#switchBtn{background:rgba(86,89,173,.84)}
+#touchControls{
+  position:absolute;z-index:12;
+  left:max(12px,env(safe-area-inset-left));
+  right:max(12px,env(safe-area-inset-right));
+  bottom:max(10px,env(safe-area-inset-bottom));
+  display:flex;justify-content:space-between;align-items:flex-end;
+  gap:8px;padding:0;pointer-events:none;opacity:.84;
+  transition:opacity .2s ease,filter .2s ease
+}
+.touchGroup{
+  display:flex;gap:6px;align-items:flex-end;padding:5px;
+  border-radius:19px;background:rgba(18,14,42,.48);
+  border:1px solid rgba(255,255,255,.14);
+  box-shadow:0 10px 28px rgba(0,0,0,.27);
+  backdrop-filter:blur(10px);pointer-events:auto
+}
+.touchGroup button{
+  width:58px;min-width:58px;height:58px;padding:4px!important;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  border:2px solid rgba(255,255,255,.72);border-radius:16px;
+  color:#fff;background:linear-gradient(155deg,#384a72,#1d2e53);
+  box-shadow:0 8px 18px rgba(0,0,0,.3),inset 0 1px rgba(255,255,255,.22);
+  user-select:none;-webkit-user-select:none;touch-action:none;
+  -webkit-tap-highlight-color:transparent;
+  transition:transform .09s,filter .09s,box-shadow .09s
+}
+.touchGroup button>span:first-child{font-size:21px;line-height:1}
+.touchGroup .mini{width:52px;min-width:52px;background:linear-gradient(155deg,#7757e6,#5545bb)}
+.touchGroup .power{background:linear-gradient(155deg,#ef49ad,#a63fca)}
+.touchGroup .jump{background:linear-gradient(155deg,#40d8ca,#278fb8)}
+.controlIcon{font-size:19px!important;line-height:1;margin-bottom:3px;pointer-events:none}
+.controlLabel{font-size:8px;font-weight:1000;letter-spacing:-.045em;line-height:.95;pointer-events:none}
+.touchGroup button.isPressed{
+  transform:translateY(3px) scale(.93);
+  filter:brightness(1.28);
+  box-shadow:0 3px 9px rgba(0,0,0,.35),0 0 0 3px rgba(255,255,255,.2)
+}
 #rotateHint{display:none}
 
-@media(hover:hover) and (pointer:fine){#touchControls{opacity:.9}.touchSide button:hover{transform:translateY(-3px);filter:brightness(1.15)}}
+@media(hover:hover) and (pointer:fine){#touchControls{opacity:.7}#touchControls:hover{opacity:1}.touchGroup button:hover{transform:translateY(-2px);filter:brightness(1.12)}}
 @media(max-width:760px){
   #tahoeHud{right:112px;gap:5px}.tahoeChip{padding:6px 9px;font-size:.78rem}.altitudeChip{display:none}.trailProgress{max-width:none}
-  .touchSide button{width:62px;height:62px}
-  #objective{bottom:82px}
-  .dialogue{bottom:82px;grid-template-columns:58px 1fr}.dialogue img{width:54px;height:54px}.dialogue button{grid-column:1/-1;width:100%;padding:8px}
-}
-@media(max-height:520px) and (orientation:landscape){
-  .storyCard{padding:18px 26px}.storyCard h1{font-size:3.4rem}.storyCard p{font-size:.82rem;margin:.5em 0}.storyCard button{padding:10px}
-  .dialogue{bottom:70px}.touchSide button{width:56px;height:56px}
-  #objective{bottom:68px;padding:8px 12px}
-}
-@media(orientation:portrait) and (max-width:600px){
-  #rotateHint{display:block;position:absolute;z-index:30;left:50%;bottom:18px;transform:translateX(-50%);width:90%;padding:12px;text-align:center;border-radius:999px;background:rgba(3,18,29,.92);font-weight:900}
-}
-
-
-/* v2.0.1 — The Arrival */
-.missionReveal{position:absolute;z-index:24;left:50%;top:34%;transform:translate(-50%,-50%);width:min(650px,90vw);padding:25px 30px;text-align:center;border-top:2px solid rgba(255,255,255,.8);border-bottom:2px solid rgba(255,255,255,.8);background:linear-gradient(90deg,transparent,rgba(3,27,38,.92) 18%,rgba(3,27,38,.92) 82%,transparent);text-shadow:0 3px 18px #000;animation:missionIn .65s both}
-.missionReveal small{color:#82efd1;letter-spacing:.28em;font-weight:1000}.missionReveal h2{font-size:clamp(2rem,6vw,4.2rem);margin:.1em 0;color:#fff}.missionReveal p{margin:.25em 0;color:#ffe899;font-weight:850}
-@keyframes missionIn{from{opacity:0;transform:translate(-50%,-40%) scale(.92)}to{opacity:1;transform:translate(-50%,-50%) scale(1)}}
-.cinematicCaption{position:absolute;z-index:23;left:50%;bottom:28px;transform:translateX(-50%);width:min(760px,92vw);display:grid;grid-template-columns:1fr auto;gap:4px 18px;padding:15px 18px;border-radius:18px;background:rgba(3,21,33,.88);border:1px solid rgba(255,255,255,.5);backdrop-filter:blur(10px)}
-.cinematicCaption small{grid-column:1;color:#77eccd;letter-spacing:.2em;font-weight:1000}.cinematicCaption strong{font-size:1.05rem}.cinematicCaption button{grid-column:2;grid-row:1/3;padding:9px 15px;border-radius:999px;background:#3a5871}
-.photoFrame{position:absolute;z-index:27;inset:0;display:grid;place-items:center;background:rgba(255,255,255,.88);animation:flashAway 1.8s both;pointer-events:none}.postcard{width:min(680px,86vw);height:min(420px,65vh);display:flex;flex-direction:column;justify-content:flex-end;padding:28px;border:13px solid #fff;background:linear-gradient(180deg,rgba(48,170,209,.2),rgba(20,79,76,.6)),radial-gradient(circle at 70% 15%,#fff4b0 0 7%,transparent 8%),linear-gradient(160deg,#83d7eb 0 45%,#2e9db6 46% 63%,#557658 64%);box-shadow:0 25px 90px rgba(0,0,0,.55);transform:rotate(-1deg);color:white;text-shadow:0 3px 10px #000}
-.postcard small{letter-spacing:.25em;font-weight:1000}.postcard strong{font-size:clamp(2.4rem,7vw,5rem);line-height:.9}.postcard p{font-size:1.05rem;font-weight:800}
-@keyframes flashAway{0%{opacity:0}8%{opacity:1}72%{opacity:1}100%{opacity:0}}
-@media(max-height:520px){.cinematicCaption{bottom:8px;padding:9px 13px}.missionReveal{top:30%;padding:13px}.photoFrame .postcard{height:75vh;padding:16px}.postcard strong{font-size:2.5rem}}
-
-
-/* v2.0.2 — Trail Climb */
-.checkpointCard{
-  position:absolute;z-index:19;left:50%;top:18%;transform:translateX(-50%);
-  width:min(480px,88vw);display:grid;grid-template-columns:auto 1fr;gap:8px 14px;
-  align-items:center;padding:15px 20px;border:2px solid #8ff3c8;border-radius:20px;
-  background:rgba(5,31,43,.96);box-shadow:0 18px 65px rgba(0,0,0,.55)
-}
-.checkpointCard>span{font-size:2.7rem}
-.checkpointCard small{display:block;color:#8ff3c8;letter-spacing:.16em;font-weight:1000}
-.checkpointCard strong{display:block;font-size:1.35rem}
-.checkpointCard p{margin:2px 0 0;opacity:.78}
-.damageFlash{position:absolute;z-index:40;inset:0;background:rgba(255,58,72,.42);pointer-events:none;animation:damagePulse .35s ease-out}
-@keyframes damagePulse{from{opacity:1}to{opacity:0}}
-
-/* v2.0.3v — First Playable */
-.playTip{position:absolute;z-index:18;left:50%;bottom:112px;transform:translateX(-50%);width:min(760px,90vw);display:flex;gap:12px;align-items:center;justify-content:center;padding:11px 16px;border:1px solid rgba(255,255,255,.3);border-radius:16px;background:rgba(4,25,36,.9);box-shadow:0 12px 35px rgba(0,0,0,.35);font-size:.88rem;text-align:center}.playTip b{color:#ffe58d;letter-spacing:.1em;white-space:nowrap}.playTip span{opacity:.9}@media(max-width:700px){.playTip{bottom:150px;display:block}.playTip b{display:block;margin-bottom:3px}}
-
-
-/* v2.0.4 — Playable Input Fix */
-#tahoeCanvas{outline:none}
-.touchSide button{
-  touch-action:none;
-  -webkit-tap-highlight-color:transparent;
-  transition:transform .1s,filter .1s,box-shadow .1s;
-}
-.touchSide button.pressed{
-  transform:translateY(3px) scale(.94)!important;
-  filter:brightness(1.3);
-  box-shadow:0 3px 10px rgba(0,0,0,.38),0 0 0 4px rgba(255,255,255,.22);
-}
-.inputStatus{
+  .inputStatus{
   position:absolute;z-index:13;right:18px;bottom:92px;
   display:grid;grid-template-columns:auto auto;column-gap:7px;align-items:center;
   padding:8px 12px;border-radius:14px;border:1px solid rgba(255,255,255,.42);
@@ -139,3 +112,15 @@ button{color:#fff;border:0;font-weight:950;cursor:pointer}
   transition:opacity .25s,transform .25s
 }
 .saveToast.show{opacity:1;transform:translate(-50%,0)}
+
+
+/* v2.0.6 — Tahoe Playable & Scenic Pass */
+.powerReadyPulse{animation:powerReadyPulse .7s ease}
+@keyframes powerReadyPulse{50%{filter:brightness(1.45);box-shadow:0 0 0 5px rgba(255,91,194,.22),0 0 26px rgba(255,91,194,.7)}}
+@media(max-width:760px){
+  #touchControls{left:max(7px,env(safe-area-inset-left));right:max(7px,env(safe-area-inset-right));bottom:max(6px,env(safe-area-inset-bottom))}
+  .touchGroup{gap:4px;padding:4px}
+  .touchGroup button{width:52px;min-width:52px;height:55px;border-radius:15px}
+  .touchGroup .mini{width:47px;min-width:47px}
+  .controlIcon{font-size:17px!important}.controlLabel{font-size:7px}
+}

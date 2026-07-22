@@ -1,0 +1,18 @@
+{
+  "release": "2.0.6",
+  "base": "user-uploaded 3dudes1Quest_Game-main(6).zip",
+  "javascript_syntax": "PASS",
+  "checks": {
+    "level_one_control_layout": true,
+    "new_script_linked": true,
+    "single_pointer_path": true,
+    "keyboard_move": true,
+    "keyboard_power": true,
+    "power_projectile": true,
+    "blast_hits_beetles": true,
+    "jump_stomp_retained": true,
+    "scenic_water": true,
+    "patch_only": true
+  },
+  "all_pass": true
+}
