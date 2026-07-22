@@ -1,0 +1,17 @@
+{
+  "release": "2.4.0",
+  "passed": true,
+  "checks": {
+    "html_loads_240": true,
+    "four_nests": true,
+    "boss_three_phases": true,
+    "superman_retained": true,
+    "stomping_retained": true,
+    "dynamic_weather": true,
+    "rigsby_sense": true,
+    "alaska_portal": true,
+    "boss_hud": true,
+    "adventure1_untouched": true
+  },
+  "syntax_check": "node --check passed"
+}

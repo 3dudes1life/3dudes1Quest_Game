@@ -6,8 +6,8 @@
   <meta name="theme-color" content="#071b28">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <title>3Dudes1Quest v2.3 — Living Tahoe World</title>
-  <link rel="stylesheet" href="css/tahoe.css?v=2.3.0">
+  <title>3Dudes1Quest v2.4 — Rise of the Pine Beetle Queen</title>
+  <link rel="stylesheet" href="css/tahoe.css?v=2.4.0">
 </head>
 <body>
   <main id="tahoeApp">
@@ -15,7 +15,7 @@
     <header id="tahoeHud">
       <div class="tahoeChip dudeChip"><span id="hudPortrait">W</span><b id="hudDude">Will</b></div>
       <div class="tahoeChip">❤️ <b id="hudHealth">5</b></div>
-      <div class="tahoeChip">🪲 <b id="hudBeetles">0</b>/18</div>
+      <div class="tahoeChip">🪲 <b id="hudBeetles">0</b></div><div class="tahoeChip">🪹 <b id="hudNests">0</b>/4</div><div class="tahoeChip">🌦️ <b id="hudWeather">SUN</b></div>
       <div class="tahoeChip">⭐ <b id="hudScore">0</b></div>
       <div class="tahoeChip">📸 <b id="hudMemories">0</b>/6</div>
       <div class="tahoeChip altitudeChip">⛰️ <b id="hudAltitude">Emerald Shore</b></div>
@@ -25,11 +25,11 @@
     <a id="returnBtn" href="index.html" aria-label="Return to title">⌂</a>
     <section id="openingCard" class="storyCard">
       <small>ADVENTURE 2</small><h1>Lake Tahoe</h1><h2>Save Our Secret Place</h2>
-      <p>Explore a much larger Tahoe with waterfall climbs, a broken log bridge, a crystal cave, secret collectibles, and Superman combat.</p>
+      <p>Destroy the beetle nests, survive Tahoe’s changing weather, and defeat the three-phase Pine Beetle Queen with Superman combat.</p>
       <button id="beginTahoe">Play Tahoe</button>
     </section>
     <section id="missionCard" class="missionReveal hidden" aria-live="polite">
-      <small>WORLD EXPANSION</small><h2>Living Tahoe</h2><p>Explore six zones, climb ledges, find five secret crystals, and clear 18 beetles.</p>
+      <small>BOSS ADVENTURE</small><h2>Rise of the Pine Beetle Queen</h2><p>Destroy four spawning nests, follow Rigsby’s warnings, and defeat the Queen before Tahoe is lost.</p>
     </section>
     <section id="cinematicCaption" class="cinematicCaption hidden"><small>ADVENTURE 2</small><strong id="cinematicText">Welcome back to Tahoe.</strong><button id="skipCinematic">SKIP</button></section>
     <section id="photoFrame" class="photoFrame hidden"><div class="postcard"><small>LAKE TAHOE</small><strong>Sixteen Summers</strong><p>Some places become part of your family.</p></div></section>
@@ -59,10 +59,10 @@
         <button data-action="jump" class="jump" aria-label="Jump"><span class="controlIcon">↑</span><span class="controlLabel">JUMP</span></button>
       </div>
     </div>
-    <div id="comboHud" aria-live="polite"></div>
+    <div id="comboHud" aria-live="polite"></div><section id="bossHud" class="bossHud hidden" aria-live="polite"><small>PINE BEETLE QUEEN</small><div><span id="bossHealthFill"></span></div><b id="bossPhase">PHASE 1</b></section>
     <div id="powerCharge"><span id="powerChargeFill"></span><b id="powerChargeLabel">READY</b></div>
     <div id="rotateHint">Rotate your device for the full Tahoe view 🌲</div>
   </main>
-  <script src="js/tahoe230.js?v=2.3.0"></script>
+  <script src="js/tahoe240.js?v=2.4.0"></script>
 </body>
 </html>
