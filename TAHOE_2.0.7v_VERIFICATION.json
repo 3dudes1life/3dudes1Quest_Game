@@ -1,0 +1,18 @@
+{
+  "release": "2.0.7v",
+  "base": "v2.0.6 Tahoe Playable patch",
+  "javascript_syntax": "PASS",
+  "checks": {
+    "script_linked": true,
+    "four_memory_hud": true,
+    "four_discoveries": true,
+    "saved_discoveries": true,
+    "rigsby_alert": true,
+    "five_zones": true,
+    "landmarks": true,
+    "ambient_wildlife": true,
+    "controls_retained": true,
+    "patch_only": true
+  },
+  "all_pass": true
+}
