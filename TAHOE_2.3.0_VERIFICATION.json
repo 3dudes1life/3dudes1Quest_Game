@@ -1,0 +1,13 @@
+{
+  "release": "2.3.0",
+  "phase": "World Expansion",
+  "adventure1_modified": false,
+  "entry": "tahoe.html",
+  "runtime": "js/tahoe230.js",
+  "world_width": 9200,
+  "beetles": 18,
+  "memories": 6,
+  "secret_crystals": 5,
+  "platforms": 15,
+  "syntax_check": "passed"
+}
