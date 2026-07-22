@@ -1,0 +1,12 @@
+{
+  "release": "2.1.1",
+  "javascript_syntax": "PASS",
+  "play_button": "PASS",
+  "movement": "PASS",
+  "jump": "PASS",
+  "power": "PASS",
+  "five_beetles": "PASS",
+  "four_memories": "PASS",
+  "alaska_exit": "PASS",
+  "adventure1_untouched": true
+}

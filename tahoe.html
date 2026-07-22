@@ -6,113 +6,60 @@
   <meta name="theme-color" content="#071b28">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <title>3Dudes1Quest v2.1.0 — Adventure 2 Complete: Lake Tahoe</title>
-  <link rel="stylesheet" href="css/tahoe.css?v=2.1.0">
+  <title>3Dudes1Quest v2.1.1 — Lake Tahoe Playable Fix</title>
+  <link rel="stylesheet" href="css/tahoe.css?v=2.1.1">
 </head>
 <body>
   <main id="tahoeApp">
     <canvas id="tahoeCanvas" width="1280" height="720" tabindex="0" aria-label="Adventure 2 Lake Tahoe"></canvas>
-
     <header id="tahoeHud">
       <div class="tahoeChip dudeChip"><span id="hudPortrait">W</span><b id="hudDude">Will</b></div>
       <div class="tahoeChip">❤️ <b id="hudHealth">5</b></div>
       <div class="tahoeChip">🪲 <b id="hudBeetles">0</b>/5</div>
       <div class="tahoeChip">📸 <b id="hudMemories">0</b>/4</div>
-      <div class="tahoeChip altitudeChip">⛰️ <b id="hudAltitude">Lake Level</b></div>
+      <div class="tahoeChip altitudeChip">⛰️ <b id="hudAltitude">Emerald Shore</b></div>
       <div class="trailProgress"><span id="trailProgressFill"></span><b>LAKESHORE → TRAILHEAD</b></div>
     </header>
-
     <button id="pauseBtn" aria-label="Pause">Ⅱ</button>
     <a id="returnBtn" href="index.html" aria-label="Return to title">⌂</a>
-
     <section id="openingCard" class="storyCard">
-      <small>ADVENTURE 2</small>
-      <h1>Lake Tahoe</h1>
-      <h2>Save Our Secret Place</h2>
-      <p>Cross the lakeshore, save the forest from the Pine Beetles, recover Tahoe memories, and open the portal to Alaska.</p>
-      <button id="beginTahoe">Enter the Portal</button>
+      <small>ADVENTURE 2</small><h1>Lake Tahoe</h1><h2>Save Our Secret Place</h2>
+      <p>Cross the lakeshore, clear five Pine Beetles, recover Tahoe memories, and open the portal to Alaska.</p>
+      <button id="beginTahoe">Play Tahoe</button>
     </section>
-
-
     <section id="missionCard" class="missionReveal hidden" aria-live="polite">
-      <small>NEW MISSION</small><h2>Save Our Secret Place</h2>
-      <p>The Pine Beetle is spreading. Reach the trailhead.</p>
+      <small>NEW MISSION</small><h2>Save Our Secret Place</h2><p>Clear five Pine Beetles and reach the summit.</p>
     </section>
-
-    <section id="cinematicCaption" class="cinematicCaption hidden"><small>ADVENTURE 2</small><strong id="cinematicText">The portal is opening...</strong><button id="skipCinematic">SKIP</button></section>
-
+    <section id="cinematicCaption" class="cinematicCaption hidden"><small>ADVENTURE 2</small><strong id="cinematicText">Welcome back to Tahoe.</strong><button id="skipCinematic">SKIP</button></section>
     <section id="photoFrame" class="photoFrame hidden"><div class="postcard"><small>LAKE TAHOE</small><strong>Sixteen Summers</strong><p>Some places become part of your family.</p></div></section>
-
     <section id="dialogue" class="dialogue hidden" aria-live="polite">
-      <img id="dialoguePortrait" src="assets/portraits/will.png" alt="">
-      <div>
-        <small id="dialogueName">Will</small>
-        <p id="dialogueText">We made it...</p>
-      </div>
-      <button id="dialogueNext">NEXT</button>
+      <img id="dialoguePortrait" src="assets/portraits/will.png" alt=""><div><small id="dialogueName">Will</small><p id="dialogueText">We made it...</p></div><button id="dialogueNext">NEXT</button>
     </section>
-
     <section id="memoryCard" class="memoryCard hidden" aria-live="polite">
-      <span>📸</span>
-      <small>TAHOE MEMORY FOUND</small>
-      <strong>Sixteen Summers</strong>
-      <p>A place can become part of your family.</p>
+      <span>📸</span><small>TAHOE MEMORY FOUND</small><strong id="memoryCardTitle">Sixteen Summers</strong><p id="memoryCardText">A place can become part of your family.</p>
     </section>
-
-
-    <section id="playTip" class="playTip hidden" aria-live="polite"><b>CONTROLS ACTIVE</b><span>Move with ← → or A D · Jump with ↑, W, or Space · Blast with X or F · Stomp or blast the beetles</span></section>
-    <div id="inputStatus" class="inputStatus" aria-live="polite"><span class="inputDot"></span><b>READY</b><small>Use keyboard or hold the buttons</small></div>
-
-    <section id="checkpointCard" class="checkpointCard hidden" aria-live="polite">
-      <span>🚩</span>
-      <div><small>CHECKPOINT</small><strong>Granite Overlook</strong><p>Progress restored here after a fall or beetle hit.</p></div>
-    </section>
-
+    <section id="playTip" class="playTip hidden" aria-live="polite"><b>CONTROLS ACTIVE</b><span>Move ← → or A D · Jump ↑, W, or Space · Blast X or F</span></section>
+    <div id="inputStatus" class="inputStatus" aria-live="polite"><span class="inputDot"></span><b>READY</b><small>Keyboard or screen buttons</small></div>
+    <section id="checkpointCard" class="checkpointCard hidden" aria-live="polite"><span>🚩</span><div><small>CHECKPOINT</small><strong>Granite Overlook</strong><p>Progress saved.</p></div></section>
     <section id="damageFlash" class="damageFlash hidden" aria-hidden="true"></section>
-
     <section id="trailheadCard" class="trailheadCard hidden" aria-live="polite">
-      <small>ADVENTURE 2 COMPLETE</small>
-      <h2>Tahoe Is Breathing Again</h2>
-      <p>The beetles are gone, color is returning to the forest, and the Rainbow Prism has opened the path north.</p>
-      <button id="continueToPortal">Enter the Alaska Portal</button>
-      <button id="replayTahoe">Replay Tahoe</button>
-      <a href="index.html">Return to Title</a>
+      <small>ADVENTURE 2 COMPLETE</small><h2>Tahoe Is Breathing Again</h2>
+      <p>The forest is recovering and the path north is open.</p>
+      <button id="continueToPortal">Enter the Alaska Portal</button><button id="replayTahoe">Replay Tahoe</button><a href="index.html">Return to Title</a>
     </section>
-
-    <section id="finaleBanner" class="finaleBanner hidden" aria-live="polite">
-      <small>FOREST RESTORED</small>
-      <strong>The portal to Alaska is open.</strong>
-      <span>Walk into the portal at the summit.</span>
-    </section>
-
-    <section id="pauseMenu" class="pauseMenu hidden">
-      <small>ADVENTURE PAUSED</small>
-      <h2>Lake Tahoe</h2>
-      <button id="resumeTahoe">Resume</button>
-      <button id="restartTahoe">Restart Preview</button>
-      <a href="index.html">Return to Title</a>
-    </section>
-
-    <div id="objective">
-      <small>CURRENT OBJECTIVE</small>
-      <strong id="objectiveTitle">Take in the lake</strong>
-      <span id="objectiveText">Walk right and explore the shoreline.</span>
-    </div>
-
+    <section id="finaleBanner" class="finaleBanner hidden" aria-live="polite"><small>FOREST RESTORED</small><strong>The portal to Alaska is open.</strong><span>Walk into the portal at the summit.</span></section>
+    <section id="pauseMenu" class="pauseMenu hidden"><small>ADVENTURE PAUSED</small><h2>Lake Tahoe</h2><button id="resumeTahoe">Resume</button><button id="restartTahoe">Restart Tahoe</button><a href="index.html">Return to Title</a></section>
+    <div id="objective"><small>CURRENT OBJECTIVE</small><strong id="objectiveTitle">Enter Tahoe</strong><span id="objectiveText">Press Play Tahoe.</span></div>
     <div id="touchControls" aria-label="Game controls">
-      <div class="touchGroup">
-        <button data-action="left" aria-label="Move left"><span aria-hidden="true">◀</span></button>
-        <button data-action="right" aria-label="Move right"><span aria-hidden="true">▶</span></button>
-      </div>
+      <div class="touchGroup"><button data-action="left" aria-label="Move left"><span>◀</span></button><button data-action="right" aria-label="Move right"><span>▶</span></button></div>
       <div class="touchGroup right">
-        <button id="switchBtn" class="mini" aria-label="Switch character"><span class="controlIcon" aria-hidden="true">↻</span><span class="controlLabel">SWITCH</span></button>
-        <button id="powerBtn" data-action="power" class="power" aria-label="Blast Pine Beetles"><span id="powerIcon" class="controlIcon" aria-hidden="true">🌈</span><span class="controlLabel">POWER</span></button>
-        <button data-action="jump" class="jump" aria-label="Jump"><span class="controlIcon" aria-hidden="true">↑</span><span class="controlLabel">JUMP</span></button>
+        <button id="switchBtn" class="mini" aria-label="Switch character"><span class="controlIcon">↻</span><span class="controlLabel">SWITCH</span></button>
+        <button id="powerBtn" data-action="power" class="power" aria-label="Blast Pine Beetles"><span class="controlIcon">🌈</span><span class="controlLabel">POWER</span></button>
+        <button data-action="jump" class="jump" aria-label="Jump"><span class="controlIcon">↑</span><span class="controlLabel">JUMP</span></button>
       </div>
     </div>
-
     <div id="rotateHint">Rotate your device for the full Tahoe view 🌲</div>
   </main>
-  <script src="js/tahoe210.js?v=2.1.0"></script>
+  <script src="js/tahoe211.js?v=2.1.1"></script>
 </body>
 </html>
