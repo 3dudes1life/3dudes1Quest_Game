@@ -187,3 +187,10 @@ button{color:#fff;border:0;font-weight:950;cursor:pointer}
 .bossHud>div{height:16px;background:rgba(255,255,255,.13);border-radius:999px;overflow:hidden;border:1px solid rgba(255,255,255,.25)}
 .bossHud span{display:block;height:100%;width:100%;background:linear-gradient(90deg,#ff4d73,#ff9d45,#ffe35f);transition:width .18s ease}
 .bossHud b{display:block;margin-top:6px;font-size:12px;letter-spacing:.14em;color:#ffc7de}
+
+/* v2.4.3 Level 1 parity pass */
+#powerCharge{height:22px;bottom:25px}
+#powerCharge b{font-size:8px;letter-spacing:.08em;padding:0 8px;white-space:nowrap}
+#bossHud{border-color:#ff6d94!important;box-shadow:0 0 30px rgba(255,70,120,.36),0 16px 45px rgba(0,0,0,.45)!important}
+#bossHud small{color:#ffd55f!important}
+@media(hover:hover) and (pointer:fine){#touchControls{display:flex!important;opacity:.72!important}}

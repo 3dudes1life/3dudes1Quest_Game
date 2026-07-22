@@ -6,8 +6,8 @@
   <meta name="theme-color" content="#071b28">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <title>3Dudes1Quest v2.4.2 — Tahoe Quality Pass</title>
-  <link rel="stylesheet" href="css/tahoe.css?v=2.4.2">
+  <title>3Dudes1Quest v2.4.3 — Tahoe Level 1 Parity Pass</title>
+  <link rel="stylesheet" href="css/tahoe.css?v=2.4.3">
 
   <meta name="application-name" content="3Dudes1Quest">
   <meta name="apple-mobile-web-app-title" content="3Dudes1Quest">
@@ -18,11 +18,11 @@
   <meta property="og:description" content="Save Tahoe. Defeat the Queen. Open the portal to Alaska.">
   <meta property="og:image" content="assets/share-card.jpg">
   <meta name="twitter:card" content="summary_large_image">
-  <link rel="manifest" href="manifest.webmanifest?v=2.4.2">
-  <link rel="icon" href="favicon.ico?v=2.4.2" sizes="any">
-  <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32.png?v=2.4.2">
-  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png?v=2.4.2">
-  <link rel="stylesheet" href="css/pwa241.css?v=2.4.2">
+  <link rel="manifest" href="manifest.webmanifest?v=2.4.3">
+  <link rel="icon" href="favicon.ico?v=2.4.3" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32.png?v=2.4.3">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png?v=2.4.3">
+  <link rel="stylesheet" href="css/pwa241.css?v=2.4.3">
 </head>
 <body>
   <main id="tahoeApp">
@@ -40,7 +40,7 @@
     <a id="returnBtn" href="index.html" aria-label="Return to title">⌂</a>
     <section id="openingCard" class="storyCard">
       <small>ADVENTURE 2</small><h1>Lake Tahoe</h1><h2>Save Our Secret Place</h2>
-      <p>Destroy the beetle nests, survive Tahoe’s changing weather, and defeat the three-phase Pine Beetle Queen with Superman combat.</p>
+      <p>Destroy the beetle nests, survive Tahoe’s changing weather, and defeat the three-phase Pine Beetle Queen using the same character powers from Adventure 1.</p>
       <button id="beginTahoe">Play Tahoe</button>
     </section>
     <section id="missionCard" class="missionReveal hidden" aria-live="polite">
@@ -54,7 +54,7 @@
     <section id="memoryCard" class="memoryCard hidden" aria-live="polite">
       <span>📸</span><small>TAHOE MEMORY FOUND</small><strong id="memoryCardTitle">Sixteen Summers</strong><p id="memoryCardText">A place can become part of your family.</p>
     </section>
-    <section id="playTip" class="playTip hidden" aria-live="polite"><b>CONTROLS ACTIVE</b><span>Move ← → or A D · Jump ↑, W, or Space · HOLD X/F or Power, then release</span></section>
+    <section id="playTip" class="playTip hidden" aria-live="polite"><b>CONTROLS ACTIVE</b><span>Move ← → or A D · Jump ↑, W, or Space · Press X/F or Power to fire</span></section>
     <div id="inputStatus" class="inputStatus" aria-live="polite"><span class="inputDot"></span><b>READY</b><small>Keyboard or screen buttons</small></div>
     <section id="checkpointCard" class="checkpointCard hidden" aria-live="polite"><span>🚩</span><div><small>CHECKPOINT</small><strong>Granite Overlook</strong><p>Progress saved.</p></div></section>
     <section id="damageFlash" class="damageFlash hidden" aria-hidden="true"></section>
@@ -70,7 +70,7 @@
       <div class="touchGroup"><button data-action="left" aria-label="Move left"><span>◀</span></button><button data-action="right" aria-label="Move right"><span>▶</span></button></div>
       <div class="touchGroup right">
         <button id="switchBtn" class="mini" aria-label="Switch character"><span class="controlIcon">↻</span><span class="controlLabel">SWITCH</span></button>
-        <button id="powerBtn" data-action="power" class="power" aria-label="Use your character power"><span class="controlIcon">✨</span><span class="controlLabel">POWER</span></button>
+        <button id="powerBtn" data-action="power" class="power" aria-label="Use your character power"><span id="powerIcon" class="controlIcon">🌈</span><span id="powerButtonLabel" class="controlLabel">RICOCHET</span></button>
         <button data-action="jump" class="jump" aria-label="Jump"><span class="controlIcon">↑</span><span class="controlLabel">JUMP</span></button>
       </div>
     </div>
@@ -78,8 +78,8 @@
     <div id="powerCharge"><span id="powerChargeFill"></span><b id="powerChargeLabel">READY</b></div>
     <div id="rotateHint">Rotate your device for the full Tahoe view 🌲</div>
   </main>
-  <script src="js/tahoe242.js?v=2.4.2"></script>
+  <script src="js/tahoe243.js?v=2.4.3"></script>
 
-  <script src="js/pwa241.js?v=2.4.2"></script>
+  <script src="js/pwa241.js?v=2.4.3"></script>
 </body>
 </html>

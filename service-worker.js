@@ -1,10 +1,10 @@
-const VERSION = '2.4.1';
+const VERSION = '2.4.3';
 const CACHE = `3dudes1quest-${VERSION}`;
 const CORE = [
   './','./index.html','./tahoe.html','./manifest.webmanifest','./favicon.ico',
   './icons/icon-192.png','./icons/icon-512.png','./icons/apple-touch-icon.png',
   './assets/share-card.jpg','./css/style.css','./css/tahoe.css','./js/pwa241.js',
-  './js/tahoe240.js','./assets/will.png','./assets/daniel.png','./assets/caleb.png',
+  './js/tahoe243.js','./css/quality243.css','./assets/will.png','./assets/daniel.png','./assets/caleb.png',
   './assets/portraits/will.png','./assets/portraits/daniel.png','./assets/portraits/caleb.png'
 ];
 self.addEventListener('install', event => {

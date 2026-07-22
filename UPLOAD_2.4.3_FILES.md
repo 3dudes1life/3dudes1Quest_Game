@@ -1,0 +1,1 @@
+Upload every file in this patch to the repository root, preserving folders. Replace matching files. The service worker cache is bumped to 2.4.3, so installed Home Screen apps will update automatically.

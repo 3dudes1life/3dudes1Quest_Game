@@ -1,0 +1,6 @@
+/* 3Dudes1Quest v2.4.3 — Level 1 parity and control recovery */
+@media (hover:hover) and (pointer:fine){
+  #touchControls{display:flex!important;opacity:.78!important}
+  #touchControls:hover{opacity:1!important}
+}
+#touchControls{visibility:visible!important}
