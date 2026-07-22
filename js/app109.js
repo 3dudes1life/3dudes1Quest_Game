@@ -104,10 +104,10 @@ function createLivingTitleWorld(){
 
 function createUI(){
   const screens={title:qs('titleScreen'),help:qs('helpScreen'),game:qs('gameScreen'),complete:qs('completeScreen'),portal:qs('portalScreen')};
-  const refs={dude:qs('hudDude'),health:qs('hudHealth'),cards:qs('hudCards'),beacons:qs('hudBeacons'),triangle:qs('hudTriangle'),routeFill:qs('routeProgressFill'),routeLabel:qs('routeLabel'),objectiveTitle:qs('objectiveTitle'),objectiveDetail:qs('objectiveDetail'),message:qs('message'),completeStats:qs('completeStats'),bossPhase:qs('bossPhase')};
+  const refs={dude:qs('hudDude'),health:qs('hudHealth'),cards:qs('hudCards'),beacons:qs('hudBeacons'),triangle:qs('hudTriangle'),score:qs('hudScore'),routeFill:qs('routeProgressFill'),routeLabel:qs('routeLabel'),objectiveTitle:qs('objectiveTitle'),objectiveDetail:qs('objectiveDetail'),message:qs('message'),completeStats:qs('completeStats'),bossPhase:qs('bossPhase')};
   function show(name){Object.values(screens).forEach(s=>s.classList.remove('active'));screens[name].classList.add('active')}
   function flash(text){refs.message.textContent=text;refs.message.classList.add('show');clearTimeout(flash.t);flash.t=setTimeout(()=>refs.message.classList.remove('show'),1800)}
-  function hud(game){const s=game.state,d=DUDES[s.dude],z=game.zone();refs.dude.textContent=d.name;refs.health.textContent=s.health;refs.cards.textContent=s.cards;refs.beacons.textContent=s.beacons;refs.triangle.textContent=Math.floor(s.triangle);refs.routeFill.style.width=(game.player.x/(WORLD-100)*100)+'%';refs.routeLabel.textContent=z.name;refs.objectiveTitle.textContent=s.objective.title;refs.objectiveDetail.textContent=s.objective.detail;refs.bossPhase.classList.toggle('hidden',!game.boss.active);if(game.boss.active){const hp=Math.max(0,game.boss.hp);refs.bossPhase.textContent=`QUEEN OF BEIGE  ${hp}/${game.boss.maxHp}`;refs.bossPhase.style.setProperty('--boss-health',`${hp/game.boss.maxHp*100}%`);refs.bossPhase.dataset.phase=String(game.boss.phase)}}
+  function hud(game){const s=game.state,d=DUDES[s.dude],z=game.zone();refs.dude.textContent=d.name;refs.health.textContent=s.health;refs.cards.textContent=s.cards;refs.beacons.textContent=s.beacons;refs.triangle.textContent=Math.floor(s.triangle);if(refs.score)refs.score.textContent=(s.score||0).toLocaleString();refs.routeFill.style.width=(game.player.x/(WORLD-100)*100)+'%';refs.routeLabel.textContent=z.name;refs.objectiveTitle.textContent=s.objective.title;refs.objectiveDetail.textContent=s.objective.detail;refs.bossPhase.classList.toggle('hidden',!game.boss.active);if(game.boss.active){const hp=Math.max(0,game.boss.hp);refs.bossPhase.textContent=`QUEEN OF BEIGE  ${hp}/${game.boss.maxHp}`;refs.bossPhase.style.setProperty('--boss-health',`${hp/game.boss.maxHp*100}%`);refs.bossPhase.dataset.phase=String(game.boss.phase)}}
   return {show,flash,hud,refs,screens};
 }
 function qs(id){return document.getElementById(id)}
@@ -225,7 +225,7 @@ class Adventure{
   load(key,src){const im=new Image();im.src=src;this.images[key]=im}
   loadAssets(){this.load('home','assets/environments/home_base_remastered.svg');['will','daniel','caleb'].forEach(n=>['idle','walk','jump','attack','hurt','celebrate'].forEach(s=>this.load(`${n}_${s}`,`assets/sprites_hd/${n}_${s}.png`)));['idle','walk','bark'].forEach(s=>this.load(`rigsby_${s}`,`assets/sprites_hd/rigsby_${s}.png`))}
   reset(startingDude=0){
-    this.state={health:4,cards:0,beacons:0,dude:clamp(startingDude,0,2),triangle:0,paused:false,bossDefeated:false,zoeyUnlocked:false,adventureComplete:false,objective:{title:ZONES[0].objective,detail:ZONES[0].detail}};
+    this.state={health:4,cards:0,beacons:0,score:0,dude:clamp(startingDude,0,2),triangle:0,paused:false,bossDefeated:false,zoeyUnlocked:false,adventureComplete:false,objective:{title:ZONES[0].objective,detail:ZONES[0].detail}};
     this.player={x:150,y:FLOOR-72,w:44,h:72,vx:0,vy:0,onGround:true,facing:1,inv:0,anim:'idle',animUntil:0};this.camera=0;this.running=false;this.last=0;this.finished=false;this.zoneId='home';this.zoneIntro=performance.now()+1300;this.jumpHeld=false;this.powerHeld=false;this.rigsby={x:265,y:FLOOR-42,w:56,h:40};
     this.cards=[650,1720,2600,3730,4630,7580].map((x,i)=>({x,y:FLOOR-100-(i%2)*95,w:38,h:52,taken:false}));
     this.beacons=[{x:3020,y:FLOOR-105,w:54,h:92,on:false},{x:4870,y:FLOOR-105,w:54,h:92,on:false},{x:6980,y:FLOOR-105,w:54,h:92,on:false}];
@@ -558,7 +558,7 @@ class Adventure{
     if(!site)return;
     site.found=true;
     this.secretsFound++;
-    this.state.triangle=clamp(this.state.triangle+8,0,100);
+    this.state.triangle=clamp(this.state.triangle+8,0,100);this.state.score+=100;
     this.burst(site.x,site.y-18,'#ffe66d',46);
     this.burst(site.x,site.y-18,'#3ce7d2',28);
     this.showPetMoment('Rigsby found a secret!',site.label,'🐶');
@@ -699,7 +699,7 @@ class Adventure{
     for(const c of this.cards){
       if(!c.taken&&overlap(this.player,c)){
         c.taken=true;
-        this.state.cards++;
+        this.state.cards++;this.state.score+=500;
         this.state.triangle=clamp(this.state.triangle+12,0,100);
         this.worldPulse=14;
         this.shake=Math.max(this.shake,4);
@@ -712,7 +712,7 @@ class Adventure{
     for(const b of this.beacons){
       if(!b.on&&overlap(this.player,b)){
         b.on=true;
-        this.state.beacons++;
+        this.state.beacons++;this.state.score+=1000;
         this.state.triangle=clamp(this.state.triangle+18,0,100);
         this.restorationBurst(b.x+27,b.y+46);
         showAchievement(`Color restored ${this.state.beacons}/3`,'🔺');
