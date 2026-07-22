@@ -1,0 +1,183 @@
+{
+  "release": "2.5.2",
+  "name": "Adventure 1 Exact Cast Lock",
+  "result": "PASS",
+  "checks": {
+    "node_check:js/core/quest-core.js": true,
+    "node_check:js/tahoe252.js": true,
+    "node_check:js/pwa241.js": true,
+    "node_check:service-worker.js": true,
+    "html_loads_core_before_tahoe252": true,
+    "html_uses_2_5_2_cache_busting": true,
+    "tahoe_release_is_2_5_2": true,
+    "tahoe_waits_for_cast_preload": true,
+    "tahoe_never_calls_fake_fallback": true,
+    "core_drawdude_returns_waiting_not_fake": true,
+    "core_uses_unique_cast_asset_version": true,
+    "service_worker_version_2_5_2": true,
+    "service_worker_precaches_versioned_cast": true,
+    "all_21_assets_match_gold_master": true
+  },
+  "asset_count": 21,
+  "assets": [
+    {
+      "file": "assets/sprites_hd/caleb_attack.png",
+      "width": 768,
+      "height": 192,
+      "sha256": "6e87721fc7520519e7f6354fd3a25361c4bc79a00ac475b032cc658d356b0a39",
+      "matches_adventure1_gold_master": true
+    },
+    {
+      "file": "assets/sprites_hd/caleb_celebrate.png",
+      "width": 1024,
+      "height": 192,
+      "sha256": "bd4dee8f7680ace81106e4bb2cda320ababe44ec6ffb4c0cc6cc940c56a21af9",
+      "matches_adventure1_gold_master": true
+    },
+    {
+      "file": "assets/sprites_hd/caleb_hurt.png",
+      "width": 512,
+      "height": 192,
+      "sha256": "98bf232ae707f380a1fd76369cc9b58e66008560f2cee3d23e2993616747bab1",
+      "matches_adventure1_gold_master": true
+    },
+    {
+      "file": "assets/sprites_hd/caleb_idle.png",
+      "width": 768,
+      "height": 192,
+      "sha256": "6357f75abdef28d067a478c9076505bab0861cfcc54947a241b90ca144460c43",
+      "matches_adventure1_gold_master": true
+    },
+    {
+      "file": "assets/sprites_hd/caleb_jump.png",
+      "width": 512,
+      "height": 192,
+      "sha256": "9d1f2f93cc0b7223c77061878537e8432faeeb7ea1cf8cfc7b5c8f9d35f3f771",
+      "matches_adventure1_gold_master": true
+    },
+    {
+      "file": "assets/sprites_hd/caleb_walk.png",
+      "width": 1024,
+      "height": 192,
+      "sha256": "f725d3a9288ccc7f0587854b5e114c0ff1bf64ffcc57e99dc6c892f0991cb3ab",
+      "matches_adventure1_gold_master": true
+    },
+    {
+      "file": "assets/sprites_hd/daniel_attack.png",
+      "width": 768,
+      "height": 192,
+      "sha256": "d0eae8ba8e346dbe0b6a7dc9dd7edde24c94ff5d18947633b8420c9a5e6423bf",
+      "matches_adventure1_gold_master": true
+    },
+    {
+      "file": "assets/sprites_hd/daniel_celebrate.png",
+      "width": 1024,
+      "height": 192,
+      "sha256": "fd80b0dad1c65b3305b883b75af818ce0ea9a9483ff941cc0aedab4e6c4e45c9",
+      "matches_adventure1_gold_master": true
+    },
+    {
+      "file": "assets/sprites_hd/daniel_hurt.png",
+      "width": 512,
+      "height": 192,
+      "sha256": "cade6fa00702b4bbc0a281edb1d2335991957a6988160cc60a8ee4a0a7beb2f1",
+      "matches_adventure1_gold_master": true
+    },
+    {
+      "file": "assets/sprites_hd/daniel_idle.png",
+      "width": 768,
+      "height": 192,
+      "sha256": "a06d585e9e28ef5c554b9835a6d92114e09cbecfb25970852e285fa277bbef69",
+      "matches_adventure1_gold_master": true
+    },
+    {
+      "file": "assets/sprites_hd/daniel_jump.png",
+      "width": 512,
+      "height": 192,
+      "sha256": "1211bf7df835130741b944096b8f28eeaac4cbb7bc5c1d55eecf3b33b61f6b22",
+      "matches_adventure1_gold_master": true
+    },
+    {
+      "file": "assets/sprites_hd/daniel_walk.png",
+      "width": 1024,
+      "height": 192,
+      "sha256": "52bde2ab8d81e4257d513fc707e4fb56c2dec90962eea652ab2f3d55c85a0f00",
+      "matches_adventure1_gold_master": true
+    },
+    {
+      "file": "assets/sprites_hd/rigsby_bark.png",
+      "width": 640,
+      "height": 96,
+      "sha256": "f86f90db59e74c7ee3f2b8bb0412eeb54bd63fe550a79ed4f86e95c40690b444",
+      "matches_adventure1_gold_master": true
+    },
+    {
+      "file": "assets/sprites_hd/rigsby_idle.png",
+      "width": 768,
+      "height": 96,
+      "sha256": "405d803da8788cc454805d7cd06dc2eaa912cc60529cf41e53f5c499e1144127",
+      "matches_adventure1_gold_master": true
+    },
+    {
+      "file": "assets/sprites_hd/rigsby_walk.png",
+      "width": 1024,
+      "height": 96,
+      "sha256": "a7988dcc7764d2246d5cb2f79cc52771e738ff136f2a2266ddedec9e96fc5356",
+      "matches_adventure1_gold_master": true
+    },
+    {
+      "file": "assets/sprites_hd/will_attack.png",
+      "width": 768,
+      "height": 192,
+      "sha256": "0726a64509a80f94bdd4a6847760f327390c4c198c4d25f2ac27d8fb8201a93e",
+      "matches_adventure1_gold_master": true
+    },
+    {
+      "file": "assets/sprites_hd/will_celebrate.png",
+      "width": 1024,
+      "height": 192,
+      "sha256": "d4cddd75242cfe1090e5795a06f4c8a3d2522ee43cd3c45bd12830fc3a17dc12",
+      "matches_adventure1_gold_master": true
+    },
+    {
+      "file": "assets/sprites_hd/will_hurt.png",
+      "width": 512,
+      "height": 192,
+      "sha256": "f315ec736d3a35d41f6c7db4bcd47657f8e20a28a7f388b972ad486a61da0aeb",
+      "matches_adventure1_gold_master": true
+    },
+    {
+      "file": "assets/sprites_hd/will_idle.png",
+      "width": 768,
+      "height": 192,
+      "sha256": "d65040ecd50f4b547bf91ac472681249e94fffe1f4d216c78f23d3638efaac17",
+      "matches_adventure1_gold_master": true
+    },
+    {
+      "file": "assets/sprites_hd/will_jump.png",
+      "width": 512,
+      "height": 192,
+      "sha256": "9e1b2e7132e522d2952f3ce85e69a7b795d2b2eee3cf35cb0a86166b18cb44c5",
+      "matches_adventure1_gold_master": true
+    },
+    {
+      "file": "assets/sprites_hd/will_walk.png",
+      "width": 1024,
+      "height": 192,
+      "sha256": "51238648e29929c44d1c10f5bc29b3dc9544cb6fffc2f57b3573a239019704e7",
+      "matches_adventure1_gold_master": true
+    }
+  ],
+  "runtime_mock_test": {
+    "cast_files_loaded": 21,
+    "preload_ready": true,
+    "will_draw_result": "sprite",
+    "animation": "idle",
+    "source_frame": [
+      0,
+      0,
+      128,
+      192
+    ]
+  }
+}

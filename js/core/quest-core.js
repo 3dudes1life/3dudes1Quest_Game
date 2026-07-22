@@ -6,7 +6,8 @@
  * They must not redefine the five main characters or the three dude powers.
  */
 (() => {
-  const VERSION = "2.5.1";
+  const VERSION = "2.5.2";
+  const CAST_ASSET_VERSION = "adventure1-gold-master-109-v252";
   const ANIMATIONS = Object.freeze(["idle", "walk", "jump", "attack", "hurt", "celebrate"]);
 
   const CAST = Object.freeze([
@@ -63,24 +64,71 @@
   function spritePath(character, animation = "idle") {
     const key = typeof character === "number" ? CAST[character]?.key : character?.key || character;
     if (!key || !ANIMATIONS.includes(animation)) throw new Error(`Unknown cast sprite: ${String(key)} ${animation}`);
-    return `assets/sprites_hd/${key}_${animation}.png`;
+    return `assets/sprites_hd/${key}_${animation}.png?cast=${CAST_ASSET_VERSION}`;
   }
 
   function loadCastImages() {
     const images = {};
+    const load = (key, src) => {
+      const image = new Image();
+      image.decoding = "async";
+      image.loading = "eager";
+      image.src = src;
+      images[key] = image;
+    };
     for (const dude of CAST) {
       for (const animation of ANIMATIONS) {
-        const image = new Image();
-        image.src = spritePath(dude, animation);
-        images[`${dude.key}_${animation}`] = image;
+        load(`${dude.key}_${animation}`, spritePath(dude, animation));
       }
     }
     for (const animation of ["idle", "walk", "bark"]) {
-      const image = new Image();
-      image.src = `assets/sprites_hd/rigsby_${animation}.png`;
-      images[`rigsby_${animation}`] = image;
+      load(`rigsby_${animation}`, `assets/sprites_hd/rigsby_${animation}.png?cast=${CAST_ASSET_VERSION}`);
     }
     return images;
+  }
+
+  function requiredCastKeys() {
+    const keys = [];
+    for (const dude of CAST) for (const animation of ANIMATIONS) keys.push(`${dude.key}_${animation}`);
+    keys.push("rigsby_idle", "rigsby_walk", "rigsby_bark");
+    return keys;
+  }
+
+  function imageReady(image) {
+    return !!(image && image.complete && image.naturalWidth > 0 && image.naturalHeight > 0);
+  }
+
+  async function preloadCastImages(images, timeoutMs = 12000) {
+    const keys = requiredCastKeys();
+    const waitFor = (key) => new Promise(resolve => {
+      const image = images[key];
+      if (imageReady(image)) return resolve({key, ok: true});
+      if (!image) return resolve({key, ok: false, reason: "missing image object"});
+      let settled = false;
+      const finish = (ok, reason = "") => {
+        if (settled) return;
+        settled = true;
+        clearTimeout(timer);
+        image.removeEventListener("load", onLoad);
+        image.removeEventListener("error", onError);
+        resolve({key, ok, reason});
+      };
+      const onLoad = async () => {
+        try { if (typeof image.decode === "function") await image.decode(); } catch (_) {}
+        finish(imageReady(image), imageReady(image) ? "" : "decoded without dimensions");
+      };
+      const onError = () => finish(false, "asset request failed");
+      const timer = setTimeout(() => finish(imageReady(image), imageReady(image) ? "" : "timeout"), timeoutMs);
+      image.addEventListener("load", onLoad, {once: true});
+      image.addEventListener("error", onError, {once: true});
+    });
+    const results = await Promise.all(keys.map(waitFor));
+    const missing = results.filter(result => !result.ok);
+    return {ready: missing.length === 0, results, missing};
+  }
+
+  function castImagesReady(images) {
+    return requiredCastKeys().every(key => imageReady(images[key]));
   }
 
   function makePowerProjectile(dudeIndex, player) {
@@ -484,13 +532,14 @@
       ctx.ellipse(screenX + 22, resolvedGround - 2, 31, 8, 0, Math.PI * 2);
       ctx.fill();
       const frame = Math.floor(time / speed) % frames;
-      const painted = safeSprite(ctx, image, screenX - 20, screenY - 50, frame, 128, 192, 84, 126, facing < 0);
-      if (!painted) drawFallbackHero(ctx, screenX, screenY, dude, facing);
-      return { drawn: painted ? "sprite" : "fallback", animation };
+      let painted = safeSprite(ctx, image, screenX - 20, screenY - 50, frame, 128, 192, 84, 126, facing < 0);
+      if (!painted && animation !== "idle") {
+        painted = safeSprite(ctx, images[`${dude.key}_idle`], screenX - 20, screenY - 50, Math.floor(time / 150) % 6, 128, 192, 84, 126, facing < 0);
+      }
+      return { drawn: painted ? "sprite" : "waiting", animation };
     } catch (error) {
-      console.warn("QuestCore hero fallback activated", error);
-      try { drawFallbackHero(ctx, screenX, screenY, dude, facing); } catch (_) {}
-      return { drawn: "fallback", animation };
+      console.warn("QuestCore locked cast sprite unavailable", error);
+      return { drawn: "waiting", animation };
     } finally {
       ctx.restore();
     }
@@ -527,6 +576,7 @@
 
   window.QuestCore = Object.freeze({
     VERSION,
+    CAST_ASSET_VERSION,
     ANIMATIONS,
     CAST,
     PETS,
@@ -535,6 +585,8 @@
     actionForCode,
     spritePath,
     loadCastImages,
+    preloadCastImages,
+    castImagesReady,
     makePowerProjectile,
     drawHeroShots,
     drawPositiveFields,
