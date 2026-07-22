@@ -1,10 +1,12 @@
-# v2.0.7v — Upload only these files
+# v2.1.0 — Upload only these changed/new files
 
+- index.html
 - tahoe.html
+- alaska.html
 - css/tahoe.css
-- js/tahoe207v.js
+- js/tahoe210.js
 - VERSION.txt
-- TAHOE_2.0.7v_CHANGELOG.md
-- TAHOE_2.0.7v_VERIFICATION.json
+- TAHOE_2.1.0_CHANGELOG.md
+- TAHOE_2.1.0_VERIFICATION.json
 
-Adventure 1 and all unchanged assets remain untouched.
+All other Adventure 1 and shared asset files remain untouched.

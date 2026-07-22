@@ -6,12 +6,12 @@
   <meta name="theme-color" content="#071b28">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <title>3Dudes1Quest v2.0.7v — Adventure 2: Lake Tahoe</title>
-  <link rel="stylesheet" href="css/tahoe.css?v=2.0.7v">
+  <title>3Dudes1Quest v2.1.0 — Adventure 2 Complete: Lake Tahoe</title>
+  <link rel="stylesheet" href="css/tahoe.css?v=2.1.0">
 </head>
 <body>
   <main id="tahoeApp">
-    <canvas id="tahoeCanvas" width="1280" height="720" tabindex="0" aria-label="Adventure 2 Lake Tahoe playable preview"></canvas>
+    <canvas id="tahoeCanvas" width="1280" height="720" tabindex="0" aria-label="Adventure 2 Lake Tahoe"></canvas>
 
     <header id="tahoeHud">
       <div class="tahoeChip dudeChip"><span id="hudPortrait">W</span><b id="hudDude">Will</b></div>
@@ -29,7 +29,7 @@
       <small>ADVENTURE 2</small>
       <h1>Lake Tahoe</h1>
       <h2>Save Our Secret Place</h2>
-      <p>Walk the peaceful lakeshore, find the first Tahoe Memory, and reach the trailhead.</p>
+      <p>Cross the lakeshore, save the forest from the Pine Beetles, recover Tahoe memories, and open the portal to Alaska.</p>
       <button id="beginTahoe">Enter the Portal</button>
     </section>
 
@@ -71,11 +71,18 @@
     <section id="damageFlash" class="damageFlash hidden" aria-hidden="true"></section>
 
     <section id="trailheadCard" class="trailheadCard hidden" aria-live="polite">
-      <small>WORLD POLISH PLAYTEST COMPLETE</small>
-      <h2>The Trail Begins Here</h2>
-      <p>You crossed the polished lakeshore trail and reached the overlook. Across the mountain, thousands of pines are turning brown—and something enormous moves beneath the canopy.</p>
-      <button id="replayTahoe">Explore Again</button>
+      <small>ADVENTURE 2 COMPLETE</small>
+      <h2>Tahoe Is Breathing Again</h2>
+      <p>The beetles are gone, color is returning to the forest, and the Rainbow Prism has opened the path north.</p>
+      <button id="continueToPortal">Enter the Alaska Portal</button>
+      <button id="replayTahoe">Replay Tahoe</button>
       <a href="index.html">Return to Title</a>
+    </section>
+
+    <section id="finaleBanner" class="finaleBanner hidden" aria-live="polite">
+      <small>FOREST RESTORED</small>
+      <strong>The portal to Alaska is open.</strong>
+      <span>Walk into the portal at the summit.</span>
     </section>
 
     <section id="pauseMenu" class="pauseMenu hidden">
@@ -106,6 +113,6 @@
 
     <div id="rotateHint">Rotate your device for the full Tahoe view 🌲</div>
   </main>
-  <script src="js/tahoe207v.js?v=2.0.7v"></script>
+  <script src="js/tahoe210.js?v=2.1.0"></script>
 </body>
 </html>

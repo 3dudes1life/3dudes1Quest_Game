@@ -1,0 +1,17 @@
+{
+  "release": "2.1.0",
+  "base": "v2.0.7v Great Tahoe Rebuild plus current Gold Master index",
+  "javascript_syntax": "PASS",
+  "checks": {
+    "intro_crash_fixed": true,
+    "adventure1_enter_tahoe": true,
+    "tahoe_script_linked": true,
+    "golden_path_controls": true,
+    "five_beetle_gate": true,
+    "forest_finale": true,
+    "walkable_exit_portal": true,
+    "alaska_waiting_level": true,
+    "patch_only": true
+  },
+  "all_pass": true
+}

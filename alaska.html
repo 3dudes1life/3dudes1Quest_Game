@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#061529">
+<title>3Dudes1Quest — Adventure 3: Alaska</title>
+<style>
+*{box-sizing:border-box}html,body{margin:0;min-height:100%;overflow:hidden;background:#061529;color:#fff;font-family:Inter,ui-rounded,system-ui,sans-serif}
+body{min-height:100vh;display:grid;place-items:center}
+.scene{position:fixed;inset:0;background:linear-gradient(#061529 0%,#13375a 48%,#365d70 72%,#eef7f8 100%);overflow:hidden}
+.aurora{position:absolute;inset:-20% -10% 30%;filter:blur(28px);opacity:.7;background:
+radial-gradient(ellipse at 25% 50%,rgba(67,255,198,.72),transparent 38%),
+radial-gradient(ellipse at 65% 45%,rgba(125,91,255,.62),transparent 42%),
+radial-gradient(ellipse at 86% 35%,rgba(255,86,190,.4),transparent 35%);
+animation:drift 8s ease-in-out infinite alternate}
+.stars{position:absolute;inset:0;background-image:radial-gradient(#fff 1px,transparent 1px);background-size:42px 42px;opacity:.42}
+.mountain{position:absolute;left:-8%;right:-8%;bottom:15%;height:48%;clip-path:polygon(0 100%,0 72%,12% 38%,22% 70%,36% 18%,48% 67%,62% 28%,73% 72%,86% 13%,100% 65%,100% 100%);background:linear-gradient(145deg,#dbe9ee,#7896a7 56%,#314d61)}
+.mountain.back{bottom:28%;opacity:.52;transform:scale(1.12);background:#49677b}
+.snow{position:absolute;inset:0;pointer-events:none}
+.snow i{position:absolute;top:-5%;width:6px;height:6px;border-radius:50%;background:#fff;opacity:.8;animation:fall linear infinite}
+.snow i:nth-child(3n){width:3px;height:3px}.snow i:nth-child(4n){width:9px;height:9px;filter:blur(1px)}
+.card{position:relative;z-index:3;width:min(680px,90vw);padding:34px;text-align:center;border-radius:30px;background:rgba(3,17,34,.72);border:1px solid rgba(190,240,255,.35);box-shadow:0 28px 90px rgba(0,0,0,.5);backdrop-filter:blur(16px)}
+.kicker{font-weight:1000;letter-spacing:.24em;color:#80ffd0;font-size:.72rem}.card h1{font-size:clamp(3rem,9vw,6.8rem);line-height:.85;margin:14px 0 5px;text-transform:uppercase}.card h2{margin:0;color:#a9e9ff;font-size:clamp(1.1rem,3vw,1.7rem)}
+.badge{display:inline-block;margin:23px 0 14px;padding:9px 16px;border-radius:999px;background:rgba(118,255,207,.12);border:1px solid rgba(118,255,207,.48);font-weight:900}
+.card p{max-width:520px;margin:0 auto 24px;line-height:1.55;color:#deedf5}
+.actions{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}.actions a{padding:12px 18px;border-radius:14px;text-decoration:none;color:#fff;font-weight:900;background:linear-gradient(135deg,#e546aa,#7157e9);border:1px solid rgba(255,255,255,.35)}
+.actions a.secondary{background:rgba(255,255,255,.08)}
+.footprint{position:absolute;right:8%;bottom:7%;font-size:76px;filter:drop-shadow(0 12px 15px rgba(0,0,0,.35));transform:rotate(-12deg);opacity:.55}
+@keyframes drift{to{transform:translate(6%,5%) scale(1.08)}}@keyframes fall{to{transform:translate(70px,110vh) rotate(180deg)}}
+</style>
+</head>
+<body>
+<div class="scene" aria-hidden="true">
+  <div class="stars"></div><div class="aurora"></div>
+  <div class="mountain back"></div><div class="mountain"></div>
+  <div class="snow" id="snow"></div><div class="footprint">🐾</div>
+</div>
+<main class="card">
+  <div class="kicker">THE JOURNEY CONTINUES</div>
+  <h1>Alaska</h1>
+  <h2>Adventure 3</h2>
+  <div class="badge">COMING SOON</div>
+  <p>Tahoe is safe. Beyond the northern lights, a new wilderness is waiting—and something enormous has left tracks in the snow.</p>
+  <div class="actions"><a href="index.html">Return to Quest Hub</a><a class="secondary" href="tahoe.html">Replay Tahoe</a></div>
+</main>
+<script>
+const snow=document.getElementById("snow");
+for(let i=0;i<70;i++){const f=document.createElement("i");f.style.left=Math.random()*100+"%";f.style.animationDuration=5+Math.random()*9+"s";f.style.animationDelay=-Math.random()*12+"s";snow.appendChild(f)}
+try{localStorage.setItem("3dudes1quest_adventure2_complete","true")}catch(_){}
+</script>
+</body>
+</html>
