@@ -1,0 +1,36 @@
+{
+  "release": "3Dudes1Quest 2.5.0 Shared Cast Engine",
+  "base": "uploaded 3dudes1Quest_Game-main-2.zip plus latest parity patch",
+  "checks": {
+    "syntax:js/core/quest-core.js": true,
+    "syntax:js/app109.js": true,
+    "syntax:js/tahoe250.js": true,
+    "syntax:js/pwa241.js": true,
+    "syntax:service-worker.js": true,
+    "core_loaded_before_level1": true,
+    "core_loaded_before_level2": true,
+    "level1_uses_locked_cast": true,
+    "level2_uses_locked_cast": true,
+    "level1_uses_shared_power_factory": true,
+    "level2_uses_shared_power_factory": true,
+    "space_is_power": true,
+    "w_is_jump": true,
+    "no_tahoe_stomp_combat": true,
+    "no_tahoe_zoey_replacement_sprite": true,
+    "shared_beagle_renderer_level1": true,
+    "shared_beagle_renderer_level2": true,
+    "pwa_cache_bumped": true,
+    "pwa_script_bumped": true,
+    "controls_forced_visible": true,
+    "service_worker_paths_exist": true,
+    "locked_names_and_powers": true
+  },
+  "missing_service_worker_paths": [],
+  "passed": true,
+  "notes": [
+    "No image files are included in this patch.",
+    "Adventure 1 and Adventure 2 both import js/core/quest-core.js.",
+    "Will, Daniel, Caleb, Rigsby, Zoey, movement values, controls, and power launch contracts are locked in shared code.",
+    "Tahoe remains shoot-only combat; jumping on enemies does not deal damage."
+  ]
+}

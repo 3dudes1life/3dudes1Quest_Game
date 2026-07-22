@@ -1,0 +1,6 @@
+/* 3Dudes1Quest v2.5 shared cast/control lock */
+#touchControls{display:flex!important;visibility:visible!important;pointer-events:auto!important}
+#touchControls button{touch-action:none;-webkit-user-select:none;user-select:none}
+#touchControls .controlLabel{letter-spacing:.07em}
+@media (hover:hover) and (pointer:fine){#touchControls{opacity:.82!important}#touchControls:hover{opacity:1!important}}
+@media (max-width:900px),(pointer:coarse){#touchControls{opacity:1!important}}

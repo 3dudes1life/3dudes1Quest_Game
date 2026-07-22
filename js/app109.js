@@ -22,11 +22,8 @@ window.addEventListener('error',e=>{
 const W=1280,H=720,FLOOR=620,WORLD=9200;
 const clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
 const overlap=(a,b)=>a.x+a.w>b.x&&a.x<b.x+b.w&&a.y+a.h>b.y&&a.y<b.y+b.h;
-const DUDES=[
-  {name:'Will',color:'#ff4fb8',accent:'#ffe66d',speed:6.2,jump:14,power:'Rainbow Ricochet',shortPower:'BOUNCE',powerIcon:'🌈'},
-  {name:'Daniel',color:'#8d5cff',accent:'#3ce7d2',speed:5.7,jump:13.5,power:'Heartfield Burst',shortPower:'HEARTS',powerIcon:'💖'},
-  {name:'Caleb',color:'#ff9a3c',accent:'#fff',speed:5.9,jump:13,power:'Long-Range Cookie Toss',shortPower:'TOSS',powerIcon:'🍪'}
-];
+const DUDES=window.QuestCore?.CAST;
+if(!DUDES)throw new Error('QuestCore must load before Adventure 1');
 const ZONES=[
   {id:'home',name:'HOME BASE',start:0,end:1450,color:'#ff9d78',objective:'Find Zoey',detail:'Follow Rigsby and recover the first Gay Card. Zoey has been taken by the Queen of Beige.'},
   {id:'hillcrest',name:'HILLCREST',start:1450,end:3300,color:'#ff4fb8',objective:'Restore Hillcrest',detail:'Collect two Gay Cards and activate the neighborhood Prism Beacon.'},
@@ -836,44 +833,26 @@ class Adventure{
   }
 
   power(t){
-    this.player.anim='attack';this.player.animUntil=t+430;const dude=this.state.dude;
-    if(dude===0){
-      this.heroShots.push({type:'rainbow',x:this.player.x+(this.player.facing>0?48:-18),y:this.player.y+30,w:58,h:22,vx:this.player.facing*12.8,vy:0,life:130,trail:[],bounces:2,hitTargets:[]});
-      this.shake=Math.max(this.shake,5);this.burst(this.player.x+22,this.player.y+32,'#ffe66d',20);this.burst(this.player.x+22,this.player.y+32,'#ff4fb8',16);
-      this.sound('ricochet');this.haptic(10);this.ui.flash('Rainbow Ricochet!');return;
+    this.player.anim='attack';
+    this.player.animUntil=t+430;
+    const payload=window.QuestCore.makePowerProjectile(this.state.dude,this.player);
+    if(payload.kind==='heroShot')this.heroShots.push(payload.entity);
+    else this.cookieBombs.push(payload.entity);
+
+    if(this.state.dude===0){
+      this.shake=Math.max(this.shake,5);
+      this.burst(this.player.x+22,this.player.y+32,'#ffe66d',20);
+      this.burst(this.player.x+22,this.player.y+32,'#ff4fb8',16);
+      this.sound(payload.sound);this.haptic(10);this.ui.flash(payload.feedback);return;
     }
-    if(dude===1){
-      const facing=this.player.facing||1;
-      // The heart forms in front of Daniel's hands. No body-centered particles or switch rings.
+    if(this.state.dude===1){
       this.danielCast=12;
-      this.heroShots.push({
-        type:'heart',
-        x:this.player.x+(facing>0?58:-34),
-        y:this.player.y+18,
-        w:38,h:34,
-        vx:facing*10.6,vy:0,
-        life:138,age:0,trail:[],facing
-      });
       this.player.inv=Math.max(this.player.inv,42);
       this.shake=Math.max(this.shake,2);
-      this.sound('heart');this.haptic([12,20,18]);this.ui.flash('Heartfield launched!');return;
+      this.sound(payload.sound);this.haptic([12,20,18]);this.ui.flash(payload.feedback);return;
     }
-    const facing=this.player.facing||1;
-    this.cookieBombs.push({
-      x:this.player.x+(facing>0?52:-18),
-      y:this.player.y+20,
-      w:32,h:32,
-      vx:facing*10.4,
-      vy:-5.7,
-      gravity:.28,
-      life:220,
-      fuse:42,
-      stuck:false,
-      target:null,
-      trail:[]
-    });
     this.shake=Math.max(this.shake,2);
-    this.sound('cookie');this.haptic(18);this.ui.flash('Long-range cookie toss!');
+    this.sound(payload.sound);this.haptic(18);this.ui.flash(payload.feedback);
   }
 
   findRicochetTarget(shot,from){
@@ -1606,37 +1585,7 @@ class Adventure{
   }
 
   drawBeagle(x,y,t,variant='rigsby',flip=false){
-    const c=this.ctx;
-    const run=Math.sin(t*.012+x*.01);
-    c.save();
-    c.translate(x+(flip?54:0),y);
-    c.scale(flip?-1:1,1);
-    c.fillStyle='rgba(0,0,0,.16)';
-    c.beginPath();c.ellipse(27,38,27,6,0,0,Math.PI*2);c.fill();
-    c.fillStyle=variant==='zoey'?'#f2e6d6':'#d8b28a';
-    c.beginPath();c.ellipse(28,21,25,16,0,0,Math.PI*2);c.fill();
-    c.fillStyle=variant==='zoey'?'#6a4431':'#6f4932';
-    c.beginPath();c.ellipse(45,13,16,13,0,0,Math.PI*2);c.fill();
-    c.beginPath();c.ellipse(47,22,11,15,.35,0,Math.PI*2);c.fill();
-    c.fillStyle='#23170f';
-    c.beginPath();c.arc(57,14,4,0,Math.PI*2);c.fill();
-    c.fillStyle='#fff';
-    c.beginPath();c.arc(48,9,3.2,0,Math.PI*2);c.fill();
-    c.fillStyle='#21150f';
-    c.beginPath();c.arc(49,9,1.5,0,Math.PI*2);c.fill();
-    c.strokeStyle=variant==='zoey'?'#ff4fb8':'#3ce7d2';
-    c.lineWidth=3;
-    c.beginPath();c.arc(45,19,10,.2,2.5);c.stroke();
-    c.strokeStyle=variant==='zoey'?'#f2e6d6':'#d8b28a';
-    c.lineWidth=7;
-    c.beginPath();
-    c.moveTo(14,30);c.lineTo(12+run*3,39);
-    c.moveTo(34,31);c.lineTo(36-run*3,39);
-    c.stroke();
-    c.strokeStyle=variant==='zoey'?'#6a4431':'#6f4932';
-    c.lineWidth=5;
-    c.beginPath();c.moveTo(4,18);c.quadraticCurveTo(-8,5,-2,-4-run*3);c.stroke();
-    c.restore();
+    window.QuestCore.drawBeagle(this.ctx,x,y,t,variant,flip);
   }
 
   drawCinematicLife(t){
@@ -2606,7 +2555,7 @@ function showAchievement(title,icon='🏆'){const stack=qs('achievementStack');c
 function showCollect(text){const t=qs('collectibleToast');t.textContent=text;t.classList.add('isVisible');clearTimeout(showCollect.t);showCollect.t=setTimeout(()=>t.classList.remove('isVisible'),1450)}
 window.showAchievement=showAchievement;window.showCollectible=showCollect;
 
-const canvas=qs('gameCanvas');canvas.width=W;canvas.height=H;const ui=createUI();let game;const input=createInput(i=>game?.switchDude(i));game=new Adventure(canvas,ui,input,state=>{ui.refs.completeStats.textContent=`All ${state.cards}/6 Gay Cards recovered, ${state.beacons}/3 Prism Beacons restored, and the Queen of Beige defeated.`;ui.show('complete')});window.__questGame=game;window.__QUEST_RELEASE__={version:'1.0.9',dudeCount:DUDES.length,powers:DUDES.map(dude=>({name:dude.name,power:dude.power,icon:dude.powerIcon}))};
+const canvas=qs('gameCanvas');canvas.width=W;canvas.height=H;const ui=createUI();let game;const input=createInput(i=>game?.switchDude(i));game=new Adventure(canvas,ui,input,state=>{ui.refs.completeStats.textContent=`All ${state.cards}/6 Gay Cards recovered, ${state.beacons}/3 Prism Beacons restored, and the Queen of Beige defeated.`;ui.show('complete')});window.__questGame=game;window.__QUEST_RELEASE__={version:'1.0.10-core-lock',coreVersion:window.QuestCore.VERSION,dudeCount:DUDES.length,powers:DUDES.map(dude=>({name:dude.name,power:dude.power,icon:dude.powerIcon})),castLocked:window.QuestCore.validateCast(DUDES)};
 const SAVE='3dudes1quest-save-109';
 const LEGACY_SAVES=[
   '3dudes1quest-save-108x','3dudes1quest-save-108w','3dudes1quest-save-108v',
