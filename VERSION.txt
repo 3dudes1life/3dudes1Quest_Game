@@ -1,3 +1,1 @@
-3Dudes1Quest Core Engine 2.5.0
-Adventure 1: 1.0.10 Core Lock
-Adventure 2: 2.5.0 Shared Cast Engine
+3Dudes1Quest v2.5.1 — Cast Visibility Hotfix

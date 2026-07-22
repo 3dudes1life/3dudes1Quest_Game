@@ -1,5 +1,5 @@
 (() => {
-  const VERSION='2.5.0';
+  const VERSION='2.5.1';
   let deferredPrompt=null;
   const root=document.documentElement;
   root.classList.add('pwa-ready');

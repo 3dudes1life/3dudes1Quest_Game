@@ -6,7 +6,7 @@
  * They must not redefine the five main characters or the three dude powers.
  */
 (() => {
-  const VERSION = "2.5.0";
+  const VERSION = "2.5.1";
   const ANIMATIONS = Object.freeze(["idle", "walk", "jump", "attack", "hurt", "celebrate"]);
 
   const CAST = Object.freeze([
@@ -383,6 +383,119 @@
   }
 
 
+
+  /**
+   * Draw a sprite without ever allowing an image/canvas failure to stop the game loop.
+   * Returns true only when the sprite frame was successfully painted.
+   */
+  function safeSprite(ctx, image, x, y, frame, frameWidth, frameHeight, width, height, flip = false) {
+    if (!ctx || !image || !image.complete || !image.naturalWidth || !image.naturalHeight) return false;
+    const values = [x, y, frame, frameWidth, frameHeight, width, height];
+    if (!values.every(Number.isFinite) || frameWidth <= 0 || frameHeight <= 0 || width <= 0 || height <= 0) return false;
+    const columns = Math.max(1, Math.floor(image.naturalWidth / frameWidth));
+    const safeFrame = ((Math.floor(frame) % columns) + columns) % columns;
+    const sourceX = safeFrame * frameWidth;
+    const sourceWidth = Math.min(frameWidth, image.naturalWidth - sourceX);
+    const sourceHeight = Math.min(frameHeight, image.naturalHeight);
+    if (sourceWidth <= 0 || sourceHeight <= 0) return false;
+    ctx.save();
+    try {
+      ctx.translate(x + (flip ? width : 0), y);
+      ctx.scale(flip ? -1 : 1, 1);
+      ctx.drawImage(image, sourceX, 0, sourceWidth, sourceHeight, 0, 0, width, height);
+      return true;
+    } catch (error) {
+      console.warn("QuestCore sprite fallback activated", error);
+      return false;
+    } finally {
+      ctx.restore();
+    }
+  }
+
+  function resolveDudeAnimation(player, time) {
+    let animation = "idle";
+    let frames = 6;
+    let speed = 150;
+    const grounded = player.onGround ?? player.on ?? false;
+    if (Number(player.animUntil) > time && ANIMATIONS.includes(player.anim)) {
+      animation = player.anim;
+      frames = animation === "jump" ? 4 : animation === "walk" ? 8 : 6;
+      speed = animation === "walk" ? 82 : 150;
+    } else if (!grounded) {
+      animation = "jump";
+      frames = 4;
+    } else if (Math.abs(Number(player.vx) || 0) > 0.35) {
+      animation = "walk";
+      frames = 8;
+      speed = 82;
+    }
+    return { animation, frames, speed };
+  }
+
+  /** Exact code-rendered Adventure 1 fallback hero. */
+  function drawFallbackHero(ctx, x, y, dude, facing = 1) {
+    if (!ctx || !dude) return;
+    ctx.save();
+    try {
+      ctx.translate(x + (facing < 0 ? 44 : 0), y);
+      ctx.scale(facing < 0 ? -1 : 1, 1);
+      ctx.fillStyle = "#b87855";
+      ctx.beginPath();
+      ctx.arc(22, 15, 15, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.fillStyle = dude.color;
+      ctx.beginPath();
+      if (typeof ctx.roundRect === "function") ctx.roundRect(5, 28, 34, 38, 9);
+      else ctx.rect(5, 28, 34, 38);
+      ctx.fill();
+      ctx.fillStyle = dude.accent;
+      ctx.fillRect(18, 31, 7, 30);
+      ctx.fillStyle = "#211a34";
+      ctx.fillRect(8, 63, 11, 17);
+      ctx.fillRect(26, 63, 11, 17);
+    } finally {
+      ctx.restore();
+    }
+  }
+
+  /**
+   * Canonical cross-adventure hero renderer. It uses Adventure 1 sprite timing,
+   * then guarantees a visible code-rendered hero if an asset is late or invalid.
+   */
+  function drawDude(ctx, options) {
+    const {
+      images = {}, dudeIndex = 0, player, time = 0,
+      cameraX = 0, groundY = null
+    } = options || {};
+    if (!ctx || !player) return { drawn: "none", animation: "idle" };
+    const dude = CAST[dudeIndex] || CAST[0];
+    const facing = player.facing ?? player.face ?? 1;
+    const screenX = (Number(player.x) || 0) - (Number(cameraX) || 0);
+    const screenY = Number(player.y) || 0;
+    const resolvedGround = Number.isFinite(groundY) ? groundY : screenY + (Number(player.h) || 72);
+    const { animation, frames, speed } = resolveDudeAnimation(player, time);
+    const image = images[`${dude.key}_${animation}`] || images[`${dude.key}_idle`];
+    const alpha = Number(player.inv) > 0 && Math.floor(Number(player.inv) / 90) % 2 === 0 ? 0.35 : 1;
+    ctx.save();
+    try {
+      ctx.globalAlpha = alpha;
+      ctx.fillStyle = "rgba(0,0,0,.22)";
+      ctx.beginPath();
+      ctx.ellipse(screenX + 22, resolvedGround - 2, 31, 8, 0, Math.PI * 2);
+      ctx.fill();
+      const frame = Math.floor(time / speed) % frames;
+      const painted = safeSprite(ctx, image, screenX - 20, screenY - 50, frame, 128, 192, 84, 126, facing < 0);
+      if (!painted) drawFallbackHero(ctx, screenX, screenY, dude, facing);
+      return { drawn: painted ? "sprite" : "fallback", animation };
+    } catch (error) {
+      console.warn("QuestCore hero fallback activated", error);
+      try { drawFallbackHero(ctx, screenX, screenY, dude, facing); } catch (_) {}
+      return { drawn: "fallback", animation };
+    } finally {
+      ctx.restore();
+    }
+  }
+
   function drawDanielCast(ctx, player, remaining, cameraX = 0) {
     if (remaining <= 0) return;
     const facing = player.facing ?? player.face ?? 1;
@@ -426,6 +539,10 @@
     drawHeroShots,
     drawPositiveFields,
     drawCookieBombs,
+    safeSprite,
+    resolveDudeAnimation,
+    drawFallbackHero,
+    drawDude,
     drawDanielCast,
     drawBeagle,
     validateCast
