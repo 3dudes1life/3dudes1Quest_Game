@@ -1,0 +1,34 @@
+{
+  "root_cause": "QuestCore.drawDude called CanvasRenderingContext2D.ellipse with 6 arguments. Browsers require 7, so the renderer caught the TypeError and returned drawn=waiting while the dogs continued rendering.",
+  "fixed_call": "ctx.ellipse(screenX + 22, resolvedGround - 2, 31, 8, 0, 0, Math.PI * 2)",
+  "node_syntax": {
+    "quest-core.js": "passed",
+    "tahoe253.js": "passed"
+  },
+  "live_browser_render_test": {
+    "cases": 18,
+    "passed": 18,
+    "failed": 0,
+    "characters": [
+      "will",
+      "daniel",
+      "caleb"
+    ],
+    "animations": [
+      "idle",
+      "walk",
+      "jump",
+      "attack",
+      "hurt",
+      "celebrate"
+    ]
+  },
+  "ellipse_arity_issues": {
+    "js/core/quest-core.js": [],
+    "js/tahoe253.js": []
+  },
+  "runtime_gate": "Tahoe now runs the 18-case live renderer test after image preload and does not enable Play unless every locked Adventure 1 animation actually draws.",
+  "cache_version": "2.5.3",
+  "adventure_1_gameplay_changed": false,
+  "sprite_files_changed": false
+}

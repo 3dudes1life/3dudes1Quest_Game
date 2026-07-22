@@ -6,8 +6,8 @@
  * They must not redefine the five main characters or the three dude powers.
  */
 (() => {
-  const VERSION = "2.5.2";
-  const CAST_ASSET_VERSION = "adventure1-gold-master-109-v252";
+  const VERSION = "2.5.3";
+  const CAST_ASSET_VERSION = "adventure1-gold-master-109-v253";
   const ANIMATIONS = Object.freeze(["idle", "walk", "jump", "attack", "hurt", "celebrate"]);
 
   const CAST = Object.freeze([
@@ -529,7 +529,7 @@
       ctx.globalAlpha = alpha;
       ctx.fillStyle = "rgba(0,0,0,.22)";
       ctx.beginPath();
-      ctx.ellipse(screenX + 22, resolvedGround - 2, 31, 8, 0, Math.PI * 2);
+      ctx.ellipse(screenX + 22, resolvedGround - 2, 31, 8, 0, 0, Math.PI * 2);
       ctx.fill();
       const frame = Math.floor(time / speed) % frames;
       let painted = safeSprite(ctx, image, screenX - 20, screenY - 50, frame, 128, 192, 84, 126, facing < 0);
@@ -543,6 +543,47 @@
     } finally {
       ctx.restore();
     }
+  }
+
+  /**
+   * Runs every locked Adventure 1 animation through the real shared renderer.
+   * This catches runtime-only Canvas API failures that syntax checks cannot see.
+   */
+  function verifyCastRenderer(images) {
+    const canvas = document.createElement("canvas");
+    canvas.width = 240;
+    canvas.height = 240;
+    const testCtx = canvas.getContext("2d");
+    const animations = ["idle", "walk", "jump", "attack", "hurt", "celebrate"];
+    const results = [];
+    if (!testCtx) return { ready: false, results, error: "2D canvas unavailable" };
+
+    for (let dudeIndex = 0; dudeIndex < CAST.length; dudeIndex++) {
+      for (const animation of animations) {
+        testCtx.clearRect(0, 0, canvas.width, canvas.height);
+        const player = {
+          x: 78, y: 94, w: 44, h: 72, vx: animation === "walk" ? 2 : 0, vy: 0,
+          on: animation !== "jump", onGround: animation !== "jump", face: 1, facing: 1, inv: 0,
+          anim: animation, animUntil: ["attack", "hurt", "celebrate"].includes(animation) ? 1000 : 0
+        };
+        let rendered;
+        try {
+          rendered = drawDude(testCtx, { images, dudeIndex, player, time: 100, cameraX: 0, groundY: 166 });
+        } catch (error) {
+          rendered = { drawn: "error", animation, error: String(error?.message || error) };
+        }
+        results.push({
+          dude: CAST[dudeIndex].key,
+          animation,
+          drawn: rendered?.drawn || "none",
+          ok: rendered?.drawn === "sprite",
+          error: rendered?.error || ""
+        });
+      }
+    }
+
+    const failed = results.filter(result => !result.ok);
+    return { ready: failed.length === 0, results, failed };
   }
 
   function drawDanielCast(ctx, player, remaining, cameraX = 0) {
@@ -595,6 +636,7 @@
     resolveDudeAnimation,
     drawFallbackHero,
     drawDude,
+    verifyCastRenderer,
     drawDanielCast,
     drawBeagle,
     validateCast

@@ -1,15 +1,15 @@
-const VERSION = '2.5.2';
+const VERSION = '2.5.3';
 const CACHE = `3dudes1quest-${VERSION}`;
 const CORE = [
   './','./index.html','./tahoe.html','./manifest.webmanifest','./favicon.ico',
   './icons/icon-192.png','./icons/icon-512.png','./icons/apple-touch-icon.png',
   './assets/share-card.jpg','./css/style.css','./css/tahoe.css','./css/pwa241.css','./css/quality243.css','./css/core250.css',
-  './js/core/quest-core.js','./js/app109.js','./js/remaster.js','./js/gold-master-self-test.js','./js/pwa241.js','./js/tahoe252.js',
+  './js/core/quest-core.js','./js/app109.js','./js/remaster.js','./js/gold-master-self-test.js','./js/pwa241.js','./js/tahoe253.js',
   './assets/portraits/will.png','./assets/portraits/daniel.png','./assets/portraits/caleb.png',
-  './assets/sprites_hd/will_idle.png?cast=adventure1-gold-master-109-v252','./assets/sprites_hd/will_walk.png?cast=adventure1-gold-master-109-v252','./assets/sprites_hd/will_jump.png?cast=adventure1-gold-master-109-v252','./assets/sprites_hd/will_attack.png?cast=adventure1-gold-master-109-v252','./assets/sprites_hd/will_hurt.png?cast=adventure1-gold-master-109-v252','./assets/sprites_hd/will_celebrate.png?cast=adventure1-gold-master-109-v252',
-  './assets/sprites_hd/daniel_idle.png?cast=adventure1-gold-master-109-v252','./assets/sprites_hd/daniel_walk.png?cast=adventure1-gold-master-109-v252','./assets/sprites_hd/daniel_jump.png?cast=adventure1-gold-master-109-v252','./assets/sprites_hd/daniel_attack.png?cast=adventure1-gold-master-109-v252','./assets/sprites_hd/daniel_hurt.png?cast=adventure1-gold-master-109-v252','./assets/sprites_hd/daniel_celebrate.png?cast=adventure1-gold-master-109-v252',
-  './assets/sprites_hd/caleb_idle.png?cast=adventure1-gold-master-109-v252','./assets/sprites_hd/caleb_walk.png?cast=adventure1-gold-master-109-v252','./assets/sprites_hd/caleb_jump.png?cast=adventure1-gold-master-109-v252','./assets/sprites_hd/caleb_attack.png?cast=adventure1-gold-master-109-v252','./assets/sprites_hd/caleb_hurt.png?cast=adventure1-gold-master-109-v252','./assets/sprites_hd/caleb_celebrate.png?cast=adventure1-gold-master-109-v252',
-  './assets/sprites_hd/rigsby_idle.png?cast=adventure1-gold-master-109-v252','./assets/sprites_hd/rigsby_walk.png?cast=adventure1-gold-master-109-v252','./assets/sprites_hd/rigsby_bark.png?cast=adventure1-gold-master-109-v252'
+  './assets/sprites_hd/will_idle.png?cast=adventure1-gold-master-109-v253','./assets/sprites_hd/will_walk.png?cast=adventure1-gold-master-109-v253','./assets/sprites_hd/will_jump.png?cast=adventure1-gold-master-109-v253','./assets/sprites_hd/will_attack.png?cast=adventure1-gold-master-109-v253','./assets/sprites_hd/will_hurt.png?cast=adventure1-gold-master-109-v253','./assets/sprites_hd/will_celebrate.png?cast=adventure1-gold-master-109-v253',
+  './assets/sprites_hd/daniel_idle.png?cast=adventure1-gold-master-109-v253','./assets/sprites_hd/daniel_walk.png?cast=adventure1-gold-master-109-v253','./assets/sprites_hd/daniel_jump.png?cast=adventure1-gold-master-109-v253','./assets/sprites_hd/daniel_attack.png?cast=adventure1-gold-master-109-v253','./assets/sprites_hd/daniel_hurt.png?cast=adventure1-gold-master-109-v253','./assets/sprites_hd/daniel_celebrate.png?cast=adventure1-gold-master-109-v253',
+  './assets/sprites_hd/caleb_idle.png?cast=adventure1-gold-master-109-v253','./assets/sprites_hd/caleb_walk.png?cast=adventure1-gold-master-109-v253','./assets/sprites_hd/caleb_jump.png?cast=adventure1-gold-master-109-v253','./assets/sprites_hd/caleb_attack.png?cast=adventure1-gold-master-109-v253','./assets/sprites_hd/caleb_hurt.png?cast=adventure1-gold-master-109-v253','./assets/sprites_hd/caleb_celebrate.png?cast=adventure1-gold-master-109-v253',
+  './assets/sprites_hd/rigsby_idle.png?cast=adventure1-gold-master-109-v253','./assets/sprites_hd/rigsby_walk.png?cast=adventure1-gold-master-109-v253','./assets/sprites_hd/rigsby_bark.png?cast=adventure1-gold-master-109-v253'
 ];
 self.addEventListener('install', event => {
   event.waitUntil(caches.open(CACHE).then(async cache => {
