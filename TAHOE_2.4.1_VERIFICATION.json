@@ -1,0 +1,20 @@
+{
+  "version": "2.4.1",
+  "base": "2.4.0",
+  "checks": {
+    "manifest": true,
+    "service_worker": true,
+    "auto_update": true,
+    "share_ui": true,
+    "install_ui": true,
+    "icons": [
+      16,
+      32,
+      180,
+      192,
+      512
+    ],
+    "safe_area_css": true,
+    "gameplay_files_modified": false
+  }
+}

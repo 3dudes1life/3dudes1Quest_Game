@@ -1,0 +1,13 @@
+/* 3Dudes1Quest v2.4.1 PWA/mobile shell */
+:root{--safe-top:env(safe-area-inset-top,0px);--safe-right:env(safe-area-inset-right,0px);--safe-bottom:env(safe-area-inset-bottom,0px);--safe-left:env(safe-area-inset-left,0px)}
+html,body{overscroll-behavior:none;-webkit-user-select:none;user-select:none;-webkit-touch-callout:none;touch-action:manipulation}
+body{padding-top:var(--safe-top);padding-right:var(--safe-right);padding-bottom:var(--safe-bottom);padding-left:var(--safe-left)}
+canvas{touch-action:none}
+.pwaDock{position:fixed;z-index:99999;top:calc(10px + var(--safe-top));right:calc(10px + var(--safe-right));display:flex;gap:8px;pointer-events:auto}
+.pwaDock button{min-height:42px;border:1px solid rgba(255,255,255,.28);border-radius:999px;background:rgba(8,12,28,.82);color:#fff;font:800 12px/1 system-ui,sans-serif;letter-spacing:.08em;padding:0 14px;box-shadow:0 8px 28px rgba(0,0,0,.28);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+.pwaDock button:active{transform:scale(.94)}
+.pwaToast{position:fixed;z-index:100000;left:50%;bottom:calc(20px + var(--safe-bottom));transform:translate(-50%,30px);opacity:0;pointer-events:none;background:#130d2e;color:#fff;border:2px solid #f9dc58;border-radius:999px;padding:12px 20px;font:900 12px/1.2 system-ui,sans-serif;letter-spacing:.08em;box-shadow:0 12px 35px rgba(0,0,0,.4);transition:.25s ease;text-align:center;max-width:min(88vw,560px)}
+.pwaToast.show{opacity:1;transform:translate(-50%,0)}
+@media (display-mode:standalone),(display-mode:fullscreen){.pwaDock{top:calc(6px + var(--safe-top))}.pwaDock #pwaInstall{display:none!important}}
+@media (max-width:700px){.pwaDock button{width:44px;padding:0;font-size:18px}.pwaDock button span{display:none}}
+@media (orientation:portrait) and (max-width:900px){#rotateHint{padding-bottom:calc(16px + var(--safe-bottom))}}
