@@ -1,0 +1,10 @@
+{
+  "name": "3dudes1quest",
+  "version": "3.0.0",
+  "private": true,
+  "scripts": {
+    "test": "node --test tests/runtime.test.cjs",
+    "test:browser": "node tests/browser.cjs"
+  },
+  "devDependencies": { "playwright": "1.62.1" }
+}
