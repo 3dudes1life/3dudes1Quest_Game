@@ -1,0 +1,12 @@
+/* Keep sharing/update actions out of the controls during active play. */
+body:has(#gameScreen.active) #pwaDock,
+body:has(#openingCard.hidden) #pwaDock { display: none; }
+body:has(#gameScreen.active):has(#journal:not(.hidden)) #pwaDock,
+body:has(#pauseMenu:not(.hidden)) #pwaDock { display: flex; top: auto; bottom: max(12px, env(safe-area-inset-bottom)); right: 50%; transform: translateX(50%); }
+#goldMasterQaPanel { pointer-events: none; }
+#touchControls button, #controls button { touch-action: none; }
+@media (max-width: 900px) and (pointer: coarse) {
+  #tahoeHud { right: 94px; gap: 4px; }
+  #tahoeHud .tahoeChip { padding: 5px 7px; font-size: 12px; }
+  #tahoeHud .altitudeChip, #tahoeHud .trailProgress { display: none; }
+}

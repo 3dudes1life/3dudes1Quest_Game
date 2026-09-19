@@ -9,8 +9,8 @@
     const canvas=document.getElementById('gameCanvas');
     const powerLabel=document.getElementById('powerLabel');
 
-    add('Gold Master title',document.title.includes('v1.0.9'),document.title);
-    add('Release metadata',release?.version==='1.0.9',release?.version||'missing');
+    add('Gold Master title',document.title.includes('v3.0.0'),document.title);
+    add('Release metadata',release?.version==='3.0.0',release?.version||'missing');
     add('Three playable dudes',release?.dudeCount===3,String(release?.dudeCount));
     add('Three power identities',Array.isArray(release?.powers)&&release.powers.length===3);
     add('Game object created',Boolean(game));
@@ -28,7 +28,7 @@
       const snapshot=game?.save?.();
       const encoded=JSON.stringify(snapshot);
       add('Save serializes',Boolean(encoded&&encoded.length>100),`${encoded?.length||0} bytes`);
-      add('Save version',snapshot?.version==='1.0.9',snapshot?.version||'missing');
+      add('Save version',snapshot?.version==='3.0.0',snapshot?.version||'missing');
       add('Save schema',snapshot?.schema===2,String(snapshot?.schema));
       add('Finale state saved',Boolean(snapshot?.finale&&'complete' in snapshot.finale));
       add('Portal state saved',Boolean(snapshot?.portal&&'open' in snapshot.portal));
@@ -48,7 +48,7 @@
 
     const passed=checks.filter(check=>check.pass).length;
     const report={
-      release:'1.0.9',
+      release:'3.0.0',
       passed,
       total:checks.length,
       ok:passed===checks.length,
