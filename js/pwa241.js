@@ -1,5 +1,5 @@
 (() => {
-  const VERSION='2.5.2';
+  const VERSION='3.0.0';
   let deferredPrompt=null;
   const root=document.documentElement;
   root.classList.add('pwa-ready');
@@ -34,9 +34,30 @@
       const check=()=>reg.update().catch(()=>{});
       check(); setInterval(check,30*60*1000);
       document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='visible')check();});
-      let refreshing=false;
-      navigator.serviceWorker.addEventListener('controllerchange',()=>{ if(refreshing)return; refreshing=true; location.reload(); });
-      reg.addEventListener('updatefound',()=>{ const worker=reg.installing; if(!worker)return; worker.addEventListener('statechange',()=>{ if(worker.state==='installed' && navigator.serviceWorker.controller){ toast('NEW VERSION READY — UPDATING…'); worker.postMessage({type:'SKIP_WAITING'}); } }); });
+      let refreshing=false,requestedUpdate=false;
+      function offerUpdate(){
+        if(!reg.waiting||document.getElementById('pwaUpdate'))return;
+        const button=document.createElement('button');button.id='pwaUpdate';button.textContent='UPDATE READY';
+        button.onclick=()=>{
+          const session=window.__QUEST_SESSION__;
+          if(session?.isActive()){
+            session.pause();
+            if(!session.save()){toast('Could not save. Update after finishing this adventure.',5000);return;}
+          }
+          requestedUpdate=true;reg.waiting?.postMessage({type:'SKIP_WAITING'});
+        };
+        document.getElementById('pwaDock')?.appendChild(button);
+        toast('UPDATE READY — TAP UPDATE WHEN YOU ARE READY',4500);
+      }
+      navigator.serviceWorker.addEventListener('controllerchange',()=>{
+        // Another tab may activate a worker. Never interrupt this tab's adventure.
+        if(refreshing||!requestedUpdate)return;refreshing=true;location.reload();
+      });
+      offerUpdate();
+      reg.addEventListener('updatefound',()=>{
+        const worker=reg.installing;if(!worker)return;
+        worker.addEventListener('statechange',()=>{if(worker.state==='installed'&&navigator.serviceWorker.controller)offerUpdate()});
+      });
     }catch(e){ console.warn('PWA registration failed',e); }
   }
   document.addEventListener('DOMContentLoaded',()=>{makeUI();register();});

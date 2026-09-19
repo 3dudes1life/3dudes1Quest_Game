@@ -1,17 +1,24 @@
 "use strict";
 
 (function boot(){
-  const boot=document.getElementById('bootSequence');
-  if(!boot)return;
-  const fill=boot.querySelector('.bootProgressFill');
-  const status=boot.querySelector('.bootStatus');
-  const enter=document.getElementById('enterQuest');
-  const steps=[[15,'LOADING HOME BASE...'],[32,'LIGHTING HILLCREST...'],[50,'OPENING THE PCH...'],[68,'ROLLING INTO HOLLYWOOD...'],[84,'SUMMONING THE QUEEN OF BEIGE...'],[100,'SOUTHERN CALIFORNIA READY']];
-  let i=0;
-  const dismiss=()=>{boot.classList.add('isHidden');boot.style.pointerEvents='none';setTimeout(()=>boot.remove(),550)};
-  const next=()=>{const s=steps[i++];if(!s)return;fill.style.width=s[0]+'%';status.textContent=s[1];if(i<steps.length)setTimeout(next,170);else setTimeout(()=>{enter.classList.add('isReady');enter.style.display='block';setTimeout(dismiss,700)},180)};
-  enter.addEventListener('click',dismiss,{once:true});
-  setTimeout(next,100);setTimeout(dismiss,3000);
+  document.addEventListener('DOMContentLoaded',async()=>{
+    const boot=document.getElementById('bootSequence'),enter=document.getElementById('enterQuest');
+    const start=document.getElementById('startBtn'),resume=document.getElementById('continueBtn');
+    const status=boot.querySelector('.bootStatus'),fill=boot.querySelector('.bootProgressFill');
+    async function prepare(){
+      start.disabled=resume.disabled=enter.disabled=true;status.textContent='LOADING YOUR ADVENTURE…';fill.style.width='35%';
+      const report=await QuestCore.preloadCastImages(window.__questGame.images);
+      if(report.ready){
+        fill.style.width='100%';status.textContent='ADVENTURE READY';start.disabled=resume.disabled=false;
+        boot.classList.add('isHidden');boot.style.pointerEvents='none';setTimeout(()=>boot.style.display='none',550);
+      }else{
+        status.textContent='Some character images could not load. Check your connection and retry.';
+        enter.disabled=false;enter.textContent='RETRY LOADING';enter.classList.add('isReady');enter.style.display='block';
+      }
+    }
+    enter.onclick=()=>{window.__questGame.loadAssets();prepare()};
+    await prepare();
+  });
 })();
 
 window.addEventListener('error',e=>{
@@ -109,121 +116,28 @@ function createUI(){
 }
 function qs(id){return document.getElementById(id)}
 function createInput(switcher){
-  const k={left:false,right:false,jump:false,power:false,ultimate:false};
-  const activePointers=new Map();
-  const game=()=>window.__questGame;
-  const gameScreen=()=>document.getElementById('gameScreen');
-  const gameActive=()=>Boolean(gameScreen()?.classList.contains('active'));
-  const isPlaying=()=>gameActive()&&game()?.inputMode==='PLAYING'&&!game()?.state.paused;
-
-  const releaseAll=()=>{
-    k.left=k.right=k.jump=k.power=k.ultimate=false;
-    activePointers.clear();
-    document.querySelectorAll('#touchControls button.isPressed').forEach(button=>button.classList.remove('isPressed'));
-  };
-
-  const focusCanvas=()=>{
-    document.activeElement?.blur?.();
-    const canvas=document.getElementById('gameCanvas');
-    requestAnimationFrame(()=>canvas?.focus({preventScroll:true}));
-  };
-
-  const consume=event=>{
-    event.preventDefault();
-    event.stopPropagation();
-    event.stopImmediatePropagation();
-  };
-
-  // Capture-phase authority: Space belongs only to Power while the game screen is active.
-  addEventListener('keydown',event=>{
-    const code=event.code;
-
-    if(gameActive()&&code==='Space'){
-      consume(event);
-      if(isPlaying()&&!event.repeat)k.power=true;
-      return;
-    }
-
-    if(gameActive()&&(code==='Escape'||code==='KeyP')){
-      consume(event);
-      if(game()?.inputMode==='PAUSED')game().resumeGameplay();
-      else if(isPlaying())game().pauseGameplay();
-      return;
-    }
-
-    const gameplayCode=['ArrowLeft','ArrowRight','ArrowUp','KeyA','KeyD','KeyW','KeyX','KeyF','KeyQ','Digit1','Digit2','Digit3'].includes(code);
-    if(gameplayCode&&gameActive()){
-      consume(event);
-      if(!isPlaying()){releaseAll();return}
-    }
-    if(!isPlaying())return;
-
-    if(code==='ArrowLeft'||code==='KeyA')k.left=true;
-    if(code==='ArrowRight'||code==='KeyD')k.right=true;
-    if(code==='ArrowUp'||code==='KeyW')k.jump=true;
-    if(code==='KeyX'||code==='KeyF')k.power=true;
-    if(code==='KeyQ'&&!event.repeat)k.ultimate=true;
-    if(code==='Digit1')switcher(0);
-    if(code==='Digit2')switcher(1);
-    if(code==='Digit3')switcher(2);
-  },{capture:true,passive:false});
-
-  addEventListener('keyup',event=>{
-    const code=event.code;
-    if(gameActive()&&code==='Space'){
-      consume(event);
-      k.power=false;
-      return;
-    }
-    const gameplayCode=['ArrowLeft','ArrowRight','ArrowUp','KeyA','KeyD','KeyW','KeyX','KeyF','KeyQ','Digit1','Digit2','Digit3'].includes(code);
-    if(gameplayCode&&gameActive())consume(event);
-    if(code==='ArrowLeft'||code==='KeyA')k.left=false;
-    if(code==='ArrowRight'||code==='KeyD')k.right=false;
-    if(code==='ArrowUp'||code==='KeyW')k.jump=false;
-    if(code==='KeyX'||code==='KeyF')k.power=false;
-    if(code==='KeyQ')k.ultimate=false;
-  },{capture:true,passive:false});
-
-  addEventListener('blur',releaseAll);
-  addEventListener('pagehide',releaseAll);
-  document.addEventListener('visibilitychange',()=>{if(document.hidden)releaseAll()});
-
-  document.querySelectorAll('[data-action]').forEach(button=>{
-    const action=button.dataset.action;
-    const press=event=>{
-      consume(event);
-      if(!isPlaying())return;
-      activePointers.set(event.pointerId,action);
-      k[action]=true;
-      try{button.setPointerCapture(event.pointerId)}catch(_){}
-      button.classList.add('isPressed');
-    };
-    const release=event=>{
-      consume(event);
-      const held=activePointers.get(event.pointerId)||action;
-      if(held in k)k[held]=false;
-      activePointers.delete(event.pointerId);
-      button.classList.remove('isPressed');
-      try{if(button.hasPointerCapture(event.pointerId))button.releasePointerCapture(event.pointerId)}catch(_){}
-    };
-    button.addEventListener('pointerdown',press,{passive:false});
-    button.addEventListener('pointerup',release,{passive:false});
-    button.addEventListener('pointercancel',release,{passive:false});
-    button.addEventListener('lostpointercapture',release);
-    button.addEventListener('click',consume,{passive:false});
+  const current=()=>window.__questGame;
+  const screenActive=()=>qs('gameScreen')?.classList.contains('active');
+  return QuestRuntime.createInput({
+    active:()=>screenActive()&&current()?.running&&current()?.inputMode==='PLAYING'&&!current()?.state.paused,
+    screenActive, canvas:qs('gameCanvas'), buttons:[...document.querySelectorAll('[data-action]')],
+    switchDude:switcher, pause:()=>current()?.togglePause()
   });
-
-  return Object.assign(k,{releaseAll,focusCanvas,isPlaying});
 }
 class Adventure{
   constructor(canvas,ui,input,onComplete){
-    this.canvas=canvas;this.ctx=canvas.getContext('2d');this.ui=ui;this.input=input;this.onComplete=onComplete;this.ctx.imageSmoothingEnabled=true;this.images={};this.loadAssets();this.reset();window.__questGame=this;
+    this.canvas=canvas;this.ctx=canvas.getContext('2d');this.ui=ui;this.input=input;this.onComplete=onComplete;this.ctx.imageSmoothingEnabled=true;this.images={};
+    this.clock=QuestRuntime.createLoop({
+      active:()=>this.running&&!this.state.paused,
+      update:(dt,time)=>this.update(1,time), draw:time=>{if(this.running)this.draw(time)},
+      onError:error=>{console.error('Quest runtime error',error);this.pauseGameplay();this.ui.flash('Game paused after an error. Reload to recover your last save.');}
+    });this.loadAssets();this.reset();window.__questGame=this;
   }
   load(key,src){const im=new Image();im.src=src;this.images[key]=im}
   loadAssets(){this.load('home','assets/environments/home_base_remastered.svg');['will','daniel','caleb'].forEach(n=>['idle','walk','jump','attack','hurt','celebrate'].forEach(s=>this.load(`${n}_${s}`,`assets/sprites_hd/${n}_${s}.png`)));['idle','walk','bark'].forEach(s=>this.load(`rigsby_${s}`,`assets/sprites_hd/rigsby_${s}.png`))}
   reset(startingDude=0){
     this.state={health:4,cards:0,beacons:0,score:0,dude:clamp(startingDude,0,2),triangle:0,paused:false,bossDefeated:false,zoeyUnlocked:false,adventureComplete:false,objective:{title:ZONES[0].objective,detail:ZONES[0].detail}};
-    this.player={x:150,y:FLOOR-72,w:44,h:72,vx:0,vy:0,onGround:true,facing:1,inv:0,anim:'idle',animUntil:0};this.camera=0;this.running=false;this.last=0;this.finished=false;this.zoneId='home';this.zoneIntro=performance.now()+1300;this.jumpHeld=false;this.powerHeld=false;this.rigsby={x:265,y:FLOOR-42,w:56,h:40};
+    this.player={x:150,y:FLOOR-72,w:44,h:72,vx:0,vy:0,onGround:true,facing:1,inv:0,anim:'idle',animUntil:0};this.camera=0;this.running=false;this.last=0;this.finished=false;this.zoneId='home';this.zoneIntro=this.clock.time+1300;this.jumpHeld=false;this.powerHeld=false;this.rigsby={x:265,y:FLOOR-42,w:56,h:40};
     this.cards=[650,1720,2600,3730,4630,7580].map((x,i)=>({x,y:FLOOR-100-(i%2)*95,w:38,h:52,taken:false}));
     this.beacons=[{x:3020,y:FLOOR-105,w:54,h:92,on:false},{x:4870,y:FLOOR-105,w:54,h:92,on:false},{x:6980,y:FLOOR-105,w:54,h:92,on:false}];
     this.platforms=[
@@ -260,7 +174,7 @@ class Adventure{
     this.defeatEchoes=[];this.hitNumbers=[];this.switchCombo={heroes:[this.state.dude],expires:0};
     this.comboPulse=0;this.audioCtx=null;this.danielCast=0;
     this.bossIntroShown=false;this.boss.phase=1;this.boss.summoned=false;
-    this.zoneBanner={text:'HOME BASE',until:performance.now()+1500};
+    this.zoneBanner={text:'HOME BASE',until:this.clock.time+1500};
     this.bossEntranceUntil=0;
     this.cameraTarget=0;
     this.cameraZoom=1;
@@ -310,10 +224,13 @@ class Adventure{
     qs('triangleUltimateBtn')?.classList.add('hidden');
   }
   start(save,startingDude=0){
+    this.clock.stop();
+    this.input.releaseAll();
+    this.motion={};
     this.reset(startingDude);
     if(save)this.applySave(save);
     this.running=true;
-    this.last=performance.now();
+    this.last=this.clock.time;
     const dude=DUDES[this.state.dude];
     this.updatePowerButton();
 
@@ -322,7 +239,7 @@ class Adventure{
       this.zoneId=resumedZone.id;
       this.zoneSeen=new Set(ZONES.filter(zone=>this.player.x>=zone.start).map(zone=>zone.id));
       this.zoneSeen.add('home');
-      this.zoneBanner={text:`${resumedZone.name} — RESUMED`,until:performance.now()+1250};
+      this.zoneBanner={text:`${resumedZone.name} — RESUMED`,until:this.clock.time+1250};
       this.ui.flash(`${dude.name} restored • ${resumedZone.name}`);
       if(resumedZone.id!=='la'){
         this.state.objective={title:resumedZone.objective,detail:resumedZone.detail};
@@ -334,15 +251,16 @@ class Adventure{
       setTimeout(()=>this.showCinematicZone(ZONES[0],'THE QUEST BEGINS'),180);
     }
 
-    requestAnimationFrame(t=>this.loop(t));
+    this.clock.start();
   }
-  stop(){this.running=false}
+  stop(){this.running=false;this.clock.stop();this.input.releaseAll();}
   zone(){return ZONES.find(z=>this.player.x>=z.start&&this.player.x<z.end)||ZONES.at(-1)}
   setZone(z){
     if(z.id===this.zoneId)return;
     this.zoneId=z.id;
+    persistQuest('checkpoint');
     this.zoneIntro=0;
-    this.zoneBanner={text:z.name,until:performance.now()+1500};
+    this.zoneBanner={text:z.name,until:this.clock.time+1500};
     this.state.objective={title:z.objective,detail:z.detail};
     this.ui.flash(z.name);
     if(!this.zoneSeen.has(z.id)){
@@ -356,7 +274,6 @@ class Adventure{
       this.showCinematicZone(z,subtitles[z.id]||'THE QUEST CONTINUES');
     }
   }
-  loop(t){if(!this.running)return;const dt=clamp((t-this.last)/16.667||1,0,2);this.last=t;if(!this.state.paused)this.update(dt,t);this.draw(t);requestAnimationFrame(n=>this.loop(n))}
   update(dt,t){
     if(this.finale.active){
       this.updateFinale(dt,t);
@@ -370,61 +287,19 @@ class Adventure{
       return;
     }
     const d=DUDES[this.state.dude];
-    if(this.input.left){this.player.vx-=.82*dt;this.player.facing=-1}
-    if(this.input.right){this.player.vx+=.82*dt;this.player.facing=1}
-    if(!this.input.left&&!this.input.right)this.player.vx*=Math.pow(.58,dt);if(Math.abs(this.player.vx)<.08)this.player.vx=0;
-    this.player.vx=clamp(this.player.vx,-d.speed,d.speed);
-
-    if(this.input.jump&&!this.jumpHeld)this.jumpBufferFrames=9;
-    this.jumpHeld=this.input.jump;
-    if(this.jumpBufferFrames>0)this.jumpBufferFrames-=dt;
-    if(this.player.onGround)this.coyoteFrames=8;
-    else this.coyoteFrames=Math.max(0,this.coyoteFrames-dt);
-
-    if(this.jumpBufferFrames>0&&this.coyoteFrames>0){
-      this.player.vy=-d.jump;
-      this.player.onGround=false;
-      this.coyoteFrames=0;
-      this.jumpBufferFrames=0;
-      this.landImpact=0;
-      this.burst(this.player.x+22,this.player.y+this.player.h,'#ffe66d',16);
-    }
-
-    if(this.input.power&&!this.powerHeld){
-      this.power(t);
-      this.powerFlash=this.state.dude===1?0:12;
-    }
-    this.powerHeld=this.input.power;
-
-    if(this.input.ultimate&&!this.ultimateHeld)this.useTriangleUltimate();
-    this.ultimateHeld=this.input.ultimate;
-
-    const previouslyGrounded=this.player.onGround;
-    const previousVy=this.player.vy;
-    this.player.vy+=.72*dt;
-    this.player.x+=this.player.vx*dt;
-    this.player.y+=this.player.vy*dt;
-    this.player.x=clamp(this.player.x,0,WORLD-this.player.w);
-    this.player.onGround=false;
-
-    if(this.player.y+this.player.h>=FLOOR){
-      this.player.y=FLOOR-this.player.h;
-      this.player.vy=0;
-      this.player.onGround=true;
-    }
-    for(const p of this.platforms){
-      if(this.player.x+this.player.w>p.x&&this.player.x<p.x+p.w&&this.player.y+this.player.h>=p.y&&this.player.y+this.player.h<=p.y+30&&this.player.vy>=0){
-        this.player.y=p.y-this.player.h;
-        this.player.vy=0;
-        this.player.onGround=true;
-      }
-    }
-
-    if(!previouslyGrounded&&this.player.onGround&&previousVy>5.5){
-      this.landImpact=clamp(previousVy/14,0,1);
+    const movement=QuestRuntime.movePlayer(this.player,this.input,d,{
+      ground:()=>FLOOR,platforms:this.platforms,world:WORLD,
+      jumpPressed:this.input.consume('jump'),motion:this.motion||(this.motion={})
+    });
+    if(movement.jumped)this.burst(this.player.x+22,this.player.y+this.player.h,'#ffe66d',16);
+    if(movement.landed&&movement.impact>5.5){
+      this.landImpact=clamp(movement.impact/14,0,1);
       this.shake=Math.max(this.shake,4+this.landImpact*7);
-      this.burst(this.player.x+22,this.player.y+this.player.h,'#e9d7c1',18+Math.floor(this.landImpact*22));
+      this.burst(this.player.x+22,this.player.y+this.player.h,'#e9d7c1',18);
     }
+    if(this.input.consume('power')){this.power(t);this.powerFlash=this.state.dude===1?0:12;}
+    if(this.input.consume('ultimate'))this.useTriangleUltimate();
+    QuestRuntime.capEffects(this.particles);
 
     if(Math.abs(this.player.vx)>3.5&&this.player.onGround&&Math.random()<.28*dt){
       this.particles.push({x:this.player.x+22-this.player.facing*16,y:this.player.y+this.player.h-5,vx:-this.player.vx*.25+(Math.random()-.5)*2,vy:-1-Math.random()*2,life:22+Math.random()*18,color:'rgba(255,255,255,.55)',s:2+Math.random()*3});
@@ -508,6 +383,8 @@ class Adventure{
   pauseGameplay(){
     if(this.inputMode!=='PLAYING')return;
     this.state.paused=true;
+    this.clock.reset();
+    persistQuest('pause');
     this.setInputMode('PAUSED');
     qs('journal')?.classList.remove('hidden');
     this.input.releaseAll?.();
@@ -516,7 +393,9 @@ class Adventure{
   resumeGameplay(){
     qs('journal')?.classList.add('hidden');
     qs('dialogueBox')?.classList.add('hidden');
+    if(this.photoMode||document.querySelector('.featureOverlay:not(.hidden)'))return;
     this.state.paused=false;
+    this.clock.reset();
     this.setInputMode('PLAYING');
     this.input.releaseAll?.();
     this.input.focusCanvas?.();
@@ -531,7 +410,7 @@ class Adventure{
     card.classList.remove('play');
     void card.offsetWidth;
     card.classList.add('play');
-    this.cinematicActiveUntil=performance.now()+2600;
+    this.cinematicActiveUntil=this.clock.time+2600;
     clearTimeout(this.zoneCardTimer);
     this.zoneCardTimer=setTimeout(()=>card.classList.add('hidden'),2550);
   }
@@ -554,7 +433,7 @@ class Adventure{
     const site=this.secretSites.find(s=>!s.found&&Math.abs(this.rigsby.x-s.x)<105);
     if(!site)return;
     site.found=true;
-    this.secretsFound++;
+    this.secretsFound++;persistQuest('secret');
     this.state.triangle=clamp(this.state.triangle+8,0,100);this.state.score+=100;
     this.burst(site.x,site.y-18,'#ffe66d',46);
     this.burst(site.x,site.y-18,'#3ce7d2',28);
@@ -703,7 +582,7 @@ class Adventure{
         this.burst(c.x,c.y,'#ffe66d',44);
         this.burst(c.x,c.y,'#ff4fb8',24);
         this.haptic([18,18,28]);
-        showCollect(`🌈 Gay Card ${this.state.cards}/6`);
+        showCollect(`🌈 Gay Card ${this.state.cards}/6`);persistQuest('card');
       }
     }
     for(const b of this.beacons){
@@ -712,8 +591,8 @@ class Adventure{
         this.state.beacons++;this.state.score+=1000;
         this.state.triangle=clamp(this.state.triangle+18,0,100);
         this.restorationBurst(b.x+27,b.y+46);
-        showAchievement(`Color restored ${this.state.beacons}/3`,'🔺');
-        this.zoneBanner={text:['HILLCREST BLOOMS','THE COAST SHINES','LOS ANGELES RESTORED'][this.state.beacons-1]||'COLOR RESTORED',until:performance.now()+1900};
+        showAchievement(`Color restored ${this.state.beacons}/3`,'🔺');persistQuest('beacon');
+        this.zoneBanner={text:['HILLCREST BLOOMS','THE COAST SHINES','LOS ANGELES RESTORED'][this.state.beacons-1]||'COLOR RESTORED',until:this.clock.time+1900};
       }
     }
   }
@@ -748,7 +627,7 @@ class Adventure{
 
     if(this.player.x>6250&&!this.protestWaveAnnounced){
       this.protestWaveAnnounced=true;
-      this.zoneBanner={text:'HATE-SIGN BLOCKADE',until:performance.now()+1900};
+      this.zoneBanner={text:'HATE-SIGN BLOCKADE',until:this.clock.time+1900};
       this.showCombatStatus('PROTEST WAVE','Break their signs, then clear the path.','🪧');
     }
   }
@@ -816,7 +695,7 @@ class Adventure{
     return false;
   }
 
-  hurt(source){this.state.health--;this.player.inv=100;this.player.vx=source<this.player.x?7:-7;this.player.vy=-7;this.burst(this.player.x,this.player.y,'#ff6b8a',18);if(this.state.health<=0){this.state.health=4;const z=this.zone();this.player.x=z.start+100;this.player.y=FLOOR-this.player.h;this.camera=clamp(this.player.x-250,0,WORLD-W)}}
+  hurt(source){this.state.health--;this.player.inv=100;this.player.vx=source<this.player.x?7:-7;this.player.vy=-7;this.burst(this.player.x,this.player.y,'#ff6b8a',18);if(this.state.health<=0){this.state.health=4;const z=this.zone();this.player.x=z.start+100;this.player.y=FLOOR-this.player.h;this.player.vx=this.player.vy=0;this.player.onGround=true;this.motion={};this.input.releaseAll();this.enemyShots=[];persistQuest("respawn");this.camera=clamp(this.player.x-250,0,WORLD-W)}}
   sound(kind='hit'){
     try{
       const AC=window.AudioContext||window.webkitAudioContext;if(!AC)return;
@@ -1207,7 +1086,7 @@ class Adventure{
       this.showFinaleCard('ADVENTURE 2 AWAITS','Take Rigsby and Zoey into Lake Tahoe.','PORTAL OPEN');
       this.burst(this.portal.x+75,this.portal.y+82,'#3ce7d2',120);this.burst(this.portal.x+75,this.portal.y+82,'#ff4fb8',100);this.haptic([40,30,70,30,100]);
     }else if(f.stage===5&&f.timer>110){
-      f.stage=6;f.timer=0;f.active=false;f.complete=true;f.completedAt=performance.now();
+      f.stage=6;f.timer=0;f.active=false;f.complete=true;f.completedAt=this.clock.time;
       this.rigsby.x=this.player.x-128*(this.player.facing||1);
       this.zoey.x=this.player.x-72*(this.player.facing||1);
       this.state.objective={title:'Enter the Lake Tahoe Portal',detail:'Zoey is safe. Rigsby and Zoey are ready for Adventure 2.'};
@@ -1298,7 +1177,7 @@ class Adventure{
 
   drawFinale(t){
     const f=this.finale;if(!f.active&&!f.complete)return;
-    const holdTableau=f.active||((performance.now()-(f.completedAt||performance.now()))<2400);
+    const holdTableau=f.active||((this.clock.time-(f.completedAt||this.clock.time))<2400);
     if(!holdTableau)return;
     const c=this.ctx;
     c.save();
@@ -2306,7 +2185,7 @@ class Adventure{
     if(button){button.dataset.hero=dude.name.toLowerCase();button.setAttribute('aria-label',`Use ${dude.power}`)}
   }
   switchDude(i=null){
-    const now=performance.now();
+    const now=this.clock.time;
     this.switchFrom=this.state.dude;
     this.state.dude=i===null?(this.state.dude+1)%3:i;
     this.switchBurst=this.state.dude===1?0:18;
@@ -2342,7 +2221,7 @@ class Adventure{
   save(){
     return {
       schema:2,
-      version:'1.0.9',
+      version:'3.0.0',
       player:{
         x:this.player.x,
         y:this.player.y,
@@ -2397,6 +2276,8 @@ class Adventure{
     this.state.dude=clamp(Math.round(finite(this.state.dude,0)),0,2);
     this.state.triangle=clamp(finite(this.state.triangle,0),0,100);
     this.state.adventureComplete=Boolean(this.state.adventureComplete);
+    this.state.score=clamp(finite(this.state.score,0),0,1e9);
+    if(!this.state.objective||typeof this.state.objective!=='object')this.state.objective={title:'Continue your adventure',detail:'Follow Rigsby.'};
 
     this.player.x=clamp(finite(s.player?.x,150),0,WORLD-this.player.w);
     this.player.y=clamp(finite(s.player?.y,FLOOR-this.player.h),0,FLOOR-this.player.h);
@@ -2499,7 +2380,7 @@ class Adventure{
           timer:0,
           complete:true,
           portalReady:true,
-          completedAt:performance.now()-3000
+          completedAt:this.clock.time-3000
         };
         this.setInputMode('PLAYING');
         this.state.zoeyUnlocked=true;
@@ -2545,17 +2426,17 @@ class Adventure{
 
 function showBossIntro(){
   const game=window.__questGame;
-  if(game)game.zoneBanner={text:'FINAL BOSS — QUEEN OF BEIGE',until:performance.now()+1900};
+  if(game)game.zoneBanner={text:'FINAL BOSS — QUEEN OF BEIGE',until:game.clock.time+1900};
 }
 function showScene(title){
   const game=window.__questGame;
-  if(game)game.zoneBanner={text:title,until:performance.now()+1500};
+  if(game)game.zoneBanner={text:title,until:game.clock.time+1500};
 }
 function showAchievement(title,icon='🏆'){const stack=qs('achievementStack');const card=document.createElement('div');card.className='achievementCard';card.innerHTML=`<div class="achievementIcon">${icon}</div><div><div class="achievementLabel">ACHIEVEMENT UNLOCKED</div><div class="achievementTitle">${title}</div></div>`;stack.appendChild(card);setTimeout(()=>card.remove(),4700)}
 function showCollect(text){const t=qs('collectibleToast');t.textContent=text;t.classList.add('isVisible');clearTimeout(showCollect.t);showCollect.t=setTimeout(()=>t.classList.remove('isVisible'),1450)}
 window.showAchievement=showAchievement;window.showCollectible=showCollect;
 
-const canvas=qs('gameCanvas');canvas.width=W;canvas.height=H;const ui=createUI();let game;const input=createInput(i=>game?.switchDude(i));game=new Adventure(canvas,ui,input,state=>{ui.refs.completeStats.textContent=`All ${state.cards}/6 Gay Cards recovered, ${state.beacons}/3 Prism Beacons restored, and the Queen of Beige defeated.`;ui.show('complete')});window.__questGame=game;window.__QUEST_RELEASE__={version:'1.0.10-core-lock',coreVersion:window.QuestCore.VERSION,dudeCount:DUDES.length,powers:DUDES.map(dude=>({name:dude.name,power:dude.power,icon:dude.powerIcon})),castLocked:window.QuestCore.validateCast(DUDES)};
+const canvas=qs('gameCanvas');canvas.width=W;canvas.height=H;const ui=createUI();let game;const input=createInput(i=>game?.switchDude(i));game=new Adventure(canvas,ui,input,state=>{ui.refs.completeStats.textContent=`All ${state.cards}/6 Gay Cards recovered, ${state.beacons}/3 Prism Beacons restored, and the Queen of Beige defeated.`;ui.show('complete')});window.__questGame=game;window.__QUEST_RELEASE__={version:'3.0.0',coreVersion:window.QuestCore.VERSION,dudeCount:DUDES.length,powers:DUDES.map(dude=>({name:dude.name,power:dude.power,icon:dude.powerIcon})),castLocked:window.QuestCore.validateCast(DUDES)};
 const SAVE='3dudes1quest-save-109';
 const LEGACY_SAVES=[
   '3dudes1quest-save-108x','3dudes1quest-save-108w','3dudes1quest-save-108v',
@@ -2567,16 +2448,7 @@ const LEGACY_SAVES=[
 ];
 
 function parseStoredSave(key){
-  try{
-    const raw=localStorage.getItem(key);
-    if(!raw)return null;
-    const parsed=JSON.parse(raw);
-    return parsed&&typeof parsed==='object'?parsed:null;
-  }catch(error){
-    console.warn(`Ignoring unreadable save ${key}:`,error);
-    try{localStorage.removeItem(key)}catch(_){}
-    return null;
-  }
+  return QuestRuntime.readSave(key,value=>value&&typeof value==='object'&&!Array.isArray(value)&&value.state&&typeof value.state==='object');
 }
 
 function migrateSave(save){
@@ -2584,7 +2456,7 @@ function migrateSave(save){
   return {
     ...save,
     schema:2,
-    version:'1.0.9',
+    version:'3.0.0',
     savedAt:save.savedAt||new Date().toISOString()
   };
 }
@@ -2607,7 +2479,7 @@ function readSave(){
 
 function clearAllQuestSaves(){
   for(const key of [SAVE,...LEGACY_SAVES]){
-    try{localStorage.removeItem(key)}catch(_){}
+    QuestRuntime.clearSave(key);
   }
 }
 
@@ -2615,7 +2487,7 @@ function persistQuest(reason='auto'){
   if(!game)return false;
   if(!game.running&&!game.state?.bossDefeated)return false;
   try{
-    localStorage.setItem(SAVE,JSON.stringify(game.save()));
+    if(!QuestRuntime.writeSave(SAVE,game.save()))return false;
     document.documentElement.dataset.lastQuestSave=reason;
     return true;
   }catch(error){
@@ -2686,7 +2558,7 @@ qs('startBtn').onclick=()=>{
 qs('continueBtn').onclick=()=>begin(readSave());
 qs('helpBtn').onclick=()=>ui.show('help');
 qs('backBtn').onclick=()=>ui.show('title');
-qs('triangleUltimateBtn').onclick=()=>{game.input.ultimate=true;setTimeout(()=>game.input.ultimate=false,80)};
+qs('triangleUltimateBtn').onclick=()=>game.input.trigger('ultimate');
 qs('pauseBtn').onclick=()=>game.pauseGameplay();
 qs('journalBtn').onclick=()=>{if(game.inputMode==='PAUSED')game.resumeGameplay();else game.pauseGameplay()};
 qs('journalClose').onclick=()=>game.resumeGameplay();
@@ -2716,7 +2588,7 @@ qs('journalClose').onclick=()=>game.resumeGameplay();
 qs('restartBtn').onclick=()=>{clearAllQuestSaves();refresh();begin(null,selectedStartingDude)};
 qs('portalBtn').onclick=()=>ui.show('portal');
 qs('titleBtn').onclick=()=>ui.show('title');
-qs('saveBtn').onclick=()=>{persistQuest('manual');qs('saveToast').classList.add('show');setTimeout(()=>qs('saveToast').classList.remove('show'),1200);refresh()};
+qs('saveBtn').onclick=()=>{qs('saveToast').textContent=persistQuest('manual')?'Quest saved ✓':'Could not save — storage unavailable';qs('saveToast').classList.add('show');setTimeout(()=>qs('saveToast').classList.remove('show'),1200);refresh()};
 qs('cutsceneNext').onclick=()=>{qs('cutscene').classList.add('hidden');game.resumeGameplay()};
 
 function buildWorldMap(){
@@ -2858,9 +2730,13 @@ installSafariGameMode();
 
 addEventListener('pagehide',()=>persistQuest('pagehide'),{passive:true});
 document.addEventListener('visibilitychange',()=>{
-  if(document.hidden)persistQuest('hidden');
+  if(document.hidden){persistQuest('hidden');game.pauseGameplay();}
 });
 refresh();
 setInterval(()=>{
   if(game.running&&!game.state.paused)persistQuest('interval');
 },20000);
+
+addEventListener('blur',()=>game.pauseGameplay());
+addEventListener('orientationchange',()=>game.pauseGameplay());
+window.__QUEST_SESSION__={isActive:()=>game.running,save:()=>persistQuest('update'),pause:()=>game.pauseGameplay()};
