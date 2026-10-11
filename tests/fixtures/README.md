@@ -13,3 +13,5 @@ The `*-3.2.json` files were serialized by the actual 3.2.0 runtime from a separa
 
 The `*-3.3.json` fixtures were serialized by the original 3.3.0 runtime at `0bcd42ed79310b2cd0be5c87c34c5e38f9290d78`, using its actual SoCal pause save and Tahoe save function. Both have score 3407 and Caleb selected; SoCal preserves health 3. Tahoe has checkpoint 3360 and its established loader restores health to 4 (Tahoe never serialized current health). The 3.4 visual suite loads them through Continue/Play and verifies those values.
 Native 3.4.0 fixtures were written by the deployed `c455779aec2a373c78ecc16b60a53ceda069e6c3` runtime. Each selects Caleb with score 3417. SoCal preserves Court completion; Tahoe preserves checkpoint 3360 and a lost yellow tree; Alaska preserves shelter 2450 and the first cleared relay. Character tests load these unmodified snapshots into 3.4.1.
+
+`socal-3.4.1-grandfathered.json` was serialized by production 3.4.1 (version repair 4441b46) after loading a simulated legacy Queen-active checkpoint derived from a normal-keyboard fresh SoCal route. It reproduces migration to an unverified courtDefeated flag; it is not the owner’s personal save.
