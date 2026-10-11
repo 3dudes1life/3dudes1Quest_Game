@@ -1,6 +1,13 @@
-const VERSION='3.3.0';
-const CACHE=`3dudes1quest-${VERSION}-audio2`;
+const VERSION='3.4.0';
+const CACHE=`3dudes1quest-${VERSION}`;
 const CORE=[
+  "./js/core/quest-cast.js",
+  "./assets/cast340/socal.png",
+  "./assets/cast340/tahoe.png",
+  "./assets/cast340/alaska.png",
+  "./css/visual340.css",
+  "./js/core/quest-adventure.js",
+  "./js/world-alaska.js",
   "./js/core/quest-score.js",
   "./js/core/quest-audio.js",
   "./css/audio330.css",

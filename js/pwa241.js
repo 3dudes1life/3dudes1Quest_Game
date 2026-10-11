@@ -1,5 +1,5 @@
 (() => {
-  const VERSION='3.3.0';
+  const VERSION='3.4.0';
   let deferredPrompt=null;
   const root=document.documentElement;
   root.classList.add('pwa-ready');
@@ -15,7 +15,7 @@
     document.getElementById('pwaInstall').addEventListener('click',installGame);
   }
   async function shareGame(){
-    const data={title:'3Dudes1Quest',text:'Save Tahoe, defeat the Pine Beetle Queen, and open the portal to Alaska!',url:location.origin+location.pathname.replace(/[^/]*$/,'')};
+    const data={title:'3Dudes1Quest',text:'Restore SoCal, save Tahoe, and bring Alaska’s aurora home!',url:location.origin+location.pathname.replace(/[^/]*$/,'')};
     try{ if(navigator.share) await navigator.share(data); else { await navigator.clipboard.writeText(data.url); toast('GAME LINK COPIED'); } }catch(e){ if(e.name!=='AbortError') toast('SHARE CANCELLED'); }
   }
   async function installGame(){
