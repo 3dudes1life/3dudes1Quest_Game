@@ -6,7 +6,7 @@
  * They must not redefine the five main characters or the three dude powers.
  */
 (() => {
-  const VERSION = "2.5.3";
+  const VERSION = "3.1.0";
   const CAST_ASSET_VERSION = "adventure1-gold-master-109-v253";
   const ANIMATIONS = Object.freeze(["idle", "walk", "jump", "attack", "hurt", "celebrate"]);
 

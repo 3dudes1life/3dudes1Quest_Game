@@ -1,16 +1,15 @@
-const VERSION='3.0.0';
+const VERSION='3.1.0';
 const CACHE=`3dudes1quest-${VERSION}`;
 const CORE=[
-  "./css/stability300.css",
+  "./css/viewport310.css",
+  "./js/core/quest-viewport.js",
   "./",
   "./index.html",
   "./tahoe.html",
   "./alaska.html",
   "./manifest.webmanifest",
   "./favicon.ico",
-  "./css/core250.css",
   "./css/tahoe.css",
-  "./css/quality243.css",
   "./css/style.css",
   "./css/pwa241.css",
   "./icons/apple-touch-icon.png",

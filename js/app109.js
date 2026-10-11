@@ -2221,7 +2221,7 @@ class Adventure{
   save(){
     return {
       schema:2,
-      version:'3.0.0',
+      version:'3.1.0',
       player:{
         x:this.player.x,
         y:this.player.y,
@@ -2436,7 +2436,7 @@ function showAchievement(title,icon='🏆'){const stack=qs('achievementStack');c
 function showCollect(text){const t=qs('collectibleToast');t.textContent=text;t.classList.add('isVisible');clearTimeout(showCollect.t);showCollect.t=setTimeout(()=>t.classList.remove('isVisible'),1450)}
 window.showAchievement=showAchievement;window.showCollectible=showCollect;
 
-const canvas=qs('gameCanvas');canvas.width=W;canvas.height=H;const ui=createUI();let game;const input=createInput(i=>game?.switchDude(i));game=new Adventure(canvas,ui,input,state=>{ui.refs.completeStats.textContent=`All ${state.cards}/6 Gay Cards recovered, ${state.beacons}/3 Prism Beacons restored, and the Queen of Beige defeated.`;ui.show('complete')});window.__questGame=game;window.__QUEST_RELEASE__={version:'3.0.0',coreVersion:window.QuestCore.VERSION,dudeCount:DUDES.length,powers:DUDES.map(dude=>({name:dude.name,power:dude.power,icon:dude.powerIcon})),castLocked:window.QuestCore.validateCast(DUDES)};
+const canvas=qs('gameCanvas');canvas.width=W;canvas.height=H;const ui=createUI();let game;const input=createInput(i=>game?.switchDude(i));game=new Adventure(canvas,ui,input,state=>{ui.refs.completeStats.textContent=`All ${state.cards}/6 Gay Cards recovered, ${state.beacons}/3 Prism Beacons restored, and the Queen of Beige defeated.`;ui.show('complete')});window.__questGame=game;window.__QUEST_RELEASE__={version:'3.1.0',coreVersion:window.QuestCore.VERSION,dudeCount:DUDES.length,powers:DUDES.map(dude=>({name:dude.name,power:dude.power,icon:dude.powerIcon})),castLocked:window.QuestCore.validateCast(DUDES)};
 const SAVE='3dudes1quest-save-109';
 const LEGACY_SAVES=[
   '3dudes1quest-save-108x','3dudes1quest-save-108w','3dudes1quest-save-108v',
@@ -2456,7 +2456,7 @@ function migrateSave(save){
   return {
     ...save,
     schema:2,
-    version:'3.0.0',
+    version:'3.1.0',
     savedAt:save.savedAt||new Date().toISOString()
   };
 }
@@ -2657,77 +2657,6 @@ qs('photoCapture').onclick=()=>{
   }
 };
 
-function resize(){canvas.width=W;canvas.height=H;let w=innerWidth,h=w/(16/9);if(h>innerHeight){h=innerHeight;w=h*(16/9)}canvas.style.width=Math.floor(w)+'px';canvas.style.height=Math.floor(h)+'px'}addEventListener('resize',resize,{passive:true});resize();
-function updateMobileLayoutMode(){
-  const coarse=window.matchMedia?matchMedia('(pointer:coarse)').matches:false;
-  document.body.classList.toggle('touchDevice',coarse);
-  document.body.classList.toggle('portraitGame',coarse&&innerHeight>innerWidth);
-  document.body.classList.toggle('landscapeGame',coarse&&innerWidth>=innerHeight);
-}
-addEventListener('resize',updateMobileLayoutMode,{passive:true});
-addEventListener('orientationchange',()=>setTimeout(updateMobileLayoutMode,120),{passive:true});
-updateMobileLayoutMode();
-
-
-function installSafariGameMode(){
-  const gameScreen=qs('gameScreen');
-  const touchControls=qs('touchControls');
-  if(!gameScreen||!touchControls)return;
-
-  let lastTouchEnd=0;
-
-  const gameIsActive=()=>gameScreen.classList.contains('active');
-  const insideGameControls=target=>Boolean(
-    target?.closest?.(
-      '#touchControls, #pauseBtn, #journalBtn, #photoBtn, #dialogueNext, #cutsceneNext, #journal, .featureOverlay, #photoMode, #gameCanvas'
-    )
-  );
-
-  // iOS Safari pinch-to-zoom events.
-  ['gesturestart','gesturechange','gestureend'].forEach(type=>{
-    document.addEventListener(type,event=>{
-      if(gameIsActive())event.preventDefault();
-    },{passive:false});
-  });
-
-  // Block double-tap zoom while preserving single-tap game input.
-  document.addEventListener('touchend',event=>{
-    if(!gameIsActive()||!insideGameControls(event.target))return;
-    const now=Date.now();
-    if(now-lastTouchEnd<420){
-      event.preventDefault();
-    }
-    lastTouchEnd=now;
-  },{passive:false,capture:true});
-
-  // Safari sometimes promotes rapid button taps into a dblclick zoom.
-  document.addEventListener('dblclick',event=>{
-    if(gameIsActive()&&insideGameControls(event.target)){
-      event.preventDefault();
-      event.stopPropagation();
-    }
-  },{passive:false,capture:true});
-
-  // Keep the page fixed while the player is interacting with game controls.
-  document.addEventListener('touchmove',event=>{
-    if(gameIsActive()&&insideGameControls(event.target)){
-      event.preventDefault();
-    }
-  },{passive:false,capture:true});
-
-  // Prevent native selection/callout behavior from interrupting play.
-  document.addEventListener('contextmenu',event=>{
-    if(gameIsActive()&&insideGameControls(event.target)){
-      event.preventDefault();
-    }
-  },{capture:true});
-
-  const resetInput=()=>window.__questGame?.input?.releaseAll?.();
-  addEventListener('orientationchange',resetInput,{passive:true});
-  addEventListener('pagehide',resetInput,{passive:true});
-}
-installSafariGameMode();
-
 addEventListener('pagehide',()=>persistQuest('pagehide'),{passive:true});
 document.addEventListener('visibilitychange',()=>{
   if(document.hidden){persistQuest('hidden');game.pauseGameplay();}
@@ -2738,5 +2667,8 @@ setInterval(()=>{
 },20000);
 
 addEventListener('blur',()=>game.pauseGameplay());
-addEventListener('orientationchange',()=>game.pauseGameplay());
-window.__QUEST_SESSION__={isActive:()=>game.running,save:()=>persistQuest('update'),pause:()=>game.pauseGameplay()};
+
+window.__QUEST_SESSION__={isActive:()=>game.running,save:()=>persistQuest('update'),pause:()=>game.pauseGameplay(),suspendViewport:()=>{
+  const paused=game.state.paused;game.state.paused=true;game.clock.reset();game.input.releaseAll();persistQuest('rotation');
+  return ()=>{game.input.releaseAll();game.clock.reset();game.state.paused=paused;};
+}};

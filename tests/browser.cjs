@@ -72,6 +72,7 @@ const server=http.createServer((req,res)=>{
    await page.evaluate(()=>{__TAHOE_TEST__.clock.stop();const s=__TAHOE_DEBUG__.state;s.player.x=9700;__TAHOE_TEST__.update(QuestRuntime.STEP)});await page.waitForURL('**/alaska.html');
    assert.deepEqual(errors,[]);await context.close();console.log(`PASS ${mobile?'mobile':'desktop'} movement, input, pause, saves, death, boss and portal scenarios`);
   }
+  await require('./mobile-layout.cjs')(browser,base);
   const context=await browser.newContext();const page=await context.newPage();await page.goto(base+'/index.html');
   await page.evaluate(()=>navigator.serviceWorker.ready);await page.reload();await context.setOffline(true);await page.goto(base+'/tahoe.html');await page.waitForFunction(()=>!document.getElementById('beginTahoe').disabled);await page.locator('#beginTahoe').click();assert.equal(await page.evaluate(()=>__TAHOE_DEBUG__.state.started),true);console.log('PASS installed release launches Tahoe offline');await context.close();
  }finally{await browser.close();server.close()}

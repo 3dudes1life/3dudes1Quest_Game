@@ -31,6 +31,8 @@
   }
 
   function createInput({ active, screenActive = active, canvas, buttons, switchDude, pause }) {
+    const canPlay = active;
+    active = () => canPlay() && !document.getElementById('viewportPause')?.matches(':not([hidden])');
     const held = new Map(), pending = new Set();
     const input = { left: false, right: false, jump: false, power: false, ultimate: false };
     function sync(action) { input[action] = [...held.values()].includes(action); }
@@ -47,7 +49,7 @@
     }
     addEventListener('keydown', event => {
       const action = window.QuestCore.actionForCode(event.code);
-      if (!action || !screenActive()) return;
+      if (!action || !screenActive() || document.getElementById('viewportPause')?.matches(':not([hidden])') || /^(SELECT|INPUT|TEXTAREA)$/.test(event.target?.tagName)) return;
       event.preventDefault();
       if (event.repeat) return;
       if (action === 'pause') { pause(); return; }
