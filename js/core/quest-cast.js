@@ -1,34 +1,26 @@
-/* Original 3.4 cast atlases. Outfit selection changes artwork, never physics. */
+/* Shared character artwork only: movement, hitboxes and powers remain in QuestCore. */
 (() => {
  'use strict';
  const names=['will','daniel','caleb','rigsby','zoey'];
  const world=document.querySelector('main[data-world]')?.dataset.world || (document.getElementById('tahoeApp')?'tahoe':'socal');
- const atlas=new Image(), strips={}, portraits={};
- const animations={idle:[0,0,0,0,0,0],walk:[1,2,1,2,1,2,1,2],jump:[3,3,3,3],attack:[4,4,4,4,4,4],hurt:[3,3,3,3,3,3],celebrate:[5,5,5,5,5,5],bark:[4,4,4,4,4,4]};
- const ready=new Promise((resolve,reject)=>{atlas.onload=()=>{try{
-  const cw=atlas.naturalWidth/6;
-  // Atlas rows have different heights for full-size humans and shorter beagles.
-  const rows=[0,265,509,753,948,1145].map(v=>v*atlas.naturalHeight/1145);
-  const scratch=document.createElement('canvas');scratch.width=Math.ceil(cw);scratch.height=Math.ceil(rows[1]);const sc=scratch.getContext('2d',{willReadFrequently:true});
-  names.forEach((name,row)=>{const sy=rows[row],ch=rows[row+1]-sy;scratch.height=Math.ceil(ch);sc.imageSmoothingEnabled=false;
-   const bounds=[];
-   for(let col=0;col<6;col++){sc.clearRect(0,0,cw,ch);sc.drawImage(atlas,col*cw,sy,cw,ch,0,0,cw,ch);const data=sc.getImageData(0,0,scratch.width,scratch.height).data;let left=cw,right=0,top=ch,bottom=0;
-    for(let y=0;y<ch;y++)for(let x=0;x<cw;x++)if(data[(y*scratch.width+x)*4+3]>96){left=Math.min(left,x);right=Math.max(right,x);top=Math.min(top,y);bottom=Math.max(bottom,y)}bounds.push({left,right,top,bottom});
-   }
-   const scale=(row<3?180:86)/Math.max(...bounds.map(b=>b.bottom-b.top+1));
-   for(const [animation,cols] of Object.entries(animations)){
-    if(row<3&&animation==='bark')continue;
-    const fw=row<3?192:128,fh=row<3?192:96,c=document.createElement('canvas');c.width=fw*cols.length;c.height=fh;const cx=c.getContext('2d');cx.imageSmoothingEnabled=false;
-    cols.forEach((col,i)=>{const b=bounds[col],sw=b.right-b.left+1,sh=b.bottom-b.top+1,dw=sw*scale,dh=sh*scale;cx.save();const bob=animation==='idle'&&i%3===1?-1:animation==='celebrate'&&i%2?-3:0;cx.translate(animation==='attack'?-[0,2,3,1,0,0][i]:0,bob);if(animation==='hurt'||(animation==='jump'&&i>=2)){cx.translate(i*fw+fw/2,fh-4);cx.rotate(animation==='hurt'?-.12:.08);cx.translate(-i*fw-fw/2,-fh+4)}cx.drawImage(atlas,col*cw+b.left,sy+b.top,sw,sh,i*fw+(fw-dw)/2,fh-4-dh,dw,dh);cx.restore()});
-    strips[name+'_'+animation]=c.toDataURL();
-   }
-   if(row<3){const b=bounds[0],c=document.createElement('canvas');c.width=128;c.height=128;const cx=c.getContext('2d');cx.imageSmoothingEnabled=false;const side=Math.max(b.right-b.left+1,(b.bottom-b.top)*.52);cx.drawImage(atlas,b.left,sy+b.top,side,side,0,0,128,128);portraits[name]=c.toDataURL()}
-  });
-  const replacePortraits=()=>document.querySelectorAll('img[data-cast-portrait],img[src*="assets/portraits/"]').forEach(im=>{const name=im.dataset.castPortrait||im.getAttribute('src').split('/').pop().split('.')[0];if(portraits[name]&&im.src!==portraits[name]){im.src=portraits[name];im.dataset.cast='3.4.0'}});
-  replacePortraits();new MutationObserver(replacePortraits).observe(document.body,{subtree:true,attributes:true,attributeFilter:['src']});
-  resolve(true);
- }catch(e){reject(e)}};atlas.onerror=()=>reject(new Error('Cannot load '+world+' cast atlas'));atlas.src='assets/cast340/'+world+'.png?v=3.4.0'});
- function loadImages(){const images={};names.forEach(name=>Object.keys(animations).forEach(anim=>{if(names.indexOf(name)<3&&anim==='bark')return;const image=new Image();images[name+'_'+anim]=image;ready.then(()=>image.src=strips[name+'_'+anim]).catch(()=>image.dispatchEvent(new Event('error')))}));return images}
+ let atlas;
+ const worldIndex=['socal','tahoe','alaska'].indexOf(world),strips={},portraits={},metrics={};
+ const animations={idle:[0,0,0,0,0,0],walk:[1,2,1,2,1,2,1,2],run:[3,4,3,4,3,4,3,4],jump:[5,5,6,6],fall:[6,6,6,6],attack:[7,7,8,8,8,7],hurt:[9,9,9,9,9,9],celebrate:[10,10,10,10,10,10],back:[11,11,11,11,11,11]};
+ const petAnimations={idle:[0,0,0,0,0,0],walk:[1,2,1,2,1,2,1,2],jump:[3,3,3,3],attack:[4,4,4,4,4,4],hurt:[3,3,3,3,3,3],celebrate:[5,5,5,5,5,5],bark:[4,4,4,4,4,4]};
+ function load(src){return new Promise((resolve,reject)=>{const im=new Image();im.onload=()=>resolve(im);im.onerror=()=>reject(new Error('Cannot load '+src));im.src=src})}
+ function bounds(im,sx,sy,cw,ch){const c=document.createElement('canvas');c.width=cw;c.height=ch;const x=c.getContext('2d',{willReadFrequently:true});x.drawImage(im,sx,sy,cw,ch,0,0,cw,ch);const data=x.getImageData(0,0,cw,ch).data;let left=cw,right=-1,top=ch,bottom=-1;for(let y=0;y<ch;y++)for(let xx=0;xx<cw;xx++)if(data[(y*cw+xx)*4+3]>96){left=Math.min(left,xx);right=Math.max(right,xx);top=Math.min(top,y);bottom=Math.max(bottom,y)}if(right<0)throw new Error('Empty cast frame');return {sx:sx+left,sy:sy+top,sw:right-left+1,sh:bottom-top+1,offset:left-cw/2}}
+ // Empty alpha gutters define the authoring grid. Reject sheets without safe cuts.
+ function grid(im){const c=document.createElement('canvas');c.width=im.width;c.height=im.height;const x=c.getContext('2d',{willReadFrequently:true});x.drawImage(im,0,0);const d=x.getImageData(0,0,c.width,c.height).data,rows=Array(c.height).fill(0),cols=Array(c.width).fill(0);for(let y=0;y<c.height;y++)for(let xx=0;xx<c.width;xx++)if(d[(y*c.width+xx)*4+3]>96){rows[y]++;cols[xx]++}function cuts(a,n){return [0,...Array.from({length:5},(_,i)=>{const mid=n*(i+1)/6,range=n/6*.18;let best=Math.round(mid);for(let k=Math.floor(mid-range);k<mid+range;k++)if(a[k]<a[best])best=k;if(a[best]>0)throw new Error('Cast atlas has no transparent gutter at '+(i+1));return best}),n]}return {x:cuts(cols,c.width),y:cuts(rows,c.height)}}
+ function stripsFor(name,im,frames,mapping,human){const fw=human?192:128,fh=human?192:96,scale=Math.min((human?180:86)/Math.max(...frames.map(b=>b.sh)),(fw-8)/Math.max(...frames.map(b=>b.sw)));metrics[name]={scale,frames:frames.map(b=>({width:b.sw*scale,height:b.sh*scale})),baseline:fh-4};for(const [animation,indices] of Object.entries(mapping)){const c=document.createElement('canvas');c.width=fw*indices.length;c.height=fh;const x=c.getContext('2d');x.imageSmoothingEnabled=false;indices.forEach((index,i)=>{const b=frames[index],dw=b.sw*scale,dh=b.sh*scale;const bob=animation==='idle'&&i%3===1?-1:animation==='celebrate'&&i%2?-3:0;const dx=human?Math.max(4,Math.min(fw-4-dw,fw/2+b.offset*scale)):(fw-dw)/2;x.drawImage(im,b.sx,b.sy,b.sw,b.sh,i*fw+dx,fh-4-dh+bob,dw,dh)});strips[name+'_'+animation]=c.toDataURL()}
+ if(human){const b=frames[0],c=document.createElement('canvas');c.width=c.height=128;const x=c.getContext('2d');x.imageSmoothingEnabled=false;const side=Math.min(b.sw,b.sh*.53);x.drawImage(im,b.sx+(b.sw-side)/2,b.sy,side,side,0,0,128,128);portraits[name]=c.toDataURL()}}
+ const ready=Promise.all([load('assets/cast340/'+world+'.png?v=3.4.0'),...names.slice(0,3).map(n=>load('assets/cast341/'+n+'.png?v=3.4.1'))]).then(([pets,...heroes])=>{
+  atlas=pets;
+  heroes.forEach((im,i)=>{const g=grid(im),frames=[];for(let row=worldIndex*2;row<worldIndex*2+2;row++)for(let col=0;col<6;col++)frames.push(bounds(im,g.x[col],g.y[row],g.x[col+1]-g.x[col],g.y[row+1]-g.y[row]));stripsFor(names[i],im,frames,animations,true)});
+  const ys=[0,265,509,753,948,1145].map(v=>Math.round(v*pets.height/1145));names.slice(3).forEach((name,i)=>{const row=i+3,frames=[];for(let col=0;col<6;col++){const left=Math.round(col*pets.width/6),right=Math.round((col+1)*pets.width/6);frames.push(bounds(pets,left,ys[row],right-left,ys[row+1]-ys[row]))}stripsFor(name,pets,frames,petAnimations,false)});
+  const replacePortraits=()=>document.querySelectorAll('img[data-cast-portrait],img[src*="assets/portraits/"]').forEach(im=>{const name=im.dataset.castPortrait||im.getAttribute('src').split('/').pop().split('.')[0];if(portraits[name]&&im.src!==portraits[name]){im.src=portraits[name];im.dataset.cast='3.4.1'}});replacePortraits();new MutationObserver(replacePortraits).observe(document.body,{subtree:true,attributes:true,attributeFilter:['src']});return true;
+ });
+ function loadImages(){const images={};names.forEach((name,i)=>Object.keys(i<3?animations:petAnimations).forEach(anim=>{const image=new Image();images[name+'_'+anim]=image;ready.then(()=>image.src=strips[name+'_'+anim]).catch(()=>image.dispatchEvent(new Event('error')))}));return images}
+ function setPortrait(element,name){if(element&&portraits[name]&&element.src!==portraits[name]){element.src=portraits[name];element.dataset.castPortrait=name;element.alt=name[0].toUpperCase()+name.slice(1)}}
  let pets;function drawPet(ctx,x,y,time,name,flip){if(!pets)pets=loadImages();const image=pets[name+'_walk'];if(!image?.complete||!image.naturalWidth)return false;ctx.save();ctx.imageSmoothingEnabled=false;ctx.translate(Math.round(x+(flip?78:0)),Math.round(y-18));ctx.scale(flip?-1:1,1);ctx.drawImage(image,(Math.floor(time/110)%8)*128,0,128,96,0,0,78,58);ctx.restore();return true}
- window.QuestCast=Object.freeze({world,ready,loadImages,drawPet,portraits,names,atlas});
+ window.QuestCast=Object.freeze({world,ready,loadImages,drawPet,setPortrait,portraits,names,metrics,animations,get atlas(){return atlas}});
 })();

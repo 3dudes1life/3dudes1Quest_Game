@@ -17,7 +17,7 @@
    $('objectiveText').textContent=left?'Hit each relay twice with your character power. Explore upper ledges for shards and supplies.':'Watch the yellow warning. Jump ice waves; break her ice shield using any power.';
   }
   function hud(){
-   $('hudDude').textContent=QuestCore.CAST[s.dude].name;$('hudHealth').textContent=s.health;$('hudScore').textContent=s.score;
+   $('hudDude').textContent=QuestCore.CAST[s.dude].name;QuestCast.setPortrait($('hudPortrait'),QuestCore.CAST[s.dude].key);$('hudHealth').textContent=s.health;$('hudScore').textContent=s.score;
    $('hudRelays').textContent=s.relays.filter(r=>r.hp===0).length;$('hudShards').textContent=s.shards.filter(r=>r.got).length;$('hudWeather').textContent=s.weather;
    $('powerChargeFill').style.width=(100-s.cooldown/32*100)+'%';$('powerChargeLabel').textContent=s.cooldown?'CHARGING':'READY';
    $('bossHud').classList.toggle('hidden',!s.bossStarted||s.bossDefeated);$('bossHealthFill').style.width=(boss.hp/12*100)+'%';$('bossPhase').textContent=`PHASE ${boss.phase}${boss.shield?` · SHIELD ${boss.shield}`:s.blizzard?` · BLIZZARD`:``}`;
@@ -51,7 +51,7 @@
     if(s.bossStarted&&!s.bossDefeated){s.bossStarted=false;Object.assign(boss,{hp:12,timer:100,windup:0,inv:0,attack:0,phase:1,shield:0});s.blizzard=0;s.icePatches=[];s.enemies=s.enemies.filter(e=>!e.summoned)}message('Back at the shelter. Relays and treasures are safe.');save();
    }hud();return true;
   }
-  function fire(){if(s.cooldown||s.paused||s.completed)return;const power=QuestCore.makePowerProjectile(s.dude,player);if(power.kind==='cookieBomb')s.cookies.push(power.entity);else s.shots.push(power.entity);s.cooldown=32;s.cast=s.dude===1?18:0;player.anim='attack';player.animUntil=clock.time+240;QuestAudio.effect(power.sound);}
+  function fire(){if(s.cooldown||s.paused||s.completed)return;const power=QuestCore.makePowerProjectile(s.dude,player);if(power.kind==='cookieBomb')s.cookies.push(power.entity);else s.shots.push(power.entity);s.cooldown=32;s.cast=s.dude===1?18:0;player.anim='attack';player.animStarted=clock.time;player.animUntil=clock.time+240;QuestAudio.effect(power.sound);}
   const overlaps=(a,b)=>a.x<b.x+b.w&&a.x+a.w>b.x&&a.y<b.y+b.h&&a.y+a.h>b.y;
   function targets(){return [...s.enemies.filter(e=>e.alive&&!e.normal),...s.relays.filter(r=>r.hp>0),...(s.bossStarted&&!s.bossDefeated?[boss]:[])]}
   function hit(target,damage=1){
@@ -168,7 +168,7 @@
   QuestAudio.bind(()=>({track:!s.started?'title':s.bossDefeated?'victory':s.bossStarted?world.bossMusic:world.music,paused:s.paused}));
   QuestCore.preloadCastImages(imgs).then(report=>{ready=report.ready&&QuestCore.verifyCastRenderer(imgs).ready;$('beginAdventure').disabled=!ready;$('continueAdventure').disabled=!ready||!QuestRuntime.readSave(world.saveKey);if(!ready)message('Characters could not load. Reload when online.');draw(0)});
   const api={state:s,player,boss,input,clock,save,load,update,draw,start,hit,hurt,fire,setDude,world,renderer};
-  window.__ADVENTURE_DEBUG__={state:s,player,version:'3.4.0'};if(new URLSearchParams(location.search).has('qa'))window.__ADVENTURE_TEST__=api;
+  window.__ADVENTURE_DEBUG__={state:s,player,version:'3.4.1'};if(new URLSearchParams(location.search).has('qa'))window.__ADVENTURE_TEST__=api;
   clock.start();return api;
  }
  window.QuestAdventure=Object.freeze({create});

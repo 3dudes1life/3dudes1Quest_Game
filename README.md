@@ -1,6 +1,8 @@
-# 3Dudes1Quest 3.4 — Three-World Master Release
+# 3Dudes1Quest 3.4.1 — Character Identity & Signature Powers
 
 A browser platform adventure starring Will, Daniel, Caleb, Rigsby, and Zoey. Restore Southern California, protect Lake Tahoe, and restore Alaska’s aurora. Three adventures are playable; Costa Rica and Hawaii are Coming Soon.
+
+3.4.1 builds on the verified 3.4 release. Will uses DJ Soundwave with preserved ricochet mechanics; Daniel retains Heartfield Burst; adult Caleb keeps Cookie Toss with rainbow trails. Shared portraits, world outfits and aligned walk/run/jump/fall/attack/hurt/victory frames follow the approved character references. See [character artwork](docs/CHARACTER-ART-3.4.1.md) and [release candidate](docs/RELEASE-3.4.1.md).
 
 ## Play and develop
 

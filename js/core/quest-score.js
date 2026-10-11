@@ -35,7 +35,7 @@
     card:[tone('square',660,660,.08),tone('square',880,880,.13,.09)],
     beacon:[tone('triangle',440,440,.12),tone('pulse',660,660,.12,.12),tone('pulse',880,1320,.22,.24)],
     switch:[tone('triangle',392,523,.08),tone('triangle',784,784,.09,.08)],
-    ricochet:[tone('square',600,1200,.075),tone('triangle',960,720,.07,.065)],
+    ricochet:[tone('square',523.25,1046.5,.075),tone('triangle',783.99,523.25,.07,.065)],
     heart:[tone('triangle',330,660,.18),tone('pulse',660,660,.12,.12,.08)],
     heartPop:[tone('triangle',523,1046,.17),tone('noise',900,200,.09,0,.06)],
     cookie:[tone('pulse',190,90,.12),tone('noise',150,60,.07,.10,.09)],
