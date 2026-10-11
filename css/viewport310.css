@@ -85,3 +85,9 @@ html.quest-layout, .quest-layout body { margin:0; padding:0; width:100%; height:
 .quest-layout #triangleUltimateBtn { animation:none; }
 .quest-layout #bossPhase { animation:none; }
 #goldMasterQaPanel { pointer-events:none; }
+
+/* Court replay stays outside the primary menu grid on compact landscapes. */
+.quest-layout .courtReplayActions { display:flex; flex-wrap:wrap; gap:8px; }
+.quest-layout .courtReplayActions button { flex:1 1 220px; min-height:44px; }
+.quest-layout .courtReplayActions p { flex-basis:100%; font:12px/1.4 ui-monospace,monospace; margin:0 0 8px; }
+.quest-layout .courtReplayActions [hidden] { display:none!important; }
