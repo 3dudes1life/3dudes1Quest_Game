@@ -81,6 +81,8 @@ module.exports=async function audioChecks(browser,base){
  const context=await browser.newContext({serviceWorkers:'block'}),page=await context.newPage();await page.goto(base+'/index.html?audioqa');await page.waitForFunction(()=>window.__QUEST_AUDIO_TEST__);
  await page.waitForFunction(()=>document.querySelector('#bootSequence').classList.contains('isHidden'));await page.waitForTimeout(600);
  await page.locator('.audioSettings summary').first().click();await page.locator('.audioSettings').first().scrollIntoViewIfNeeded();await page.screenshot({path:path.join(out,'desktop-settings.png')});
+ const retired=await page.evaluate(()=>__QUEST_AUDIO_TEST__.renderRetired());
+ assert.ok(retired.every(v=>Number.isFinite(v)&&Math.abs(v)<.00001),'retired future notes must remain silent');
  const names=await page.evaluate(()=>[...Object.keys(QuestScore.songs),...Object.keys(QuestScore.effects)]);
  const report={};
  for(const name of names){
