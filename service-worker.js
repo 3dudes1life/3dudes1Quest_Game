@@ -1,5 +1,5 @@
 const VERSION='3.3.0';
-const CACHE=`3dudes1quest-${VERSION}`;
+const CACHE=`3dudes1quest-${VERSION}-audio2`;
 const CORE=[
   "./js/core/quest-score.js",
   "./js/core/quest-audio.js",

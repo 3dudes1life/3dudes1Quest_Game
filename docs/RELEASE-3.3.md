@@ -57,3 +57,7 @@ Sound settings appear in title and pause menus: independent music/effects toggle
 Human listening was not available in this execution environment. The generated WAV previews are for listening review; waveform/RMS checks are not a substitute for ears. Verify melody balance, repetition fatigue, phone-speaker bass audibility, and effect prominence in actual gameplay.
 
 Test iPhone Safari and installed Home Screen mode, and Android Chrome/PWA, with silent mode, Bluetooth/headphone changes, phone calls, app switching, orientation lock, both landscape directions, and repeated resume. Browser-emulated rotation/focus checks do not establish those behaviors on hardware. Confirm performance/battery usage on lower-end phones. Existing fractional screen scaling and controlled-boss-test limitations still apply. Alaska remains a teaser; Costa Rica and Hawaii remain future route entries.
+
+### Post-merge audio correction
+
+The first post-merge stress run exposed a timing-dependent gain spike when priority effects cancelled notes before their envelopes began. Voice gains now start at zero, and retirement preserves the current envelope or explicitly silences future notes. A real offline-render regression verifies that 40 retired future voices produce silence. The service-worker cache revision is refreshed for this correction.

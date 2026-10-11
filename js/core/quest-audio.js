@@ -20,7 +20,7 @@
   }
   function synth(context,bus,spec,at,resources,onend){
     const [wave,from,to,duration,delay=0,amp=.1]=spec,start=at+delay;
-    const gain=context.createGain();let source,filter;
+    const gain=context.createGain();gain.gain.value=0;let source,filter;
     if(wave==='noise'){
       source=context.createBufferSource();source.buffer=resources.noise;source.loop=true;
       filter=context.createBiquadFilter();filter.type='lowpass';filter.frequency.setValueAtTime(from,start);filter.frequency.exponentialRampToValueAtTime(Math.max(30,to),start+duration);
@@ -41,12 +41,20 @@
     let voice;voice=synth(ctx,group==='music'?musicBus:sfxBus,spec,at,{noise,pulse},()=>voices.delete(voice));
     Object.assign(voice,{group,priority});voices.add(voice);scheduled++;peakVoices=Math.max(peakVoices,voices.size);return true;
   }
+  function fadeVoice(voice,now){
+    const p=voice.gain.gain;
+    // Cancelling a future envelope must never restore GainNode's default gain of 1.
+    if(voice.start>now){p.cancelScheduledValues(now);p.setValueAtTime(0,now)}
+    else if(p.cancelAndHoldAtTime)p.cancelAndHoldAtTime(now);
+    else{const value=p.value;p.cancelScheduledValues(now);p.setValueAtTime(value,now)}
+    p.linearRampToValueAtTime(0,now+.018);
+    try{voice.source.stop(now+.02)}catch(_){}
+  }
   function stop(group){
     if(!ctx)return;
     const now=ctx.currentTime;
     for(const voice of voices){if((group&&voice.group!==group)||voice.retiring)continue;voice.retiring=true;
-      const p=voice.gain.gain;p.cancelScheduledValues(now);p.setValueAtTime(voice.start>now?0:p.value,now);p.linearRampToValueAtTime(0,now+.018);
-      try{voice.source.stop(now+.02)}catch(_){}
+      fadeVoice(voice,now);
     }
   }
   function levels(){if(!ctx)return;const now=ctx.currentTime;for(const [node,value] of [[master,settings.mute?0:.7],[musicBus,settings.music?settings.musicVolume*(ducked?.2:1):0],[sfxBus,settings.sfx?settings.sfxVolume:0]]){node.gain.cancelScheduledValues(now);node.gain.setTargetAtTime(value,now,.012)}}
@@ -96,7 +104,7 @@
     if(active.length+specs.length>14){
       // Important warnings/damage may replace lower priority voices. Quiet hits simply drop.
       if(p<3){dropped++;return false}
-      for(const v of active.filter(v=>v.priority<p)){v.retiring=true;v.gain.gain.cancelScheduledValues(now);v.gain.gain.setTargetAtTime(0,now,.004);try{v.source.stop(now+.02)}catch(_){}}
+      for(const v of active.filter(v=>v.priority<p)){v.retiring=true;fadeVoice(v,now);}
       if(active.filter(v=>!v.retiring).length+specs.length>14||voices.size+specs.length>40){dropped++;return false}
     }
     if(name==='gameOver')duckUntil=now+1.1;
@@ -133,6 +141,12 @@
   function status(){const data=analyser?new Float32Array(analyser.fftSize):[];analyser?.getFloatTimeDomainData(data);return {initialized:!!ctx,state:ctx?.state||'locked',blocked,track,cursor,playing,completed,voices:voices.size,musicVoices:[...voices].filter(v=>v.group==='music').length,sfxVoices:[...voices].filter(v=>v.group==='sfx').length,ahead:ctx?nextAt-ctx.currentTime:0,peakVoices,scheduled,dropped,transitions,schedulers:interval===null?0:1,settings:{...settings},events:{...counts},signalPeak:data.length?data.reduce((max,v)=>Math.max(max,Math.abs(v)),0):0,rms:data.length?Math.sqrt(data.reduce((sum,v)=>sum+v*v,0)/data.length):0}}
   window.QuestAudio=Object.freeze({effect,configure,bind(fn){provider=fn;sync()},sync,suspend,status});
   if(new URLSearchParams(location.search).has('audioqa'))window.__QUEST_AUDIO_TEST__={
+    async renderRetired(){
+      const Offline=window.OfflineAudioContext||window.webkitOfflineAudioContext;
+      const offline=new Offline(1,4410,44100),g=graph(offline);
+      for(let i=0;i<40;i++){const voice=synth(offline,g.sfx,['square',440,440,.08,0,.1],.002,g);fadeVoice(voice,0)}
+      return Array.from((await offline.startRendering()).getChannelData(0));
+    },
     async render(name,seconds=8){
       seconds=Math.min(20,Math.max(1,seconds));const Offline=window.OfflineAudioContext||window.webkitOfflineAudioContext;
       const offline=new Offline(1,44100*seconds,44100),g=graph(offline),song=QuestScore.songs[name];
