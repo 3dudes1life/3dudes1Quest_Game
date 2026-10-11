@@ -5,7 +5,7 @@ module.exports=async function(browser,base){
  for(const file of ['index.html','tahoe.html','alaska.html']){
   await p.goto(base+'/'+file);await p.waitForFunction(()=>window.QuestCore);
   assert.equal((await p.locator('[data-release-version]').innerText()).toLowerCase(),'v'+expected,file);
-  assert.equal(await p.evaluate(()=>QuestCore.VERSION),expected);
+  assert.equal(await p.evaluate(()=>QuestCore.VERSION),expected);assert.equal(await p.evaluate(()=>window.__QUEST_RELEASE__?.version||window.__TAHOE_RELEASE__?.version||window.__ADVENTURE_DEBUG__?.version),expected);
  }
  await context.close();
  // Simulate an installed old release, then deliver this worker through UPDATE READY.

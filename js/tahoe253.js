@@ -1,7 +1,7 @@
 (() => {
 "use strict";
 const $=id=>document.getElementById(id), canvas=$("tahoeCanvas"), renderer=QuestRetro.createRenderer(canvas), ctx=renderer.ctx;
-const W=canvas.width,H=canvas.height,WORLD=9800,FLOOR=570,SAVE="3dudes1quest_tahoe_v250",RELEASE="3.4.1";
+const W=canvas.width,H=canvas.height,WORLD=9800,FLOOR=570,SAVE="3dudes1quest_tahoe_v250",RELEASE=window.QuestRelease.version;
 const platforms=[
 {x:1320,y:438,w:190,h:18,kind:"log"},{x:1580,y:385,w:170,h:18,kind:"rock"},{x:1840,y:330,w:190,h:18,kind:"rock"},
 {x:2800,y:410,w:180,h:18,kind:"log"},{x:3060,y:350,w:170,h:18,kind:"rock"},{x:3320,y:292,w:210,h:18,kind:"rock"},
