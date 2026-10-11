@@ -13,3 +13,7 @@
 @media (min-height:500px) and (pointer:fine) {
  .quest-layout .tahoeChip, .quest-layout #hud .chip { font-size:14px; }
 }
+/* Shared 3.4.1 portraits stay inside the existing compact HUD chip. */
+.castHudPortrait { width:24px; height:24px; object-fit:contain; image-rendering:pixelated; vertical-align:middle; flex-shrink:0; }
+.quest-layout .chip:has(> .castHudPortrait), .quest-layout .tahoeChip:has(> .castHudPortrait) { display:inline-flex; align-items:center; gap:4px; }
+@media (max-height:430px) { .castHudPortrait { width:18px; height:18px; } }

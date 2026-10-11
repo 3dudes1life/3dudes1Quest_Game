@@ -89,3 +89,18 @@ test('Alaska route has reachable stepped platforms, separated shelters and three
  for(const p of w.platforms){assert.ok(p.y>=350&&p.y<=w.floor&&p.w>=180);const lower=w.platforms.some(q=>q!==p&&q.y>p.y&&q.y-p.y<=90&&Math.abs(q.x-p.x)<=350);assert.ok(w.floor-p.y<=90||lower)}
  assert.ok(w.bossX>6500&&w.bossX<w.length-400);assert.ok(w.checkpoints[2].x<6500);
 });
+test('3.4.1 visual upgrade preserves 3.4 character stats and every left/right projectile property',()=>{
+ const baseline=JSON.parse(fs.readFileSync('tests/fixtures/power-contract-3.4.json','utf8'));
+ const context={window:{},console};vm.runInNewContext(fs.readFileSync('js/core/quest-core.js','utf8'),context);const q=context.window.QuestCore;
+ const entities=[];for(let d=0;d<3;d++)for(const facing of [-1,1])entities.push(q.makePowerProjectile(d,{x:700,y:548,facing}).entity);
+ assert.deepEqual(JSON.parse(JSON.stringify({stats:q.CAST.map(d=>({speed:d.speed,jump:d.jump,shot:d.shot})),powers:q.POWER_CONTRACT,entities})),baseline);
+ assert.equal(q.CAST[0].power,'DJ Soundwave');
+ assert.equal(q.resolveDudeAnimation({on:true,vx:1},0).animation,'walk');
+ assert.equal(q.resolveDudeAnimation({on:true,vx:6},0).animation,'run');
+ assert.equal(q.resolveDudeAnimation({on:false,vy:-2},0).animation,'jump');
+ assert.equal(q.resolveDudeAnimation({on:false,vy:2},0).animation,'fall');
+ const attack={on:true,anim:'attack',animStarted:1000,animUntil:1430};
+ assert.equal(q.resolveDudeAnimation(attack,1000).frame,0);
+ assert.equal(q.resolveDudeAnimation(attack,1200).frame,2);
+ assert.equal(q.resolveDudeAnimation(attack,1400).frame,5);
+});

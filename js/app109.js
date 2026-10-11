@@ -114,7 +114,7 @@ function createUI(){
   const refs={dude:qs('hudDude'),health:qs('hudHealth'),cards:qs('hudCards'),beacons:qs('hudBeacons'),triangle:qs('hudTriangle'),score:qs('hudScore'),routeFill:qs('routeProgressFill'),routeLabel:qs('routeLabel'),objectiveTitle:qs('objectiveTitle'),objectiveDetail:qs('objectiveDetail'),message:qs('message'),completeStats:qs('completeStats'),bossPhase:qs('bossPhase')};
   function show(name){Object.values(screens).forEach(s=>s.classList.remove('active'));screens[name].classList.add('active')}
   function flash(text){refs.message.textContent=text;refs.message.classList.add('show');clearTimeout(flash.t);flash.t=setTimeout(()=>refs.message.classList.remove('show'),1800)}
-  function hud(game){const s=game.state,d=DUDES[s.dude],z=game.zone();refs.dude.textContent=d.name;refs.health.textContent=s.health;refs.cards.textContent=s.cards;refs.beacons.textContent=s.beacons;refs.triangle.textContent=Math.floor(s.triangle);if(refs.score)refs.score.textContent=(s.score||0).toLocaleString();refs.routeFill.style.width=(game.player.x/(WORLD-100)*100)+'%';refs.routeLabel.textContent=z.name;refs.objectiveTitle.textContent=s.objective.title;refs.objectiveDetail.textContent=s.objective.detail;refs.bossPhase.classList.toggle('hidden',!game.boss.active&&!game.court?.active);if(game.court?.active){refs.bossPhase.textContent=`SUPREME COURT · PHASE ${game.court.phase} · ${game.court.drain?'RIGHTS DRAIN':game.court.warning?'DRAIN WARNING':'POWERS READY'}`;refs.bossPhase.style.setProperty('--boss-health',`${game.enemies.filter(e=>e.type==='judge'&&e.alive).length/[1,3,5][game.court.phase-1]*100}%`);}if(game.boss.active){const hp=Math.max(0,game.boss.hp);refs.bossPhase.textContent=`QUEEN OF BEIGE  ${hp}/${game.boss.maxHp}`;refs.bossPhase.style.setProperty('--boss-health',`${hp/game.boss.maxHp*100}%`);refs.bossPhase.dataset.phase=String(game.boss.phase)}}
+  function hud(game){const s=game.state,d=DUDES[s.dude],z=game.zone();refs.dude.textContent=d.name;QuestCast.setPortrait(qs("hudPortrait"),d.key);refs.health.textContent=s.health;refs.cards.textContent=s.cards;refs.beacons.textContent=s.beacons;refs.triangle.textContent=Math.floor(s.triangle);if(refs.score)refs.score.textContent=(s.score||0).toLocaleString();refs.routeFill.style.width=(game.player.x/(WORLD-100)*100)+'%';refs.routeLabel.textContent=z.name;refs.objectiveTitle.textContent=s.objective.title;refs.objectiveDetail.textContent=s.objective.detail;refs.bossPhase.classList.toggle('hidden',!game.boss.active&&!game.court?.active);if(game.court?.active){refs.bossPhase.textContent=`SUPREME COURT · PHASE ${game.court.phase} · ${game.court.drain?'RIGHTS DRAIN':game.court.warning?'DRAIN WARNING':'POWERS READY'}`;refs.bossPhase.style.setProperty('--boss-health',`${game.enemies.filter(e=>e.type==='judge'&&e.alive).length/[1,3,5][game.court.phase-1]*100}%`);}if(game.boss.active){const hp=Math.max(0,game.boss.hp);refs.bossPhase.textContent=`QUEEN OF BEIGE  ${hp}/${game.boss.maxHp}`;refs.bossPhase.style.setProperty('--boss-health',`${hp/game.boss.maxHp*100}%`);refs.bossPhase.dataset.phase=String(game.boss.phase)}}
   return {show,flash,hud,refs,screens};
 }
 function qs(id){return document.getElementById(id)}
@@ -719,7 +719,7 @@ class Adventure{
   power(t){
     if(this.court.drain>0){this.ui.flash("RIGHTS DRAIN — powers return in "+Math.ceil(this.court.drain/60)+"s. Keep moving!");return;}
     this.player.anim='attack';
-    this.player.animUntil=t+430;
+    this.player.animStarted=t;this.player.animUntil=t+430;
     const payload=window.QuestCore.makePowerProjectile(this.state.dude,this.player);
     if(payload.kind==='heroShot')this.heroShots.push(payload.entity);
     else this.cookieBombs.push(payload.entity);
@@ -787,7 +787,7 @@ class Adventure{
       }
       if(!handled&&this.boss.active&&this.boss.alive&&!s.hitTargets?.includes(this.boss)&&overlap(s,this.boss)){
         if(s.type==='heart'){s.life=0;this.spawnPositiveField(this.boss.x+this.boss.w/2,this.boss.y+this.boss.h/2,this.boss,true)}
-        else{s.hitTargets.push(this.boss);this.damageBoss(1,'Rainbow ricochet!');if(!this.redirectRicochet(s,this.boss))s.life=0}
+        else{s.hitTargets.push(this.boss);this.damageBoss(1,'Soundwave hit!');if(!this.redirectRicochet(s,this.boss))s.life=0}
       }
     }
     this.heroShots=this.heroShots.filter(s=>s.life>0&&s.x>-100&&s.x<WORLD+100&&s.y>-120&&s.y<H+120);
@@ -2167,7 +2167,7 @@ class Adventure{
   save(){
     return {
       schema:2,
-      version:'3.4.0',
+      version:'3.4.1',
       player:{
         x:this.player.x,
         y:this.player.y,
@@ -2383,7 +2383,7 @@ function showAchievement(title,icon='🏆'){const stack=qs('achievementStack');c
 function showCollect(text){const t=qs('collectibleToast');t.textContent=text;t.classList.add('isVisible');clearTimeout(showCollect.t);showCollect.t=setTimeout(()=>t.classList.remove('isVisible'),1450)}
 window.showAchievement=showAchievement;window.showCollectible=showCollect;
 
-const canvas=qs('gameCanvas');canvas.width=W;canvas.height=H;const ui=createUI();let game;const input=createInput(i=>game?.switchDude(i));game=new Adventure(canvas,ui,input,state=>{ui.refs.completeStats.textContent=`All ${state.cards}/6 Gay Cards recovered, ${state.beacons}/3 Prism Beacons restored, and the Queen of Beige defeated.`;ui.show('complete')});window.__questGame=game;window.__QUEST_RELEASE__={version:'3.4.0',coreVersion:window.QuestCore.VERSION,dudeCount:DUDES.length,powers:DUDES.map(dude=>({name:dude.name,power:dude.power,icon:dude.powerIcon})),castLocked:window.QuestCore.validateCast(DUDES)};
+const canvas=qs('gameCanvas');canvas.width=W;canvas.height=H;const ui=createUI();let game;const input=createInput(i=>game?.switchDude(i));game=new Adventure(canvas,ui,input,state=>{ui.refs.completeStats.textContent=`All ${state.cards}/6 Gay Cards recovered, ${state.beacons}/3 Prism Beacons restored, and the Queen of Beige defeated.`;ui.show('complete')});window.__questGame=game;window.__QUEST_RELEASE__={version:'3.4.1',coreVersion:window.QuestCore.VERSION,dudeCount:DUDES.length,powers:DUDES.map(dude=>({name:dude.name,power:dude.power,icon:dude.powerIcon})),castLocked:window.QuestCore.validateCast(DUDES)};
 const SAVE='3dudes1quest-save-109';
 const LEGACY_SAVES=[
   '3dudes1quest-save-108x','3dudes1quest-save-108w','3dudes1quest-save-108v',
@@ -2403,7 +2403,7 @@ function migrateSave(save){
   return {
     ...save,
     schema:2,
-    version:'3.4.0',
+    version:'3.4.1',
     savedAt:save.savedAt||new Date().toISOString()
   };
 }

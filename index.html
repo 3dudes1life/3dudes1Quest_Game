@@ -7,8 +7,8 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="format-detection" content="telephone=no">
-  <title>3Dudes1Quest v3.4.0 — Visual Clarity & Alaska</title>
-  <link rel="stylesheet" href="css/style.css?v=3.4.0">
+  <title>3Dudes1Quest v3.4.1 — Visual Clarity & Alaska</title>
+  <link rel="stylesheet" href="css/style.css?v=3.4.1">
 
   <meta name="application-name" content="3Dudes1Quest">
   <meta name="apple-mobile-web-app-title" content="3Dudes1Quest">
@@ -19,15 +19,15 @@
   <meta property="og:description" content="Save Tahoe. Defeat the Queen. Open the portal to Alaska.">
   <meta property="og:image" content="assets/share-card.jpg">
   <meta name="twitter:card" content="summary_large_image">
-  <link rel="manifest" href="manifest.webmanifest?v=3.4.0">
-  <link rel="icon" href="favicon.ico?v=3.4.0" sizes="any">
-  <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32.png?v=3.4.0">
-  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png?v=3.4.0">
-  <link rel="stylesheet" href="css/pwa241.css?v=3.4.0">
-  <link rel="stylesheet" href="css/viewport310.css?v=3.4.0">
-  <link rel="stylesheet" href="css/retro320.css?v=3.4.0">
-  <link rel="stylesheet" href="css/audio330.css?v=3.4.0">
-  <link rel="stylesheet" href="css/visual340.css?v=3.4.0">
+  <link rel="manifest" href="manifest.webmanifest?v=3.4.1">
+  <link rel="icon" href="favicon.ico?v=3.4.1" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32.png?v=3.4.1">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png?v=3.4.1">
+  <link rel="stylesheet" href="css/pwa241.css?v=3.4.1">
+  <link rel="stylesheet" href="css/viewport310.css?v=3.4.1">
+  <link rel="stylesheet" href="css/retro320.css?v=3.4.1">
+  <link rel="stylesheet" href="css/audio330.css?v=3.4.1">
+  <link rel="stylesheet" href="css/visual340.css?v=3.4.1">
 </head>
 <body>
 <div id="bootSequence" class="bootSequence" aria-live="polite">
@@ -118,7 +118,7 @@
           <div class="selectedDudeSummary">
             Starting as <b id="selectedDudeName">Will</b>
             <span>•</span>
-            Power: <b id="selectedDudePower">Rainbow Ricochet</b>
+            Power: <b id="selectedDudePower">DJ Soundwave</b>
           </div>
         </section>
 
@@ -153,7 +153,7 @@
       <canvas id="gameCanvas" width="1280" height="720" tabindex="0" aria-label="3Dudes1Quest game"></canvas>
 
       <div id="hud">
-        <div class="chip"><span id="hudDude">Will</span></div>
+        <div class="chip"><img id="hudPortrait" class="castHudPortrait" data-cast-portrait="will" alt="Will"><span id="hudDude">Will</span></div>
         <div class="chip">HP <span id="hudHealth">4</span></div>
         <div class="chip">CARDS <span id="hudCards">0</span>/6</div>
         <div class="chip">BEACONS <span id="hudBeacons">0</span>/3</div>
@@ -277,7 +277,7 @@
         </div>
         <div class="touchGroup right">
           <button id="switchBtn" class="mini" aria-label="Switch character"><span class="controlIcon" aria-hidden="true">↻</span><span class="controlLabel">SWITCH</span></button>
-          <button id="powerBtn" data-action="power" class="power" aria-label="Use power"><span id="powerIcon" class="controlIcon" aria-hidden="true">🌈</span><span id="powerLabel" class="controlLabel">POWER</span></button>
+          <button id="powerBtn" data-action="power" class="power" aria-label="Use power"><span id="powerIcon" class="controlIcon" aria-hidden="true">♫</span><span id="powerLabel" class="controlLabel">POWER</span></button>
           <button data-action="jump" class="jump" aria-label="Jump"><span class="controlIcon" aria-hidden="true">↑</span><span class="controlLabel">JUMP</span></button>
         </div>
       </div>
@@ -358,17 +358,17 @@
       </div>
     </section>
   </main>
-  <script src="js/core/quest-runtime.js?v=3.4.0"></script>
-  <script src="js/core/quest-score.js?v=3.4.0"></script>
-  <script src="js/core/quest-audio.js?v=3.4.0"></script>
-  <script src="js/core/quest-retro.js?v=3.4.0"></script>
-  <script src="js/core/quest-journey.js?v=3.4.0"></script>
-  <script src="js/core/quest-cast.js?v=3.4.0"></script><script src="js/core/quest-core.js?v=3.4.0"></script>
-  <script src="js/app109.js?v=3.4.0"></script>
-  <script src="js/remaster.js?v=3.4.0"></script>
-  <script src="js/gold-master-self-test.js?v=3.4.0"></script>
+  <script src="js/core/quest-runtime.js?v=3.4.1"></script>
+  <script src="js/core/quest-score.js?v=3.4.1"></script>
+  <script src="js/core/quest-audio.js?v=3.4.1"></script>
+  <script src="js/core/quest-retro.js?v=3.4.1"></script>
+  <script src="js/core/quest-journey.js?v=3.4.1"></script>
+  <script src="js/core/quest-cast.js?v=3.4.1"></script><script src="js/core/quest-core.js?v=3.4.1"></script>
+  <script src="js/app109.js?v=3.4.1"></script>
+  <script src="js/remaster.js?v=3.4.1"></script>
+  <script src="js/gold-master-self-test.js?v=3.4.1"></script>
 
-  <script src="js/pwa241.js?v=3.4.0"></script>
-  <script src="js/core/quest-viewport.js?v=3.4.0"></script>
+  <script src="js/pwa241.js?v=3.4.1"></script>
+  <script src="js/core/quest-viewport.js?v=3.4.1"></script>
 </body>
 </html>

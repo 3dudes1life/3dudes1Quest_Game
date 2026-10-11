@@ -6,16 +6,16 @@
  * They must not redefine the five main characters or the three dude powers.
  */
 (() => {
-  const VERSION = "3.4.0";
-  const CAST_ASSET_VERSION = "original-world-outfits-340";
-  const ANIMATIONS = Object.freeze(["idle", "walk", "jump", "attack", "hurt", "celebrate"]);
+  const VERSION = "3.4.1";
+  const CAST_ASSET_VERSION = "owner-reference-world-outfits-341";
+  const ANIMATIONS = Object.freeze(["idle", "walk", "run", "jump", "fall", "attack", "hurt", "celebrate", "back"]);
 
   const CAST = Object.freeze([
     Object.freeze({
       id: "will", key: "will", name: "Will", letter: "W",
-      color: "#ff4fb8", accent: "#ffe66d", speed: 6.2, jump: 14,
-      power: "Rainbow Ricochet", powerName: "Rainbow Ricochet",
-      shortPower: "BOUNCE", powerIcon: "🌈", shot: "rainbow"
+      color: "#40dcff", accent: "#b35cff", speed: 6.2, jump: 14,
+      power: "DJ Soundwave", powerName: "DJ Soundwave",
+      shortPower: "WAVE", powerIcon: "♫", shot: "rainbow"
     }),
     Object.freeze({
       id: "daniel", key: "daniel", name: "Daniel", letter: "D",
@@ -141,7 +141,7 @@
     if (dude.shot === "rainbow") {
       return {
         kind: "heroShot",
-        feedback: "Rainbow Ricochet!",
+        feedback: "DJ Soundwave!",
         sound: "ricochet",
         entity: {
           type: "rainbow",
@@ -314,17 +314,18 @@
     const grounded = player.onGround ?? player.on ?? false;
     if (Number(player.animUntil) > time && ANIMATIONS.includes(player.anim)) {
       animation = player.anim;
-      frames = animation === "jump" ? 4 : animation === "walk" ? 8 : 6;
-      speed = animation === "walk" ? 82 : 150;
+      frames = ["jump","fall"].includes(animation) ? 4 : ["walk","run"].includes(animation) ? 8 : 6;
+      speed = animation === "run" ? 82 : animation === "walk" ? 110 : 150;
     } else if (!grounded) {
-      animation = "jump";
+      animation = Number(player.vy)>=0 ? "fall" : "jump";
       frames = 4;
     } else if (Math.abs(Number(player.vx) || 0) > 0.35) {
-      animation = "walk";
+      animation = Math.abs(Number(player.vx))>3 ? "run" : "walk";
       frames = 8;
-      speed = 82;
+      speed = animation === "run" ? 82 : 110;
     }
-    return { animation, frames, speed };
+    const frame = animation === "attack" && Number.isFinite(player.animStarted) ? Math.max(0,Math.min(frames-1,Math.floor((time-player.animStarted)/Math.max(1,player.animUntil-player.animStarted)*frames))) : animation === "jump" ? ((Number(player.vy)||0)>=0?2:0)+Math.floor(time/speed)%2 : Math.floor(time/speed)%frames;
+    return { animation, frames, speed, frame };
   }
 
   /** Exact code-rendered Adventure 1 fallback hero. */
@@ -368,7 +369,7 @@
     const screenX = (Number(player.x) || 0) - (Number(cameraX) || 0);
     const screenY = Number(player.y) || 0;
     const resolvedGround = Number.isFinite(groundY) ? groundY : screenY + (Number(player.h) || 72);
-    const { animation, frames, speed } = resolveDudeAnimation(player, time);
+    const { animation, frame } = resolveDudeAnimation(player, time);
     const image = images[`${dude.key}_${animation}`] || images[`${dude.key}_idle`];
     const alpha = Number(player.inv) > 0 && Math.floor(time / 80) % 2 === 0 ? 0.35 : 1;
     ctx.save();
@@ -378,7 +379,6 @@
       ctx.beginPath();
       ctx.ellipse(screenX + 22, resolvedGround - 2, 31, 8, 0, 0, Math.PI * 2);
       ctx.fill();
-      const frame = animation==="jump" ? ((Number(player.vy)||0)>=0?2:0)+Math.floor(time/speed)%2 : Math.floor(time / speed) % frames;
       let painted = safeSprite(ctx, image, screenX - 41, screenY - 50, frame, 192, 192, 126, 126, facing < 0);
       if (!painted && animation !== "idle") {
         painted = safeSprite(ctx, images[`${dude.key}_idle`], screenX - 41, screenY - 50, Math.floor(time / 150) % 6, 192, 192, 126, 126, facing < 0);
@@ -401,7 +401,7 @@
     canvas.width = 240;
     canvas.height = 240;
     const testCtx = canvas.getContext("2d");
-    const animations = ["idle", "walk", "jump", "attack", "hurt", "celebrate"];
+    const animations = ["idle", "walk", "run", "jump", "fall", "attack", "hurt", "celebrate", "back"];
     const results = [];
     if (!testCtx) return { ready: false, results, error: "2D canvas unavailable" };
 

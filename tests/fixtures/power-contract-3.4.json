@@ -1,0 +1,133 @@
+{
+  "stats": [
+    {
+      "speed": 6.2,
+      "jump": 14,
+      "shot": "rainbow"
+    },
+    {
+      "speed": 5.7,
+      "jump": 13.5,
+      "shot": "heart"
+    },
+    {
+      "speed": 5.9,
+      "jump": 13,
+      "shot": "cookie"
+    }
+  ],
+  "powers": {
+    "rainbow": {
+      "width": 58,
+      "height": 22,
+      "speed": 12.8,
+      "life": 130,
+      "bounces": 2,
+      "maxTargetRange": 430,
+      "damage": 1
+    },
+    "heart": {
+      "width": 38,
+      "height": 34,
+      "speed": 10.6,
+      "life": 138,
+      "fieldLife": 62,
+      "detonateAge": 30,
+      "fieldRadius": 98,
+      "damage": 1
+    },
+    "cookie": {
+      "width": 32,
+      "height": 32,
+      "speed": 10.4,
+      "lift": -5.7,
+      "gravity": 0.28,
+      "life": 220,
+      "fuse": 42,
+      "splashRadius": 220,
+      "damage": 2
+    }
+  },
+  "entities": [
+    {
+      "type": "rainbow",
+      "x": 682,
+      "y": 578,
+      "w": 58,
+      "h": 22,
+      "vx": -12.8,
+      "vy": 0,
+      "life": 130,
+      "trail": [],
+      "bounces": 2,
+      "hitTargets": []
+    },
+    {
+      "type": "rainbow",
+      "x": 748,
+      "y": 578,
+      "w": 58,
+      "h": 22,
+      "vx": 12.8,
+      "vy": 0,
+      "life": 130,
+      "trail": [],
+      "bounces": 2,
+      "hitTargets": []
+    },
+    {
+      "type": "heart",
+      "x": 666,
+      "y": 566,
+      "w": 38,
+      "h": 34,
+      "vx": -10.6,
+      "vy": 0,
+      "life": 138,
+      "age": 0,
+      "trail": [],
+      "facing": -1
+    },
+    {
+      "type": "heart",
+      "x": 758,
+      "y": 566,
+      "w": 38,
+      "h": 34,
+      "vx": 10.6,
+      "vy": 0,
+      "life": 138,
+      "age": 0,
+      "trail": [],
+      "facing": 1
+    },
+    {
+      "x": 682,
+      "y": 568,
+      "w": 32,
+      "h": 32,
+      "vx": -10.4,
+      "vy": -5.7,
+      "gravity": 0.28,
+      "life": 220,
+      "fuse": 42,
+      "stuck": false,
+      "target": null,
+      "trail": []
+    },
+    {
+      "x": 752,
+      "y": 568,
+      "w": 32,
+      "h": 32,
+      "vx": 10.4,
+      "vy": -5.7,
+      "gravity": 0.28,
+      "life": 220,
+      "fuse": 42,
+      "stuck": false,
+      "target": null,
+      "trail": []
+    }
+  ]
+}
