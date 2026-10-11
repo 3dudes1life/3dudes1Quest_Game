@@ -1,6 +1,10 @@
-const VERSION='3.4.1';
-const CACHE=`3dudes1quest-${VERSION}`;
+importScripts('./js/core/quest-release.js');
+const VERSION=self.QuestRelease.version;
+const CACHE=`3dudes1quest-${VERSION}-${self.QuestRelease.cacheRevision}`;
 const CORE=[
+  "./js/core/quest-release.js",
+  "./VERSION.txt",
+  "./package.json",
   "./js/core/quest-cast.js",
   "./assets/cast340/socal.png",
   "./assets/cast340/tahoe.png",
@@ -124,7 +128,7 @@ const CORE=[
 ];
 self.addEventListener('install',event=>{
   // A partial release must never replace the last complete offline version.
-  event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(CORE)));
+  event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(CORE.map(url=>new Request(url,{cache:'reload'})))));
 });
 self.addEventListener('activate',event=>{
   // Keep previous caches for tabs still using the preceding release.
@@ -137,6 +141,8 @@ self.addEventListener('message',event=>{
 self.addEventListener('fetch',event=>{
   if(event.request.method!=='GET'||new URL(event.request.url).origin!==self.location.origin)return;
   event.respondWith(caches.open(CACHE).then(async cache=>{
+    // Serve a complete release snapshot, including navigations. A waiting worker
+    // becomes visible only after the player saves and accepts UPDATE READY.
     const cached=await cache.match(event.request,{ignoreSearch:true});
     if(cached)return cached;
     return fetch(event.request);

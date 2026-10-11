@@ -6,7 +6,7 @@
  * They must not redefine the five main characters or the three dude powers.
  */
 (() => {
-  const VERSION = "3.4.1";
+  const VERSION = window.QuestRelease.version;
   const CAST_ASSET_VERSION = "owner-reference-world-outfits-341";
   const ANIMATIONS = Object.freeze(["idle", "walk", "run", "jump", "fall", "attack", "hurt", "celebrate", "back"]);
 
