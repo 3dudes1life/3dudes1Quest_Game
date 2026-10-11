@@ -6,7 +6,7 @@
  * They must not redefine the five main characters or the three dude powers.
  */
 (() => {
-  const VERSION = "3.1.0";
+  const VERSION = "3.2.0";
   const CAST_ASSET_VERSION = "adventure1-gold-master-109-v253";
   const ANIMATIONS = Object.freeze(["idle", "walk", "jump", "attack", "hurt", "celebrate"]);
 
@@ -208,172 +208,15 @@
   }
 
   function drawHeroShots(ctx, shots, time, cameraX = 0) {
-    ctx.save();
-    ctx.translate(-cameraX, 0);
-    for (const shot of shots) {
-      if (shot.type === "heart") {
-        ctx.save();
-        for (let i = 0; i < shot.trail.length; i++) {
-          const point = shot.trail[i];
-          const alpha = (i + 1) / shot.trail.length;
-          ctx.globalAlpha = alpha * 0.34;
-          ctx.fillStyle = i % 2 ? "#ff79bd" : "#3ce7d2";
-          heartPath(ctx, point.x + shot.w / 2, point.y + shot.h / 2, 5 + alpha * 5);
-          ctx.fill();
-        }
-        ctx.globalAlpha = 1;
-        const pulse = 1 + Math.sin(time * 0.022 + shot.x) * 0.08;
-        ctx.translate(shot.x + shot.w / 2, shot.y + shot.h / 2);
-        ctx.scale(pulse, pulse);
-        ctx.shadowColor = "#ff4fb8";
-        ctx.shadowBlur = 24;
-        const gradient = ctx.createLinearGradient(-18, -18, 18, 18);
-        gradient.addColorStop(0, "#fff");
-        gradient.addColorStop(0.28, "#ff8fc7");
-        gradient.addColorStop(0.7, "#ff4fb8");
-        gradient.addColorStop(1, "#8d5cff");
-        ctx.fillStyle = gradient;
-        heartPath(ctx, 0, 0, 21);
-        ctx.fill();
-        ctx.lineWidth = 2;
-        ctx.strokeStyle = "rgba(255,255,255,.82)";
-        ctx.stroke();
-        ctx.restore();
-        continue;
-      }
-
-      for (let i = 0; i < shot.trail.length; i++) {
-        const point = shot.trail[i];
-        ctx.globalAlpha = ((i + 1) / shot.trail.length) * 0.38;
-        ctx.fillStyle = ["#ff4fb8", "#ffe66d", "#3ce7d2", "#8d5cff"][i % 4];
-        ctx.beginPath();
-        ctx.arc(point.x, point.y + 9, 4 + i * 0.35, 0, Math.PI * 2);
-        ctx.fill();
-      }
-      ctx.globalAlpha = 1;
-      const gradient = ctx.createLinearGradient(shot.x, shot.y, shot.x + shot.w, shot.y);
-      gradient.addColorStop(0, "#ff4fb8");
-      gradient.addColorStop(0.34, "#ffe66d");
-      gradient.addColorStop(0.67, "#3ce7d2");
-      gradient.addColorStop(1, "#8d5cff");
-      ctx.shadowColor = "#ff4fb8";
-      ctx.shadowBlur = 20;
-      ctx.fillStyle = gradient;
-      ctx.beginPath();
-      ctx.roundRect(shot.x, shot.y, shot.w, shot.h, 9);
-      ctx.fill();
-      ctx.shadowBlur = 0;
-      if ((shot.bounces || 0) > 0) {
-        ctx.strokeStyle = "rgba(255,255,255,.72)";
-        ctx.lineWidth = 2;
-        for (let i = 0; i < shot.bounces; i++) {
-          ctx.beginPath();
-          ctx.arc(shot.x + shot.w - 7 - i * 9, shot.y + 4, 3, 0, Math.PI * 2);
-          ctx.stroke();
-        }
-      }
-    }
-    ctx.globalAlpha = 1;
-    ctx.restore();
+    QuestRetro.shots(ctx, shots, time, cameraX);
   }
 
   function drawPositiveFields(ctx, fields, time, cameraX = 0) {
-    ctx.save();
-    ctx.translate(-cameraX, 0);
-    for (const field of fields) {
-      const fade = Math.max(0, Math.min(1, field.life / 18));
-      const pulse = 0.92 + 0.08 * Math.sin(time * 0.018 + field.x);
-      ctx.save();
-      ctx.translate(field.x, field.y);
-      ctx.globalAlpha = fade;
-      ctx.globalCompositeOperation = "screen";
-      const glow = ctx.createRadialGradient(0, 0, 4, 0, 0, field.radius * 1.25);
-      glow.addColorStop(0, "rgba(255,255,255,.56)");
-      glow.addColorStop(0.28, "rgba(255,79,184,.34)");
-      glow.addColorStop(0.68, "rgba(60,231,210,.2)");
-      glow.addColorStop(1, "rgba(141,92,255,0)");
-      ctx.fillStyle = glow;
-      ctx.beginPath();
-      ctx.arc(0, 0, field.radius * 1.25, 0, Math.PI * 2);
-      ctx.fill();
-      ctx.strokeStyle = field.detonated ? "#ffe66d" : "#3ce7d2";
-      ctx.lineWidth = field.detonated ? 6 : 4;
-      ctx.shadowColor = "#ff4fb8";
-      ctx.shadowBlur = 22;
-      ctx.beginPath();
-      ctx.arc(0, 0, field.radius * pulse, 0, Math.PI * 2);
-      ctx.stroke();
-      ctx.strokeStyle = "rgba(255,255,255,.64)";
-      ctx.lineWidth = 2;
-      ctx.beginPath();
-      ctx.arc(0, 0, field.radius * 0.72, 0, Math.PI * 2);
-      ctx.stroke();
-      for (let i = 0; i < 7; i++) {
-        const angle = time * 0.004 + i * Math.PI * 2 / 7;
-        const radius = field.radius * (0.75 + (i % 2) * 0.2);
-        ctx.save();
-        ctx.translate(Math.cos(angle) * radius, Math.sin(angle) * radius);
-        ctx.rotate(angle + Math.PI / 2);
-        ctx.fillStyle = i % 2 ? "#ff79bd" : "#ffe66d";
-        ctx.font = "900 16px system-ui";
-        ctx.textAlign = "center";
-        ctx.textBaseline = "middle";
-        ctx.fillText("♥", 0, 0);
-        ctx.restore();
-      }
-      ctx.restore();
-    }
-    ctx.restore();
+    QuestRetro.fields(ctx, fields, time, cameraX);
   }
 
   function drawCookieBombs(ctx, bombs, time, cameraX = 0) {
-    ctx.save();
-    ctx.translate(-cameraX, 0);
-    for (const bomb of bombs) {
-      if (!bomb.stuck && bomb.trail?.length) {
-        ctx.save();
-        for (let i = 0; i < bomb.trail.length; i++) {
-          const point = bomb.trail[i];
-          const alpha = (i + 1) / bomb.trail.length;
-          ctx.globalAlpha = alpha * 0.42;
-          ctx.fillStyle = i % 2 ? "#ffe66d" : "#b76a35";
-          ctx.beginPath();
-          ctx.arc(point.x, point.y, 1.5 + alpha * 2.4, 0, Math.PI * 2);
-          ctx.fill();
-        }
-        ctx.restore();
-      }
-      ctx.save();
-      ctx.translate(bomb.x + bomb.w / 2, bomb.y + bomb.h / 2);
-      ctx.rotate(bomb.stuck ? Math.sin(time * 0.02) * 0.08 : time * 0.01 + bomb.x);
-      const urgency = bomb.stuck ? Math.max(0, Math.min(1, 1 - bomb.fuse / 38)) : 0;
-      ctx.shadowColor = urgency > 0.58 ? "#ff4b6e" : "#ff9a3c";
-      ctx.shadowBlur = 12 + urgency * 22;
-      ctx.fillStyle = "#b76a35";
-      ctx.beginPath();
-      ctx.arc(0, 0, 14 + urgency * 2, 0, Math.PI * 2);
-      ctx.fill();
-      ctx.fillStyle = "#4b291e";
-      for (const [x, y] of [[-5, -4], [5, -5], [-2, 5], [7, 4]]) {
-        ctx.beginPath();
-        ctx.arc(x, y, 2.4, 0, Math.PI * 2);
-        ctx.fill();
-      }
-      if (bomb.stuck) {
-        ctx.strokeStyle = urgency > 0.55 ? "#ff4b6e" : "#ffe66d";
-        ctx.lineWidth = 3;
-        ctx.beginPath();
-        ctx.arc(0, 0, 20 + Math.sin(time * 0.025) * 3, 0, Math.PI * 2);
-        ctx.stroke();
-        ctx.fillStyle = urgency > 0.55 ? "#ff4b6e" : "#ffe66d";
-        ctx.font = "900 14px system-ui";
-        ctx.textAlign = "center";
-        ctx.textBaseline = "middle";
-        ctx.fillText("!", 0, -27);
-      }
-      ctx.restore();
-    }
-    ctx.restore();
+    QuestRetro.cookies(ctx, bombs, time, cameraX);
   }
 
   function drawBeagle(ctx, x, y, time, variant = "rigsby", flip = false) {
@@ -448,7 +291,8 @@
     if (sourceWidth <= 0 || sourceHeight <= 0) return false;
     ctx.save();
     try {
-      ctx.translate(x + (flip ? width : 0), y);
+      ctx.imageSmoothingEnabled = false;
+      ctx.translate(Math.round(x + (flip ? width : 0)), Math.round(y));
       ctx.scale(flip ? -1 : 1, 1);
       ctx.drawImage(image, sourceX, 0, sourceWidth, sourceHeight, 0, 0, width, height);
       return true;
@@ -523,7 +367,7 @@
     const resolvedGround = Number.isFinite(groundY) ? groundY : screenY + (Number(player.h) || 72);
     const { animation, frames, speed } = resolveDudeAnimation(player, time);
     const image = images[`${dude.key}_${animation}`] || images[`${dude.key}_idle`];
-    const alpha = Number(player.inv) > 0 && Math.floor(Number(player.inv) / 90) % 2 === 0 ? 0.35 : 1;
+    const alpha = Number(player.inv) > 0 && Math.floor(time / 80) % 2 === 0 ? 0.35 : 1;
     ctx.save();
     try {
       ctx.globalAlpha = alpha;
@@ -586,26 +430,7 @@
     return { ready: failed.length === 0, results, failed };
   }
 
-  function drawDanielCast(ctx, player, remaining, cameraX = 0) {
-    if (remaining <= 0) return;
-    const facing = player.facing ?? player.face ?? 1;
-    const progress = Math.max(0, Math.min(1, remaining / 12));
-    const x = player.x + (facing > 0 ? 57 : -12) - cameraX;
-    const y = player.y + 34;
-    ctx.save();
-    ctx.globalAlpha = progress;
-    ctx.translate(x, y);
-    ctx.scale(0.78 + 0.22 * (1 - progress), 0.78 + 0.22 * (1 - progress));
-    ctx.shadowColor = "#ff79bd";
-    ctx.shadowBlur = 14;
-    ctx.fillStyle = "#ff79bd";
-    heartPath(ctx, 0, 0, 13);
-    ctx.fill();
-    ctx.strokeStyle = "rgba(255,255,255,.88)";
-    ctx.lineWidth = 1.5;
-    ctx.stroke();
-    ctx.restore();
-  }
+  function drawDanielCast(ctx, player, remaining, cameraX = 0) { QuestRetro.cast(ctx, player, remaining, cameraX); }
 
   function validateCast(candidate) {
     if (!Array.isArray(candidate) || candidate.length !== CAST.length) return false;
