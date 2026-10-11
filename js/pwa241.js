@@ -1,5 +1,5 @@
 (() => {
-  const VERSION='3.0.0';
+  const VERSION='3.1.0';
   let deferredPrompt=null;
   const root=document.documentElement;
   root.classList.add('pwa-ready');
@@ -9,6 +9,8 @@
     const dock=document.createElement('div'); dock.id='pwaDock'; dock.className='pwaDock';
     dock.innerHTML=`<button id="pwaShare" type="button" aria-label="Share 3Dudes1Quest">↗ <span>SHARE</span></button><button id="pwaInstall" type="button" aria-label="Add 3Dudes1Quest to Home Screen" hidden>＋ <span>INSTALL</span></button>`;
     document.body.appendChild(dock);
+    const panel=document.querySelector('#journal, #pauseMenu');
+    if(panel){const place=()=>{const open=!panel.classList.contains('hidden');(open?panel:document.body).appendChild(dock)};new MutationObserver(place).observe(panel,{attributes:true,attributeFilter:['class']});place();}
     document.getElementById('pwaShare').addEventListener('click',shareGame);
     document.getElementById('pwaInstall').addEventListener('click',installGame);
   }

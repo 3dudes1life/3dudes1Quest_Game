@@ -740,18 +740,7 @@ body{
     radial-gradient(circle at 20% 20%,rgba(255,79,184,.13),transparent 35%),
     #070b18;
 }
-#gameCanvas{
-  position:absolute!important;
-  left:50%!important;
-  top:50%!important;
-  transform:translate(-50%,-50%)!important;
-  display:block!important;
-  max-width:100vw!important;
-  max-height:100vh!important;
-  object-fit:contain!important;
-  background:#15102f;
-  outline:none;
-}
+
 #hud,#objectiveCard,#pauseBtn,#journalBtn,#touchControls,#message,.saveToast,.bossPhase{
   z-index:30;
 }
@@ -1265,7 +1254,6 @@ body{
 }
 
 @media (hover:none) and (pointer:coarse) and (orientation:landscape){
-  #gameCanvas{width:100vw!important;height:100vh!important;max-width:none!important;max-height:none!important}
   #hud{max-width:calc(100vw - 122px)}
   .routeProgress{width:min(330px,42vw)}
 }
@@ -1299,16 +1287,13 @@ html,body,#app,.screen,#gameScreen,#gameCanvas{
   -webkit-overflow-scrolling:auto;
 }
 
-#gameScreen,
 #gameCanvas,
 #touchControls,
 #touchControls *,
 #pauseBtn,
 #journalBtn,
 #dialogueNext,
-#cutsceneNext,
-#journal,
-#journal *{
+#cutsceneNext{
   touch-action:none!important;
   -ms-touch-action:none!important;
   -webkit-user-select:none!important;
@@ -1342,36 +1327,11 @@ html,body,#app,.screen,#gameScreen,#gameCanvas{
   filter:brightness(1.24)!important;
 }
 
-body.touchDevice #gameScreen.active{
-  position:fixed;
-  inset:0;
-  width:100%;
-  height:100%;
-  overflow:hidden;
-}
-
-body.touchDevice #gameCanvas{
-  display:block;
-  max-width:none;
-  max-height:none;
-}
-
 /* Ensure button labels cannot become their own Safari tap target. */
 #touchControls button span,
 #pauseBtn span,
 #journalBtn span{
   pointer-events:none;
-}
-
-/* Keep controls inside the visual viewport when Safari chrome changes size. */
-@supports (height:100dvh){
-  body.touchDevice #gameScreen.active{
-    height:100dvh;
-  }
-  body.touchDevice.landscapeGame #gameCanvas{
-    width:100dvw!important;
-    height:100dvh!important;
-  }
 }
 
 @media (hover:none), (pointer:coarse){
@@ -2111,260 +2071,6 @@ body.touchDevice #gameCanvas{
 @media (hover:none) and (pointer:coarse) and (max-width:390px){
   #powerBtn[data-hero="will"] .controlLabel{font-size:7px}
   #powerBtn[data-hero="caleb"] .controlLabel{font-size:7px}
-}
-
-
-/* =========================================================
-   v1.0.8W — Landscape Combat Polish
-   ========================================================= */
-
-@supports (height:100dvh){
-  html,body,#app,.screen{width:100dvw;height:100dvh;min-height:100dvh}
-}
-
-@media (hover:none), (pointer:coarse){
-  html,body{
-    padding:0;
-    width:100%;
-    height:100%;
-    min-height:100%;
-    overflow:hidden;
-  }
-
-  #app,.screen,#gameScreen{
-    inset:0;
-    width:100%;
-    height:100%;
-    overflow:hidden;
-  }
-
-  #touchControls .controlLabel{
-    max-width:100%;
-    overflow:hidden;
-    text-overflow:clip;
-  }
-}
-
-/* Landscape is the primary phone layout. */
-@media (hover:none) and (pointer:coarse) and (orientation:landscape){
-  #gameScreen{
-    width:100dvw;
-    height:100dvh;
-  }
-
-  #gameCanvas{
-    position:absolute;
-    inset:0;
-    width:100dvw!important;
-    height:100dvh!important;
-    max-width:none!important;
-    max-height:none!important;
-    object-fit:contain;
-    border-radius:0;
-  }
-
-  #hud{
-    top:max(5px,env(safe-area-inset-top));
-    left:max(7px,env(safe-area-inset-left));
-    right:calc(max(7px,env(safe-area-inset-right)) + 132px);
-    display:flex;
-    flex-wrap:nowrap;
-    gap:4px;
-    padding:0;
-    max-width:none;
-  }
-
-  #hud .chip{
-    min-height:29px;
-    padding:4px 7px;
-    border-radius:11px;
-    font-size:10px;
-    line-height:1;
-  }
-
-  .routeProgress{
-    position:fixed;
-    top:max(6px,env(safe-area-inset-top));
-    left:50%;
-    transform:translateX(-50%);
-    width:min(285px,31vw);
-    height:14px;
-    margin:0;
-    z-index:7;
-  }
-
-  .routeProgress b{
-    line-height:12px;
-    font-size:7px;
-  }
-
-  #pauseBtn,#journalBtn,#photoBtn{
-    top:max(5px,env(safe-area-inset-top));
-    width:36px;
-    height:36px;
-    border-radius:12px;
-    padding:0;
-  }
-
-  #pauseBtn{right:max(7px,env(safe-area-inset-right))}
-  #journalBtn{right:calc(max(7px,env(safe-area-inset-right)) + 42px)}
-  #photoBtn{right:calc(max(7px,env(safe-area-inset-right)) + 84px)}
-
-  .objectiveCard{
-    top:calc(max(5px,env(safe-area-inset-top)) + 39px);
-    left:max(7px,env(safe-area-inset-left));
-    width:auto;
-    max-width:min(230px,31vw);
-    padding:6px 9px;
-    border-radius:12px;
-  }
-
-  .objectiveCard small{font-size:6px;margin:0}
-  .objectiveCard strong{font-size:10px;line-height:1.08;margin:2px 0 0}
-  .objectiveCard span{display:none}
-
-  #touchControls{
-    left:max(7px,env(safe-area-inset-left));
-    right:max(7px,env(safe-area-inset-right));
-    bottom:max(6px,env(safe-area-inset-bottom));
-    gap:8px;
-    padding:0;
-    opacity:.84;
-  }
-
-  .touchGroup{
-    gap:5px;
-    padding:4px;
-    border-radius:18px;
-    background:rgba(18,14,42,.46);
-  }
-
-  #touchControls button,
-  #touchControls .mini{
-    width:55px;
-    min-width:55px;
-    height:55px;
-    border-radius:15px;
-    padding:3px!important;
-  }
-
-  #touchControls .mini{
-    width:50px;
-    min-width:50px;
-  }
-
-  #touchControls .controlIcon{
-    font-size:17px;
-    margin-bottom:2px;
-  }
-
-  #touchControls .controlLabel{
-    font-size:8px;
-    letter-spacing:-.055em;
-    line-height:.95;
-  }
-
-  #powerBtn[data-hero="will"] .controlLabel,
-  #powerBtn[data-hero="caleb"] .controlLabel{
-    font-size:8px;
-  }
-
-  #message,.collectibleToast{
-    bottom:calc(max(6px,env(safe-area-inset-bottom)) + 68px);
-    max-width:min(410px,46vw);
-    font-size:11px;
-    padding:8px 12px;
-  }
-
-  .dialogue{
-    bottom:calc(max(6px,env(safe-area-inset-bottom)) + 66px);
-    max-height:39vh;
-    padding:9px 11px;
-  }
-
-  .bossPhase{
-    top:43px;
-    padding:8px 14px;
-    font-size:12px;
-  }
-
-  .bossTaunt{
-    top:82px;
-    width:min(470px,52vw);
-    padding:8px 12px;
-  }
-
-  .combatStatus{
-    bottom:calc(max(6px,env(safe-area-inset-bottom)) + 67px);
-    width:min(390px,46vw);
-    padding:8px 11px;
-  }
-
-  .cinematicZoneCard{
-    top:15%;
-    width:min(430px,52vw);
-    padding:11px 14px 13px;
-  }
-
-  .cinematicZoneCard strong{font-size:clamp(22px,4vw,31px)}
-}
-
-/* Extra-short iPhone landscape heights. */
-@media (hover:none) and (pointer:coarse) and (orientation:landscape) and (max-height:450px){
-  #hud .chip{min-height:26px;padding:3px 6px;font-size:9px}
-  .routeProgress{height:12px;width:min(250px,29vw)}
-  .routeProgress b{line-height:10px;font-size:6px}
-
-  #pauseBtn,#journalBtn,#photoBtn{width:32px;height:32px}
-  #journalBtn{right:calc(max(7px,env(safe-area-inset-right)) + 37px)}
-  #photoBtn{right:calc(max(7px,env(safe-area-inset-right)) + 74px)}
-
-  .objectiveCard{
-    top:36px;
-    max-width:min(205px,29vw);
-    padding:5px 8px;
-  }
-
-  #touchControls button,
-  #touchControls .mini{
-    width:49px;
-    min-width:49px;
-    height:49px;
-    border-radius:14px;
-  }
-
-  #touchControls .mini{width:46px;min-width:46px}
-  #touchControls .controlIcon{font-size:15px}
-  #touchControls .controlLabel{font-size:7px}
-
-  #message,.collectibleToast{
-    bottom:calc(max(5px,env(safe-area-inset-bottom)) + 59px);
-    padding:7px 10px;
-    font-size:10px;
-  }
-}
-
-/* Portrait remains playable, but gently explains the intended orientation. */
-@media (hover:none) and (pointer:coarse) and (orientation:portrait){
-  #gameScreen::before{
-    content:"ROTATE FOR THE FULL QUEST";
-    position:absolute;
-    z-index:29;
-    top:calc(max(8px,env(safe-area-inset-top)) + 100px);
-    left:50%;
-    transform:translateX(-50%);
-    padding:6px 10px;
-    border:1px solid rgba(255,255,255,.2);
-    border-radius:999px;
-    background:rgba(18,14,42,.68);
-    color:rgba(255,255,255,.72);
-    font:900 8px/1 system-ui,-apple-system,sans-serif;
-    letter-spacing:.12em;
-    white-space:nowrap;
-    pointer-events:none;
-    backdrop-filter:blur(14px);
-    -webkit-backdrop-filter:blur(14px);
-  }
 }
 
 

@@ -1,0 +1,87 @@
+/* The shared manager owns viewport geometry. World art is never stretched. */
+html.quest-layout, .quest-layout body { margin:0; padding:0; width:100%; height:100%; min-height:0; overflow:hidden; touch-action:manipulation; }
+.safeAreaProbe { position:fixed; visibility:hidden; pointer-events:none; padding:env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left); }
+.quest-layout #app, .quest-layout #tahoeApp, .quest-layout #viewportPause, .quest-layout .bootSequence { position:fixed; inset:auto; left:var(--view-x); top:var(--view-y); width:var(--view-w); height:var(--view-h); min-height:0; padding:0; overflow:hidden; }
+.quest-layout .screen, .quest-layout #gameScreen { inset:0; width:100%; height:100%; min-height:0; }
+.quest-layout #gameCanvas, .quest-layout #tahoeCanvas { position:absolute; inset:auto; left:var(--world-x); top:var(--world-y); width:var(--world-w)!important; height:var(--world-h)!important; max-width:none!important; max-height:none!important; transform:none; margin:0; border:0; border-radius:0; object-fit:contain; touch-action:none; }
+.quest-layout #gameScreen::before, .quest-layout #rotateHint { display:none; }
+.quest-layout #hud, .quest-layout #tahoeHud { position:absolute; left:8px; right:158px; top:4px; bottom:auto; display:flex; flex-wrap:wrap; align-content:start; align-items:center; gap:4px; padding:0; max-width:none; height:44px; overflow:hidden; }
+.quest-layout #hud .chip, .quest-layout .tahoeChip { min-height:28px; height:28px; padding:3px 6px; font:700 12px/1.2 system-ui; gap:4px; border-width:1px; white-space:nowrap; }
+.quest-layout .dudeChip span { width:20px; height:20px; }
+.quest-layout .routeProgress, .quest-layout .trailProgress, .quest-layout .altitudeChip { display:none; }
+.quest-layout #pauseBtn, .quest-layout #journalBtn, .quest-layout #photoBtn, .quest-layout #returnBtn { position:absolute; top:4px; width:44px; height:44px; min-width:44px; padding:0; border-radius:12px; display:grid; place-items:center; }
+.quest-layout #pauseBtn { right:8px; }
+.quest-layout #journalBtn, .quest-layout #returnBtn { right:56px; }
+.quest-layout #photoBtn { right:104px; }
+.quest-layout #objectiveCard, .quest-layout #objective { position:absolute; top:48px; left:8px; bottom:auto; width:calc(55% - 16px); max-width:none; height:26px; padding:4px 6px; border:0; border-radius:6px; overflow:auto; pointer-events:auto; touch-action:pan-y; }
+.quest-layout #objectiveCard small, .quest-layout #objective small, .quest-layout #objectiveCard span, .quest-layout #objective span { display:none; }
+.quest-layout #objectiveCard strong, .quest-layout #objective strong { font:700 12px/18px system-ui; margin:0; display:block; }
+.quest-layout #bossHud, .quest-layout #bossPhase { position:absolute; top:49px; left:auto; right:8px; bottom:auto; transform:none; width:40%; padding:2px 6px; margin:0; min-height:0; min-width:0; font-size:11px; }
+.quest-layout #bossHud { display:grid; grid-template-columns:auto 1fr auto; align-items:center; gap:6px; }
+.quest-layout #bossHud small, .quest-layout #bossHud b { font-size:9px; margin:0; letter-spacing:0; }
+.quest-layout #bossHud #bossPhase { position:static; width:auto; }
+.quest-layout #bossHud div { height:8px; }
+.quest-layout #touchControls { position:absolute; left:8px; right:8px; bottom:6px; padding:0; gap:8px; height:calc(var(--control-size) + 8px); pointer-events:none!important; opacity:1!important; }
+.quest-layout #touchControls .touchGroup { gap:5px; padding:3px; border-radius:14px; pointer-events:auto; }
+.quest-layout #touchControls button, .quest-layout #touchControls .mini { width:var(--control-size); min-width:var(--control-size); height:var(--control-size); min-height:44px; border-radius:14px; flex-shrink:0; padding:3px!important; }
+.quest-layout #touchControls .controlLabel { font-size:9px!important; letter-spacing:0; }
+.quest-layout #touchControls .controlIcon { font-size:20px!important; }
+.quest-layout[data-control-hand=left] #touchControls { flex-direction:row-reverse; }
+.quest-layout #powerCharge { left:50%; bottom:8px; top:auto; transform:translateX(-50%); width:112px; }
+.quest-layout #triangleUltimateBtn { position:absolute; top:48px; right:8px; min-height:44px; pointer-events:auto; z-index:15; font-size:11px; }
+.quest-layout #hud:has(#triangleUltimateBtn:not(.hidden)) { overflow:visible; }
+/* Scrollable panels, including touch scrolling on Safari, stay inside the safe viewport. */
+.quest-layout #titleScreen, .quest-layout #helpScreen, .quest-layout #completeScreen, .quest-layout #portalScreen { padding:8px; overflow:auto; align-items:center; touch-action:pan-y; }
+.quest-layout .card, .quest-layout #titleScreen .titleMenuCard, .quest-layout .portalWrap { width:min(760px,100%); max-height:calc(var(--view-h) - 16px); margin:0; overflow:auto; padding:16px; touch-action:pan-y; }
+.quest-layout .storyCard, .quest-layout .pauseMenu, .quest-layout .trailheadCard { width:min(650px,calc(100% - 16px)); max-height:calc(var(--view-h) - 16px); overflow:auto; padding:16px; touch-action:pan-y; }
+.quest-layout #journal { inset:8px; max-height:calc(var(--view-h) - 16px); padding:12px; overflow:auto; touch-action:pan-y; z-index:80; }
+.quest-layout .featureOverlay, .quest-layout .cutscene { padding:8px; touch-action:pan-y; }
+.quest-layout .featurePanel, .quest-layout .cutscenePanel { width:min(900px,100%); max-height:calc(var(--view-h) - 16px); padding:16px; overflow:auto; touch-action:pan-y; }
+.quest-layout .worldMapRoute { min-width:0; flex-wrap:wrap; gap:8px; }
+.quest-layout .dialogue { width:calc(100% - 16px); max-height:calc(var(--view-h) - 92px); bottom:calc(var(--control-size) + 18px); padding:8px; grid-template-columns:44px minmax(0,1fr) auto; gap:8px; overflow:auto; touch-action:pan-y; }
+.quest-layout .dialogue img { width:44px; height:44px; }
+.quest-layout .dialogue button, .quest-layout .featureClose, .quest-layout .journalActions button { min-width:44px; min-height:44px; }
+.quest-layout .dialogueCopy, .quest-layout .dialogue p { font-size:14px; }
+.quest-layout .controlSettings { display:flex; flex-wrap:wrap; gap:12px; border:1px solid currentColor; border-radius:10px; margin:16px 0 0; padding:10px; text-align:left; }
+.quest-layout .controlSettings label { display:flex; align-items:center; gap:8px; font:600 14px system-ui; }
+.quest-layout .controlSettings select { font:inherit; min-height:44px; max-width:100%; }
+.quest-layout #viewportPause { z-index:10000; display:grid; place-items:center; background:rgba(4,10,28,.96); color:white; text-align:center; padding:12px; touch-action:pan-y; }
+.quest-layout #viewportPause[hidden] { display:none; }
+.quest-layout #viewportPause>div { max-height:100%; overflow:auto; max-width:520px; }
+.quest-layout #viewportResume { min-height:48px; background:#6943c3; padding:12px 30px; }
+.quest-layout #viewportPause h2 { font:700 22px/1.2 system-ui; }
+.quest-layout .bootLogoWrap { max-height:100%; overflow:auto; padding:12px; touch-action:pan-y; }
+.quest-layout #pwaDock { z-index:90; }
+.quest-layout body:has(#gameScreen.active) #pwaDock, .quest-layout body:has(#openingCard.hidden) #pwaDock { display:none; }
+.quest-layout body:has(#journal:not(.hidden)) #pwaDock, .quest-layout body:has(#pauseMenu:not(.hidden)) #pwaDock { position:relative; inset:auto; transform:none; display:flex; justify-content:center; margin:8px auto; }
+.quest-layout #inputStatus, .quest-layout #playTip { display:none; }
+.quest-layout #message, .quest-layout .collectibleToast, .quest-layout #combatStatus { top:80px; bottom:auto; max-width:65%; font-size:12px; padding:5px 8px; }
+.quest-layout .bossTaunt { top:80px; max-width:60%; padding:6px; font-size:12px; }
+.quest-layout .cinematicZoneCard, .quest-layout .missionReveal { top:80px; max-height:calc(var(--view-h) - 160px); overflow:auto; padding:8px; pointer-events:none; }
+.quest-layout .cinematicZoneCard strong { font-size:24px; }
+.quest-layout .finaleCard, .quest-layout .finaleBanner, .quest-layout .memoryCard { max-height:calc(var(--view-h) - 100px); overflow:auto; padding:10px; }
+.quest-layout.quest-compact h1, .quest-layout.quest-compact .storyCard h1 { font-size:34px; }
+.quest-layout.quest-compact h2 { font-size:22px; }
+.quest-layout.quest-compact .bootLogo { font-size:48px; }
+.quest-layout.quest-portrait #hud, .quest-layout.quest-portrait #tahoeHud { right:104px; height:88px; }
+.quest-layout.quest-portrait #photoBtn { display:none; } /* Photo remains available in Adventure Menu. */
+.quest-layout.quest-portrait #objectiveCard, .quest-layout.quest-portrait #objective { top:90px; width:calc(100% - 16px); }
+.quest-layout.quest-portrait #bossHud, .quest-layout.quest-portrait #bossPhase { top:120px; width:calc(100% - 16px); }
+.quest-layout.quest-portrait #powerCharge { bottom:calc(var(--control-size) + 18px); }
+/* Landscape puts thumb controls in the letterbox gutters, keeping the world larger. */
+.quest-layout.quest-rails #touchControls { height:auto; align-items:flex-end; }
+.quest-layout.quest-rails #touchControls .right { flex-direction:column; }
+.quest-layout #gameCanvas, .quest-layout #tahoeCanvas { outline:none; }
+.quest-layout #comboHud { left:auto; right:8px; top:78px; transform:none; font-size:14px; width:auto; }
+.quest-layout .cinematicZoneCard { width:min(400px,70%); padding:6px; }
+.quest-layout .cinematicZoneCard strong { font-size:20px; }
+.quest-layout .cinematicZoneCard small, .quest-layout .cinematicZoneCard span { font-size:9px; }
+.quest-layout #triangleUltimateBtn { position:fixed; top:auto; right:auto; left:50%; bottom:calc(6px + env(safe-area-inset-bottom)); transform:translateX(-50%); width:140px; min-height:44px; }
+
+.quest-layout .dialogue { left:8px!important; right:8px!important; width:auto!important; transform:none; }
+.quest-layout #objectiveCard, .quest-layout #objective { transform:none; animation:none; }
+.quest-layout.quest-rails #triangleUltimateBtn { position:absolute; top:80px; bottom:auto; left:8px; right:auto; width:124px; transform:none; }
+.quest-layout.quest-rails[data-control-hand=left] #triangleUltimateBtn { left:auto; right:8px; }
+.quest-layout #triangleUltimateBtn { animation:none; }
+.quest-layout #bossPhase { animation:none; }
+#goldMasterQaPanel { pointer-events:none; }

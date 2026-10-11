@@ -1,7 +1,7 @@
 (() => {
 "use strict";
 const $=id=>document.getElementById(id), canvas=$("tahoeCanvas"), ctx=canvas.getContext("2d");
-const W=canvas.width,H=canvas.height,WORLD=9800,FLOOR=570,SAVE="3dudes1quest_tahoe_v250",RELEASE="3.0.0";
+const W=canvas.width,H=canvas.height,WORLD=9800,FLOOR=570,SAVE="3dudes1quest_tahoe_v250",RELEASE="3.1.0";
 const platforms=[
 {x:1320,y:438,w:190,h:18,kind:"log"},{x:1580,y:385,w:170,h:18,kind:"rock"},{x:1840,y:330,w:190,h:18,kind:"rock"},
 {x:2800,y:410,w:180,h:18,kind:"log"},{x:3060,y:350,w:170,h:18,kind:"rock"},{x:3320,y:292,w:210,h:18,kind:"rock"},
@@ -205,7 +205,7 @@ const input=QuestRuntime.createInput({active:()=>state.started&&!state.paused&&!
 state.keys=input;
 let motion={};
 function release(){input.releaseAll()}
-for(const event of ['blur','pagehide','orientationchange'])addEventListener(event,()=>setPaused(true));
+for(const event of ['blur','pagehide'])addEventListener(event,()=>setPaused(true));
 document.addEventListener('visibilitychange',()=>{if(document.hidden)setPaused(true)});
 setInterval(()=>{if(state.started&&!state.paused&&!state.complete)save()},20000);
 function prepareCast(){
@@ -231,8 +231,11 @@ ui.continuePortal.addEventListener("click",()=>{if(!state.bossDefeated)return;st
 const clock=QuestRuntime.createLoop({active:()=>state.started&&!state.paused&&!state.complete,
  update,draw,onError:error=>{setPaused(true);window.__TAHOE_LAST_ERROR__={message:String(error),stack:error.stack};console.error(error);objective("Adventure paused","Reload to recover your last checkpoint.")}});
 clock.start();
-window.__QUEST_SESSION__={isActive:()=>state.started,save,pause:()=>setPaused(true)};
+window.__QUEST_SESSION__={isActive:()=>state.started,save,pause:()=>setPaused(true),suspendViewport:()=>{
+const paused=state.paused;state.paused=true;release();clock.reset();save();
+return ()=>{release();clock.reset();state.paused=paused};
+}};
 window.__TAHOE_DEBUG__=Object.freeze({get state(){return state},get cast(){return dudes},firePower,setDude});
 if(new URLSearchParams(location.search).has('qa'))window.__TAHOE_TEST__={update,save,load,reset,hurt,hitBoss,damageNest,defeat,nests,clock};
-window.__TAHOE_RELEASE__={version:RELEASE,name:"Smooth Adventure",coreVersion:window.QuestCore.VERSION,castLocked:window.QuestCore.validateCast(dudes),features:["exact Adventure 1 sprite asset preload","no fake character fallback","Adventure 1 animation timing","one locked cast across every adventure","Adventure 1 movement stats","Adventure 1 sprite sheets","Adventure 1 controls","Space fires power","Rainbow Ricochet parity","Heartfield Burst parity","Cookie Toss parity","Rigsby parity","Zoey parity","shoot-only combat","Pine Beetle Queen quality pass"]};
+window.__TAHOE_RELEASE__={version:RELEASE,name:"Mobile Landscape Rescue",coreVersion:window.QuestCore.VERSION,castLocked:window.QuestCore.validateCast(dudes),features:["exact Adventure 1 sprite asset preload","no fake character fallback","Adventure 1 animation timing","one locked cast across every adventure","Adventure 1 movement stats","Adventure 1 sprite sheets","Adventure 1 controls","Space fires power","Rainbow Ricochet parity","Heartfield Burst parity","Cookie Toss parity","Rigsby parity","Zoey parity","shoot-only combat","Pine Beetle Queen quality pass"]};
 })();
