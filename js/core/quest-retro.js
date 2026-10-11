@@ -1,27 +1,22 @@
-/* Original Quest art, rendered on a shared 320×180 pixel grid. Physics stays 1280×720. */
+/* Shared original-color pixel renderer. Physics stays 1280×720. */
 (() => {
   'use strict';
-  const palette = ['101020','242438','404058','606078','888898','b8b8c0','e8e8d8','ffffff',
-    '381848','682878','a038a0','e050a8','f898b8','f8c8d8','282858','4040a0','6868d8','a898f8',
-    '103858','185888','2878b8','48a8d8','88d8e8','b8e8f8','183828','286838','489848','88b858','b8d878',
-    '584020','886038','b88850','e8b878','f8d898','f8e858','782838','b83848','e85858','f88858','d86838']
-    .map(hex=>[0,2,4].map(i=>parseInt(hex.slice(i,i+2),16)));
-  const lookup = new Uint8Array(32768);
-  for(let i=0;i<lookup.length;i++){
-    const r=(i>>10)*8+4,g=((i>>5)&31)*8+4,b=(i&31)*8+4;
-    let best=Infinity;
-    palette.forEach((p,n)=>{const d=(r-p[0])**2+(g-p[1])**2+(b-p[2])**2;if(d<best){best=d;lookup[i]=n}});
-  }
   function createRenderer(canvas) {
-    const buffer=document.createElement('canvas'); buffer.width=320;buffer.height=180;
-    const ctx=buffer.getContext('2d',{willReadFrequently:true});ctx.scale(.25,.25);ctx.imageSmoothingEnabled=false;
+    // Native logical coordinates on desktop; a half-size buffer on touch screens.
+    // No palette conversion or per-frame readback: original artwork retains its colors.
+    const requested=Number(new URLSearchParams(location.search).get('renderqa'));
+    const touch=matchMedia('(pointer: coarse)').matches||navigator.maxTouchPoints>0;
+    const width=[640,960,1280].includes(requested)?requested:touch?640:1280;
+    const height=width*9/16,buffer=width===1280?canvas:document.createElement('canvas');
+    buffer.width=width;buffer.height=height;
+    const ctx=buffer.getContext('2d');ctx.scale(width/1280,width/1280);ctx.imageSmoothingEnabled=false;
     const output=canvas.getContext('2d');output.imageSmoothingEnabled=false;
+    canvas.dataset.renderResolution=`${width}x${height}`;
     function present(){
-      const pixels=ctx.getImageData(0,0,320,180),d=pixels.data;
-      for(let i=0;i<d.length;i+=4){const p=palette[lookup[((d[i]>>3)<<10)|((d[i+1]>>3)<<5)|(d[i+2]>>3)]];d[i]=p[0];d[i+1]=p[1];d[i+2]=p[2];}
-      ctx.putImageData(pixels,0,0);output.clearRect(0,0,1280,720);output.drawImage(buffer,0,0,1280,720);
+      if(buffer===canvas)return;
+      output.clearRect(0,0,1280,720);output.drawImage(buffer,0,0,1280,720);
     }
-    return {ctx,present};
+    return {ctx,present,width,height};
   }
   const snap=n=>Math.round(n/4)*4;
   function heart(ctx,x,y,size=4){

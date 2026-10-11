@@ -1,0 +1,15 @@
+/* Higher detail original art, with the proven 3.1 geometry retained. */
+.quest-layout #adventureCanvas { position:absolute; left:var(--world-x); top:var(--world-y); width:var(--world-w)!important; height:var(--world-h)!important; max-width:none; max-height:none; margin:0; border:0; touch-action:none; }
+.quest-layout .dudeChip span { display:grid; font:700 12px monospace; }
+.quest-layout .tahoeChip, .quest-layout #hud .chip { font-size:12px; }
+.quest-layout #adventureMessage { position:absolute; top:calc(var(--world-y) + 48px); left:calc(var(--world-x) + 6px); max-width:calc(var(--world-w) - 12px); background:#162d59; color:#fff0b7; font:12px/1.4 monospace; padding:3px 6px; pointer-events:none; }
+.quest-layout #adventureMessage:empty { display:none; }
+.quest-layout [data-world=alaska] #dialogue { grid-template-columns:1fr auto; }
+.quest-layout #endingCard { position:absolute; z-index:90; top:50%; left:50%; transform:translate(-50%,-50%); }
+.quest-layout #endingCard button { display:block; margin:14px auto; min-height:44px; }
+.quest-layout #openingCard button { min-height:44px; margin:4px; }
+.quest-layout button:disabled { opacity:.45; cursor:wait; }
+.quest-layout .journeyRoute small { display:block; }
+@media (min-height:500px) and (pointer:fine) {
+ .quest-layout .tahoeChip, .quest-layout #hud .chip { font-size:14px; }
+}

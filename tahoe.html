@@ -6,8 +6,8 @@
   <meta name="theme-color" content="#071b28">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <title>3Dudes1Quest v3.3.0 — Retro Audio & Gameplay</title>
-  <link rel="stylesheet" href="css/tahoe.css?v=3.3.0">
+  <title>3Dudes1Quest v3.4.0 — Visual Clarity & Alaska</title>
+  <link rel="stylesheet" href="css/tahoe.css?v=3.4.0">
 
   <meta name="application-name" content="3Dudes1Quest">
   <meta name="apple-mobile-web-app-title" content="3Dudes1Quest">
@@ -18,14 +18,15 @@
   <meta property="og:description" content="Save Tahoe. Defeat the Queen. Open the portal to Alaska.">
   <meta property="og:image" content="assets/share-card.jpg">
   <meta name="twitter:card" content="summary_large_image">
-  <link rel="manifest" href="manifest.webmanifest?v=3.3.0">
-  <link rel="icon" href="favicon.ico?v=3.3.0" sizes="any">
-  <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32.png?v=3.3.0">
-  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png?v=3.3.0">
-  <link rel="stylesheet" href="css/pwa241.css?v=3.3.0">
-  <link rel="stylesheet" href="css/viewport310.css?v=3.3.0">
-  <link rel="stylesheet" href="css/retro320.css?v=3.3.0">
-  <link rel="stylesheet" href="css/audio330.css?v=3.3.0">
+  <link rel="manifest" href="manifest.webmanifest?v=3.4.0">
+  <link rel="icon" href="favicon.ico?v=3.4.0" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32.png?v=3.4.0">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png?v=3.4.0">
+  <link rel="stylesheet" href="css/pwa241.css?v=3.4.0">
+  <link rel="stylesheet" href="css/viewport310.css?v=3.4.0">
+  <link rel="stylesheet" href="css/retro320.css?v=3.4.0">
+  <link rel="stylesheet" href="css/audio330.css?v=3.4.0">
+  <link rel="stylesheet" href="css/visual340.css?v=3.4.0">
 </head>
 <body>
   <main id="tahoeApp">
@@ -53,7 +54,7 @@
     <section id="cinematicCaption" class="cinematicCaption hidden"><small>ADVENTURE 2</small><strong id="cinematicText">Welcome back to Tahoe.</strong><button id="skipCinematic">SKIP</button></section>
     <section id="photoFrame" class="photoFrame hidden"><div class="postcard"><small>LAKE TAHOE</small><strong>Sixteen Summers</strong><p>Some places become part of your family.</p></div></section>
     <section id="dialogue" class="dialogue hidden" aria-live="polite">
-      <img id="dialoguePortrait" src="assets/portraits/will.png" alt=""><div><small id="dialogueName">Will</small><p id="dialogueText">We made it...</p></div><button id="dialogueNext">NEXT</button>
+      <img id="dialoguePortrait" data-cast-portrait="will" alt=""><div><small id="dialogueName">Will</small><p id="dialogueText">We made it...</p></div><button id="dialogueNext">NEXT</button>
     </section>
     <section id="memoryCard" class="memoryCard hidden" aria-live="polite">
       <span>📸</span><small>TAHOE MEMORY FOUND</small><strong id="memoryCardTitle">Sixteen Summers</strong><p id="memoryCardText">A place can become part of your family.</p>
@@ -82,15 +83,15 @@
     <div id="powerCharge"><span id="powerChargeFill"></span><b id="powerChargeLabel">READY</b></div>
     <div id="rotateHint">Rotate your device for the full Tahoe view 🌲</div>
   </main>
-  <script src="js/core/quest-runtime.js?v=3.3.0"></script>
-  <script src="js/core/quest-score.js?v=3.3.0"></script>
-  <script src="js/core/quest-audio.js?v=3.3.0"></script>
-  <script src="js/core/quest-retro.js?v=3.3.0"></script>
-  <script src="js/core/quest-journey.js?v=3.3.0"></script>
-  <script src="js/core/quest-core.js?v=3.3.0"></script>
-  <script src="js/tahoe253.js?v=3.3.0"></script>
+  <script src="js/core/quest-runtime.js?v=3.4.0"></script>
+  <script src="js/core/quest-score.js?v=3.4.0"></script>
+  <script src="js/core/quest-audio.js?v=3.4.0"></script>
+  <script src="js/core/quest-retro.js?v=3.4.0"></script>
+  <script src="js/core/quest-journey.js?v=3.4.0"></script>
+  <script src="js/core/quest-cast.js?v=3.4.0"></script><script src="js/core/quest-core.js?v=3.4.0"></script>
+  <script src="js/tahoe253.js?v=3.4.0"></script>
 
-  <script src="js/pwa241.js?v=3.3.0"></script>
-  <script src="js/core/quest-viewport.js?v=3.3.0"></script>
+  <script src="js/pwa241.js?v=3.4.0"></script>
+  <script src="js/core/quest-viewport.js?v=3.4.0"></script>
 </body>
 </html>

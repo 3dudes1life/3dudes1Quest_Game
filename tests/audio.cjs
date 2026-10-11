@@ -61,7 +61,7 @@ module.exports=async function audioChecks(browser,base){
   await page.locator(socal?'#resumeBtn':'#resumeTahoe').click();await page.waitForFunction(()=>QuestAudio.status().state==='running'&&QuestAudio.status().playing);
   // Attack warnings leave real simulation time to react, without changing player physics.
   assert.equal(await page.evaluate(s=>{
-   if(s){const g=__questGame;g.clock.stop();g.state.cards=6;g.state.beacons=3;g.player.x=8000;g.enemies.forEach(e=>e.alive=false);g.enemyShots=[];g.bossIntroShown=false;g.boss.cool=0;g.updateBoss(1,g.clock.time);if(g.enemyShots.length)return false;for(let i=0;i<27;i++)g.updateBoss(1,g.clock.time);return g.boss.warned&&g.enemyShots.length===0}
+   if(s){const g=__questGame;g.clock.stop();g.state.cards=6;g.state.beacons=3;g.player.x=8000;g.enemies.forEach(e=>e.alive=false);g.enemyShots=[];g.state.courtDefeated=true;g.bossIntroShown=false;g.boss.cool=0;g.updateBoss(1,g.clock.time);if(g.enemyShots.length)return false;for(let i=0;i<27;i++)g.updateBoss(1,g.clock.time);return g.boss.warned&&g.enemyShots.length===0}
    const t=__TAHOE_TEST__,g=__TAHOE_DEBUG__.state;t.clock.stop();g.inv=9999;const b=g.beetles.find(b=>b.type==='charger'&&b.alive);g.player.x=b.x-150;g.player.y=100;g.hitStop=0;g.heroShots=[];g.cookieBombs=[];g.positiveFields=[];g.drops=[];g.beetles=[b];t.nests.forEach(n=>n.alive=false);b.stun=0;b.alert=1;b.chargeWindup=0;const x=b.x;for(let i=0;i<8;i++)t.update(QuestRuntime.STEP);if(b.x!==x)return false;for(let i=0;i<10;i++)t.update(QuestRuntime.STEP);if(b.x===x)return false;g.checkpoint=250;g.player.x=3450;g.hitStop=0;t.update(QuestRuntime.STEP);const card=document.querySelector('#checkpointCard'),r=card.getBoundingClientRect();return card.querySelector('strong').textContent==='Eagle Creek'&&r.x>=0&&r.right<=844&&r.y>=76&&r.bottom<160;
   },socal),true);
   // Controlled boss states validate soundtrack selection; combat progression is in browser.cjs.
@@ -96,5 +96,5 @@ module.exports=async function audioChecks(browser,base){
    const wav=Buffer.alloc(44+pcm.length*2);wav.write('RIFF');wav.writeUInt32LE(wav.length-8,4);wav.write('WAVEfmt ',8);wav.writeUInt32LE(16,16);wav.writeUInt16LE(1,20);wav.writeUInt16LE(1,22);wav.writeUInt32LE(44100,24);wav.writeUInt32LE(88200,28);wav.writeUInt16LE(2,32);wav.writeUInt16LE(16,34);wav.write('data',36);wav.writeUInt32LE(pcm.length*2,40);pcm.forEach((value,i)=>wav.writeInt16LE(Math.round(Math.max(-1,Math.min(1,value))*32767),44+i*2));fs.writeFileSync(path.join(out,name+'.wav'),wav);
   }
  }
- fs.writeFileSync(path.join(out,'signal-report.json'),JSON.stringify(report,null,2));await context.close();console.log('PASS real Web Audio renders: five original scores and all effects produce finite, non-silent, unclipped output; loop boundaries contain signal');
+ fs.writeFileSync(path.join(out,'signal-report.json'),JSON.stringify(report,null,2));await context.close();console.log('PASS real Web Audio renders: seven original scores and all effects produce finite, non-silent, unclipped output; loop boundaries contain signal');
 };

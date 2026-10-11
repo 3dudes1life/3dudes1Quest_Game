@@ -6,8 +6,8 @@
  * They must not redefine the five main characters or the three dude powers.
  */
 (() => {
-  const VERSION = "3.3.0";
-  const CAST_ASSET_VERSION = "adventure1-gold-master-109-v253";
+  const VERSION = "3.4.0";
+  const CAST_ASSET_VERSION = "original-world-outfits-340";
   const ANIMATIONS = Object.freeze(["idle", "walk", "jump", "attack", "hurt", "celebrate"]);
 
   const CAST = Object.freeze([
@@ -68,6 +68,7 @@
   }
 
   function loadCastImages() {
+    if(window.QuestCast)return QuestCast.loadImages();
     const images = {};
     const load = (key, src) => {
       const image = new Image();
@@ -99,6 +100,7 @@
   }
 
   async function preloadCastImages(images, timeoutMs = 12000) {
+    if(window.QuestCast){try{await QuestCast.ready}catch(error){return {ready:false,results:[],missing:[{key:"atlas",reason:error.message}]}}}
     const keys = requiredCastKeys();
     const waitFor = (key) => new Promise(resolve => {
       const image = images[key];
@@ -220,6 +222,7 @@
   }
 
   function drawBeagle(ctx, x, y, time, variant = "rigsby", flip = false) {
+    if(window.QuestCast?.drawPet(ctx,x,y,time,variant,flip))return;
     const run = Math.sin(time * 0.012 + x * 0.01);
     ctx.save();
     ctx.translate(x + (flip ? 54 : 0), y);
@@ -375,10 +378,10 @@
       ctx.beginPath();
       ctx.ellipse(screenX + 22, resolvedGround - 2, 31, 8, 0, 0, Math.PI * 2);
       ctx.fill();
-      const frame = Math.floor(time / speed) % frames;
-      let painted = safeSprite(ctx, image, screenX - 20, screenY - 50, frame, 128, 192, 84, 126, facing < 0);
+      const frame = animation==="jump" ? ((Number(player.vy)||0)>=0?2:0)+Math.floor(time/speed)%2 : Math.floor(time / speed) % frames;
+      let painted = safeSprite(ctx, image, screenX - 41, screenY - 50, frame, 192, 192, 126, 126, facing < 0);
       if (!painted && animation !== "idle") {
-        painted = safeSprite(ctx, images[`${dude.key}_idle`], screenX - 20, screenY - 50, Math.floor(time / 150) % 6, 128, 192, 84, 126, facing < 0);
+        painted = safeSprite(ctx, images[`${dude.key}_idle`], screenX - 41, screenY - 50, Math.floor(time / 150) % 6, 192, 192, 126, 126, facing < 0);
       }
       return { drawn: painted ? "sprite" : "waiting", animation };
     } catch (error) {

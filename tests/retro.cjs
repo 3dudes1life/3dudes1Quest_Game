@@ -14,15 +14,15 @@ module.exports=async function retroChecks(browser,base){
   const restored=await page.evaluate(s=>s?[__questGame.state.cards,__questGame.state.score,__questGame.state.dude]:[__TAHOE_DEBUG__.state.mem[0],__TAHOE_DEBUG__.state.crystals[0].got,__TAHOE_DEBUG__.state.checkpoint,__TAHOE_DEBUG__.state.nestsDestroyed,__TAHOE_DEBUG__.state.score,__TAHOE_DEBUG__.state.dude],socal);
   assert.deepEqual(restored,socal?[1,987,2]:[true,true,3360,1,2234,1]);
   await page.waitForTimeout(1100);
-  // The displayed logical canvas must consist of exact 4×4 pixel blocks and <=40 colors.
+  // The displayed logical canvas must consist of exact 2×2 pixel blocks with original artwork colors.
   const pixels=await page.locator(socal?'#gameCanvas':'#tahoeCanvas').evaluate(c=>{
    const d=c.getContext('2d').getImageData(0,0,1280,720).data,colors=new Set();let aligned=true;
    const color=(x,y)=>{const i=(y*1280+x)*4;return (d[i]<<16)|(d[i+1]<<8)|d[i+2]};
-   for(let y=0;y<720;y+=4)for(let x=0;x<1280;x+=4){const v=color(x,y);colors.add(v);if(v!==color(x+3,y+3)||v!==color(x+1,y+2))aligned=false;}
+   for(let y=0;y<720;y+=2)for(let x=0;x<1280;x+=2){const v=color(x,y);colors.add(v);if(v!==color(x+1,y+1))aligned=false;}
    return {colors:colors.size,aligned,smoothing:c.getContext('2d').imageSmoothingEnabled};
-  });assert.equal(pixels.aligned,true);assert.ok(pixels.colors>8&&pixels.colors<=40);assert.equal(pixels.smoothing,false);
-  assert.deepEqual(await page.evaluate(()=>[QuestJourney.next('socal').id,QuestJourney.next('tahoe').id,QuestJourney.worlds.filter(w=>w.url).length]),['tahoe','alaska',2]);
-  assert.equal(await page.locator('.journeyRoute').first().locator('a').count(),2);
+  });assert.equal(pixels.aligned,true);assert.ok(pixels.colors>40);assert.equal(pixels.smoothing,false);
+  assert.deepEqual(await page.evaluate(()=>[QuestJourney.next('socal').id,QuestJourney.next('tahoe').id,QuestJourney.worlds.filter(w=>w.url).length]),['tahoe','alaska',3]);
+  assert.equal(await page.locator('.journeyRoute').first().locator('a').count(),3);
   // Damage protection must reject multiple contacts in one damage window.
   assert.deepEqual(await page.evaluate(s=>{
    if(s){const g=__questGame;g.clock.stop();g.state.health=4;g.player.inv=0;g.hurt(g.player.x+50);g.hurt(g.player.x+50);return [g.state.health,g.player.anim]}
@@ -53,6 +53,6 @@ module.exports=async function retroChecks(browser,base){
    // Cross a checkpoint and memory via the actual update loop, then read the save.
    assert.deepEqual(await page.evaluate(()=>{const t=__TAHOE_TEST__,s=__TAHOE_DEBUG__.state;t.reset(true);t.clock.stop();s.inv=10000;s.player.x=3450;t.update(QuestRuntime.STEP);s.player.x=s.discoveries[0].x;t.update(QuestRuntime.STEP);t.save();const saved=JSON.parse(localStorage.getItem('3dudes1quest_tahoe_v250'));return [saved.checkpoint,saved.mem[0]]}),[3360,true]);
   }
-  assert.deepEqual(errors,[]);await context.close();console.log(`PASS ${name}: native 3.1 save, pixel grid/palette, damage immunity, all power visuals, collectibles/checkpoint and progression`);
+  assert.deepEqual(errors,[]);await context.close();console.log(`PASS ${name}: native 3.1 save, original-color pixel detail, damage immunity, all power visuals, collectibles/checkpoint and progression`);
  }
 };

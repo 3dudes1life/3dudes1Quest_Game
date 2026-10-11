@@ -38,6 +38,17 @@
           "sizes": "192x192"
         }
       ]
+    },
+    {
+      "name": "Play Alaska",
+      "short_name": "Alaska",
+      "url": "./alaska.html?source=shortcut",
+      "icons": [
+        {
+          "src": "icons/icon-192.png",
+          "sizes": "192x192"
+        }
+      ]
     }
   ],
   "share_target": {

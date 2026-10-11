@@ -1,6 +1,6 @@
-# 3Dudes1Quest 3.3 — Retro Audio & Professional Gameplay
+# 3Dudes1Quest 3.4 — Three-World Master Release
 
-A browser platform adventure starring Will, Daniel, Caleb, Rigsby, and Zoey. Restore Southern California, protect Lake Tahoe, and discover the Alaska teaser.
+A browser platform adventure starring Will, Daniel, Caleb, Rigsby, and Zoey. Restore Southern California, protect Lake Tahoe, and restore Alaska’s aurora. Three adventures are playable; Costa Rica and Hawaii are Coming Soon.
 
 ## Play and develop
 
@@ -11,6 +11,16 @@ Serve this repository with a static HTTP server (for example `python3 -m http.se
 - SoCal Triangle Power: Q when charged. Mobile controls support simultaneous touches.
 - Short taps are buffered. Release jump early for a shorter jump.
 - Leaving the app or rotating the device pauses play. Resume explicitly when ready.
+
+## 3.4 three-world release
+
+Original artwork now renders at 1280 × 720 on desktop and 640 × 360 on touch screens, with nearest-neighbor sprites and original colors. The restrictive 320 × 180 / 40-color pipeline is retired. SoCal and Tahoe retain their physics, content and saves, with clearer platforms and forest detail.
+
+The shared cast has new world-specific outfits and animations, with Will bald throughout. SoCal adds Walking Flaming Laws and a three-phase Supreme Court encounter before the Queen of Beige. Tahoe adds interruptible Forest Drain, protected trees, flyers and giant larvae, followed by forest restoration.
+
+Adventure 3, **Alaska: The Aurora Return**, adds four trail sections, three Aurora Relays, twelve optional shards, two hidden caches, snow gusts, shelter checkpoints, zombie salmon, the three-phase Frost Queen and a complete ending. All dudes and companions share the existing controls, powers, audio settings and PWA infrastructure. Tahoe's portal now enters playable Alaska.
+
+See [the 3.4 release report](docs/RELEASE-3.4.md) for rendering comparisons, architecture, gameplay/testing evidence and device/listening limits; [Alaska design](docs/ALASKA-DESIGN.md) records the storyline and encounters. Run `npm test` and `npm run test:browser`; screenshots, signal reports and WAV previews are saved in `test-results` and uploaded by CI.
 
 ## 3.3 original audio release
 
