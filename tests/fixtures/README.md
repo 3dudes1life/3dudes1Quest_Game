@@ -6,3 +6,7 @@ These JSON saves were produced by the actual game runtime from main commit `2bd2
 - Tahoe: checkpoint 3360, first memory and crystal collected, one nest destroyed, score 2234, Daniel selected. Original key: `3dudes1quest_tahoe_v250`.
 
 `tests/retro.cjs` seeds these unchanged bytes and uses the visible Continue/Play controls to load them. Assertions verify preserved milestones and character selection before new gameplay.
+
+## 3.2 compatibility fixtures
+
+The `*-3.2.json` files were serialized by the actual 3.2.0 runtime from a separate archive of `fbeb0c3312e59db1692f5af70022e288ac2251df`. Controlled milestones: SoCal score 3300, Daniel, first card; Tahoe score 4400, checkpoint 3360, first memory. Audio browser tests load these through Continue/Play before checking sound lifecycle behavior.

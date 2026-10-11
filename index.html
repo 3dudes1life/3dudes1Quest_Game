@@ -7,8 +7,8 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="format-detection" content="telephone=no">
-  <title>3Dudes1Quest v3.2.0 — Retro Gameplay & World Polish</title>
-  <link rel="stylesheet" href="css/style.css?v=3.2.0">
+  <title>3Dudes1Quest v3.3.0 — Retro Audio & Gameplay</title>
+  <link rel="stylesheet" href="css/style.css?v=3.3.0">
 
   <meta name="application-name" content="3Dudes1Quest">
   <meta name="apple-mobile-web-app-title" content="3Dudes1Quest">
@@ -19,13 +19,14 @@
   <meta property="og:description" content="Save Tahoe. Defeat the Queen. Open the portal to Alaska.">
   <meta property="og:image" content="assets/share-card.jpg">
   <meta name="twitter:card" content="summary_large_image">
-  <link rel="manifest" href="manifest.webmanifest?v=3.2.0">
-  <link rel="icon" href="favicon.ico?v=3.2.0" sizes="any">
-  <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32.png?v=3.2.0">
-  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png?v=3.2.0">
-  <link rel="stylesheet" href="css/pwa241.css?v=3.2.0">
-  <link rel="stylesheet" href="css/viewport310.css?v=3.2.0">
-  <link rel="stylesheet" href="css/retro320.css?v=3.2.0">
+  <link rel="manifest" href="manifest.webmanifest?v=3.3.0">
+  <link rel="icon" href="favicon.ico?v=3.3.0" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32.png?v=3.3.0">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png?v=3.3.0">
+  <link rel="stylesheet" href="css/pwa241.css?v=3.3.0">
+  <link rel="stylesheet" href="css/viewport310.css?v=3.3.0">
+  <link rel="stylesheet" href="css/retro320.css?v=3.3.0">
+  <link rel="stylesheet" href="css/audio330.css?v=3.3.0">
 </head>
 <body>
 <div id="bootSequence" class="bootSequence" aria-live="polite">
@@ -64,7 +65,7 @@
       </div>
       <div class="card titleMenuCard">
         <div class="eyebrow">3DUDES1LIFE CREATIVE PRESENTS</div>
-        <div class="releaseBadge">v3.2 • RETRO QUEST</div>
+        <div class="releaseBadge">v3.3 • SOUND OF THE QUEST</div>
         <h1>3Dudes1Quest</h1>
         <h2>Adventure 1: Southern California</h2>
         <p>The Queen of Beige is draining the color from SoCal—and she has taken Zoey captive. Follow Rigsby, restore the Prism Beacons, recover every Gay Card, rescue Zoey, and enter the portal together.</p>
@@ -123,6 +124,7 @@
         <button id="startBtn" class="primary">Start as Will</button>
         <button id="continueBtn" class="primary continue hidden">Continue Adventure</button>
         <div id="saveStatus" class="saveStatus">No saved quest yet.</div>
+        <p class="firstQuestTip">Head right. Jump with ↑ / W; use Space or POWER to defeat enemies. Touching enemies hurts. Release jump early for a shorter hop. Pause for sound and control settings.</p>
         <button id="helpBtn" class="secondary">How to Play</button>
         <a class="secondary tahoePreviewLaunch" href="tahoe.html">
           <span>🌲</span>
@@ -355,15 +357,17 @@
       </div>
     </section>
   </main>
-  <script src="js/core/quest-runtime.js?v=3.2.0"></script>
-  <script src="js/core/quest-retro.js?v=3.2.0"></script>
-  <script src="js/core/quest-journey.js?v=3.2.0"></script>
-  <script src="js/core/quest-core.js?v=3.2.0"></script>
-  <script src="js/app109.js?v=3.2.0"></script>
-  <script src="js/remaster.js?v=3.2.0"></script>
-  <script src="js/gold-master-self-test.js?v=3.2.0"></script>
+  <script src="js/core/quest-runtime.js?v=3.3.0"></script>
+  <script src="js/core/quest-score.js?v=3.3.0"></script>
+  <script src="js/core/quest-audio.js?v=3.3.0"></script>
+  <script src="js/core/quest-retro.js?v=3.3.0"></script>
+  <script src="js/core/quest-journey.js?v=3.3.0"></script>
+  <script src="js/core/quest-core.js?v=3.3.0"></script>
+  <script src="js/app109.js?v=3.3.0"></script>
+  <script src="js/remaster.js?v=3.3.0"></script>
+  <script src="js/gold-master-self-test.js?v=3.3.0"></script>
 
-  <script src="js/pwa241.js?v=3.2.0"></script>
-  <script src="js/core/quest-viewport.js?v=3.2.0"></script>
+  <script src="js/pwa241.js?v=3.3.0"></script>
+  <script src="js/core/quest-viewport.js?v=3.3.0"></script>
 </body>
 </html>

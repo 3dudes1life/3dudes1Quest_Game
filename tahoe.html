@@ -6,8 +6,8 @@
   <meta name="theme-color" content="#071b28">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <title>3Dudes1Quest v3.2.0 — Retro Gameplay & World Polish</title>
-  <link rel="stylesheet" href="css/tahoe.css?v=3.2.0">
+  <title>3Dudes1Quest v3.3.0 — Retro Audio & Gameplay</title>
+  <link rel="stylesheet" href="css/tahoe.css?v=3.3.0">
 
   <meta name="application-name" content="3Dudes1Quest">
   <meta name="apple-mobile-web-app-title" content="3Dudes1Quest">
@@ -18,13 +18,14 @@
   <meta property="og:description" content="Save Tahoe. Defeat the Queen. Open the portal to Alaska.">
   <meta property="og:image" content="assets/share-card.jpg">
   <meta name="twitter:card" content="summary_large_image">
-  <link rel="manifest" href="manifest.webmanifest?v=3.2.0">
-  <link rel="icon" href="favicon.ico?v=3.2.0" sizes="any">
-  <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32.png?v=3.2.0">
-  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png?v=3.2.0">
-  <link rel="stylesheet" href="css/pwa241.css?v=3.2.0">
-  <link rel="stylesheet" href="css/viewport310.css?v=3.2.0">
-  <link rel="stylesheet" href="css/retro320.css?v=3.2.0">
+  <link rel="manifest" href="manifest.webmanifest?v=3.3.0">
+  <link rel="icon" href="favicon.ico?v=3.3.0" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32.png?v=3.3.0">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png?v=3.3.0">
+  <link rel="stylesheet" href="css/pwa241.css?v=3.3.0">
+  <link rel="stylesheet" href="css/viewport310.css?v=3.3.0">
+  <link rel="stylesheet" href="css/retro320.css?v=3.3.0">
+  <link rel="stylesheet" href="css/audio330.css?v=3.3.0">
 </head>
 <body>
   <main id="tahoeApp">
@@ -43,6 +44,7 @@
     <section id="openingCard" class="storyCard">
       <small>ADVENTURE 2</small><h1>Lake Tahoe</h1><h2>Save Our Secret Place</h2>
       <p>Destroy the beetle nests, survive Tahoe’s changing weather, and defeat the three-phase Pine Beetle Queen with Will, Daniel, Caleb, Rigsby, and Zoey.</p>
+      <p class="firstQuestTip">Head right. Jump with ↑ / W; use Space or POWER to defeat enemies. Touching enemies hurts. Release jump early for a shorter hop. Pause for sound and control settings.</p>
       <button id="beginTahoe">Play Tahoe</button>
     </section>
     <section id="missionCard" class="missionReveal hidden" aria-live="polite">
@@ -66,7 +68,7 @@
       <button id="continueToPortal">Enter the Alaska Portal</button><button id="replayTahoe">Replay Tahoe</button><a href="index.html">Return to Title</a>
     </section>
     <section id="finaleBanner" class="finaleBanner hidden" aria-live="polite"><small>FOREST RESTORED</small><strong>The portal to Alaska is open.</strong><span>Walk into the portal at the summit.</span></section>
-    <section id="pauseMenu" class="pauseMenu hidden"><small>ADVENTURE PAUSED</small><h2>Lake Tahoe</h2><button id="resumeTahoe">Resume</button><button id="restartTahoe">Restart Tahoe</button><a href="index.html">Return to Title</a></section>
+    <section id="pauseMenu" class="pauseMenu hidden"><small>ADVENTURE PAUSED</small><h2>Lake Tahoe</h2><button id="resumeTahoe">Resume</button><button id="saveTahoe">Save checkpoint</button><p id="tahoeSaveStatus" role="status"></p><button id="restartTahoe">Restart Tahoe</button><a href="index.html">Return to Title</a></section>
     <div id="objective"><small>CURRENT OBJECTIVE</small><strong id="objectiveTitle">Enter Tahoe</strong><span id="objectiveText">Press Play Tahoe.</span></div>
     <div id="touchControls" aria-label="Game controls">
       <div class="touchGroup"><button data-action="left" aria-label="Move left"><span>◀</span></button><button data-action="right" aria-label="Move right"><span>▶</span></button></div>
@@ -80,13 +82,15 @@
     <div id="powerCharge"><span id="powerChargeFill"></span><b id="powerChargeLabel">READY</b></div>
     <div id="rotateHint">Rotate your device for the full Tahoe view 🌲</div>
   </main>
-  <script src="js/core/quest-runtime.js?v=3.2.0"></script>
-  <script src="js/core/quest-retro.js?v=3.2.0"></script>
-  <script src="js/core/quest-journey.js?v=3.2.0"></script>
-  <script src="js/core/quest-core.js?v=3.2.0"></script>
-  <script src="js/tahoe253.js?v=3.2.0"></script>
+  <script src="js/core/quest-runtime.js?v=3.3.0"></script>
+  <script src="js/core/quest-score.js?v=3.3.0"></script>
+  <script src="js/core/quest-audio.js?v=3.3.0"></script>
+  <script src="js/core/quest-retro.js?v=3.3.0"></script>
+  <script src="js/core/quest-journey.js?v=3.3.0"></script>
+  <script src="js/core/quest-core.js?v=3.3.0"></script>
+  <script src="js/tahoe253.js?v=3.3.0"></script>
 
-  <script src="js/pwa241.js?v=3.2.0"></script>
-  <script src="js/core/quest-viewport.js?v=3.2.0"></script>
+  <script src="js/pwa241.js?v=3.3.0"></script>
+  <script src="js/core/quest-viewport.js?v=3.3.0"></script>
 </body>
 </html>

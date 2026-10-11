@@ -1,4 +1,4 @@
-# 3Dudes1Quest 3.2 — Retro Gameplay & World Polish
+# 3Dudes1Quest 3.3 — Retro Audio & Professional Gameplay
 
 A browser platform adventure starring Will, Daniel, Caleb, Rigsby, and Zoey. Restore Southern California, protect Lake Tahoe, and discover the Alaska teaser.
 
@@ -11,6 +11,12 @@ Serve this repository with a static HTTP server (for example `python3 -m http.se
 - SoCal Triangle Power: Q when charged. Mobile controls support simultaneous touches.
 - Short taps are buffered. Release jump early for a shorter jump.
 - Leaving the app or rotating the device pauses play. Resume explicitly when ready.
+
+## 3.3 original audio release
+
+Both adventures now share original title, world, boss, and victory chiptunes, a defeat cue, and 26 event effects. Open **Sound settings** on the title or pause screen for music/effects toggles, separate volumes, and master mute. Audio starts only after interaction, pauses safely, and works offline. The 3.2 artwork, pixel grid, physics, saves, and journey remain intact.
+
+This release also fixes Space activation on pause-menu buttons, adds enemy/boss warnings and coordinated damage flashes, and clarifies first-time controls and checkpoints. See [the 3.3 release report](docs/RELEASE-3.3.md) for the gameplay audit, music/effect list, architecture, automated checks, and remaining listening/device checks. No human listening or physical-device verification is claimed.
 
 ## Stability update
 

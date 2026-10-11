@@ -68,3 +68,16 @@ test('camera tracks smoothly, settles when stopped, and respects world bounds',(
  assert.equal(camera,2000-1280*.36);
  p.x=20000;for(let i=0;i<120;i++)camera=runtime.followCamera(camera,p,1280,9200);assert.equal(camera,7920);
 });
+
+// Validate the authored score data and every statically named production sound hook.
+test('original scores have complete phrases, valid pitches and distinct melodies',()=>{
+ const context={window:{}};vm.runInNewContext(fs.readFileSync('js/core/quest-score.js','utf8'),context);
+ const {songs,notes}=context.window.QuestScore;const melodies=new Set();
+ for(const song of Object.values(songs)){assert.equal(song.melody.length%8,0);assert.equal(song.roots.length*8,song.melody.length);assert.ok(song.bpm>=90&&song.bpm<=180);melodies.add(song.melody.join(','));for(let i=0;i<song.melody.length;i++){assert.ok(song.melody[i]===0||(song.melody[i]>=48&&song.melody[i]<=96));for(const spec of notes(song,i)){assert.ok(spec[1]>0&&spec[2]>0&&spec[3]>0&&spec[5]<=.2)}}}
+ assert.equal(melodies.size,5);
+});
+test('all named gameplay sounds resolve to short original effects',()=>{
+ const context={window:{}};vm.runInNewContext(fs.readFileSync('js/core/quest-score.js','utf8'),context);const {effects}=context.window.QuestScore;
+ for(const file of ['js/app109.js','js/tahoe253.js','js/core/quest-audio.js']){const source=fs.readFileSync(file,'utf8');for(const match of source.matchAll(/(?:sound|effect)\(['"]([^'"]+)['"]\)/g))assert.ok(effects[match[1]],file+': '+match[1])}
+ for(const specs of Object.values(effects)){assert.ok(specs.length<=4);for(const spec of specs)assert.ok(spec[3]+spec[4]<=1)}
+});
