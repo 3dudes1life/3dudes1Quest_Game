@@ -1,0 +1,18 @@
+.quest-layout .audioSettings { margin:12px 0; border:2px solid #888898; padding:8px; color:#e8e8d8; text-align:left; font:14px/1.5 ui-monospace,monospace; }
+.quest-layout .audioSettings summary { cursor:pointer; min-height:44px; display:list-item; padding:10px 4px; color:#f8e858; }
+.quest-layout .audioSettings fieldset { min-width:0; border:0; padding:4px; }
+.quest-layout .audioSettings label { display:flex; gap:12px; align-items:center; justify-content:space-between; min-height:44px; margin:4px 0; }
+.quest-layout .audioSettings label span { min-width:105px; }
+.quest-layout .audioSettings input[type=checkbox] { width:28px; height:28px; accent-color:#48a8d8; }
+.quest-layout .audioSettings input[type=range] { min-width:70px; width:45%; height:44px; accent-color:#48a8d8; touch-action:pan-x; }
+.quest-layout .audioSettings output { min-width:4ch; font-size:12px; }
+.quest-layout .audioSettings :focus-visible { outline:3px solid #f8e858; outline-offset:2px; }
+.quest-layout .audioStatus { font-size:12px; margin:8px 0; }
+.quest-layout .firstQuestTip { font:13px/1.5 ui-monospace,monospace; color:#f8d898; }
+
+/* Tahoe's previously unstyled checkpoint notice must not cover the HUD. */
+.quest-layout .checkpointCard { position:absolute; z-index:18; top:calc(var(--world-y) + 4px); left:calc(var(--world-x) + 4px); width:calc(var(--world-w) - 8px); padding:4px 8px; border:2px solid #f8e858; background:#101020; font:11px/14px ui-monospace,monospace; pointer-events:none; }
+.quest-layout .checkpointCard>span { display:none; }
+.quest-layout .checkpointCard small { color:#f8e858; margin-right:8px; }
+.quest-layout .checkpointCard strong { font-size:11px; }
+.quest-layout .checkpointCard p { margin:2px 0 0; font-size:11px; }

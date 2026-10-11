@@ -50,6 +50,10 @@
     addEventListener('keydown', event => {
       const action = window.QuestCore.actionForCode(event.code);
       if (!action || !screenActive() || document.getElementById('viewportPause')?.matches(':not([hidden])') || /^(SELECT|INPUT|TEXTAREA)$/.test(event.target?.tagName)) return;
+      if (action !== 'pause' && !active()) return;
+      const control = event.code === 'Space' && event.target?.closest?.('button[data-action]');
+      if (control) { event.preventDefault(); if (!event.repeat) down(`key:${event.code}`, control.dataset.action); return; }
+      if (event.code === 'Space' && event.target?.closest?.('button,a,summary')) return;
       event.preventDefault();
       if (event.repeat) return;
       if (action === 'pause') { pause(); return; }
@@ -58,7 +62,7 @@
       else down(`key:${event.code}`, action);
     });
     addEventListener('keyup', event => {
-      if (screenActive() && window.QuestCore.actionForCode(event.code)) event.preventDefault();
+      if (active() && window.QuestCore.actionForCode(event.code) && !event.target?.closest?.('button,a,summary,input,select')) event.preventDefault();
       up(`key:${event.code}`);
     });
     buttons.forEach(button => {
