@@ -40,7 +40,7 @@ const server=http.createServer((req,res)=>{
      g.power(g.clock.time);for(let i=0;i<190;i++)g.update(1,g.clock.time+i*QuestRuntime.STEP);
      return !enemy.alive;
    })),[true,true,true]);
-   await page.evaluate(()=>{__questGame.state.health=1;__questGame.hurt(__questGame.player.x+50)});assert.equal(await page.evaluate(()=>__questGame.state.health),4);
+   await page.evaluate(()=>{__questGame.state.health=1;__questGame.player.inv=0;__questGame.hurt(__questGame.player.x+50)});assert.equal(await page.evaluate(()=>__questGame.state.health),4);
    assert.equal(await page.evaluate(()=>{const g=__questGame;const s=g.save();s.cards=s.cards.map(()=>true);s.beacons=s.beacons.map(()=>true);s.boss={hp:0,alive:false,phase:3};s.finale={complete:true,portalReady:true};s.portal={open:true};g.applySave(s);return g.portal.open&&g.state.bossDefeated&&g.state.cards===6}),true);
    assert.equal(await page.evaluate(()=>{
      const g=__questGame;g.start(null,0);g.clock.stop();g.cards.forEach(c=>c.taken=true);g.beacons.forEach(b=>b.on=true);
@@ -69,10 +69,11 @@ const server=http.createServer((req,res)=>{
    assert.equal(await page.evaluate(()=>{const t=__TAHOE_TEST__,s=__TAHOE_DEBUG__.state;t.clock.stop();s.beetles.forEach(b=>b.alive=false);s.defeated=s.beetles.length;t.nests.forEach(n=>t.damageNest(n,10));s.player.x=8500;s.player.y=100;t.update(QuestRuntime.STEP);if(!s.bossStarted)return false;for(let i=0;i<18;i++){s.boss.inv=0;t.hitBoss(1)}return s.bossDefeated&&s.portal&&s.forestRestored}),true);
    await page.reload();await page.waitForFunction(()=>!document.getElementById('beginTahoe').disabled);await page.locator('#beginTahoe').click();assert.equal(await page.evaluate(()=>__TAHOE_DEBUG__.state.portal),true);
    await page.screenshot({path:path.join(require('node:os').tmpdir(),`quest-tahoe-${mobile?'mobile':'desktop'}.png`)});
-   await page.evaluate(()=>{__TAHOE_TEST__.clock.stop();const s=__TAHOE_DEBUG__.state;s.player.x=9700;__TAHOE_TEST__.update(QuestRuntime.STEP)});await page.waitForURL('**/alaska.html');
+   await page.evaluate(()=>{__TAHOE_TEST__.clock.stop();const s=__TAHOE_DEBUG__.state;s.player.x=9700;__TAHOE_TEST__.update(QuestRuntime.STEP)});await page.waitForURL('**/alaska.html');assert.equal(await page.evaluate(()=>JSON.parse(localStorage.getItem('3dudes1quest_journey')).tahoe),true);
    assert.deepEqual(errors,[]);await context.close();console.log(`PASS ${mobile?'mobile':'desktop'} movement, input, pause, saves, death, boss and portal scenarios`);
   }
   await require('./mobile-layout.cjs')(browser,base);
+  await require('./retro.cjs')(browser,base);
   const context=await browser.newContext();const page=await context.newPage();await page.goto(base+'/index.html');
   await page.evaluate(()=>navigator.serviceWorker.ready);await page.reload();await context.setOffline(true);await page.goto(base+'/tahoe.html');await page.waitForFunction(()=>!document.getElementById('beginTahoe').disabled);await page.locator('#beginTahoe').click();assert.equal(await page.evaluate(()=>__TAHOE_DEBUG__.state.started),true);console.log('PASS installed release launches Tahoe offline');await context.close();
  }finally{await browser.close();server.close()}

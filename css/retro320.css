@@ -1,0 +1,58 @@
+/* NES-inspired presentation using only original Quest content. Geometry belongs to 3.1. */
+html.quest-layout body { font-family:ui-monospace,Monaco,monospace; background:#101020; }
+.quest-layout #app, .quest-layout #tahoeApp, .quest-layout #gameScreen { background:#101020; }
+.quest-layout canvas { image-rendering:pixelated!important; filter:none!important; border-radius:0!important; }
+.quest-layout button, .quest-layout .secondary, .quest-layout .primary, .quest-layout select { font-family:ui-monospace,Monaco,monospace!important; font-weight:bold; border-radius:2px!important; box-shadow:none!important; text-shadow:none!important; background:#282858!important; color:#fff!important; border:2px solid #b8b8c0!important; }
+.quest-layout button:hover, .quest-layout button:focus-visible { border-color:#f8e858!important; outline:2px solid #f8e858; outline-offset:2px; }
+.quest-layout button.isPressed { background:#6868d8!important; }
+.quest-layout .card, .quest-layout .titleMenuCard, .quest-layout .storyCard, .quest-layout .pauseMenu, .quest-layout .trailheadCard, .quest-layout #journal, .quest-layout .featurePanel, .quest-layout .dialogue, .quest-layout .cutscenePanel, .quest-layout .portalWrap { background:#101020!important; color:#e8e8d8!important; border:3px solid #b8b8c0!important; border-radius:2px!important; box-shadow:none!important; backdrop-filter:none!important; }
+.quest-layout h1, .quest-layout h2, .quest-layout .storyCard h1 { color:#f8e858!important; background:none!important; -webkit-text-fill-color:currentColor; text-shadow:none!important; font-family:ui-monospace,Monaco,monospace!important; }
+.quest-layout #hud .chip, .quest-layout .tahoeChip { font-family:ui-monospace,Monaco,monospace; border:0; border-radius:0; background:#101020; color:#fff; box-shadow:none; backdrop-filter:none; font-size:11px; }
+.quest-layout .dudeChip span { display:none; }
+.quest-layout #touchControls .touchGroup { border:0; border-radius:0; background:#101020; box-shadow:none; backdrop-filter:none; }
+.quest-layout #touchControls button { border-radius:2px; }
+.quest-layout #touchControls .power { border-color:#e050a8!important; }
+.quest-layout #touchControls .jump { border-color:#48a8d8!important; }
+.quest-layout #objective, .quest-layout #objectiveCard, .quest-layout #bossHud, .quest-layout #bossPhase, .quest-layout #powerCharge { border-radius:0; background:#242438; box-shadow:none!important; backdrop-filter:none; }
+.quest-layout #objective strong, .quest-layout #objectiveCard strong { font:700 12px/18px ui-monospace,Monaco,monospace; color:#f8e858; }
+.quest-layout #bossPhase, .quest-layout #bossHud { color:#fff; border:2px solid #e85858!important; }
+.quest-layout #bossHealthFill, .quest-layout #powerChargeFill { background:#e85858; box-shadow:none; }
+.quest-layout #bossPhase::before, .quest-layout #bossPhase::after { display:none; }
+.quest-layout #powerCharge b { font-family:ui-monospace,monospace; text-shadow:none; font-size:8px; }
+.quest-layout .releaseBadge, .quest-layout .stamp, .quest-layout .dudeSelectCard, .quest-layout .startingDudePicker, .quest-layout .selectedDudeSummary { background:#242438!important; border-radius:0!important; box-shadow:none!important; }
+.quest-layout .dudePortraitWrap img { image-rendering:pixelated; }
+.quest-layout .dudeSelectCard { min-height:72px!important; }
+.quest-layout .dudePortraitWrap { display:none; }
+.quest-layout #titleScreen .dudeSelectCard { grid-template-columns:1fr; }
+.quest-layout #titleScreen, .quest-layout #helpScreen, .quest-layout #completeScreen { background:#101020; }
+.quest-layout .titleWorldVignette, .quest-layout .titleWorldHint { display:none; }
+.quest-layout .cinematicZoneCard, .quest-layout .missionReveal { width:auto; max-width:60%; left:50%; top:80px; padding:4px 10px; border:2px solid #b8b8c0; border-radius:0; background:#101020; box-shadow:none; backdrop-filter:none; }
+.quest-layout .cinematicZoneCard small, .quest-layout .cinematicZoneCard span, .quest-layout .missionReveal p, .quest-layout .missionReveal small { display:none; }
+.quest-layout .cinematicZoneCard strong, .quest-layout .missionReveal h2 { font:700 14px ui-monospace,monospace; margin:0; }
+.quest-layout #message, .quest-layout .bossTaunt, .quest-layout .memoryCard, .quest-layout .finaleBanner, .quest-layout .finaleCard, .quest-layout #combatStatus { border-radius:0; background:#101020; color:#fff; box-shadow:none; backdrop-filter:none; border:2px solid #b8b8c0; font-family:ui-monospace,monospace; }
+.quest-layout #comboHud { font-family:ui-monospace,monospace; color:#f8e858; text-shadow:none; }
+.quest-layout .journeyRoute { display:flex; flex-wrap:wrap; gap:8px; padding:8px 0; margin:8px 0; list-style:none; font:700 12px/1.5 ui-monospace,monospace; }
+.quest-layout .journeyRoute li { padding:6px; border:1px solid #606078; color:#b8b8c0; }
+.quest-layout .journeyRoute [aria-current] { color:#f8e858; border-color:#f8e858; }
+.quest-layout .journeyRoute a { color:inherit; }
+.quest-layout .journeyRoute small { font-size:10px; margin:0; opacity:1; }
+.quest-layout .pauseObjective { line-height:1.5; }
+.quest-layout .journalTabs button, .quest-layout .hubPrimaryActions button { min-height:44px; }
+.quest-layout .bootBackdrop, .quest-layout .bootParticles { display:none; }
+.quest-layout .bootSequence { background:#101020; }
+@media(prefers-reduced-motion:reduce){.quest-layout *{animation:none!important;transition:none!important}}
+
+.quest-layout #powerBtn { background:#682878!important; }
+.quest-layout #returnBtn { background:#282858; border-radius:2px; }
+.quest-layout #powerIcon { font-family:ui-monospace,monospace; }
+/* Rewards stay readable without covering the player or the landing area. */
+.quest-layout .achievementStack { top:calc(var(--view-y) + var(--world-y) + 4px); left:calc(var(--view-x) + var(--world-x) + 4px); right:auto; width:calc(var(--world-w) - 8px); gap:2px; transform:none; }
+.quest-layout .achievementCard { width:auto; min-height:0; max-width:100%; backdrop-filter:none; -webkit-backdrop-filter:none; padding:3px 6px; display:block; border:1px solid #f8e858; border-radius:0; background:#101020; box-shadow:none; opacity:1; transform:none; animation:none; }
+.quest-layout .achievementCard:not(:last-child), .quest-layout .achievementIcon, .quest-layout .achievementLabel { display:none; }
+.quest-layout .achievementTitle { font:700 11px/14px ui-monospace,monospace; color:#f8e858; }
+.quest-layout .petMoment { left:calc(var(--world-x) + 4px); top:calc(var(--world-y) + 31px); bottom:auto; width:calc(var(--world-w) - 8px); max-width:none; padding:3px 6px; border:1px solid #b8b8c0; border-radius:0; background:#101020; box-shadow:none; backdrop-filter:none; transform:none; animation:none; }
+.quest-layout .petMoment>span { display:none; }
+.quest-layout .petMoment b, .quest-layout .petMoment small { display:inline; font:700 11px/14px ui-monospace,monospace; }
+.quest-layout .petMoment small::before { content:' · '; }
+
+.quest-layout #message { left:calc(var(--world-x) + 4px); top:calc(var(--world-y) + 68px); bottom:auto; max-width:calc(var(--world-w) - 8px); transform:none; padding:3px 6px; font-size:11px; }

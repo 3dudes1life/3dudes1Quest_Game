@@ -1,6 +1,9 @@
-const VERSION='3.1.0';
+const VERSION='3.2.0';
 const CACHE=`3dudes1quest-${VERSION}`;
 const CORE=[
+  "./css/retro320.css",
+  "./js/core/quest-retro.js",
+  "./js/core/quest-journey.js",
   "./css/viewport310.css",
   "./js/core/quest-viewport.js",
   "./",

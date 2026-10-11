@@ -1,4 +1,4 @@
-# 3Dudes1Quest 3.1 — Mobile Landscape Rescue
+# 3Dudes1Quest 3.2 — Retro Gameplay & World Polish
 
 A browser platform adventure starring Will, Daniel, Caleb, Rigsby, and Zoey. Restore Southern California, protect Lake Tahoe, and discover the Alaska teaser.
 
@@ -44,6 +44,25 @@ The boss scenarios use controlled game state to cover transitions quickly; they 
 - `alaska.html` → Adventure 3 coming-soon destination
 
 Historical runtime files remain in the repository for reference; the HTML entrypoints above determine what players run.
+
+## 3.2 retro gameplay release
+
+The 3.2 branch starts from verified, deployed 3.1 (`2bd2c3932d66526fa141b4de2176e0b5bcc6b429`). The engine, 1280 × 720 physics world, collision boxes, existing character artwork, abilities, enemies, bosses, collectibles, and save formats remain in place.
+
+- **Both adventures:** `js/core/quest-retro.js` renders the original content on a 320 × 180 grid, maps it to one authored 40-color palette, and presents exact 4 × 4 nearest-neighbor blocks on the logical canvas. Shared character rendering fixes inconsistent scaling and damage flashes. Rainbow Ricochet has block trails and bounce marks; Heartfield Burst has a segmented ring and pixel hearts; Cookie Toss has chocolate chips and a blinking fuse. Combat damage, cooldowns, jump strengths, and maximum speeds are preserved.
+- **Movement:** faster direction reversal, predictable stopping, and one shared camera follow rule. Existing variable-height jumps, buffered input, coyote time, and swept platform landing remain. Partial input objects no longer produce a NaN direction. SoCal rejects repeated damage during invulnerability.
+- **Southern California:** simpler sky bands and evenly lit scenes, clearer platform edges, stepped collectible bobbing, smaller zone announcements, and the same power rendering as Tahoe. Six Gay Cards, three Prism Beacons, Queen of Beige, Rigsby, Zoey, and the rescue/portal sequence remain. Portal completion cannot advance while paused.
+- **Lake Tahoe:** matching palette and HUD, clearer platform edges and collectibles, reduced screen flashes, a 350 ms warning before the Queen charges, checkpoint camera reset, and objective text that distinguishes the original trail beetles from spawned minions. Weather, four nests, six memories, companions, boss phases, and the Alaska teaser remain.
+- **Connected journey:** `js/core/quest-journey.js` provides one five-world route in title/pause menus and durable completion badges. Only SoCal and Tahoe have playable links. Alaska, Costa Rica, and Hawaii are marked coming later. Existing completed saves populate badges without rewriting campaign saves.
+- **Menus:** `css/retro320.css` supplies squared panels, plain colors, monospaced labels, and consistent HUD styling while retaining 3.1 viewport geometry, scrollable menus, adjustable controls, and handedness preferences. Original source artwork is retained; no Nintendo assets or music are introduced.
+
+### 3.2 verification
+
+Ten unit tests cover timing at 30/60/120 Hz, actual movement distance, reversal/stopping, distinct character jumps, tap versus held jumps, landing from above, rising through one-way platforms, jump buffering, camera bounds, pause timing, and backup saves. Browser tests exercise keyboard and touch input, all powers defeating enemies, boss progression, save/reload, checkpoints, collectibles, damage protection, SoCal→Tahoe→Alaska transitions, and offline Tahoe startup. The full 3.1 landscape suite remains enabled.
+
+`tests/retro.cjs` loads genuine 3.1 save fixtures, checks the displayed pixel grid and palette, renders every power in both worlds, checks pause-safe progression and the Queen's charge warning, and captures screenshots under `test-results/retro`. Layout/boss/menu captures remain under `test-results/landscape`. GitHub Actions retains both directories in its gameplay-screenshots artifact. See `tests/fixtures/README.md` for fixture provenance.
+
+This is an NES-inspired presentation, not a hardware-accurate NES emulator. Fractional CSS scaling can produce uneven pixel widths on some screen sizes, but interpolation is disabled and sprites keep their aspect ratio. Palette conversion adds a small per-frame canvas readback; actual low-end phone performance still needs measurement. Automated boss scenarios are not a complete human campaign playthrough. No physical iPhone Safari or Android Chrome certification is claimed; the device checklist below still applies.
 
 ## 3.1 mobile landscape release
 

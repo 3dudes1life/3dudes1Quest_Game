@@ -91,8 +91,8 @@
     const previousVy = player.vy, oldBottom = player.y + player.h;
     motion.coyote = wasGrounded ? 8 : Math.max(0, (motion.coyote || 0) - 1);
     motion.buffer = jumpPressed ? 9 : Math.max(0, (motion.buffer || 0) - 1);
-    const direction = Number(input.right) - Number(input.left);
-    if (direction) { player.vx += direction * .82; player.facing = player.face = direction; }
+    const direction = Number(Boolean(input.right)) - Number(Boolean(input.left));
+    if (direction) { player.vx += direction * (player.vx * direction < 0 ? 1.15 : .82); player.facing = player.face = direction; }
     else player.vx *= .58;
     if (Math.abs(player.vx) < .08) player.vx = 0;
     player.vx = Math.max(-dude.speed, Math.min(dude.speed, player.vx));
@@ -114,6 +114,12 @@
     return { jumped, landed: !wasGrounded && grounded, impact: previousVy };
   }
 
+  function followCamera(camera, player, width, world) {
+    const target = Math.max(0, Math.min(world-width, player.x-width*.36+player.vx*10));
+    const next = camera + (target-camera)*.1;
+    return Math.abs(target-next)<.1 ? target : next;
+  }
+
   function readSave(key, validate = value => value && typeof value === 'object' && !Array.isArray(value)) {
     for (const name of [key, `${key}:backup`]) {
       try { const value = JSON.parse(localStorage.getItem(name) || 'null'); if (validate(value)) return value; } catch (_) {}
@@ -132,5 +138,5 @@
   }
   function clearSave(key) { try { localStorage.removeItem(key); localStorage.removeItem(`${key}:backup`); } catch (_) {} }
   function capEffects(items, maximum = 280) { if (items.length > maximum) items.splice(0, items.length - maximum); }
-  window.QuestRuntime = Object.freeze({ STEP, createLoop, createInput, movePlayer, readSave, writeSave, clearSave, capEffects });
+  window.QuestRuntime = Object.freeze({ STEP, createLoop, createInput, movePlayer, followCamera, readSave, writeSave, clearSave, capEffects });
 })();

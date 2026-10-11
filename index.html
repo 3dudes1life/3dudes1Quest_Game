@@ -7,8 +7,8 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="format-detection" content="telephone=no">
-  <title>3Dudes1Quest v3.1.0 — Mobile Landscape Rescue</title>
-  <link rel="stylesheet" href="css/style.css?v=3.1.0">
+  <title>3Dudes1Quest v3.2.0 — Retro Gameplay & World Polish</title>
+  <link rel="stylesheet" href="css/style.css?v=3.2.0">
 
   <meta name="application-name" content="3Dudes1Quest">
   <meta name="apple-mobile-web-app-title" content="3Dudes1Quest">
@@ -19,12 +19,13 @@
   <meta property="og:description" content="Save Tahoe. Defeat the Queen. Open the portal to Alaska.">
   <meta property="og:image" content="assets/share-card.jpg">
   <meta name="twitter:card" content="summary_large_image">
-  <link rel="manifest" href="manifest.webmanifest?v=3.1.0">
-  <link rel="icon" href="favicon.ico?v=3.1.0" sizes="any">
-  <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32.png?v=3.1.0">
-  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png?v=3.1.0">
-  <link rel="stylesheet" href="css/pwa241.css?v=3.1.0">
-  <link rel="stylesheet" href="css/viewport310.css?v=3.1.0">
+  <link rel="manifest" href="manifest.webmanifest?v=3.2.0">
+  <link rel="icon" href="favicon.ico?v=3.2.0" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32.png?v=3.2.0">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png?v=3.2.0">
+  <link rel="stylesheet" href="css/pwa241.css?v=3.2.0">
+  <link rel="stylesheet" href="css/viewport310.css?v=3.2.0">
+  <link rel="stylesheet" href="css/retro320.css?v=3.2.0">
 </head>
 <body>
 <div id="bootSequence" class="bootSequence" aria-live="polite">
@@ -63,7 +64,7 @@
       </div>
       <div class="card titleMenuCard">
         <div class="eyebrow">3DUDES1LIFE CREATIVE PRESENTS</div>
-        <div class="releaseBadge">v3.1 • MOBILE LANDSCAPE RESCUE</div>
+        <div class="releaseBadge">v3.2 • RETRO QUEST</div>
         <h1>3Dudes1Quest</h1>
         <h2>Adventure 1: Southern California</h2>
         <p>The Queen of Beige is draining the color from SoCal—and she has taken Zoey captive. Follow Rigsby, restore the Prism Beacons, recover every Gay Card, rescue Zoey, and enter the portal together.</p>
@@ -125,8 +126,8 @@
         <button id="helpBtn" class="secondary">How to Play</button>
         <a class="secondary tahoePreviewLaunch" href="tahoe.html">
           <span>🌲</span>
-          <b>Adventure 2 Developer Preview</b>
-          <small>Launch Lake Tahoe instantly</small>
+          <b>World 2: Lake Tahoe</b>
+          <small>Continue the five-world quest</small>
         </a>
         <small>Best played in landscape on mobile.</small>
       </div>
@@ -150,11 +151,11 @@
 
       <div id="hud">
         <div class="chip"><span id="hudDude">Will</span></div>
-        <div class="chip">❤️ <span id="hudHealth">4</span></div>
-        <div class="chip">🪪 <span id="hudCards">0</span>/6</div>
-        <div class="chip">🔮 <span id="hudBeacons">0</span>/3</div>
+        <div class="chip">HP <span id="hudHealth">4</span></div>
+        <div class="chip">CARDS <span id="hudCards">0</span>/6</div>
+        <div class="chip">BEACONS <span id="hudBeacons">0</span>/3</div>
         <div class="chip triangle">△ <span id="hudTriangle">0</span>%</div>
-        <div class="chip">🏆 <span id="hudScore">0</span></div>
+        <div class="chip">SCORE <span id="hudScore">0</span></div>
         <button id="triangleUltimateBtn" class="triangleUltimateBtn hidden" type="button">△ TRIANGLE POWER</button>
         <div class="routeProgress"><span id="routeProgressFill"></span><b id="routeLabel">HOME</b></div>
       </div>
@@ -354,13 +355,15 @@
       </div>
     </section>
   </main>
-  <script src="js/core/quest-runtime.js?v=3.1.0"></script>
-  <script src="js/core/quest-core.js?v=3.1.0"></script>
-  <script src="js/app109.js?v=3.1.0"></script>
-  <script src="js/remaster.js?v=3.1.0"></script>
-  <script src="js/gold-master-self-test.js?v=3.1.0"></script>
+  <script src="js/core/quest-runtime.js?v=3.2.0"></script>
+  <script src="js/core/quest-retro.js?v=3.2.0"></script>
+  <script src="js/core/quest-journey.js?v=3.2.0"></script>
+  <script src="js/core/quest-core.js?v=3.2.0"></script>
+  <script src="js/app109.js?v=3.2.0"></script>
+  <script src="js/remaster.js?v=3.2.0"></script>
+  <script src="js/gold-master-self-test.js?v=3.2.0"></script>
 
-  <script src="js/pwa241.js?v=3.1.0"></script>
-  <script src="js/core/quest-viewport.js?v=3.1.0"></script>
+  <script src="js/pwa241.js?v=3.2.0"></script>
+  <script src="js/core/quest-viewport.js?v=3.2.0"></script>
 </body>
 </html>
