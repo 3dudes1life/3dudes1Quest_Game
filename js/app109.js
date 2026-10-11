@@ -2167,7 +2167,7 @@ class Adventure{
   save(){
     return {
       schema:2,
-      version:'3.4.1',
+      version:window.QuestRelease.version,
       player:{
         x:this.player.x,
         y:this.player.y,
@@ -2383,7 +2383,7 @@ function showAchievement(title,icon='🏆'){const stack=qs('achievementStack');c
 function showCollect(text){const t=qs('collectibleToast');t.textContent=text;t.classList.add('isVisible');clearTimeout(showCollect.t);showCollect.t=setTimeout(()=>t.classList.remove('isVisible'),1450)}
 window.showAchievement=showAchievement;window.showCollectible=showCollect;
 
-const canvas=qs('gameCanvas');canvas.width=W;canvas.height=H;const ui=createUI();let game;const input=createInput(i=>game?.switchDude(i));game=new Adventure(canvas,ui,input,state=>{ui.refs.completeStats.textContent=`All ${state.cards}/6 Gay Cards recovered, ${state.beacons}/3 Prism Beacons restored, and the Queen of Beige defeated.`;ui.show('complete')});window.__questGame=game;window.__QUEST_RELEASE__={version:'3.4.1',coreVersion:window.QuestCore.VERSION,dudeCount:DUDES.length,powers:DUDES.map(dude=>({name:dude.name,power:dude.power,icon:dude.powerIcon})),castLocked:window.QuestCore.validateCast(DUDES)};
+const canvas=qs('gameCanvas');canvas.width=W;canvas.height=H;const ui=createUI();let game;const input=createInput(i=>game?.switchDude(i));game=new Adventure(canvas,ui,input,state=>{ui.refs.completeStats.textContent=`All ${state.cards}/6 Gay Cards recovered, ${state.beacons}/3 Prism Beacons restored, and the Queen of Beige defeated.`;ui.show('complete')});window.__questGame=game;window.__QUEST_RELEASE__={version:window.QuestRelease.version,coreVersion:window.QuestCore.VERSION,dudeCount:DUDES.length,powers:DUDES.map(dude=>({name:dude.name,power:dude.power,icon:dude.powerIcon})),castLocked:window.QuestCore.validateCast(DUDES)};
 const SAVE='3dudes1quest-save-109';
 const LEGACY_SAVES=[
   '3dudes1quest-save-108x','3dudes1quest-save-108w','3dudes1quest-save-108v',
@@ -2403,7 +2403,7 @@ function migrateSave(save){
   return {
     ...save,
     schema:2,
-    version:'3.4.1',
+    version:window.QuestRelease.version,
     savedAt:save.savedAt||new Date().toISOString()
   };
 }

@@ -91,7 +91,7 @@ test('Alaska route has reachable stepped platforms, separated shelters and three
 });
 test('3.4.1 visual upgrade preserves 3.4 character stats and every left/right projectile property',()=>{
  const baseline=JSON.parse(fs.readFileSync('tests/fixtures/power-contract-3.4.json','utf8'));
- const context={window:{},console};vm.runInNewContext(fs.readFileSync('js/core/quest-core.js','utf8'),context);const q=context.window.QuestCore;
+ const context={window:{},console};vm.runInNewContext(fs.readFileSync('js/core/quest-release.js','utf8'),context);vm.runInNewContext(fs.readFileSync('js/core/quest-core.js','utf8'),context);const q=context.window.QuestCore;
  const entities=[];for(let d=0;d<3;d++)for(const facing of [-1,1])entities.push(q.makePowerProjectile(d,{x:700,y:548,facing}).entity);
  assert.deepEqual(JSON.parse(JSON.stringify({stats:q.CAST.map(d=>({speed:d.speed,jump:d.jump,shot:d.shot})),powers:q.POWER_CONTRACT,entities})),baseline);
  assert.equal(q.CAST[0].power,'DJ Soundwave');
@@ -103,4 +103,18 @@ test('3.4.1 visual upgrade preserves 3.4 character stats and every left/right pr
  assert.equal(q.resolveDudeAnimation(attack,1000).frame,0);
  assert.equal(q.resolveDudeAnimation(attack,1200).frame,2);
  assert.equal(q.resolveDudeAnimation(attack,1400).frame,5);
+});
+
+test('release metadata, visible fallback badges and cache source stay aligned',()=>{
+ const context={window:{}};vm.runInNewContext(fs.readFileSync('js/core/quest-release.js','utf8'),context);
+ const version=context.window.QuestRelease.version;
+ assert.equal(fs.readFileSync('VERSION.txt','utf8').trim(),version);
+ assert.equal(JSON.parse(fs.readFileSync('package.json','utf8')).version,version);
+ for(const file of ['index.html','tahoe.html','alaska.html']){
+  const html=fs.readFileSync(file,'utf8');
+  assert.ok(html.includes('data-release-version>v'+version+'</span>'),file+' visible fallback');
+  assert.ok(html.indexOf('quest-release.js')<html.indexOf('quest-core.js'));
+  assert.equal(/v?3\.0\.0|2\.5\.3/.test(html),false);
+ }
+ assert.ok(fs.readFileSync('service-worker.js','utf8').includes('self.QuestRelease.cacheRevision'));
 });

@@ -168,7 +168,7 @@
   QuestAudio.bind(()=>({track:!s.started?'title':s.bossDefeated?'victory':s.bossStarted?world.bossMusic:world.music,paused:s.paused}));
   QuestCore.preloadCastImages(imgs).then(report=>{ready=report.ready&&QuestCore.verifyCastRenderer(imgs).ready;$('beginAdventure').disabled=!ready;$('continueAdventure').disabled=!ready||!QuestRuntime.readSave(world.saveKey);if(!ready)message('Characters could not load. Reload when online.');draw(0)});
   const api={state:s,player,boss,input,clock,save,load,update,draw,start,hit,hurt,fire,setDude,world,renderer};
-  window.__ADVENTURE_DEBUG__={state:s,player,version:'3.4.1'};if(new URLSearchParams(location.search).has('qa'))window.__ADVENTURE_TEST__=api;
+  window.__ADVENTURE_DEBUG__={state:s,player,version:window.QuestRelease.version};if(new URLSearchParams(location.search).has('qa'))window.__ADVENTURE_TEST__=api;
   clock.start();return api;
  }
  window.QuestAdventure=Object.freeze({create});
