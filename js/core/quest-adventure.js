@@ -164,7 +164,7 @@
   $('saveAdventure').addEventListener('click',()=>{const ok=save();$('adventureSaveStatus').textContent=ok?'Checkpoint saved.':'Storage unavailable. Keep this tab open.';if(ok)QuestAudio.effect('save')});
   $('dialogueNext').addEventListener('click',()=>{$('dialogue').classList.add('hidden');s.paused=false;clock.reset();input.focusCanvas();QuestAudio.sync()});
   for(const type of ['blur','pagehide'])addEventListener(type,()=>{if(s.started&&!s.paused&&!s.completed)pause(true)});document.addEventListener('visibilitychange',()=>{if(document.hidden&&s.started&&!s.completed)pause(true)});
-  window.__QUEST_SESSION__={isActive:()=>s.started&&!s.completed,suspendViewport(){const paused=s.paused;s.paused=true;input.releaseAll();save();QuestAudio.sync();return()=>{s.paused=paused;clock.reset();QuestAudio.sync()}}};
+  window.__QUEST_SESSION__={isActive:()=>s.started&&!s.completed,save,pause:()=>pause(true),suspendViewport(){const paused=s.paused;s.paused=true;input.releaseAll();save();QuestAudio.sync();return()=>{s.paused=paused;clock.reset();QuestAudio.sync()}}};
   QuestAudio.bind(()=>({track:!s.started?'title':s.bossDefeated?'victory':s.bossStarted?world.bossMusic:world.music,paused:s.paused}));
   QuestCore.preloadCastImages(imgs).then(report=>{ready=report.ready&&QuestCore.verifyCastRenderer(imgs).ready;$('beginAdventure').disabled=!ready;$('continueAdventure').disabled=!ready||!QuestRuntime.readSave(world.saveKey);if(!ready)message('Characters could not load. Reload when online.');draw(0)});
   const api={state:s,player,boss,input,clock,save,load,update,draw,start,hit,hurt,fire,setDude,world,renderer};

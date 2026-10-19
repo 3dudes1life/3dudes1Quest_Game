@@ -50,7 +50,10 @@ module.exports=async function(browser,base){
   // Death recovery is confined to the active arena; this check targets the hurt path, not completion.
   assert.equal(await p.evaluate(()=>{const g=__questGame;g.state.health=1;g.player.inv=0;g.hurt(g.player.x+50);return g.player.x}),8008);
   await p.locator('#pauseBtn').click();await p.locator('#courtReturnBtn').click();assert.deepEqual(await p.evaluate(()=>[__questGame.player.x,__questGame.state.score,__questGame.boss.hp]),[before.player.x,before.state.score,7]);
-  await p.locator('#pauseBtn').click();await p.locator('#courtReplayBtn').click();await p.keyboard.press('2');await fightCourt(p,'legacy-replay');await p.waitForFunction(()=>!__questGame.courtReplay);const after=await p.evaluate(()=>__questGame.save());
+  // Capture restoration synchronously: the resumed low-health Queen fight can kill the
+  // player before Playwright's next frame/poll, legitimately moving them to a checkpoint.
+  await p.evaluate(()=>{const g=__questGame,restore=g.returnFromCourtReplay;g.returnFromCourtReplay=function(won){restore.call(this,won);if(won){window.courtRestoredSave=this.save();this.pauseGameplay();}}});
+  await p.locator('#pauseBtn').click();await p.locator('#courtReplayBtn').click();await p.keyboard.press('2');await fightCourt(p,'legacy-replay');await p.waitForFunction(()=>!__questGame.courtReplay);const after=await p.evaluate(()=>window.courtRestoredSave);
   assert.deepEqual([after.cards,after.beacons,after.enemies,after.boss,after.player,after.state.score],[before.cards,before.beacons,before.enemies,before.boss,before.player,before.state.score]);assert.equal(after.state.courtVictoryRecorded,true);
   await p.locator('#pauseBtn').click();await p.locator('#saveBtn').click();await p.reload();await p.locator('#continueBtn').click();assert.equal(await p.evaluate(()=>__questGame.state.courtVictoryRecorded),true);
   // Current 3.4.1 saves with an unverified completion flag remain replayable, even after rescue.

@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "test": "node --test tests/runtime.test.cjs",
-    "test:browser": "node tests/browser.cjs"
+    "test:browser": "node tests/browser.cjs",
+    "test:audit": "node tests/audit-playthroughs.cjs all"
   },
   "devDependencies": { "playwright": "1.62.1" }
 }
