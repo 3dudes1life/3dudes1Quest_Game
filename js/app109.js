@@ -9,7 +9,7 @@
       start.disabled=resume.disabled=enter.disabled=true;status.textContent='LOADING YOUR ADVENTURE…';fill.style.width='35%';
       const report=await QuestCore.preloadCastImages(window.__questGame.images);
       if(report.ready){
-        fill.style.width='100%';status.textContent='ADVENTURE READY';start.disabled=resume.disabled=false;
+        fill.style.width='100%';status.textContent='ADVENTURE READY';start.disabled=resume.disabled=false;document.getElementById('ourStoryBtn').disabled=false;
         boot.classList.add('isHidden');boot.style.pointerEvents='none';setTimeout(()=>boot.style.display='none',550);
       }else{
         status.textContent='Some character images could not load. Check your connection and retry.';
@@ -67,7 +67,7 @@ function createLivingTitleWorld(){
   }
   function draw(t){
     if(!running)return;
-    if(!qs('titleScreen').classList.contains('active')){last=t;requestAnimationFrame(draw);return;}
+    if(!qs('titleScreen').classList.contains('active')||window.QuestStory?.active){last=t;requestAnimationFrame(draw);return;}
     const dt=Math.min(32,t-last);last=t;focus+=(targetFocus-focus)*.045;
     const accent=heroColors[selected];
     c.clearRect(0,0,1280,720);
@@ -2531,10 +2531,11 @@ function begin(s=null,startingDude=selectedStartingDude){
 updateStartingDudeSelection(0);
 
 qs('startBtn').onclick=()=>{
-  clearAllQuestSaves();
-  refresh();
-  begin(null,selectedStartingDude);
+  const dude=selectedStartingDude;
+  const start=()=>{clearAllQuestSaves();refresh();begin(null,dude)};
+  if(QuestStory.shouldIntroduce())QuestStory.play({dude,onFinish:start});else start();
 };
+qs('ourStoryBtn').onclick=()=>QuestStory.play({dude:selectedStartingDude,onFinish:()=>qs('ourStoryBtn').focus()});
 qs('continueBtn').onclick=()=>begin(readSave());
 qs('helpBtn').onclick=()=>ui.show('help');
 qs('backBtn').onclick=()=>ui.show('title');
@@ -2655,4 +2656,4 @@ window.__QUEST_SESSION__={isActive:()=>game.running,save:()=>persistQuest('updat
   return ()=>{game.input.releaseAll();game.clock.reset();game.state.paused=paused;};
 }};
 
-QuestAudio.bind(()=>({track:qs('titleScreen').classList.contains('active')?'title':game.court.active?'boss':game.state.bossDefeated?'victory':game.running?((game.boss.active&&game.boss.alive)||game.court.active?'boss':'socal'):'title',paused:game.running&&game.state.paused}));
+QuestAudio.bind(()=>QuestStory.active?QuestStory.audioScene():({track:qs('titleScreen').classList.contains('active')?'title':game.court.active?'boss':game.state.bossDefeated?'victory':game.running?((game.boss.active&&game.boss.alive)||game.court.active?'boss':'socal'):'title',paused:game.running&&game.state.paused}));

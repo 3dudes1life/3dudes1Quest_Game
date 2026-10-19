@@ -74,7 +74,7 @@ test('original scores have complete phrases, valid pitches and distinct melodies
  const context={window:{}};vm.runInNewContext(fs.readFileSync('js/core/quest-score.js','utf8'),context);
  const {songs,notes}=context.window.QuestScore;const melodies=new Set();
  for(const song of Object.values(songs)){assert.equal(song.melody.length%8,0);assert.equal(song.roots.length*8,song.melody.length);assert.ok(song.bpm>=90&&song.bpm<=180);melodies.add(song.melody.join(','));for(let i=0;i<song.melody.length;i++){assert.ok(song.melody[i]===0||(song.melody[i]>=48&&song.melody[i]<=96));for(const spec of notes(song,i)){assert.ok(spec[1]>0&&spec[2]>0&&spec[3]>0&&spec[5]<=.2)}}}
- assert.equal(melodies.size,7);
+ assert.equal(melodies.size,11);
 });
 test('all named gameplay sounds resolve to short original effects',()=>{
  const context={window:{}};vm.runInNewContext(fs.readFileSync('js/core/quest-score.js','utf8'),context);const {effects}=context.window.QuestScore;

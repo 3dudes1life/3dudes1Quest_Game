@@ -6,6 +6,8 @@ const CORE=[
   "./VERSION.txt",
   "./package.json",
   "./js/core/quest-cast.js",
+  "./js/core/quest-story.js",
+  "./css/origin-story.css",
   "./assets/cast340/socal.png",
   "./assets/cast340/tahoe.png",
   "./assets/cast340/alaska.png",

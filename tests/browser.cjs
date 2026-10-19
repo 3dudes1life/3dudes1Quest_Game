@@ -15,6 +15,10 @@ const server=http.createServer((req,res)=>{
  await new Promise(resolve=>server.listen(0,'127.0.0.1',resolve));
  const base=`http://127.0.0.1:${server.address().port}`;
  const browser=await chromium.launch({headless:true,...(process.env.CHROME_PATH?{executablePath:process.env.CHROME_PATH}:{})});
+ // Existing gameplay scenarios represent returning players. The dedicated story suite
+ // below removes this separate presentation preference to test genuine first entry.
+ const newContext=browser.newContext.bind(browser);
+ browser.newContext=async options=>{const c=await newContext(options);await c.addInitScript(()=>localStorage.setItem('3dudes1quest-origin-seen','1'));return c};
  try{
   for(const mobile of [false,true]){
    const context=await browser.newContext({viewport:mobile?{width:844,height:390}:{width:1280,height:800},isMobile:mobile,hasTouch:mobile,serviceWorkers:'block'});
@@ -82,6 +86,7 @@ const server=http.createServer((req,res)=>{
   await require('./release-version.cjs')(browser,base);
   await require('./master-audit-ui.cjs')(browser,base);
   await require('./court-progression341.cjs')(browser,base);
+  await require('./origin-story.cjs')(browser,base);
   const context=await browser.newContext();const page=await context.newPage();await page.goto(base+'/index.html');
   await page.evaluate(()=>navigator.serviceWorker.ready);await page.reload();await context.setOffline(true);await page.goto(base+'/tahoe.html');await page.waitForFunction(()=>!document.getElementById('beginTahoe').disabled);await page.locator('#beginTahoe').click();assert.equal(await page.evaluate(()=>__TAHOE_DEBUG__.state.started),true);await page.waitForFunction(()=>QuestAudio.status().track==='tahoe'&&QuestAudio.status().rms>.0001);console.log('PASS installed release launches Tahoe and synthesized music offline');await context.close();
  }finally{await browser.close();server.close()}

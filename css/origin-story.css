@@ -1,0 +1,20 @@
+/* The cinematic owns only its modal; the shared viewport still owns game layout. */
+#originStory{position:fixed;inset:0;margin:0;box-sizing:border-box;width:100%;height:100%;max-width:none;max-height:none;border:0;padding:max(8px,env(safe-area-inset-top)) max(12px,env(safe-area-inset-right)) max(8px,env(safe-area-inset-bottom)) max(12px,env(safe-area-inset-left));background:#080b20;color:#fff;overflow:auto;font-family:ui-monospace,SFMono-Regular,Consolas,monospace}
+#originStory[open]{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px}
+#originStory::backdrop{background:#080b20}
+.storyStage{position:relative;flex:none;width:min(100%,calc((100dvh - 82px - env(safe-area-inset-top) - env(safe-area-inset-bottom))*16/9),1100px);aspect-ratio:16/9;background:#10132d;border:2px solid #6f87ba;box-shadow:0 0 0 3px #171a39;overflow:hidden}
+#storyCanvas{display:block;width:100%;height:100%;image-rendering:pixelated}
+#originStory .storyScene{position:absolute;left:3%;top:4%;margin:0;padding:5px 8px;background:#11172ee8!important;color:#f5d7a4!important;font-size:clamp(10px,1.6vw,16px);line-height:1.2;letter-spacing:.06em}
+.storyCaption{position:absolute;bottom:0;left:0;right:0;box-sizing:border-box;min-height:27%;display:flex;align-items:center;justify-content:center;margin:0;padding:9px 5%;border-top:2px solid #646f9a;background:#0d122df5;text-align:center;font-size:clamp(14px,2.15vw,24px);line-height:1.4;text-wrap:pretty;color:#fff8ec}
+.storyControls{width:min(100%,1100px);display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap}
+#originStory button{min-height:44px;min-width:44px;width:auto;margin:0;border:2px solid #6f87ba;border-radius:3px;padding:7px 12px;background:#192442;color:#fff;font:700 13px ui-monospace,monospace;cursor:pointer;box-shadow:none}
+#originStory button:hover{background:#2c3765}#originStory button:focus-visible{outline:3px solid #ffd47c;outline-offset:2px}
+#storySkip{border-color:#ffc778!important;color:#ffe0a4!important}
+.storyTime{font-size:12px;color:#cdd9ed;white-space:nowrap;min-width:94px;text-align:center}
+#storyProgress{height:4px;width:100%;max-width:1100px;background:#303954;flex:none;overflow:hidden}
+#storyProgress span{height:100%;display:block;background:#ffb878;width:0}
+#storyNotice{position:absolute;inset:32% 12% auto;z-index:1;padding:12px;background:#11172df5;border:2px solid #f9c978;text-align:center;font-size:clamp(14px,2vw,22px);line-height:1.4}
+#storyNotice[hidden]{display:none}
+@media(max-height:420px){#originStory[open]{gap:4px}.storyStage{width:min(100%,calc((100dvh - 76px - env(safe-area-inset-top) - env(safe-area-inset-bottom))*16/9))}.storyControls{gap:5px}#originStory button{padding:5px 9px;font-size:12px}.storyCaption{padding:6px 4%;font-size:clamp(13px,1.9vw,19px)}}
+@media(orientation:portrait){.storyStage{width:100%;}.storyControls{max-width:550px}#originStory[open]{justify-content:center}.storyCaption{font-size:clamp(12px,3.1vw,20px)}}
+@media(prefers-reduced-motion:reduce){#originStory *{scroll-behavior:auto;transition:none!important;animation:none!important}}
