@@ -18,13 +18,13 @@ html.quest-layout, .quest-layout body { margin:0; padding:0; width:100%; height:
 .quest-layout #objectiveCard strong, .quest-layout #objective strong { font:700 12px/18px system-ui; margin:0; display:block; }
 .quest-layout #bossHud, .quest-layout #bossPhase { position:absolute; top:49px; left:auto; right:8px; bottom:auto; transform:none; width:40%; padding:2px 6px; margin:0; min-height:0; min-width:0; font-size:11px; }
 .quest-layout #bossHud { display:grid; grid-template-columns:auto 1fr auto; align-items:center; gap:6px; }
-.quest-layout #bossHud small, .quest-layout #bossHud b { font-size:9px; margin:0; letter-spacing:0; }
+.quest-layout #bossHud small, .quest-layout #bossHud b { font-size:10px; margin:0; letter-spacing:0; }
 .quest-layout #bossHud #bossPhase { position:static; width:auto; }
 .quest-layout #bossHud div { height:8px; }
 .quest-layout #touchControls { position:absolute; left:8px; right:8px; bottom:6px; padding:0; gap:8px; height:calc(var(--control-size) + 8px); pointer-events:none!important; opacity:1!important; }
 .quest-layout #touchControls .touchGroup { gap:5px; padding:3px; border-radius:14px; pointer-events:auto; }
 .quest-layout #touchControls button, .quest-layout #touchControls .mini { width:var(--control-size); min-width:var(--control-size); height:var(--control-size); min-height:44px; border-radius:14px; flex-shrink:0; padding:3px!important; }
-.quest-layout #touchControls .controlLabel { font-size:9px!important; letter-spacing:0; }
+.quest-layout #touchControls .controlLabel { font-size:10px!important; letter-spacing:0; }
 .quest-layout #touchControls .controlIcon { font-size:20px!important; }
 .quest-layout[data-control-hand=left] #touchControls { flex-direction:row-reverse; }
 .quest-layout #powerCharge { left:50%; bottom:8px; top:auto; transform:translateX(-50%); width:112px; }
@@ -91,3 +91,6 @@ html.quest-layout, .quest-layout body { margin:0; padding:0; width:100%; height:
 .quest-layout .courtReplayActions button { flex:1 1 220px; min-height:44px; }
 .quest-layout .courtReplayActions p { flex-basis:100%; font:12px/1.4 ui-monospace,monospace; margin:0 0 8px; }
 .quest-layout .courtReplayActions [hidden] { display:none!important; }
+
+/* Opening screens expose start/continue actions; gameplay controls appear after entry. */
+.quest-layout #tahoeApp:has(#openingCard:not(.hidden)) :is(#tahoeHud,#touchControls,#pauseBtn,#returnBtn,#objective,#powerCharge,#bossHud) { visibility:hidden; pointer-events:none; }

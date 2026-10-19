@@ -30,10 +30,10 @@ module.exports=async function(browser,base){
   await c.close();oldMetadata=true;
   const imported=await browser.newContext(),ip=await imported.newPage();
   try{
-   await ip.goto(url+'/index.html');await ip.evaluate(()=>navigator.serviceWorker.ready);await ip.reload();await ip.waitForFunction(()=>navigator.serviceWorker.controller&&window.QuestRelease);await ip.waitForFunction(()=>!document.getElementById('startBtn').disabled);
+   await ip.goto(url+'/alaska.html');await ip.evaluate(()=>navigator.serviceWorker.ready);await ip.reload();await ip.waitForFunction(()=>navigator.serviceWorker.controller&&window.QuestRelease);await ip.waitForFunction(()=>!document.getElementById('beginAdventure').disabled);await ip.locator('#beginAdventure').click();await ip.locator('#pauseBtn').click();
    await ip.evaluate(async()=>{await (await navigator.serviceWorker.getRegistration()).update()});
    assert.equal(await ip.evaluate(()=>QuestRelease.cacheRevision),'import-update-test-old');oldMetadata=false;
-   await ip.evaluate(async()=>{await (await navigator.serviceWorker.getRegistration()).update()});await ip.locator('#pwaUpdate').waitFor({timeout:60000});await ip.locator('#pwaUpdate').click();await ip.waitForFunction(()=>window.QuestRelease&&QuestRelease.cacheRevision!=='import-update-test-old');
+   await ip.evaluate(async()=>{await (await navigator.serviceWorker.getRegistration()).update()});await ip.locator('#pwaUpdate').waitFor({timeout:60000});await ip.locator('#pwaUpdate').click();await ip.waitForFunction(()=>window.QuestRelease&&QuestRelease.cacheRevision!=='import-update-test-old');await ip.locator('#continueAdventure').click();assert.equal(await ip.evaluate(()=>__ADVENTURE_DEBUG__.state.checkpoint),160);
    assert.equal(await ip.evaluate(()=>caches.has('3dudes1quest-3.4.1-import-update-test-old')),true);
   }finally{await imported.close();}
  }finally{await c.close();await new Promise(resolve=>server.close(resolve));}

@@ -35,7 +35,7 @@ const ZONES=[
   {id:'home',name:'HOME BASE',start:0,end:1450,color:'#ff9d78',objective:'Find Zoey',detail:'Follow Rigsby and recover the first Gay Card. Zoey has been taken by the Queen of Beige.'},
   {id:'hillcrest',name:'HILLCREST',start:1450,end:3300,color:'#ff4fb8',objective:'Restore Hillcrest',detail:'Collect two Gay Cards and activate the neighborhood Prism Beacon.'},
   {id:'pch',name:'PCH',start:3300,end:5000,color:'#3ce7d2',objective:'Race the PCH',detail:'Cross the coast, avoid Beige Bots, and restore the ocean beacon.'},
-  {id:'hollywood',name:'HOLLYWOOD',start:5000,end:6600,color:'#ffe66d',objective:'Take Back Hollywood',detail:'Climb the studio district and recover the final Gay Card.'},
+  {id:'hollywood',name:'HOLLYWOOD',start:5000,end:6600,color:'#ffe66d',objective:'Take Back Hollywood',detail:'Cross the studio district toward Los Angeles. The final Gay Card is on the downtown approach.'},
   {id:'la',name:'LOS ANGELES',start:6600,end:9200,color:'#8d5cff',objective:'Rescue Zoey',detail:'Restore the final beacon, defeat the Queen of Beige, and free Zoey from the HOA cage.'}
 ];
 

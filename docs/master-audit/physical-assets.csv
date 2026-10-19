@@ -1,0 +1,93 @@
+path,dimensions,bytes,observed_in_normal_routes,production_match,role
+assets/caleb.png,32x48,308,False,True,precache/static reference; not proof of active rendering
+assets/cast340/alaska.png,1374x1145,1421558,True,True,runtime-observed
+assets/cast340/socal.png,1374x1145,1382058,True,True,runtime-observed
+assets/cast340/tahoe.png,1373x1145,1367829,True,True,runtime-observed
+assets/cast341/caleb.png,1024x1536,2428751,True,True,runtime-observed
+assets/cast341/daniel.png,1246x1262,1802247,True,True,runtime-observed
+assets/cast341/will.png,1261x1247,1886618,True,True,runtime-observed
+assets/daniel.png,32x48,305,False,True,precache/static reference; not proof of active rendering
+assets/effects/beige_bloom.png,256x256,62457,False,True,precache/static reference; not proof of active rendering
+assets/effects/cookie_bloom.png,256x256,62954,False,True,precache/static reference; not proof of active rendering
+assets/effects/prism_bloom.png,256x256,67942,False,True,precache/static reference; not proof of active rendering
+assets/effects/rainbow_bloom.png,256x256,67053,False,True,precache/static reference; not proof of active rendering
+assets/effects/shield_bloom.png,256x256,66649,False,True,precache/static reference; not proof of active rendering
+assets/environments/hillcrest_fg.png,1600x720,7574,False,True,precache/static reference; not proof of active rendering
+assets/environments/hillcrest_hd.png,1600x720,15163,False,True,precache/static reference; not proof of active rendering
+assets/environments/hoa_arena_fg.png,1600x720,5320,False,True,precache/static reference; not proof of active rendering
+assets/environments/hoa_arena_hd.png,1600x720,96043,False,True,precache/static reference; not proof of active rendering
+assets/environments/home_base_fg.png,1600x720,9494,False,True,precache/static reference; not proof of active rendering
+assets/environments/home_base_hd.png,1600x720,16974,False,True,precache/static reference; not proof of active rendering
+assets/environments/home_base_remastered.svg,viewBox 0 0 1280 720,6412,True,True,runtime-observed
+assets/environments/los_angeles_fg.png,1600x720,5392,False,True,precache/static reference; not proof of active rendering
+assets/environments/los_angeles_hd.png,1600x720,18872,False,True,precache/static reference; not proof of active rendering
+assets/environments/pch_fg.png,1600x720,7768,False,True,precache/static reference; not proof of active rendering
+assets/environments/pch_hd.png,1600x720,18578,False,True,precache/static reference; not proof of active rendering
+assets/hoa_queen.png,32x48,305,False,True,precache/static reference; not proof of active rendering
+assets/npc_pride.png,32x48,306,False,True,precache/static reference; not proof of active rendering
+assets/portraits/cafe_regular.png,192x192,1623,False,True,precache/static reference; not proof of active rendering
+assets/portraits/caleb.png,192x192,1622,False,True,precache/static reference; not proof of active rendering
+assets/portraits/coastal local.png,192x192,1630,False,True,precache/static reference; not proof of active rendering
+assets/portraits/coastal_local.png,192x192,1630,False,True,precache/static reference; not proof of active rendering
+assets/portraits/daniel.png,192x192,1633,False,True,precache/static reference; not proof of active rendering
+assets/portraits/hillcrest local.png,192x192,1630,False,True,precache/static reference; not proof of active rendering
+assets/portraits/hillcrest_local.png,192x192,1630,False,True,precache/static reference; not proof of active rendering
+assets/portraits/hoa queen.png,192x192,1622,False,True,precache/static reference; not proof of active rendering
+assets/portraits/hoa_queen.png,192x192,1622,False,True,precache/static reference; not proof of active rendering
+assets/portraits/la local.png,192x192,1630,False,True,precache/static reference; not proof of active rendering
+assets/portraits/la_local.png,192x192,1630,False,True,precache/static reference; not proof of active rendering
+assets/portraits/neighbor.png,192x192,1621,False,True,precache/static reference; not proof of active rendering
+assets/portraits/will.png,192x192,1819,False,True,precache/static reference; not proof of active rendering
+assets/sprites/caleb_walk.png,192x72,1637,False,True,precache/static reference; not proof of active rendering
+assets/sprites/daniel_walk.png,192x72,1519,False,True,precache/static reference; not proof of active rendering
+assets/sprites/enemy_beigeBot.png,192x48,620,False,True,precache/static reference; not proof of active rendering
+assets/sprites/enemy_hoaDrone.png,192x48,525,False,True,precache/static reference; not proof of active rendering
+assets/sprites/enemy_scooter.png,192x48,725,False,True,precache/static reference; not proof of active rendering
+assets/sprites/enemy_troll.png,192x48,616,False,True,precache/static reference; not proof of active rendering
+assets/sprites/hoa_queen_boss.png,512x144,3552,False,True,precache/static reference; not proof of active rendering
+assets/sprites/npc_cafe.png,192x72,1427,False,True,precache/static reference; not proof of active rendering
+assets/sprites/npc_coastal.png,192x72,1368,False,True,precache/static reference; not proof of active rendering
+assets/sprites/npc_hillcrest.png,192x72,1402,False,True,precache/static reference; not proof of active rendering
+assets/sprites/npc_la.png,192x72,1385,False,True,precache/static reference; not proof of active rendering
+assets/sprites/npc_neighbor.png,192x72,1414,False,True,precache/static reference; not proof of active rendering
+assets/sprites/rigsby_walk.png,256x48,934,False,True,precache/static reference; not proof of active rendering
+assets/sprites/will_walk.png,192x72,1549,False,True,precache/static reference; not proof of active rendering
+assets/sprites_hd/caleb_attack.png,768x192,39954,False,True,precache/static reference; not proof of active rendering
+assets/sprites_hd/caleb_celebrate.png,1024x192,49527,False,True,precache/static reference; not proof of active rendering
+assets/sprites_hd/caleb_hurt.png,512x192,56029,False,True,precache/static reference; not proof of active rendering
+assets/sprites_hd/caleb_idle.png,768x192,33587,False,True,precache/static reference; not proof of active rendering
+assets/sprites_hd/caleb_jump.png,512x192,34453,False,True,precache/static reference; not proof of active rendering
+assets/sprites_hd/caleb_walk.png,1024x192,49989,False,True,precache/static reference; not proof of active rendering
+assets/sprites_hd/daniel_attack.png,768x192,46861,False,True,precache/static reference; not proof of active rendering
+assets/sprites_hd/daniel_celebrate.png,1024x192,58815,False,True,precache/static reference; not proof of active rendering
+assets/sprites_hd/daniel_hurt.png,512x192,60497,False,True,precache/static reference; not proof of active rendering
+assets/sprites_hd/daniel_idle.png,768x192,38250,False,True,precache/static reference; not proof of active rendering
+assets/sprites_hd/daniel_jump.png,512x192,39700,False,True,precache/static reference; not proof of active rendering
+assets/sprites_hd/daniel_walk.png,1024x192,58608,False,True,precache/static reference; not proof of active rendering
+assets/sprites_hd/hoa_queen_attack.png,1320x260,50136,False,True,precache/static reference; not proof of active rendering
+assets/sprites_hd/hoa_queen_defeat.png,1760x260,76305,False,True,precache/static reference; not proof of active rendering
+assets/sprites_hd/hoa_queen_idle.png,1320x260,49235,True,True,runtime-observed
+assets/sprites_hd/hoa_queen_rage.png,1760x260,63267,False,True,precache/static reference; not proof of active rendering
+assets/sprites_hd/rigsby_bark.png,640x96,30268,False,True,precache/static reference; not proof of active rendering
+assets/sprites_hd/rigsby_idle.png,768x96,22344,False,True,precache/static reference; not proof of active rendering
+assets/sprites_hd/rigsby_rescue.png,1024x96,43323,False,True,precache/static reference; not proof of active rendering
+assets/sprites_hd/rigsby_walk.png,1024x96,31228,False,True,precache/static reference; not proof of active rendering
+assets/sprites_hd/will_attack.png,768x192,48336,False,True,precache/static reference; not proof of active rendering
+assets/sprites_hd/will_celebrate.png,1024x192,49004,False,True,precache/static reference; not proof of active rendering
+assets/sprites_hd/will_hurt.png,512x192,56336,False,True,precache/static reference; not proof of active rendering
+assets/sprites_hd/will_idle.png,768x192,33553,False,True,precache/static reference; not proof of active rendering
+assets/sprites_hd/will_jump.png,512x192,35404,False,True,precache/static reference; not proof of active rendering
+assets/sprites_hd/will_walk.png,1024x192,49738,False,True,precache/static reference; not proof of active rendering
+assets/sprites_hd/zoey_walk.png,1024x96,3426,False,True,precache/static reference; not proof of active rendering
+assets/ui/dialogue_panel.png,1100x250,7573,False,True,precache/static reference; not proof of active rendering
+assets/ui/hud_panel.png,620x150,5987,False,True,precache/static reference; not proof of active rendering
+assets/ui/journal_panel.png,1200x760,11433,False,True,precache/static reference; not proof of active rendering
+assets/ui/objective_panel.png,430x170,5942,False,True,precache/static reference; not proof of active rendering
+assets/ui/ui_icons.png,512x128,1814,False,True,precache/static reference; not proof of active rendering
+assets/will.png,32x48,300,False,True,precache/static reference; not proof of active rendering
+favicon.ico,,15280,False,True,precache/static reference; not proof of active rendering
+icons/apple-touch-icon.png,180x180,26067,False,True,precache/static reference; not proof of active rendering
+icons/favicon-16.png,16x16,814,False,True,precache/static reference; not proof of active rendering
+icons/favicon-32.png,32x32,2527,False,True,precache/static reference; not proof of active rendering
+icons/icon-192.png,192x192,28585,False,True,precache/static reference; not proof of active rendering
+icons/icon-512.png,512x512,75536,False,True,precache/static reference; not proof of active rendering

@@ -1,0 +1,107 @@
+{
+  "socal": {
+    "world": "socal",
+    "method": "normal keyboard; read-only state observations; no teleports/invulnerability/boss edits",
+    "seconds": 67.748,
+    "result": {
+      "complete": true,
+      "cards": 6,
+      "beacons": 3,
+      "court": true,
+      "queen": true,
+      "zoey": true,
+      "links": [
+        "tahoe.html"
+      ]
+    },
+    "events": [],
+    "errors": []
+  },
+  "tahoe": {
+    "world": "tahoe",
+    "method": "normal keyboard; read-only state observations; no teleports/invulnerability/boss edits",
+    "seconds": 46.913,
+    "result": {
+      "queen": true,
+      "nests": 4,
+      "memories": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "checkpoint": 6820,
+      "beetles": 32,
+      "transition": "/alaska.html"
+    },
+    "events": [
+      {
+        "phase": 1,
+        "x": 8438.300000000014,
+        "health": 4
+      },
+      {
+        "phase": 2,
+        "x": 8389.474922209496,
+        "health": 4
+      },
+      {
+        "phase": 3,
+        "x": 8394.203934505864,
+        "health": 4
+      }
+    ],
+    "errors": []
+  },
+  "alaska": {
+    "world": "alaska",
+    "method": "normal keyboard; read-only state observations; no teleports/invulnerability/boss edits",
+    "seconds": 29.372,
+    "result": {
+      "completed": true,
+      "deaths": 0,
+      "sessionMethods": [
+        "isActive",
+        "save",
+        "pause",
+        "suspendViewport"
+      ],
+      "ending": "ADVENTURE 3 COMPLETE\nThe Aurora Returns\n\nTHE LAST FRONTIER IS SAVED! Her curse breaks, the salmon return to normal, and the northern lights shine in rainbow colors. Rigsby celebrates with snow zoomies; Zoey retrieves the trail keeper\u2019s satchel.\n\nBeyond the portal: Costa Rica, where Caleb hopes the cookies will finally stay warm.\n\nNEXT ADVENTURE: COSTA RICA \u00b7 COMING SOON...\nReplay Alaska\nReturn to Quest Hub"
+    },
+    "events": [],
+    "errors": []
+  },
+  "production_baseline": {
+    "commit": "2b1859551861bd2b6106d14ff8980892c3586c80",
+    "files_compared": 123,
+    "files_matched": 123,
+    "open_prs": 0,
+    "latest_ci": 38169654387,
+    "deployment": 38169653776,
+    "status": "success"
+  },
+  "physical_devices": "not tested",
+  "long_session_stress": "not established",
+  "short_emulated_performance": [
+    {
+      "mobile": false,
+      "median": 16.699999999999818,
+      "p95": 16.799999999999727,
+      "heapStart": 8151853,
+      "heapEnd": 7452881,
+      "voices": 9,
+      "resolution": "1280x720"
+    },
+    {
+      "mobile": true,
+      "median": 16.699999999999818,
+      "p95": 16.700000000000273,
+      "heapStart": 7495011,
+      "heapEnd": 8353828,
+      "voices": 9,
+      "resolution": "640x360"
+    }
+  ]
+}

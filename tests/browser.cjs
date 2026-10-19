@@ -80,6 +80,7 @@ const server=http.createServer((req,res)=>{
   await require('./master340.cjs')(browser,base);
   await require('./characters341.cjs')(browser,base);
   await require('./release-version.cjs')(browser,base);
+  await require('./master-audit-ui.cjs')(browser,base);
   await require('./court-progression341.cjs')(browser,base);
   const context=await browser.newContext();const page=await context.newPage();await page.goto(base+'/index.html');
   await page.evaluate(()=>navigator.serviceWorker.ready);await page.reload();await context.setOffline(true);await page.goto(base+'/tahoe.html');await page.waitForFunction(()=>!document.getElementById('beginTahoe').disabled);await page.locator('#beginTahoe').click();assert.equal(await page.evaluate(()=>__TAHOE_DEBUG__.state.started),true);await page.waitForFunction(()=>QuestAudio.status().track==='tahoe'&&QuestAudio.status().rms>.0001);console.log('PASS installed release launches Tahoe and synthesized music offline');await context.close();
