@@ -61,6 +61,8 @@ Normal-keyboard verification completed:
 
 These used real keyboard events and the ordinary simulation clock. Read-only state observations guided the scripts; they did not teleport, set invulnerability, edit health/boss flags or skip required progression. [Machine-readable route/results evidence](master-audit/test-results.json). `npm run test:audit` reproduces the complete required routes in isolated contexts against a local candidate server; `AUDIT_BASE` can select another server. It does not use the owner's personal browser/save.
 
+CI exposed a race in the existing Court replay preservation test: after restoration, the low-health Queen fight resumed before the next browser poll and could legitimately respawn at its checkpoint. The controlled test now captures restoration synchronously and pauses before checking the saved campaign. The production replay behavior is unchanged.
+
 Controlled scenarios remain separate: older boss arena seeds, direct collision/power/death checks, corrupt/quota save fault injection, legacy checkpoint fixtures, and imported-worker update fixtures. They supplement natural play and are not described as complete campaign playthroughs.
 
 ## Audio, performance and reliability
