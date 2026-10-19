@@ -141,6 +141,20 @@
   function status(){const data=analyser?new Float32Array(analyser.fftSize):[];analyser?.getFloatTimeDomainData(data);return {initialized:!!ctx,state:ctx?.state||'locked',blocked,track,cursor,playing,completed,voices:voices.size,musicVoices:[...voices].filter(v=>v.group==='music').length,sfxVoices:[...voices].filter(v=>v.group==='sfx').length,ahead:ctx?nextAt-ctx.currentTime:0,peakVoices,scheduled,dropped,transitions,schedulers:interval===null?0:1,settings:{...settings},events:{...counts},signalPeak:data.length?data.reduce((max,v)=>Math.max(max,Math.abs(v)),0):0,rms:data.length?Math.sqrt(data.reduce((sum,v)=>sum+v*v,0)/data.length):0}}
   window.QuestAudio=Object.freeze({effect,configure,bind(fn){provider=fn;sync()},sync,suspend,status});
   if(new URLSearchParams(location.search).has('audioqa'))window.__QUEST_AUDIO_TEST__={
+    async renderStory(){
+      const Offline=window.OfflineAudioContext||window.webkitOfflineAudioContext;
+      const seconds=QuestStory.duration,offline=new Offline(1,44100*seconds,44100),g=graph(offline);
+      const segments=[];
+      for(const scene of QuestStory.scenes)if(segments.at(-1)?.music!==scene.music)segments.push({at:scene.at,music:scene.music});
+      for(let s=0;s<segments.length;s++){
+        const segment=segments[s],end=segments[s+1]?.at??seconds,song=QuestScore.songs[segment.music],step=30/song.bpm;
+        for(let i=0;segment.at+i*step<end-.03;i++)for(const spec of QuestScore.notes(song,i)){
+          const at=segment.at+i*step+.01,remaining=end-at-(spec[4]||0);
+          if(remaining>.03)synth(offline,g.music,[...spec.slice(0,3),Math.min(spec[3],remaining),...spec.slice(4)],at,g);
+        }
+      }
+      return Array.from((await offline.startRendering()).getChannelData(0));
+    },
     async renderRetired(){
       const Offline=window.OfflineAudioContext||window.webkitOfflineAudioContext;
       const offline=new Offline(1,4410,44100),g=graph(offline);
@@ -148,7 +162,7 @@
       return Array.from((await offline.startRendering()).getChannelData(0));
     },
     async render(name,seconds=8){
-      seconds=Math.min(20,Math.max(1,seconds));const Offline=window.OfflineAudioContext||window.webkitOfflineAudioContext;
+      seconds=Math.min(24,Math.max(1,seconds));const Offline=window.OfflineAudioContext||window.webkitOfflineAudioContext;
       const offline=new Offline(1,44100*seconds,44100),g=graph(offline),song=QuestScore.songs[name];
       if(song){const step=30/song.bpm;for(let i=0;i*step<seconds-.5;i++){if(song.once&&i>=song.melody.length)break;for(const spec of QuestScore.notes(song,i))synth(offline,g.music,spec,i*step+.01,g)}}
       else{if(!QuestScore.effects[name])throw Error('Unknown cue');for(const spec of QuestScore.effects[name])synth(offline,g.sfx,spec,.05,g)}

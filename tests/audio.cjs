@@ -86,7 +86,9 @@ module.exports=async function audioChecks(browser,base){
  const names=await page.evaluate(()=>[...Object.keys(QuestScore.songs),...Object.keys(QuestScore.effects)]);
  const report={};
  for(const name of names){
-  const song=await page.evaluate(n=>QuestScore.songs[n]||null,name),seconds=song?20:2;
+  // The gentle 96 BPM story phrase is 20s long: include its seam and tail rather
+  // than reading beyond a fixed 20s render and falsely reporting silent audio.
+  const song=await page.evaluate(n=>QuestScore.songs[n]||null,name),seconds=song?Math.max(20,song.melody.length*30/song.bpm+1):2;
   const pcm=await page.evaluate(({name,seconds})=>__QUEST_AUDIO_TEST__.render(name,seconds),{name,seconds});
   let peak=0,energy=0;for(const value of pcm){assert.ok(Number.isFinite(value));peak=Math.max(peak,Math.abs(value));energy+=value*value}
   const rms=Math.sqrt(energy/pcm.length);assert.ok(rms>.0001,`${name} is silent`);assert.ok(peak<.95,`${name} clips`);
@@ -96,5 +98,5 @@ module.exports=async function audioChecks(browser,base){
    const wav=Buffer.alloc(44+pcm.length*2);wav.write('RIFF');wav.writeUInt32LE(wav.length-8,4);wav.write('WAVEfmt ',8);wav.writeUInt32LE(16,16);wav.writeUInt16LE(1,20);wav.writeUInt16LE(1,22);wav.writeUInt32LE(44100,24);wav.writeUInt32LE(88200,28);wav.writeUInt16LE(2,32);wav.writeUInt16LE(16,34);wav.write('data',36);wav.writeUInt32LE(pcm.length*2,40);pcm.forEach((value,i)=>wav.writeInt16LE(Math.round(Math.max(-1,Math.min(1,value))*32767),44+i*2));fs.writeFileSync(path.join(out,name+'.wav'),wav);
   }
  }
- fs.writeFileSync(path.join(out,'signal-report.json'),JSON.stringify(report,null,2));await context.close();console.log('PASS real Web Audio renders: seven original scores and all effects produce finite, non-silent, unclipped output; loop boundaries contain signal');
+ fs.writeFileSync(path.join(out,'signal-report.json'),JSON.stringify(report,null,2));await context.close();console.log('PASS real Web Audio renders: original gameplay and story scores and all effects produce finite, non-silent, unclipped output; loop boundaries contain signal');
 };

@@ -4,7 +4,7 @@
   const worlds=Object.freeze([
     {id:'socal',name:'Southern California',url:'index.html'},
     {id:'tahoe',name:'Lake Tahoe',url:'tahoe.html'},
-    {id:'alaska',name:'Alaska',url:'alaska.html'}, {id:'costa-rica',name:'Costa Rica'}, {id:'hawaii',name:'Hawaii'}
+    {id:'alaska',name:'Alaska',url:'alaska.html'}, {id:'hawaii',name:'Hawaii'}, {id:'costa-rica',name:'Costa Rica'}
   ].map(Object.freeze));
   const key='3dudes1quest_journey';
   let completed=QuestRuntime.readSave(key)||{};

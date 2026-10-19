@@ -24,6 +24,19 @@
     victory: {name:'Color Comes Home', bpm:132, once:true, roots:[48,53,55,48], melody:phrase([
       '72 76 79 0 79 81 84 0','81 77 72 77 81 0 84 0','83 79 74 79 86 84 83 79','84 0 0 0 0 0 0 0'])}
   };
+  // Origin-story variations on the original title motif, from a quiet duet to the quest.
+  songs.storySun={name:'Under the Caribbean Sun',bpm:96,arrangement:'gentle',roots:[48,53,57,55,48,53,55,48],melody:phrase([
+    '72 0 76 0 79 0 76 0','77 0 76 0 72 0 69 0','76 0 79 0 81 0 76 0','74 0 71 0 67 0 0 0',
+    '72 0 76 79 0 0 76 0','77 0 81 0 79 0 77 0','74 0 77 0 79 0 74 0','76 0 72 0 0 0 0 0'])};
+  songs.storyStorm={name:'Closer Through the Storm',bpm:104,arrangement:'storm',roots:[45,41,48,52,45,41,50,52],melody:phrase([
+    '69 0 72 0 76 0 72 0','65 0 69 0 72 0 69 0','67 0 72 0 76 0 72 0','68 0 71 0 76 0 71 0',
+    '69 72 0 76 0 72 69 0','65 69 0 72 0 69 65 0','74 0 77 0 76 0 74 0','71 0 76 0 0 0 0 0'])};
+  songs.storyRise={name:'Three Hearts, Stronger',bpm:120,arrangement:'rising',roots:[48,53,57,55,48,53,55,48],melody:phrase([
+    '72 0 76 79 0 76 72 0','77 0 81 84 0 81 77 0','81 0 84 88 0 84 81 0','79 0 83 86 0 83 79 0',
+    '76 79 84 0 83 79 76 0','77 81 84 0 86 84 81 77','79 83 86 0 88 86 83 79','84 0 79 76 72 0 0 0'])};
+  songs.storyQuest={name:'Three Dudes. One Life. One Quest.',bpm:132,roots:[48,53,57,55,48,53,55,48],melody:phrase([
+    '72 76 79 84 79 76 72 0','77 81 84 86 84 81 77 0','81 84 88 91 88 84 81 0','79 83 86 89 86 83 79 0',
+    '84 79 76 72 76 79 84 0','81 77 72 77 81 84 86 84','83 79 74 79 86 84 83 79','84 0 79 76 72 0 0 0'])};
   // [wave, start Hz, end Hz, duration seconds, delay seconds, amplitude]
   const tone=(wave,from,to,duration,delay=0,amp=.15)=>[wave,from,to,duration,delay,amp];
   const effects = {
@@ -61,6 +74,17 @@
   function notes(song,index){
     const i=index%song.melody.length, root=song.roots[Math.floor(i/8)], step=30/song.bpm;
     const notes=[],lead=song.melody[i];
+    if(song.arrangement==='gentle'){
+      if(lead)notes.push(tone('triangle',midi(lead),midi(lead),step*1.8,0,.09));
+      if(i%4===0)notes.push(tone('triangle',midi(root),midi(root),step*3.4,0,.12));
+      return notes;
+    }
+    if(song.arrangement==='storm'){
+      if(lead)notes.push(tone('pulse',midi(lead),midi(lead),step*.9,0,.065));
+      if(i%2===0)notes.push(tone('triangle',midi(root),midi(root),step*1.7,0,.12));
+      if(i%8===0)notes.push(tone('noise',240,90,.12,0,.025));
+      return notes;
+    }
     if(lead)notes.push(tone('pulse',midi(lead),midi(lead),step*(song.melody[i+1]===0?1.8:.78),0,.105));
     if(i%2===0)notes.push(tone('triangle',midi(root+(i%8===4?7:0)),midi(root+(i%8===4?7:0)),step*1.65,0,.17));
     if(i%2===1){const note=root+12+[0,7,12,7][Math.floor(i%8/2)];notes.push(tone('square',midi(note),midi(note),step*.38,0,.035))}
