@@ -2,7 +2,7 @@
 
 **Status: preview only. Production is unchanged.**
 
-Starting point: completed and verified master audit commit `d2509392365aef1004657a12adfe41971f98c6f4` (audit PR #10). The cinematic is on a separate branch and targets that audit branch for review. No new release number.
+Starting point: completed and verified master audit commit `d2509392365aef1004657a12adfe41971f98c6f4` (audit PR #10). The cinematic is on a separate branch and targets main, which now contains the identical verified audit tree through merge commit `8bd29ac7bc8036b1eb1c885a229ce5ef01f7404e`. No new release number.
 
 ## Preview
 
@@ -33,4 +33,4 @@ Review evidence deliberately distinguishes natural full playback from controlled
 
 Alaska still ends with its existing Costa Rica teaser; no ending or gameplay route was rewritten. The preview itself and future journey metadata use the newly approved Hawaii-before-Costa-Rica order. Resolve the older teaser in a separately scoped content change if desired.
 
-Do not automatically begin villain-art integration. Production remains at the preserved baseline until the owner approves the relevant PRs.
+Do not automatically begin villain-art integration. The audit was merged separately while this work was in progress. The cinematic remains undeployed until owner approval.

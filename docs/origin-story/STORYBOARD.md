@@ -1,6 +1,6 @@
 # Our Story — 86-second storyboard
 
-Source: verified audit commit `d2509392365aef1004657a12adfe41971f98c6f4`. Review branch: `codex/origin-story-cinematic`. This is a stacked change above the audit PR; neither PR is deployed by this work. The release number stays 3.4.1.
+Source: verified audit commit `d2509392365aef1004657a12adfe41971f98c6f4`. Review branch: `codex/origin-story-cinematic`. This change starts at the verified audit baseline. Audit PR #10 was merged separately while the cinematic was in progress; main now has the same audit tree, and the cinematic PR targets main. This cinematic is not deployed. The release number stays 3.4.1.
 
 The approved narrative is reproduced sentence for sentence in `QuestStory.scenes`. Original additional text is limited to scene headings, destination labels and two small visual jokes. No narration voice, commercial recordings or new character/villain illustrations are introduced.
 
