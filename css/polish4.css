@@ -1,0 +1,46 @@
+/* Build 4: consistent readable menus; established viewport/canvas geometry is preserved. */
+.quest-layout :is(button,a,summary,select,input):focus-visible{outline:3px solid #fff38a!important;outline-offset:3px}
+.quest-layout :is(button,a)[aria-disabled=true]{opacity:.65}
+.quest-layout .pauseMenu,.quest-layout .trailheadCard,.quest-layout .storyCard{z-index:85}
+.quest-layout[data-menu-open] :is(#survivalHud,#touchControls,#triangleUltimateBtn,#survivalStatus,#pauseBtn,#journalBtn,#photoBtn,#returnBtn){visibility:hidden;pointer-events:none}
+.quest-layout .survivalMenu{font-family:ui-monospace,monospace;font-size:13px;line-height:1.5;border-color:#7ddfd8}
+.quest-layout .survivalMenu strong{display:block;color:#fff38a;font-size:16px}
+.quest-layout .survivalMenu button{display:inline-block;line-height:1.3;min-height:44px}
+.quest-layout #survivalMenuStatus:empty{display:none}
+.quest-layout #teamPower{font-family:ui-monospace,monospace;line-height:1.15;overflow-wrap:anywhere}
+.quest-layout #teamPower[data-ready=true]{border-color:#fff38a!important;background:#214632!important}
+.quest-layout .survivor[data-out=true]{opacity:1;color:#e0c1c1;border-color:#976c79;text-decoration:none}
+.quest-layout .survivalEndPanel{position:fixed;z-index:9000;left:calc(var(--view-x,0px) + 8px);top:calc(var(--view-y,0px) + 8px);width:calc(var(--view-w,100vw) - 16px);max-height:calc(var(--view-h,100vh) - 16px);overflow:auto;padding:20px;border:3px solid #fff38a;background:#101020;color:#fff;box-sizing:border-box;font:16px/1.5 ui-monospace,monospace}
+.quest-layout .survivalEndPanel[hidden]{display:none}
+.quest-layout .survivalEndPanel button{min-height:48px;margin:8px;padding:10px}
+.quest-layout .survivalEndPanel h2{margin:0 0 12px}
+.quest-layout .titleMenuCard>p{max-width:65ch;margin:8px auto;font-size:14px;line-height:1.5}
+.quest-layout .titleMenuCard h1{font-size:clamp(26px,4vw,42px);margin:8px 0}
+.quest-layout .titleMenuCard h2{font-size:clamp(18px,3vw,26px);margin:8px 0}
+.quest-layout .titleMenuCard .releaseBadge{font-size:12px;letter-spacing:0;padding:6px}
+.quest-layout .firstQuestTip{font:13px/1.5 ui-monospace,monospace}
+@media(max-height:450px){
+ .quest-layout .titleMenuCard,.quest-layout .storyCard,.quest-layout .pauseMenu{padding:12px}
+ .quest-layout .titleMenuCard h1,.quest-layout .storyCard h1{font-size:26px;margin:6px 0}
+ .quest-layout .titleMenuCard h2,.quest-layout .storyCard h2{font-size:20px;margin:6px 0}
+ .quest-layout .titleMenuCard>p{font-size:13px;line-height:1.4}
+ .quest-layout .survivalMenu{margin:8px 0;padding:8px}
+ .quest-layout .survivalMenu p{margin:4px 0!important}
+ .quest-layout .pauseMenu h2{margin:4px 0;font-size:22px}
+ .quest-layout .pauseMenu :is(button,a){padding:8px;margin-top:8px;min-height:44px}
+}
+@media(max-height:450px){
+ .quest-layout #titleScreen .startingDudePicker{padding:8px;margin:8px 0}
+ .quest-layout #titleScreen .dudeSelectGrid{grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}
+ .quest-layout #titleScreen .dudeSelectCard{min-height:64px;padding:6px;gap:4px;grid-template-columns:32px minmax(0,1fr)}
+ .quest-layout #titleScreen .dudePortraitWrap{width:32px;height:40px}
+ .quest-layout #titleScreen .dudePortraitWrap img{width:100%;height:100%;object-fit:contain}
+ .quest-layout #titleScreen .dudeSelectCopy em{display:none}
+ .quest-layout #titleScreen .dudeSelectCopy small{font-size:10px;line-height:1.3}
+ .quest-layout #titleScreen .chooseDudeHeader{gap:8px;flex-wrap:wrap;margin-bottom:6px}
+}
+.quest-layout #survivalHud{font-family:ui-monospace,monospace}
+.quest-layout .survivor[data-active=true]::before{content:'▶';color:#fff38a;font-size:10px}
+.quest-layout :is(#survivalPauseStatus,#survivalEndStatus):empty{display:none}
+.quest-layout :is(.pauseMenu,.storyCard,.trailheadCard) a{border:2px solid #b8b8c0;border-radius:2px;background:#282858;color:#fff;font:700 14px/1.4 ui-monospace,monospace}
+.quest-layout #bossHud :is(small,b){font-size:12px;line-height:1.25}

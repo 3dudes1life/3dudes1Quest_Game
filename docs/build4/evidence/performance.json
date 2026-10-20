@@ -1,0 +1,1361 @@
+{
+  "method": "Sequential unthrottled local Chrome. 239 RAF intervals per sample while walking. Baseline c3aba0f versus Build4; Includes first-use action draw CPU/readback probes after the walking sample. No physical device, GPU memory or sustained thermal claim.",
+  "results": [
+    {
+      "world": "socal",
+      "mobile": false,
+      "label": "baseline",
+      "bootMs": 802,
+      "medianMs": 16.699999999999818,
+      "p95Ms": 16.700000000000728,
+      "over33": 0,
+      "heapBytes": 8667733,
+      "contours": 13,
+      "contourBytes": 795584,
+      "transferBytes": 11829054,
+      "firstUse": {
+        "samples": [
+          {
+            "id": "queen-beige",
+            "pose": "attack",
+            "ms": 12.5
+          },
+          {
+            "id": "queen-beige",
+            "pose": "hurt",
+            "ms": 4.0999999940395355
+          },
+          {
+            "id": "queen-beige",
+            "pose": "defeat",
+            "ms": 3.7000000178813934
+          },
+          {
+            "id": "court-judge",
+            "pose": "attack",
+            "ms": 6.5999999940395355
+          },
+          {
+            "id": "court-judge",
+            "pose": "hurt",
+            "ms": 1.4000000059604645
+          },
+          {
+            "id": "court-judge",
+            "pose": "defeat",
+            "ms": 1.9000000059604645
+          },
+          {
+            "id": "flaming-law",
+            "pose": "attack",
+            "ms": 1.699999988079071
+          },
+          {
+            "id": "flaming-law",
+            "pose": "hurt",
+            "ms": 1.5
+          },
+          {
+            "id": "flaming-law",
+            "pose": "defeat",
+            "ms": 1.4000000059604645
+          },
+          {
+            "id": "hoa-drone",
+            "pose": "attack",
+            "ms": 6.5999999940395355
+          },
+          {
+            "id": "hoa-drone",
+            "pose": "hurt",
+            "ms": 1.5
+          },
+          {
+            "id": "hoa-drone",
+            "pose": "defeat",
+            "ms": 1.0999999940395355
+          },
+          {
+            "id": "beige-bot",
+            "pose": "attack",
+            "ms": 5.9000000059604645
+          },
+          {
+            "id": "beige-bot",
+            "pose": "hurt",
+            "ms": 1.5
+          },
+          {
+            "id": "beige-bot",
+            "pose": "defeat",
+            "ms": 1.9000000059604645
+          }
+        ],
+        "contourBytes": 2731304
+      }
+    },
+    {
+      "world": "socal",
+      "mobile": false,
+      "label": "candidate",
+      "bootMs": 785,
+      "medianMs": 16.699999999999818,
+      "p95Ms": 16.799999999999727,
+      "over33": 0,
+      "heapBytes": 9237365,
+      "contours": 13,
+      "contourBytes": 795584,
+      "transferBytes": 11843400,
+      "firstUse": {
+        "samples": [
+          {
+            "id": "queen-beige",
+            "pose": "attack",
+            "ms": 11.5
+          },
+          {
+            "id": "queen-beige",
+            "pose": "hurt",
+            "ms": 4.699999988079071
+          },
+          {
+            "id": "queen-beige",
+            "pose": "defeat",
+            "ms": 4
+          },
+          {
+            "id": "court-judge",
+            "pose": "attack",
+            "ms": 7.300000011920929
+          },
+          {
+            "id": "court-judge",
+            "pose": "hurt",
+            "ms": 1.5999999940395355
+          },
+          {
+            "id": "court-judge",
+            "pose": "defeat",
+            "ms": 1.5999999940395355
+          },
+          {
+            "id": "flaming-law",
+            "pose": "attack",
+            "ms": 1.300000011920929
+          },
+          {
+            "id": "flaming-law",
+            "pose": "hurt",
+            "ms": 1.2999999821186066
+          },
+          {
+            "id": "flaming-law",
+            "pose": "defeat",
+            "ms": 1.100000023841858
+          },
+          {
+            "id": "hoa-drone",
+            "pose": "attack",
+            "ms": 6.5999999940395355
+          },
+          {
+            "id": "hoa-drone",
+            "pose": "hurt",
+            "ms": 1.5
+          },
+          {
+            "id": "hoa-drone",
+            "pose": "defeat",
+            "ms": 1.0999999940395355
+          },
+          {
+            "id": "beige-bot",
+            "pose": "attack",
+            "ms": 6.5999999940395355
+          },
+          {
+            "id": "beige-bot",
+            "pose": "hurt",
+            "ms": 1.4000000059604645
+          },
+          {
+            "id": "beige-bot",
+            "pose": "defeat",
+            "ms": 1.5
+          }
+        ],
+        "contourBytes": 2731304
+      }
+    },
+    {
+      "world": "tahoe",
+      "mobile": false,
+      "label": "baseline",
+      "bootMs": 564,
+      "medianMs": 16.699999999999818,
+      "p95Ms": 16.700000000000728,
+      "over33": 0,
+      "heapBytes": 7412734,
+      "contours": 7,
+      "contourBytes": 252904,
+      "transferBytes": 11973139,
+      "firstUse": {
+        "samples": [
+          {
+            "id": "toxic-bloom",
+            "pose": "attack",
+            "ms": 15.400000005960464
+          },
+          {
+            "id": "toxic-bloom",
+            "pose": "hurt",
+            "ms": 5.699999988079071
+          },
+          {
+            "id": "toxic-bloom",
+            "pose": "defeat",
+            "ms": 3.800000011920929
+          },
+          {
+            "id": "algae-slime",
+            "pose": "attack",
+            "ms": 5.299999982118607
+          },
+          {
+            "id": "algae-slime",
+            "pose": "hurt",
+            "ms": 1.5
+          },
+          {
+            "id": "algae-slime",
+            "pose": "defeat",
+            "ms": 1.399999976158142
+          },
+          {
+            "id": "pine-queen",
+            "pose": "attack",
+            "ms": 8.100000023841858
+          },
+          {
+            "id": "pine-queen",
+            "pose": "hurt",
+            "ms": 3.0999999940395355
+          },
+          {
+            "id": "pine-queen",
+            "pose": "defeat",
+            "ms": 3.5
+          },
+          {
+            "id": "pine-beetle",
+            "pose": "attack",
+            "ms": 1.5
+          },
+          {
+            "id": "pine-beetle",
+            "pose": "hurt",
+            "ms": 1.2999999821186066
+          },
+          {
+            "id": "pine-beetle",
+            "pose": "defeat",
+            "ms": 1.2000000178813934
+          },
+          {
+            "id": "larva",
+            "pose": "attack",
+            "ms": 4.699999988079071
+          },
+          {
+            "id": "larva",
+            "pose": "hurt",
+            "ms": 1.2000000178813934
+          },
+          {
+            "id": "larva",
+            "pose": "defeat",
+            "ms": 1.199999988079071
+          },
+          {
+            "id": "flying-beetle",
+            "pose": "attack",
+            "ms": 1.2000000178813934
+          },
+          {
+            "id": "flying-beetle",
+            "pose": "hurt",
+            "ms": 1.199999988079071
+          },
+          {
+            "id": "flying-beetle",
+            "pose": "defeat",
+            "ms": 1.199999988079071
+          }
+        ],
+        "contourBytes": 4126336
+      }
+    },
+    {
+      "world": "tahoe",
+      "mobile": false,
+      "label": "candidate",
+      "bootMs": 596,
+      "medianMs": 16.699999999999818,
+      "p95Ms": 16.700000000000728,
+      "over33": 0,
+      "heapBytes": 7703546,
+      "contours": 7,
+      "contourBytes": 252904,
+      "transferBytes": 11987756,
+      "firstUse": {
+        "samples": [
+          {
+            "id": "toxic-bloom",
+            "pose": "attack",
+            "ms": 15.099999994039536
+          },
+          {
+            "id": "toxic-bloom",
+            "pose": "hurt",
+            "ms": 4.4000000059604645
+          },
+          {
+            "id": "toxic-bloom",
+            "pose": "defeat",
+            "ms": 3.5999999940395355
+          },
+          {
+            "id": "algae-slime",
+            "pose": "attack",
+            "ms": 5.699999988079071
+          },
+          {
+            "id": "algae-slime",
+            "pose": "hurt",
+            "ms": 1.5
+          },
+          {
+            "id": "algae-slime",
+            "pose": "defeat",
+            "ms": 1.300000011920929
+          },
+          {
+            "id": "pine-queen",
+            "pose": "attack",
+            "ms": 8.099999994039536
+          },
+          {
+            "id": "pine-queen",
+            "pose": "hurt",
+            "ms": 3.300000011920929
+          },
+          {
+            "id": "pine-queen",
+            "pose": "defeat",
+            "ms": 3.0999999940395355
+          },
+          {
+            "id": "pine-beetle",
+            "pose": "attack",
+            "ms": 1.199999988079071
+          },
+          {
+            "id": "pine-beetle",
+            "pose": "hurt",
+            "ms": 1.300000011920929
+          },
+          {
+            "id": "pine-beetle",
+            "pose": "defeat",
+            "ms": 1.199999988079071
+          },
+          {
+            "id": "larva",
+            "pose": "attack",
+            "ms": 5
+          },
+          {
+            "id": "larva",
+            "pose": "hurt",
+            "ms": 1.100000023841858
+          },
+          {
+            "id": "larva",
+            "pose": "defeat",
+            "ms": 1.199999988079071
+          },
+          {
+            "id": "flying-beetle",
+            "pose": "attack",
+            "ms": 1.0999999940395355
+          },
+          {
+            "id": "flying-beetle",
+            "pose": "hurt",
+            "ms": 1.300000011920929
+          },
+          {
+            "id": "flying-beetle",
+            "pose": "defeat",
+            "ms": 1.199999988079071
+          }
+        ],
+        "contourBytes": 4126336
+      }
+    },
+    {
+      "world": "alaska",
+      "mobile": false,
+      "label": "baseline",
+      "bootMs": 528,
+      "medianMs": 16.699999999999818,
+      "p95Ms": 16.700000000000728,
+      "over33": 0,
+      "heapBytes": 8145457,
+      "contours": 6,
+      "contourBytes": 216800,
+      "transferBytes": 12064657,
+      "firstUse": {
+        "samples": [
+          {
+            "id": "pipeline-worker",
+            "pose": "attack",
+            "ms": 11.700000017881393
+          },
+          {
+            "id": "pipeline-worker",
+            "pose": "hurt",
+            "ms": 2.199999988079071
+          },
+          {
+            "id": "pipeline-worker",
+            "pose": "defeat",
+            "ms": 1.5999999940395355
+          },
+          {
+            "id": "surveillance-drone",
+            "pose": "attack",
+            "ms": 7.0999999940395355
+          },
+          {
+            "id": "surveillance-drone",
+            "pose": "hurt",
+            "ms": 1.4000000059604645
+          },
+          {
+            "id": "surveillance-drone",
+            "pose": "defeat",
+            "ms": 2.0999999940395355
+          },
+          {
+            "id": "security-turret",
+            "pose": "attack",
+            "ms": 6.9000000059604645
+          },
+          {
+            "id": "security-turret",
+            "pose": "hurt",
+            "ms": 1.5999999940395355
+          },
+          {
+            "id": "security-turret",
+            "pose": "defeat",
+            "ms": 1.600000023841858
+          },
+          {
+            "id": "machinery",
+            "pose": "attack",
+            "ms": 6.199999988079071
+          },
+          {
+            "id": "machinery",
+            "pose": "hurt",
+            "ms": 1.5
+          },
+          {
+            "id": "machinery",
+            "pose": "defeat",
+            "ms": 1.5999999940395355
+          },
+          {
+            "id": "oil-slime",
+            "pose": "attack",
+            "ms": 5.5999999940395355
+          },
+          {
+            "id": "oil-slime",
+            "pose": "hurt",
+            "ms": 1.7000000178813934
+          },
+          {
+            "id": "oil-slime",
+            "pose": "defeat",
+            "ms": 1.5
+          },
+          {
+            "id": "frost-queen",
+            "pose": "attack",
+            "ms": 7.799999982118607
+          },
+          {
+            "id": "frost-queen",
+            "pose": "hurt",
+            "ms": 2.9000000059604645
+          },
+          {
+            "id": "frost-queen",
+            "pose": "defeat",
+            "ms": 2.800000011920929
+          },
+          {
+            "id": "zombie-salmon",
+            "pose": "attack",
+            "ms": 1.2999999821186066
+          },
+          {
+            "id": "zombie-salmon",
+            "pose": "hurt",
+            "ms": 1.300000011920929
+          },
+          {
+            "id": "zombie-salmon",
+            "pose": "defeat",
+            "ms": 1.199999988079071
+          },
+          {
+            "id": "alaskan-owl",
+            "pose": "attack",
+            "ms": 5
+          },
+          {
+            "id": "alaskan-owl",
+            "pose": "hurt",
+            "ms": 1.600000023841858
+          },
+          {
+            "id": "alaskan-owl",
+            "pose": "defeat",
+            "ms": 1.199999988079071
+          }
+        ],
+        "contourBytes": 3150392
+      }
+    },
+    {
+      "world": "alaska",
+      "mobile": false,
+      "label": "candidate",
+      "bootMs": 606,
+      "medianMs": 16.699999999999818,
+      "p95Ms": 16.799999999999727,
+      "over33": 0,
+      "heapBytes": 8076070,
+      "contours": 6,
+      "contourBytes": 216800,
+      "transferBytes": 12079241,
+      "firstUse": {
+        "samples": [
+          {
+            "id": "pipeline-worker",
+            "pose": "attack",
+            "ms": 9.899999976158142
+          },
+          {
+            "id": "pipeline-worker",
+            "pose": "hurt",
+            "ms": 2.2000000178813934
+          },
+          {
+            "id": "pipeline-worker",
+            "pose": "defeat",
+            "ms": 2.0999999940395355
+          },
+          {
+            "id": "surveillance-drone",
+            "pose": "attack",
+            "ms": 7.300000011920929
+          },
+          {
+            "id": "surveillance-drone",
+            "pose": "hurt",
+            "ms": 1.699999988079071
+          },
+          {
+            "id": "surveillance-drone",
+            "pose": "defeat",
+            "ms": 1.5999999940395355
+          },
+          {
+            "id": "security-turret",
+            "pose": "attack",
+            "ms": 6.5999999940395355
+          },
+          {
+            "id": "security-turret",
+            "pose": "hurt",
+            "ms": 1.5
+          },
+          {
+            "id": "security-turret",
+            "pose": "defeat",
+            "ms": 1.600000023841858
+          },
+          {
+            "id": "machinery",
+            "pose": "attack",
+            "ms": 5.799999982118607
+          },
+          {
+            "id": "machinery",
+            "pose": "hurt",
+            "ms": 2
+          },
+          {
+            "id": "machinery",
+            "pose": "defeat",
+            "ms": 1.5999999940395355
+          },
+          {
+            "id": "oil-slime",
+            "pose": "attack",
+            "ms": 5.9000000059604645
+          },
+          {
+            "id": "oil-slime",
+            "pose": "hurt",
+            "ms": 1.4000000059604645
+          },
+          {
+            "id": "oil-slime",
+            "pose": "defeat",
+            "ms": 1.800000011920929
+          },
+          {
+            "id": "frost-queen",
+            "pose": "attack",
+            "ms": 7.699999988079071
+          },
+          {
+            "id": "frost-queen",
+            "pose": "hurt",
+            "ms": 2.9000000059604645
+          },
+          {
+            "id": "frost-queen",
+            "pose": "defeat",
+            "ms": 2.800000011920929
+          },
+          {
+            "id": "zombie-salmon",
+            "pose": "attack",
+            "ms": 1.5
+          },
+          {
+            "id": "zombie-salmon",
+            "pose": "hurt",
+            "ms": 1.2999999821186066
+          },
+          {
+            "id": "zombie-salmon",
+            "pose": "defeat",
+            "ms": 1.300000011920929
+          },
+          {
+            "id": "alaskan-owl",
+            "pose": "attack",
+            "ms": 4.9000000059604645
+          },
+          {
+            "id": "alaskan-owl",
+            "pose": "hurt",
+            "ms": 1.0999999940395355
+          },
+          {
+            "id": "alaskan-owl",
+            "pose": "defeat",
+            "ms": 1.4000000059604645
+          }
+        ],
+        "contourBytes": 3150392
+      }
+    },
+    {
+      "world": "socal",
+      "mobile": true,
+      "label": "baseline",
+      "bootMs": 583,
+      "medianMs": 16.699999999999818,
+      "p95Ms": 16.700000000000728,
+      "over33": 1,
+      "heapBytes": 7830045,
+      "contours": 13,
+      "contourBytes": 795584,
+      "transferBytes": 11829054,
+      "firstUse": {
+        "samples": [
+          {
+            "id": "queen-beige",
+            "pose": "attack",
+            "ms": 11.200000017881393
+          },
+          {
+            "id": "queen-beige",
+            "pose": "hurt",
+            "ms": 4.199999988079071
+          },
+          {
+            "id": "queen-beige",
+            "pose": "defeat",
+            "ms": 3.9000000059604645
+          },
+          {
+            "id": "court-judge",
+            "pose": "attack",
+            "ms": 6.699999988079071
+          },
+          {
+            "id": "court-judge",
+            "pose": "hurt",
+            "ms": 1.4000000059604645
+          },
+          {
+            "id": "court-judge",
+            "pose": "defeat",
+            "ms": 1.2000000178813934
+          },
+          {
+            "id": "flaming-law",
+            "pose": "attack",
+            "ms": 1.2999999821186066
+          },
+          {
+            "id": "flaming-law",
+            "pose": "hurt",
+            "ms": 1.2000000178813934
+          },
+          {
+            "id": "flaming-law",
+            "pose": "defeat",
+            "ms": 1.399999976158142
+          },
+          {
+            "id": "hoa-drone",
+            "pose": "attack",
+            "ms": 6.4000000059604645
+          },
+          {
+            "id": "hoa-drone",
+            "pose": "hurt",
+            "ms": 1.2000000178813934
+          },
+          {
+            "id": "hoa-drone",
+            "pose": "defeat",
+            "ms": 1.199999988079071
+          },
+          {
+            "id": "beige-bot",
+            "pose": "attack",
+            "ms": 5.9000000059604645
+          },
+          {
+            "id": "beige-bot",
+            "pose": "hurt",
+            "ms": 1.2999999821186066
+          },
+          {
+            "id": "beige-bot",
+            "pose": "defeat",
+            "ms": 1.100000023841858
+          }
+        ],
+        "contourBytes": 2731304
+      }
+    },
+    {
+      "world": "socal",
+      "mobile": true,
+      "label": "candidate",
+      "bootMs": 502,
+      "medianMs": 16.699999999999818,
+      "p95Ms": 16.700000000000728,
+      "over33": 0,
+      "heapBytes": 8345851,
+      "contours": 13,
+      "contourBytes": 795584,
+      "transferBytes": 11843400,
+      "firstUse": {
+        "samples": [
+          {
+            "id": "queen-beige",
+            "pose": "attack",
+            "ms": 5.600000023841858
+          },
+          {
+            "id": "queen-beige",
+            "pose": "hurt",
+            "ms": 1.899999976158142
+          },
+          {
+            "id": "queen-beige",
+            "pose": "defeat",
+            "ms": 1.9000000059604645
+          },
+          {
+            "id": "court-judge",
+            "pose": "attack",
+            "ms": 4.5
+          },
+          {
+            "id": "court-judge",
+            "pose": "hurt",
+            "ms": 1.2000000178813934
+          },
+          {
+            "id": "court-judge",
+            "pose": "defeat",
+            "ms": 2.2999999821186066
+          },
+          {
+            "id": "flaming-law",
+            "pose": "attack",
+            "ms": 1.0999999940395355
+          },
+          {
+            "id": "flaming-law",
+            "pose": "hurt",
+            "ms": 0.9000000059604645
+          },
+          {
+            "id": "flaming-law",
+            "pose": "defeat",
+            "ms": 0.800000011920929
+          },
+          {
+            "id": "hoa-drone",
+            "pose": "attack",
+            "ms": 4.299999982118607
+          },
+          {
+            "id": "hoa-drone",
+            "pose": "hurt",
+            "ms": 1
+          },
+          {
+            "id": "hoa-drone",
+            "pose": "defeat",
+            "ms": 0.9000000059604645
+          },
+          {
+            "id": "beige-bot",
+            "pose": "attack",
+            "ms": 4.300000011920929
+          },
+          {
+            "id": "beige-bot",
+            "pose": "hurt",
+            "ms": 1.199999988079071
+          },
+          {
+            "id": "beige-bot",
+            "pose": "defeat",
+            "ms": 2.2000000178813934
+          }
+        ],
+        "contourBytes": 2731304
+      }
+    },
+    {
+      "world": "tahoe",
+      "mobile": true,
+      "label": "baseline",
+      "bootMs": 567,
+      "medianMs": 16.699999999999818,
+      "p95Ms": 16.700000000000728,
+      "over33": 0,
+      "heapBytes": 7805697,
+      "contours": 7,
+      "contourBytes": 252904,
+      "transferBytes": 11973139,
+      "firstUse": {
+        "samples": [
+          {
+            "id": "toxic-bloom",
+            "pose": "attack",
+            "ms": 14.700000017881393
+          },
+          {
+            "id": "toxic-bloom",
+            "pose": "hurt",
+            "ms": 3.9000000059604645
+          },
+          {
+            "id": "toxic-bloom",
+            "pose": "defeat",
+            "ms": 4
+          },
+          {
+            "id": "algae-slime",
+            "pose": "attack",
+            "ms": 5.4000000059604645
+          },
+          {
+            "id": "algae-slime",
+            "pose": "hurt",
+            "ms": 1.2999999821186066
+          },
+          {
+            "id": "algae-slime",
+            "pose": "defeat",
+            "ms": 1.4000000059604645
+          },
+          {
+            "id": "pine-queen",
+            "pose": "attack",
+            "ms": 8.300000011920929
+          },
+          {
+            "id": "pine-queen",
+            "pose": "hurt",
+            "ms": 3.199999988079071
+          },
+          {
+            "id": "pine-queen",
+            "pose": "defeat",
+            "ms": 3.199999988079071
+          },
+          {
+            "id": "pine-beetle",
+            "pose": "attack",
+            "ms": 1.4000000059604645
+          },
+          {
+            "id": "pine-beetle",
+            "pose": "hurt",
+            "ms": 1.2000000178813934
+          },
+          {
+            "id": "pine-beetle",
+            "pose": "defeat",
+            "ms": 1.2999999821186066
+          },
+          {
+            "id": "larva",
+            "pose": "attack",
+            "ms": 4.800000011920929
+          },
+          {
+            "id": "larva",
+            "pose": "hurt",
+            "ms": 1.199999988079071
+          },
+          {
+            "id": "larva",
+            "pose": "defeat",
+            "ms": 1.2000000178813934
+          },
+          {
+            "id": "flying-beetle",
+            "pose": "attack",
+            "ms": 1.199999988079071
+          },
+          {
+            "id": "flying-beetle",
+            "pose": "hurt",
+            "ms": 1.0999999940395355
+          },
+          {
+            "id": "flying-beetle",
+            "pose": "defeat",
+            "ms": 1.0999999940395355
+          }
+        ],
+        "contourBytes": 4126336
+      }
+    },
+    {
+      "world": "tahoe",
+      "mobile": true,
+      "label": "candidate",
+      "bootMs": 647,
+      "medianMs": 16.699999999999818,
+      "p95Ms": 16.799999999999955,
+      "over33": 0,
+      "heapBytes": 7976650,
+      "contours": 7,
+      "contourBytes": 252904,
+      "transferBytes": 11987756,
+      "firstUse": {
+        "samples": [
+          {
+            "id": "toxic-bloom",
+            "pose": "attack",
+            "ms": 15.900000005960464
+          },
+          {
+            "id": "toxic-bloom",
+            "pose": "hurt",
+            "ms": 4.5999999940395355
+          },
+          {
+            "id": "toxic-bloom",
+            "pose": "defeat",
+            "ms": 3.9000000059604645
+          },
+          {
+            "id": "algae-slime",
+            "pose": "attack",
+            "ms": 5.9000000059604645
+          },
+          {
+            "id": "algae-slime",
+            "pose": "hurt",
+            "ms": 1.5
+          },
+          {
+            "id": "algae-slime",
+            "pose": "defeat",
+            "ms": 1.699999988079071
+          },
+          {
+            "id": "pine-queen",
+            "pose": "attack",
+            "ms": 7.9000000059604645
+          },
+          {
+            "id": "pine-queen",
+            "pose": "hurt",
+            "ms": 3
+          },
+          {
+            "id": "pine-queen",
+            "pose": "defeat",
+            "ms": 3.0999999940395355
+          },
+          {
+            "id": "pine-beetle",
+            "pose": "attack",
+            "ms": 1.4000000059604645
+          },
+          {
+            "id": "pine-beetle",
+            "pose": "hurt",
+            "ms": 1.4000000059604645
+          },
+          {
+            "id": "pine-beetle",
+            "pose": "defeat",
+            "ms": 1.2999999821186066
+          },
+          {
+            "id": "larva",
+            "pose": "attack",
+            "ms": 5
+          },
+          {
+            "id": "larva",
+            "pose": "hurt",
+            "ms": 1.2000000178813934
+          },
+          {
+            "id": "larva",
+            "pose": "defeat",
+            "ms": 1.0999999940395355
+          },
+          {
+            "id": "flying-beetle",
+            "pose": "attack",
+            "ms": 1.300000011920929
+          },
+          {
+            "id": "flying-beetle",
+            "pose": "hurt",
+            "ms": 1.199999988079071
+          },
+          {
+            "id": "flying-beetle",
+            "pose": "defeat",
+            "ms": 1
+          }
+        ],
+        "contourBytes": 4126336
+      }
+    },
+    {
+      "world": "alaska",
+      "mobile": true,
+      "label": "baseline",
+      "bootMs": 541,
+      "medianMs": 16.699999999999818,
+      "p95Ms": 16.700000000000728,
+      "over33": 0,
+      "heapBytes": 8461833,
+      "contours": 6,
+      "contourBytes": 216800,
+      "transferBytes": 12064657,
+      "firstUse": {
+        "samples": [
+          {
+            "id": "pipeline-worker",
+            "pose": "attack",
+            "ms": 10
+          },
+          {
+            "id": "pipeline-worker",
+            "pose": "hurt",
+            "ms": 1.9000000059604645
+          },
+          {
+            "id": "pipeline-worker",
+            "pose": "defeat",
+            "ms": 1.699999988079071
+          },
+          {
+            "id": "surveillance-drone",
+            "pose": "attack",
+            "ms": 7.700000017881393
+          },
+          {
+            "id": "surveillance-drone",
+            "pose": "hurt",
+            "ms": 1.4000000059604645
+          },
+          {
+            "id": "surveillance-drone",
+            "pose": "defeat",
+            "ms": 1.399999976158142
+          },
+          {
+            "id": "security-turret",
+            "pose": "attack",
+            "ms": 6.600000023841858
+          },
+          {
+            "id": "security-turret",
+            "pose": "hurt",
+            "ms": 1.399999976158142
+          },
+          {
+            "id": "security-turret",
+            "pose": "defeat",
+            "ms": 1.2000000178813934
+          },
+          {
+            "id": "machinery",
+            "pose": "attack",
+            "ms": 6
+          },
+          {
+            "id": "machinery",
+            "pose": "hurt",
+            "ms": 1.2999999821186066
+          },
+          {
+            "id": "machinery",
+            "pose": "defeat",
+            "ms": 1.2000000178813934
+          },
+          {
+            "id": "oil-slime",
+            "pose": "attack",
+            "ms": 5.4000000059604645
+          },
+          {
+            "id": "oil-slime",
+            "pose": "hurt",
+            "ms": 1.199999988079071
+          },
+          {
+            "id": "oil-slime",
+            "pose": "defeat",
+            "ms": 1.300000011920929
+          },
+          {
+            "id": "frost-queen",
+            "pose": "attack",
+            "ms": 7.699999988079071
+          },
+          {
+            "id": "frost-queen",
+            "pose": "hurt",
+            "ms": 2.9000000059604645
+          },
+          {
+            "id": "frost-queen",
+            "pose": "defeat",
+            "ms": 2.9000000059604645
+          },
+          {
+            "id": "zombie-salmon",
+            "pose": "attack",
+            "ms": 1.2999999821186066
+          },
+          {
+            "id": "zombie-salmon",
+            "pose": "hurt",
+            "ms": 1.2000000178813934
+          },
+          {
+            "id": "zombie-salmon",
+            "pose": "defeat",
+            "ms": 1.199999988079071
+          },
+          {
+            "id": "alaskan-owl",
+            "pose": "attack",
+            "ms": 5.0999999940395355
+          },
+          {
+            "id": "alaskan-owl",
+            "pose": "hurt",
+            "ms": 1.2000000178813934
+          },
+          {
+            "id": "alaskan-owl",
+            "pose": "defeat",
+            "ms": 1
+          }
+        ],
+        "contourBytes": 3150392
+      }
+    },
+    {
+      "world": "alaska",
+      "mobile": true,
+      "label": "candidate",
+      "bootMs": 651,
+      "medianMs": 16.699999999999818,
+      "p95Ms": 16.700000000000273,
+      "over33": 0,
+      "heapBytes": 8192014,
+      "contours": 6,
+      "contourBytes": 216800,
+      "transferBytes": 12079241,
+      "firstUse": {
+        "samples": [
+          {
+            "id": "pipeline-worker",
+            "pose": "attack",
+            "ms": 9.200000017881393
+          },
+          {
+            "id": "pipeline-worker",
+            "pose": "hurt",
+            "ms": 2.199999988079071
+          },
+          {
+            "id": "pipeline-worker",
+            "pose": "defeat",
+            "ms": 1.800000011920929
+          },
+          {
+            "id": "surveillance-drone",
+            "pose": "attack",
+            "ms": 7.299999982118607
+          },
+          {
+            "id": "surveillance-drone",
+            "pose": "hurt",
+            "ms": 1.7999999821186066
+          },
+          {
+            "id": "surveillance-drone",
+            "pose": "defeat",
+            "ms": 2.2000000178813934
+          },
+          {
+            "id": "security-turret",
+            "pose": "attack",
+            "ms": 7.699999988079071
+          },
+          {
+            "id": "security-turret",
+            "pose": "hurt",
+            "ms": 2.800000011920929
+          },
+          {
+            "id": "security-turret",
+            "pose": "defeat",
+            "ms": 1.5
+          },
+          {
+            "id": "machinery",
+            "pose": "attack",
+            "ms": 6.399999976158142
+          },
+          {
+            "id": "machinery",
+            "pose": "hurt",
+            "ms": 1.600000023841858
+          },
+          {
+            "id": "machinery",
+            "pose": "defeat",
+            "ms": 1.699999988079071
+          },
+          {
+            "id": "oil-slime",
+            "pose": "attack",
+            "ms": 5.5999999940395355
+          },
+          {
+            "id": "oil-slime",
+            "pose": "hurt",
+            "ms": 1.300000011920929
+          },
+          {
+            "id": "oil-slime",
+            "pose": "defeat",
+            "ms": 1.2999999821186066
+          },
+          {
+            "id": "frost-queen",
+            "pose": "attack",
+            "ms": 7.100000023841858
+          },
+          {
+            "id": "frost-queen",
+            "pose": "hurt",
+            "ms": 2.699999988079071
+          },
+          {
+            "id": "frost-queen",
+            "pose": "defeat",
+            "ms": 2.699999988079071
+          },
+          {
+            "id": "zombie-salmon",
+            "pose": "attack",
+            "ms": 1.300000011920929
+          },
+          {
+            "id": "zombie-salmon",
+            "pose": "hurt",
+            "ms": 1.199999988079071
+          },
+          {
+            "id": "zombie-salmon",
+            "pose": "defeat",
+            "ms": 1
+          },
+          {
+            "id": "alaskan-owl",
+            "pose": "attack",
+            "ms": 4.700000017881393
+          },
+          {
+            "id": "alaskan-owl",
+            "pose": "hurt",
+            "ms": 1.199999988079071
+          },
+          {
+            "id": "alaskan-owl",
+            "pose": "defeat",
+            "ms": 1.4000000059604645
+          }
+        ],
+        "contourBytes": 3150392
+      }
+    }
+  ]
+}

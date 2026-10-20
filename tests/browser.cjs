@@ -93,6 +93,8 @@ const server=http.createServer((req,res)=>{
   await require('./survival-bosses.cjs')(browser,base);
   await require('./survival-interrupts.cjs')(browser,base);
   await require('./gameplay-polish.cjs')(browser,base);
+  await require('./build4.cjs')(browser,base);
+  await require('./continuous-campaign.cjs')(browser,base);
   await require('./origin-story.cjs')(browser,base);
   await require('./story2-composition.cjs')(browser,base);
   const context=await browser.newContext();const page=await context.newPage();await page.goto(base+'/index.html');

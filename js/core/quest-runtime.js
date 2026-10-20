@@ -90,6 +90,25 @@
     });
   }
 
+  // The existing SoCal press pattern, shared with every discrete gameplay button.
+  function bindPressButton(button, {active, press}) {
+    const pointers = new Set();
+    function release(event) {
+      if (event?.pointerId !== undefined) pointers.delete(event.pointerId); else pointers.clear();
+      button.classList.toggle('isPressed', pointers.size > 0);
+      try { if (event?.pointerId !== undefined && button.hasPointerCapture(event.pointerId)) button.releasePointerCapture(event.pointerId); } catch (_) {}
+    }
+    button.addEventListener('pointerdown', event => {
+      if ((event.pointerType === 'mouse' && event.button !== 0) || !active()) return;
+      event.preventDefault();event.stopPropagation();pointers.add(event.pointerId);press();
+      button.classList.add('isPressed');try { button.setPointerCapture(event.pointerId); } catch (_) {}
+    }, {passive:false});
+    for (const type of ['pointerup','pointercancel','lostpointercapture']) button.addEventListener(type, release);
+    // Keyboard and assistive activation have no pointer press. Compatibility clicks must not fire twice.
+    button.addEventListener('click', event => {event.preventDefault();if(event.detail === 0 && active()) press()});
+    for (const type of ['blur','pagehide','orientationchange']) addEventListener(type, release);
+  }
+
   function movePlayer(player, input, dude, { ground, platforms, world, jumpPressed, motion }) {
     const wasGrounded = player.onGround ?? player.on ?? false;
     const previousVy = player.vy, oldBottom = player.y + player.h;
@@ -146,5 +165,5 @@
   }
   function clearSave(key) { if(window.QuestSurvival?.storage.clear(key))return; try { localStorage.removeItem(key); localStorage.removeItem(`${key}:backup`); } catch (_) {} }
   function capEffects(items, maximum = 280) { if (items.length > maximum) items.splice(0, items.length - maximum); }
-  window.QuestRuntime = Object.freeze({ STEP, createLoop, createInput, movePlayer, followCamera, readSave, writeSave, clearSave, capEffects });
+  window.QuestRuntime = Object.freeze({ STEP, createLoop, createInput, bindPressButton, movePlayer, followCamera, readSave, writeSave, clearSave, capEffects });
 })();

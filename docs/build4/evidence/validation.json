@@ -1,0 +1,58 @@
+{
+  "baseline": "c3aba0f47f58c32870bf1e64ebd1a463295dd362",
+  "commands": [
+    {
+      "command": "npm test",
+      "result": "PASS",
+      "tests": 20,
+      "log": "unit.log"
+    },
+    {
+      "command": "npm run test:browser",
+      "result": "PASS",
+      "log": "browser.log"
+    },
+    {
+      "command": "npm run test:audit",
+      "result": "PASS: all three Legacy keyboard routes",
+      "log": "routes.log"
+    },
+    {
+      "command": "SURVIVAL=1 npm run test:audit",
+      "result": "PASS: all three Survival keyboard routes",
+      "log": "survival-routes.log"
+    },
+    {
+      "command": "tests/survival-bosses.cjs, repeated desktop and touch-mobile contexts",
+      "result": "PASS: 42 victories per context; 126 including full-suite set",
+      "log": "repeat-bosses.log"
+    }
+  ],
+  "continuousCampaign": {
+    "seconds": 146.765,
+    "sameRunId": true,
+    "exactHandoffs": true,
+    "genuineThreeContributionsAndActivation": true,
+    "file": "campaign.json"
+  },
+  "mobile": "Chrome emulation only; actual CDP four-contact inputs, not physical-device certification",
+  "ci": "Exact head SHA and final GitHub run URL are recorded in draft PR",
+  "runtimeFingerprint": "qualified-source.json",
+  "regressionActivity": "regression-activity.json",
+  "soak": {
+    "result": "PASS",
+    "wallSeconds": 1200.489,
+    "profiles": 2,
+    "perProfile": {
+      "switches": 240,
+      "pauses": 60,
+      "teamActivations": 20,
+      "directWorldEntries": 20
+    },
+    "errors": [],
+    "sourceUnchanged": true,
+    "file": "soak-final.json",
+    "summary": "soak-summary.json",
+    "protectedTesterAndSyntheticCharge": true
+  }
+}

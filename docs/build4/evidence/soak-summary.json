@@ -1,0 +1,222 @@
+{
+  "wallSeconds": 1200.489,
+  "overlapRegressionSeconds": 797.7185639648437,
+  "profiles": [
+    {
+      "mobile": true,
+      "seconds": 1200.24,
+      "operations": {
+        "switches": 240,
+        "pauses": 60,
+        "teams": 20,
+        "worldEntries": 20
+      },
+      "errors": [],
+      "worlds": {
+        "socal": {
+          "samples": 30,
+          "heapMBRange": [
+            3.887972,
+            4.21934
+          ],
+          "firstLastWarmHeapMB": [
+            3.992152,
+            4.21934
+          ],
+          "listenersRange": [
+            373,
+            379
+          ],
+          "documentsMax": 2,
+          "nodesRange": [
+            1560,
+            1581
+          ],
+          "contoursMax": 20,
+          "contourMBMax": 1.366528,
+          "audioPeakVoices": 13,
+          "schedulersMax": 1,
+          "windowP95Range": [
+            16.700000000000728,
+            16.799999999999272
+          ],
+          "over33Fraction": 0.0
+        },
+        "tahoe": {
+          "samples": 30,
+          "heapMBRange": [
+            3.312856,
+            3.561736
+          ],
+          "firstLastWarmHeapMB": [
+            3.4104,
+            3.518496
+          ],
+          "listenersRange": [
+            165,
+            169
+          ],
+          "documentsMax": 1,
+          "nodesRange": [
+            736,
+            749
+          ],
+          "contoursMax": 11,
+          "contourMBMax": 0.473288,
+          "audioPeakVoices": 12,
+          "schedulersMax": 1,
+          "windowP95Range": [
+            16.700000000000728,
+            16.799999999999272
+          ],
+          "over33Fraction": 0.0
+        },
+        "alaska": {
+          "samples": 26,
+          "heapMBRange": [
+            3.370188,
+            3.567016
+          ],
+          "firstLastWarmHeapMB": [
+            3.445716,
+            3.527476
+          ],
+          "listenersRange": [
+            174,
+            180
+          ],
+          "documentsMax": 1,
+          "nodesRange": [
+            596,
+            610
+          ],
+          "contoursMax": 10,
+          "contourMBMax": 0.509536,
+          "audioPeakVoices": 18,
+          "schedulersMax": 1,
+          "windowP95Range": [
+            16.700000000000728,
+            16.799999999999272
+          ],
+          "over33Fraction": 0.0
+        }
+      },
+      "allSampleFrameWindows": {
+        "count": 120,
+        "p95RangeMs": [
+          16.700000000000045,
+          16.800000000000182
+        ],
+        "over33Fraction": 6.283281758062235e-05
+      }
+    },
+    {
+      "mobile": false,
+      "seconds": 1200.257,
+      "operations": {
+        "switches": 240,
+        "pauses": 60,
+        "teams": 20,
+        "worldEntries": 20
+      },
+      "errors": [],
+      "worlds": {
+        "socal": {
+          "samples": 30,
+          "heapMBRange": [
+            3.841996,
+            4.178672
+          ],
+          "firstLastWarmHeapMB": [
+            3.841996,
+            4.168464
+          ],
+          "listenersRange": [
+            374,
+            381
+          ],
+          "documentsMax": 2,
+          "nodesRange": [
+            1558,
+            1603
+          ],
+          "contoursMax": 20,
+          "contourMBMax": 1.366528,
+          "audioPeakVoices": 16,
+          "schedulersMax": 1,
+          "windowP95Range": [
+            16.700000000000728,
+            16.799999999999272
+          ],
+          "over33Fraction": 5.521201413427562e-05
+        },
+        "tahoe": {
+          "samples": 31,
+          "heapMBRange": [
+            3.227128,
+            3.500984
+          ],
+          "firstLastWarmHeapMB": [
+            3.374984,
+            3.493804
+          ],
+          "listenersRange": [
+            165,
+            170
+          ],
+          "documentsMax": 1,
+          "nodesRange": [
+            734,
+            748
+          ],
+          "contoursMax": 11,
+          "contourMBMax": 0.473288,
+          "audioPeakVoices": 11,
+          "schedulersMax": 1,
+          "windowP95Range": [
+            16.700000000000728,
+            16.799999999999272
+          ],
+          "over33Fraction": 0.0
+        },
+        "alaska": {
+          "samples": 26,
+          "heapMBRange": [
+            3.333772,
+            3.50906
+          ],
+          "firstLastWarmHeapMB": [
+            3.358192,
+            3.47694
+          ],
+          "listenersRange": [
+            174,
+            181
+          ],
+          "documentsMax": 1,
+          "nodesRange": [
+            595,
+            606
+          ],
+          "contoursMax": 8,
+          "contourMBMax": 0.373024,
+          "audioPeakVoices": 18,
+          "schedulersMax": 1,
+          "windowP95Range": [
+            16.700000000000728,
+            16.799999999999272
+          ],
+          "over33Fraction": 0.0
+        }
+      },
+      "allSampleFrameWindows": {
+        "count": 120,
+        "p95RangeMs": [
+          16.700000000000045,
+          16.799999999999955
+        ],
+        "over33Fraction": 3.1179845347967076e-05
+      }
+    }
+  ]
+}

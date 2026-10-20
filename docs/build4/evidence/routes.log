@@ -1,0 +1,7 @@
+
+> 3dudes1quest@3.4.1 test:audit
+> node tests/audit-playthroughs.cjs all
+
+PASS normal keyboard alaska {"poses":{"walk":9649,"hurt":452,"defeat":788,"prepare":204,"attack":101,"transform":17},"pipeline":true,"completed":true,"deaths":0,"sessionMethods":["isActive","save","pause","suspendViewport"],"ending":"ADVENTURE 3 COMPLETE\nThe Aurora Returns\n\nTHE LAST FRONTIER IS SAVED! Her curse breaks, the salmon return to normal, and the northern lights shine in rainbow colors. Rigsby celebrates with snow zoomies; Zoey retrieves the trail keeper’s satchel.\n\nBeyond the portal: Hawaii. Costa Rica awaits as the fifth and final adventure, where the three dudes retire together.\n\nNEXT ADVENTURE: HAWAII · COMING SOON...\nReplay Alaska\nReturn to Quest Hub"}
+PASS normal keyboard tahoe {"poses":{"walk":4295,"hurt":749,"defeat":2065,"attack":366,"idle":144,"prepare":146,"transform":47},"bloom":true,"queen":true,"nests":4,"memories":[true,true,true,true,true,true],"checkpoint":6820,"beetles":20,"transition":"/alaska.html"}
+PASS normal keyboard socal {"poses":{"walk":28789,"idle":729,"hurt":571,"defeat":1996,"attack":312,"prepare":285,"transform":531},"queenMid":true,"complete":true,"cards":6,"beacons":3,"court":true,"queen":true,"zoey":true,"links":["tahoe.html"]}

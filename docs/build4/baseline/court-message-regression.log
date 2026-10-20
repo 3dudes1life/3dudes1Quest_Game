@@ -1,0 +1,38 @@
+
+> 3dudes1quest@3.4.1 test:browser
+> node tests/browser.cjs
+
+PASS desktop movement, input, pause, saves, death, boss and portal scenarios
+PASS mobile movement, input, pause, saves, death, boss and portal scenarios
+PASS socal: rotation with 3 touches, paused/menu rotation, 4 landscape sizes, toolbar, safe areas, left-hand/size preferences, dialogue/completion
+PASS tahoe: rotation with 3 touches, paused/menu rotation, 4 landscape sizes, toolbar, safe areas, left-hand/size preferences, dialogue/completion
+PASS Android-sized touch layout and orientation event
+PASS socal: native 3.1 save, original-color pixel detail, damage immunity, all power visuals, collectibles/checkpoint and progression
+PASS tahoe: native 3.1 save, original-color pixel detail, damage immunity, all power visuals, collectibles/checkpoint and progression
+PASS socal audio: autoplay, real signal, settings, 3.2 saves, keyboard menus, rotation, focus loss, transitions and bounded nodes
+PASS tahoe audio: autoplay, real signal, settings, 3.2 saves, keyboard menus, rotation, focus loss, transitions and bounded nodes
+PASS real Web Audio renders: original gameplay and story scores and all effects produce finite, non-silent, unclipped output; loop boundaries contain signal
+PASS Alaska: full live keyboard route, three relays, boss and ending; all powers, collectible, checkpoint/death and backup-save recovery
+PASS Alaska desktop/touch layouts, three-touch rotation, pause/menu recovery, sound settings and timing observations
+PASS installed Alaska launches, moves and plays shared audio offline
+PASS SoCal/Tahoe native detail at three desktop sizes native 3.3 saves and live keyboard play with all characters
+PASS new cast lineups, all Flaming Law powers, Court 1/3/9 figures, warned temporary Rights Drain and save migration; live keyboard Court fight from controlled arena setup
+PASS live keyboard three-phase Pine Beetle Queen battle from controlled arena setup, using Daniel’s established power
+PASS Forest Drain interrupt/failure/save/bounded boost, larvae/flyers/restoration and all powers on roots; salmon route, Queen phases/blizzard/icicles/ice shield/thaw and Hawaii teaser
+PASS 3.4.1 all 27 world/animation strips, nonempty aligned transparent frames, selection/live character screenshots, left-facing power collisions and visual review package
+PASS release version in all adventures; old cached HTML updates only after pause/save approval, retains saves and caches, and repaired release works offline; unchanged worker source detects imported cache-revision updates
+PASS master audit: actual PWA pause/save contracts in three worlds, quota failure, start/continue clarity and opening/gameplay chrome on desktop and mobile
+AssertionError [ERR_ASSERTION]: The input did not match the regular expression /OVERRULED!/. Input:
+
+'Heartfield launched!'
+
+    at fightCourt (/Volumes/OutAt Mac Mini/Development & Production/ChatGPT Projects/3dudes1Quest/tests/court-progression341.cjs:8:291)
+    at async module.exports (/Volumes/OutAt Mac Mini/Development & Production/ChatGPT Projects/3dudes1Quest/tests/court-progression341.cjs:54:84)
+    at async /Volumes/OutAt Mac Mini/Development & Production/ChatGPT Projects/3dudes1Quest/tests/browser.cjs:88:3 {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: 'Heartfield launched!',
+  expected: /OVERRULED!/,
+  operator: 'match',
+  diff: 'simple'
+}

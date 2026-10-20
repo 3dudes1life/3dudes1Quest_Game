@@ -1,6 +1,6 @@
 const assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path');
-module.exports=async function(browser,base){
- const out=path.resolve('test-results/survival');fs.mkdirSync(out,{recursive:true});const results=[],c=await browser.newContext({serviceWorkers:'block'}),p=await c.newPage(),errors=[];await c.addInitScript(()=>localStorage.setItem('3dudes1quest-origin-seen','1'));p.on('pageerror',e=>errors.push(e.message));
+module.exports=async function(browser,base,{label=''}={}){
+ const out=path.resolve('test-results/survival'+(label?'-'+label:''));fs.mkdirSync(out,{recursive:true});const results=[],c=await browser.newContext({serviceWorkers:'block'}),p=await c.newPage(),errors=[];await c.addInitScript(()=>localStorage.setItem('3dudes1quest-origin-seen','1'));p.on('pageerror',e=>errors.push(e.message));
  try{
  for(const world of ['socal','tahoe','alaska']){
   await p.goto(base+'/'+(world==='socal'?'index':world)+'.html?qa');await p.waitForFunction(()=>!(document.querySelector('#startBtn')||document.querySelector('#beginTahoe')||document.querySelector('#beginAdventure')).disabled);await p.locator(world==='socal'?'#startBtn':world==='tahoe'?'#beginTahoe':'#beginAdventure').click();
@@ -39,6 +39,6 @@ module.exports=async function(browser,base){
    assert.equal(result.genuineContribution,true,world+' actual '+result.survivors[0]+' projectile contribution');assert.equal(result.genuineTeam,true,'all three actual SoCal powers contributed before the full combo');assert.equal(result.contributionBefore,true);assert.equal(result.activated,true,JSON.stringify(result));assert.equal(result.charge,0);assert.ok(result.health.every((hp,i)=>Boolean(hp)===Boolean(mask&(1<<i))));assert.equal(result.badge,result.survivors.length===3?'THREE DUDES STANDING':result.survivors.length===2?'DOUBLE TROUBLE':'LAST DUDE STANDING');results.push(result);
   }
  }
- assert.deepEqual(errors,[]);fs.writeFileSync(out+'/boss-configurations.json',JSON.stringify({method:'7 survivor masks × 3 worlds; real signature projectiles, controlled invulnerability and arena prerequisites; no forced boss victory. Normal keyboard routes reported separately.',results,errors},null,2));console.log('PASS all 42 encounters across seven survivor configurations, including 18 sole-survivor boss fights; all tiers and survivor achievements');
+ assert.deepEqual(errors,[]);fs.writeFileSync(out+'/boss-configurations.json',JSON.stringify({environment:await p.evaluate(()=>({width:innerWidth,height:innerHeight,touch:navigator.maxTouchPoints})),method:'7 survivor masks × 3 worlds; real signature projectiles, controlled invulnerability and arena prerequisites; no forced boss victory. Normal keyboard routes reported separately.',results,errors},null,2));console.log('PASS all 42 encounters across seven survivor configurations, including 18 sole-survivor boss fights; all tiers and survivor achievements');
  }finally{await c.close()}
 };
