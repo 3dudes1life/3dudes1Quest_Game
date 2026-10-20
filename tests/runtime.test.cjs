@@ -118,3 +118,13 @@ test('release metadata, visible fallback badges and cache source stay aligned',(
  }
  assert.ok(fs.readFileSync('service-worker.js','utf8').includes('self.QuestRelease.cacheRevision'));
 });
+
+test('additive encounters preserve legacy access without inventing new boss victories',()=>{
+ const c={window:{}};vm.runInNewContext(fs.readFileSync('js/core/quest-encounters.js','utf8'),c);const q=c.window.QuestEncounters;
+ const old={state:{bossDefeated:true,adventureComplete:true},bossDefeated:true,completed:true,checkpoint:6900,player:{x:8500}};
+ const copy=JSON.stringify(old);for(const world of ['socal','tahoe','alaska']){const r=q.read(world,old);assert.equal(r.legacyAccess,true);assert.equal(r.pastMid,true);if(world==='socal'){assert.equal(r.queenComplete,true);assert.equal(r.finalComplete,false)}else if(world==='tahoe')assert.equal(r.bloom.complete,false);else assert.equal(r.pipeline.complete,false)}assert.equal(JSON.stringify(old),copy);
+ for(const world of ['socal','tahoe','alaska']){const r=q.read(world);assert.equal(r.legacyAccess,false);assert.equal(r.pastMid,false);assert.equal(r.version,1)}
+ const bloom=q.read('tahoe',{encounters:{version:1,bloom:{cores:[0,0,0],complete:false,contamination:Infinity}}});assert.equal(bloom.bloom.complete,false);assert.equal(bloom.bloom.cores[2],2);assert.equal(bloom.bloom.contamination,0);
+ const pipe=q.read('alaska',{encounters:{version:1,pipeline:{valves:[0,0,0],stage:0,floodTicks:Infinity}}});assert.equal(pipe.pipeline.stage,2);assert.equal(pipe.pipeline.complete,false);assert.equal(pipe.pipeline.floodTicks,0);
+ const court=q.read('socal',{encounters:{version:1,court:{active:true,phase:900,hp:[NaN,-20,2,1]}}});assert.equal(court.court.phase,3);assert.equal(court.court.hp[0],-1);assert.equal(court.court.hp[1],-1);assert.equal(court.court.hp[2],2);
+});

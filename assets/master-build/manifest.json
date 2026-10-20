@@ -1,6 +1,6 @@
 {
   "baseline": "39c8d2f4a46420fb2e925bc41fca45c1d846520f",
-  "status": "PARTIAL ART FOUNDATION — NOT SIX-BOSS RELEASE",
+  "status": "SIX ENCOUNTERS IMPLEMENTED \u2014 FINAL AUTOMATED AND OWNER REVIEW IN PROGRESS",
   "cell": [
     192,
     192
@@ -19,12 +19,7 @@
       3
     ]
   },
-  "unverifiedStates": [
-    "attack",
-    "hurt-pose",
-    "phase-transformation",
-    "defeat"
-  ],
+  "unverifiedStates": [],
   "actors": [
     {
       "id": "queen-beige",
@@ -94,14 +89,124 @@
         "walk": 140
       },
       "emission": {
-        "note": "Existing simulation emission origins preserved; attack artwork not yet approved"
+        "ownership": "Existing simulation target/power contract; attacks face the player; no protagonist projectile parameters changed.",
+        "damageDeathTimingMs": [
+          120,
+          880
+        ]
       },
       "approvedReferences": [
         "0B75F5D1-DA37-4797-8F36-F96760C880F2.PNG"
       ],
       "generatedSourceSha256": "7b34511753b3f28f5019577460850eee87a791ea18f399e99da0763f59d26240",
-      "runtimeSha256": "69c3230fa674b9493c937b1cc895b4d5067e20180381a62427aa6793ba6dbc81",
-      "collisionContract": "Existing simulation hitbox unchanged; visual bounds are decorative. Original projectile emission origins unchanged."
+      "runtimeSha256": "32c17be862aeaf400dbaf1134ab68dae4a3a55cf61cd93cb183fab81bbdcad85",
+      "collisionContract": "Existing simulation hitbox unchanged; visual bounds are decorative. Original projectile emission origins unchanged.",
+      "actions": {
+        "file": "assets/master-build/actors/queen-beige-actions.png",
+        "source": "docs/six-boss/source/socal.png",
+        "fragmentCleanup": "8-connected components; small detached edge fragments excluded before foot alignment",
+        "cell": [
+          384,
+          256
+        ],
+        "pivot": [
+          144,
+          244
+        ],
+        "states": {
+          "prepare": [
+            0
+          ],
+          "attack": [
+            1
+          ],
+          "hurt": [
+            2
+          ],
+          "defeat": [
+            3
+          ],
+          "transform": [
+            0,
+            1
+          ]
+        },
+        "frameMs": {
+          "prepare": 100,
+          "attack": 120,
+          "hurt": 100,
+          "defeat": 140,
+          "transform": 120
+        },
+        "frames": [
+          {
+            "source": [
+              742,
+              0,
+              200,
+              247
+            ],
+            "anchorX": 837,
+            "sourceBottom": 231,
+            "scale": 0.9574468085106383,
+            "drawOrigin": [
+              53,
+              22
+            ]
+          },
+          {
+            "source": [
+              942,
+              0,
+              253,
+              247
+            ],
+            "anchorX": 1020,
+            "sourceBottom": 231,
+            "scale": 0.9574468085106383,
+            "drawOrigin": [
+              69,
+              22
+            ]
+          },
+          {
+            "source": [
+              1195,
+              0,
+              173,
+              247
+            ],
+            "anchorX": 1282,
+            "sourceBottom": 231,
+            "scale": 0.9574468085106383,
+            "drawOrigin": [
+              61,
+              22
+            ]
+          },
+          {
+            "source": [
+              1368,
+              0,
+              218,
+              247
+            ],
+            "anchorX": 1468,
+            "sourceBottom": 242,
+            "scale": 0.9574468085106383,
+            "drawOrigin": [
+              48,
+              11
+            ]
+          }
+        ],
+        "sha256": "86c3eabf94879624b585551c21e86bd0f486792badacbeffcc89d3659eabe39f",
+        "phaseNote": "Distinct preparation/execution poses combine with encounter-specific multiplication, wings, ice shield and restoration effects; no repeated idle substitute.",
+        "runtimeFile": "assets/master-build/actors/queen-beige-actions.webp",
+        "runtimeSha256": "2f25a344fac58924b10fc76f1a19fa1c98841648dde1b73ce26fef37e401e57b"
+      },
+      "runtimeFile": "assets/master-build/actors/queen-beige.webp",
+      "pngSha256": "69c3230fa674b9493c937b1cc895b4d5067e20180381a62427aa6793ba6dbc81"
     },
     {
       "id": "court-judge",
@@ -171,14 +276,124 @@
         "walk": 140
       },
       "emission": {
-        "note": "Existing simulation emission origins preserved; attack artwork not yet approved"
+        "ownership": "Existing simulation target/power contract; attacks face the player; no protagonist projectile parameters changed.",
+        "damageDeathTimingMs": [
+          120,
+          880
+        ]
       },
       "approvedReferences": [
         "3062528D-C835-4E0D-800F-6BADBF05ABF2.PNG"
       ],
       "generatedSourceSha256": "918524a0d4f62c5711ca73850f9b465a06a1d8f21e6769f77e090a6e0de76a2e",
-      "runtimeSha256": "b46cbcc9317e6125f6bba580a175086274c38c557352a9fe8566440d3ee9de8d",
-      "collisionContract": "Existing simulation hitbox unchanged; visual bounds are decorative. Original projectile emission origins unchanged."
+      "runtimeSha256": "d011d5aa0c992160a197237c47bbf39e3a9e83e7146e20b9260651f751eda57e",
+      "collisionContract": "Existing simulation hitbox unchanged; visual bounds are decorative. Original projectile emission origins unchanged.",
+      "actions": {
+        "file": "assets/master-build/actors/court-judge-actions.png",
+        "source": "docs/six-boss/source/court.png",
+        "fragmentCleanup": "8-connected components; small detached edge fragments excluded before foot alignment",
+        "cell": [
+          384,
+          256
+        ],
+        "pivot": [
+          144,
+          244
+        ],
+        "states": {
+          "prepare": [
+            0
+          ],
+          "attack": [
+            1
+          ],
+          "hurt": [
+            2
+          ],
+          "defeat": [
+            3
+          ],
+          "transform": [
+            0,
+            1
+          ]
+        },
+        "frameMs": {
+          "prepare": 100,
+          "attack": 120,
+          "hurt": 100,
+          "defeat": 140,
+          "transform": 120
+        },
+        "frames": [
+          {
+            "source": [
+              0,
+              420,
+              443,
+              467
+            ],
+            "anchorX": 220,
+            "sourceBottom": 817,
+            "scale": 0.5806451612903226,
+            "drawOrigin": [
+              16,
+              13
+            ]
+          },
+          {
+            "source": [
+              443,
+              420,
+              507,
+              467
+            ],
+            "anchorX": 600,
+            "sourceBottom": 817,
+            "scale": 0.5806451612903226,
+            "drawOrigin": [
+              53,
+              13
+            ]
+          },
+          {
+            "source": [
+              950,
+              420,
+              370,
+              467
+            ],
+            "anchorX": 1100,
+            "sourceBottom": 817,
+            "scale": 0.5806451612903226,
+            "drawOrigin": [
+              57,
+              13
+            ]
+          },
+          {
+            "source": [
+              1320,
+              420,
+              454,
+              467
+            ],
+            "anchorX": 1540,
+            "sourceBottom": 817,
+            "scale": 0.5806451612903226,
+            "drawOrigin": [
+              16,
+              13
+            ]
+          }
+        ],
+        "sha256": "80734ab044af2f205860fb7b5b895e64545728be6771ae235e7b0a00004a739e",
+        "phaseNote": "Distinct preparation/execution poses combine with encounter-specific multiplication, wings, ice shield and restoration effects; no repeated idle substitute.",
+        "runtimeFile": "assets/master-build/actors/court-judge-actions.webp",
+        "runtimeSha256": "8e861a80f44391fa54e0ac08d13abd64d286cce0df0ba08524734cc5c04309b8"
+      },
+      "runtimeFile": "assets/master-build/actors/court-judge.webp",
+      "pngSha256": "b46cbcc9317e6125f6bba580a175086274c38c557352a9fe8566440d3ee9de8d"
     },
     {
       "id": "flaming-law",
@@ -248,14 +463,124 @@
         "walk": 140
       },
       "emission": {
-        "note": "Existing simulation emission origins preserved; attack artwork not yet approved"
+        "ownership": "Existing simulation target/power contract; attacks face the player; no protagonist projectile parameters changed.",
+        "damageDeathTimingMs": [
+          120,
+          880
+        ]
       },
       "approvedReferences": [
         "0B75F5D1-DA37-4797-8F36-F96760C880F2.PNG"
       ],
       "generatedSourceSha256": "7b34511753b3f28f5019577460850eee87a791ea18f399e99da0763f59d26240",
-      "runtimeSha256": "0ffa265b7d768fe2ad67ed4f209086aa1ab31ff731ac6a564728d384f203b07d",
-      "collisionContract": "Existing simulation hitbox unchanged; visual bounds are decorative. Original projectile emission origins unchanged."
+      "runtimeSha256": "8a2cc6c58e1713361a0b687217240bef1d4d0d47b3c448adb562b758432081e6",
+      "collisionContract": "Existing simulation hitbox unchanged; visual bounds are decorative. Original projectile emission origins unchanged.",
+      "actions": {
+        "file": "assets/master-build/actors/flaming-law-actions.png",
+        "source": "docs/six-boss/source/socal.png",
+        "fragmentCleanup": "8-connected components; small detached edge fragments excluded before foot alignment",
+        "cell": [
+          384,
+          256
+        ],
+        "pivot": [
+          144,
+          244
+        ],
+        "states": {
+          "prepare": [
+            0
+          ],
+          "attack": [
+            1
+          ],
+          "hurt": [
+            2
+          ],
+          "defeat": [
+            3
+          ],
+          "transform": [
+            0,
+            1
+          ]
+        },
+        "frameMs": {
+          "prepare": 100,
+          "attack": 120,
+          "hurt": 100,
+          "defeat": 140,
+          "transform": 120
+        },
+        "frames": [
+          {
+            "source": [
+              742,
+              445,
+              200,
+              180
+            ],
+            "anchorX": 837,
+            "sourceBottom": 610,
+            "scale": 1.1464968152866242,
+            "drawOrigin": [
+              35,
+              54
+            ]
+          },
+          {
+            "source": [
+              942,
+              445,
+              253,
+              180
+            ],
+            "anchorX": 1020,
+            "sourceBottom": 607,
+            "scale": 1.1464968152866242,
+            "drawOrigin": [
+              55,
+              57
+            ]
+          },
+          {
+            "source": [
+              1195,
+              445,
+              173,
+              180
+            ],
+            "anchorX": 1282,
+            "sourceBottom": 610,
+            "scale": 1.1464968152866242,
+            "drawOrigin": [
+              44,
+              54
+            ]
+          },
+          {
+            "source": [
+              1368,
+              445,
+              218,
+              180
+            ],
+            "anchorX": 1468,
+            "sourceBottom": 612,
+            "scale": 1.1464968152866242,
+            "drawOrigin": [
+              29,
+              51
+            ]
+          }
+        ],
+        "sha256": "7fab66811b058f988abb08aadc03ab048c3ecb1e82b49936a5ca7a0a5c66fa4c",
+        "phaseNote": "Distinct preparation/execution poses combine with encounter-specific multiplication, wings, ice shield and restoration effects; no repeated idle substitute.",
+        "runtimeFile": "assets/master-build/actors/flaming-law-actions.webp",
+        "runtimeSha256": "3d67f286a41073f7765df944d2b30bf944828411df2b57bff14c0292a97ddf66"
+      },
+      "runtimeFile": "assets/master-build/actors/flaming-law.webp",
+      "pngSha256": "0ffa265b7d768fe2ad67ed4f209086aa1ab31ff731ac6a564728d384f203b07d"
     },
     {
       "id": "hoa-drone",
@@ -325,14 +650,124 @@
         "walk": 140
       },
       "emission": {
-        "note": "Existing simulation emission origins preserved; attack artwork not yet approved"
+        "ownership": "Existing simulation target/power contract; attacks face the player; no protagonist projectile parameters changed.",
+        "damageDeathTimingMs": [
+          120,
+          880
+        ]
       },
       "approvedReferences": [
         "0B75F5D1-DA37-4797-8F36-F96760C880F2.PNG"
       ],
       "generatedSourceSha256": "7b34511753b3f28f5019577460850eee87a791ea18f399e99da0763f59d26240",
-      "runtimeSha256": "31eaff20a780f2658dcd378d37c8a48824390a634c4951dc03b85343b0ef8736",
-      "collisionContract": "Existing simulation hitbox unchanged; visual bounds are decorative. Original projectile emission origins unchanged."
+      "runtimeSha256": "712e8a67d2bd7a350f61a32adc4ca901d89cf754300cecc5f2d5150aa2c05cc2",
+      "collisionContract": "Existing simulation hitbox unchanged; visual bounds are decorative. Original projectile emission origins unchanged.",
+      "actions": {
+        "file": "assets/master-build/actors/hoa-drone-actions.png",
+        "source": "docs/six-boss/source/socal.png",
+        "fragmentCleanup": "8-connected components; small detached edge fragments excluded before foot alignment",
+        "cell": [
+          384,
+          256
+        ],
+        "pivot": [
+          144,
+          244
+        ],
+        "states": {
+          "prepare": [
+            0
+          ],
+          "attack": [
+            1
+          ],
+          "hurt": [
+            2
+          ],
+          "defeat": [
+            3
+          ],
+          "transform": [
+            0,
+            1
+          ]
+        },
+        "frameMs": {
+          "prepare": 100,
+          "attack": 120,
+          "hurt": 100,
+          "defeat": 140,
+          "transform": 120
+        },
+        "frames": [
+          {
+            "source": [
+              742,
+              625,
+              200,
+              177
+            ],
+            "anchorX": 837,
+            "sourceBottom": 801,
+            "scale": 1.125,
+            "drawOrigin": [
+              37,
+              45
+            ]
+          },
+          {
+            "source": [
+              942,
+              625,
+              253,
+              177
+            ],
+            "anchorX": 1020,
+            "sourceBottom": 799,
+            "scale": 1.125,
+            "drawOrigin": [
+              56,
+              47
+            ]
+          },
+          {
+            "source": [
+              1195,
+              625,
+              173,
+              177
+            ],
+            "anchorX": 1282,
+            "sourceBottom": 787,
+            "scale": 1.125,
+            "drawOrigin": [
+              46,
+              61
+            ]
+          },
+          {
+            "source": [
+              1368,
+              625,
+              218,
+              177
+            ],
+            "anchorX": 1468,
+            "sourceBottom": 801,
+            "scale": 1.125,
+            "drawOrigin": [
+              31,
+              45
+            ]
+          }
+        ],
+        "sha256": "77f1b2dba30a4594d2c2db960c1db0fdb00f288bd74f94bde82f3ac6b779883c",
+        "phaseNote": "Distinct preparation/execution poses combine with encounter-specific multiplication, wings, ice shield and restoration effects; no repeated idle substitute.",
+        "runtimeFile": "assets/master-build/actors/hoa-drone-actions.webp",
+        "runtimeSha256": "4bb6de1086ee179089df910b68db5eb5eaddaa3d595d69357901d6aae543d04b"
+      },
+      "runtimeFile": "assets/master-build/actors/hoa-drone.webp",
+      "pngSha256": "31eaff20a780f2658dcd378d37c8a48824390a634c4951dc03b85343b0ef8736"
     },
     {
       "id": "beige-bot",
@@ -402,19 +837,129 @@
         "walk": 140
       },
       "emission": {
-        "note": "Existing simulation emission origins preserved; attack artwork not yet approved"
+        "ownership": "Existing simulation target/power contract; attacks face the player; no protagonist projectile parameters changed.",
+        "damageDeathTimingMs": [
+          120,
+          880
+        ]
       },
       "approvedReferences": [
         "0B75F5D1-DA37-4797-8F36-F96760C880F2.PNG"
       ],
       "generatedSourceSha256": "7b34511753b3f28f5019577460850eee87a791ea18f399e99da0763f59d26240",
-      "runtimeSha256": "ecfd98cadf57fbbfad9d31b398d0f38233e37f0a997e811fdbcba69e2b28c89c",
-      "collisionContract": "Existing simulation hitbox unchanged; visual bounds are decorative. Original projectile emission origins unchanged."
+      "runtimeSha256": "536bef1a6fc5cf3e0871a86f1c6bdc2bd6ba05aabc0179fa7e1c8b2bfd632fba",
+      "collisionContract": "Existing simulation hitbox unchanged; visual bounds are decorative. Original projectile emission origins unchanged.",
+      "actions": {
+        "file": "assets/master-build/actors/beige-bot-actions.png",
+        "source": "docs/six-boss/source/socal.png",
+        "fragmentCleanup": "8-connected components; small detached edge fragments excluded before foot alignment",
+        "cell": [
+          384,
+          256
+        ],
+        "pivot": [
+          144,
+          244
+        ],
+        "states": {
+          "prepare": [
+            0
+          ],
+          "attack": [
+            1
+          ],
+          "hurt": [
+            2
+          ],
+          "defeat": [
+            3
+          ],
+          "transform": [
+            0,
+            1
+          ]
+        },
+        "frameMs": {
+          "prepare": 100,
+          "attack": 120,
+          "hurt": 100,
+          "defeat": 140,
+          "transform": 120
+        },
+        "frames": [
+          {
+            "source": [
+              742,
+              802,
+              200,
+              190
+            ],
+            "anchorX": 837,
+            "sourceBottom": 966,
+            "scale": 1.1538461538461537,
+            "drawOrigin": [
+              34,
+              54
+            ]
+          },
+          {
+            "source": [
+              942,
+              802,
+              253,
+              190
+            ],
+            "anchorX": 1020,
+            "sourceBottom": 966,
+            "scale": 1.1538461538461537,
+            "drawOrigin": [
+              54,
+              54
+            ]
+          },
+          {
+            "source": [
+              1195,
+              802,
+              173,
+              190
+            ],
+            "anchorX": 1282,
+            "sourceBottom": 976,
+            "scale": 1.1538461538461537,
+            "drawOrigin": [
+              44,
+              42
+            ]
+          },
+          {
+            "source": [
+              1368,
+              802,
+              218,
+              190
+            ],
+            "anchorX": 1468,
+            "sourceBottom": 971,
+            "scale": 1.1538461538461537,
+            "drawOrigin": [
+              29,
+              48
+            ]
+          }
+        ],
+        "sha256": "2a045dda0eec7fbcc4029db677d84717d201525c1d432115470ed070638f02f2",
+        "phaseNote": "Distinct preparation/execution poses combine with encounter-specific multiplication, wings, ice shield and restoration effects; no repeated idle substitute.",
+        "runtimeFile": "assets/master-build/actors/beige-bot-actions.webp",
+        "runtimeSha256": "dd6923a4793c97b74334197ee6c430bc78e39c6a95f9e489d47b7e730795d795"
+      },
+      "runtimeFile": "assets/master-build/actors/beige-bot.webp",
+      "pngSha256": "ecfd98cadf57fbbfad9d31b398d0f38233e37f0a997e811fdbcba69e2b28c89c"
     },
     {
       "id": "toxic-bloom",
       "file": "assets/master-build/actors/toxic-bloom.png",
-      "usage": "review-only",
+      "usage": "active",
       "source": "docs/six-boss/source/tahoe.png",
       "sourceSize": [
         1448,
@@ -479,15 +1024,125 @@
         "walk": 140
       },
       "emission": {
-        "note": "Existing simulation emission origins preserved; attack artwork not yet approved"
+        "ownership": "Existing simulation target/power contract; attacks face the player; no protagonist projectile parameters changed.",
+        "damageDeathTimingMs": [
+          120,
+          880
+        ]
       },
       "approvedReferences": [
         "28910717-4F6D-42A5-8BC1-2F063642A3E3.PNG",
         "0B75F5D1-DA37-4797-8F36-F96760C880F2.PNG"
       ],
       "generatedSourceSha256": "c5be708ac2efb0235068f6c2ccaf64a2b02e482bc7bfb678620f6b1cd1c7011d",
-      "runtimeSha256": "330aa7d589d5ffbe68f79ee0aa9d084de84fd392b8ecfd54c3a1f409b479673b",
-      "collisionContract": "Existing simulation hitbox unchanged; visual bounds are decorative. Original projectile emission origins unchanged."
+      "runtimeSha256": "70d13f51d1c0a0a571f18f06cc0e2f3bae013327b799343587912da82a976444",
+      "collisionContract": "Existing simulation hitbox unchanged; visual bounds are decorative. Original projectile emission origins unchanged.",
+      "actions": {
+        "file": "assets/master-build/actors/toxic-bloom-actions.png",
+        "source": "docs/six-boss/source/tahoe.png",
+        "fragmentCleanup": "8-connected components; small detached edge fragments excluded before foot alignment",
+        "cell": [
+          384,
+          256
+        ],
+        "pivot": [
+          144,
+          244
+        ],
+        "states": {
+          "prepare": [
+            0
+          ],
+          "attack": [
+            1
+          ],
+          "hurt": [
+            2
+          ],
+          "defeat": [
+            3
+          ],
+          "transform": [
+            0,
+            1
+          ]
+        },
+        "frameMs": {
+          "prepare": 100,
+          "attack": 120,
+          "hurt": 100,
+          "defeat": 140,
+          "transform": 120
+        },
+        "frames": [
+          {
+            "source": [
+              710,
+              0,
+              200,
+              245
+            ],
+            "anchorX": 810,
+            "sourceBottom": 235,
+            "scale": 0.9375,
+            "drawOrigin": [
+              50,
+              23
+            ]
+          },
+          {
+            "source": [
+              910,
+              0,
+              185,
+              245
+            ],
+            "anchorX": 1000,
+            "sourceBottom": 236,
+            "scale": 0.9375,
+            "drawOrigin": [
+              60,
+              22
+            ]
+          },
+          {
+            "source": [
+              1095,
+              0,
+              173,
+              245
+            ],
+            "anchorX": 1175,
+            "sourceBottom": 235,
+            "scale": 0.9375,
+            "drawOrigin": [
+              69,
+              23
+            ]
+          },
+          {
+            "source": [
+              1268,
+              0,
+              180,
+              245
+            ],
+            "anchorX": 1350,
+            "sourceBottom": 237,
+            "scale": 0.9375,
+            "drawOrigin": [
+              67,
+              21
+            ]
+          }
+        ],
+        "sha256": "f00cd4e30413459ffc958b473b8ed2c7c5db39bf9d1d70a77c0927c25f978287",
+        "phaseNote": "Distinct preparation/execution poses combine with encounter-specific multiplication, wings, ice shield and restoration effects; no repeated idle substitute.",
+        "runtimeFile": "assets/master-build/actors/toxic-bloom-actions.webp",
+        "runtimeSha256": "fc9390dc658dda43b3520cb77dc6ccac7d27dc62c8532023151d16fda3d20d77"
+      },
+      "runtimeFile": "assets/master-build/actors/toxic-bloom.webp",
+      "pngSha256": "330aa7d589d5ffbe68f79ee0aa9d084de84fd392b8ecfd54c3a1f409b479673b"
     },
     {
       "id": "pine-queen",
@@ -557,15 +1212,125 @@
         "walk": 140
       },
       "emission": {
-        "note": "Existing simulation emission origins preserved; attack artwork not yet approved"
+        "ownership": "Existing simulation target/power contract; attacks face the player; no protagonist projectile parameters changed.",
+        "damageDeathTimingMs": [
+          120,
+          880
+        ]
       },
       "approvedReferences": [
         "28910717-4F6D-42A5-8BC1-2F063642A3E3.PNG",
         "0B75F5D1-DA37-4797-8F36-F96760C880F2.PNG"
       ],
       "generatedSourceSha256": "c5be708ac2efb0235068f6c2ccaf64a2b02e482bc7bfb678620f6b1cd1c7011d",
-      "runtimeSha256": "8a86b08863ba45de18456fad147a470437a498f30953b1193477b7e1bb8bea39",
-      "collisionContract": "Existing simulation hitbox unchanged; visual bounds are decorative. Original projectile emission origins unchanged."
+      "runtimeSha256": "14e205dd0f98178868685e9b85a16bd5cb6ae7d68dd4734ad45be359447ca99b",
+      "collisionContract": "Existing simulation hitbox unchanged; visual bounds are decorative. Original projectile emission origins unchanged.",
+      "actions": {
+        "file": "assets/master-build/actors/pine-queen-actions.png",
+        "source": "docs/six-boss/source/pine-actions.png",
+        "fragmentCleanup": "8-connected components; small detached edge fragments excluded before foot alignment",
+        "cell": [
+          384,
+          256
+        ],
+        "pivot": [
+          144,
+          244
+        ],
+        "states": {
+          "prepare": [
+            0
+          ],
+          "attack": [
+            1
+          ],
+          "hurt": [
+            2
+          ],
+          "defeat": [
+            3
+          ],
+          "transform": [
+            0,
+            1
+          ]
+        },
+        "frameMs": {
+          "prepare": 100,
+          "attack": 120,
+          "hurt": 100,
+          "defeat": 140,
+          "transform": 120
+        },
+        "frames": [
+          {
+            "source": [
+              0,
+              0,
+              543,
+              724
+            ],
+            "anchorX": 275,
+            "sourceBottom": 589,
+            "scale": 0.42,
+            "drawOrigin": [
+              28,
+              -4
+            ]
+          },
+          {
+            "source": [
+              543,
+              0,
+              607,
+              724
+            ],
+            "anchorX": 815,
+            "sourceBottom": 589,
+            "scale": 0.42,
+            "drawOrigin": [
+              30,
+              -4
+            ]
+          },
+          {
+            "source": [
+              1150,
+              0,
+              470,
+              724
+            ],
+            "anchorX": 1375,
+            "sourceBottom": 589,
+            "scale": 0.42,
+            "drawOrigin": [
+              49,
+              -4
+            ]
+          },
+          {
+            "source": [
+              1620,
+              0,
+              552,
+              724
+            ],
+            "anchorX": 1925,
+            "sourceBottom": 608,
+            "scale": 0.42,
+            "drawOrigin": [
+              16,
+              -12
+            ]
+          }
+        ],
+        "sha256": "6e944ac1e77e58e63125878edca2f3715cda1a8e77752f84f368cd7940ed5ecb",
+        "phaseNote": "Distinct preparation/execution poses combine with encounter-specific multiplication, wings, ice shield and restoration effects; no repeated idle substitute.",
+        "runtimeFile": "assets/master-build/actors/pine-queen-actions.webp",
+        "runtimeSha256": "77a2b47a1217edef01c17ad748082f6d81a5e3d3678d6ce2aa82ac8b1e446a95"
+      },
+      "runtimeFile": "assets/master-build/actors/pine-queen.webp",
+      "pngSha256": "8a86b08863ba45de18456fad147a470437a498f30953b1193477b7e1bb8bea39"
     },
     {
       "id": "pine-beetle",
@@ -635,15 +1400,125 @@
         "walk": 140
       },
       "emission": {
-        "note": "Existing simulation emission origins preserved; attack artwork not yet approved"
+        "ownership": "Existing simulation target/power contract; attacks face the player; no protagonist projectile parameters changed.",
+        "damageDeathTimingMs": [
+          120,
+          880
+        ]
       },
       "approvedReferences": [
         "28910717-4F6D-42A5-8BC1-2F063642A3E3.PNG",
         "0B75F5D1-DA37-4797-8F36-F96760C880F2.PNG"
       ],
       "generatedSourceSha256": "c5be708ac2efb0235068f6c2ccaf64a2b02e482bc7bfb678620f6b1cd1c7011d",
-      "runtimeSha256": "8727556908679db79063c2d4219b3c17cdf70016fe214bb8a257509bddab8cfb",
-      "collisionContract": "Existing simulation hitbox unchanged; visual bounds are decorative. Original projectile emission origins unchanged."
+      "runtimeSha256": "f196b034294befdcb4b584e8c07b02781d0d429582a67abd92d18d0361e5321d",
+      "collisionContract": "Existing simulation hitbox unchanged; visual bounds are decorative. Original projectile emission origins unchanged.",
+      "actions": {
+        "file": "assets/master-build/actors/pine-beetle-actions.png",
+        "source": "docs/six-boss/source/tahoe.png",
+        "fragmentCleanup": "8-connected components; small detached edge fragments excluded before foot alignment",
+        "cell": [
+          384,
+          256
+        ],
+        "pivot": [
+          144,
+          244
+        ],
+        "states": {
+          "prepare": [
+            0
+          ],
+          "attack": [
+            1
+          ],
+          "hurt": [
+            2
+          ],
+          "defeat": [
+            3
+          ],
+          "transform": [
+            0,
+            1
+          ]
+        },
+        "frameMs": {
+          "prepare": 100,
+          "attack": 120,
+          "hurt": 100,
+          "defeat": 140,
+          "transform": 120
+        },
+        "frames": [
+          {
+            "source": [
+              710,
+              473,
+              200,
+              162
+            ],
+            "anchorX": 810,
+            "sourceBottom": 610,
+            "scale": 1.2328767123287672,
+            "drawOrigin": [
+              21,
+              74
+            ]
+          },
+          {
+            "source": [
+              910,
+              473,
+              185,
+              162
+            ],
+            "anchorX": 1000,
+            "sourceBottom": 609,
+            "scale": 1.2328767123287672,
+            "drawOrigin": [
+              33,
+              75
+            ]
+          },
+          {
+            "source": [
+              1095,
+              473,
+              173,
+              162
+            ],
+            "anchorX": 1175,
+            "sourceBottom": 610,
+            "scale": 1.2328767123287672,
+            "drawOrigin": [
+              45,
+              74
+            ]
+          },
+          {
+            "source": [
+              1268,
+              473,
+              180,
+              162
+            ],
+            "anchorX": 1350,
+            "sourceBottom": 611,
+            "scale": 1.2328767123287672,
+            "drawOrigin": [
+              43,
+              73
+            ]
+          }
+        ],
+        "sha256": "c321ad282559b83441b273796c17d7f6f2a4647f4f7c2a9cb9bce803c15dc816",
+        "phaseNote": "Distinct preparation/execution poses combine with encounter-specific multiplication, wings, ice shield and restoration effects; no repeated idle substitute.",
+        "runtimeFile": "assets/master-build/actors/pine-beetle-actions.webp",
+        "runtimeSha256": "4a968b9a31bbd05cd1de4309e6d85750cf86acf1ebbb0b546b8c310451943906"
+      },
+      "runtimeFile": "assets/master-build/actors/pine-beetle.webp",
+      "pngSha256": "8727556908679db79063c2d4219b3c17cdf70016fe214bb8a257509bddab8cfb"
     },
     {
       "id": "larva",
@@ -713,15 +1588,125 @@
         "walk": 140
       },
       "emission": {
-        "note": "Existing simulation emission origins preserved; attack artwork not yet approved"
+        "ownership": "Existing simulation target/power contract; attacks face the player; no protagonist projectile parameters changed.",
+        "damageDeathTimingMs": [
+          120,
+          880
+        ]
       },
       "approvedReferences": [
         "28910717-4F6D-42A5-8BC1-2F063642A3E3.PNG",
         "0B75F5D1-DA37-4797-8F36-F96760C880F2.PNG"
       ],
       "generatedSourceSha256": "c5be708ac2efb0235068f6c2ccaf64a2b02e482bc7bfb678620f6b1cd1c7011d",
-      "runtimeSha256": "cc4eec4eb3c5b2df384d773fd37e7a79b7b06c9e130a2086be639bd3e7eec81c",
-      "collisionContract": "Existing simulation hitbox unchanged; visual bounds are decorative. Original projectile emission origins unchanged."
+      "runtimeSha256": "7c781a024691d9b7b758d36d37cf9f06b58f09146e20774b362318bc06adfeba",
+      "collisionContract": "Existing simulation hitbox unchanged; visual bounds are decorative. Original projectile emission origins unchanged.",
+      "actions": {
+        "file": "assets/master-build/actors/larva-actions.png",
+        "source": "docs/six-boss/source/tahoe.png",
+        "fragmentCleanup": "8-connected components; small detached edge fragments excluded before foot alignment",
+        "cell": [
+          384,
+          256
+        ],
+        "pivot": [
+          144,
+          244
+        ],
+        "states": {
+          "prepare": [
+            0
+          ],
+          "attack": [
+            1
+          ],
+          "hurt": [
+            2
+          ],
+          "defeat": [
+            3
+          ],
+          "transform": [
+            0,
+            1
+          ]
+        },
+        "frameMs": {
+          "prepare": 100,
+          "attack": 120,
+          "hurt": 100,
+          "defeat": 140,
+          "transform": 120
+        },
+        "frames": [
+          {
+            "source": [
+              710,
+              635,
+              200,
+              143
+            ],
+            "anchorX": 810,
+            "sourceBottom": 758,
+            "scale": 1.3740458015267176,
+            "drawOrigin": [
+              7,
+              74
+            ]
+          },
+          {
+            "source": [
+              910,
+              635,
+              185,
+              143
+            ],
+            "anchorX": 1000,
+            "sourceBottom": 760,
+            "scale": 1.3740458015267176,
+            "drawOrigin": [
+              20,
+              71
+            ]
+          },
+          {
+            "source": [
+              1095,
+              635,
+              173,
+              143
+            ],
+            "anchorX": 1175,
+            "sourceBottom": 761,
+            "scale": 1.3740458015267176,
+            "drawOrigin": [
+              34,
+              69
+            ]
+          },
+          {
+            "source": [
+              1268,
+              635,
+              180,
+              143
+            ],
+            "anchorX": 1350,
+            "sourceBottom": 762,
+            "scale": 1.3740458015267176,
+            "drawOrigin": [
+              31,
+              68
+            ]
+          }
+        ],
+        "sha256": "c4eeb6f7131c743d46ddea725cd736a5b045f0d4fe58d1d92b01c6032a65113a",
+        "phaseNote": "Distinct preparation/execution poses combine with encounter-specific multiplication, wings, ice shield and restoration effects; no repeated idle substitute.",
+        "runtimeFile": "assets/master-build/actors/larva-actions.webp",
+        "runtimeSha256": "c370ec57e1ca41c546dd3a4f9dfb5136749fa478eae7033ef97f99f890ee04c9"
+      },
+      "runtimeFile": "assets/master-build/actors/larva.webp",
+      "pngSha256": "cc4eec4eb3c5b2df384d773fd37e7a79b7b06c9e130a2086be639bd3e7eec81c"
     },
     {
       "id": "flying-beetle",
@@ -791,20 +1776,130 @@
         "walk": 140
       },
       "emission": {
-        "note": "Existing simulation emission origins preserved; attack artwork not yet approved"
+        "ownership": "Existing simulation target/power contract; attacks face the player; no protagonist projectile parameters changed.",
+        "damageDeathTimingMs": [
+          120,
+          880
+        ]
       },
       "approvedReferences": [
         "28910717-4F6D-42A5-8BC1-2F063642A3E3.PNG",
         "0B75F5D1-DA37-4797-8F36-F96760C880F2.PNG"
       ],
       "generatedSourceSha256": "c5be708ac2efb0235068f6c2ccaf64a2b02e482bc7bfb678620f6b1cd1c7011d",
-      "runtimeSha256": "fc485c6be1cc8b0cb9e22ce62bf640ac4de2ee08e46b99dd266c10f91afa54d3",
-      "collisionContract": "Existing simulation hitbox unchanged; visual bounds are decorative. Original projectile emission origins unchanged."
+      "runtimeSha256": "5c5b81278d5433ad96f51437d7ea101c75d55fc9375b6a9ce5a2425e136efc67",
+      "collisionContract": "Existing simulation hitbox unchanged; visual bounds are decorative. Original projectile emission origins unchanged.",
+      "actions": {
+        "file": "assets/master-build/actors/flying-beetle-actions.png",
+        "source": "docs/six-boss/source/tahoe.png",
+        "fragmentCleanup": "8-connected components; small detached edge fragments excluded before foot alignment",
+        "cell": [
+          384,
+          256
+        ],
+        "pivot": [
+          144,
+          244
+        ],
+        "states": {
+          "prepare": [
+            0
+          ],
+          "attack": [
+            1
+          ],
+          "hurt": [
+            2
+          ],
+          "defeat": [
+            3
+          ],
+          "transform": [
+            0,
+            1
+          ]
+        },
+        "frameMs": {
+          "prepare": 100,
+          "attack": 120,
+          "hurt": 100,
+          "defeat": 140,
+          "transform": 120
+        },
+        "frames": [
+          {
+            "source": [
+              710,
+              778,
+              200,
+              157
+            ],
+            "anchorX": 810,
+            "sourceBottom": 916,
+            "scale": 1.1920529801324504,
+            "drawOrigin": [
+              25,
+              78
+            ]
+          },
+          {
+            "source": [
+              910,
+              778,
+              185,
+              157
+            ],
+            "anchorX": 1000,
+            "sourceBottom": 916,
+            "scale": 1.1920529801324504,
+            "drawOrigin": [
+              37,
+              78
+            ]
+          },
+          {
+            "source": [
+              1095,
+              778,
+              173,
+              157
+            ],
+            "anchorX": 1175,
+            "sourceBottom": 916,
+            "scale": 1.1920529801324504,
+            "drawOrigin": [
+              49,
+              78
+            ]
+          },
+          {
+            "source": [
+              1268,
+              778,
+              180,
+              157
+            ],
+            "anchorX": 1350,
+            "sourceBottom": 917,
+            "scale": 1.1920529801324504,
+            "drawOrigin": [
+              46,
+              77
+            ]
+          }
+        ],
+        "sha256": "db1c398761ba93dfadd1f5a241757d630abce995279d8498e2882abfa8fc3d77",
+        "phaseNote": "Distinct preparation/execution poses combine with encounter-specific multiplication, wings, ice shield and restoration effects; no repeated idle substitute.",
+        "runtimeFile": "assets/master-build/actors/flying-beetle-actions.webp",
+        "runtimeSha256": "2c14fe6fc835706a614f4c6adcd68fee3d521321a3fdea9d786af8933e1b9489"
+      },
+      "runtimeFile": "assets/master-build/actors/flying-beetle.webp",
+      "pngSha256": "fc485c6be1cc8b0cb9e22ce62bf640ac4de2ee08e46b99dd266c10f91afa54d3"
     },
     {
       "id": "algae-slime",
       "file": "assets/master-build/actors/algae-slime.png",
-      "usage": "review-only",
+      "usage": "active",
       "source": "docs/six-boss/source/tahoe.png",
       "sourceSize": [
         1448,
@@ -869,15 +1964,125 @@
         "walk": 140
       },
       "emission": {
-        "note": "Existing simulation emission origins preserved; attack artwork not yet approved"
+        "ownership": "Existing simulation target/power contract; attacks face the player; no protagonist projectile parameters changed.",
+        "damageDeathTimingMs": [
+          120,
+          880
+        ]
       },
       "approvedReferences": [
         "28910717-4F6D-42A5-8BC1-2F063642A3E3.PNG",
         "0B75F5D1-DA37-4797-8F36-F96760C880F2.PNG"
       ],
       "generatedSourceSha256": "c5be708ac2efb0235068f6c2ccaf64a2b02e482bc7bfb678620f6b1cd1c7011d",
-      "runtimeSha256": "9d25e10d121dab6a88c78032e7c1c82950f7d77fb8d05f47433d858a5ca73c32",
-      "collisionContract": "Existing simulation hitbox unchanged; visual bounds are decorative. Original projectile emission origins unchanged."
+      "runtimeSha256": "1b5583d5b5dadd81658bf124b2770ea1ed0eee59aa5f072134eeca7799ef984a",
+      "collisionContract": "Existing simulation hitbox unchanged; visual bounds are decorative. Original projectile emission origins unchanged.",
+      "actions": {
+        "file": "assets/master-build/actors/algae-slime-actions.png",
+        "source": "docs/six-boss/source/tahoe.png",
+        "fragmentCleanup": "8-connected components; small detached edge fragments excluded before foot alignment",
+        "cell": [
+          384,
+          256
+        ],
+        "pivot": [
+          144,
+          244
+        ],
+        "states": {
+          "prepare": [
+            0
+          ],
+          "attack": [
+            1
+          ],
+          "hurt": [
+            2
+          ],
+          "defeat": [
+            3
+          ],
+          "transform": [
+            0,
+            1
+          ]
+        },
+        "frameMs": {
+          "prepare": 100,
+          "attack": 120,
+          "hurt": 100,
+          "defeat": 140,
+          "transform": 120
+        },
+        "frames": [
+          {
+            "source": [
+              710,
+              935,
+              200,
+              151
+            ],
+            "anchorX": 810,
+            "sourceBottom": 1049,
+            "scale": 1.4173228346456692,
+            "drawOrigin": [
+              2,
+              81
+            ]
+          },
+          {
+            "source": [
+              910,
+              935,
+              185,
+              151
+            ],
+            "anchorX": 1000,
+            "sourceBottom": 1049,
+            "scale": 1.4173228346456692,
+            "drawOrigin": [
+              16,
+              81
+            ]
+          },
+          {
+            "source": [
+              1095,
+              935,
+              173,
+              151
+            ],
+            "anchorX": 1175,
+            "sourceBottom": 1050,
+            "scale": 1.4173228346456692,
+            "drawOrigin": [
+              31,
+              80
+            ]
+          },
+          {
+            "source": [
+              1268,
+              935,
+              180,
+              151
+            ],
+            "anchorX": 1350,
+            "sourceBottom": 1050,
+            "scale": 1.4173228346456692,
+            "drawOrigin": [
+              28,
+              80
+            ]
+          }
+        ],
+        "sha256": "bc5c73556f8450e6e3a3bc1637b508f90c240e5a6068d9cb6ba56e152e599e88",
+        "phaseNote": "Distinct preparation/execution poses combine with encounter-specific multiplication, wings, ice shield and restoration effects; no repeated idle substitute.",
+        "runtimeFile": "assets/master-build/actors/algae-slime-actions.webp",
+        "runtimeSha256": "040704320bd2da769d6d52a0a8e03276715344fc83dc3879d3e39d043aa38b4f"
+      },
+      "runtimeFile": "assets/master-build/actors/algae-slime.webp",
+      "pngSha256": "9d25e10d121dab6a88c78032e7c1c82950f7d77fb8d05f47433d858a5ca73c32"
     },
     {
       "id": "frost-queen",
@@ -947,20 +2152,130 @@
         "walk": 140
       },
       "emission": {
-        "note": "Existing simulation emission origins preserved; attack artwork not yet approved"
+        "ownership": "Existing simulation target/power contract; attacks face the player; no protagonist projectile parameters changed.",
+        "damageDeathTimingMs": [
+          120,
+          880
+        ]
       },
       "approvedReferences": [
         "AD4B51CB-020D-44E2-BA4B-0D3622578FB1.PNG",
         "0B75F5D1-DA37-4797-8F36-F96760C880F2.PNG"
       ],
       "generatedSourceSha256": "40db0921e1b6745a152c67c8afbf4c13c691ce388c01667234d3a60d920bf56b",
-      "runtimeSha256": "df8ee5f2795c9a504729b5cf18a24e01bb7e12e61f013630ed6d13bcca8df33b",
-      "collisionContract": "Existing simulation hitbox unchanged; visual bounds are decorative. Original projectile emission origins unchanged."
+      "runtimeSha256": "6ef7fb18f42c14d1d77f7c22e4ea7fc83c7a6d7dc127c2ba71e9d2b1be5167de",
+      "collisionContract": "Existing simulation hitbox unchanged; visual bounds are decorative. Original projectile emission origins unchanged.",
+      "actions": {
+        "file": "assets/master-build/actors/frost-queen-actions.png",
+        "source": "docs/six-boss/source/alaska.png",
+        "fragmentCleanup": "8-connected components; small detached edge fragments excluded before foot alignment",
+        "cell": [
+          384,
+          256
+        ],
+        "pivot": [
+          144,
+          244
+        ],
+        "states": {
+          "prepare": [
+            0
+          ],
+          "attack": [
+            1
+          ],
+          "hurt": [
+            2
+          ],
+          "defeat": [
+            3
+          ],
+          "transform": [
+            0,
+            1
+          ]
+        },
+        "frameMs": {
+          "prepare": 100,
+          "attack": 120,
+          "hurt": 100,
+          "defeat": 140,
+          "transform": 120
+        },
+        "frames": [
+          {
+            "source": [
+              768,
+              0,
+              187,
+              165
+            ],
+            "anchorX": 850,
+            "sourceBottom": 159,
+            "scale": 1.1920529801324504,
+            "drawOrigin": [
+              46,
+              53
+            ]
+          },
+          {
+            "source": [
+              955,
+              0,
+              220,
+              165
+            ],
+            "anchorX": 1035,
+            "sourceBottom": 159,
+            "scale": 1.1920529801324504,
+            "drawOrigin": [
+              49,
+              53
+            ]
+          },
+          {
+            "source": [
+              1175,
+              0,
+              165,
+              165
+            ],
+            "anchorX": 1240,
+            "sourceBottom": 158,
+            "scale": 1.1920529801324504,
+            "drawOrigin": [
+              67,
+              54
+            ]
+          },
+          {
+            "source": [
+              1340,
+              0,
+              196,
+              165
+            ],
+            "anchorX": 1430,
+            "sourceBottom": 155,
+            "scale": 1.1920529801324504,
+            "drawOrigin": [
+              37,
+              58
+            ]
+          }
+        ],
+        "sha256": "852a90837a7967a50330d4ebe0855024757d7d79930f00d28a7a3747edeabcd9",
+        "phaseNote": "Distinct preparation/execution poses combine with encounter-specific multiplication, wings, ice shield and restoration effects; no repeated idle substitute.",
+        "runtimeFile": "assets/master-build/actors/frost-queen-actions.webp",
+        "runtimeSha256": "fa11f0caa205bce4a1380367e54770ba0b8559eb3f666c21e6e7013530afb582"
+      },
+      "runtimeFile": "assets/master-build/actors/frost-queen.webp",
+      "pngSha256": "df8ee5f2795c9a504729b5cf18a24e01bb7e12e61f013630ed6d13bcca8df33b"
     },
     {
       "id": "pipeline-worker",
       "file": "assets/master-build/actors/pipeline-worker.png",
-      "usage": "review-only",
+      "usage": "active",
       "source": "docs/six-boss/source/alaska.png",
       "sourceSize": [
         1536,
@@ -1025,20 +2340,130 @@
         "walk": 140
       },
       "emission": {
-        "note": "Existing simulation emission origins preserved; attack artwork not yet approved"
+        "ownership": "Existing simulation target/power contract; attacks face the player; no protagonist projectile parameters changed.",
+        "damageDeathTimingMs": [
+          120,
+          880
+        ]
       },
       "approvedReferences": [
         "AD4B51CB-020D-44E2-BA4B-0D3622578FB1.PNG",
         "0B75F5D1-DA37-4797-8F36-F96760C880F2.PNG"
       ],
       "generatedSourceSha256": "40db0921e1b6745a152c67c8afbf4c13c691ce388c01667234d3a60d920bf56b",
-      "runtimeSha256": "125995ba61df8da789f60c2bdf3762d154da1220e81c820549cbab068add4aec",
-      "collisionContract": "Existing simulation hitbox unchanged; visual bounds are decorative. Original projectile emission origins unchanged."
+      "runtimeSha256": "49cb597f9d39eaf1f03a29265dc1b48555679d24d4f8b470eb92325040d75f86",
+      "collisionContract": "Existing simulation hitbox unchanged; visual bounds are decorative. Original projectile emission origins unchanged.",
+      "actions": {
+        "file": "assets/master-build/actors/pipeline-worker-actions.png",
+        "source": "docs/six-boss/source/alaska.png",
+        "fragmentCleanup": "8-connected components; small detached edge fragments excluded before foot alignment",
+        "cell": [
+          384,
+          256
+        ],
+        "pivot": [
+          144,
+          244
+        ],
+        "states": {
+          "prepare": [
+            0
+          ],
+          "attack": [
+            1
+          ],
+          "hurt": [
+            2
+          ],
+          "defeat": [
+            3
+          ],
+          "transform": [
+            0,
+            1
+          ]
+        },
+        "frameMs": {
+          "prepare": 100,
+          "attack": 120,
+          "hurt": 100,
+          "defeat": 140,
+          "transform": 120
+        },
+        "frames": [
+          {
+            "source": [
+              768,
+              165,
+              187,
+              138
+            ],
+            "anchorX": 850,
+            "sourceBottom": 293,
+            "scale": 1.4516129032258065,
+            "drawOrigin": [
+              25,
+              57
+            ]
+          },
+          {
+            "source": [
+              955,
+              165,
+              220,
+              138
+            ],
+            "anchorX": 1035,
+            "sourceBottom": 293,
+            "scale": 1.4516129032258065,
+            "drawOrigin": [
+              28,
+              57
+            ]
+          },
+          {
+            "source": [
+              1175,
+              165,
+              165,
+              138
+            ],
+            "anchorX": 1240,
+            "sourceBottom": 293,
+            "scale": 1.4516129032258065,
+            "drawOrigin": [
+              50,
+              57
+            ]
+          },
+          {
+            "source": [
+              1340,
+              165,
+              196,
+              138
+            ],
+            "anchorX": 1430,
+            "sourceBottom": 293,
+            "scale": 1.4516129032258065,
+            "drawOrigin": [
+              13,
+              57
+            ]
+          }
+        ],
+        "sha256": "e8e45a7cceec9bf82e9f8e1bd35970c95b7163638349e5f7a5f7d26341817162",
+        "phaseNote": "Distinct preparation/execution poses combine with encounter-specific multiplication, wings, ice shield and restoration effects; no repeated idle substitute.",
+        "runtimeFile": "assets/master-build/actors/pipeline-worker-actions.webp",
+        "runtimeSha256": "df06afac6843597e6f403a54f8946a0ede3328e6ffc39534abafa3f61c1c7787"
+      },
+      "runtimeFile": "assets/master-build/actors/pipeline-worker.webp",
+      "pngSha256": "125995ba61df8da789f60c2bdf3762d154da1220e81c820549cbab068add4aec"
     },
     {
       "id": "surveillance-drone",
       "file": "assets/master-build/actors/surveillance-drone.png",
-      "usage": "review-only",
+      "usage": "active",
       "source": "docs/six-boss/source/alaska.png",
       "sourceSize": [
         1536,
@@ -1103,20 +2528,130 @@
         "walk": 140
       },
       "emission": {
-        "note": "Existing simulation emission origins preserved; attack artwork not yet approved"
+        "ownership": "Existing simulation target/power contract; attacks face the player; no protagonist projectile parameters changed.",
+        "damageDeathTimingMs": [
+          120,
+          880
+        ]
       },
       "approvedReferences": [
         "AD4B51CB-020D-44E2-BA4B-0D3622578FB1.PNG",
         "0B75F5D1-DA37-4797-8F36-F96760C880F2.PNG"
       ],
       "generatedSourceSha256": "40db0921e1b6745a152c67c8afbf4c13c691ce388c01667234d3a60d920bf56b",
-      "runtimeSha256": "21e0174e66e926f14c3c7b12de36b1a8262349912c548c464d8dc0f241afd9f7",
-      "collisionContract": "Existing simulation hitbox unchanged; visual bounds are decorative. Original projectile emission origins unchanged."
+      "runtimeSha256": "eae8feb635792a2442fe36db4545316974419eb9cf1eedd88773ede33ae8752c",
+      "collisionContract": "Existing simulation hitbox unchanged; visual bounds are decorative. Original projectile emission origins unchanged.",
+      "actions": {
+        "file": "assets/master-build/actors/surveillance-drone-actions.png",
+        "source": "docs/six-boss/source/alaska.png",
+        "fragmentCleanup": "8-connected components; small detached edge fragments excluded before foot alignment",
+        "cell": [
+          384,
+          256
+        ],
+        "pivot": [
+          144,
+          244
+        ],
+        "states": {
+          "prepare": [
+            0
+          ],
+          "attack": [
+            1
+          ],
+          "hurt": [
+            2
+          ],
+          "defeat": [
+            3
+          ],
+          "transform": [
+            0,
+            1
+          ]
+        },
+        "frameMs": {
+          "prepare": 100,
+          "attack": 120,
+          "hurt": 100,
+          "defeat": 140,
+          "transform": 120
+        },
+        "frames": [
+          {
+            "source": [
+              768,
+              303,
+              187,
+              117
+            ],
+            "anchorX": 850,
+            "sourceBottom": 403,
+            "scale": 1.3432835820895523,
+            "drawOrigin": [
+              34,
+              108
+            ]
+          },
+          {
+            "source": [
+              955,
+              303,
+              220,
+              117
+            ],
+            "anchorX": 1035,
+            "sourceBottom": 400,
+            "scale": 1.3432835820895523,
+            "drawOrigin": [
+              37,
+              112
+            ]
+          },
+          {
+            "source": [
+              1175,
+              303,
+              165,
+              117
+            ],
+            "anchorX": 1240,
+            "sourceBottom": 409,
+            "scale": 1.3432835820895523,
+            "drawOrigin": [
+              57,
+              100
+            ]
+          },
+          {
+            "source": [
+              1340,
+              303,
+              196,
+              117
+            ],
+            "anchorX": 1430,
+            "sourceBottom": 414,
+            "scale": 1.3432835820895523,
+            "drawOrigin": [
+              23,
+              94
+            ]
+          }
+        ],
+        "sha256": "87794eb14c801531a210f32d149f283fac2c04a3da24350d35781fd7452d3f51",
+        "phaseNote": "Distinct preparation/execution poses combine with encounter-specific multiplication, wings, ice shield and restoration effects; no repeated idle substitute.",
+        "runtimeFile": "assets/master-build/actors/surveillance-drone-actions.webp",
+        "runtimeSha256": "304109648e69f7c76107a0c1a33bc857bdc7490c977cbd03aa8051cb24213795"
+      },
+      "runtimeFile": "assets/master-build/actors/surveillance-drone.webp",
+      "pngSha256": "21e0174e66e926f14c3c7b12de36b1a8262349912c548c464d8dc0f241afd9f7"
     },
     {
       "id": "security-turret",
       "file": "assets/master-build/actors/security-turret.png",
-      "usage": "review-only",
+      "usage": "active",
       "source": "docs/six-boss/source/alaska.png",
       "sourceSize": [
         1536,
@@ -1181,20 +2716,130 @@
         "walk": 140
       },
       "emission": {
-        "note": "Existing simulation emission origins preserved; attack artwork not yet approved"
+        "ownership": "Existing simulation target/power contract; attacks face the player; no protagonist projectile parameters changed.",
+        "damageDeathTimingMs": [
+          120,
+          880
+        ]
       },
       "approvedReferences": [
         "AD4B51CB-020D-44E2-BA4B-0D3622578FB1.PNG",
         "0B75F5D1-DA37-4797-8F36-F96760C880F2.PNG"
       ],
       "generatedSourceSha256": "40db0921e1b6745a152c67c8afbf4c13c691ce388c01667234d3a60d920bf56b",
-      "runtimeSha256": "0aad37480fcb40b8d9827b9ae0cd5c2a82fbef57e806ccc2779f48302cb4850d",
-      "collisionContract": "Existing simulation hitbox unchanged; visual bounds are decorative. Original projectile emission origins unchanged."
+      "runtimeSha256": "7d973ae472b842518416c175a2c8646140b2ef32ec627a48501618ee7dba0521",
+      "collisionContract": "Existing simulation hitbox unchanged; visual bounds are decorative. Original projectile emission origins unchanged.",
+      "actions": {
+        "file": "assets/master-build/actors/security-turret-actions.png",
+        "source": "docs/six-boss/source/alaska.png",
+        "fragmentCleanup": "8-connected components; small detached edge fragments excluded before foot alignment",
+        "cell": [
+          384,
+          256
+        ],
+        "pivot": [
+          144,
+          244
+        ],
+        "states": {
+          "prepare": [
+            0
+          ],
+          "attack": [
+            1
+          ],
+          "hurt": [
+            2
+          ],
+          "defeat": [
+            3
+          ],
+          "transform": [
+            0,
+            1
+          ]
+        },
+        "frameMs": {
+          "prepare": 100,
+          "attack": 120,
+          "hurt": 100,
+          "defeat": 140,
+          "transform": 120
+        },
+        "frames": [
+          {
+            "source": [
+              768,
+              420,
+              187,
+              114
+            ],
+            "anchorX": 850,
+            "sourceBottom": 530,
+            "scale": 1.6981132075471699,
+            "drawOrigin": [
+              5,
+              56
+            ]
+          },
+          {
+            "source": [
+              955,
+              420,
+              220,
+              114
+            ],
+            "anchorX": 1035,
+            "sourceBottom": 530,
+            "scale": 1.6981132075471699,
+            "drawOrigin": [
+              8,
+              56
+            ]
+          },
+          {
+            "source": [
+              1175,
+              420,
+              165,
+              114
+            ],
+            "anchorX": 1240,
+            "sourceBottom": 530,
+            "scale": 1.6981132075471699,
+            "drawOrigin": [
+              34,
+              56
+            ]
+          },
+          {
+            "source": [
+              1340,
+              420,
+              196,
+              114
+            ],
+            "anchorX": 1430,
+            "sourceBottom": 530,
+            "scale": 1.6981132075471699,
+            "drawOrigin": [
+              -9,
+              56
+            ]
+          }
+        ],
+        "sha256": "6b45d77609c348d852398b58fe10df06ba2ada00c15c144df5b111f54918ee92",
+        "phaseNote": "Distinct preparation/execution poses combine with encounter-specific multiplication, wings, ice shield and restoration effects; no repeated idle substitute.",
+        "runtimeFile": "assets/master-build/actors/security-turret-actions.webp",
+        "runtimeSha256": "86bf31dfe18163d199fc40f3ef8b887a6e51b92fdb513a0c595df01a551ca561"
+      },
+      "runtimeFile": "assets/master-build/actors/security-turret.webp",
+      "pngSha256": "0aad37480fcb40b8d9827b9ae0cd5c2a82fbef57e806ccc2779f48302cb4850d"
     },
     {
       "id": "machinery",
       "file": "assets/master-build/actors/machinery.png",
-      "usage": "review-only",
+      "usage": "active",
       "source": "docs/six-boss/source/alaska.png",
       "sourceSize": [
         1536,
@@ -1259,20 +2904,130 @@
         "walk": 140
       },
       "emission": {
-        "note": "Existing simulation emission origins preserved; attack artwork not yet approved"
+        "ownership": "Existing simulation target/power contract; attacks face the player; no protagonist projectile parameters changed.",
+        "damageDeathTimingMs": [
+          120,
+          880
+        ]
       },
       "approvedReferences": [
         "AD4B51CB-020D-44E2-BA4B-0D3622578FB1.PNG",
         "0B75F5D1-DA37-4797-8F36-F96760C880F2.PNG"
       ],
       "generatedSourceSha256": "40db0921e1b6745a152c67c8afbf4c13c691ce388c01667234d3a60d920bf56b",
-      "runtimeSha256": "d42587dd613afa4c21150422bf3b03d0a208f1454f6af33d4a98afb5c711d8e0",
-      "collisionContract": "Existing simulation hitbox unchanged; visual bounds are decorative. Original projectile emission origins unchanged."
+      "runtimeSha256": "3fefc27f9ca6c366e036b45a1298f73a3ae6c6309020a56ee6595935eef8993c",
+      "collisionContract": "Existing simulation hitbox unchanged; visual bounds are decorative. Original projectile emission origins unchanged.",
+      "actions": {
+        "file": "assets/master-build/actors/machinery-actions.png",
+        "source": "docs/six-boss/source/alaska.png",
+        "fragmentCleanup": "8-connected components; small detached edge fragments excluded before foot alignment",
+        "cell": [
+          384,
+          256
+        ],
+        "pivot": [
+          144,
+          244
+        ],
+        "states": {
+          "prepare": [
+            0
+          ],
+          "attack": [
+            1
+          ],
+          "hurt": [
+            2
+          ],
+          "defeat": [
+            3
+          ],
+          "transform": [
+            0,
+            1
+          ]
+        },
+        "frameMs": {
+          "prepare": 100,
+          "attack": 120,
+          "hurt": 100,
+          "defeat": 140,
+          "transform": 120
+        },
+        "frames": [
+          {
+            "source": [
+              768,
+              534,
+              187,
+              134
+            ],
+            "anchorX": 850,
+            "sourceBottom": 662,
+            "scale": 1.0714285714285714,
+            "drawOrigin": [
+              56,
+              106
+            ]
+          },
+          {
+            "source": [
+              955,
+              534,
+              220,
+              134
+            ],
+            "anchorX": 1035,
+            "sourceBottom": 662,
+            "scale": 1.0714285714285714,
+            "drawOrigin": [
+              58,
+              106
+            ]
+          },
+          {
+            "source": [
+              1175,
+              534,
+              165,
+              134
+            ],
+            "anchorX": 1240,
+            "sourceBottom": 662,
+            "scale": 1.0714285714285714,
+            "drawOrigin": [
+              74,
+              106
+            ]
+          },
+          {
+            "source": [
+              1340,
+              534,
+              196,
+              134
+            ],
+            "anchorX": 1430,
+            "sourceBottom": 662,
+            "scale": 1.0714285714285714,
+            "drawOrigin": [
+              48,
+              106
+            ]
+          }
+        ],
+        "sha256": "a2995433e8b757221d5f9f778b922999afa6e102f63bda6749fdd8950cef6735",
+        "phaseNote": "Distinct preparation/execution poses combine with encounter-specific multiplication, wings, ice shield and restoration effects; no repeated idle substitute.",
+        "runtimeFile": "assets/master-build/actors/machinery-actions.webp",
+        "runtimeSha256": "f5a09f80c88fea45696742afa9a82ab3ed067f8cd4886f1416a175c6fa41f98a"
+      },
+      "runtimeFile": "assets/master-build/actors/machinery.webp",
+      "pngSha256": "d42587dd613afa4c21150422bf3b03d0a208f1454f6af33d4a98afb5c711d8e0"
     },
     {
       "id": "oil-slime",
       "file": "assets/master-build/actors/oil-slime.png",
-      "usage": "review-only",
+      "usage": "active",
       "source": "docs/six-boss/source/alaska.png",
       "sourceSize": [
         1536,
@@ -1337,15 +3092,125 @@
         "walk": 140
       },
       "emission": {
-        "note": "Existing simulation emission origins preserved; attack artwork not yet approved"
+        "ownership": "Existing simulation target/power contract; attacks face the player; no protagonist projectile parameters changed.",
+        "damageDeathTimingMs": [
+          120,
+          880
+        ]
       },
       "approvedReferences": [
         "AD4B51CB-020D-44E2-BA4B-0D3622578FB1.PNG",
         "0B75F5D1-DA37-4797-8F36-F96760C880F2.PNG"
       ],
       "generatedSourceSha256": "40db0921e1b6745a152c67c8afbf4c13c691ce388c01667234d3a60d920bf56b",
-      "runtimeSha256": "d390c7b50e82ccee24c83311c4e8d28c398ee4d3bbde51577e1424037702da9c",
-      "collisionContract": "Existing simulation hitbox unchanged; visual bounds are decorative. Original projectile emission origins unchanged."
+      "runtimeSha256": "98dbbc737cfad3e772b9f888dcb6a5013b15de35cf3e3a43d33870bfe473ba83",
+      "collisionContract": "Existing simulation hitbox unchanged; visual bounds are decorative. Original projectile emission origins unchanged.",
+      "actions": {
+        "file": "assets/master-build/actors/oil-slime-actions.png",
+        "source": "docs/six-boss/source/alaska.png",
+        "fragmentCleanup": "8-connected components; small detached edge fragments excluded before foot alignment",
+        "cell": [
+          384,
+          256
+        ],
+        "pivot": [
+          144,
+          244
+        ],
+        "states": {
+          "prepare": [
+            0
+          ],
+          "attack": [
+            1
+          ],
+          "hurt": [
+            2
+          ],
+          "defeat": [
+            3
+          ],
+          "transform": [
+            0,
+            1
+          ]
+        },
+        "frameMs": {
+          "prepare": 100,
+          "attack": 120,
+          "hurt": 100,
+          "defeat": 140,
+          "transform": 120
+        },
+        "frames": [
+          {
+            "source": [
+              768,
+              668,
+              187,
+              115
+            ],
+            "anchorX": 850,
+            "sourceBottom": 776,
+            "scale": 1.3235294117647058,
+            "drawOrigin": [
+              35,
+              100
+            ]
+          },
+          {
+            "source": [
+              955,
+              668,
+              220,
+              115
+            ],
+            "anchorX": 1035,
+            "sourceBottom": 776,
+            "scale": 1.3235294117647058,
+            "drawOrigin": [
+              38,
+              100
+            ]
+          },
+          {
+            "source": [
+              1175,
+              668,
+              165,
+              115
+            ],
+            "anchorX": 1240,
+            "sourceBottom": 775,
+            "scale": 1.3235294117647058,
+            "drawOrigin": [
+              58,
+              101
+            ]
+          },
+          {
+            "source": [
+              1340,
+              668,
+              196,
+              115
+            ],
+            "anchorX": 1430,
+            "sourceBottom": 777,
+            "scale": 1.3235294117647058,
+            "drawOrigin": [
+              25,
+              98
+            ]
+          }
+        ],
+        "sha256": "957bd2dc4dc1abe23d85b4238f1f73314e96c992addb27de1a93f467ef253d5e",
+        "phaseNote": "Distinct preparation/execution poses combine with encounter-specific multiplication, wings, ice shield and restoration effects; no repeated idle substitute.",
+        "runtimeFile": "assets/master-build/actors/oil-slime-actions.webp",
+        "runtimeSha256": "7fdaf7d5b74294a09d8931d4a1851fd1f85f633a112466b61a212ea2a4a332e6"
+      },
+      "runtimeFile": "assets/master-build/actors/oil-slime.webp",
+      "pngSha256": "d390c7b50e82ccee24c83311c4e8d28c398ee4d3bbde51577e1424037702da9c"
     },
     {
       "id": "zombie-salmon",
@@ -1415,15 +3280,125 @@
         "walk": 140
       },
       "emission": {
-        "note": "Existing simulation emission origins preserved; attack artwork not yet approved"
+        "ownership": "Existing simulation target/power contract; attacks face the player; no protagonist projectile parameters changed.",
+        "damageDeathTimingMs": [
+          120,
+          880
+        ]
       },
       "approvedReferences": [
         "AD4B51CB-020D-44E2-BA4B-0D3622578FB1.PNG",
         "0B75F5D1-DA37-4797-8F36-F96760C880F2.PNG"
       ],
       "generatedSourceSha256": "40db0921e1b6745a152c67c8afbf4c13c691ce388c01667234d3a60d920bf56b",
-      "runtimeSha256": "6cd70fbe45faed7739903707a658dd0c8ed1fe3045cbbd35bdd063b594892241",
-      "collisionContract": "Existing simulation hitbox unchanged; visual bounds are decorative. Original projectile emission origins unchanged."
+      "runtimeSha256": "ee91725c95fde2ad61ed041521f8559ef9ad7dac70114e66ee224ed2e3751461",
+      "collisionContract": "Existing simulation hitbox unchanged; visual bounds are decorative. Original projectile emission origins unchanged.",
+      "actions": {
+        "file": "assets/master-build/actors/zombie-salmon-actions.png",
+        "source": "docs/six-boss/source/alaska.png",
+        "fragmentCleanup": "8-connected components; small detached edge fragments excluded before foot alignment",
+        "cell": [
+          384,
+          256
+        ],
+        "pivot": [
+          144,
+          244
+        ],
+        "states": {
+          "prepare": [
+            0
+          ],
+          "attack": [
+            1
+          ],
+          "hurt": [
+            2
+          ],
+          "defeat": [
+            3
+          ],
+          "transform": [
+            0,
+            1
+          ]
+        },
+        "frameMs": {
+          "prepare": 100,
+          "attack": 120,
+          "hurt": 100,
+          "defeat": 140,
+          "transform": 120
+        },
+        "frames": [
+          {
+            "source": [
+              768,
+              783,
+              187,
+              104
+            ],
+            "anchorX": 850,
+            "sourceBottom": 880,
+            "scale": 1.2765957446808511,
+            "drawOrigin": [
+              39,
+              119
+            ]
+          },
+          {
+            "source": [
+              955,
+              783,
+              220,
+              104
+            ],
+            "anchorX": 1035,
+            "sourceBottom": 879,
+            "scale": 1.2765957446808511,
+            "drawOrigin": [
+              42,
+              120
+            ]
+          },
+          {
+            "source": [
+              1175,
+              783,
+              165,
+              104
+            ],
+            "anchorX": 1240,
+            "sourceBottom": 884,
+            "scale": 1.2765957446808511,
+            "drawOrigin": [
+              61,
+              114
+            ]
+          },
+          {
+            "source": [
+              1340,
+              783,
+              196,
+              104
+            ],
+            "anchorX": 1430,
+            "sourceBottom": 881,
+            "scale": 1.2765957446808511,
+            "drawOrigin": [
+              29,
+              118
+            ]
+          }
+        ],
+        "sha256": "6ba5cee9201d0ad449d4b7adbe3221aed7f996d3ea194c23ef09583633cb95d4",
+        "phaseNote": "Distinct preparation/execution poses combine with encounter-specific multiplication, wings, ice shield and restoration effects; no repeated idle substitute.",
+        "runtimeFile": "assets/master-build/actors/zombie-salmon-actions.webp",
+        "runtimeSha256": "276eff020fa13d7eb79e75b613ce623d1a3a9882a8d3257f78dc1d148054266e"
+      },
+      "runtimeFile": "assets/master-build/actors/zombie-salmon.webp",
+      "pngSha256": "6cd70fbe45faed7739903707a658dd0c8ed1fe3045cbbd35bdd063b594892241"
     },
     {
       "id": "alaskan-owl",
@@ -1493,15 +3468,125 @@
         "walk": 140
       },
       "emission": {
-        "note": "Existing simulation emission origins preserved; attack artwork not yet approved"
+        "ownership": "Existing simulation target/power contract; attacks face the player; no protagonist projectile parameters changed.",
+        "damageDeathTimingMs": [
+          120,
+          880
+        ]
       },
       "approvedReferences": [
         "AD4B51CB-020D-44E2-BA4B-0D3622578FB1.PNG",
         "0B75F5D1-DA37-4797-8F36-F96760C880F2.PNG"
       ],
       "generatedSourceSha256": "40db0921e1b6745a152c67c8afbf4c13c691ce388c01667234d3a60d920bf56b",
-      "runtimeSha256": "db26313500d1075263e904ad715352cb685543abfb77f66e461b8bb4f946f5e5",
-      "collisionContract": "Existing simulation hitbox unchanged; visual bounds are decorative. Original projectile emission origins unchanged."
+      "runtimeSha256": "6b109ac26ab77b360b5746c7dc5eb5d7820f6b2725513273853661fb7f8b9bee",
+      "collisionContract": "Existing simulation hitbox unchanged; visual bounds are decorative. Original projectile emission origins unchanged.",
+      "actions": {
+        "file": "assets/master-build/actors/alaskan-owl-actions.png",
+        "source": "docs/six-boss/source/alaska.png",
+        "fragmentCleanup": "8-connected components; small detached edge fragments excluded before foot alignment",
+        "cell": [
+          384,
+          256
+        ],
+        "pivot": [
+          144,
+          244
+        ],
+        "states": {
+          "prepare": [
+            0
+          ],
+          "attack": [
+            1
+          ],
+          "hurt": [
+            2
+          ],
+          "defeat": [
+            3
+          ],
+          "transform": [
+            0,
+            1
+          ]
+        },
+        "frameMs": {
+          "prepare": 100,
+          "attack": 120,
+          "hurt": 100,
+          "defeat": 140,
+          "transform": 120
+        },
+        "frames": [
+          {
+            "source": [
+              768,
+              887,
+              187,
+              137
+            ],
+            "anchorX": 850,
+            "sourceBottom": 1009,
+            "scale": 1.5254237288135593,
+            "drawOrigin": [
+              19,
+              56
+            ]
+          },
+          {
+            "source": [
+              955,
+              887,
+              220,
+              137
+            ],
+            "anchorX": 1035,
+            "sourceBottom": 1007,
+            "scale": 1.5254237288135593,
+            "drawOrigin": [
+              22,
+              59
+            ]
+          },
+          {
+            "source": [
+              1175,
+              887,
+              165,
+              137
+            ],
+            "anchorX": 1240,
+            "sourceBottom": 1006,
+            "scale": 1.5254237288135593,
+            "drawOrigin": [
+              45,
+              61
+            ]
+          },
+          {
+            "source": [
+              1340,
+              887,
+              196,
+              137
+            ],
+            "anchorX": 1430,
+            "sourceBottom": 1008,
+            "scale": 1.5254237288135593,
+            "drawOrigin": [
+              7,
+              58
+            ]
+          }
+        ],
+        "sha256": "a5ef345c33916a4e1424b78e6cc292cb4700fc325a480ad75af5eb3ed8c001ee",
+        "phaseNote": "Distinct preparation/execution poses combine with encounter-specific multiplication, wings, ice shield and restoration effects; no repeated idle substitute.",
+        "runtimeFile": "assets/master-build/actors/alaskan-owl-actions.webp",
+        "runtimeSha256": "7dfb98ace64a990c2e43e1fa03b54b7c3b7322d17f186bd2dce6024e816fd2fe"
+      },
+      "runtimeFile": "assets/master-build/actors/alaskan-owl.webp",
+      "pngSha256": "db26313500d1075263e904ad715352cb685543abfb77f66e461b8bb4f946f5e5"
     }
   ],
   "backgrounds": [
@@ -1521,7 +3606,10 @@
         5
       ],
       "reviewOnlyPanels": [],
-      "sha256": "d38f0d140e8c9c35c97ccdd2b15b5b6a8ca39541511faf2b4207f94faf88a00b"
+      "sha256": "d38f0d140e8c9c35c97ccdd2b15b5b6a8ca39541511faf2b4207f94faf88a00b",
+      "runtimeFile": "assets/master-build/socal-scenes.webp",
+      "runtimeSha256": "794ada0bfb49a1e3a7a8f570a5ce38cde04510e7068520aee037d473fa21015a",
+      "pngSha256": "d38f0d140e8c9c35c97ccdd2b15b5b6a8ca39541511faf2b4207f94faf88a00b"
     },
     {
       "world": "tahoe",
@@ -1532,15 +3620,17 @@
       ],
       "activePanels": [
         0,
+        1,
         2,
         3,
         4,
         5
       ],
-      "reviewOnlyPanels": [
-        1
-      ],
-      "sha256": "80bf0ba991a76131b63511aea2b86725be526daf70ad349a76d36965bd98588b"
+      "reviewOnlyPanels": [],
+      "sha256": "80bf0ba991a76131b63511aea2b86725be526daf70ad349a76d36965bd98588b",
+      "runtimeFile": "assets/master-build/tahoe-scenes.webp",
+      "runtimeSha256": "2095c1d42d677f191b3c0a9ee0f58dad2350e4cd5ed5fd680a7a8923d5bb644a",
+      "pngSha256": "80bf0ba991a76131b63511aea2b86725be526daf70ad349a76d36965bd98588b"
     },
     {
       "world": "alaska",
@@ -1552,14 +3642,16 @@
       "activePanels": [
         0,
         1,
+        2,
+        3,
         4,
         5
       ],
-      "reviewOnlyPanels": [
-        2,
-        3
-      ],
-      "sha256": "58ddebb326a24e2f25102a6b0b076d9dde5156f80dd755b89d5177f7493da37b"
+      "reviewOnlyPanels": [],
+      "sha256": "58ddebb326a24e2f25102a6b0b076d9dde5156f80dd755b89d5177f7493da37b",
+      "runtimeFile": "assets/master-build/alaska-scenes.webp",
+      "runtimeSha256": "2340fd0a37510f391d908e6b976683c0752844160c374a4e4892dc1fa73467d1",
+      "pngSha256": "58ddebb326a24e2f25102a6b0b076d9dde5156f80dd755b89d5177f7493da37b"
     }
   ],
   "normalization": {
@@ -1572,5 +3664,132 @@
     "footY": 188,
     "resampling": "nearest-neighbor",
     "sourceRectangles": "Per-frame measurements below; generated sheets only, no annotated reference posters sliced."
+  },
+  "foreground": {
+    "file": "assets/master-build/foreground.png",
+    "runtimeFile": "assets/master-build/foreground.webp",
+    "source": "docs/six-boss/source/foreground.png",
+    "cell": [
+      256,
+      320
+    ],
+    "pivot": [
+      128,
+      312
+    ],
+    "names": [
+      "pine-green",
+      "pine-yellow",
+      "pine-restored",
+      "pine-snow",
+      "palm-tall",
+      "palm-fan",
+      "ice-rock",
+      "granite-rock"
+    ],
+    "frames": [
+      {
+        "source": [
+          32,
+          27,
+          341,
+          493
+        ],
+        "size": [
+          210,
+          304
+        ]
+      },
+      {
+        "source": [
+          433,
+          27,
+          315,
+          493
+        ],
+        "size": [
+          194,
+          304
+        ]
+      },
+      {
+        "source": [
+          794,
+          27,
+          344,
+          493
+        ],
+        "size": [
+          212,
+          304
+        ]
+      },
+      {
+        "source": [
+          1183,
+          27,
+          334,
+          493
+        ],
+        "size": [
+          206,
+          304
+        ]
+      },
+      {
+        "source": [
+          29,
+          540,
+          344,
+          451
+        ],
+        "size": [
+          232,
+          304
+        ]
+      },
+      {
+        "source": [
+          410,
+          615,
+          338,
+          376
+        ],
+        "size": [
+          240,
+          267
+        ]
+      },
+      {
+        "source": [
+          785,
+          690,
+          338,
+          300
+        ],
+        "size": [
+          240,
+          213
+        ]
+      },
+      {
+        "source": [
+          1159,
+          714,
+          348,
+          275
+        ],
+        "size": [
+          240,
+          190
+        ]
+      }
+    ],
+    "referencePacks": [
+      "28910717-4F6D-42A5-8BC1-2F063642A3E3.PNG",
+      "AD4B51CB-020D-44E2-BA4B-0D3622578FB1.PNG"
+    ],
+    "pngSha256": "d89588de3406dd66eb3240e3dddb9a1fe808b71094676ac8184527e057c71f57",
+    "runtimeSha256": "c9947ca63532c289f0239c23b7d28ab835eb24ac1280864e93473234d074f8ac"
   }
 }

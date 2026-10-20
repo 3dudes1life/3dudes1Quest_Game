@@ -37,7 +37,7 @@ const ZONES=[
   {id:'hillcrest',name:'HILLCREST',start:1450,end:3300,color:'#ff4fb8',objective:'Restore Hillcrest',detail:'Collect two Gay Cards and activate the neighborhood Prism Beacon.'},
   {id:'pch',name:'PCH',start:3300,end:5000,color:'#3ce7d2',objective:'Race the PCH',detail:'Cross the coast, avoid Beige Bots, and restore the ocean beacon.'},
   {id:'hollywood',name:'HOLLYWOOD',start:5000,end:6600,color:'#ffe66d',objective:'Take Back Hollywood',detail:'Cross the studio district toward Los Angeles. The final Gay Card is on the downtown approach.'},
-  {id:'la',name:'LOS ANGELES',start:6600,end:9200,color:'#8d5cff',objective:'Rescue Zoey',detail:'Restore the final beacon, defeat the Queen of Beige, and free Zoey from the HOA cage.'}
+  {id:'la',name:'LOS ANGELES',start:6600,end:9200,color:'#8d5cff',objective:'Rescue Zoey',detail:'Restore the final beacon, defeat the Court of Supremes, and free Zoey from the HOA cage.'}
 ];
 
 
@@ -115,7 +115,7 @@ function createUI(){
   const refs={dude:qs('hudDude'),health:qs('hudHealth'),cards:qs('hudCards'),beacons:qs('hudBeacons'),triangle:qs('hudTriangle'),score:qs('hudScore'),routeFill:qs('routeProgressFill'),routeLabel:qs('routeLabel'),objectiveTitle:qs('objectiveTitle'),objectiveDetail:qs('objectiveDetail'),message:qs('message'),completeStats:qs('completeStats'),bossPhase:qs('bossPhase')};
   function show(name){Object.values(screens).forEach(s=>s.classList.remove('active'));screens[name].classList.add('active')}
   function flash(text){refs.message.textContent=text;refs.message.classList.add('show');clearTimeout(flash.t);flash.t=setTimeout(()=>refs.message.classList.remove('show'),1800)}
-  function hud(game){for(const id of ['courtReplayBtn','courtReplayNote'])qs(id).hidden=Boolean(game.courtReplay)||!(game.state.courtDefeated||game.boss.active||game.state.bossDefeated);qs('courtReturnBtn').hidden=!game.courtReplay;const s=game.state,d=DUDES[s.dude],z=game.zone();refs.dude.textContent=d.name;QuestCast.setPortrait(qs("hudPortrait"),d.key);refs.health.textContent=s.health;refs.cards.textContent=s.cards;refs.beacons.textContent=s.beacons;refs.triangle.textContent=Math.floor(s.triangle);if(refs.score)refs.score.textContent=(s.score||0).toLocaleString();refs.routeFill.style.width=(game.player.x/(WORLD-100)*100)+'%';refs.routeLabel.textContent=z.name;refs.objectiveTitle.textContent=s.objective.title;refs.objectiveDetail.textContent=s.objective.detail;refs.bossPhase.classList.toggle('hidden',!game.boss.active&&!game.court?.active);if(game.court?.active){refs.bossPhase.textContent=`COURT OF SUPREMES · PHASE ${game.court.phase} · ${game.court.drain?'RIGHTS DRAIN':game.court.warning?'DRAIN WARNING':'POWERS READY'}`;refs.bossPhase.style.setProperty('--boss-health',`${game.enemies.filter(e=>e.type==='judge'&&e.alive).length/[1,3,5][game.court.phase-1]*100}%`);}if(game.boss.active){const hp=Math.max(0,game.boss.hp);refs.bossPhase.textContent=`QUEEN OF BEIGE  ${hp}/${game.boss.maxHp}`;refs.bossPhase.style.setProperty('--boss-health',`${hp/game.boss.maxHp*100}%`);refs.bossPhase.dataset.phase=String(game.boss.phase)}}
+  function hud(game){for(const id of ['courtReplayBtn','courtReplayNote'])qs(id).hidden=Boolean(game.courtReplay)||!(game.encounters.pastMid||game.encounters.finalComplete||game.encounters.legacyAccess);qs('courtReturnBtn').hidden=!game.courtReplay;qs('queenReplayBtn').hidden=Boolean(game.courtReplay);const s=game.state,d=DUDES[s.dude],z=game.zone();refs.dude.textContent=d.name;QuestCast.setPortrait(qs("hudPortrait"),d.key);refs.health.textContent=s.health;refs.cards.textContent=s.cards;refs.beacons.textContent=s.beacons;refs.triangle.textContent=Math.floor(s.triangle);if(refs.score)refs.score.textContent=(s.score||0).toLocaleString();refs.routeFill.style.width=(game.player.x/(WORLD-100)*100)+'%';refs.routeLabel.textContent=z.name;refs.objectiveTitle.textContent=s.objective.title;refs.objectiveDetail.textContent=s.objective.detail;refs.bossPhase.classList.toggle('hidden',!game.boss.active&&!game.court?.active);if(game.court?.active){refs.bossPhase.textContent=`COURT OF SUPREMES · PHASE ${game.court.phase} · ${game.court.drain?'RIGHTS DRAIN':game.court.warning?'DRAIN WARNING':'POWERS READY'}`;refs.bossPhase.style.setProperty('--boss-health',`${game.enemies.filter(e=>e.type==='judge'&&e.alive).length/[1,3,9][game.court.phase-1]*100}%`);}if(game.boss.active){const hp=Math.max(0,game.boss.hp);refs.bossPhase.textContent=`QUEEN OF BEIGE  ${hp}/${game.boss.maxHp}`;refs.bossPhase.style.setProperty('--boss-health',`${hp/game.boss.maxHp*100}%`);refs.bossPhase.dataset.phase=String(game.boss.phase)}}
   return {show,flash,hud,refs,screens};
 }
 function qs(id){return document.getElementById(id)}
@@ -140,6 +140,7 @@ class Adventure{
   load(key,src){const im=new Image();im.src=src;this.images[key]=im}
   loadAssets(){this.load('home','assets/environments/home_base_remastered.svg');Object.assign(this.images,QuestCore.loadCastImages())}
   reset(startingDude=0){
+    QuestMasterArt.clearDeaths();this.encounters=QuestEncounters.read('socal');
     this.state={health:4,cards:0,beacons:0,score:0,dude:clamp(startingDude,0,2),triangle:0,paused:false,bossDefeated:false,zoeyUnlocked:false,adventureComplete:false,objective:{title:ZONES[0].objective,detail:ZONES[0].detail}};
     this.player={x:150,y:FLOOR-72,w:44,h:72,vx:0,vy:0,onGround:true,facing:1,inv:0,anim:'idle',animUntil:0};this.camera=0;this.running=false;this.last=0;this.finished=false;this.zoneId='home';this.zoneIntro=this.clock.time+1300;this.jumpHeld=false;this.powerHeld=false;this.rigsby={x:265,y:FLOOR-42,w:56,h:40};
     this.cards=[650,1720,2600,3730,4630,7580].map((x,i)=>({x,y:FLOOR-100-(i%2)*95,w:38,h:52,taken:false}));
@@ -176,7 +177,7 @@ class Adventure{
     this.enemies.filter(e=>e.type==='flamingLaw').forEach(e=>{const platform=this.platforms.find(p=>e.x>=p.x&&e.x+e.w<=p.x+p.w);e.floor=platform?.y||FLOOR;e.y=e.floor-e.h;if(platform){e.min=platform.x;e.max=platform.x+platform.w-e.w}});
     this.court={active:false,phase:1,drain:0,warning:0,timer:360};this.state.courtDefeated=false;this.state.courtVictoryRecorded=false;this.courtReplay=null;
     this.enemies.forEach((enemy,index)=>{enemy.id=`enemy-${index}`;enemy.hitFlash=0;enemy.stun=0;enemy.knock=0;enemy.status='';});
-    this.boss={x:8150,y:FLOOR-150,w:120,h:150,hp:10,maxHp:10,active:false,alive:true,cool:0,dir:-1};
+    this.boss={x:4500,y:FLOOR-150,w:120,h:150,hp:10,maxHp:10,active:false,alive:true,cool:0,dir:-1};
     this.portal={x:8840,y:FLOOR-170,w:150,h:165,open:false};this.particles=[];
     this.heroShots=[];this.enemyShots=[];this.cookieBombs=[];this.positiveFields=[];this.heartCombo=0;this.shake=0;
     this.defeatEchoes=[];this.hitNumbers=[];this.switchCombo={heroes:[this.state.dude],expires:0};
@@ -619,7 +620,7 @@ class Adventure{
       if(e.type==='flamingLaw'||e.type==='judge'){
         e.cool-=dt;const near=Math.abs(this.player.x-e.x)<550;
         if(near&&e.cool<=30&&e.cool>0&&!e.warned){e.warned=true;this.sound('warning')}
-        if(near&&e.cool<=0){e.warned=false;e.cool=e.type==='judge'?180+(e.pattern||0)*35:240;const direction=this.player.x<e.x?-1:1;this.enemyShots.push({x:e.x,y:e.y+28,w:24,h:20,vx:direction*(e.type==='judge'?4:3),vy:0,life:150,type:'flamingScroll'})}
+        if(near&&e.cool<=0){e.animUntil=this.clock.time+250;e.warned=false;e.cool=e.type==='judge'?180+(e.pattern||0)*35:240;const direction=this.player.x<e.x?-1:1;this.enemyShots.push({x:e.x,y:e.y+28,w:24,h:20,vx:direction*(e.type==='judge'?4:3),vy:0,life:150,type:'flamingScroll'})}
         if(e.type==='flamingLaw'){if(--e.jumpTimer<=0){e.vy=-5;e.jumpTimer=170}e.vy+=.28*dt;e.y=Math.min(e.floor-e.h,e.y+e.vy*dt);if(e.y>=e.floor-e.h)e.vy=0}
       }
       if((e.type==='protester' ||e.type==='leadProtester')&&e.stun<=0){
@@ -627,7 +628,7 @@ class Adventure{
         const distance=Math.abs(this.player.x-e.x);
         if(distance<520&&e.cool<=20&&e.cool>0&&!e.warned){e.warned=true;this.sound('warning')}
         if(distance<520&&e.cool<=0){
-          e.warned=false;
+          e.animUntil=this.clock.time+300;e.warned=false;
           e.cool=e.type==='leadProtester'?48:90+Math.random()*45;
           const direction=this.player.x<e.x?-1:1;
           this.enemyShots.push({
@@ -690,6 +691,7 @@ class Adventure{
     }
 
     if(e.hp<=0){
+      QuestMasterArt.defeat(e.type==='judge'?'court-judge':e.type==='flamingLaw'?'flaming-law':e.type==='hoa'&&Math.round(e.min||0)%3===0?'hoa-drone':'beige-bot',e.x+e.w/2,e.y+e.h,this.clock.time,e.type==='judge'?106:e.h+26);
       e.alive=false;
       this.defeatEchoes.push({x:e.x+e.w/2,y:e.y+e.h/2,vx:e.knock*.45,vy:-2.4,spin:0,spinV:(Math.random()-.5)*.12,life:42,type:e.type||'hoa',source,color:sourceColor,w:e.w,h:e.h});
       if(e.type==='protester'||e.type==='leadProtester'){
@@ -697,7 +699,7 @@ class Adventure{
         this.enemyDefeated(e,sourceColor);
         this.ui.flash(e.type==='leadProtester'?'Blockade captain fled!':'Hate-sign protester fled!');
         if(e.type==='leadProtester'){
-          this.showCombatStatus('BLOCKADE CLEARED','City Hall is open. The Queen is next.','🌈');
+          this.showCombatStatus('BLOCKADE CLEARED','City Hall is open. The Court is next.','🌈');
           showAchievement('Hate-Sign Blockade Cleared','🪧');
         }
       }else if(e.type==='flamingLaw'||e.type==='judge'){
@@ -714,7 +716,7 @@ class Adventure{
     return false;
   }
 
-  hurt(source){if(this.player.inv>0||this.finished)return;this.state.health--;this.sound('damage');this.player.anim='hurt';this.player.animUntil=this.clock.time+400;this.player.inv=100;this.player.vx=source<this.player.x?7:-7;this.player.vy=-7;this.burst(this.player.x,this.player.y,'#ff6b8a',18);if(this.state.health<=0){this.sound('gameOver');this.court.drain=this.court.warning=0;this.court.timer=360;this.ui.flash('Back at the checkpoint — progress kept');this.state.health=4;const z=this.zone();this.player.x=this.court.active?8008:z.start+100;this.player.y=FLOOR-this.player.h;this.player.vx=this.player.vy=0;this.player.onGround=true;this.motion={};this.input.releaseAll();this.enemyShots=[];persistQuest("respawn");this.camera=clamp(this.player.x-250,0,WORLD-W)}}
+  hurt(source){if(this.player.inv>0||this.finished)return;this.state.health--;this.sound('damage');this.player.anim='hurt';this.player.animUntil=this.clock.time+400;this.player.inv=100;this.player.vx=source<this.player.x?7:-7;this.player.vy=-7;this.burst(this.player.x,this.player.y,'#ff6b8a',18);if(this.state.health<=0){this.sound('gameOver');this.court.drain=this.court.warning=0;this.court.timer=360;this.ui.flash('Back at the checkpoint — progress kept');this.state.health=4;const z=this.zone();this.player.x=this.court.active?8008:this.boss.active?4280:z.start+100;this.player.y=FLOOR-this.player.h;this.player.vx=this.player.vy=0;this.player.onGround=true;this.motion={};this.input.releaseAll();this.enemyShots=[];persistQuest("respawn");this.camera=clamp(this.player.x-250,0,WORLD-W)}}
   sound(kind='hit'){QuestAudio.effect(kind)}
 
   power(t){
@@ -923,24 +925,25 @@ class Adventure{
   }
 
   updateObjective(){
-    if(this.zone().id!=='la')return;
+    if(this.boss.active){this.state.objective={title:this.boss.x>7000?'Finish your saved Queen encounter':'Queen of Beige · PCH midpoint',detail:'Defeat the Queen to restore the coast, then continue toward Los Angeles.'};return;}if(this.zone().id!=='la')return;
     if(this.court.active){this.state.objective={title:`Court of Supremes — Phase ${this.court.phase}`,detail:this.court.drain?'Rights Drain ends in '+Math.ceil(this.court.drain/60)+' seconds. Keep moving and dodge scrolls.':'Defeat every judge with your power. Watch the yellow warning before Rights Drain.'};return;}
     const cards=6-this.state.cards,beacons=3-this.state.beacons;
     if(cards>0)this.state.objective={title:'Recover the Final Gay Card',detail:'The final card is glowing on the downtown LA approach.'};
     else if(beacons>0)this.state.objective={title:'Restore the Final Prism Beacon',detail:`${beacons} beacon remains before City Hall will open.`};
     else if(this.enemies.some(e=>e.type==='leadProtester'&&e.alive))this.state.objective={title:'Clear the Hate-Sign Blockade',detail:'Break the protest captain’s sign and clear the City Hall entrance.'};
-    else if(this.boss.alive&&!this.boss.active&&!this.state.courtDefeated)this.state.objective={title:'Confront the Court of Supremes',detail:'One judge becomes three, then five. Defeat the Court to unlock the Queen of Beige.'};
+    else if(!this.encounters.finalComplete&&!this.court.active)this.state.objective={title:'Confront the Court of Supremes',detail:'One judge becomes three, then nine. Defeat the Court to rescue Zoey.'};
     else if(this.boss.alive&&!this.boss.active)this.state.objective={title:'Enter Beige City Hall',detail:'The blockade is gone. Cross the rainbow security gate and confront the Queen.'};
     else if(this.boss.active&&this.boss.alive)this.state.objective={title:`Defeat the Queen — Phase ${this.boss.phase}`,detail:'Will ricochets through groups. Daniel traps enemies. Caleb sticks timed cookie bombs.'};
     else if(this.finale.active)this.state.objective={title:'Zoey Rescue',detail:'Stay with the beagles while the city celebrates.'};
     else this.state.objective={title:'Enter the Lake Tahoe Portal',detail:'Southern California is restored. Adventure 2 awaits.'};
   }
 
-  startCourtReplay(){
-    if(this.courtReplay||!(this.state.courtDefeated||this.boss.active||this.state.bossDefeated))return;
+  startCourtReplay(kind='court'){
+    if(this.courtReplay||kind==='court'&&!(this.encounters.pastMid||this.encounters.finalComplete||this.encounters.legacyAccess))return;
     if(!persistQuest('before-court-replay')){this.ui.flash('Could not save. Court replay will wait until your progress can be saved.');return;}
     const snapshot=JSON.parse(JSON.stringify(this.save()));
-    this.courtReplay={snapshot,running:this.running,finished:this.finished,screen:this.ui.screens.complete.classList.contains('active')?'complete':'game'};
+    if(!QuestRuntime.writeSave(SAVE+'-encounter-replay',{campaign:snapshot,kind})){this.ui.flash('Replay unavailable: your campaign could not be protected.');return;}
+    this.courtReplay={kind,snapshot,running:this.running,finished:this.finished,screen:this.ui.screens.complete.classList.contains('active')?'complete':'game'};
     this.running=true;this.finished=false;this.state.health=4;this.state.paused=false;
     this.finale.active=false;this.portal.open=false;this.boss.active=false;
     this.player.x=8008;this.player.y=FLOOR-this.player.h;this.player.vx=this.player.vy=0;this.player.inv=0;this.player.onGround=true;this.player.facing=1;
@@ -949,12 +952,14 @@ class Adventure{
     this.enemies=[];
     this.court={active:true,phase:1,drain:0,warning:0,timer:360};
     this.zoneId='la';this.zoneSeen.add('la');this.camera=clamp(this.player.x-350,0,WORLD-W);
-    this.ui.show('game');this.resumeGameplay();this.spawnCourt();this.clock.start();
+    if(kind==='queen'){this.encounters={...this.encounters,queenComplete:false,pastMid:false,legacyAccess:false,finalComplete:false};this.state.bossDefeated=false;this.player.x=4280;this.boss={x:4500,y:FLOOR-150,w:120,h:150,hp:10,maxHp:10,active:false,alive:true,cool:90,phase:1,dir:-1};this.court.active=false;this.zoneId='pch';}
+    this.ui.show('game');this.resumeGameplay();if(kind==='court')this.spawnCourt();this.clock.start();
   }
   returnFromCourtReplay(won=false){
     const replay=this.courtReplay;if(!replay)return;
     const snapshot=replay.snapshot;
-    if(won){snapshot.state.courtVictoryRecorded=true;snapshot.state.courtDefeated=true;}
+    if(won){snapshot.encounters=QuestEncounters.read('socal',snapshot);if(replay.kind==='queen')snapshot.encounters.queenComplete=true;else{snapshot.state.courtVictoryRecorded=true;snapshot.encounters.finalComplete=true;}}
+    if(!QuestRuntime.writeSave(SAVE,snapshot)){this.ui.flash('Unable to restore saved adventure. Keep this tab open and retry Return.');return;}QuestRuntime.clearSave(SAVE+'-encounter-replay');
     this.reset(snapshot.state.dude);this.applySave(snapshot);
     this.running=replay.running;this.finished=replay.finished;
     this.input.releaseAll();this.ui.show(replay.screen);this.resumeGameplay();
@@ -963,8 +968,9 @@ class Adventure{
     this.ui.flash(won?'OVERRULED! Your adventure progress is restored.':'Returned to your saved adventure.');
   }
   spawnCourt(){
-    const counts=[1,3,5],hp=[3,2,1],count=counts[this.court.phase-1];
-    for(let i=0;i<count;i++){const x=8150+i*90;this.enemies.push({id:`court-${this.court.phase}-${i}`,type:'judge',x,y:FLOOR-100,w:46,h:100,vx:i%2?.45:-.45,min:x-25,max:x+25,hp:hp[this.court.phase-1],maxHp:hp[this.court.phase-1],alive:true,cool:120+i*35,pattern:i,stun:0,knock:0,hitFlash:0})}
+    this.enemies=this.enemies.filter(e=>e.type!=='judge');
+    const counts=[1,3,9],hp=[3,2,1],count=counts[this.court.phase-1];
+    for(let i=0;i<count;i++){const x=8110+i*64;this.enemies.push({spawnedAt:this.clock.time,id:`court-${this.court.phase}-${i}`,type:'judge',x,y:FLOOR-100,w:46,h:100,vx:i%2?.45:-.45,min:x-25,max:x+25,hp:hp[this.court.phase-1],maxHp:hp[this.court.phase-1],alive:true,cool:120+i*35,pattern:i,stun:0,knock:0,hitFlash:0})}
     this.ui.flash(['ONE JUDGE','MAJORITY OPINION','FULL COURT'][this.court.phase-1]);this.sound('bossAppear');
   }
   updateCourt(dt){
@@ -974,7 +980,7 @@ class Adventure{
     if(c.warning>0){c.warning=Math.max(0,c.warning-dt);if(c.warning===0){c.drain=120;this.ui.flash('RIGHTS DRAIN — keep moving! Powers return in 2 seconds.')}}
     else if(c.drain===0&&(c.timer-=dt)<=0){c.warning=60;c.timer=420;this.sound('warning');this.ui.flash('RIGHTS DRAIN INCOMING — temporary power restriction!')}
     if(!this.enemies.some(e=>e.type==='judge'&&e.alive)){
-      if(c.phase<3){c.phase++;this.spawnCourt()}else{c.active=false;c.drain=c.warning=0;c.victoryUntil=this.clock.time+3000;this.state.courtDefeated=true;this.state.courtVictoryRecorded=true;this.enemyShots=this.enemyShots.filter(q=>q.type!=='flamingScroll');if(!this.courtReplay)this.state.score+=2000;this.zoneBanner={text:'OVERRULED!',until:this.clock.time+3000};this.ui.flash(this.courtReplay?'OVERRULED! Returning to your saved adventure.':'OVERRULED! Next: the Queen of Beige.');for(const color of ['#ff4fb8','#ffe66d','#3ce7d2','#8d5cff'])this.burst(8320,FLOOR-100,color,20);this.particles.slice(-80).forEach(p=>p.paper=true);this.sound('bossDefeat');persistQuest('court-complete')}
+      if(c.phase<3){c.phase++;this.spawnCourt()}else{c.active=false;c.drain=c.warning=0;c.victoryUntil=this.clock.time+3000;this.state.courtDefeated=true;this.state.courtVictoryRecorded=true;this.enemyShots=this.enemyShots.filter(q=>q.type!=='flamingScroll');this.encounters.finalComplete=true;if(!this.courtReplay)this.state.score+=2000;this.zoneBanner={text:'OVERRULED!',until:this.clock.time+3000};this.ui.flash(this.courtReplay?'OVERRULED! Returning to your saved adventure.':'OVERRULED! Zoey is free!');for(const color of ['#ff4fb8','#ffe66d','#3ce7d2','#8d5cff'])this.burst(8320,FLOOR-100,color,20);this.particles.slice(-80).forEach(p=>p.paper=true);this.sound('bossDefeat');if(!this.courtReplay)this.beginCourtRescue();persistQuest('court-complete')}
     }
   }
   updateBoss(dt,t){
@@ -982,7 +988,13 @@ class Adventure{
     if(this.court.active||this.clock.time<(this.court.victoryUntil||0))return;
 
     if(this.courtReplay){this.returnFromCourtReplay(true);return;}
-    const prereq=this.state.cards===6&&this.state.beacons===3,arenaX=7980;
+    if(this.finale.active||this.state.bossDefeated)return;
+    const midAllowed=this.encounters.queenComplete||this.encounters.pastMid;
+    if(this.player.x>4270&&!this.encounters.queenComplete&&!this.encounters.pastMid){
+      this.player.x=Math.min(this.player.x,4820);
+      if(!this.boss.active){this.boss.active=true;this.boss.cool=90;this.bossEntranceUntil=t+1000;this.ui.flash('QUEEN OF BEIGE · restore the coast!');this.sound('bossAppear');}
+    }
+    const prereq=this.state.cards===6&&this.state.beacons===3&&midAllowed,arenaX=7980;
     if(this.player.x>arenaX&&!prereq){
       this.player.x=arenaX-55;this.player.vx=-2;
       const cards=6-this.state.cards,beacons=3-this.state.beacons;
@@ -993,22 +1005,12 @@ class Adventure{
       this.player.x=arenaX-70;this.player.vx=-3;
       this.ui.flash('Clear the hate-sign blockade before entering City Hall.');return;
     }
-    if(this.player.x>arenaX&&prereq&&this.boss.alive&&!this.boss.active&&!this.state.courtDefeated){this.court.active=true;this.spawnCourt();return;}
-    if(this.player.x>arenaX&&prereq&&this.boss.alive){
-      this.boss.active=true;
-      if(!this.bossIntroShown){
-        this.bossIntroShown=true;this.boss.cool=Math.max(45,this.boss.cool);this.sound('bossAppear');
-        this.bossEntranceUntil=t+1900;
-        this.zoneBanner={text:'FINAL BOSS — QUEEN OF BEIGE',until:t+1900};
-        this.ui.flash('That rainbow is NOT HOA approved.');
-        this.shake=14;
-        this.tauntCooldown=110;
-      }
-    }
+    if(this.player.x>arenaX&&prereq&&!this.boss.active&&!this.state.courtDefeated){this.court.active=true;this.spawnCourt();return;}
     if(!this.boss.active||!this.boss.alive)return;
+    const origin=this.boss.x>7000?8080:4390;
     const phase=this.boss.phase,speed=phase===1?1.05:phase===2?1.65:2.15;
     if(phase!==this.lastBossPhase){
-      this.lastBossPhase=phase;
+      this.lastBossPhase=phase;this.boss.transformUntil=t+650;
       const phaseLines={
         2:'Your happiness exceeds city code.',
         3:'I am writing ALL THREE of you up!'
@@ -1029,12 +1031,12 @@ class Adventure{
       this.tauntCooldown=150;
     }
     if(phase===3&&Math.random()<.006*dt){
-      const oldX=this.boss.x;this.boss.x=8085+Math.random()*390;this.burst(oldX+60,this.boss.y+70,'#c8b99b',34);this.burst(this.boss.x+60,this.boss.y+70,'#ff4fb8',42);this.shake=11;
-    }else{this.boss.x+=this.boss.dir*speed*dt;if(this.boss.x<8080||this.boss.x>8500)this.boss.dir*=-1;}
+      const oldX=this.boss.x;this.boss.x=origin+45+Math.random()*300;this.burst(oldX+60,this.boss.y+70,'#c8b99b',34);this.burst(this.boss.x+60,this.boss.y+70,'#ff4fb8',42);this.shake=11;
+    }else{this.boss.x+=this.boss.dir*speed*dt;if(this.boss.x<origin||this.boss.x>origin+360)this.boss.dir*=-1;}
     this.boss.cool-=dt;
     if(this.boss.cool<=18&&this.boss.cool>0&&!this.boss.warned){this.boss.warned=true;this.sound('warning');this.ui.flash('Queen attack incoming — jump clear!')}
     if(this.boss.cool<=0){
-      this.boss.warned=false;
+      this.boss.animUntil=t+300;this.boss.warned=false;
       this.boss.cool=phase===1?85:phase===2?58:42;
       if(phase===1)this.enemyShots.push({x:this.boss.x,y:this.boss.y+55,w:42,h:24,vx:-6.5,vy:0,life:190,type:'fine',label:['TOO GAY','JOY FINE','NO COLOR','$900'][Math.floor(Math.random()*4)]});
       else if(phase===2)for(const vy of [-2.4,0,2.4])this.enemyShots.push({x:this.boss.x,y:this.boss.y+55,w:34,h:20,vx:-7.2,vy,life:190,type:'beige'});
@@ -1043,17 +1045,17 @@ class Adventure{
         this.enemyShots.push({x:this.boss.x,y:this.boss.y+90,w:44,h:22,vx:-8,vy:1.3,life:200,type:'fine',label:'HAPPINESS'});
         if(!this.boss.summoned){
           this.boss.summoned=true;
-          this.enemies.push({x:7950,y:FLOOR-54,w:52,h:54,vx:1.4,min:7880,max:8100,alive:true},{x:8580,y:FLOOR-54,w:52,h:54,vx:-1.4,min:8500,max:8720,alive:true});
+          this.enemies.push({x:4300,y:FLOOR-54,w:52,h:54,vx:1.4,min:4260,max:4460,alive:true},{x:4780,y:FLOOR-54,w:52,h:54,vx:-1.4,min:4700,max:4830,alive:true});
           this.ui.flash('Phase 3: HOA reinforcements!');
         }
       }
     }
-    if(phase>=2&&Math.random()<.0035*dt){const rainX=7980+Math.random()*650;this.enemyShots.push({x:rainX,y:180,w:28,h:34,vx:0,vy:5.3,life:110,type:'beigeRain'});}
+    if(phase>=2&&Math.random()<.0035*dt){const rainX=4300+Math.random()*500;this.enemyShots.push({x:rainX,y:180,w:28,h:34,vx:0,vy:5.3,life:110,type:'beigeRain'});}
     if(overlap(this.player,this.boss)&&this.player.inv<=0)this.hurt(this.boss.x);
   }
 
   updateCityHallDamage(){
-    if(!this.boss.active||!this.boss.alive)return;
+    if(!this.boss.active||!this.boss.alive||this.boss.x<7000)return;
     const damage=clamp(1-this.boss.hp/this.boss.maxHp,0,1);
     this.cityHallDamage=damage;
     const stage=damage>=.75?3:damage>=.45?2:damage>=.18?1:0;
@@ -1085,6 +1087,12 @@ class Adventure{
   }
 
   defeatBoss(){
+    if(this.encounters.queenComplete)return;
+    QuestMasterArt.defeat('queen-beige',this.boss.x+60,this.boss.y+150,this.clock.time,176);this.encounters.queenComplete=true;if(this.courtReplay?.kind==='queen'){this.returnFromCourtReplay(true);return;}this.boss.hp=0;this.boss.alive=false;this.boss.active=false;this.enemyShots=[];this.state.health=4;
+    this.zoneBanner={text:'COAST COLOR RESTORED!',until:this.clock.time+3000};this.sound('bossDefeat');this.ui.flash('Queen defeated! The coast is free. Continue to Los Angeles and the Court.');
+    this.state.objective={title:'Continue toward Los Angeles',detail:'Restore the final beacon and confront the Court of Supremes.'};if(this.encounters.finalComplete&&!this.encounters.legacyAccess)this.beginCourtRescue();persistQuest('queen-midpoint');
+  }
+  beginCourtRescue(){
     if(this.finale.active||this.state.bossDefeated)return;
     this.boss.alive=false;
     this.boss.active=false;
@@ -1097,10 +1105,10 @@ class Adventure{
     this.worldPulse=90;this.shake=34;this.cameraZoom=.92;
     this.cityHallDamage=1;this.cityHallDamageStage=3;this.cityHallBreakBurst=60;
     for(let i=0;i<34;i++)this.cityHallDebris.push({x:7700+Math.random()*520,y:270+Math.random()*220,vx:(Math.random()-.5)*8,vy:-2-Math.random()*6,spin:(Math.random()-.5)*.22,r:0,life:110+Math.random()*120,size:3+Math.random()*8,color:i%3===0?'#ff4fb8':i%3===1?'#d8c3a6':'#ffe66d'});
-    this.state.objective={title:'Zoey Rescue',detail:'The Queen is defeated. Stay with the beagles for this moment.'};
+    this.state.objective={title:'Zoey Rescue',detail:'The Court is overruled. Stay with the beagles for this moment.'};
     this.burst(this.boss.x+60,this.boss.y+70,'#ffe66d',150);
     this.burst(this.boss.x+60,this.boss.y+70,'#ff4fb8',110);
-    this.showFinaleCard('QUEEN DEFEATED','The beige spell is breaking.','ADVENTURE 1 FINALE');
+    this.showFinaleCard('OVERRULED!','The Court has fallen. Zoey is free.','ADVENTURE 1 FINALE');
     this.haptic([45,35,80,45,120]);
     persistQuest('boss-defeated');
   }
@@ -1123,13 +1131,13 @@ class Adventure{
     if(f.stage===0&&f.timer>78){
       f.stage=1;f.timer=0;this.shake=8;
       this.showFinaleCard('WAIT...','The cage is moving.','CITY HALL FALLS SILENT');
-      this.burst(8665,FLOOR-90,'#e9d7c1',42);
+      this.burst(8792,FLOOR-90,'#e9d7c1',42);
     }else if(f.stage===1&&f.timer>92){
       f.stage=2;f.timer=0;
-      this.state.zoeyUnlocked=true;this.zoey.active=true;this.zoey.x=8660;this.zoey.y=FLOOR-40;this.zoey.heart=300;
+      this.state.zoeyUnlocked=true;this.zoey.active=true;this.zoey.x=8764;this.zoey.y=FLOOR-40;this.zoey.heart=300;
       this.rigsby.x=8460;
       this.showFinaleCard('ZOEY!','Rigsby sees her.','THE CAGE OPENS');
-      this.burst(8665,FLOOR-70,'#ff8db8',110);this.haptic([30,30,55]);
+      this.burst(8792,FLOOR-70,'#ff8db8',110);this.haptic([30,30,55]);
     }else if(f.stage===2){
       this.rigsby.x+=(8550-this.rigsby.x)*.065*dt;this.zoey.x+=(8588-this.zoey.x)*.055*dt;
       if(f.timer>125){f.stage=3;f.timer=0;this.showFinaleCard('WE GOT HER.','Rigsby and Zoey are together again.','THE BEAGLES REUNITE');this.burst(8570,FLOOR-55,'#ff4fb8',90);this.burst(8570,FLOOR-55,'#ffe66d',65);showAchievement('Zoey Rescued!','🐶');}
@@ -1298,7 +1306,7 @@ class Adventure{
 
   drawSky(t){
     const artPanel=this.player.x<1450?0:this.player.x<3300?1:this.player.x<5000?2:this.player.x<5600?3:this.player.x<6600?4:5;
-    if(QuestMasterArt.background(this.ctx,artPanel,this.camera,W,H))return;
+    if(QuestMasterArt.background(this.ctx,artPanel,this.camera,W,H)){if(artPanel===2&&!this.encounters.queenComplete){this.ctx.fillStyle='rgba(145,127,102,.38)';this.ctx.fillRect(0,0,W,H)}return;}
     const c=this.ctx,z=this.zone(),restoration=this.restorationLevel();
     const palettes={
       home:['#5b398d','#ff6e9f','#ffc476'],
@@ -1342,7 +1350,7 @@ class Adventure{
   }
   drawWorld(t){for(const z of ZONES)this.drawZone(z,t);if(this.player.x>=5000&&this.player.x<5600){this.ctx.fillStyle='#27233e';this.ctx.fillRect(5060,340,235,35);this.ctx.fillStyle='#ffe5ae';this.ctx.font='bold 20px monospace';this.ctx.fillText('WEST HOLLYWOOD',5070,365)}this.drawGround();for(const p of this.platforms){this.ctx.fillStyle=p.x<3300?'#71405f':p.x<5000?'#3c8890':p.x<6600?'#8b5b9d':'#4a3c6d';this.ctx.beginPath();this.ctx.roundRect(p.x,p.y,p.w,p.h,10);this.ctx.fill();this.ctx.fillStyle='#f8d898';this.ctx.fillRect(p.x,p.y,p.w,4);this.ctx.fillStyle='#29273e';this.ctx.fillRect(p.x,p.y+p.h-3,p.w,3)}}
   drawGround(){const c=this.ctx;for(const z of ZONES){const colors={home:['#a6603f','#61393a'],hillcrest:['#5d365f','#2f2444'],pch:['#b88959','#5f6d5e'],hollywood:['#76506c','#34283e'],la:['#4a405d','#211d32']}[z.id];const g=c.createLinearGradient(0,FLOOR,0,H);g.addColorStop(0,colors[0]);g.addColorStop(1,colors[1]);c.fillStyle=g;c.fillRect(z.start,FLOOR,z.end-z.start,100);c.strokeStyle='rgba(255,255,255,.12)';for(let x=z.start;x<z.end;x+=110){c.beginPath();c.moveTo(x,FLOOR);c.lineTo(x+55,H);c.stroke()}}}
-  drawZone(z,t){const c=this.ctx;if(z.id==='home'){const im=this.images.home;if(!QuestMasterArt.status().loaded){if(im?.complete&&im.naturalWidth)c.drawImage(im,0,0,1450,720);else this.house(150)}}else if(z.id==='hillcrest'){for(let x=z.start+80;x<z.end;x+=280)this.storefront(x,430,(x/280)%2?'#ff4fb8':'#3ce7d2');this.rainbowCrosswalk(2050)}else if(z.id==='pch'){c.fillStyle='#1aa8c7';c.fillRect(z.start,405,z.end-z.start,215);for(let x=z.start;x<z.end;x+=170){c.strokeStyle='rgba(255,255,255,.55)';c.lineWidth=5;c.beginPath();c.arc(x,470+Math.sin(t*.002+x)*18,90,3.5,5.9);c.stroke()}for(let x=z.start+180;x<z.end;x+=430)this.palm(x,520)}else if(z.id==='hollywood'){for(let x=z.start+100;x<z.end;x+=260){c.fillStyle=x%520?'#3b284d':'#53335e';c.fillRect(x,340,190,280);c.fillStyle='#ffe66d';for(let y=380;y<570;y+=45){c.fillRect(x+25,y,28,16);c.fillRect(x+100,y,28,16)}}this.text('HOLLYWOOD',5580,290,42,'rgba(255,255,255,.8)','center')}else{this.drawLosAngeles(t,z)}}
+  drawZone(z,t){const c=this.ctx;if(z.id==='home'){const im=this.images.home;if(!QuestMasterArt.status().loaded){if(im?.complete&&im.naturalWidth)c.drawImage(im,0,0,1450,720);else this.house(150)}}else if(z.id==='hillcrest'){for(let x=z.start+80;x<z.end;x+=280)this.storefront(x,430,(x/280)%2?'#ff4fb8':'#3ce7d2');this.rainbowCrosswalk(2050);this.drawHillcrestSign()}else if(z.id==='pch'){c.fillStyle='#1aa8c7';c.fillRect(z.start,405,z.end-z.start,215);for(let x=z.start;x<z.end;x+=170){c.strokeStyle='rgba(255,255,255,.55)';c.lineWidth=5;c.beginPath();c.arc(x,470+Math.sin(t*.002+x)*18,90,3.5,5.9);c.stroke()}for(let x=z.start+180;x<z.end;x+=430)this.palm(x,520)}else if(z.id==='hollywood'){for(let x=z.start+100;x<z.end;x+=260)this.storefront(x,340,x<5600?'#c16caa':'#b99462',x<5600?'WEHO':'STUDIO');this.text('HOLLYWOOD',5580,290,42,'rgba(255,255,255,.8)','center')}else{this.drawLosAngeles(t,z)}}
   drawLosAngeles(t,z){
     const c=this.ctx;
     const skyline=[[6660,265,165,355],[6840,330,120,290],[6990,205,175,415],[7185,300,130,320],[7340,155,190,465],[7550,285,145,335],[7720,225,150,395],[8720,280,180,340],[8910,190,180,430]];
@@ -1638,16 +1646,29 @@ class Adventure{
     }
   }
   house(x){const c=this.ctx;c.fillStyle='#fff1dc';c.fillRect(x+90,330,560,290);c.fillStyle='#37263f';c.beginPath();c.moveTo(x,340);c.lineTo(x+370,120);c.lineTo(x+740,340);c.fill();c.fillStyle='#573344';c.fillRect(x+170,420,140,200);c.fillStyle='#54cbe0';c.fillRect(x+400,420,180,110)}
-  storefront(x,y,color){const c=this.ctx;c.fillStyle='#302443';c.fillRect(x,y,220,FLOOR-y);c.fillStyle=color;c.fillRect(x,y,220,24);c.fillStyle='#75dbe3';c.fillRect(x+25,y+55,70,80);c.fillRect(x+120,y+55,70,80);c.fillStyle='#fff';c.font='900 15px system-ui';c.fillText(x%560?'CAFÉ':'PRIDE',x+65,y+190)}
+  storefront(x,y,color,label=null){const c=this.ctx;c.fillStyle='#302443';c.fillRect(x-3,y-3,226,FLOOR-y+3);c.fillStyle='#4a354e';c.fillRect(x,y,220,FLOOR-y);for(let yy=y+30;yy<FLOOR;yy+=15){c.fillStyle=yy%30?'#51394f':'#5b4058';c.fillRect(x+3,yy,214,2);for(let xx=x+8+(yy%30?0:18);xx<x+215;xx+=36)c.fillRect(xx,yy,2,15)}
+    c.fillStyle=color;c.fillRect(x,y,220,24);for(let xx=0;xx<220;xx+=22){c.fillStyle=xx%44?'#e9c8b0':color;c.fillRect(x+xx,y+20,22,13)}c.fillStyle='#211c35';c.fillRect(x,y+33,220,6);
+    for(const wx of [x+22,x+121]){c.fillStyle='#d9c5ad';c.fillRect(wx-3,y+52,76,87);c.fillStyle='#33687c';c.fillRect(wx,y+55,70,80);c.fillStyle='#70b8c5';c.fillRect(wx+4,y+59,62,24);c.fillStyle='#9fd1d2';c.fillRect(wx+8,y+61,4,53);c.fillRect(wx+14,y+61,3,32);c.fillStyle='#363450';c.fillRect(wx+34,y+55,4,80);c.fillRect(wx,y+92,70,4);}
+    c.fillStyle='#cfa87f';c.fillRect(x+84,FLOOR-95,54,95);c.fillStyle='#241e36';c.fillRect(x+89,FLOOR-91,44,91);c.fillStyle='#92bac5';c.fillRect(x+94,FLOOR-85,34,47);c.fillStyle='#ffe1a4';c.fillRect(x+125,FLOOR-33,4,4);c.fillStyle='#d6b597';c.fillRect(x+78,FLOOR-6,66,6);
+    c.fillStyle='#fff0da';c.font='bold 15px monospace';c.textAlign='center';c.fillText(label||(x%560?'CAFÉ':'PRIDE'),x+110,y+170);c.fillStyle='#29243d';c.fillRect(x+8,FLOOR-28,27,28);c.fillStyle='#427b63';for(let i=0;i<4;i++)c.fillRect(x+5+i*7,FLOOR-38-i%2*7,10,15);
+    c.fillStyle='#e5d2be';c.fillRect(x+203,y+43,3,68);['#ec5a77','#eda655','#eddb78','#6ac18a','#69a7ce','#aa7bc7'].forEach((co,i)=>{c.fillStyle=co;c.fillRect(x+168,y+45+i*5,35,5)});
+  }
+  // Original pixel interpretation of the suspended University/Fifth gateway sign.
+  drawHillcrestSign(){const c=this.ctx,x=1940,y=242,w=430;this.hillcrestSignBounds={x,y,w,h:94,label:'HILLCREST'};
+    c.fillStyle='#212539';c.fillRect(x-45,y+8,10,370);c.fillRect(x+w+35,y+8,10,370);c.fillRect(x-40,y+8,w+80,5);
+    const letters={H:['101','101','101','111','101','101','101'],I:['111','010','010','010','010','010','111'],L:['100','100','100','100','100','100','111'],C:['111','100','100','100','100','100','111'],R:['110','101','101','110','101','101','101'],E:['111','100','100','110','100','100','111'],S:['111','100','100','111','001','001','111'],T:['111','010','010','010','010','010','010']};
+    [...'HILLCREST'].forEach((letter,i)=>{const px=x+13+i*45,py=y+Math.round(Math.abs(i-4)*6);c.fillStyle='#101421';c.fillRect(px-8,py-8,44,72);c.fillStyle='#cb326c';c.fillRect(px-5,py-5,38,65);c.fillStyle='#21152c';c.fillRect(px-2,py-2,32,59);letters[letter].forEach((row,yy)=>[...row].forEach((v,xx)=>{if(v==='1'){c.fillStyle='#ff79bd';c.fillRect(px+xx*8,py+yy*7,7,6);c.fillStyle='#ffeaf4';c.fillRect(px+xx*8+2,py+yy*7,3,5)}}));});
+    for(const px of [x-35,x+w+35]){c.fillStyle='#172235';c.fillRect(px,y+118,5,130);['#ee496c','#ffad54','#ffe887','#65d49a','#68bce6','#b279dd'].forEach((co,i)=>{c.fillStyle=co;c.fillRect(px+5,y+122+i*7,58,7)});}
+  }
   rainbowCrosswalk(x){const colors=['#ff4b4b','#ff9f43','#ffe66d','#49d17d','#45a3ff','#a55cff'];colors.forEach((co,i)=>{this.ctx.fillStyle=co;this.ctx.fillRect(x+i*45,FLOOR-18,38,18)})}
-  palm(x,y){const c=this.ctx;c.strokeStyle='#70513f';c.lineWidth=13;c.beginPath();c.moveTo(x,y+100);c.quadraticCurveTo(x-10,y+20,x,y-70);c.stroke();c.fillStyle='#20734f';for(let i=0;i<7;i++){c.save();c.translate(x,y-70);c.rotate(i*Math.PI/3.5);c.beginPath();c.ellipse(0,-48,12,58,0,0,Math.PI*2);c.fill();c.restore()}}
+  palm(x,y){if(QuestMasterArt.prop(this.ctx,Math.floor(x/100)%2?4:5,x,y+100,270))return;const c=this.ctx;c.strokeStyle='#70513f';c.lineWidth=13;c.beginPath();c.moveTo(x,y+100);c.quadraticCurveTo(x-10,y+20,x,y-70);c.stroke();c.fillStyle='#20734f';for(let i=0;i<7;i++){c.save();c.translate(x,y-70);c.rotate(i*Math.PI/3.5);c.beginPath();c.ellipse(0,-48,12,58,0,0,Math.PI*2);c.fill();c.restore()}}
   drawCollectibles(t){for(const c of this.cards){if(c.taken)continue;const y=c.y+Math.round(Math.sin(t*.004+c.x)*2)*4;this.ctx.save();this.ctx.shadowColor='#ffe66d';this.ctx.shadowBlur=0;this.ctx.fillStyle='#171128';this.ctx.beginPath();this.ctx.roundRect(c.x,y,c.w,c.h,7);this.ctx.fill();['#ff4b4b','#ff9f43','#ffe66d','#49d17d','#45a3ff','#a55cff'].forEach((co,i)=>{this.ctx.fillStyle=co;this.ctx.fillRect(c.x+7,y+8+i*5,c.w-14,5)});this.ctx.restore()}for(const b of this.beacons){const pulse=.8+.18*Math.sin(t*.006+b.x);this.ctx.save();this.ctx.translate(b.x+27,b.y+46);this.ctx.shadowColor=b.on?'#3ce7d2':'#7d708a';this.ctx.shadowBlur=0;this.ctx.fillStyle=b.on?'#3ce7d2':'#665a78';this.ctx.beginPath();this.ctx.moveTo(0,-45);this.ctx.lineTo(25,0);this.ctx.lineTo(0,45);this.ctx.lineTo(-25,0);this.ctx.closePath();this.ctx.fill();if(b.on){this.ctx.globalAlpha=.25;this.ctx.scale(1.5*pulse,1.5*pulse);this.ctx.fill()}this.ctx.restore()}}
   drawEnemies(t){
-    const c=this.ctx;
+    const c=this.ctx;QuestMasterArt.drawDefeats(c,t);
     for(const e of this.enemies){
       if(!e.alive)continue;
       const artId=e.type==='judge'?'court-judge':e.type==='flamingLaw'?'flaming-law':e.type==='protester'||e.type==='leadProtester'?'beige-bot':Math.round(e.min||0)%3===0?'hoa-drone':'beige-bot';
-      if(QuestMasterArt.draw(c,artId,e.x+e.w/2,e.y+e.h,t,e.type==='judge'?120:e.h+26,{moving:true,flip:e.vx<0,flash:e.hitFlash>0})){if(e.warned){c.fillStyle='#f8e858';c.fillRect(e.x+e.w/2-4,e.y-30,8,18)}if(e.signUp){c.fillStyle='#2b233e';c.fillRect(e.x-8,e.y-30,e.w+16,20);c.fillStyle='#fff';c.font='bold 12px monospace';c.textAlign='center';c.fillText('SHIELD '+e.signHp,e.x+e.w/2,e.y-15)}continue;}
+      if(QuestMasterArt.draw(c,artId,e.x+e.w/2,e.y+e.h,t,e.type==='judge'?106:e.h+26,{moving:Math.abs(e.vx)>0,flip:e.warned||t<(e.animUntil||0)?this.player.x<e.x:e.vx<0,flash:e.hitFlash>0,pose:e.hitFlash>0?'hurt':e.type==='judge'&&t<(e.spawnedAt||0)+600?'transform':e.warned?'prepare':t<(e.animUntil||0)?'attack':null})){if(e.warned){c.fillStyle='#f8e858';c.fillRect(e.x+e.w/2-4,e.y-30,8,18)}if(e.signUp){c.fillStyle='#2b233e';c.fillRect(e.x-8,e.y-30,e.w+16,20);c.fillStyle='#fff';c.font='bold 12px monospace';c.textAlign='center';c.fillText('SHIELD '+e.signHp,e.x+e.w/2,e.y-15)}continue;}
       if(e.warned){c.fillStyle='#f8e858';c.fillRect(e.x+e.w/2-4,e.y-32,8,16);c.fillRect(e.x+e.w/2-4,e.y-12,8,4)}
       const reactionY=e.heartHeld>0?Math.sin(t*.02+e.x)*5:0;
       c.save();c.translate(0,-reactionY);if(e.hitFlash>0)c.globalAlpha=Math.floor(e.hitFlash/3)%2?.45:1;
@@ -1740,7 +1761,7 @@ class Adventure{
   drawCaptiveZoey(t){
     if(this.state.zoeyUnlocked)return;
     const c=this.ctx;
-    const x=8660,y=FLOOR-112;
+    const x=8752,y=FLOOR-112;
     c.save();
 
     // Warning glow and story label.
@@ -1935,10 +1956,9 @@ class Adventure{
 
   drawBoss(t){
     this.drawCaptiveZoey(t);
-    if(this.court.active||!this.state.courtDefeated)return;
     if(!this.boss.alive)return;
     const c=this.ctx,b=this.boss,phase=this.boss.phase;
-    if(QuestMasterArt.draw(c,'queen-beige',b.x+b.w/2,b.y+b.h,t,176,{moving:b.active,flip:b.dir<0,flash:this.bossHitFlash>0})){if(b.warned){c.fillStyle='#f8e858';c.fillRect(b.x+52,b.y-40,8,20)}return;}
+    if(QuestMasterArt.draw(c,'queen-beige',b.x+b.w/2,b.y+b.h,t,176,{moving:b.active,flip:b.warned||t<(b.animUntil||0)?true:b.dir<0,flash:this.bossHitFlash>0,pose:this.bossHitFlash>0?'hurt':t<(b.transformUntil||0)?'transform':b.warned?'prepare':t<(b.animUntil||0)?'attack':null})){if(b.warned){c.fillStyle='#f8e858';c.fillRect(b.x+52,b.y-40,8,20)}return;}
     const entrance=this.bossEntranceUntil>t;
     const entranceProgress=entrance?clamp(1-(this.bossEntranceUntil-t)/1900,0,1):1;
     const strut=Math.sin(t*.012)*3;
@@ -2200,9 +2220,10 @@ class Adventure{
 
   save(){
     // Replay autosaves keep the original campaign checkpoint, including during rotation/update.
-    if(this.courtReplay){const snapshot=this.courtReplay.snapshot;return {...snapshot,state:{...snapshot.state,courtVictoryRecorded:Boolean(this.state.courtVictoryRecorded)}};}
+    if(this.courtReplay)return this.courtReplay.snapshot;
     return {
       schema:2,
+      encounters:{...this.encounters,court:{active:this.court.active,phase:this.court.phase,hp:this.enemies.filter(e=>e.type==='judge').map(e=>e.alive?e.hp:0)}},
       version:window.QuestRelease.version,
       player:{
         x:this.player.x,
@@ -2224,7 +2245,7 @@ class Adventure{
       })),
       secrets:this.secretSites.map(site=>Boolean(site.found)),
       boss:{
-        hp:this.boss.hp,
+        x:this.boss.x,hp:this.boss.hp,
         alive:Boolean(this.boss.alive),
         active:Boolean(this.boss.active),
         phase:this.boss.phase,
@@ -2251,6 +2272,7 @@ class Adventure{
       return Number.isFinite(number)?number:fallback;
     };
 
+    this.encounters=QuestEncounters.read('socal',s);
     const savedState=s.state&&typeof s.state==='object'?s.state:{};
     Object.assign(this.state,savedState,{paused:false});
 
@@ -2307,18 +2329,19 @@ class Adventure{
 
     const savedBoss=s.boss&&typeof s.boss==='object'?s.boss:{};
     this.boss.hp=clamp(finite(savedBoss.hp,this.boss.maxHp),0,this.boss.maxHp);
-    this.boss.alive=savedBoss.alive!==false&&this.boss.hp>0;
+    this.boss.alive=savedBoss.alive!==false&&this.boss.hp>0;if(!this.encounters.queenComplete&&!this.boss.alive){this.boss.hp=1;this.boss.alive=true;}
     const healthPhase=this.boss.hp<=4?3:this.boss.hp<=7?2:1;
     this.boss.phase=clamp(Math.max(healthPhase,Math.round(finite(savedBoss.phase,1))),1,3);
-    this.boss.active=Boolean(savedBoss.active&&this.boss.alive);
+    this.boss.active=Boolean(savedBoss.active&&this.boss.alive);this.boss.x=clamp(finite(savedBoss.x,this.encounters.pastMid&&this.boss.active&&this.player.x>7000?8150:4500),4300,8500);
     // Legacy Queen progress is preserved; it is not evidence of a Court victory.
     this.state.courtVictoryRecorded=Boolean(savedState.courtVictoryRecorded);
-    this.state.courtDefeated=Boolean(this.state.courtVictoryRecorded||savedState.courtDefeated||this.boss.active||savedState.bossDefeated||savedState.adventureComplete);
+    this.state.courtDefeated=this.encounters.finalComplete||this.encounters.legacyAccess;
+    if(this.encounters.queenComplete){this.boss.alive=false;this.boss.active=false;this.boss.hp=0;}
     this.boss.summoned=Boolean(savedBoss.summoned);
     this.bossIntroShown=this.boss.active;
     this.lastBossPhase=this.boss.phase;
 
-    const defeated=Boolean(this.state.bossDefeated||!this.boss.alive);
+    const defeated=this.encounters.finalComplete&&this.encounters.queenComplete||this.encounters.legacyAccess;
     this.state.bossDefeated=defeated;
     this.finished=false;
 
@@ -2393,6 +2416,7 @@ class Adventure{
       this.setInputMode('PLAYING');
     }
 
+    if(this.encounters.court.active&&!defeated){this.court={active:true,phase:this.encounters.court.phase,drain:0,warning:0,timer:360};this.spawnCourt();this.enemies.filter(e=>e.type==='judge').forEach((e,i)=>{const hp=this.encounters.court.hp[i];if(hp>=0){e.hp=hp;e.alive=hp>0}});}
     this.zoneId=this.zone().id;
     this.zoneSeen=new Set(ZONES.filter(zone=>this.player.x>=zone.start).map(zone=>zone.id));
     this.zoneSeen.add('home');
@@ -2421,7 +2445,7 @@ function showAchievement(title,icon='🏆'){const stack=qs('achievementStack');c
 function showCollect(text){const t=qs('collectibleToast');t.textContent=text;t.classList.add('isVisible');clearTimeout(showCollect.t);showCollect.t=setTimeout(()=>t.classList.remove('isVisible'),1450)}
 window.showAchievement=showAchievement;window.showCollectible=showCollect;
 
-const canvas=qs('gameCanvas');canvas.width=W;canvas.height=H;const ui=createUI();let game;const input=createInput(i=>game?.switchDude(i));game=new Adventure(canvas,ui,input,state=>{ui.refs.completeStats.textContent=`All ${state.cards}/6 Gay Cards recovered, ${state.beacons}/3 Prism Beacons restored, and the Queen of Beige defeated.`;ui.show('complete')});window.__questGame=game;window.__QUEST_RELEASE__={version:window.QuestRelease.version,coreVersion:window.QuestCore.VERSION,dudeCount:DUDES.length,powers:DUDES.map(dude=>({name:dude.name,power:dude.power,icon:dude.powerIcon})),castLocked:window.QuestCore.validateCast(DUDES)};
+const canvas=qs('gameCanvas');canvas.width=W;canvas.height=H;const ui=createUI();let game;const input=createInput(i=>game?.switchDude(i));game=new Adventure(canvas,ui,input,state=>{ui.refs.completeStats.textContent=`All ${state.cards}/6 Gay Cards recovered, ${state.beacons}/3 Prism Beacons restored, and the Queen of Beige and Court of Supremes defeated.`;ui.show('complete')});window.__questGame=game;window.__QUEST_RELEASE__={version:window.QuestRelease.version,coreVersion:window.QuestCore.VERSION,dudeCount:DUDES.length,powers:DUDES.map(dude=>({name:dude.name,power:dude.power,icon:dude.powerIcon})),castLocked:window.QuestCore.validateCast(DUDES)};
 const SAVE='3dudes1quest-save-109';
 const LEGACY_SAVES=[
   '3dudes1quest-save-108x','3dudes1quest-save-108w','3dudes1quest-save-108v',
@@ -2472,7 +2496,7 @@ function persistQuest(reason='auto'){
   if(!game)return false;
   if(!game.running&&!game.state?.bossDefeated)return false;
   try{
-    if(!QuestRuntime.writeSave(SAVE,game.save()))return false;
+    if(!QuestRuntime.writeSave(game.courtReplay?SAVE+'-encounter-replay':SAVE,game.courtReplay?{campaign:game.save(),kind:game.courtReplay.kind}:game.save()))return false;
     document.documentElement.dataset.lastQuestSave=reason;
     if(reason==='manual')QuestAudio.effect('save');
     return true;
@@ -2623,6 +2647,7 @@ function closeFeatureOverlay(id){
 }
 
 qs('resumeBtn').onclick=()=>game.resumeGameplay();
+qs('queenReplayBtn').onclick=()=>game.startCourtReplay('queen');
 qs('courtReplayBtn').onclick=qs('courtReplayCompleteBtn').onclick=()=>game.startCourtReplay();
 qs('courtReturnBtn').onclick=()=>game.returnFromCourtReplay();
 qs('mapBtn').onclick=()=>{buildWorldMap();openFeatureOverlay('worldMapOverlay')};

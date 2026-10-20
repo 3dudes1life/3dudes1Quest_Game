@@ -1,69 +1,67 @@
-# Six-boss master build — partial development checkpoint
+# Six-boss master build — implementation and owner review
 
-**NO-GO for deployment. Not a complete six-boss release candidate.** This checkpoint uses the brief's explicit allowance to preserve verified work on a development branch when the full scope cannot safely be completed in one run. Nothing from this branch has been merged or deployed. Final artwork approval has not been requested because required gameplay and animations remain unfinished.
+**GO for owner review. NO-GO for merge or deployment until explicit final owner approval and passing CI on the submitted commit.** PR #12 remains draft. Production is unchanged. This continues checkpoint `ee3f12b469e5ebbf8fcdf9bbe205c3a76eb13b7d`; it does not replace the engine, protagonists or approved cinematic.
 
 ## Baseline and rollback
 
-Exact main baseline: `39c8d2f4a46420fb2e925bc41fca45c1d846520f` (Origin Story merge, PR11). Main stability run39342695666 and Pages39342695567 succeeded. Eight fetched production HTML/runtime/release/worker files matched that commit. A fresh live production game completed the86-second origin cinematic, retained Caleb selection, handed off to SoCal and moved220logicalpixels without page errors. Evidence: local `test-results/six-boss/baseline/`. Rollback branch: `codex/rollback-origin-story-39c8d2f`. Development branch: `codex/six-boss-master`.
+Main baseline: `39c8d2f4a46420fb2e925bc41fca45c1d846520f` (Origin Story merge, PR11). Rollback branch: `codex/rollback-origin-story-39c8d2f`. Development branch: `codex/six-boss-master`. Release stays 3.4.1; the additive cache revision is `master-six-encounters-1`. Exact final commit and its CI status are recorded in the PR and delivery message; this report does not imply deployment.
 
-## What changed
+## Six-encounter implementation matrix
 
-- New preloaded Canvas artwork adapter with 12 active enemy/boss strips, four measured poses each, nearest-neighbor rendering, fixed foot pivots, reduced-motion support and existing damage flashes. No per-frame image processing or rendering dependency was added.
-- 19 total compiled strips and four generated source sheets preserved. Seven proposed actors remain review-only. The source posters are creative references, not runtime atlases.
-- Six geographically distinct SoCal backdrop panels; WeHo identity occupies part of the existing Hollywood stretch, preserving PCH and the full route. Tahoe lake/forest/trail/restoration and Alaska mountain/glacier/Frost/aurora scenery are selected by existing progression.
-- Toxic-lake and pipeline disaster panels remain review-only. Existing foreground trees/buildings/terrain still need style consistency work.
-- The active old Court name is now **Court of Supremes**. Internal save identifiers remain intact. This is a naming/art change, not the required boss reorder.
-- Alaska ending now points to **Hawaii**, with Costa Rica identified as the fifth/final retirement destination. Neither future world is playable.
-- Active art is preloaded before enabling entry and included in the atomic service-worker precache. Safe update approval, pause/save contracts and retained previous caches remain intact. Release version stays3.4.1; cache revision is `master-art-foundation-1`, identifying a development snapshot, not a newly shipped release.
-
-## Six-encounter completion matrix
-
-| Required encounter | This checkpoint | Remaining required work |
+| Encounter | Actual behavior | Verification |
 |---|---|---|
-| SoCal Queen mid-boss | Existing Queen playable with candidate idle/walk art, in the original final location | Relocate to real midpoint; local color restoration; independent completion state; new action/phase/defeat animation |
-| Court of Supremes final | Existing Court playable; approved fictional name and candidate judge art | Reorder after Queen, replace1/3/5 with readable1/3/9, final rescue ownership, additive migration/replay verification, full action/phase/defeat art |
-| Toxic Bloom | Candidate four-pose strip and contaminated-lake background only; neither active | Full encounter, three cores, hazards/minions, victory/restoration, progression/save/replay integration and all-powers tests |
-| Pine Beetle Queen | Existing playable Forest Drain, larvae/flyers, infections and restoration; candidate idle/walk art | Full attack/phase/defeat art, final required restoration wording, test interaction with new Bloom progression |
-| Pipeline Meltdown | Candidate worker/drone/turret/machine/slime strips and disaster backgrounds only; inactive | Full valves/leaks/glacier/moving-ice/flood/high-ground encounter, fair checkpoint, all-powers validation, bounded hazards, save/replay integration |
-| Frost Queen | Existing playable three phases, snowballs, salmon, blizzard, icicles and breakable shield; candidate idle/walk art | Full action/phase/defeat art and interaction with new pipeline progression |
+| Queen of Beige | PCH midpoint, original combat and three phases; independent saved victory, local color restoration, no rescue | Natural keyboard route; each character's real projectiles; reload and legacy active-Queen compatibility |
+| Court of Supremes | Final arena, actual 1 → 3 → 9 judges; staggered flaming scrolls, warned temporary Rights Drain, recovery, OVERRULED!, then original Zoey rescue/Tahoe transition | Natural keyboard fight observes phases, drain and recovery; all powers; HP reload; nine-judge arena/cage/portal bounds |
+| Toxic Bloom | Progressive lake contamination, three HP-bearing cores, toxic bubbles/algae minions, checkpoint, blue-water restoration | Natural keyboard route and all powers; partial-core reload, rotation, optional replay and reward protection |
+| Pine Beetle Queen | Original three phases, Forest Drain, infected/restored trees, larvae/flyers; new campaigns require Bloom plus original objectives | Natural keyboard route with four nests/six memories, all powers and phases, Alaska transition |
+| Pipeline Meltdown | Five industrial actor types, three actual shutoff valves, leak, glacier warning, moving ice, rising flood, high-ground escape and sealing/restoration | Natural keyboard route; all powers against valves; partial saves, industrial defeat records, flood death/reload recovery |
+| Frost Queen | Original three phases, shield, blizzard, icicles and zombie salmon; rainbow aurora restored; HAWAII — COMING SOON | Natural keyboard completion, all powers and shield phases, restored aurora and ending captures |
 
-No six-boss completion claim is supported. Existing four encounters and the old SoCal ordering are retained.
+## Artwork and destinations
 
-## Save migration
+All 19 relevant actors now use the runtime adapter. Existing four-cell idle/movement strips remain. Each has four additional **distinct** measured preparation, execution, hurt and defeat poses (76 poses), with transparent gutters, fixed foot pivots and nearest-neighbor rendering. Runtime phase transitions combine action poses with timed multiplication, wings, shield or transformation effects; they are not claimed as separate bespoke multi-frame phase atlases. Defeats use a hurt-to-defeat sequence and bounded fade queue. Projectile origins and collision boxes remain simulation-owned. Healthy salmon retain their established renderer.
 
-[Migration design](MIGRATION-DESIGN.md) was written before changing any progression behavior. **New migration code has not been implemented.** Existing storage keys, schema versions, collectible indices, checkpoints, backups, old victories and world unlocks are unchanged. Existing save/replay/backup tests protect compatibility for these presentation changes. They do not validate the proposed new encounter migration. Required fixtures for old Queen-active/rescue/completed worlds, legacy grandfathering, new optional replay, malformed fields and quota failure are documented for the next stage.
+The Pine Beetle Queen action source was regenerated to correct inconsistent proportions. Foreground pine variants, palms and rocks were generated and integrated; original geometry remains. Hillcrest now has a recognizable arched HILLCREST sign with supports, flags and surrounding pixel storefronts, based on the actual neighborhood landmark. San Diego, Hillcrest, PCH, West Hollywood, Hollywood and LA keep their routes and collectibles. Environmental state changes follow actual victories: coastal color, lake contamination/blue recovery, infected/recovered forest, industrial flood/repair and aurora.
 
-## Asset manifest and visual evidence
+[Visual review](review.html), [animated contact sheet](contact-sheet.html), [asset manifest](../../assets/master-build/manifest.json) and [generation provenance](GENERATED-ART.md) provide inspectable artwork at gameplay scale. Source posters are references, not runtime atlases. The approved protagonists, their powers and the 86-second nine-scene cinematic were not regenerated or redesigned. A cinematic style remaster remains a separate future decision.
 
-[Complete integrated asset manifest](../../assets/master-build/manifest.json) records approved reference filenames, generated source hashes, runtime hashes, four source rectangles per strip, dimensions, normalization scale, foot pivot, timing, active/review status and background panel selection. Projectile emission and hitbox ownership remain with the existing simulation.
+## Saves and replay
 
-[Visual review](review.html) includes before/after gameplay, landscape captures, the existing Court/Pine/Frost encounters from natural keyboard routes, background panels and an actual compiled-strip contact sheet. These are partial artwork evidence, **not six-boss screenshots**. [Generation provenance](GENERATED-ART.md) identifies the built-in ImageGen workflow and generated original files.
+The shared `quest-encounters.js` adds a versioned encounter record without renaming existing storage keys or changing existing collectible indices. It sanitizes malformed numbers and contradictory stage/core data. Genuine old victories and completed-world access remain; old late checkpoints do not falsely award newly introduced encounters. An old active Queen can finish in her saved arena.
 
-Unverified and inactive animation states: attack pose, hurt pose, phase transformation and defeat. Existing procedural projectiles/warnings/particles remain. Healthy salmon retain their existing renderer. Characters, powers, cast sheets and the cinematic were not regenerated.
+Eligible existing players can replay the new encounters. Entry first persists and protects the campaign snapshot; quota failure refuses entry. Replay autosaves use a separate sidecar. Returning restores campaign position, score, collectibles, checkpoint and existing boss state. Winning records only the newly earned encounter completion, without duplicating rewards. Reload during a replay returns to the protected campaign. Flood failure retains earned valve/objective progress and resets the warning from safe ground. [Migration design and implemented contract](MIGRATION-DESIGN.md) describe the details.
 
-## Verification
+## Automated and gameplay evidence
 
-- Unit suite:15/15 passed (fixed-step movement, collision/jump behavior, save fallback/quota handling, character/power invariants and release metadata).
-- Natural keyboard routes: all three passed without teleports, invulnerability or forced boss completion. SoCal:6cards/3beacons, genuine Court victory, Queen, Zoey rescue, Tahoe portal. Tahoe:4nests/6memories, Queen, Alaska transition. Alaska:3relays, Frost Queen and Hawaii ending, zero deaths in this run.
-- Full browser suite and PR CI: see linked development PR/checks and final handoff for the exact completed results. This checkpoint must not be merged on a pending or failed check.
-- New artwork regression checks cover19nonempty transparent four-frame strips, dimensions/gutters/foot pivots,12active cache memberships, three live renderers, desktop/landscape captures, and installed offline loading in all three worlds with a preserved storage sentinel.
-- Existing browser coverage includes all powers, Court temporary warned Rights Drain/recovery, legacy Court replays and quota protection, Forest Drain, Frost shield/thaw, audio signal/autoplay/settings, mobile multitouch rotation, safe-update save blocking, backups, native old saves, release badges and86-second cinematic handoff/replay/skip/interruption/reduced motion.
-- Physical iPhone Safari and Android Chrome testing: **not performed**. Real notch/toolbar/rotation, touch latency, memory pressure, install/update and sustained thermal behavior remain device checks.
+- Unit suite: **16/16 passed** locally, including strict fresh/legacy/malformed encounter normalization, fixed-step physics, saves/quota handling and release invariants.
+- Full local browser suite passed, including release labels, controls, saves/backups, audio, mobile rotation/multitouch, Court progression/replays, art and all-world offline PWA checks, and the unchanged natural 86-second cinematic. Final submitted bytes must also pass GitHub CI.
+- Controlled scenarios use real player power projectiles for all three characters against all six encounters. These deliberately isolate boss conditions; they are **separate from complete routes**. [Controlled results](controlled-results.json).
+- All three complete routes use normal keyboard inputs and read-only guidance, without teleporting, invulnerability or boss-completion edits. SoCal: Queen midpoint, six cards, three beacons, Court nine judges, rescue and portal. Tahoe: Bloom, four nests, six memories, Queen and Alaska transition. Alaska: valves/flood, three relays, Frost Queen, zero deaths in the recorded run and Hawaii ending. [Natural route results](natural-results.json).
+- Meaningful save scenarios cover partial Court HP, Bloom cores and valves; interrupted/rotated fights; replay snapshot protection; storage quota failure; malformed saves; flood death/reload; and retained legacy world access. Preparation/attack/hurt/transformation/defeat usage is observed in natural routes.
+- Asset tests check 19 idle/movement strips and 76 distinct action poses, alpha, pivots, PNG/WebP integrity, three live renderers, desktop/touch landscape and all three worlds offline. All service-worker precache paths exist. Safe update approval and save blocking remain intact.
 
-## Performance observations
+## Performance
 
-[Raw before/after measurements](performance.json): same local headless Chrome, sequential baseline/candidate cases, desktop1280×800 and simulated touch844×390,239RAF intervals while walking per case. Shared machine, no throttling. Median16.7ms; p95 up to16.8ms for baseline and candidate; no sampled intervals over33ms. This short diagnostic does not establish physical-device performance or long-session stability.
+[Raw measurements](performance.json) use sequential local headless Chrome, desktop 1280×800 and simulated touch 844×390, with 239 RAF intervals while walking per case. No throttling; shared machine. Candidate median 16.7ms, p95 at most 16.8ms, zero sampled intervals over 33ms. Baseline SoCal had five desktop and one touch interval over 33ms; other baseline cases had zero. This short sample does not establish sustained physical-device performance.
 
-Fresh page resource transfer increased from approximately7.7–7.9MB to12.0–12.3MB per world, primarily detailed PNG backgrounds (+4.2–4.6MB). Observed local boot times were447–604ms baseline and465–864ms candidate; network conditions and shared load make these unsuitable as a cold-mobile startup guarantee. JS heap observations are recorded, but GPU/decoded image memory was not measured. Before deployment, optimize art payloads and measure real-device startup, memory and sustained play. Assets are processed once at build time; active drawing uses bounded image reads and existing effect/enemy limits.
+| World | Main baseline transfer | Candidate transfer | Desktop startup baseline → candidate | Touch startup baseline → candidate |
+|---|---:|---:|---:|---:|
+| SoCal | 7.91 MB | 11.81 MB | 579 → 501 ms | 466 → 468 ms |
+| Tahoe | 7.67 MB | 11.95 MB | 531 → 582 ms | 490 → 538 ms |
+| Alaska | 7.71 MB | 12.04 MB | 516 → 532 ms | 491 → 500 ms |
 
-## Changed files
+The detailed art still increases a fresh page's transfer by about 3.9–4.3 MB over main. Compared with the partial PNG checkpoint, SoCal/Tahoe decrease by about 0.39/0.36 MB despite the additional actions and actors; Alaska increases by about 0.06 MB. Encoded actor/backdrop payload fell from 17.36 MB PNG to 10.77 MB WebP before adding the shared foreground atlas ([compression record](compression.json)). Actor visible RGBA is lossless; backdrop maximum channel deviation is 2/255. Original PNGs remain review/build sources and are not redundantly precached. Only current-world art is loaded by each runtime; offline installation intentionally caches all worlds.
 
-Runtime: `index.html`, `tahoe.html`, `alaska.html`, `js/app109.js`, `js/tahoe253.js`, `js/core/quest-adventure.js`, `js/core/quest-master-art.js`, `js/core/quest-release.js`, `js/world-alaska.js`, `service-worker.js`.
+Observed JS heap is roughly 7–8 MB for SoCal/Tahoe and 18 MB for Alaska. GPU/decoded-image memory was not measured. Startup numbers are local observations, not cold mobile-network guarantees. Enemies, bubbles, falling ice and death-animation queues are bounded; no per-frame image processing was added.
 
-Tests/tooling: `tests/browser.cjs`, `tests/master340.cjs`, `tests/master-art.cjs`, `scripts/build-master-art.cjs`, `scripts/measure-master-art.cjs`.
+## Modified files
 
-Assets/evidence: `assets/master-build/manifest.json`,19actor PNGs,3scene PNGs, `docs/six-boss/` source/provenance/design/report/review/contact-sheet/performance/screenshots. Historical audit/cinematic files remain untouched.
+Runtime: `index.html`, `tahoe.html`, `alaska.html`, `js/app109.js`, `js/tahoe253.js`, `js/core/quest-adventure.js`, `js/core/quest-master-art.js`, new `js/core/quest-encounters.js`, `js/core/quest-release.js`, `service-worker.js`. Earlier checkpoint `js/world-alaska.js` ending change remains.
 
-## Remaining work / recommendation
+Tests: `runtime.test.cjs`, `browser.cjs`, `alaska.cjs`, `audio.cjs`, `characters341.cjs`, `court-progression341.cjs`, `master340.cjs`, `master-art.cjs`, `audit-playthroughs.cjs`, new `six-boss.cjs` and `encounter-saves.cjs`.
 
-**NO-GO.** Preserve this branch and its draft PR. Complete both new encounters, SoCal reordering/1-3-9 arena, additive save migration and safe new-encounter replays, all action/phase/defeat animation, full six-route gameplay/save reload testing, final restoration copy, foreground consistency, performance work and physical-device checks. Then produce the complete six-boss acceptance package and obtain the owner's explicit final artwork/gameplay approval before merge or deployment. This report does not request deployment approval for incomplete work.
+Build/evidence: action/foreground generation and optimization scripts, measurement/preview scripts, 19 actor action PNG/WebP sets, runtime WebP scenery, foreground atlas, updated manifest, provenance, migration contract, contact sheet, screenshots and result records under `docs/six-boss/`. Existing audit/cinematic work is preserved.
+
+## Remaining checks and recommendation
+
+**GO for owner artwork/gameplay review; NO-GO for merge/deployment without that approval and green final CI.** No physical iPhone Safari or Android Chrome testing was performed. Real toolbar/notch behavior, simultaneous touch during rotation, installed-update behavior, low-memory reloads and sustained thermal/startup behavior need device checks. Browser emulation alone cannot establish those results. Detailed art remains heavier than main; slower-device memory/network measurements remain a material limitation. No Hawaii/Costa Rica gameplay, cinematic remaster, permanent elimination or public difficulty rebalance was added.

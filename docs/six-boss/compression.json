@@ -1,0 +1,301 @@
+[
+  {
+    "source": "assets/master-build/actors/queen-beige.png",
+    "runtime": "assets/master-build/actors/queen-beige.webp",
+    "sourceBytes": 208248,
+    "runtimeBytes": 149090,
+    "identicalVisibleRGBA": true
+  },
+  {
+    "source": "assets/master-build/actors/queen-beige-actions.png",
+    "runtime": "assets/master-build/actors/queen-beige-actions.webp",
+    "sourceBytes": 226439,
+    "runtimeBytes": 160440,
+    "identicalVisibleRGBA": true
+  },
+  {
+    "source": "assets/master-build/actors/court-judge.png",
+    "runtime": "assets/master-build/actors/court-judge.webp",
+    "sourceBytes": 212675,
+    "runtimeBytes": 139460,
+    "identicalVisibleRGBA": true
+  },
+  {
+    "source": "assets/master-build/actors/court-judge-actions.png",
+    "runtime": "assets/master-build/actors/court-judge-actions.webp",
+    "sourceBytes": 266287,
+    "runtimeBytes": 174862,
+    "identicalVisibleRGBA": true
+  },
+  {
+    "source": "assets/master-build/actors/flaming-law.png",
+    "runtime": "assets/master-build/actors/flaming-law.webp",
+    "sourceBytes": 163985,
+    "runtimeBytes": 116190,
+    "identicalVisibleRGBA": true
+  },
+  {
+    "source": "assets/master-build/actors/flaming-law-actions.png",
+    "runtime": "assets/master-build/actors/flaming-law-actions.webp",
+    "sourceBytes": 195320,
+    "runtimeBytes": 137808,
+    "identicalVisibleRGBA": true
+  },
+  {
+    "source": "assets/master-build/actors/hoa-drone.png",
+    "runtime": "assets/master-build/actors/hoa-drone.webp",
+    "sourceBytes": 179606,
+    "runtimeBytes": 106274,
+    "identicalVisibleRGBA": true
+  },
+  {
+    "source": "assets/master-build/actors/hoa-drone-actions.png",
+    "runtime": "assets/master-build/actors/hoa-drone-actions.webp",
+    "sourceBytes": 231237,
+    "runtimeBytes": 145792,
+    "identicalVisibleRGBA": true
+  },
+  {
+    "source": "assets/master-build/actors/beige-bot.png",
+    "runtime": "assets/master-build/actors/beige-bot.webp",
+    "sourceBytes": 187633,
+    "runtimeBytes": 118806,
+    "identicalVisibleRGBA": true
+  },
+  {
+    "source": "assets/master-build/actors/beige-bot-actions.png",
+    "runtime": "assets/master-build/actors/beige-bot-actions.webp",
+    "sourceBytes": 226812,
+    "runtimeBytes": 148430,
+    "identicalVisibleRGBA": true
+  },
+  {
+    "source": "assets/master-build/actors/toxic-bloom.png",
+    "runtime": "assets/master-build/actors/toxic-bloom.webp",
+    "sourceBytes": 235118,
+    "runtimeBytes": 180510,
+    "identicalVisibleRGBA": true
+  },
+  {
+    "source": "assets/master-build/actors/toxic-bloom-actions.png",
+    "runtime": "assets/master-build/actors/toxic-bloom-actions.webp",
+    "sourceBytes": 189977,
+    "runtimeBytes": 139758,
+    "identicalVisibleRGBA": true
+  },
+  {
+    "source": "assets/master-build/actors/pine-queen.png",
+    "runtime": "assets/master-build/actors/pine-queen.webp",
+    "sourceBytes": 249777,
+    "runtimeBytes": 190186,
+    "identicalVisibleRGBA": true
+  },
+  {
+    "source": "assets/master-build/actors/pine-queen-actions.png",
+    "runtime": "assets/master-build/actors/pine-queen-actions.webp",
+    "sourceBytes": 267281,
+    "runtimeBytes": 204222,
+    "identicalVisibleRGBA": true
+  },
+  {
+    "source": "assets/master-build/actors/pine-beetle.png",
+    "runtime": "assets/master-build/actors/pine-beetle.webp",
+    "sourceBytes": 128704,
+    "runtimeBytes": 94378,
+    "identicalVisibleRGBA": true
+  },
+  {
+    "source": "assets/master-build/actors/pine-beetle-actions.png",
+    "runtime": "assets/master-build/actors/pine-beetle-actions.webp",
+    "sourceBytes": 141995,
+    "runtimeBytes": 100800,
+    "identicalVisibleRGBA": true
+  },
+  {
+    "source": "assets/master-build/actors/larva.png",
+    "runtime": "assets/master-build/actors/larva.webp",
+    "sourceBytes": 123750,
+    "runtimeBytes": 87244,
+    "identicalVisibleRGBA": true
+  },
+  {
+    "source": "assets/master-build/actors/larva-actions.png",
+    "runtime": "assets/master-build/actors/larva-actions.webp",
+    "sourceBytes": 130809,
+    "runtimeBytes": 89360,
+    "identicalVisibleRGBA": true
+  },
+  {
+    "source": "assets/master-build/actors/flying-beetle.png",
+    "runtime": "assets/master-build/actors/flying-beetle.webp",
+    "sourceBytes": 128336,
+    "runtimeBytes": 93134,
+    "identicalVisibleRGBA": true
+  },
+  {
+    "source": "assets/master-build/actors/flying-beetle-actions.png",
+    "runtime": "assets/master-build/actors/flying-beetle-actions.webp",
+    "sourceBytes": 133023,
+    "runtimeBytes": 93228,
+    "identicalVisibleRGBA": true
+  },
+  {
+    "source": "assets/master-build/actors/algae-slime.png",
+    "runtime": "assets/master-build/actors/algae-slime.webp",
+    "sourceBytes": 90484,
+    "runtimeBytes": 60768,
+    "identicalVisibleRGBA": true
+  },
+  {
+    "source": "assets/master-build/actors/algae-slime-actions.png",
+    "runtime": "assets/master-build/actors/algae-slime-actions.webp",
+    "sourceBytes": 112308,
+    "runtimeBytes": 72010,
+    "identicalVisibleRGBA": true
+  },
+  {
+    "source": "assets/master-build/actors/frost-queen.png",
+    "runtime": "assets/master-build/actors/frost-queen.webp",
+    "sourceBytes": 188801,
+    "runtimeBytes": 148284,
+    "identicalVisibleRGBA": true
+  },
+  {
+    "source": "assets/master-build/actors/frost-queen-actions.png",
+    "runtime": "assets/master-build/actors/frost-queen-actions.webp",
+    "sourceBytes": 204671,
+    "runtimeBytes": 154894,
+    "identicalVisibleRGBA": true
+  },
+  {
+    "source": "assets/master-build/actors/pipeline-worker.png",
+    "runtime": "assets/master-build/actors/pipeline-worker.webp",
+    "sourceBytes": 121771,
+    "runtimeBytes": 89518,
+    "identicalVisibleRGBA": true
+  },
+  {
+    "source": "assets/master-build/actors/pipeline-worker-actions.png",
+    "runtime": "assets/master-build/actors/pipeline-worker-actions.webp",
+    "sourceBytes": 142226,
+    "runtimeBytes": 99940,
+    "identicalVisibleRGBA": true
+  },
+  {
+    "source": "assets/master-build/actors/surveillance-drone.png",
+    "runtime": "assets/master-build/actors/surveillance-drone.webp",
+    "sourceBytes": 94947,
+    "runtimeBytes": 62598,
+    "identicalVisibleRGBA": true
+  },
+  {
+    "source": "assets/master-build/actors/surveillance-drone-actions.png",
+    "runtime": "assets/master-build/actors/surveillance-drone-actions.webp",
+    "sourceBytes": 124148,
+    "runtimeBytes": 79416,
+    "identicalVisibleRGBA": true
+  },
+  {
+    "source": "assets/master-build/actors/security-turret.png",
+    "runtime": "assets/master-build/actors/security-turret.webp",
+    "sourceBytes": 112859,
+    "runtimeBytes": 72360,
+    "identicalVisibleRGBA": true
+  },
+  {
+    "source": "assets/master-build/actors/security-turret-actions.png",
+    "runtime": "assets/master-build/actors/security-turret-actions.webp",
+    "sourceBytes": 139533,
+    "runtimeBytes": 86996,
+    "identicalVisibleRGBA": true
+  },
+  {
+    "source": "assets/master-build/actors/machinery.png",
+    "runtime": "assets/master-build/actors/machinery.webp",
+    "sourceBytes": 137292,
+    "runtimeBytes": 96756,
+    "identicalVisibleRGBA": true
+  },
+  {
+    "source": "assets/master-build/actors/machinery-actions.png",
+    "runtime": "assets/master-build/actors/machinery-actions.webp",
+    "sourceBytes": 169689,
+    "runtimeBytes": 117598,
+    "identicalVisibleRGBA": true
+  },
+  {
+    "source": "assets/master-build/actors/oil-slime.png",
+    "runtime": "assets/master-build/actors/oil-slime.webp",
+    "sourceBytes": 84296,
+    "runtimeBytes": 54836,
+    "identicalVisibleRGBA": true
+  },
+  {
+    "source": "assets/master-build/actors/oil-slime-actions.png",
+    "runtime": "assets/master-build/actors/oil-slime-actions.webp",
+    "sourceBytes": 128483,
+    "runtimeBytes": 80004,
+    "identicalVisibleRGBA": true
+  },
+  {
+    "source": "assets/master-build/actors/zombie-salmon.png",
+    "runtime": "assets/master-build/actors/zombie-salmon.webp",
+    "sourceBytes": 116915,
+    "runtimeBytes": 81250,
+    "identicalVisibleRGBA": true
+  },
+  {
+    "source": "assets/master-build/actors/zombie-salmon-actions.png",
+    "runtime": "assets/master-build/actors/zombie-salmon-actions.webp",
+    "sourceBytes": 122739,
+    "runtimeBytes": 81546,
+    "identicalVisibleRGBA": true
+  },
+  {
+    "source": "assets/master-build/actors/alaskan-owl.png",
+    "runtime": "assets/master-build/actors/alaskan-owl.webp",
+    "sourceBytes": 128166,
+    "runtimeBytes": 90996,
+    "identicalVisibleRGBA": true
+  },
+  {
+    "source": "assets/master-build/actors/alaskan-owl-actions.png",
+    "runtime": "assets/master-build/actors/alaskan-owl-actions.webp",
+    "sourceBytes": 153874,
+    "runtimeBytes": 103660,
+    "identicalVisibleRGBA": true
+  },
+  {
+    "source": "assets/master-build/socal-scenes.png",
+    "runtime": "assets/master-build/socal-scenes.webp",
+    "sourceBytes": 3323775,
+    "runtimeBytes": 1922106,
+    "maxChannelDelta": 2,
+    "meanChannelDelta": 0.6622062754493455,
+    "changedChannels": 3168495,
+    "dimensionsUnchanged": true,
+    "encoding": "near-lossless WebP60; original PNG retained; owner visual approval pending"
+  },
+  {
+    "source": "assets/master-build/tahoe-scenes.png",
+    "runtime": "assets/master-build/tahoe-scenes.webp",
+    "sourceBytes": 3998761,
+    "runtimeBytes": 2295016,
+    "maxChannelDelta": 2,
+    "meanChannelDelta": 0.6940564022508992,
+    "changedChannels": 3294927,
+    "dimensionsUnchanged": true,
+    "encoding": "near-lossless WebP60; original PNG retained; owner visual approval pending"
+  },
+  {
+    "source": "assets/master-build/alaska-scenes.png",
+    "runtime": "assets/master-build/alaska-scenes.webp",
+    "sourceBytes": 3833278,
+    "runtimeBytes": 2248612,
+    "maxChannelDelta": 2,
+    "meanChannelDelta": 0.7008633702372686,
+    "changedChannels": 3329487,
+    "dimensionsUnchanged": true,
+    "encoding": "near-lossless WebP60; original PNG retained; owner visual approval pending"
+  }
+]
