@@ -22,6 +22,8 @@ The comparison pairs use a controlled, matched one-second timeline position. The
 
 The 16-test unit suite, cinematic player-experience regression suite and naturally timed desktop/landscape composition suite passed locally. Required full GitHub CI must pass on the submitted correction commit. The composition suite covers every scene, source identity, face preservation, layer order, transparency/bounds, keyboard, replay timers/audio, fallback and now the unchanged-panel hashes. The existing cinematic suite covers handoff, Continue, skip/replay, saves, interruption/rotation, reduced motion, four touch sizes, audio and offline playback. Exact final results and commit SHA are recorded in PR #13 and the delivery message.
 
+The first correction CI run exposed an existing Tahoe replay-test timestamp race: replay entry intentionally saves the campaign again, updating `savedAt`. The test had compared the entire save across that entry. A test-only correction now crosses the timestamp boundary deliberately, checks every progress field across entry, and checks exact campaign bytes during replay. The targeted replay suite passed; no game runtime was changed.
+
 Physical-device testing, human listening and final owner artistic approval remain unperformed. Return this candidate for approval; do not merge or deploy.
 
 ## Original artwork and generation prompt
