@@ -13,7 +13,7 @@ module.exports=async function(browser,base){
     const survivors=[0,1,2].filter(d=>mask&(1<<d)),d=survivors[0];q.select(d);
     let a,b,phases=new Set(),shield=false;
     if(world==='socal'){
-     g.enemies=[];g.player.x=4280;g.player.inv=100000;for(let i=0;i<1600&&!g.encounters.queenComplete;i++){if(i%45===0)g.power(i*17);g.update(1,i*17)}a=g.encounters.queenComplete;
+     g.enemies=[];g.player.x=4280;g.player.inv=100000;for(let i=0;i<1600&&!g.encounters.queenComplete;i++){if(mask===7&&i%90===0)g.switchDude(survivors[(i/90)%survivors.length]);if(i%45===0)g.power(i*17);g.update(1,i*17)}a=g.encounters.queenComplete;
      g.state.cards=6;g.state.beacons=3;g.enemies=[];g.player.x=8008;g.player.inv=100000;g.player.facing=1;g.running=true;g.updateBoss(1,0);
      for(let i=0;i<2400&&!g.encounters.finalComplete;i++){phases.add(g.court.phase);const target=g.enemies.find(e=>e.type==='judge'&&e.alive);if(target)g.player.x=Math.max(8008,Math.min(8670,target.x-180));if(i%45===0)g.power(i*17);g.update(1,i*17)}b=g.encounters.finalComplete;
     }else if(world==='tahoe'){
@@ -28,14 +28,15 @@ module.exports=async function(browser,base){
      t.state.enemies=[];t.state.relays.forEach(r=>r.hp=0);t.state.checkpoint=6320;t.state.bossStarted=true;t.player.x=6840;t.player.y=548;t.player.facing=1;t.player.inv=100000;
      for(let i=0;i<2400&&!t.state.bossDefeated;i++){phases.add(t.boss.phase);shield||=t.boss.shield>0;if(i%40===0)t.fire();t.update(17,i*17)}b=t.state.bossDefeated;
     }
+    const genuineContribution=q.state.contributions[d],genuineTeam=mask!==7||world!=='socal'||q.state.contributions.every(Boolean);
     // Tier activation uses surviving signatures; fresh targets stand in for successful HP thresholds.
     survivors.forEach(owner=>q.hit('contribution:'+owner,1,0,owner));for(let i=0;i<25;i++)q.hit('charge:'+i,1,0,d);
     if(world==='socal'){g.finale.active=false;g.state.paused=false;g.finished=false;g.running=true;g.setInputMode('PLAYING');g.court.drain=0}else{t.state&&(t.state.paused=false);if(world==='tahoe'){__TAHOE_DEBUG__.state.paused=false;__TAHOE_DEBUG__.state.complete=false}else{t.state.completed=false;t.state.started=true}}
     const contributionBefore=q.state.contributions[d];const activated=q.activate(),charge=q.state.charge;
-    q.complete(world);const state=q.state;return {world,mask,survivors,a,b,phases:[...phases],shield,contributionBefore,activated,charge,health:state.characters.map(c=>c.hp),badge:state.achievements.find(a=>a.world===world)?.badge};
+    q.complete(world);const state=q.state;return {world,mask,survivors,a,b,phases:[...phases],shield,genuineContribution,genuineTeam,contributionBefore,activated,charge,health:state.characters.map(c=>c.hp),badge:state.achievements.find(a=>a.world===world)?.badge};
    },{world,mask});
    assert.ok(result.a&&result.b,JSON.stringify(result));assert.deepEqual(result.phases,[1,2,3]);if(world==='alaska')assert.equal(result.shield,true);
-   assert.equal(result.contributionBefore,true);assert.equal(result.activated,true,JSON.stringify(result));assert.equal(result.charge,0);assert.ok(result.health.every((hp,i)=>Boolean(hp)===Boolean(mask&(1<<i))));assert.equal(result.badge,result.survivors.length===3?'THREE DUDES STANDING':result.survivors.length===2?'DOUBLE TROUBLE':'LAST DUDE STANDING');results.push(result);
+   assert.equal(result.genuineContribution,true,world+' actual '+result.survivors[0]+' projectile contribution');assert.equal(result.genuineTeam,true,'all three actual SoCal powers contributed before the full combo');assert.equal(result.contributionBefore,true);assert.equal(result.activated,true,JSON.stringify(result));assert.equal(result.charge,0);assert.ok(result.health.every((hp,i)=>Boolean(hp)===Boolean(mask&(1<<i))));assert.equal(result.badge,result.survivors.length===3?'THREE DUDES STANDING':result.survivors.length===2?'DOUBLE TROUBLE':'LAST DUDE STANDING');results.push(result);
   }
  }
  assert.deepEqual(errors,[]);fs.writeFileSync(out+'/boss-configurations.json',JSON.stringify({method:'7 survivor masks × 3 worlds; real signature projectiles, controlled invulnerability and arena prerequisites; no forced boss victory. Normal keyboard routes reported separately.',results,errors},null,2));console.log('PASS all 42 encounters across seven survivor configurations, including 18 sole-survivor boss fights; all tiers and survivor achievements');
