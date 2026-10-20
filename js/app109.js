@@ -1674,7 +1674,7 @@ class Adventure{
     for(const e of this.enemies){
       if(!e.alive)continue;
       const artId=e.type==='judge'?'court-judge':e.type==='flamingLaw'?'flaming-law':e.type==='protester'||e.type==='leadProtester'?'beige-bot':Math.round(e.min||0)%3===0?'hoa-drone':'beige-bot';
-      if(QuestMasterArt.draw(c,artId,e.x+e.w/2,e.y+e.h,t,e.type==='judge'?106:e.h+26,{moving:Math.abs(e.vx)>0,flip:e.warned||t<(e.animUntil||0)?this.player.x<e.x:e.vx<0,flash:e.hitFlash>0,pose:e.hitFlash>0?'hurt':e.type==='judge'&&t<(e.spawnedAt||0)+600?'transform':e.warned?'prepare':t<(e.animUntil||0)?'attack':null})){if(e.warned){c.fillStyle='#f8e858';c.fillRect(e.x+e.w/2-4,e.y-30,8,18)}if(e.signUp){c.fillStyle='#2b233e';c.fillRect(e.x-8,e.y-30,e.w+16,20);c.fillStyle='#fff';c.font='bold 12px monospace';c.textAlign='center';c.fillText('SHIELD '+e.signHp,e.x+e.w/2,e.y-15)}continue;}
+      if(QuestMasterArt.draw(c,artId,e.x+e.w/2,e.y+e.h,t,e.type==='judge'?106:e.h+26,{grounded:artId!=='hoa-drone'&&(e.type!=='flamingLaw'||e.y+e.h>=e.floor-1),moving:Math.abs(e.vx)>0,flip:e.warned||t<(e.animUntil||0)?this.player.x<e.x:e.vx<0,flash:e.hitFlash>0,pose:e.hitFlash>0?'hurt':e.type==='judge'&&t<(e.spawnedAt||0)+600?'transform':e.warned?'prepare':t<(e.animUntil||0)?'attack':null})){if(e.warned)QuestMasterArt.warning(c,e.x+e.w/2,e.y-30);if(e.signUp){c.fillStyle='#2b233e';c.fillRect(e.x-8,e.y-30,e.w+16,20);c.fillStyle='#fff';c.font='bold 12px monospace';c.textAlign='center';c.fillText('SHIELD '+e.signHp,e.x+e.w/2,e.y-15)}continue;}
       if(e.warned){c.fillStyle='#f8e858';c.fillRect(e.x+e.w/2-4,e.y-32,8,16);c.fillRect(e.x+e.w/2-4,e.y-12,8,4)}
       const reactionY=e.heartHeld>0?Math.sin(t*.02+e.x)*5:0;
       c.save();c.translate(0,-reactionY);if(e.hitFlash>0)c.globalAlpha=Math.floor(e.hitFlash/3)%2?.45:1;
@@ -1964,7 +1964,7 @@ class Adventure{
     this.drawCaptiveZoey(t);
     if(!this.boss.alive)return;
     const c=this.ctx,b=this.boss,phase=this.boss.phase;
-    if(QuestMasterArt.draw(c,'queen-beige',b.x+b.w/2,b.y+b.h,t,176,{moving:b.active,flip:b.warned||t<(b.animUntil||0)?true:b.dir<0,flash:this.bossHitFlash>0,pose:this.bossHitFlash>0?'hurt':t<(b.transformUntil||0)?'transform':b.warned?'prepare':t<(b.animUntil||0)?'attack':null})){if(b.warned){c.fillStyle='#f8e858';c.fillRect(b.x+52,b.y-40,8,20)}return;}
+    if(QuestMasterArt.draw(c,'queen-beige',b.x+b.w/2,b.y+b.h,t,176,{moving:b.active,flip:b.warned||t<(b.animUntil||0)?true:b.dir<0,flash:this.bossHitFlash>0,pose:this.bossHitFlash>0?'hurt':t<(b.transformUntil||0)?'transform':b.warned?'prepare':t<(b.animUntil||0)?'attack':null})){if(b.warned)QuestMasterArt.warning(c,b.x+56,b.y-40);return;}
     const entrance=this.bossEntranceUntil>t;
     const entranceProgress=entrance?clamp(1-(this.bossEntranceUntil-t)/1900,0,1):1;
     const strut=Math.sin(t*.012)*3;
