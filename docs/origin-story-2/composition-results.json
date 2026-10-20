@@ -1,0 +1,411 @@
+{
+  "physicalDevices": false,
+  "humanListening": false,
+  "natural": [
+    {
+      "mobile": false,
+      "wallSeconds": 55.002,
+      "runtime": 55
+    },
+    {
+      "mobile": true,
+      "wallSeconds": 54.965,
+      "runtime": 55
+    }
+  ],
+  "faces": [
+    {
+      "mobile": false,
+      "scene": 1,
+      "rows": [
+        {
+          "name": "will",
+          "opaque": 2024,
+          "mismatch": 0,
+          "maxChannelDelta": 0
+        },
+        {
+          "name": "daniel",
+          "opaque": 2024,
+          "mismatch": 0,
+          "maxChannelDelta": 0
+        },
+        {
+          "name": "caleb",
+          "opaque": 2024,
+          "mismatch": 0,
+          "maxChannelDelta": 0
+        }
+      ]
+    },
+    {
+      "mobile": false,
+      "scene": 2,
+      "rows": [
+        {
+          "name": "will",
+          "opaque": 2024,
+          "mismatch": 0,
+          "maxChannelDelta": 0
+        },
+        {
+          "name": "daniel",
+          "opaque": 2024,
+          "mismatch": 0,
+          "maxChannelDelta": 0
+        },
+        {
+          "name": "caleb",
+          "opaque": 2024,
+          "mismatch": 0,
+          "maxChannelDelta": 0
+        }
+      ]
+    },
+    {
+      "mobile": false,
+      "scene": 3,
+      "rows": [
+        {
+          "name": "will",
+          "opaque": 2024,
+          "mismatch": 0,
+          "maxChannelDelta": 0
+        },
+        {
+          "name": "daniel",
+          "opaque": 2024,
+          "mismatch": 0,
+          "maxChannelDelta": 0
+        },
+        {
+          "name": "caleb",
+          "opaque": 2024,
+          "mismatch": 0,
+          "maxChannelDelta": 0
+        }
+      ]
+    },
+    {
+      "mobile": false,
+      "scene": 4,
+      "rows": [
+        {
+          "name": "will",
+          "opaque": 2024,
+          "mismatch": 0,
+          "maxChannelDelta": 0
+        },
+        {
+          "name": "daniel",
+          "opaque": 2024,
+          "mismatch": 0,
+          "maxChannelDelta": 0
+        },
+        {
+          "name": "caleb",
+          "opaque": 2024,
+          "mismatch": 0,
+          "maxChannelDelta": 0
+        }
+      ]
+    },
+    {
+      "mobile": false,
+      "scene": 5,
+      "rows": [
+        {
+          "name": "will",
+          "opaque": 2024,
+          "mismatch": 0,
+          "maxChannelDelta": 0
+        },
+        {
+          "name": "daniel",
+          "opaque": 2024,
+          "mismatch": 0,
+          "maxChannelDelta": 0
+        },
+        {
+          "name": "caleb",
+          "opaque": 2024,
+          "mismatch": 0,
+          "maxChannelDelta": 0
+        }
+      ]
+    },
+    {
+      "mobile": false,
+      "scene": 6,
+      "rows": [
+        {
+          "name": "will",
+          "opaque": 2024,
+          "mismatch": 0,
+          "maxChannelDelta": 0
+        },
+        {
+          "name": "daniel",
+          "opaque": 2024,
+          "mismatch": 0,
+          "maxChannelDelta": 0
+        },
+        {
+          "name": "caleb",
+          "opaque": 2024,
+          "mismatch": 0,
+          "maxChannelDelta": 0
+        }
+      ]
+    },
+    {
+      "mobile": false,
+      "scene": 7,
+      "rows": [
+        {
+          "name": "will",
+          "opaque": 2024,
+          "mismatch": 0,
+          "maxChannelDelta": 0
+        },
+        {
+          "name": "daniel",
+          "opaque": 2024,
+          "mismatch": 0,
+          "maxChannelDelta": 0
+        },
+        {
+          "name": "caleb",
+          "opaque": 2024,
+          "mismatch": 0,
+          "maxChannelDelta": 0
+        }
+      ]
+    },
+    {
+      "mobile": true,
+      "scene": 1,
+      "rows": [
+        {
+          "name": "will",
+          "opaque": 2024,
+          "mismatch": 0,
+          "maxChannelDelta": 0
+        },
+        {
+          "name": "daniel",
+          "opaque": 2024,
+          "mismatch": 0,
+          "maxChannelDelta": 0
+        },
+        {
+          "name": "caleb",
+          "opaque": 2024,
+          "mismatch": 0,
+          "maxChannelDelta": 0
+        }
+      ]
+    },
+    {
+      "mobile": true,
+      "scene": 2,
+      "rows": [
+        {
+          "name": "will",
+          "opaque": 2024,
+          "mismatch": 0,
+          "maxChannelDelta": 0
+        },
+        {
+          "name": "daniel",
+          "opaque": 2024,
+          "mismatch": 0,
+          "maxChannelDelta": 0
+        },
+        {
+          "name": "caleb",
+          "opaque": 2024,
+          "mismatch": 0,
+          "maxChannelDelta": 0
+        }
+      ]
+    },
+    {
+      "mobile": true,
+      "scene": 3,
+      "rows": [
+        {
+          "name": "will",
+          "opaque": 2024,
+          "mismatch": 0,
+          "maxChannelDelta": 0
+        },
+        {
+          "name": "daniel",
+          "opaque": 2024,
+          "mismatch": 0,
+          "maxChannelDelta": 0
+        },
+        {
+          "name": "caleb",
+          "opaque": 2024,
+          "mismatch": 0,
+          "maxChannelDelta": 0
+        }
+      ]
+    },
+    {
+      "mobile": true,
+      "scene": 4,
+      "rows": [
+        {
+          "name": "will",
+          "opaque": 2024,
+          "mismatch": 0,
+          "maxChannelDelta": 0
+        },
+        {
+          "name": "daniel",
+          "opaque": 2024,
+          "mismatch": 0,
+          "maxChannelDelta": 0
+        },
+        {
+          "name": "caleb",
+          "opaque": 2024,
+          "mismatch": 0,
+          "maxChannelDelta": 0
+        }
+      ]
+    },
+    {
+      "mobile": true,
+      "scene": 5,
+      "rows": [
+        {
+          "name": "will",
+          "opaque": 2024,
+          "mismatch": 0,
+          "maxChannelDelta": 0
+        },
+        {
+          "name": "daniel",
+          "opaque": 2024,
+          "mismatch": 0,
+          "maxChannelDelta": 0
+        },
+        {
+          "name": "caleb",
+          "opaque": 2024,
+          "mismatch": 0,
+          "maxChannelDelta": 0
+        }
+      ]
+    },
+    {
+      "mobile": true,
+      "scene": 6,
+      "rows": [
+        {
+          "name": "will",
+          "opaque": 2024,
+          "mismatch": 0,
+          "maxChannelDelta": 0
+        },
+        {
+          "name": "daniel",
+          "opaque": 2024,
+          "mismatch": 0,
+          "maxChannelDelta": 0
+        },
+        {
+          "name": "caleb",
+          "opaque": 2024,
+          "mismatch": 0,
+          "maxChannelDelta": 0
+        }
+      ]
+    },
+    {
+      "mobile": true,
+      "scene": 7,
+      "rows": [
+        {
+          "name": "will",
+          "opaque": 2024,
+          "mismatch": 0,
+          "maxChannelDelta": 0
+        },
+        {
+          "name": "daniel",
+          "opaque": 2024,
+          "mismatch": 0,
+          "maxChannelDelta": 0
+        },
+        {
+          "name": "caleb",
+          "opaque": 2024,
+          "mismatch": 0,
+          "maxChannelDelta": 0
+        }
+      ]
+    }
+  ],
+  "panelHashes": [
+    "4a155095a69c0cff70b00e23b152a3e01c8c1edf0411109d913756b8fe91ea02",
+    "161868c36a31959f500ecc252002ede8675c9b562ec92a1b4d721a9f1000d8dd",
+    "d8edfaffc78011ddd96182841206bef0946b2cb3adba1feea8a40cc0f8723330",
+    "613c5ad9379e3537a6a80d9536585b673fd17dcafa22d8ef70e84a064be5832a",
+    "b14183c5045899c2e95f79bb92dc523320c7053f5a8c086352dc3f821425310c",
+    "f331409518aeb3f5ae8c165c96f8fae8f217f73ff06d07ba517eb86631bb7209"
+  ],
+  "alpha": [
+    {
+      "name": "will_idle",
+      "opaque": 62064,
+      "edges": 0
+    },
+    {
+      "name": "will_walk",
+      "opaque": 86756,
+      "edges": 0
+    },
+    {
+      "name": "will_celebrate",
+      "opaque": 72054,
+      "edges": 0
+    },
+    {
+      "name": "daniel_idle",
+      "opaque": 58452,
+      "edges": 0
+    },
+    {
+      "name": "daniel_walk",
+      "opaque": 74900,
+      "edges": 0
+    },
+    {
+      "name": "daniel_celebrate",
+      "opaque": 60162,
+      "edges": 0
+    },
+    {
+      "name": "caleb_idle",
+      "opaque": 49470,
+      "edges": 0
+    },
+    {
+      "name": "caleb_walk",
+      "opaque": 64100,
+      "edges": 0
+    },
+    {
+      "name": "caleb_celebrate",
+      "opaque": 49200,
+      "edges": 0
+    }
+  ],
+  "keyboard": true,
+  "sceneryFallback": true
+}

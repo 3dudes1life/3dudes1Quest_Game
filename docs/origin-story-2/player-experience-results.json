@@ -1,0 +1,72 @@
+{
+  "physicalDevices": "not tested",
+  "naturalPlayback": true,
+  "scenes": [
+    {
+      "at": 0,
+      "title": "01 · WHERE LOVE BEGAN",
+      "music": "storySun",
+      "observed": 0.7334000000000003
+    },
+    {
+      "at": 8,
+      "title": "02 · BUILDING A LIFE",
+      "music": "storySun",
+      "observed": 8.73300000000003
+    },
+    {
+      "at": 15,
+      "title": "03 · THROUGH THE STORM",
+      "music": "storyStorm",
+      "observed": 15.749499999999914
+    },
+    {
+      "at": 24,
+      "title": "04 · THREE HEARTS, ONE STRENGTH",
+      "music": "storyRise",
+      "observed": 24.69899999999966
+    },
+    {
+      "at": 32,
+      "title": "05 · LOVE BECOMES ACTION",
+      "music": "storyRise",
+      "observed": 32.68199999999952
+    },
+    {
+      "at": 40,
+      "title": "06 · FIVE WORLDS. ONE FAMILY.",
+      "music": "storyQuest",
+      "observed": 40.698400000000014
+    },
+    {
+      "at": 49,
+      "title": "07 · WELCOME HOME",
+      "music": "storyQuest",
+      "observed": 49.764700000000595
+    }
+  ],
+  "mobile": [
+    {
+      "width": 844,
+      "height": 390
+    },
+    {
+      "width": 852,
+      "height": 393
+    },
+    {
+      "width": 932,
+      "height": 430
+    },
+    {
+      "width": 740,
+      "height": 320
+    }
+  ],
+  "audio": {
+    "seconds": 55,
+    "rms": 0.03591648978709223,
+    "peak": 0.1227254793047905
+  },
+  "offline": true
+}
