@@ -1,0 +1,29 @@
+{
+  "source": "docs/origin-story-2/source/scenes.png",
+  "file": "assets/story2/scenes.webp",
+  "width": 1024,
+  "height": 864,
+  "columns": 2,
+  "rows": 3,
+  "sourceBytes": 3569416,
+  "runtimeBytes": 1242914,
+  "maxChannelDelta": 2,
+  "sha256": "39318a4f588ed0a3f23dbe19f1d9506fbcad208fa7433d20c9f27823908976e1",
+  "panels": [
+    "Dominican Republic",
+    "Shared home",
+    "Through the storm",
+    "Emerging powers",
+    "Community and planet",
+    "Five-world journey"
+  ],
+  "cast": "Unchanged approved assets/cast341 and cast340; no generated protagonists",
+  "generator": "Built-in ImageGen; style reference assets/master-build/socal-scenes.png",
+  "baseline": "fcf991f5bf73c9d0789d89a0f5881a5e1991493f",
+  "approvedCastSha256": {
+    "assets/cast341/will.png": "d3bc28d91762fb570678e196517a6b56641d43fcc511fe53aee46a9d91f61b8d",
+    "assets/cast341/daniel.png": "ca214509e4f72ff7a4f7f3fc7f193a4b160cd88bae014bf07486d0bd536a933a",
+    "assets/cast341/caleb.png": "a9b3e72959fcf8eabf0c4b0e4f0b6a7fa38c61d066cfec9cc5f425d6873d809b",
+    "assets/cast340/socal.png": "e1a66fdd1e0eff005382a6352b746b62df1286b2a0c9e18802b872a903fc64c7"
+  }
+}

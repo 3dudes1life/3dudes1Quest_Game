@@ -1,0 +1,187 @@
+[
+  {
+    "world": "socal",
+    "method": "normal keyboard; read-only state observations; no teleports/invulnerability/boss edits",
+    "seconds": 62.907,
+    "result": {
+      "poses": {
+        "walk": 25863,
+        "idle": 728,
+        "hurt": 579,
+        "defeat": 2049,
+        "attack": 239,
+        "prepare": 210,
+        "transform": 537
+      },
+      "queenMid": true,
+      "complete": true,
+      "cards": 6,
+      "beacons": 3,
+      "court": true,
+      "queen": true,
+      "zoey": true,
+      "links": [
+        "tahoe.html"
+      ]
+    },
+    "events": [],
+    "errors": [],
+    "assets": [
+      "assets/master-build/actors/queen-beige.webp",
+      "assets/master-build/actors/queen-beige-actions.webp",
+      "assets/master-build/actors/court-judge.webp",
+      "assets/cast340/socal.png",
+      "assets/master-build/actors/court-judge-actions.webp",
+      "assets/cast341/will.png",
+      "assets/cast341/daniel.png",
+      "assets/cast341/caleb.png",
+      "assets/master-build/actors/flaming-law.webp",
+      "assets/master-build/actors/flaming-law-actions.webp",
+      "assets/master-build/actors/hoa-drone.webp",
+      "assets/master-build/actors/hoa-drone-actions.webp",
+      "assets/master-build/actors/beige-bot.webp",
+      "assets/master-build/actors/beige-bot-actions.webp",
+      "assets/environments/home_base_remastered.svg",
+      "assets/sprites_hd/hoa_queen_idle.png",
+      "assets/master-build/foreground.webp",
+      "assets/master-build/socal-scenes.webp"
+    ]
+  },
+  {
+    "world": "tahoe",
+    "method": "normal keyboard; read-only state observations; no teleports/invulnerability/boss edits",
+    "seconds": 52.651,
+    "result": {
+      "poses": {
+        "walk": 4021,
+        "hurt": 710,
+        "defeat": 1922,
+        "idle": 148,
+        "prepare": 120,
+        "attack": 559,
+        "transform": 52
+      },
+      "bloom": true,
+      "queen": true,
+      "nests": 4,
+      "memories": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "checkpoint": 6820,
+      "beetles": 19,
+      "transition": "/alaska.html"
+    },
+    "events": [
+      {
+        "phase": 1,
+        "x": 8432.600000000013,
+        "health": 4
+      },
+      {
+        "phase": 2,
+        "x": 8381.540893995954,
+        "health": 4
+      },
+      {
+        "phase": 3,
+        "x": 8384.696303559178,
+        "health": 4
+      }
+    ],
+    "errors": [],
+    "assets": [
+      "assets/master-build/actors/toxic-bloom-actions.webp",
+      "assets/master-build/actors/toxic-bloom.webp",
+      "assets/cast341/will.png",
+      "assets/master-build/actors/algae-slime.webp",
+      "assets/master-build/actors/algae-slime-actions.webp",
+      "assets/cast341/daniel.png",
+      "assets/cast341/caleb.png",
+      "assets/cast340/tahoe.png",
+      "assets/master-build/actors/pine-queen-actions.webp",
+      "assets/master-build/actors/pine-beetle.webp",
+      "assets/master-build/actors/pine-queen.webp",
+      "assets/master-build/actors/pine-beetle-actions.webp",
+      "assets/master-build/actors/larva.webp",
+      "assets/master-build/actors/larva-actions.webp",
+      "assets/master-build/actors/flying-beetle.webp",
+      "assets/master-build/foreground.webp",
+      "assets/master-build/actors/flying-beetle-actions.webp",
+      "assets/master-build/tahoe-scenes.webp",
+      "assets/master-build/actors/pipeline-worker-actions.webp",
+      "assets/master-build/actors/pipeline-worker.webp",
+      "assets/master-build/actors/surveillance-drone-actions.webp",
+      "assets/master-build/actors/surveillance-drone.webp",
+      "assets/master-build/actors/security-turret.webp",
+      "assets/master-build/actors/security-turret-actions.webp",
+      "assets/master-build/actors/machinery.webp",
+      "assets/master-build/actors/machinery-actions.webp",
+      "assets/master-build/actors/oil-slime.webp",
+      "assets/master-build/actors/oil-slime-actions.webp",
+      "assets/cast340/alaska.png",
+      "assets/master-build/actors/frost-queen.webp",
+      "assets/master-build/actors/frost-queen-actions.webp",
+      "assets/master-build/actors/zombie-salmon.webp",
+      "assets/master-build/actors/zombie-salmon-actions.webp",
+      "assets/master-build/actors/alaskan-owl.webp",
+      "assets/master-build/actors/alaskan-owl-actions.webp",
+      "assets/master-build/alaska-scenes.webp"
+    ]
+  },
+  {
+    "world": "alaska",
+    "method": "normal keyboard; read-only state observations; no teleports/invulnerability/boss edits",
+    "seconds": 31.207,
+    "result": {
+      "poses": {
+        "walk": 6814,
+        "hurt": 440,
+        "defeat": 923,
+        "prepare": 98,
+        "attack": 46,
+        "transform": 17
+      },
+      "pipeline": true,
+      "completed": true,
+      "deaths": 0,
+      "sessionMethods": [
+        "isActive",
+        "save",
+        "pause",
+        "suspendViewport"
+      ],
+      "ending": "ADVENTURE 3 COMPLETE\nThe Aurora Returns\n\nTHE LAST FRONTIER IS SAVED! Her curse breaks, the salmon return to normal, and the northern lights shine in rainbow colors. Rigsby celebrates with snow zoomies; Zoey retrieves the trail keeper\u2019s satchel.\n\nBeyond the portal: Hawaii. Costa Rica awaits as the fifth and final adventure, where the three dudes retire together.\n\nNEXT ADVENTURE: HAWAII \u00b7 COMING SOON...\nReplay Alaska\nReturn to Quest Hub"
+    },
+    "events": [],
+    "errors": [],
+    "assets": [
+      "assets/master-build/actors/pipeline-worker.webp",
+      "assets/master-build/actors/pipeline-worker-actions.webp",
+      "assets/cast341/daniel.png",
+      "assets/cast341/will.png",
+      "assets/cast341/caleb.png",
+      "assets/master-build/actors/surveillance-drone-actions.webp",
+      "assets/master-build/actors/surveillance-drone.webp",
+      "assets/master-build/actors/security-turret-actions.webp",
+      "assets/master-build/actors/security-turret.webp",
+      "assets/master-build/actors/machinery.webp",
+      "assets/master-build/actors/machinery-actions.webp",
+      "assets/master-build/actors/oil-slime.webp",
+      "assets/master-build/actors/oil-slime-actions.webp",
+      "assets/cast340/alaska.png",
+      "assets/master-build/actors/frost-queen.webp",
+      "assets/master-build/actors/frost-queen-actions.webp",
+      "assets/master-build/actors/zombie-salmon.webp",
+      "assets/master-build/actors/zombie-salmon-actions.webp",
+      "assets/master-build/actors/alaskan-owl.webp",
+      "assets/master-build/actors/alaskan-owl-actions.webp",
+      "assets/master-build/foreground.webp",
+      "assets/master-build/alaska-scenes.webp"
+    ]
+  }
+]

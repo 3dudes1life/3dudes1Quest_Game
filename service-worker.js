@@ -2,6 +2,7 @@ importScripts('./js/core/quest-release.js');
 const VERSION=self.QuestRelease.version;
 const CACHE=`3dudes1quest-${VERSION}-${self.QuestRelease.cacheRevision}`;
 const CORE=[
+  "./assets/story2/scenes.webp",
   "./assets/master-build/foreground.webp",
   "./assets/master-build/actors/queen-beige-actions.webp",
   "./assets/master-build/actors/court-judge-actions.webp",
