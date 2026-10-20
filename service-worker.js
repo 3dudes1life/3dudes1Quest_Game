@@ -2,6 +2,23 @@ importScripts('./js/core/quest-release.js');
 const VERSION=self.QuestRelease.version;
 const CACHE=`3dudes1quest-${VERSION}-${self.QuestRelease.cacheRevision}`;
 const CORE=[
+  "./js/core/quest-master-art.js",
+  "./assets/master-build/actors/queen-beige.png",
+  "./assets/master-build/actors/court-judge.png",
+  "./assets/master-build/actors/flaming-law.png",
+  "./assets/master-build/actors/hoa-drone.png",
+  "./assets/master-build/actors/beige-bot.png",
+  "./assets/master-build/actors/pine-queen.png",
+  "./assets/master-build/actors/pine-beetle.png",
+  "./assets/master-build/actors/larva.png",
+  "./assets/master-build/actors/flying-beetle.png",
+  "./assets/master-build/actors/frost-queen.png",
+  "./assets/master-build/actors/zombie-salmon.png",
+  "./assets/master-build/actors/alaskan-owl.png",
+  "./assets/master-build/socal-scenes.png",
+  "./assets/master-build/tahoe-scenes.png",
+  "./assets/master-build/alaska-scenes.png",
+
   "./js/core/quest-release.js",
   "./VERSION.txt",
   "./package.json",

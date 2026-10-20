@@ -1,0 +1,227 @@
+{
+  "method": "Sequential local headless Chrome; 239 RAF intervals per world/device, right held. Shared machine; no CPU/network throttling. Diagnostic only; no physical-device, GPU-memory or sustained-play claim.",
+  "results": [
+    {
+      "label": "baseline",
+      "world": "socal",
+      "mobile": false,
+      "bootMs": 604,
+      "medianFrameMs": 16.699999999999818,
+      "p95FrameMs": 16.700000000000728,
+      "framesOver33ms": 0,
+      "sampledFrames": 239,
+      "heapBytes": 7446483,
+      "transferredBytes": 7913917,
+      "art": null
+    },
+    {
+      "label": "candidate",
+      "world": "socal",
+      "mobile": false,
+      "bootMs": 563,
+      "medianFrameMs": 16.699999999999818,
+      "p95FrameMs": 16.799999999999727,
+      "framesOver33ms": 0,
+      "sampledFrames": 239,
+      "heapBytes": 7386059,
+      "transferredBytes": 12195758,
+      "art": {
+        "loaded": true,
+        "actors": [
+          "queen-beige",
+          "court-judge",
+          "flaming-law",
+          "hoa-drone",
+          "beige-bot"
+        ],
+        "draws": 6864,
+        "backgrounds": 286,
+        "failed": []
+      }
+    },
+    {
+      "label": "baseline",
+      "world": "tahoe",
+      "mobile": false,
+      "bootMs": 511,
+      "medianFrameMs": 16.699999999999818,
+      "p95FrameMs": 16.700000000000728,
+      "framesOver33ms": 0,
+      "sampledFrames": 239,
+      "heapBytes": 6870387,
+      "transferredBytes": 7670358,
+      "art": null
+    },
+    {
+      "label": "candidate",
+      "world": "tahoe",
+      "mobile": false,
+      "bootMs": 487,
+      "medianFrameMs": 16.699999999999818,
+      "p95FrameMs": 16.700000000000728,
+      "framesOver33ms": 0,
+      "sampledFrames": 239,
+      "heapBytes": 8204452,
+      "transferredBytes": 12305308,
+      "art": {
+        "loaded": true,
+        "actors": [
+          "pine-queen",
+          "pine-beetle",
+          "larva",
+          "flying-beetle"
+        ],
+        "draws": 712,
+        "backgrounds": 291,
+        "failed": []
+      }
+    },
+    {
+      "label": "baseline",
+      "world": "alaska",
+      "mobile": false,
+      "bootMs": 462,
+      "medianFrameMs": 16.699999999999818,
+      "p95FrameMs": 16.799999999999727,
+      "framesOver33ms": 0,
+      "sampledFrames": 239,
+      "heapBytes": 17842717,
+      "transferredBytes": 7713314,
+      "art": null
+    },
+    {
+      "label": "candidate",
+      "world": "alaska",
+      "mobile": false,
+      "bootMs": 501,
+      "medianFrameMs": 16.699999999999818,
+      "p95FrameMs": 16.799999999999727,
+      "framesOver33ms": 0,
+      "sampledFrames": 239,
+      "heapBytes": 17607584,
+      "transferredBytes": 11985112,
+      "art": {
+        "loaded": true,
+        "actors": [
+          "frost-queen",
+          "zombie-salmon",
+          "alaskan-owl"
+        ],
+        "draws": 3168,
+        "backgrounds": 288,
+        "failed": []
+      }
+    },
+    {
+      "label": "baseline",
+      "world": "socal",
+      "mobile": true,
+      "bootMs": 447,
+      "medianFrameMs": 16.699999999999818,
+      "p95FrameMs": 16.700000000000728,
+      "framesOver33ms": 0,
+      "sampledFrames": 239,
+      "heapBytes": 7366655,
+      "transferredBytes": 7913917,
+      "art": null
+    },
+    {
+      "label": "candidate",
+      "world": "socal",
+      "mobile": true,
+      "bootMs": 469,
+      "medianFrameMs": 16.699999999999818,
+      "p95FrameMs": 16.700000000000728,
+      "framesOver33ms": 0,
+      "sampledFrames": 239,
+      "heapBytes": 7756323,
+      "transferredBytes": 12195758,
+      "art": {
+        "loaded": true,
+        "actors": [
+          "queen-beige",
+          "court-judge",
+          "flaming-law",
+          "hoa-drone",
+          "beige-bot"
+        ],
+        "draws": 6840,
+        "backgrounds": 285,
+        "failed": []
+      }
+    },
+    {
+      "label": "baseline",
+      "world": "tahoe",
+      "mobile": true,
+      "bootMs": 485,
+      "medianFrameMs": 16.699999999999818,
+      "p95FrameMs": 16.700000000000728,
+      "framesOver33ms": 0,
+      "sampledFrames": 239,
+      "heapBytes": 7357547,
+      "transferredBytes": 7670358,
+      "art": null
+    },
+    {
+      "label": "candidate",
+      "world": "tahoe",
+      "mobile": true,
+      "bootMs": 465,
+      "medianFrameMs": 16.699999999999818,
+      "p95FrameMs": 16.700000000000728,
+      "framesOver33ms": 0,
+      "sampledFrames": 239,
+      "heapBytes": 8620831,
+      "transferredBytes": 12305464,
+      "art": {
+        "loaded": true,
+        "actors": [
+          "pine-queen",
+          "pine-beetle",
+          "larva",
+          "flying-beetle"
+        ],
+        "draws": 705,
+        "backgrounds": 289,
+        "failed": []
+      }
+    },
+    {
+      "label": "baseline",
+      "world": "alaska",
+      "mobile": true,
+      "bootMs": 498,
+      "medianFrameMs": 16.699999999999818,
+      "p95FrameMs": 16.700000000000273,
+      "framesOver33ms": 0,
+      "sampledFrames": 239,
+      "heapBytes": 17786349,
+      "transferredBytes": 7713314,
+      "art": null
+    },
+    {
+      "label": "candidate",
+      "world": "alaska",
+      "mobile": true,
+      "bootMs": 864,
+      "medianFrameMs": 16.699999999999818,
+      "p95FrameMs": 16.700000000000728,
+      "framesOver33ms": 0,
+      "sampledFrames": 239,
+      "heapBytes": 17961348,
+      "transferredBytes": 11985112,
+      "art": {
+        "loaded": true,
+        "actors": [
+          "frost-queen",
+          "zombie-salmon",
+          "alaskan-owl"
+        ],
+        "draws": 3168,
+        "backgrounds": 288,
+        "failed": []
+      }
+    }
+  ]
+}

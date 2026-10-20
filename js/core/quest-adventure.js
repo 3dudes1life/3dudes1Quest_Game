@@ -123,6 +123,7 @@
   function draw(time){
    ctx.clearRect(0,0,1280,720);ctx.drawImage(backdrop,-Math.round(s.camera*.14)%1280,0);ctx.drawImage(backdrop,1280-Math.round(s.camera*.14)%1280,0);
    if(s.bossDefeated||player.x>5800){for(let i=0;i<6;i++){ctx.globalAlpha=s.bossDefeated?.65:.28;ctx.fillStyle=(s.bossDefeated?['#ff5fa2','#ffae50','#ffe66d','#54e7b2','#76d3de','#977bde']:['#54e7b2','#76d3de','#977bde'])[s.bossDefeated?i:i%3];for(let x=0;x<1280;x+=12)ctx.fillRect(x,80+i*16+Math.round(Math.sin(x*.007+time*.0004+i)*25),12,12)}ctx.globalAlpha=1}
+   QuestMasterArt.background(ctx,s.bossDefeated?5:player.x<2400?0:player.x<6200?1:4,s.camera,1280,720);
    ctx.save();ctx.translate(-Math.round(s.camera),0);
    // Distinct landmarks sit behind the collision surfaces and actors.
    ctx.fillStyle='#779fc0';ctx.beginPath();ctx.moveTo(4340,620);ctx.lineTo(4590,300);ctx.lineTo(4810,450);ctx.lineTo(5060,240);ctx.lineTo(5480,620);ctx.fill();
@@ -138,13 +139,15 @@
    for(const r of s.relays){ctx.fillStyle='#16364d';ctx.fillRect(r.x,550,64,70);ctx.fillStyle=r.hp?'#a1dceb':'#5fefbd';ctx.fillRect(r.x+5,555,54,58);ctx.fillStyle='#f4feff';ctx.fillRect(r.x+9,560,4,42);ctx.fillStyle=r.hp?'#477b9e':'#276b57';ctx.fillRect(r.x+20,570,25,24);label(r.hp?`RELAY ${r.hp}/2`:'RESTORED',r.x+32,535,18,r.hp?'#fff0a5':'#8dffc8')}
    for(const r of s.shards)if(!r.got){const y=r.y+Math.round(Math.sin(time*.004+r.x)*3);ctx.fillStyle='#172e58';ctx.fillRect(r.x-12,y-16,24,32);ctx.fillStyle='#91ffe1';ctx.beginPath();ctx.moveTo(r.x,y-15);ctx.lineTo(r.x+10,y);ctx.lineTo(r.x,y+15);ctx.lineTo(r.x-10,y);ctx.fill();ctx.fillStyle='#fff';ctx.fillRect(r.x-3,y-8,4,8)}
    for(const r of s.caches)if(!r.got){ctx.fillStyle='#5c3a42';ctx.fillRect(r.x-18,r.y-15,36,30);ctx.fillStyle='#ffd290';ctx.fillRect(r.x-16,r.y-12,32,5);ctx.fillStyle='#fff1ce';ctx.fillRect(r.x-3,r.y,6,9)}
-   for(const e of s.enemies)if(e.alive){ctx.save();if(e.flash&&s.tick%4<2)ctx.globalAlpha=.35;const x=Math.round(e.x),y=Math.round(e.y);
+   for(const e of s.enemies)if(e.alive){if(!e.normal&&QuestMasterArt.draw(ctx,e.type==='owl'?'alaskan-owl':'zombie-salmon',e.x+e.w/2,e.y+e.h,time,e.type==='owl'?76:70,{flip:e.dir<0,flash:e.flash>0})){if(e.windup)label('!',e.x+20,e.y-15,26,'#ffe785');continue;}ctx.save();if(e.flash&&s.tick%4<2)ctx.globalAlpha=.35;const x=Math.round(e.x),y=Math.round(e.y);
     if(e.type==='salmon'){const scale=e.large?1.4:1;ctx.translate(x+(e.dir<0?e.w:0),y);ctx.scale(e.dir<0?-scale:scale,scale);ctx.fillStyle='#142a42';ctx.fillRect(6,5,42,22);ctx.fillStyle=e.normal?'#e58888':'#94a9b5';ctx.fillRect(8,7,38,18);ctx.fillStyle=e.normal?'#ffb59e':'#c3ddd2';ctx.fillRect(11,9,30,6);ctx.fillStyle='#577b94';ctx.fillRect(0,3,10,8);ctx.fillRect(0,18,10,8);ctx.fillRect(20,0,13,6);ctx.fillRect(25,23,9,6);ctx.fillStyle=e.normal?'#18243c':'#caff68';ctx.fillRect(39,10,5,5);ctx.fillStyle='#283d57';ctx.fillRect(39,20,8,3)}
     else{ctx.fillStyle='#172d42';ctx.fillRect(x-2,y-2,e.w+4,e.h+4);ctx.fillStyle='#ac9dd9';ctx.fillRect(x,y,e.w,e.h);ctx.fillStyle='#f2f4ff';ctx.fillRect(x+6,y+5,e.w-12,16);ctx.fillStyle='#253451';ctx.fillRect(x+10,y+9,5,5);ctx.fillRect(x+e.w-15,y+9,5,5);ctx.fillStyle='#ffe09a';ctx.fillRect(x+18,y+18,10,7);ctx.fillStyle='#716ba5';ctx.fillRect(x-8,y+12,8,22);ctx.fillRect(x+e.w,y+12,8,22)}
     ctx.restore();if(e.windup)label('!',e.x+20,e.y-15,26,'#ffe785')}
    if(s.bossStarted&&!s.bossDefeated){ctx.save();if(boss.inv&&s.tick%6<3)ctx.globalAlpha=.4;const x=boss.x,y=boss.y;
+    if(!QuestMasterArt.draw(ctx,'frost-queen',x+boss.w/2,y+boss.h,time,202,{flash:boss.inv>0})){
     ctx.fillStyle='#14273c';ctx.fillRect(x+24,y+30,82,138);ctx.fillStyle='#5576ac';ctx.fillRect(x+28,y+70,74,94);ctx.fillStyle='#c8edff';ctx.fillRect(x+37,y+83,56,6);ctx.fillRect(x+33,y+142,64,14);ctx.fillStyle='#e6bda6';ctx.fillRect(x+43,y+22,44,45);ctx.fillStyle='#e1f7ff';ctx.fillRect(x+38,y+18,8,45);ctx.fillRect(x+87,y+18,8,45);ctx.fillStyle='#14273c';ctx.fillRect(x+50,y+35,6,5);ctx.fillRect(x+74,y+35,6,5);ctx.fillStyle='#ba528f';ctx.fillRect(x+58,y+53,14,4);
     ctx.fillStyle='#7cf1ef';ctx.fillRect(x+36,y+8,60,12);ctx.fillRect(x+36,y-5,9,18);ctx.fillRect(x+61,y-13,9,25);ctx.fillRect(x+87,y-5,9,18);ctx.fillStyle='#d7f8ff';ctx.fillRect(x+9,y+70,17,68);ctx.fillRect(x+106,y+70,17,68);ctx.fillStyle='#435b86';ctx.fillRect(x+123,y+30,7,122);ctx.fillStyle='#8cffff';ctx.fillRect(x+114,y+20,24,16);
+    }
     if(boss.shield){ctx.strokeStyle='#b3f6ff';ctx.lineWidth=7;ctx.strokeRect(x-12,y-20,154,195);label('ICE SHIELD '+boss.shield,x+65,y-42,20,'#ccf9ff')}
     ctx.restore();if(boss.windup){label(boss.phase===1?'SNOWBALLS + SALMON!':'BLIZZARD + ICICLES!',boss.x+60,boss.y-25,21,'#ffe887');if(boss.phase>=2)for(const x of boss.markers||[]){ctx.fillStyle='#ffe66d';ctx.fillRect(x,110,18,8);label('↓',x+9,95,24,'#ffe66d')}}
    }
@@ -154,7 +157,7 @@
    for(const p of s.particles){ctx.globalAlpha=p.life/25;ctx.fillStyle=p.color;ctx.fillRect(p.x,p.y,4,4)}ctx.globalAlpha=1;
    QuestCore.drawBeagle(ctx,player.x-80,world.floor-40,time,'rigsby',player.facing<0);QuestCore.drawBeagle(ctx,player.x-140,world.floor-40,time,'zoey',player.facing<0);
    QuestCore.drawDude(ctx,{images:imgs,dudeIndex:s.dude,player,time,groundY:world.floor});QuestCore.drawDanielCast(ctx,player,s.cast);
-   if(s.bossDefeated){ctx.fillStyle='#75ffbe';ctx.fillRect(7400,480,10,140);ctx.fillRect(7410,485,90,50);label('COSTA RICA',7400,460,20,'#b6ffe0')}
+   if(s.bossDefeated){ctx.fillStyle='#75ffbe';ctx.fillRect(7400,480,10,140);ctx.fillRect(7410,485,90,50);label('HAWAII · SOON',7400,460,20,'#b6ffe0')}
    ctx.restore();if(s.weather!=='CALM')for(let i=0;i<40;i++){ctx.fillStyle=i%2?'#d4edf6':'#fff';ctx.fillRect((i*83+s.tick*(s.weather==='GUST'?2:1))%1280,(i*51+s.tick*2)%720,3,3)}renderer.present();
   }
   input=QuestRuntime.createInput({active:()=>s.started&&!s.paused&&!s.completed,screenActive:()=>s.started,canvas,buttons:[...document.querySelectorAll('[data-action]')],switchDude:setDude,pause:()=>pause(!s.paused)});
@@ -166,7 +169,7 @@
   for(const type of ['blur','pagehide'])addEventListener(type,()=>{if(s.started&&!s.paused&&!s.completed)pause(true)});document.addEventListener('visibilitychange',()=>{if(document.hidden&&s.started&&!s.completed)pause(true)});
   window.__QUEST_SESSION__={isActive:()=>s.started&&!s.completed,save,pause:()=>pause(true),suspendViewport(){const paused=s.paused;s.paused=true;input.releaseAll();save();QuestAudio.sync();return()=>{s.paused=paused;clock.reset();QuestAudio.sync()}}};
   QuestAudio.bind(()=>({track:!s.started?'title':s.bossDefeated?'victory':s.bossStarted?world.bossMusic:world.music,paused:s.paused}));
-  QuestCore.preloadCastImages(imgs).then(report=>{ready=report.ready&&QuestCore.verifyCastRenderer(imgs).ready;$('beginAdventure').disabled=!ready;$('continueAdventure').disabled=!ready||!QuestRuntime.readSave(world.saveKey);if(!ready)message('Characters could not load. Reload when online.');draw(0)});
+  Promise.all([QuestCore.preloadCastImages(imgs),QuestMasterArt.ready]).then(([report])=>{ready=report.ready&&QuestCore.verifyCastRenderer(imgs).ready;$('beginAdventure').disabled=!ready;$('continueAdventure').disabled=!ready||!QuestRuntime.readSave(world.saveKey);if(!ready)message('Characters could not load. Reload when online.');draw(0)}).catch(error=>{ready=false;$('beginAdventure').disabled=true;$('continueAdventure').disabled=true;message('Artwork could not load. Reconnect and reload.');console.error(error.message)});
   const api={state:s,player,boss,input,clock,save,load,update,draw,start,hit,hurt,fire,setDude,world,renderer};
   window.__ADVENTURE_DEBUG__={state:s,player,version:window.QuestRelease.version};if(new URLSearchParams(location.search).has('qa'))window.__ADVENTURE_TEST__=api;
   clock.start();return api;

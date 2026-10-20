@@ -1,0 +1,1576 @@
+{
+  "baseline": "39c8d2f4a46420fb2e925bc41fca45c1d846520f",
+  "status": "PARTIAL ART FOUNDATION — NOT SIX-BOSS RELEASE",
+  "cell": [
+    192,
+    192
+  ],
+  "pivot": [
+    96,
+    188
+  ],
+  "states": {
+    "idle": [
+      0,
+      1
+    ],
+    "walk": [
+      2,
+      3
+    ]
+  },
+  "unverifiedStates": [
+    "attack",
+    "hurt-pose",
+    "phase-transformation",
+    "defeat"
+  ],
+  "actors": [
+    {
+      "id": "queen-beige",
+      "file": "assets/master-build/actors/queen-beige.png",
+      "usage": "active",
+      "source": "docs/six-boss/source/socal.png",
+      "sourceSize": [
+        1586,
+        992
+      ],
+      "frames": [
+        {
+          "source": [
+            22,
+            44,
+            149,
+            188
+          ],
+          "draw": [
+            143,
+            180
+          ],
+          "scale": 0.9574468085106383
+        },
+        {
+          "source": [
+            208,
+            46,
+            147,
+            186
+          ],
+          "draw": [
+            142,
+            180
+          ],
+          "scale": 0.967741935483871
+        },
+        {
+          "source": [
+            395,
+            46,
+            142,
+            186
+          ],
+          "draw": [
+            137,
+            180
+          ],
+          "scale": 0.967741935483871
+        },
+        {
+          "source": [
+            573,
+            47,
+            144,
+            184
+          ],
+          "draw": [
+            141,
+            180
+          ],
+          "scale": 0.9782608695652174
+        }
+      ],
+      "frameMs": {
+        "idle": 180,
+        "walk": 140
+      },
+      "emission": {
+        "note": "Existing simulation emission origins preserved; attack artwork not yet approved"
+      },
+      "approvedReferences": [
+        "0B75F5D1-DA37-4797-8F36-F96760C880F2.PNG"
+      ],
+      "generatedSourceSha256": "7b34511753b3f28f5019577460850eee87a791ea18f399e99da0763f59d26240",
+      "runtimeSha256": "69c3230fa674b9493c937b1cc895b4d5067e20180381a62427aa6793ba6dbc81",
+      "collisionContract": "Existing simulation hitbox unchanged; visual bounds are decorative. Original projectile emission origins unchanged."
+    },
+    {
+      "id": "court-judge",
+      "file": "assets/master-build/actors/court-judge.png",
+      "usage": "active",
+      "source": "docs/six-boss/source/court.png",
+      "sourceSize": [
+        1774,
+        887
+      ],
+      "frames": [
+        {
+          "source": [
+            81,
+            83,
+            256,
+            310
+          ],
+          "draw": [
+            149,
+            180
+          ],
+          "scale": 0.5806451612903226
+        },
+        {
+          "source": [
+            521,
+            95,
+            245,
+            298
+          ],
+          "draw": [
+            148,
+            180
+          ],
+          "scale": 0.6040268456375839
+        },
+        {
+          "source": [
+            945,
+            96,
+            266,
+            297
+          ],
+          "draw": [
+            161,
+            180
+          ],
+          "scale": 0.6060606060606061
+        },
+        {
+          "source": [
+            1391,
+            92,
+            268,
+            303
+          ],
+          "draw": [
+            159,
+            180
+          ],
+          "scale": 0.594059405940594
+        }
+      ],
+      "frameMs": {
+        "idle": 180,
+        "walk": 140
+      },
+      "emission": {
+        "note": "Existing simulation emission origins preserved; attack artwork not yet approved"
+      },
+      "approvedReferences": [
+        "3062528D-C835-4E0D-800F-6BADBF05ABF2.PNG"
+      ],
+      "generatedSourceSha256": "918524a0d4f62c5711ca73850f9b465a06a1d8f21e6769f77e090a6e0de76a2e",
+      "runtimeSha256": "b46cbcc9317e6125f6bba580a175086274c38c557352a9fe8566440d3ee9de8d",
+      "collisionContract": "Existing simulation hitbox unchanged; visual bounds are decorative. Original projectile emission origins unchanged."
+    },
+    {
+      "id": "flaming-law",
+      "file": "assets/master-build/actors/flaming-law.png",
+      "usage": "active",
+      "source": "docs/six-boss/source/socal.png",
+      "sourceSize": [
+        1586,
+        992
+      ],
+      "frames": [
+        {
+          "source": [
+            28,
+            454,
+            140,
+            157
+          ],
+          "draw": [
+            161,
+            180
+          ],
+          "scale": 1.1464968152866242
+        },
+        {
+          "source": [
+            208,
+            459,
+            144,
+            152
+          ],
+          "draw": [
+            171,
+            180
+          ],
+          "scale": 1.1842105263157894
+        },
+        {
+          "source": [
+            378,
+            457,
+            161,
+            154
+          ],
+          "draw": [
+            180,
+            172
+          ],
+          "scale": 1.1180124223602483
+        },
+        {
+          "source": [
+            569,
+            459,
+            173,
+            152
+          ],
+          "draw": [
+            180,
+            158
+          ],
+          "scale": 1.0404624277456647
+        }
+      ],
+      "frameMs": {
+        "idle": 180,
+        "walk": 140
+      },
+      "emission": {
+        "note": "Existing simulation emission origins preserved; attack artwork not yet approved"
+      },
+      "approvedReferences": [
+        "0B75F5D1-DA37-4797-8F36-F96760C880F2.PNG"
+      ],
+      "generatedSourceSha256": "7b34511753b3f28f5019577460850eee87a791ea18f399e99da0763f59d26240",
+      "runtimeSha256": "0ffa265b7d768fe2ad67ed4f209086aa1ab31ff731ac6a564728d384f203b07d",
+      "collisionContract": "Existing simulation hitbox unchanged; visual bounds are decorative. Original projectile emission origins unchanged."
+    },
+    {
+      "id": "hoa-drone",
+      "file": "assets/master-build/actors/hoa-drone.png",
+      "usage": "active",
+      "source": "docs/six-boss/source/socal.png",
+      "sourceSize": [
+        1586,
+        992
+      ],
+      "frames": [
+        {
+          "source": [
+            19,
+            648,
+            160,
+            139
+          ],
+          "draw": [
+            180,
+            156
+          ],
+          "scale": 1.125
+        },
+        {
+          "source": [
+            207,
+            643,
+            149,
+            140
+          ],
+          "draw": [
+            180,
+            169
+          ],
+          "scale": 1.2080536912751678
+        },
+        {
+          "source": [
+            392,
+            643,
+            146,
+            144
+          ],
+          "draw": [
+            180,
+            178
+          ],
+          "scale": 1.2328767123287672
+        },
+        {
+          "source": [
+            584,
+            646,
+            139,
+            139
+          ],
+          "draw": [
+            180,
+            180
+          ],
+          "scale": 1.2949640287769784
+        }
+      ],
+      "frameMs": {
+        "idle": 180,
+        "walk": 140
+      },
+      "emission": {
+        "note": "Existing simulation emission origins preserved; attack artwork not yet approved"
+      },
+      "approvedReferences": [
+        "0B75F5D1-DA37-4797-8F36-F96760C880F2.PNG"
+      ],
+      "generatedSourceSha256": "7b34511753b3f28f5019577460850eee87a791ea18f399e99da0763f59d26240",
+      "runtimeSha256": "31eaff20a780f2658dcd378d37c8a48824390a634c4951dc03b85343b0ef8736",
+      "collisionContract": "Existing simulation hitbox unchanged; visual bounds are decorative. Original projectile emission origins unchanged."
+    },
+    {
+      "id": "beige-bot",
+      "file": "assets/master-build/actors/beige-bot.png",
+      "usage": "active",
+      "source": "docs/six-boss/source/socal.png",
+      "sourceSize": [
+        1586,
+        992
+      ],
+      "frames": [
+        {
+          "source": [
+            26,
+            808,
+            141,
+            156
+          ],
+          "draw": [
+            163,
+            180
+          ],
+          "scale": 1.1538461538461537
+        },
+        {
+          "source": [
+            202,
+            805,
+            147,
+            161
+          ],
+          "draw": [
+            164,
+            180
+          ],
+          "scale": 1.1180124223602483
+        },
+        {
+          "source": [
+            400,
+            805,
+            149,
+            162
+          ],
+          "draw": [
+            166,
+            180
+          ],
+          "scale": 1.1111111111111112
+        },
+        {
+          "source": [
+            582,
+            802,
+            149,
+            165
+          ],
+          "draw": [
+            163,
+            180
+          ],
+          "scale": 1.0909090909090908
+        }
+      ],
+      "frameMs": {
+        "idle": 180,
+        "walk": 140
+      },
+      "emission": {
+        "note": "Existing simulation emission origins preserved; attack artwork not yet approved"
+      },
+      "approvedReferences": [
+        "0B75F5D1-DA37-4797-8F36-F96760C880F2.PNG"
+      ],
+      "generatedSourceSha256": "7b34511753b3f28f5019577460850eee87a791ea18f399e99da0763f59d26240",
+      "runtimeSha256": "ecfd98cadf57fbbfad9d31b398d0f38233e37f0a997e811fdbcba69e2b28c89c",
+      "collisionContract": "Existing simulation hitbox unchanged; visual bounds are decorative. Original projectile emission origins unchanged."
+    },
+    {
+      "id": "toxic-bloom",
+      "file": "assets/master-build/actors/toxic-bloom.png",
+      "usage": "review-only",
+      "source": "docs/six-boss/source/tahoe.png",
+      "sourceSize": [
+        1448,
+        1086
+      ],
+      "frames": [
+        {
+          "source": [
+            25,
+            50,
+            192,
+            182
+          ],
+          "draw": [
+            180,
+            171
+          ],
+          "scale": 0.9375
+        },
+        {
+          "source": [
+            228,
+            94,
+            178,
+            136
+          ],
+          "draw": [
+            180,
+            138
+          ],
+          "scale": 1.0112359550561798
+        },
+        {
+          "source": [
+            406,
+            65,
+            164,
+            170
+          ],
+          "draw": [
+            174,
+            180
+          ],
+          "scale": 1.0588235294117647
+        },
+        {
+          "source": [
+            570,
+            76,
+            150,
+            159
+          ],
+          "draw": [
+            170,
+            180
+          ],
+          "scale": 1.1320754716981132
+        }
+      ],
+      "frameMs": {
+        "idle": 180,
+        "walk": 140
+      },
+      "emission": {
+        "note": "Existing simulation emission origins preserved; attack artwork not yet approved"
+      },
+      "approvedReferences": [
+        "28910717-4F6D-42A5-8BC1-2F063642A3E3.PNG",
+        "0B75F5D1-DA37-4797-8F36-F96760C880F2.PNG"
+      ],
+      "generatedSourceSha256": "c5be708ac2efb0235068f6c2ccaf64a2b02e482bc7bfb678620f6b1cd1c7011d",
+      "runtimeSha256": "330aa7d589d5ffbe68f79ee0aa9d084de84fd392b8ecfd54c3a1f409b479673b",
+      "collisionContract": "Existing simulation hitbox unchanged; visual bounds are decorative. Original projectile emission origins unchanged."
+    },
+    {
+      "id": "pine-queen",
+      "file": "assets/master-build/actors/pine-queen.png",
+      "usage": "active",
+      "source": "docs/six-boss/source/tahoe.png",
+      "sourceSize": [
+        1448,
+        1086
+      ],
+      "frames": [
+        {
+          "source": [
+            26,
+            248,
+            186,
+            203
+          ],
+          "draw": [
+            165,
+            180
+          ],
+          "scale": 0.8866995073891626
+        },
+        {
+          "source": [
+            231,
+            266,
+            145,
+            182
+          ],
+          "draw": [
+            143,
+            180
+          ],
+          "scale": 0.989010989010989
+        },
+        {
+          "source": [
+            401,
+            283,
+            136,
+            165
+          ],
+          "draw": [
+            148,
+            180
+          ],
+          "scale": 1.0909090909090908
+        },
+        {
+          "source": [
+            553,
+            285,
+            142,
+            164
+          ],
+          "draw": [
+            156,
+            180
+          ],
+          "scale": 1.0975609756097562
+        }
+      ],
+      "frameMs": {
+        "idle": 180,
+        "walk": 140
+      },
+      "emission": {
+        "note": "Existing simulation emission origins preserved; attack artwork not yet approved"
+      },
+      "approvedReferences": [
+        "28910717-4F6D-42A5-8BC1-2F063642A3E3.PNG",
+        "0B75F5D1-DA37-4797-8F36-F96760C880F2.PNG"
+      ],
+      "generatedSourceSha256": "c5be708ac2efb0235068f6c2ccaf64a2b02e482bc7bfb678620f6b1cd1c7011d",
+      "runtimeSha256": "8a86b08863ba45de18456fad147a470437a498f30953b1193477b7e1bb8bea39",
+      "collisionContract": "Existing simulation hitbox unchanged; visual bounds are decorative. Original projectile emission origins unchanged."
+    },
+    {
+      "id": "pine-beetle",
+      "file": "assets/master-build/actors/pine-beetle.png",
+      "usage": "active",
+      "source": "docs/six-boss/source/tahoe.png",
+      "sourceSize": [
+        1448,
+        1086
+      ],
+      "frames": [
+        {
+          "source": [
+            37,
+            498,
+            146,
+            113
+          ],
+          "draw": [
+            180,
+            139
+          ],
+          "scale": 1.2328767123287672
+        },
+        {
+          "source": [
+            221,
+            510,
+            145,
+            100
+          ],
+          "draw": [
+            180,
+            124
+          ],
+          "scale": 1.2413793103448276
+        },
+        {
+          "source": [
+            408,
+            498,
+            119,
+            113
+          ],
+          "draw": [
+            180,
+            171
+          ],
+          "scale": 1.5126050420168067
+        },
+        {
+          "source": [
+            563,
+            502,
+            126,
+            107
+          ],
+          "draw": [
+            180,
+            153
+          ],
+          "scale": 1.4285714285714286
+        }
+      ],
+      "frameMs": {
+        "idle": 180,
+        "walk": 140
+      },
+      "emission": {
+        "note": "Existing simulation emission origins preserved; attack artwork not yet approved"
+      },
+      "approvedReferences": [
+        "28910717-4F6D-42A5-8BC1-2F063642A3E3.PNG",
+        "0B75F5D1-DA37-4797-8F36-F96760C880F2.PNG"
+      ],
+      "generatedSourceSha256": "c5be708ac2efb0235068f6c2ccaf64a2b02e482bc7bfb678620f6b1cd1c7011d",
+      "runtimeSha256": "8727556908679db79063c2d4219b3c17cdf70016fe214bb8a257509bddab8cfb",
+      "collisionContract": "Existing simulation hitbox unchanged; visual bounds are decorative. Original projectile emission origins unchanged."
+    },
+    {
+      "id": "larva",
+      "file": "assets/master-build/actors/larva.png",
+      "usage": "active",
+      "source": "docs/six-boss/source/tahoe.png",
+      "sourceSize": [
+        1448,
+        1086
+      ],
+      "frames": [
+        {
+          "source": [
+            38,
+            676,
+            131,
+            83
+          ],
+          "draw": [
+            180,
+            114
+          ],
+          "scale": 1.3740458015267176
+        },
+        {
+          "source": [
+            222,
+            682,
+            135,
+            77
+          ],
+          "draw": [
+            180,
+            103
+          ],
+          "scale": 1.3333333333333333
+        },
+        {
+          "source": [
+            397,
+            676,
+            139,
+            84
+          ],
+          "draw": [
+            180,
+            109
+          ],
+          "scale": 1.2949640287769784
+        },
+        {
+          "source": [
+            568,
+            668,
+            174,
+            91
+          ],
+          "draw": [
+            180,
+            94
+          ],
+          "scale": 1.0344827586206897
+        }
+      ],
+      "frameMs": {
+        "idle": 180,
+        "walk": 140
+      },
+      "emission": {
+        "note": "Existing simulation emission origins preserved; attack artwork not yet approved"
+      },
+      "approvedReferences": [
+        "28910717-4F6D-42A5-8BC1-2F063642A3E3.PNG",
+        "0B75F5D1-DA37-4797-8F36-F96760C880F2.PNG"
+      ],
+      "generatedSourceSha256": "c5be708ac2efb0235068f6c2ccaf64a2b02e482bc7bfb678620f6b1cd1c7011d",
+      "runtimeSha256": "cc4eec4eb3c5b2df384d773fd37e7a79b7b06c9e130a2086be639bd3e7eec81c",
+      "collisionContract": "Existing simulation hitbox unchanged; visual bounds are decorative. Original projectile emission origins unchanged."
+    },
+    {
+      "id": "flying-beetle",
+      "file": "assets/master-build/actors/flying-beetle.png",
+      "usage": "active",
+      "source": "docs/six-boss/source/tahoe.png",
+      "sourceSize": [
+        1448,
+        1086
+      ],
+      "frames": [
+        {
+          "source": [
+            38,
+            796,
+            151,
+            113
+          ],
+          "draw": [
+            180,
+            135
+          ],
+          "scale": 1.1920529801324504
+        },
+        {
+          "source": [
+            222,
+            800,
+            121,
+            108
+          ],
+          "draw": [
+            180,
+            161
+          ],
+          "scale": 1.487603305785124
+        },
+        {
+          "source": [
+            405,
+            798,
+            119,
+            118
+          ],
+          "draw": [
+            180,
+            178
+          ],
+          "scale": 1.5126050420168067
+        },
+        {
+          "source": [
+            573,
+            801,
+            134,
+            118
+          ],
+          "draw": [
+            180,
+            159
+          ],
+          "scale": 1.3432835820895523
+        }
+      ],
+      "frameMs": {
+        "idle": 180,
+        "walk": 140
+      },
+      "emission": {
+        "note": "Existing simulation emission origins preserved; attack artwork not yet approved"
+      },
+      "approvedReferences": [
+        "28910717-4F6D-42A5-8BC1-2F063642A3E3.PNG",
+        "0B75F5D1-DA37-4797-8F36-F96760C880F2.PNG"
+      ],
+      "generatedSourceSha256": "c5be708ac2efb0235068f6c2ccaf64a2b02e482bc7bfb678620f6b1cd1c7011d",
+      "runtimeSha256": "fc485c6be1cc8b0cb9e22ce62bf640ac4de2ee08e46b99dd266c10f91afa54d3",
+      "collisionContract": "Existing simulation hitbox unchanged; visual bounds are decorative. Original projectile emission origins unchanged."
+    },
+    {
+      "id": "algae-slime",
+      "file": "assets/master-build/actors/algae-slime.png",
+      "usage": "review-only",
+      "source": "docs/six-boss/source/tahoe.png",
+      "sourceSize": [
+        1448,
+        1086
+      ],
+      "frames": [
+        {
+          "source": [
+            37,
+            974,
+            127,
+            73
+          ],
+          "draw": [
+            180,
+            103
+          ],
+          "scale": 1.4173228346456692
+        },
+        {
+          "source": [
+            216,
+            954,
+            128,
+            95
+          ],
+          "draw": [
+            180,
+            134
+          ],
+          "scale": 1.40625
+        },
+        {
+          "source": [
+            388,
+            979,
+            176,
+            67
+          ],
+          "draw": [
+            180,
+            69
+          ],
+          "scale": 1.0227272727272727
+        },
+        {
+          "source": [
+            564,
+            970,
+            140,
+            81
+          ],
+          "draw": [
+            180,
+            104
+          ],
+          "scale": 1.2857142857142858
+        }
+      ],
+      "frameMs": {
+        "idle": 180,
+        "walk": 140
+      },
+      "emission": {
+        "note": "Existing simulation emission origins preserved; attack artwork not yet approved"
+      },
+      "approvedReferences": [
+        "28910717-4F6D-42A5-8BC1-2F063642A3E3.PNG",
+        "0B75F5D1-DA37-4797-8F36-F96760C880F2.PNG"
+      ],
+      "generatedSourceSha256": "c5be708ac2efb0235068f6c2ccaf64a2b02e482bc7bfb678620f6b1cd1c7011d",
+      "runtimeSha256": "9d25e10d121dab6a88c78032e7c1c82950f7d77fb8d05f47433d858a5ca73c32",
+      "collisionContract": "Existing simulation hitbox unchanged; visual bounds are decorative. Original projectile emission origins unchanged."
+    },
+    {
+      "id": "frost-queen",
+      "file": "assets/master-build/actors/frost-queen.png",
+      "usage": "active",
+      "source": "docs/six-boss/source/alaska.png",
+      "sourceSize": [
+        1536,
+        1024
+      ],
+      "frames": [
+        {
+          "source": [
+            24,
+            8,
+            137,
+            151
+          ],
+          "draw": [
+            163,
+            180
+          ],
+          "scale": 1.1920529801324504
+        },
+        {
+          "source": [
+            207,
+            8,
+            139,
+            151
+          ],
+          "draw": [
+            166,
+            180
+          ],
+          "scale": 1.1920529801324504
+        },
+        {
+          "source": [
+            395,
+            8,
+            150,
+            151
+          ],
+          "draw": [
+            179,
+            180
+          ],
+          "scale": 1.1920529801324504
+        },
+        {
+          "source": [
+            589,
+            10,
+            151,
+            150
+          ],
+          "draw": [
+            180,
+            179
+          ],
+          "scale": 1.1920529801324504
+        }
+      ],
+      "frameMs": {
+        "idle": 180,
+        "walk": 140
+      },
+      "emission": {
+        "note": "Existing simulation emission origins preserved; attack artwork not yet approved"
+      },
+      "approvedReferences": [
+        "AD4B51CB-020D-44E2-BA4B-0D3622578FB1.PNG",
+        "0B75F5D1-DA37-4797-8F36-F96760C880F2.PNG"
+      ],
+      "generatedSourceSha256": "40db0921e1b6745a152c67c8afbf4c13c691ce388c01667234d3a60d920bf56b",
+      "runtimeSha256": "df8ee5f2795c9a504729b5cf18a24e01bb7e12e61f013630ed6d13bcca8df33b",
+      "collisionContract": "Existing simulation hitbox unchanged; visual bounds are decorative. Original projectile emission origins unchanged."
+    },
+    {
+      "id": "pipeline-worker",
+      "file": "assets/master-build/actors/pipeline-worker.png",
+      "usage": "review-only",
+      "source": "docs/six-boss/source/alaska.png",
+      "sourceSize": [
+        1536,
+        1024
+      ],
+      "frames": [
+        {
+          "source": [
+            36,
+            170,
+            115,
+            124
+          ],
+          "draw": [
+            167,
+            180
+          ],
+          "scale": 1.4516129032258065
+        },
+        {
+          "source": [
+            215,
+            170,
+            108,
+            124
+          ],
+          "draw": [
+            157,
+            180
+          ],
+          "scale": 1.4516129032258065
+        },
+        {
+          "source": [
+            401,
+            170,
+            109,
+            124
+          ],
+          "draw": [
+            158,
+            180
+          ],
+          "scale": 1.4516129032258065
+        },
+        {
+          "source": [
+            589,
+            172,
+            113,
+            122
+          ],
+          "draw": [
+            167,
+            180
+          ],
+          "scale": 1.4754098360655739
+        }
+      ],
+      "frameMs": {
+        "idle": 180,
+        "walk": 140
+      },
+      "emission": {
+        "note": "Existing simulation emission origins preserved; attack artwork not yet approved"
+      },
+      "approvedReferences": [
+        "AD4B51CB-020D-44E2-BA4B-0D3622578FB1.PNG",
+        "0B75F5D1-DA37-4797-8F36-F96760C880F2.PNG"
+      ],
+      "generatedSourceSha256": "40db0921e1b6745a152c67c8afbf4c13c691ce388c01667234d3a60d920bf56b",
+      "runtimeSha256": "125995ba61df8da789f60c2bdf3762d154da1220e81c820549cbab068add4aec",
+      "collisionContract": "Existing simulation hitbox unchanged; visual bounds are decorative. Original projectile emission origins unchanged."
+    },
+    {
+      "id": "surveillance-drone",
+      "file": "assets/master-build/actors/surveillance-drone.png",
+      "usage": "review-only",
+      "source": "docs/six-boss/source/alaska.png",
+      "sourceSize": [
+        1536,
+        1024
+      ],
+      "frames": [
+        {
+          "source": [
+            24,
+            312,
+            134,
+            90
+          ],
+          "draw": [
+            180,
+            121
+          ],
+          "scale": 1.3432835820895523
+        },
+        {
+          "source": [
+            198,
+            315,
+            146,
+            88
+          ],
+          "draw": [
+            180,
+            108
+          ],
+          "scale": 1.2328767123287672
+        },
+        {
+          "source": [
+            388,
+            314,
+            188,
+            89
+          ],
+          "draw": [
+            180,
+            85
+          ],
+          "scale": 0.9574468085106383
+        },
+        {
+          "source": [
+            576,
+            311,
+            192,
+            92
+          ],
+          "draw": [
+            180,
+            86
+          ],
+          "scale": 0.9375
+        }
+      ],
+      "frameMs": {
+        "idle": 180,
+        "walk": 140
+      },
+      "emission": {
+        "note": "Existing simulation emission origins preserved; attack artwork not yet approved"
+      },
+      "approvedReferences": [
+        "AD4B51CB-020D-44E2-BA4B-0D3622578FB1.PNG",
+        "0B75F5D1-DA37-4797-8F36-F96760C880F2.PNG"
+      ],
+      "generatedSourceSha256": "40db0921e1b6745a152c67c8afbf4c13c691ce388c01667234d3a60d920bf56b",
+      "runtimeSha256": "21e0174e66e926f14c3c7b12de36b1a8262349912c548c464d8dc0f241afd9f7",
+      "collisionContract": "Existing simulation hitbox unchanged; visual bounds are decorative. Original projectile emission origins unchanged."
+    },
+    {
+      "id": "security-turret",
+      "file": "assets/master-build/actors/security-turret.png",
+      "usage": "review-only",
+      "source": "docs/six-boss/source/alaska.png",
+      "sourceSize": [
+        1536,
+        1024
+      ],
+      "frames": [
+        {
+          "source": [
+            34,
+            426,
+            104,
+            106
+          ],
+          "draw": [
+            177,
+            180
+          ],
+          "scale": 1.6981132075471699
+        },
+        {
+          "source": [
+            221,
+            426,
+            104,
+            105
+          ],
+          "draw": [
+            178,
+            180
+          ],
+          "scale": 1.7142857142857142
+        },
+        {
+          "source": [
+            407,
+            424,
+            103,
+            107
+          ],
+          "draw": [
+            173,
+            180
+          ],
+          "scale": 1.6822429906542056
+        },
+        {
+          "source": [
+            588,
+            426,
+            106,
+            105
+          ],
+          "draw": [
+            180,
+            178
+          ],
+          "scale": 1.6981132075471699
+        }
+      ],
+      "frameMs": {
+        "idle": 180,
+        "walk": 140
+      },
+      "emission": {
+        "note": "Existing simulation emission origins preserved; attack artwork not yet approved"
+      },
+      "approvedReferences": [
+        "AD4B51CB-020D-44E2-BA4B-0D3622578FB1.PNG",
+        "0B75F5D1-DA37-4797-8F36-F96760C880F2.PNG"
+      ],
+      "generatedSourceSha256": "40db0921e1b6745a152c67c8afbf4c13c691ce388c01667234d3a60d920bf56b",
+      "runtimeSha256": "0aad37480fcb40b8d9827b9ae0cd5c2a82fbef57e806ccc2779f48302cb4850d",
+      "collisionContract": "Existing simulation hitbox unchanged; visual bounds are decorative. Original projectile emission origins unchanged."
+    },
+    {
+      "id": "machinery",
+      "file": "assets/master-build/actors/machinery.png",
+      "usage": "review-only",
+      "source": "docs/six-boss/source/alaska.png",
+      "sourceSize": [
+        1536,
+        1024
+      ],
+      "frames": [
+        {
+          "source": [
+            13,
+            539,
+            168,
+            124
+          ],
+          "draw": [
+            180,
+            133
+          ],
+          "scale": 1.0714285714285714
+        },
+        {
+          "source": [
+            206,
+            538,
+            178,
+            125
+          ],
+          "draw": [
+            180,
+            126
+          ],
+          "scale": 1.0112359550561798
+        },
+        {
+          "source": [
+            384,
+            569,
+            192,
+            94
+          ],
+          "draw": [
+            180,
+            88
+          ],
+          "scale": 0.9375
+        },
+        {
+          "source": [
+            576,
+            571,
+            192,
+            92
+          ],
+          "draw": [
+            180,
+            86
+          ],
+          "scale": 0.9375
+        }
+      ],
+      "frameMs": {
+        "idle": 180,
+        "walk": 140
+      },
+      "emission": {
+        "note": "Existing simulation emission origins preserved; attack artwork not yet approved"
+      },
+      "approvedReferences": [
+        "AD4B51CB-020D-44E2-BA4B-0D3622578FB1.PNG",
+        "0B75F5D1-DA37-4797-8F36-F96760C880F2.PNG"
+      ],
+      "generatedSourceSha256": "40db0921e1b6745a152c67c8afbf4c13c691ce388c01667234d3a60d920bf56b",
+      "runtimeSha256": "d42587dd613afa4c21150422bf3b03d0a208f1454f6af33d4a98afb5c711d8e0",
+      "collisionContract": "Existing simulation hitbox unchanged; visual bounds are decorative. Original projectile emission origins unchanged."
+    },
+    {
+      "id": "oil-slime",
+      "file": "assets/master-build/actors/oil-slime.png",
+      "usage": "review-only",
+      "source": "docs/six-boss/source/alaska.png",
+      "sourceSize": [
+        1536,
+        1024
+      ],
+      "frames": [
+        {
+          "source": [
+            23,
+            709,
+            136,
+            66
+          ],
+          "draw": [
+            180,
+            87
+          ],
+          "scale": 1.3235294117647058
+        },
+        {
+          "source": [
+            201,
+            702,
+            183,
+            74
+          ],
+          "draw": [
+            180,
+            73
+          ],
+          "scale": 0.9836065573770492
+        },
+        {
+          "source": [
+            384,
+            700,
+            192,
+            73
+          ],
+          "draw": [
+            180,
+            68
+          ],
+          "scale": 0.9375
+        },
+        {
+          "source": [
+            576,
+            700,
+            165,
+            73
+          ],
+          "draw": [
+            180,
+            80
+          ],
+          "scale": 1.0909090909090908
+        }
+      ],
+      "frameMs": {
+        "idle": 180,
+        "walk": 140
+      },
+      "emission": {
+        "note": "Existing simulation emission origins preserved; attack artwork not yet approved"
+      },
+      "approvedReferences": [
+        "AD4B51CB-020D-44E2-BA4B-0D3622578FB1.PNG",
+        "0B75F5D1-DA37-4797-8F36-F96760C880F2.PNG"
+      ],
+      "generatedSourceSha256": "40db0921e1b6745a152c67c8afbf4c13c691ce388c01667234d3a60d920bf56b",
+      "runtimeSha256": "d390c7b50e82ccee24c83311c4e8d28c398ee4d3bbde51577e1424037702da9c",
+      "collisionContract": "Existing simulation hitbox unchanged; visual bounds are decorative. Original projectile emission origins unchanged."
+    },
+    {
+      "id": "zombie-salmon",
+      "file": "assets/master-build/actors/zombie-salmon.png",
+      "usage": "active",
+      "source": "docs/six-boss/source/alaska.png",
+      "sourceSize": [
+        1536,
+        1024
+      ],
+      "frames": [
+        {
+          "source": [
+            20,
+            797,
+            141,
+            85
+          ],
+          "draw": [
+            180,
+            109
+          ],
+          "scale": 1.2765957446808511
+        },
+        {
+          "source": [
+            202,
+            790,
+            145,
+            91
+          ],
+          "draw": [
+            180,
+            113
+          ],
+          "scale": 1.2413793103448276
+        },
+        {
+          "source": [
+            394,
+            789,
+            141,
+            91
+          ],
+          "draw": [
+            180,
+            116
+          ],
+          "scale": 1.2765957446808511
+        },
+        {
+          "source": [
+            584,
+            789,
+            184,
+            90
+          ],
+          "draw": [
+            180,
+            88
+          ],
+          "scale": 0.9782608695652174
+        }
+      ],
+      "frameMs": {
+        "idle": 180,
+        "walk": 140
+      },
+      "emission": {
+        "note": "Existing simulation emission origins preserved; attack artwork not yet approved"
+      },
+      "approvedReferences": [
+        "AD4B51CB-020D-44E2-BA4B-0D3622578FB1.PNG",
+        "0B75F5D1-DA37-4797-8F36-F96760C880F2.PNG"
+      ],
+      "generatedSourceSha256": "40db0921e1b6745a152c67c8afbf4c13c691ce388c01667234d3a60d920bf56b",
+      "runtimeSha256": "6cd70fbe45faed7739903707a658dd0c8ed1fe3045cbbd35bdd063b594892241",
+      "collisionContract": "Existing simulation hitbox unchanged; visual bounds are decorative. Original projectile emission origins unchanged."
+    },
+    {
+      "id": "alaskan-owl",
+      "file": "assets/master-build/actors/alaskan-owl.png",
+      "usage": "active",
+      "source": "docs/six-boss/source/alaska.png",
+      "sourceSize": [
+        1536,
+        1024
+      ],
+      "frames": [
+        {
+          "source": [
+            35,
+            901,
+            118,
+            108
+          ],
+          "draw": [
+            180,
+            165
+          ],
+          "scale": 1.5254237288135593
+        },
+        {
+          "source": [
+            210,
+            897,
+            140,
+            112
+          ],
+          "draw": [
+            180,
+            144
+          ],
+          "scale": 1.2857142857142858
+        },
+        {
+          "source": [
+            385,
+            897,
+            191,
+            112
+          ],
+          "draw": [
+            180,
+            106
+          ],
+          "scale": 0.9424083769633508
+        },
+        {
+          "source": [
+            576,
+            901,
+            161,
+            108
+          ],
+          "draw": [
+            180,
+            121
+          ],
+          "scale": 1.1180124223602483
+        }
+      ],
+      "frameMs": {
+        "idle": 180,
+        "walk": 140
+      },
+      "emission": {
+        "note": "Existing simulation emission origins preserved; attack artwork not yet approved"
+      },
+      "approvedReferences": [
+        "AD4B51CB-020D-44E2-BA4B-0D3622578FB1.PNG",
+        "0B75F5D1-DA37-4797-8F36-F96760C880F2.PNG"
+      ],
+      "generatedSourceSha256": "40db0921e1b6745a152c67c8afbf4c13c691ce388c01667234d3a60d920bf56b",
+      "runtimeSha256": "db26313500d1075263e904ad715352cb685543abfb77f66e461b8bb4f946f5e5",
+      "collisionContract": "Existing simulation hitbox unchanged; visual bounds are decorative. Original projectile emission origins unchanged."
+    }
+  ],
+  "backgrounds": [
+    {
+      "world": "socal",
+      "file": "assets/master-build/socal-scenes.png",
+      "grid": [
+        2,
+        3
+      ],
+      "activePanels": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "reviewOnlyPanels": [],
+      "sha256": "d38f0d140e8c9c35c97ccdd2b15b5b6a8ca39541511faf2b4207f94faf88a00b"
+    },
+    {
+      "world": "tahoe",
+      "file": "assets/master-build/tahoe-scenes.png",
+      "grid": [
+        2,
+        3
+      ],
+      "activePanels": [
+        0,
+        2,
+        3,
+        4,
+        5
+      ],
+      "reviewOnlyPanels": [
+        1
+      ],
+      "sha256": "80bf0ba991a76131b63511aea2b86725be526daf70ad349a76d36965bd98588b"
+    },
+    {
+      "world": "alaska",
+      "file": "assets/master-build/alaska-scenes.png",
+      "grid": [
+        2,
+        3
+      ],
+      "activePanels": [
+        0,
+        1,
+        4,
+        5
+      ],
+      "reviewOnlyPanels": [
+        2,
+        3
+      ],
+      "sha256": "58ddebb326a24e2f25102a6b0b076d9dde5156f80dd755b89d5177f7493da37b"
+    }
+  ],
+  "normalization": {
+    "alphaCutoff": 96,
+    "maxOpaqueSize": [
+      180,
+      180
+    ],
+    "gutter": 6,
+    "footY": 188,
+    "resampling": "nearest-neighbor",
+    "sourceRectangles": "Per-frame measurements below; generated sheets only, no annotated reference posters sliced."
+  }
+}

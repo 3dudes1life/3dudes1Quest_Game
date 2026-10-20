@@ -3,7 +3,7 @@ window.AlaskaWorld=Object.freeze({
  id:'alaska',name:'Alaska',subtitle:'The Aurora Return',saveKey:'3dudes1quest_alaska_v340',length:7600,floor:620,
  music:'alaska',bossMusic:'alaskaBoss',bossName:'FROST QUEEN',bossX:7000,
  opening:'Tahoe is safe, but the northern lights have gone dark. The Frost Queen controls blizzards and has cursed the salmon! Restore three Aurora Relays, then break her ice shield. Caleb has prepared a strongly worded cookie.',
- ending:'The aurora returns. The Frost Queen’s curse breaks. Salmon return to normal and the northern lights shine in rainbow colors. Rigsby celebrates with snow zoomies; Zoey retrieves the trail keeper’s satchel. Beyond the portal: Costa Rica, where Caleb hopes the cookies will finally stay warm.',
+ ending:'The aurora returns. The Frost Queen’s curse breaks. Salmon return to normal and the northern lights shine in rainbow colors. Rigsby celebrates with snow zoomies; Zoey retrieves the trail keeper’s satchel. Beyond the portal: Hawaii. Costa Rica awaits as the fifth and final adventure, where the three dudes retire together.',
  sections:[{x:0,name:'Trail Station'},{x:2400,name:'Frozen River'},{x:4400,name:'Glacier Pass'},{x:6200,name:'Aurora Ridge'}],
  relays:[{x:1150,name:'Trail Relay'},{x:3850,name:'River Relay'},{x:5900,name:'Ridge Relay'}],
  checkpoints:[{x:2450,name:'River Shelter',line:'Rigsby: Thin ice ahead! The blue stepping ledges are safer than a surprise bath.'},{x:4800,name:'Glacier Shelter',line:'Zoey found a supply cache above the glacier. Daniel: Finally, a heartwarming discovery.'},{x:6320,name:'Aurora Shelter',line:'Will: Three relays, one sarcastic ice queen. Watch snowball warnings, dodge the icicle markers, and break her shield with any power.'}],
