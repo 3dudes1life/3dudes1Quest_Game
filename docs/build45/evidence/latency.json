@@ -1,0 +1,6393 @@
+{
+  "method": "Sequential matched isolated Chrome contexts; three delivered native key or trusted CDP-touch trials per action. Performance.now at capture listener to actual player position/jump-velocity/projectile-array mutation; switch/team use mutation notification after private Survival state changes. Warm/cold draws may differ; trial index retained. This excludes OS/hardware delivery and display scanout. Synthetic fixture restores player/fills team charge; not a campaign. First-use CPU probes run after input trials; no GPU timings.",
+  "results": [
+    {
+      "label": "baseline",
+      "world": "socal",
+      "mobile": false,
+      "bootMs": 1086,
+      "traces": [
+        {
+          "kind": "movement",
+          "trial": 0,
+          "eventStartTimeMs": 1420.5,
+          "actionTimeMs": 1433.0999999940395,
+          "ms": 12.599999994039536,
+          "trusted": true,
+          "observation": "actual player/projectile mutation"
+        },
+        {
+          "kind": "movement",
+          "trial": 1,
+          "eventStartTimeMs": 1539,
+          "actionTimeMs": 1549.699999988079,
+          "ms": 10.699999988079071,
+          "trusted": true,
+          "observation": "actual player/projectile mutation"
+        },
+        {
+          "kind": "movement",
+          "trial": 2,
+          "eventStartTimeMs": 1654.5,
+          "actionTimeMs": 1665.5999999940395,
+          "ms": 11.099999994039536,
+          "trusted": true,
+          "observation": "actual player/projectile mutation"
+        },
+        {
+          "kind": "jump",
+          "trial": 0,
+          "eventStartTimeMs": 1770.8999999761581,
+          "actionTimeMs": 1782.3999999761581,
+          "ms": 11.5,
+          "trusted": true,
+          "observation": "actual player/projectile mutation"
+        },
+        {
+          "kind": "jump",
+          "trial": 1,
+          "eventStartTimeMs": 1888.2999999821186,
+          "actionTimeMs": 1899.199999988079,
+          "ms": 10.900000005960464,
+          "trusted": true,
+          "observation": "actual player/projectile mutation"
+        },
+        {
+          "kind": "jump",
+          "trial": 2,
+          "eventStartTimeMs": 2004.199999988079,
+          "actionTimeMs": 2016.5,
+          "ms": 12.300000011920929,
+          "trusted": true,
+          "observation": "actual player/projectile mutation"
+        },
+        {
+          "kind": "attack",
+          "trial": 0,
+          "eventStartTimeMs": 2121.199999988079,
+          "actionTimeMs": 2132.699999988079,
+          "ms": 11.5,
+          "trusted": true,
+          "observation": "actual player/projectile mutation"
+        },
+        {
+          "kind": "attack",
+          "trial": 1,
+          "eventStartTimeMs": 2238.199999988079,
+          "actionTimeMs": 2248.899999976158,
+          "ms": 10.699999988079071,
+          "trusted": true,
+          "observation": "actual player/projectile mutation"
+        },
+        {
+          "kind": "attack",
+          "trial": 2,
+          "eventStartTimeMs": 2353,
+          "actionTimeMs": 2383.0999999940395,
+          "ms": 30.099999994039536,
+          "trusted": true,
+          "observation": "actual player/projectile mutation"
+        },
+        {
+          "kind": "switch",
+          "trial": 0,
+          "eventStartTimeMs": 2487.5999999940395,
+          "actionTimeMs": 2488.2999999821186,
+          "ms": 0.699999988079071,
+          "trusted": true,
+          "observation": "mutation microtask after Survival state change"
+        },
+        {
+          "kind": "switch",
+          "trial": 1,
+          "eventStartTimeMs": 2592.7999999821186,
+          "actionTimeMs": 2593.0999999940395,
+          "ms": 0.30000001192092896,
+          "trusted": true,
+          "observation": "mutation microtask after Survival state change"
+        },
+        {
+          "kind": "switch",
+          "trial": 2,
+          "eventStartTimeMs": 2698.699999988079,
+          "actionTimeMs": 2699.0999999940395,
+          "ms": 0.4000000059604645,
+          "trusted": true,
+          "observation": "mutation microtask after Survival state change"
+        },
+        {
+          "kind": "team",
+          "trial": 0,
+          "eventStartTimeMs": 5809.0999999940395,
+          "actionTimeMs": 5809.699999988079,
+          "ms": 0.5999999940395355,
+          "trusted": true,
+          "observation": "mutation microtask after Survival state change"
+        },
+        {
+          "kind": "team",
+          "trial": 1,
+          "eventStartTimeMs": 8916.59999999404,
+          "actionTimeMs": 8917,
+          "ms": 0.4000000059604645,
+          "trusted": true,
+          "observation": "mutation microtask after Survival state change"
+        },
+        {
+          "kind": "team",
+          "trial": 2,
+          "eventStartTimeMs": 12027.899999976158,
+          "actionTimeMs": 12028.299999982119,
+          "ms": 0.4000000059604645,
+          "trusted": true,
+          "observation": "mutation microtask after Survival state change"
+        }
+      ],
+      "firstUse": {
+        "startTime": 12134.699999988079,
+        "endTime": 12165.59999999404,
+        "samples": [
+          {
+            "id": "queen-beige",
+            "pose": "attack",
+            "size": 176,
+            "ms": 6.800000011920929
+          },
+          {
+            "id": "queen-beige",
+            "pose": "hurt",
+            "size": 176,
+            "ms": 2.0999999940395355
+          },
+          {
+            "id": "queen-beige",
+            "pose": "defeat",
+            "size": 176,
+            "ms": 1.9000000059604645
+          },
+          {
+            "id": "court-judge",
+            "pose": "attack",
+            "size": 106,
+            "ms": 6.199999988079071
+          },
+          {
+            "id": "court-judge",
+            "pose": "hurt",
+            "size": 106,
+            "ms": 1.4000000059604645
+          },
+          {
+            "id": "court-judge",
+            "pose": "defeat",
+            "size": 106,
+            "ms": 1.4000000059604645
+          },
+          {
+            "id": "flaming-law",
+            "pose": "attack",
+            "size": 80,
+            "ms": 1.0999999940395355
+          },
+          {
+            "id": "flaming-law",
+            "pose": "hurt",
+            "size": 80,
+            "ms": 1
+          },
+          {
+            "id": "flaming-law",
+            "pose": "defeat",
+            "size": 80,
+            "ms": 0.9000000059604645
+          },
+          {
+            "id": "hoa-drone",
+            "pose": "attack",
+            "size": 80,
+            "ms": 4.299999982118607
+          },
+          {
+            "id": "hoa-drone",
+            "pose": "hurt",
+            "size": 80,
+            "ms": 0.9000000059604645
+          },
+          {
+            "id": "hoa-drone",
+            "pose": "defeat",
+            "size": 80,
+            "ms": 1.800000011920929
+          },
+          {
+            "id": "beige-bot",
+            "pose": "attack",
+            "size": 80,
+            "ms": 1
+          },
+          {
+            "id": "beige-bot",
+            "pose": "hurt",
+            "size": 80,
+            "ms": 0
+          },
+          {
+            "id": "beige-bot",
+            "pose": "defeat",
+            "size": 80,
+            "ms": 0
+          }
+        ],
+        "cache": {
+          "loaded": true,
+          "actors": [
+            "queen-beige",
+            "court-judge",
+            "flaming-law",
+            "hoa-drone",
+            "beige-bot"
+          ],
+          "contours": 29,
+          "contourBytes": 2983648,
+          "contourBuilds": 29,
+          "draws": 14843,
+          "backgrounds": 645,
+          "failed": [],
+          "poses": {
+            "walk": 14001,
+            "idle": 645,
+            "hurt": 28,
+            "defeat": 164,
+            "attack": 5
+          },
+          "lastPanel": 0
+        }
+      },
+      "diagnostics": {
+        "longTaskSupported": true,
+        "longTasks": [
+          {
+            "startTime": 170.19999998807907,
+            "duration": 322
+          },
+          {
+            "startTime": 1142.2999999821186,
+            "duration": 180
+          },
+          {
+            "startTime": 1322.8999999761581,
+            "duration": 83
+          }
+        ],
+        "resources": [
+          {
+            "name": "css/style.css?v=3.4.1",
+            "duration": 1.9000000059604645,
+            "transferBytes": 82003
+          },
+          {
+            "name": "css/pwa241.css?v=3.4.1",
+            "duration": 3.0999999940395355,
+            "transferBytes": 2141
+          },
+          {
+            "name": "css/viewport310.css?v=3.4.1",
+            "duration": 6.299999982118607,
+            "transferBytes": 11230
+          },
+          {
+            "name": "css/retro320.css?v=3.4.1",
+            "duration": 7.5,
+            "transferBytes": 7443
+          },
+          {
+            "name": "css/origin-story.css?v=3.4.1",
+            "duration": 4.800000011920929,
+            "transferBytes": 3412
+          },
+          {
+            "name": "core/quest-release.js?v=3.4.1",
+            "duration": 8.400000005960464,
+            "transferBytes": 779
+          },
+          {
+            "name": "css/audio330.css?v=3.4.1",
+            "duration": 9,
+            "transferBytes": 2029
+          },
+          {
+            "name": "css/visual340.css?v=3.4.1",
+            "duration": 9.800000011920929,
+            "transferBytes": 2069
+          },
+          {
+            "name": "css/polish4.css?v=3.4.1",
+            "duration": 6.300000011920929,
+            "transferBytes": 4250
+          },
+          {
+            "name": "css/survival.css?v=3.4.1",
+            "duration": 7.0999999940395355,
+            "transferBytes": 2898
+          },
+          {
+            "name": "core/quest-survival.js?v=3.4.1",
+            "duration": 7.700000017881393,
+            "transferBytes": 19985
+          },
+          {
+            "name": "core/quest-runtime.js?v=3.4.1",
+            "duration": 7.9000000059604645,
+            "transferBytes": 9663
+          },
+          {
+            "name": "core/quest-journey.js?v=3.4.1",
+            "duration": 9.200000017881393,
+            "transferBytes": 2654
+          },
+          {
+            "name": "core/quest-retro.js?v=3.4.1",
+            "duration": 9.300000011920929,
+            "transferBytes": 4222
+          },
+          {
+            "name": "core/quest-score.js?v=3.4.1",
+            "duration": 9.700000017881393,
+            "transferBytes": 8118
+          },
+          {
+            "name": "core/quest-cast.js?v=3.4.1",
+            "duration": 11.900000005960464,
+            "transferBytes": 5999
+          },
+          {
+            "name": "core/quest-audio.js?v=3.4.1",
+            "duration": 9,
+            "transferBytes": 13879
+          },
+          {
+            "name": "core/quest-encounters.js?v=3.4.1",
+            "duration": 10.599999994039536,
+            "transferBytes": 2349
+          },
+          {
+            "name": "core/quest-master-art.js?v=3.4.1",
+            "duration": 11.699999988079071,
+            "transferBytes": 7306
+          },
+          {
+            "name": "core/quest-core.js?v=3.4.1",
+            "duration": 10.799999982118607,
+            "transferBytes": 18008
+          },
+          {
+            "name": "js/remaster.js?v=3.4.1",
+            "duration": 15.400000005960464,
+            "transferBytes": 837
+          },
+          {
+            "name": "js/gold-master-self-test.js?v=3.4.1",
+            "duration": 16,
+            "transferBytes": 4975
+          },
+          {
+            "name": "core/quest-interface.js?v=3.4.1",
+            "duration": 16.900000005960464,
+            "transferBytes": 4420
+          },
+          {
+            "name": "js/pwa241.js?v=3.4.1",
+            "duration": 16.69999998807907,
+            "transferBytes": 4437
+          },
+          {
+            "name": "core/quest-viewport.js?v=3.4.1",
+            "duration": 16.900000005960464,
+            "transferBytes": 6648
+          },
+          {
+            "name": "core/quest-story.js?v=3.4.1",
+            "duration": 11.799999982118607,
+            "transferBytes": 12946
+          },
+          {
+            "name": "js/app109.js?v=3.4.1",
+            "duration": 12.099999994039536,
+            "transferBytes": 144054
+          },
+          {
+            "name": "cast341/will.png?v=3.4.1",
+            "duration": 2.7999999821186066,
+            "transferBytes": 1886918
+          },
+          {
+            "name": "cast340/socal.png?v=3.4.0",
+            "duration": 8.599999994039536,
+            "transferBytes": 1382358
+          },
+          {
+            "name": "cast341/daniel.png?v=3.4.1",
+            "duration": 4.9000000059604645,
+            "transferBytes": 1802547
+          },
+          {
+            "name": "cast341/caleb.png?v=3.4.1",
+            "duration": 8.400000005960464,
+            "transferBytes": 2429051
+          },
+          {
+            "name": "actors/court-judge.webp",
+            "duration": 3.2000000178813934,
+            "transferBytes": 139760
+          },
+          {
+            "name": "actors/queen-beige.webp",
+            "duration": 6.9000000059604645,
+            "transferBytes": 149390
+          },
+          {
+            "name": "actors/queen-beige-actions.webp",
+            "duration": 8,
+            "transferBytes": 160740
+          },
+          {
+            "name": "actors/court-judge-actions.webp",
+            "duration": 8.600000023841858,
+            "transferBytes": 175162
+          },
+          {
+            "name": "actors/flaming-law.webp",
+            "duration": 9,
+            "transferBytes": 116490
+          },
+          {
+            "name": "actors/flaming-law-actions.webp",
+            "duration": 9.199999988079071,
+            "transferBytes": 138108
+          },
+          {
+            "name": "actors/beige-bot-actions.webp",
+            "duration": 9.699999988079071,
+            "transferBytes": 148730
+          },
+          {
+            "name": "master-build/foreground.webp",
+            "duration": 10.099999994039536,
+            "transferBytes": 556560
+          },
+          {
+            "name": "actors/hoa-drone.webp",
+            "duration": 10.5,
+            "transferBytes": 106574
+          },
+          {
+            "name": "actors/hoa-drone-actions.webp",
+            "duration": 10.699999988079071,
+            "transferBytes": 146092
+          },
+          {
+            "name": "actors/beige-bot.webp",
+            "duration": 10.900000005960464,
+            "transferBytes": 119106
+          },
+          {
+            "name": "master-build/socal-scenes.webp",
+            "duration": 11.699999988079071,
+            "transferBytes": 1922406
+          },
+          {
+            "name": "environments/home_base_remastered.svg",
+            "duration": 0.800000011920929,
+            "transferBytes": 6712
+          },
+          {
+            "name": "sprites_hd/hoa_queen_idle.png",
+            "duration": 0.800000011920929,
+            "transferBytes": 49535
+          },
+          {
+            "name": "baseline/favicon.ico?v=3.4.1",
+            "duration": 1.300000011920929,
+            "transferBytes": 15580
+          },
+          {
+            "name": "icons/favicon-32.png?v=3.4.1",
+            "duration": 0.9000000059604645,
+            "transferBytes": 309
+          }
+        ]
+      }
+    },
+    {
+      "label": "candidate",
+      "world": "socal",
+      "mobile": false,
+      "bootMs": 1031,
+      "traces": [
+        {
+          "kind": "movement",
+          "trial": 0,
+          "eventStartTimeMs": 1195.4000000059605,
+          "actionTimeMs": 1205.6000000238419,
+          "ms": 10.200000017881393,
+          "trusted": true,
+          "observation": "actual player/projectile mutation"
+        },
+        {
+          "kind": "movement",
+          "trial": 1,
+          "eventStartTimeMs": 1312.2000000178814,
+          "actionTimeMs": 1322.300000011921,
+          "ms": 10.099999994039536,
+          "trusted": true,
+          "observation": "actual player/projectile mutation"
+        },
+        {
+          "kind": "movement",
+          "trial": 2,
+          "eventStartTimeMs": 1427.7000000178814,
+          "actionTimeMs": 1438.9000000059605,
+          "ms": 11.199999988079071,
+          "trusted": true,
+          "observation": "actual player/projectile mutation"
+        },
+        {
+          "kind": "jump",
+          "trial": 0,
+          "eventStartTimeMs": 1542.7000000178814,
+          "actionTimeMs": 1555.6000000238419,
+          "ms": 12.900000005960464,
+          "trusted": true,
+          "observation": "actual player/projectile mutation"
+        },
+        {
+          "kind": "jump",
+          "trial": 1,
+          "eventStartTimeMs": 1660.4000000059605,
+          "actionTimeMs": 1672.300000011921,
+          "ms": 11.900000005960464,
+          "trusted": true,
+          "observation": "actual player/projectile mutation"
+        },
+        {
+          "kind": "jump",
+          "trial": 2,
+          "eventStartTimeMs": 1776.300000011921,
+          "actionTimeMs": 1788.9000000059605,
+          "ms": 12.599999994039536,
+          "trusted": true,
+          "observation": "actual player/projectile mutation"
+        },
+        {
+          "kind": "attack",
+          "trial": 0,
+          "eventStartTimeMs": 1893.1000000238419,
+          "actionTimeMs": 1905.800000011921,
+          "ms": 12.699999988079071,
+          "trusted": true,
+          "observation": "actual player/projectile mutation"
+        },
+        {
+          "kind": "attack",
+          "trial": 1,
+          "eventStartTimeMs": 2009.800000011921,
+          "actionTimeMs": 2038.800000011921,
+          "ms": 29,
+          "trusted": true,
+          "observation": "actual player/projectile mutation"
+        },
+        {
+          "kind": "attack",
+          "trial": 2,
+          "eventStartTimeMs": 2142.9000000059605,
+          "actionTimeMs": 2172.100000023842,
+          "ms": 29.200000017881393,
+          "trusted": true,
+          "observation": "actual player/projectile mutation"
+        },
+        {
+          "kind": "switch",
+          "trial": 0,
+          "eventStartTimeMs": 2276,
+          "actionTimeMs": 2276.600000023842,
+          "ms": 0.6000000238418579,
+          "trusted": true,
+          "observation": "mutation microtask after Survival state change"
+        },
+        {
+          "kind": "switch",
+          "trial": 1,
+          "eventStartTimeMs": 2381.5,
+          "actionTimeMs": 2381.800000011921,
+          "ms": 0.30000001192092896,
+          "trusted": true,
+          "observation": "mutation microtask after Survival state change"
+        },
+        {
+          "kind": "switch",
+          "trial": 2,
+          "eventStartTimeMs": 2486.4000000059605,
+          "actionTimeMs": 2486.800000011921,
+          "ms": 0.4000000059604645,
+          "trusted": true,
+          "observation": "mutation microtask after Survival state change"
+        },
+        {
+          "kind": "team",
+          "trial": 0,
+          "eventStartTimeMs": 5595.100000023842,
+          "actionTimeMs": 5595.700000017881,
+          "ms": 0.5999999940395355,
+          "trusted": true,
+          "observation": "mutation microtask after Survival state change"
+        },
+        {
+          "kind": "team",
+          "trial": 1,
+          "eventStartTimeMs": 8704.5,
+          "actionTimeMs": 8704.90000000596,
+          "ms": 0.4000000059604645,
+          "trusted": true,
+          "observation": "mutation microtask after Survival state change"
+        },
+        {
+          "kind": "team",
+          "trial": 2,
+          "eventStartTimeMs": 11821.40000000596,
+          "actionTimeMs": 11822.40000000596,
+          "ms": 1,
+          "trusted": true,
+          "observation": "mutation microtask after Survival state change"
+        }
+      ],
+      "firstUse": {
+        "startTime": 11933.800000011921,
+        "endTime": 11981.100000023842,
+        "samples": [
+          {
+            "id": "queen-beige",
+            "pose": "attack",
+            "size": 176,
+            "ms": 9.900000005960464
+          },
+          {
+            "id": "queen-beige",
+            "pose": "hurt",
+            "size": 176,
+            "ms": 2.9000000059604645
+          },
+          {
+            "id": "queen-beige",
+            "pose": "defeat",
+            "size": 176,
+            "ms": 4.5999999940395355
+          },
+          {
+            "id": "court-judge",
+            "pose": "attack",
+            "size": 106,
+            "ms": 8.900000005960464
+          },
+          {
+            "id": "court-judge",
+            "pose": "hurt",
+            "size": 106,
+            "ms": 2.0999999940395355
+          },
+          {
+            "id": "court-judge",
+            "pose": "defeat",
+            "size": 106,
+            "ms": 2.199999988079071
+          },
+          {
+            "id": "flaming-law",
+            "pose": "attack",
+            "size": 80,
+            "ms": 1.5
+          },
+          {
+            "id": "flaming-law",
+            "pose": "hurt",
+            "size": 80,
+            "ms": 1.4000000059604645
+          },
+          {
+            "id": "flaming-law",
+            "pose": "defeat",
+            "size": 80,
+            "ms": 2.5
+          },
+          {
+            "id": "hoa-drone",
+            "pose": "attack",
+            "size": 80,
+            "ms": 6.700000017881393
+          },
+          {
+            "id": "hoa-drone",
+            "pose": "hurt",
+            "size": 80,
+            "ms": 1.5
+          },
+          {
+            "id": "hoa-drone",
+            "pose": "defeat",
+            "size": 80,
+            "ms": 1.399999976158142
+          },
+          {
+            "id": "beige-bot",
+            "pose": "attack",
+            "size": 80,
+            "ms": 1.5
+          },
+          {
+            "id": "beige-bot",
+            "pose": "hurt",
+            "size": 80,
+            "ms": 0
+          },
+          {
+            "id": "beige-bot",
+            "pose": "defeat",
+            "size": 80,
+            "ms": 0
+          }
+        ],
+        "cache": {
+          "loaded": true,
+          "actors": [
+            "queen-beige",
+            "court-judge",
+            "flaming-law",
+            "hoa-drone",
+            "beige-bot"
+          ],
+          "contours": 29,
+          "contourBytes": 2983648,
+          "contourBuilds": 29,
+          "draws": 14893,
+          "backgrounds": 647,
+          "failed": [],
+          "poses": {
+            "walk": 14048,
+            "idle": 647,
+            "hurt": 29,
+            "defeat": 164,
+            "attack": 5
+          },
+          "lastPanel": 0
+        }
+      },
+      "diagnostics": {
+        "longTaskSupported": true,
+        "longTasks": [
+          {
+            "startTime": 123.7000000178814,
+            "duration": 320
+          },
+          {
+            "startTime": 1089.300000011921,
+            "duration": 92
+          }
+        ],
+        "resources": [
+          {
+            "name": "css/style.css?v=3.4.1",
+            "duration": 1.300000011920929,
+            "transferBytes": 82003
+          },
+          {
+            "name": "css/pwa241.css?v=3.4.1",
+            "duration": 1.399999976158142,
+            "transferBytes": 2141
+          },
+          {
+            "name": "css/viewport310.css?v=3.4.1",
+            "duration": 1.5999999940395355,
+            "transferBytes": 12167
+          },
+          {
+            "name": "css/retro320.css?v=3.4.1",
+            "duration": 1.5999999940395355,
+            "transferBytes": 7443
+          },
+          {
+            "name": "css/audio330.css?v=3.4.1",
+            "duration": 1.699999988079071,
+            "transferBytes": 2029
+          },
+          {
+            "name": "css/visual340.css?v=3.4.1",
+            "duration": 1.9000000059604645,
+            "transferBytes": 2069
+          },
+          {
+            "name": "css/origin-story.css?v=3.4.1",
+            "duration": 1.9000000059604645,
+            "transferBytes": 3412
+          },
+          {
+            "name": "css/survival.css?v=3.4.1",
+            "duration": 2.199999988079071,
+            "transferBytes": 2898
+          },
+          {
+            "name": "css/polish4.css?v=3.4.1",
+            "duration": 2.199999988079071,
+            "transferBytes": 4387
+          },
+          {
+            "name": "core/quest-release.js?v=3.4.1",
+            "duration": 2.0999999940395355,
+            "transferBytes": 780
+          },
+          {
+            "name": "core/quest-score.js?v=3.4.1",
+            "duration": 2.9000000059604645,
+            "transferBytes": 8118
+          },
+          {
+            "name": "core/quest-survival.js?v=3.4.1",
+            "duration": 2.5,
+            "transferBytes": 20596
+          },
+          {
+            "name": "core/quest-retro.js?v=3.4.1",
+            "duration": 3.199999988079071,
+            "transferBytes": 4222
+          },
+          {
+            "name": "core/quest-runtime.js?v=3.4.1",
+            "duration": 2.5999999940395355,
+            "transferBytes": 10403
+          },
+          {
+            "name": "core/quest-audio.js?v=3.4.1",
+            "duration": 3.0999999940395355,
+            "transferBytes": 13879
+          },
+          {
+            "name": "core/quest-encounters.js?v=3.4.1",
+            "duration": 3.4000000059604645,
+            "transferBytes": 2349
+          },
+          {
+            "name": "core/quest-journey.js?v=3.4.1",
+            "duration": 3.0999999940395355,
+            "transferBytes": 2654
+          },
+          {
+            "name": "core/quest-cast.js?v=3.4.1",
+            "duration": 3,
+            "transferBytes": 5999
+          },
+          {
+            "name": "core/quest-story.js?v=3.4.1",
+            "duration": 3.5,
+            "transferBytes": 12946
+          },
+          {
+            "name": "core/quest-master-art.js?v=3.4.1",
+            "duration": 3.4000000059604645,
+            "transferBytes": 7306
+          },
+          {
+            "name": "core/quest-core.js?v=3.4.1",
+            "duration": 3.4000000059604645,
+            "transferBytes": 18008
+          },
+          {
+            "name": "js/app109.js?v=3.4.1",
+            "duration": 3.9000000059604645,
+            "transferBytes": 144054
+          },
+          {
+            "name": "js/remaster.js?v=3.4.1",
+            "duration": 4,
+            "transferBytes": 837
+          },
+          {
+            "name": "js/gold-master-self-test.js?v=3.4.1",
+            "duration": 4.100000023841858,
+            "transferBytes": 4975
+          },
+          {
+            "name": "js/pwa241.js?v=3.4.1",
+            "duration": 4.200000017881393,
+            "transferBytes": 4437
+          },
+          {
+            "name": "core/quest-interface.js?v=3.4.1",
+            "duration": 4.5,
+            "transferBytes": 4420
+          },
+          {
+            "name": "core/quest-viewport.js?v=3.4.1",
+            "duration": 4.300000011920929,
+            "transferBytes": 9620
+          },
+          {
+            "name": "cast340/socal.png?v=3.4.0",
+            "duration": 1.9000000059604645,
+            "transferBytes": 1382358
+          },
+          {
+            "name": "cast341/will.png?v=3.4.1",
+            "duration": 2.9000000059604645,
+            "transferBytes": 1886918
+          },
+          {
+            "name": "cast341/daniel.png?v=3.4.1",
+            "duration": 4.4000000059604645,
+            "transferBytes": 1802547
+          },
+          {
+            "name": "cast341/caleb.png?v=3.4.1",
+            "duration": 12.800000011920929,
+            "transferBytes": 2429051
+          },
+          {
+            "name": "actors/court-judge.webp",
+            "duration": 2.899999976158142,
+            "transferBytes": 139760
+          },
+          {
+            "name": "actors/queen-beige.webp",
+            "duration": 5.899999976158142,
+            "transferBytes": 149390
+          },
+          {
+            "name": "actors/queen-beige-actions.webp",
+            "duration": 6.0999999940395355,
+            "transferBytes": 160740
+          },
+          {
+            "name": "actors/flaming-law.webp",
+            "duration": 6.299999982118607,
+            "transferBytes": 116490
+          },
+          {
+            "name": "actors/court-judge-actions.webp",
+            "duration": 6.699999988079071,
+            "transferBytes": 175162
+          },
+          {
+            "name": "actors/flaming-law-actions.webp",
+            "duration": 6.299999982118607,
+            "transferBytes": 138108
+          },
+          {
+            "name": "actors/hoa-drone.webp",
+            "duration": 8,
+            "transferBytes": 106574
+          },
+          {
+            "name": "actors/beige-bot.webp",
+            "duration": 7.0999999940395355,
+            "transferBytes": 119106
+          },
+          {
+            "name": "actors/beige-bot-actions.webp",
+            "duration": 7.300000011920929,
+            "transferBytes": 148730
+          },
+          {
+            "name": "master-build/foreground.webp",
+            "duration": 7.800000011920929,
+            "transferBytes": 556560
+          },
+          {
+            "name": "actors/hoa-drone-actions.webp",
+            "duration": 8.199999988079071,
+            "transferBytes": 146092
+          },
+          {
+            "name": "master-build/socal-scenes.webp",
+            "duration": 9.300000011920929,
+            "transferBytes": 1922406
+          },
+          {
+            "name": "environments/home_base_remastered.svg",
+            "duration": 0.5,
+            "transferBytes": 6712
+          },
+          {
+            "name": "sprites_hd/hoa_queen_idle.png",
+            "duration": 0.5999999940395355,
+            "transferBytes": 49535
+          },
+          {
+            "name": "candidate/favicon.ico?v=3.4.1",
+            "duration": 1.4000000059604645,
+            "transferBytes": 15580
+          },
+          {
+            "name": "icons/favicon-32.png?v=3.4.1",
+            "duration": 0.8999999761581421,
+            "transferBytes": 309
+          }
+        ]
+      }
+    },
+    {
+      "label": "baseline",
+      "world": "tahoe",
+      "mobile": false,
+      "bootMs": 510,
+      "traces": [
+        {
+          "kind": "movement",
+          "trial": 0,
+          "eventStartTimeMs": 597.1999999880791,
+          "actionTimeMs": 600,
+          "ms": 2.800000011920929,
+          "trusted": true,
+          "observation": "actual player/projectile mutation"
+        },
+        {
+          "kind": "movement",
+          "trial": 1,
+          "eventStartTimeMs": 704.6999999880791,
+          "actionTimeMs": 716.7999999821186,
+          "ms": 12.099999994039536,
+          "trusted": true,
+          "observation": "actual player/projectile mutation"
+        },
+        {
+          "kind": "movement",
+          "trial": 2,
+          "eventStartTimeMs": 822.1999999880791,
+          "actionTimeMs": 832.7999999821186,
+          "ms": 10.599999994039536,
+          "trusted": true,
+          "observation": "actual player/projectile mutation"
+        },
+        {
+          "kind": "jump",
+          "trial": 0,
+          "eventStartTimeMs": 936.6999999880791,
+          "actionTimeMs": 966.2999999821186,
+          "ms": 29.599999994039536,
+          "trusted": true,
+          "observation": "actual player/projectile mutation"
+        },
+        {
+          "kind": "jump",
+          "trial": 1,
+          "eventStartTimeMs": 1071.5999999940395,
+          "actionTimeMs": 1082.8999999761581,
+          "ms": 11.299999982118607,
+          "trusted": true,
+          "observation": "actual player/projectile mutation"
+        },
+        {
+          "kind": "jump",
+          "trial": 2,
+          "eventStartTimeMs": 1184.7999999821186,
+          "actionTimeMs": 1199.5999999940395,
+          "ms": 14.800000011920929,
+          "trusted": true,
+          "observation": "actual player/projectile mutation"
+        },
+        {
+          "kind": "attack",
+          "trial": 0,
+          "eventStartTimeMs": 1303.0999999940395,
+          "actionTimeMs": 1316,
+          "ms": 12.900000005960464,
+          "trusted": true,
+          "observation": "actual player/projectile mutation"
+        },
+        {
+          "kind": "attack",
+          "trial": 1,
+          "eventStartTimeMs": 1420.5999999940395,
+          "actionTimeMs": 1433,
+          "ms": 12.400000005960464,
+          "trusted": true,
+          "observation": "actual player/projectile mutation"
+        },
+        {
+          "kind": "attack",
+          "trial": 2,
+          "eventStartTimeMs": 1536.5,
+          "actionTimeMs": 1549.5999999940395,
+          "ms": 13.099999994039536,
+          "trusted": true,
+          "observation": "actual player/projectile mutation"
+        },
+        {
+          "kind": "switch",
+          "trial": 0,
+          "eventStartTimeMs": 1653.3999999761581,
+          "actionTimeMs": 1654.0999999940395,
+          "ms": 0.7000000178813934,
+          "trusted": true,
+          "observation": "mutation microtask after Survival state change"
+        },
+        {
+          "kind": "switch",
+          "trial": 1,
+          "eventStartTimeMs": 1758.2999999821186,
+          "actionTimeMs": 1758.699999988079,
+          "ms": 0.4000000059604645,
+          "trusted": true,
+          "observation": "mutation microtask after Survival state change"
+        },
+        {
+          "kind": "switch",
+          "trial": 2,
+          "eventStartTimeMs": 1862.8999999761581,
+          "actionTimeMs": 1863.199999988079,
+          "ms": 0.30000001192092896,
+          "trusted": true,
+          "observation": "mutation microtask after Survival state change"
+        },
+        {
+          "kind": "team",
+          "trial": 0,
+          "eventStartTimeMs": 4972.5,
+          "actionTimeMs": 4973.199999988079,
+          "ms": 0.699999988079071,
+          "trusted": true,
+          "observation": "mutation microtask after Survival state change"
+        },
+        {
+          "kind": "team",
+          "trial": 1,
+          "eventStartTimeMs": 8086.699999988079,
+          "actionTimeMs": 8087.5,
+          "ms": 0.800000011920929,
+          "trusted": true,
+          "observation": "mutation microtask after Survival state change"
+        },
+        {
+          "kind": "team",
+          "trial": 2,
+          "eventStartTimeMs": 11198.399999976158,
+          "actionTimeMs": 11198.799999982119,
+          "ms": 0.4000000059604645,
+          "trusted": true,
+          "observation": "mutation microtask after Survival state change"
+        }
+      ],
+      "firstUse": {
+        "startTime": 11304.09999999404,
+        "endTime": 11346,
+        "samples": [
+          {
+            "id": "toxic-bloom",
+            "pose": "attack",
+            "size": 205,
+            "ms": 8
+          },
+          {
+            "id": "toxic-bloom",
+            "pose": "hurt",
+            "size": 205,
+            "ms": 2.5
+          },
+          {
+            "id": "toxic-bloom",
+            "pose": "defeat",
+            "size": 205,
+            "ms": 2.4000000059604645
+          },
+          {
+            "id": "algae-slime",
+            "pose": "attack",
+            "size": 80,
+            "ms": 4.799999982118607
+          },
+          {
+            "id": "algae-slime",
+            "pose": "hurt",
+            "size": 80,
+            "ms": 1.0999999940395355
+          },
+          {
+            "id": "algae-slime",
+            "pose": "defeat",
+            "size": 80,
+            "ms": 1
+          },
+          {
+            "id": "pine-queen",
+            "pose": "attack",
+            "size": 218,
+            "ms": 5.600000023841858
+          },
+          {
+            "id": "pine-queen",
+            "pose": "hurt",
+            "size": 218,
+            "ms": 2.2999999821186066
+          },
+          {
+            "id": "pine-queen",
+            "pose": "defeat",
+            "size": 218,
+            "ms": 2.300000011920929
+          },
+          {
+            "id": "pine-beetle",
+            "pose": "attack",
+            "size": 80,
+            "ms": 1.199999988079071
+          },
+          {
+            "id": "pine-beetle",
+            "pose": "hurt",
+            "size": 80,
+            "ms": 1
+          },
+          {
+            "id": "pine-beetle",
+            "pose": "defeat",
+            "size": 80,
+            "ms": 0.9000000059604645
+          },
+          {
+            "id": "larva",
+            "pose": "attack",
+            "size": 80,
+            "ms": 3.800000011920929
+          },
+          {
+            "id": "larva",
+            "pose": "hurt",
+            "size": 80,
+            "ms": 1.0999999940395355
+          },
+          {
+            "id": "larva",
+            "pose": "defeat",
+            "size": 80,
+            "ms": 1.0999999940395355
+          },
+          {
+            "id": "flying-beetle",
+            "pose": "attack",
+            "size": 80,
+            "ms": 1.0999999940395355
+          },
+          {
+            "id": "flying-beetle",
+            "pose": "hurt",
+            "size": 80,
+            "ms": 0.9000000059604645
+          },
+          {
+            "id": "flying-beetle",
+            "pose": "defeat",
+            "size": 80,
+            "ms": 0.800000011920929
+          }
+        ],
+        "cache": {
+          "loaded": true,
+          "actors": [
+            "toxic-bloom",
+            "algae-slime",
+            "pine-queen",
+            "pine-beetle",
+            "larva",
+            "flying-beetle"
+          ],
+          "contours": 24,
+          "contourBytes": 4137624,
+          "contourBuilds": 24,
+          "draws": 344,
+          "backgrounds": 650,
+          "failed": [],
+          "poses": {
+            "walk": 125,
+            "hurt": 39,
+            "defeat": 174,
+            "attack": 6
+          },
+          "lastPanel": 0
+        }
+      },
+      "diagnostics": {
+        "longTaskSupported": true,
+        "longTasks": [
+          {
+            "startTime": 127,
+            "duration": 296
+          },
+          {
+            "startTime": 441.89999997615814,
+            "duration": 56
+          }
+        ],
+        "resources": [
+          {
+            "name": "css/tahoe.css?v=3.4.1",
+            "duration": 1.5999999940395355,
+            "transferBytes": 14071
+          },
+          {
+            "name": "css/pwa241.css?v=3.4.1",
+            "duration": 1.9000000059604645,
+            "transferBytes": 2141
+          },
+          {
+            "name": "css/viewport310.css?v=3.4.1",
+            "duration": 2.0999999940395355,
+            "transferBytes": 11230
+          },
+          {
+            "name": "css/retro320.css?v=3.4.1",
+            "duration": 2.300000011920929,
+            "transferBytes": 7443
+          },
+          {
+            "name": "css/audio330.css?v=3.4.1",
+            "duration": 2.7000000178813934,
+            "transferBytes": 2029
+          },
+          {
+            "name": "css/visual340.css?v=3.4.1",
+            "duration": 2.800000011920929,
+            "transferBytes": 2069
+          },
+          {
+            "name": "css/survival.css?v=3.4.1",
+            "duration": 3.100000023841858,
+            "transferBytes": 2898
+          },
+          {
+            "name": "css/polish4.css?v=3.4.1",
+            "duration": 3.4000000059604645,
+            "transferBytes": 4250
+          },
+          {
+            "name": "core/quest-release.js?v=3.4.1",
+            "duration": 2.9000000059604645,
+            "transferBytes": 779
+          },
+          {
+            "name": "core/quest-runtime.js?v=3.4.1",
+            "duration": 3.7000000178813934,
+            "transferBytes": 9663
+          },
+          {
+            "name": "core/quest-survival.js?v=3.4.1",
+            "duration": 3.600000023841858,
+            "transferBytes": 19985
+          },
+          {
+            "name": "core/quest-score.js?v=3.4.1",
+            "duration": 3.899999976158142,
+            "transferBytes": 8118
+          },
+          {
+            "name": "core/quest-audio.js?v=3.4.1",
+            "duration": 4,
+            "transferBytes": 13879
+          },
+          {
+            "name": "core/quest-encounters.js?v=3.4.1",
+            "duration": 4.4000000059604645,
+            "transferBytes": 2349
+          },
+          {
+            "name": "core/quest-journey.js?v=3.4.1",
+            "duration": 4,
+            "transferBytes": 2654
+          },
+          {
+            "name": "core/quest-cast.js?v=3.4.1",
+            "duration": 4.299999982118607,
+            "transferBytes": 5999
+          },
+          {
+            "name": "core/quest-master-art.js?v=3.4.1",
+            "duration": 4.5999999940395355,
+            "transferBytes": 7306
+          },
+          {
+            "name": "core/quest-retro.js?v=3.4.1",
+            "duration": 4.0999999940395355,
+            "transferBytes": 4222
+          },
+          {
+            "name": "js/pwa241.js?v=3.4.1",
+            "duration": 5.299999982118607,
+            "transferBytes": 4437
+          },
+          {
+            "name": "core/quest-core.js?v=3.4.1",
+            "duration": 5,
+            "transferBytes": 18008
+          },
+          {
+            "name": "js/tahoe253.js?v=3.4.1",
+            "duration": 5.0999999940395355,
+            "transferBytes": 67032
+          },
+          {
+            "name": "core/quest-interface.js?v=3.4.1",
+            "duration": 5.300000011920929,
+            "transferBytes": 4420
+          },
+          {
+            "name": "core/quest-viewport.js?v=3.4.1",
+            "duration": 5.300000011920929,
+            "transferBytes": 6648
+          },
+          {
+            "name": "cast340/tahoe.png?v=3.4.0",
+            "duration": 1.4000000059604645,
+            "transferBytes": 1368129
+          },
+          {
+            "name": "cast341/will.png?v=3.4.1",
+            "duration": 2.5,
+            "transferBytes": 1886918
+          },
+          {
+            "name": "cast341/daniel.png?v=3.4.1",
+            "duration": 3.5999999940395355,
+            "transferBytes": 1802547
+          },
+          {
+            "name": "cast341/caleb.png?v=3.4.1",
+            "duration": 35.80000001192093,
+            "transferBytes": 2429051
+          },
+          {
+            "name": "actors/toxic-bloom.webp",
+            "duration": 4.800000011920929,
+            "transferBytes": 180810
+          },
+          {
+            "name": "actors/toxic-bloom-actions.webp",
+            "duration": 5,
+            "transferBytes": 140058
+          },
+          {
+            "name": "actors/algae-slime.webp",
+            "duration": 2.5999999940395355,
+            "transferBytes": 61068
+          },
+          {
+            "name": "actors/pine-queen.webp",
+            "duration": 5.199999988079071,
+            "transferBytes": 190486
+          },
+          {
+            "name": "actors/pine-queen-actions.webp",
+            "duration": 5.5,
+            "transferBytes": 204522
+          },
+          {
+            "name": "actors/algae-slime-actions.webp",
+            "duration": 5.799999982118607,
+            "transferBytes": 72310
+          },
+          {
+            "name": "actors/pine-beetle.webp",
+            "duration": 5.4000000059604645,
+            "transferBytes": 94678
+          },
+          {
+            "name": "actors/larva.webp",
+            "duration": 5.799999982118607,
+            "transferBytes": 87544
+          },
+          {
+            "name": "actors/larva-actions.webp",
+            "duration": 5.9000000059604645,
+            "transferBytes": 89660
+          },
+          {
+            "name": "actors/pine-beetle-actions.webp",
+            "duration": 6.199999988079071,
+            "transferBytes": 101100
+          },
+          {
+            "name": "master-build/foreground.webp",
+            "duration": 6.5,
+            "transferBytes": 556560
+          },
+          {
+            "name": "actors/flying-beetle.webp",
+            "duration": 7.5999999940395355,
+            "transferBytes": 93434
+          },
+          {
+            "name": "actors/flying-beetle-actions.webp",
+            "duration": 7.800000011920929,
+            "transferBytes": 93528
+          },
+          {
+            "name": "master-build/tahoe-scenes.webp",
+            "duration": 36.900000005960464,
+            "transferBytes": 2295316
+          },
+          {
+            "name": "baseline/favicon.ico?v=3.4.1",
+            "duration": 0.8999999761581421,
+            "transferBytes": 15580
+          },
+          {
+            "name": "icons/favicon-32.png?v=3.4.1",
+            "duration": 0.800000011920929,
+            "transferBytes": 309
+          }
+        ]
+      }
+    },
+    {
+      "label": "candidate",
+      "world": "tahoe",
+      "mobile": false,
+      "bootMs": 494,
+      "traces": [
+        {
+          "kind": "movement",
+          "trial": 0,
+          "eventStartTimeMs": 567.4000000059605,
+          "actionTimeMs": 572.5,
+          "ms": 5.0999999940395355,
+          "trusted": true,
+          "observation": "actual player/projectile mutation"
+        },
+        {
+          "kind": "movement",
+          "trial": 1,
+          "eventStartTimeMs": 677.4000000059605,
+          "actionTimeMs": 688.7999999821186,
+          "ms": 11.399999976158142,
+          "trusted": true,
+          "observation": "actual player/projectile mutation"
+        },
+        {
+          "kind": "movement",
+          "trial": 2,
+          "eventStartTimeMs": 791.5,
+          "actionTimeMs": 804.0999999940395,
+          "ms": 12.599999994039536,
+          "trusted": true,
+          "observation": "actual player/projectile mutation"
+        },
+        {
+          "kind": "jump",
+          "trial": 0,
+          "eventStartTimeMs": 907.2999999821186,
+          "actionTimeMs": 921.1999999880791,
+          "ms": 13.900000005960464,
+          "trusted": true,
+          "observation": "actual player/projectile mutation"
+        },
+        {
+          "kind": "jump",
+          "trial": 1,
+          "eventStartTimeMs": 1024.699999988079,
+          "actionTimeMs": 1038.2999999821186,
+          "ms": 13.599999994039536,
+          "trusted": true,
+          "observation": "actual player/projectile mutation"
+        },
+        {
+          "kind": "jump",
+          "trial": 2,
+          "eventStartTimeMs": 1141.2999999821186,
+          "actionTimeMs": 1154.199999988079,
+          "ms": 12.900000005960464,
+          "trusted": true,
+          "observation": "actual player/projectile mutation"
+        },
+        {
+          "kind": "attack",
+          "trial": 0,
+          "eventStartTimeMs": 1257.2999999821186,
+          "actionTimeMs": 1271.4000000059605,
+          "ms": 14.100000023841858,
+          "trusted": true,
+          "observation": "actual player/projectile mutation"
+        },
+        {
+          "kind": "attack",
+          "trial": 1,
+          "eventStartTimeMs": 1375.9000000059605,
+          "actionTimeMs": 1388.7999999821186,
+          "ms": 12.899999976158142,
+          "trusted": true,
+          "observation": "actual player/projectile mutation"
+        },
+        {
+          "kind": "attack",
+          "trial": 2,
+          "eventStartTimeMs": 1491.0999999940395,
+          "actionTimeMs": 1504.699999988079,
+          "ms": 13.599999994039536,
+          "trusted": true,
+          "observation": "actual player/projectile mutation"
+        },
+        {
+          "kind": "switch",
+          "trial": 0,
+          "eventStartTimeMs": 1608.2999999821186,
+          "actionTimeMs": 1608.9000000059605,
+          "ms": 0.6000000238418579,
+          "trusted": true,
+          "observation": "mutation microtask after Survival state change"
+        },
+        {
+          "kind": "switch",
+          "trial": 1,
+          "eventStartTimeMs": 1712.5999999940395,
+          "actionTimeMs": 1712.9000000059605,
+          "ms": 0.30000001192092896,
+          "trusted": true,
+          "observation": "mutation microtask after Survival state change"
+        },
+        {
+          "kind": "switch",
+          "trial": 2,
+          "eventStartTimeMs": 1816.9000000059605,
+          "actionTimeMs": 1817.2999999821186,
+          "ms": 0.3999999761581421,
+          "trusted": true,
+          "observation": "mutation microtask after Survival state change"
+        },
+        {
+          "kind": "team",
+          "trial": 0,
+          "eventStartTimeMs": 4934.199999988079,
+          "actionTimeMs": 4935.5999999940395,
+          "ms": 1.4000000059604645,
+          "trusted": true,
+          "observation": "mutation microtask after Survival state change"
+        },
+        {
+          "kind": "team",
+          "trial": 1,
+          "eventStartTimeMs": 8052.199999988079,
+          "actionTimeMs": 8053,
+          "ms": 0.800000011920929,
+          "trusted": true,
+          "observation": "mutation microtask after Survival state change"
+        },
+        {
+          "kind": "team",
+          "trial": 2,
+          "eventStartTimeMs": 11168.40000000596,
+          "actionTimeMs": 11169,
+          "ms": 0.5999999940395355,
+          "trusted": true,
+          "observation": "mutation microtask after Survival state change"
+        }
+      ],
+      "firstUse": {
+        "startTime": 11275.90000000596,
+        "endTime": 11332.5,
+        "samples": [
+          {
+            "id": "toxic-bloom",
+            "pose": "attack",
+            "size": 205,
+            "ms": 12.199999988079071
+          },
+          {
+            "id": "toxic-bloom",
+            "pose": "hurt",
+            "size": 205,
+            "ms": 3.699999988079071
+          },
+          {
+            "id": "toxic-bloom",
+            "pose": "defeat",
+            "size": 205,
+            "ms": 3.4000000059604645
+          },
+          {
+            "id": "algae-slime",
+            "pose": "attack",
+            "size": 80,
+            "ms": 5.4000000059604645
+          },
+          {
+            "id": "algae-slime",
+            "pose": "hurt",
+            "size": 80,
+            "ms": 1.5
+          },
+          {
+            "id": "algae-slime",
+            "pose": "defeat",
+            "size": 80,
+            "ms": 1.5
+          },
+          {
+            "id": "pine-queen",
+            "pose": "attack",
+            "size": 218,
+            "ms": 7.0999999940395355
+          },
+          {
+            "id": "pine-queen",
+            "pose": "hurt",
+            "size": 218,
+            "ms": 3.4000000059604645
+          },
+          {
+            "id": "pine-queen",
+            "pose": "defeat",
+            "size": 218,
+            "ms": 3.5
+          },
+          {
+            "id": "pine-beetle",
+            "pose": "attack",
+            "size": 80,
+            "ms": 1.5
+          },
+          {
+            "id": "pine-beetle",
+            "pose": "hurt",
+            "size": 80,
+            "ms": 1.2000000178813934
+          },
+          {
+            "id": "pine-beetle",
+            "pose": "defeat",
+            "size": 80,
+            "ms": 1.199999988079071
+          },
+          {
+            "id": "larva",
+            "pose": "attack",
+            "size": 80,
+            "ms": 4.699999988079071
+          },
+          {
+            "id": "larva",
+            "pose": "hurt",
+            "size": 80,
+            "ms": 1.2000000178813934
+          },
+          {
+            "id": "larva",
+            "pose": "defeat",
+            "size": 80,
+            "ms": 1.300000011920929
+          },
+          {
+            "id": "flying-beetle",
+            "pose": "attack",
+            "size": 80,
+            "ms": 1.199999988079071
+          },
+          {
+            "id": "flying-beetle",
+            "pose": "hurt",
+            "size": 80,
+            "ms": 1.300000011920929
+          },
+          {
+            "id": "flying-beetle",
+            "pose": "defeat",
+            "size": 80,
+            "ms": 1.0999999940395355
+          }
+        ],
+        "cache": {
+          "loaded": true,
+          "actors": [
+            "toxic-bloom",
+            "algae-slime",
+            "pine-queen",
+            "pine-beetle",
+            "larva",
+            "flying-beetle"
+          ],
+          "contours": 24,
+          "contourBytes": 4137624,
+          "contourBuilds": 24,
+          "draws": 343,
+          "backgrounds": 650,
+          "failed": [],
+          "poses": {
+            "walk": 124,
+            "hurt": 39,
+            "defeat": 174,
+            "attack": 6
+          },
+          "lastPanel": 0
+        }
+      },
+      "diagnostics": {
+        "longTaskSupported": true,
+        "longTasks": [
+          {
+            "startTime": 116.59999999403954,
+            "duration": 294
+          },
+          {
+            "startTime": 426.2999999821186,
+            "duration": 55
+          }
+        ],
+        "resources": [
+          {
+            "name": "css/tahoe.css?v=3.4.1",
+            "duration": 1.100000023841858,
+            "transferBytes": 14071
+          },
+          {
+            "name": "css/pwa241.css?v=3.4.1",
+            "duration": 1.2999999821186066,
+            "transferBytes": 2141
+          },
+          {
+            "name": "css/viewport310.css?v=3.4.1",
+            "duration": 1.199999988079071,
+            "transferBytes": 12167
+          },
+          {
+            "name": "css/retro320.css?v=3.4.1",
+            "duration": 1.5,
+            "transferBytes": 7443
+          },
+          {
+            "name": "css/audio330.css?v=3.4.1",
+            "duration": 1.5,
+            "transferBytes": 2029
+          },
+          {
+            "name": "css/visual340.css?v=3.4.1",
+            "duration": 1.699999988079071,
+            "transferBytes": 2069
+          },
+          {
+            "name": "css/survival.css?v=3.4.1",
+            "duration": 1.7999999821186066,
+            "transferBytes": 2898
+          },
+          {
+            "name": "core/quest-release.js?v=3.4.1",
+            "duration": 1.699999988079071,
+            "transferBytes": 780
+          },
+          {
+            "name": "css/polish4.css?v=3.4.1",
+            "duration": 2.0999999940395355,
+            "transferBytes": 4387
+          },
+          {
+            "name": "core/quest-score.js?v=3.4.1",
+            "duration": 2.699999988079071,
+            "transferBytes": 8118
+          },
+          {
+            "name": "core/quest-survival.js?v=3.4.1",
+            "duration": 2.5,
+            "transferBytes": 20596
+          },
+          {
+            "name": "core/quest-retro.js?v=3.4.1",
+            "duration": 2.9000000059604645,
+            "transferBytes": 4222
+          },
+          {
+            "name": "core/quest-runtime.js?v=3.4.1",
+            "duration": 2.5,
+            "transferBytes": 10403
+          },
+          {
+            "name": "core/quest-journey.js?v=3.4.1",
+            "duration": 3,
+            "transferBytes": 2654
+          },
+          {
+            "name": "core/quest-audio.js?v=3.4.1",
+            "duration": 2.800000011920929,
+            "transferBytes": 13879
+          },
+          {
+            "name": "core/quest-cast.js?v=3.4.1",
+            "duration": 3.300000011920929,
+            "transferBytes": 5999
+          },
+          {
+            "name": "core/quest-encounters.js?v=3.4.1",
+            "duration": 3.7000000178813934,
+            "transferBytes": 2349
+          },
+          {
+            "name": "core/quest-master-art.js?v=3.4.1",
+            "duration": 3.600000023841858,
+            "transferBytes": 7306
+          },
+          {
+            "name": "js/pwa241.js?v=3.4.1",
+            "duration": 4.100000023841858,
+            "transferBytes": 4437
+          },
+          {
+            "name": "core/quest-core.js?v=3.4.1",
+            "duration": 3.9000000059604645,
+            "transferBytes": 18008
+          },
+          {
+            "name": "core/quest-viewport.js?v=3.4.1",
+            "duration": 4.200000017881393,
+            "transferBytes": 9620
+          },
+          {
+            "name": "core/quest-interface.js?v=3.4.1",
+            "duration": 4.200000017881393,
+            "transferBytes": 4420
+          },
+          {
+            "name": "js/tahoe253.js?v=3.4.1",
+            "duration": 4,
+            "transferBytes": 67032
+          },
+          {
+            "name": "cast340/tahoe.png?v=3.4.0",
+            "duration": 1.4000000059604645,
+            "transferBytes": 1368129
+          },
+          {
+            "name": "cast341/will.png?v=3.4.1",
+            "duration": 2.199999988079071,
+            "transferBytes": 1886918
+          },
+          {
+            "name": "cast341/daniel.png?v=3.4.1",
+            "duration": 3.300000011920929,
+            "transferBytes": 1802547
+          },
+          {
+            "name": "cast341/caleb.png?v=3.4.1",
+            "duration": 38.30000001192093,
+            "transferBytes": 2429051
+          },
+          {
+            "name": "actors/toxic-bloom.webp",
+            "duration": 4.4000000059604645,
+            "transferBytes": 180810
+          },
+          {
+            "name": "actors/algae-slime.webp",
+            "duration": 2.0999999940395355,
+            "transferBytes": 61068
+          },
+          {
+            "name": "actors/toxic-bloom-actions.webp",
+            "duration": 4.5999999940395355,
+            "transferBytes": 140058
+          },
+          {
+            "name": "actors/pine-queen.webp",
+            "duration": 5.4000000059604645,
+            "transferBytes": 190486
+          },
+          {
+            "name": "actors/algae-slime-actions.webp",
+            "duration": 5.4000000059604645,
+            "transferBytes": 72310
+          },
+          {
+            "name": "actors/pine-queen-actions.webp",
+            "duration": 5.5,
+            "transferBytes": 204522
+          },
+          {
+            "name": "actors/pine-beetle.webp",
+            "duration": 5.0999999940395355,
+            "transferBytes": 94678
+          },
+          {
+            "name": "actors/pine-beetle-actions.webp",
+            "duration": 5.700000017881393,
+            "transferBytes": 101100
+          },
+          {
+            "name": "actors/larva.webp",
+            "duration": 5.9000000059604645,
+            "transferBytes": 87544
+          },
+          {
+            "name": "actors/larva-actions.webp",
+            "duration": 5.9000000059604645,
+            "transferBytes": 89660
+          },
+          {
+            "name": "actors/flying-beetle.webp",
+            "duration": 6.4000000059604645,
+            "transferBytes": 93434
+          },
+          {
+            "name": "actors/flying-beetle-actions.webp",
+            "duration": 6.4000000059604645,
+            "transferBytes": 93528
+          },
+          {
+            "name": "master-build/foreground.webp",
+            "duration": 6.4000000059604645,
+            "transferBytes": 556560
+          },
+          {
+            "name": "master-build/tahoe-scenes.webp",
+            "duration": 39.30000001192093,
+            "transferBytes": 2295316
+          },
+          {
+            "name": "candidate/favicon.ico?v=3.4.1",
+            "duration": 0.9000000059604645,
+            "transferBytes": 15580
+          },
+          {
+            "name": "icons/favicon-32.png?v=3.4.1",
+            "duration": 0.699999988079071,
+            "transferBytes": 309
+          }
+        ]
+      }
+    },
+    {
+      "label": "baseline",
+      "world": "alaska",
+      "mobile": false,
+      "bootMs": 458,
+      "traces": [
+        {
+          "kind": "movement",
+          "trial": 0,
+          "eventStartTimeMs": 512.1999999880791,
+          "actionTimeMs": 545.1999999880791,
+          "ms": 33,
+          "trusted": true,
+          "observation": "actual player/projectile mutation"
+        },
+        {
+          "kind": "movement",
+          "trial": 1,
+          "eventStartTimeMs": 650,
+          "actionTimeMs": 665.4000000059605,
+          "ms": 15.400000005960464,
+          "trusted": true,
+          "observation": "actual player/projectile mutation"
+        },
+        {
+          "kind": "movement",
+          "trial": 2,
+          "eventStartTimeMs": 768.6999999880791,
+          "actionTimeMs": 798.4000000059605,
+          "ms": 29.700000017881393,
+          "trusted": true,
+          "observation": "actual player/projectile mutation"
+        },
+        {
+          "kind": "jump",
+          "trial": 0,
+          "eventStartTimeMs": 901.6999999880791,
+          "actionTimeMs": 915.4000000059605,
+          "ms": 13.700000017881393,
+          "trusted": true,
+          "observation": "actual player/projectile mutation"
+        },
+        {
+          "kind": "jump",
+          "trial": 1,
+          "eventStartTimeMs": 1018.0999999940395,
+          "actionTimeMs": 1031.4000000059605,
+          "ms": 13.300000011920929,
+          "trusted": true,
+          "observation": "actual player/projectile mutation"
+        },
+        {
+          "kind": "jump",
+          "trial": 2,
+          "eventStartTimeMs": 1135,
+          "actionTimeMs": 1164.800000011921,
+          "ms": 29.80000001192093,
+          "trusted": true,
+          "observation": "actual player/projectile mutation"
+        },
+        {
+          "kind": "attack",
+          "trial": 0,
+          "eventStartTimeMs": 1269.5,
+          "actionTimeMs": 1298.5999999940395,
+          "ms": 29.099999994039536,
+          "trusted": true,
+          "observation": "actual player/projectile mutation"
+        },
+        {
+          "kind": "attack",
+          "trial": 1,
+          "eventStartTimeMs": 1403.5999999940395,
+          "actionTimeMs": 1415.300000011921,
+          "ms": 11.700000017881393,
+          "trusted": true,
+          "observation": "actual player/projectile mutation"
+        },
+        {
+          "kind": "attack",
+          "trial": 2,
+          "eventStartTimeMs": 1517.800000011921,
+          "actionTimeMs": 1531.9000000059605,
+          "ms": 14.099999994039536,
+          "trusted": true,
+          "observation": "actual player/projectile mutation"
+        },
+        {
+          "kind": "switch",
+          "trial": 0,
+          "eventStartTimeMs": 1635.4000000059605,
+          "actionTimeMs": 1636.0999999940395,
+          "ms": 0.699999988079071,
+          "trusted": true,
+          "observation": "mutation microtask after Survival state change"
+        },
+        {
+          "kind": "switch",
+          "trial": 1,
+          "eventStartTimeMs": 1742,
+          "actionTimeMs": 1742.4000000059605,
+          "ms": 0.4000000059604645,
+          "trusted": true,
+          "observation": "mutation microtask after Survival state change"
+        },
+        {
+          "kind": "switch",
+          "trial": 2,
+          "eventStartTimeMs": 1848.5,
+          "actionTimeMs": 1849.0999999940395,
+          "ms": 0.5999999940395355,
+          "trusted": true,
+          "observation": "mutation microtask after Survival state change"
+        },
+        {
+          "kind": "team",
+          "trial": 0,
+          "eventStartTimeMs": 4961.800000011921,
+          "actionTimeMs": 4962.800000011921,
+          "ms": 1,
+          "trusted": true,
+          "observation": "mutation microtask after Survival state change"
+        },
+        {
+          "kind": "team",
+          "trial": 1,
+          "eventStartTimeMs": 8077.4000000059605,
+          "actionTimeMs": 8077.9000000059605,
+          "ms": 0.5,
+          "trusted": true,
+          "observation": "mutation microtask after Survival state change"
+        },
+        {
+          "kind": "team",
+          "trial": 2,
+          "eventStartTimeMs": 11187.90000000596,
+          "actionTimeMs": 11188.199999988079,
+          "ms": 0.29999998211860657,
+          "trusted": true,
+          "observation": "mutation microtask after Survival state change"
+        }
+      ],
+      "firstUse": {
+        "startTime": 11292.90000000596,
+        "endTime": 11344.40000000596,
+        "samples": [
+          {
+            "id": "pipeline-worker",
+            "pose": "attack",
+            "size": 80,
+            "ms": 4.799999982118607
+          },
+          {
+            "id": "pipeline-worker",
+            "pose": "hurt",
+            "size": 80,
+            "ms": 1.2000000178813934
+          },
+          {
+            "id": "pipeline-worker",
+            "pose": "defeat",
+            "size": 80,
+            "ms": 1
+          },
+          {
+            "id": "surveillance-drone",
+            "pose": "attack",
+            "size": 80,
+            "ms": 3.5999999940395355
+          },
+          {
+            "id": "surveillance-drone",
+            "pose": "hurt",
+            "size": 80,
+            "ms": 2.300000011920929
+          },
+          {
+            "id": "surveillance-drone",
+            "pose": "defeat",
+            "size": 80,
+            "ms": 0.7999999821186066
+          },
+          {
+            "id": "security-turret",
+            "pose": "attack",
+            "size": 80,
+            "ms": 3.9000000059604645
+          },
+          {
+            "id": "security-turret",
+            "pose": "hurt",
+            "size": 80,
+            "ms": 1
+          },
+          {
+            "id": "security-turret",
+            "pose": "defeat",
+            "size": 80,
+            "ms": 1
+          },
+          {
+            "id": "machinery",
+            "pose": "attack",
+            "size": 80,
+            "ms": 3.800000011920929
+          },
+          {
+            "id": "machinery",
+            "pose": "hurt",
+            "size": 80,
+            "ms": 1
+          },
+          {
+            "id": "machinery",
+            "pose": "defeat",
+            "size": 80,
+            "ms": 0.7999999821186066
+          },
+          {
+            "id": "oil-slime",
+            "pose": "attack",
+            "size": 80,
+            "ms": 3.5999999940395355
+          },
+          {
+            "id": "oil-slime",
+            "pose": "hurt",
+            "size": 80,
+            "ms": 1
+          },
+          {
+            "id": "oil-slime",
+            "pose": "defeat",
+            "size": 80,
+            "ms": 1
+          },
+          {
+            "id": "frost-queen",
+            "pose": "attack",
+            "size": 202,
+            "ms": 6.9000000059604645
+          },
+          {
+            "id": "frost-queen",
+            "pose": "hurt",
+            "size": 202,
+            "ms": 2.2000000178813934
+          },
+          {
+            "id": "frost-queen",
+            "pose": "defeat",
+            "size": 202,
+            "ms": 2.2999999821186066
+          },
+          {
+            "id": "zombie-salmon",
+            "pose": "attack",
+            "size": 80,
+            "ms": 1.300000011920929
+          },
+          {
+            "id": "zombie-salmon",
+            "pose": "hurt",
+            "size": 80,
+            "ms": 1.0999999940395355
+          },
+          {
+            "id": "zombie-salmon",
+            "pose": "defeat",
+            "size": 80,
+            "ms": 1
+          },
+          {
+            "id": "alaskan-owl",
+            "pose": "attack",
+            "size": 80,
+            "ms": 3.9000000059604645
+          },
+          {
+            "id": "alaskan-owl",
+            "pose": "hurt",
+            "size": 80,
+            "ms": 1
+          },
+          {
+            "id": "alaskan-owl",
+            "pose": "defeat",
+            "size": 80,
+            "ms": 0.9000000059604645
+          }
+        ],
+        "cache": {
+          "loaded": true,
+          "actors": [
+            "pipeline-worker",
+            "surveillance-drone",
+            "security-turret",
+            "machinery",
+            "oil-slime",
+            "frost-queen",
+            "zombie-salmon",
+            "alaskan-owl"
+          ],
+          "contours": 30,
+          "contourBytes": 3170104,
+          "contourBuilds": 30,
+          "draws": 6265,
+          "backgrounds": 653,
+          "failed": [],
+          "poses": {
+            "walk": 6120,
+            "hurt": 24,
+            "defeat": 113,
+            "attack": 8
+          },
+          "lastPanel": 0
+        }
+      },
+      "diagnostics": {
+        "longTaskSupported": true,
+        "longTasks": [
+          {
+            "startTime": 70.5,
+            "duration": 311
+          }
+        ],
+        "resources": [
+          {
+            "name": "css/tahoe.css?v=3.4.1",
+            "duration": 1.699999988079071,
+            "transferBytes": 14071
+          },
+          {
+            "name": "css/pwa241.css?v=3.4.1",
+            "duration": 2.2000000178813934,
+            "transferBytes": 2141
+          },
+          {
+            "name": "css/viewport310.css?v=3.4.1",
+            "duration": 2.2000000178813934,
+            "transferBytes": 11230
+          },
+          {
+            "name": "css/retro320.css?v=3.4.1",
+            "duration": 2.4000000059604645,
+            "transferBytes": 7443
+          },
+          {
+            "name": "css/audio330.css?v=3.4.1",
+            "duration": 3,
+            "transferBytes": 2029
+          },
+          {
+            "name": "css/visual340.css?v=3.4.1",
+            "duration": 2.5,
+            "transferBytes": 2069
+          },
+          {
+            "name": "core/quest-release.js?v=3.4.1",
+            "duration": 3.4000000059604645,
+            "transferBytes": 779
+          },
+          {
+            "name": "css/survival.css?v=3.4.1",
+            "duration": 3.199999988079071,
+            "transferBytes": 2898
+          },
+          {
+            "name": "css/polish4.css?v=3.4.1",
+            "duration": 3.199999988079071,
+            "transferBytes": 4250
+          },
+          {
+            "name": "core/quest-score.js?v=3.4.1",
+            "duration": 3.5,
+            "transferBytes": 8118
+          },
+          {
+            "name": "core/quest-runtime.js?v=3.4.1",
+            "duration": 3.199999988079071,
+            "transferBytes": 9663
+          },
+          {
+            "name": "core/quest-retro.js?v=3.4.1",
+            "duration": 3.699999988079071,
+            "transferBytes": 4222
+          },
+          {
+            "name": "core/quest-survival.js?v=3.4.1",
+            "duration": 2.9000000059604645,
+            "transferBytes": 19985
+          },
+          {
+            "name": "core/quest-audio.js?v=3.4.1",
+            "duration": 3.5,
+            "transferBytes": 13879
+          },
+          {
+            "name": "core/quest-journey.js?v=3.4.1",
+            "duration": 3.5,
+            "transferBytes": 2654
+          },
+          {
+            "name": "core/quest-cast.js?v=3.4.1",
+            "duration": 3.699999988079071,
+            "transferBytes": 5999
+          },
+          {
+            "name": "core/quest-encounters.js?v=3.4.1",
+            "duration": 3.800000011920929,
+            "transferBytes": 2349
+          },
+          {
+            "name": "core/quest-master-art.js?v=3.4.1",
+            "duration": 4.800000011920929,
+            "transferBytes": 7306
+          },
+          {
+            "name": "core/quest-core.js?v=3.4.1",
+            "duration": 4.800000011920929,
+            "transferBytes": 18008
+          },
+          {
+            "name": "js/world-alaska.js?v=3.4.1",
+            "duration": 5.200000017881393,
+            "transferBytes": 2628
+          },
+          {
+            "name": "js/pwa241.js?v=3.4.1",
+            "duration": 5.4000000059604645,
+            "transferBytes": 4437
+          },
+          {
+            "name": "core/quest-adventure.js?v=3.4.1",
+            "duration": 5,
+            "transferBytes": 39557
+          },
+          {
+            "name": "core/quest-viewport.js?v=3.4.1",
+            "duration": 5.800000011920929,
+            "transferBytes": 6648
+          },
+          {
+            "name": "core/quest-interface.js?v=3.4.1",
+            "duration": 5.800000011920929,
+            "transferBytes": 4420
+          },
+          {
+            "name": "cast340/alaska.png?v=3.4.0",
+            "duration": 1.4000000059604645,
+            "transferBytes": 1421858
+          },
+          {
+            "name": "cast341/will.png?v=3.4.1",
+            "duration": 2.4000000059604645,
+            "transferBytes": 1886918
+          },
+          {
+            "name": "cast341/daniel.png?v=3.4.1",
+            "duration": 3.4000000059604645,
+            "transferBytes": 1802547
+          },
+          {
+            "name": "cast341/caleb.png?v=3.4.1",
+            "duration": 48.20000001788139,
+            "transferBytes": 2429051
+          },
+          {
+            "name": "actors/pipeline-worker.webp",
+            "duration": 4.199999988079071,
+            "transferBytes": 89818
+          },
+          {
+            "name": "actors/pipeline-worker-actions.webp",
+            "duration": 4.5999999940395355,
+            "transferBytes": 100240
+          },
+          {
+            "name": "actors/surveillance-drone-actions.webp",
+            "duration": 4.699999988079071,
+            "transferBytes": 79716
+          },
+          {
+            "name": "actors/security-turret.webp",
+            "duration": 4.800000011920929,
+            "transferBytes": 72660
+          },
+          {
+            "name": "actors/surveillance-drone.webp",
+            "duration": 4.5999999940395355,
+            "transferBytes": 62898
+          },
+          {
+            "name": "actors/security-turret-actions.webp",
+            "duration": 5,
+            "transferBytes": 87296
+          },
+          {
+            "name": "actors/machinery.webp",
+            "duration": 5.199999988079071,
+            "transferBytes": 97056
+          },
+          {
+            "name": "actors/machinery-actions.webp",
+            "duration": 5.5999999940395355,
+            "transferBytes": 117898
+          },
+          {
+            "name": "actors/oil-slime.webp",
+            "duration": 5.5,
+            "transferBytes": 55136
+          },
+          {
+            "name": "actors/oil-slime-actions.webp",
+            "duration": 5.700000017881393,
+            "transferBytes": 80304
+          },
+          {
+            "name": "actors/frost-queen.webp",
+            "duration": 6.0999999940395355,
+            "transferBytes": 148584
+          },
+          {
+            "name": "actors/frost-queen-actions.webp",
+            "duration": 6.0999999940395355,
+            "transferBytes": 155194
+          },
+          {
+            "name": "actors/zombie-salmon.webp",
+            "duration": 6.300000011920929,
+            "transferBytes": 81550
+          },
+          {
+            "name": "actors/zombie-salmon-actions.webp",
+            "duration": 6.600000023841858,
+            "transferBytes": 81846
+          },
+          {
+            "name": "actors/alaskan-owl.webp",
+            "duration": 6.5999999940395355,
+            "transferBytes": 91296
+          },
+          {
+            "name": "actors/alaskan-owl-actions.webp",
+            "duration": 6.899999976158142,
+            "transferBytes": 103960
+          },
+          {
+            "name": "master-build/foreground.webp",
+            "duration": 7,
+            "transferBytes": 556560
+          },
+          {
+            "name": "master-build/alaska-scenes.webp",
+            "duration": 49.5,
+            "transferBytes": 2248912
+          },
+          {
+            "name": "baseline/favicon.ico",
+            "duration": 0.9000000059604645,
+            "transferBytes": 15580
+          },
+          {
+            "name": "baseline/favicon.ico",
+            "duration": 0.800000011920929,
+            "transferBytes": 15580
+          }
+        ]
+      }
+    },
+    {
+      "label": "candidate",
+      "world": "alaska",
+      "mobile": false,
+      "bootMs": 454,
+      "traces": [
+        {
+          "kind": "movement",
+          "trial": 0,
+          "eventStartTimeMs": 502.60000002384186,
+          "actionTimeMs": 540.9000000059605,
+          "ms": 38.29999998211861,
+          "trusted": true,
+          "observation": "actual player/projectile mutation"
+        },
+        {
+          "kind": "movement",
+          "trial": 1,
+          "eventStartTimeMs": 644.9000000059605,
+          "actionTimeMs": 657.6000000238419,
+          "ms": 12.700000017881393,
+          "trusted": true,
+          "observation": "actual player/projectile mutation"
+        },
+        {
+          "kind": "movement",
+          "trial": 2,
+          "eventStartTimeMs": 760.6000000238419,
+          "actionTimeMs": 789.6000000238419,
+          "ms": 29,
+          "trusted": true,
+          "observation": "actual player/projectile mutation"
+        },
+        {
+          "kind": "jump",
+          "trial": 0,
+          "eventStartTimeMs": 892.3000000119209,
+          "actionTimeMs": 907.1000000238419,
+          "ms": 14.800000011920929,
+          "trusted": true,
+          "observation": "actual player/projectile mutation"
+        },
+        {
+          "kind": "jump",
+          "trial": 1,
+          "eventStartTimeMs": 1010.3000000119209,
+          "actionTimeMs": 1023.9000000059605,
+          "ms": 13.599999994039536,
+          "trusted": true,
+          "observation": "actual player/projectile mutation"
+        },
+        {
+          "kind": "jump",
+          "trial": 2,
+          "eventStartTimeMs": 1125.6000000238419,
+          "actionTimeMs": 1140.5,
+          "ms": 14.899999976158142,
+          "trusted": true,
+          "observation": "actual player/projectile mutation"
+        },
+        {
+          "kind": "attack",
+          "trial": 0,
+          "eventStartTimeMs": 1243.6000000238419,
+          "actionTimeMs": 1257.2000000178814,
+          "ms": 13.599999994039536,
+          "trusted": true,
+          "observation": "actual player/projectile mutation"
+        },
+        {
+          "kind": "attack",
+          "trial": 1,
+          "eventStartTimeMs": 1361.800000011921,
+          "actionTimeMs": 1373.9000000059605,
+          "ms": 12.099999994039536,
+          "trusted": true,
+          "observation": "actual player/projectile mutation"
+        },
+        {
+          "kind": "attack",
+          "trial": 2,
+          "eventStartTimeMs": 1478.9000000059605,
+          "actionTimeMs": 1490.6000000238419,
+          "ms": 11.700000017881393,
+          "trusted": true,
+          "observation": "actual player/projectile mutation"
+        },
+        {
+          "kind": "switch",
+          "trial": 0,
+          "eventStartTimeMs": 1596,
+          "actionTimeMs": 1597.6000000238419,
+          "ms": 1.600000023841858,
+          "trusted": true,
+          "observation": "mutation microtask after Survival state change"
+        },
+        {
+          "kind": "switch",
+          "trial": 1,
+          "eventStartTimeMs": 1708.800000011921,
+          "actionTimeMs": 1709.4000000059605,
+          "ms": 0.5999999940395355,
+          "trusted": true,
+          "observation": "mutation microtask after Survival state change"
+        },
+        {
+          "kind": "switch",
+          "trial": 2,
+          "eventStartTimeMs": 1816.6000000238419,
+          "actionTimeMs": 1816.9000000059605,
+          "ms": 0.29999998211860657,
+          "trusted": true,
+          "observation": "mutation microtask after Survival state change"
+        },
+        {
+          "kind": "team",
+          "trial": 0,
+          "eventStartTimeMs": 4930.100000023842,
+          "actionTimeMs": 4931.100000023842,
+          "ms": 1,
+          "trusted": true,
+          "observation": "mutation microtask after Survival state change"
+        },
+        {
+          "kind": "team",
+          "trial": 1,
+          "eventStartTimeMs": 8041.600000023842,
+          "actionTimeMs": 8041.9000000059605,
+          "ms": 0.29999998211860657,
+          "trusted": true,
+          "observation": "mutation microtask after Survival state change"
+        },
+        {
+          "kind": "team",
+          "trial": 2,
+          "eventStartTimeMs": 11152.700000017881,
+          "actionTimeMs": 11153.100000023842,
+          "ms": 0.4000000059604645,
+          "trusted": true,
+          "observation": "mutation microtask after Survival state change"
+        }
+      ],
+      "firstUse": {
+        "startTime": 11260.40000000596,
+        "endTime": 11334.700000017881,
+        "samples": [
+          {
+            "id": "pipeline-worker",
+            "pose": "attack",
+            "size": 80,
+            "ms": 9
+          },
+          {
+            "id": "pipeline-worker",
+            "pose": "hurt",
+            "size": 80,
+            "ms": 2.300000011920929
+          },
+          {
+            "id": "pipeline-worker",
+            "pose": "defeat",
+            "size": 80,
+            "ms": 1.699999988079071
+          },
+          {
+            "id": "surveillance-drone",
+            "pose": "attack",
+            "size": 80,
+            "ms": 6.200000017881393
+          },
+          {
+            "id": "surveillance-drone",
+            "pose": "hurt",
+            "size": 80,
+            "ms": 1.4000000059604645
+          },
+          {
+            "id": "surveillance-drone",
+            "pose": "defeat",
+            "size": 80,
+            "ms": 1.5
+          },
+          {
+            "id": "security-turret",
+            "pose": "attack",
+            "size": 80,
+            "ms": 5.699999988079071
+          },
+          {
+            "id": "security-turret",
+            "pose": "hurt",
+            "size": 80,
+            "ms": 1.4000000059604645
+          },
+          {
+            "id": "security-turret",
+            "pose": "defeat",
+            "size": 80,
+            "ms": 1.9000000059604645
+          },
+          {
+            "id": "machinery",
+            "pose": "attack",
+            "size": 80,
+            "ms": 5.0999999940395355
+          },
+          {
+            "id": "machinery",
+            "pose": "hurt",
+            "size": 80,
+            "ms": 1.2999999821186066
+          },
+          {
+            "id": "machinery",
+            "pose": "defeat",
+            "size": 80,
+            "ms": 1.0999999940395355
+          },
+          {
+            "id": "oil-slime",
+            "pose": "attack",
+            "size": 80,
+            "ms": 6.5
+          },
+          {
+            "id": "oil-slime",
+            "pose": "hurt",
+            "size": 80,
+            "ms": 1.2999999821186066
+          },
+          {
+            "id": "oil-slime",
+            "pose": "defeat",
+            "size": 80,
+            "ms": 1.4000000059604645
+          },
+          {
+            "id": "frost-queen",
+            "pose": "attack",
+            "size": 202,
+            "ms": 9.300000011920929
+          },
+          {
+            "id": "frost-queen",
+            "pose": "hurt",
+            "size": 202,
+            "ms": 3
+          },
+          {
+            "id": "frost-queen",
+            "pose": "defeat",
+            "size": 202,
+            "ms": 2.7999999821186066
+          },
+          {
+            "id": "zombie-salmon",
+            "pose": "attack",
+            "size": 80,
+            "ms": 1.4000000059604645
+          },
+          {
+            "id": "zombie-salmon",
+            "pose": "hurt",
+            "size": 80,
+            "ms": 1.2000000178813934
+          },
+          {
+            "id": "zombie-salmon",
+            "pose": "defeat",
+            "size": 80,
+            "ms": 1.0999999940395355
+          },
+          {
+            "id": "alaskan-owl",
+            "pose": "attack",
+            "size": 80,
+            "ms": 5.199999988079071
+          },
+          {
+            "id": "alaskan-owl",
+            "pose": "hurt",
+            "size": 80,
+            "ms": 1.300000011920929
+          },
+          {
+            "id": "alaskan-owl",
+            "pose": "defeat",
+            "size": 80,
+            "ms": 1
+          }
+        ],
+        "cache": {
+          "loaded": true,
+          "actors": [
+            "pipeline-worker",
+            "surveillance-drone",
+            "security-turret",
+            "machinery",
+            "oil-slime",
+            "frost-queen",
+            "zombie-salmon",
+            "alaskan-owl"
+          ],
+          "contours": 30,
+          "contourBytes": 3170104,
+          "contourBuilds": 30,
+          "draws": 6252,
+          "backgrounds": 652,
+          "failed": [],
+          "poses": {
+            "walk": 6107,
+            "hurt": 24,
+            "defeat": 113,
+            "attack": 8
+          },
+          "lastPanel": 0
+        }
+      },
+      "diagnostics": {
+        "longTaskSupported": true,
+        "longTasks": [
+          {
+            "startTime": 66.40000000596046,
+            "duration": 313
+          }
+        ],
+        "resources": [
+          {
+            "name": "css/tahoe.css?v=3.4.1",
+            "duration": 1.0999999940395355,
+            "transferBytes": 14071
+          },
+          {
+            "name": "css/pwa241.css?v=3.4.1",
+            "duration": 1.4000000059604645,
+            "transferBytes": 2141
+          },
+          {
+            "name": "css/viewport310.css?v=3.4.1",
+            "duration": 1.4000000059604645,
+            "transferBytes": 12167
+          },
+          {
+            "name": "css/retro320.css?v=3.4.1",
+            "duration": 1.4000000059604645,
+            "transferBytes": 7443
+          },
+          {
+            "name": "css/audio330.css?v=3.4.1",
+            "duration": 1.5999999940395355,
+            "transferBytes": 2029
+          },
+          {
+            "name": "css/visual340.css?v=3.4.1",
+            "duration": 1.5,
+            "transferBytes": 2069
+          },
+          {
+            "name": "css/survival.css?v=3.4.1",
+            "duration": 1.7000000178813934,
+            "transferBytes": 2898
+          },
+          {
+            "name": "core/quest-release.js?v=3.4.1",
+            "duration": 1.5999999940395355,
+            "transferBytes": 780
+          },
+          {
+            "name": "css/polish4.css?v=3.4.1",
+            "duration": 1.9000000059604645,
+            "transferBytes": 4387
+          },
+          {
+            "name": "core/quest-survival.js?v=3.4.1",
+            "duration": 2.2000000178813934,
+            "transferBytes": 20596
+          },
+          {
+            "name": "core/quest-runtime.js?v=3.4.1",
+            "duration": 2.300000011920929,
+            "transferBytes": 10403
+          },
+          {
+            "name": "core/quest-score.js?v=3.4.1",
+            "duration": 2.2999999821186066,
+            "transferBytes": 8118
+          },
+          {
+            "name": "core/quest-journey.js?v=3.4.1",
+            "duration": 2.5999999940395355,
+            "transferBytes": 2654
+          },
+          {
+            "name": "core/quest-audio.js?v=3.4.1",
+            "duration": 2.4000000059604645,
+            "transferBytes": 13879
+          },
+          {
+            "name": "core/quest-retro.js?v=3.4.1",
+            "duration": 2.5,
+            "transferBytes": 4222
+          },
+          {
+            "name": "core/quest-encounters.js?v=3.4.1",
+            "duration": 2.800000011920929,
+            "transferBytes": 2349
+          },
+          {
+            "name": "core/quest-cast.js?v=3.4.1",
+            "duration": 2.5,
+            "transferBytes": 5999
+          },
+          {
+            "name": "js/world-alaska.js?v=3.4.1",
+            "duration": 3.4000000059604645,
+            "transferBytes": 2628
+          },
+          {
+            "name": "core/quest-core.js?v=3.4.1",
+            "duration": 3.0999999940395355,
+            "transferBytes": 18008
+          },
+          {
+            "name": "js/pwa241.js?v=3.4.1",
+            "duration": 3.5999999940395355,
+            "transferBytes": 4437
+          },
+          {
+            "name": "core/quest-master-art.js?v=3.4.1",
+            "duration": 2.9000000059604645,
+            "transferBytes": 7306
+          },
+          {
+            "name": "core/quest-viewport.js?v=3.4.1",
+            "duration": 3.5999999940395355,
+            "transferBytes": 9620
+          },
+          {
+            "name": "core/quest-adventure.js?v=3.4.1",
+            "duration": 3.300000011920929,
+            "transferBytes": 39557
+          },
+          {
+            "name": "core/quest-interface.js?v=3.4.1",
+            "duration": 3.7000000178813934,
+            "transferBytes": 4420
+          },
+          {
+            "name": "cast340/alaska.png?v=3.4.0",
+            "duration": 1.100000023841858,
+            "transferBytes": 1421858
+          },
+          {
+            "name": "cast341/will.png?v=3.4.1",
+            "duration": 1.7000000178813934,
+            "transferBytes": 1886918
+          },
+          {
+            "name": "cast341/daniel.png?v=3.4.1",
+            "duration": 2.5,
+            "transferBytes": 1802547
+          },
+          {
+            "name": "cast341/caleb.png?v=3.4.1",
+            "duration": 45.400000005960464,
+            "transferBytes": 2429051
+          },
+          {
+            "name": "actors/pipeline-worker.webp",
+            "duration": 2.699999988079071,
+            "transferBytes": 89818
+          },
+          {
+            "name": "actors/surveillance-drone-actions.webp",
+            "duration": 2.699999988079071,
+            "transferBytes": 79716
+          },
+          {
+            "name": "actors/pipeline-worker-actions.webp",
+            "duration": 3,
+            "transferBytes": 100240
+          },
+          {
+            "name": "actors/surveillance-drone.webp",
+            "duration": 3,
+            "transferBytes": 62898
+          },
+          {
+            "name": "actors/security-turret.webp",
+            "duration": 2.9000000059604645,
+            "transferBytes": 72660
+          },
+          {
+            "name": "actors/security-turret-actions.webp",
+            "duration": 4,
+            "transferBytes": 87296
+          },
+          {
+            "name": "actors/oil-slime.webp",
+            "duration": 3.9000000059604645,
+            "transferBytes": 55136
+          },
+          {
+            "name": "actors/machinery-actions.webp",
+            "duration": 4,
+            "transferBytes": 117898
+          },
+          {
+            "name": "actors/oil-slime-actions.webp",
+            "duration": 4.200000017881393,
+            "transferBytes": 80304
+          },
+          {
+            "name": "actors/machinery.webp",
+            "duration": 4.5,
+            "transferBytes": 97056
+          },
+          {
+            "name": "actors/frost-queen.webp",
+            "duration": 4.5,
+            "transferBytes": 148584
+          },
+          {
+            "name": "actors/zombie-salmon.webp",
+            "duration": 4.600000023841858,
+            "transferBytes": 81550
+          },
+          {
+            "name": "actors/frost-queen-actions.webp",
+            "duration": 4.9000000059604645,
+            "transferBytes": 155194
+          },
+          {
+            "name": "actors/alaskan-owl-actions.webp",
+            "duration": 5.4000000059604645,
+            "transferBytes": 103960
+          },
+          {
+            "name": "master-build/foreground.webp",
+            "duration": 5.600000023841858,
+            "transferBytes": 556560
+          },
+          {
+            "name": "actors/zombie-salmon-actions.webp",
+            "duration": 5.800000011920929,
+            "transferBytes": 81846
+          },
+          {
+            "name": "actors/alaskan-owl.webp",
+            "duration": 6.200000017881393,
+            "transferBytes": 91296
+          },
+          {
+            "name": "master-build/alaska-scenes.webp",
+            "duration": 46.900000005960464,
+            "transferBytes": 2248912
+          },
+          {
+            "name": "candidate/favicon.ico",
+            "duration": 0.8999999761581421,
+            "transferBytes": 15580
+          },
+          {
+            "name": "candidate/favicon.ico",
+            "duration": 0.7000000178813934,
+            "transferBytes": 15580
+          }
+        ]
+      }
+    },
+    {
+      "label": "baseline",
+      "world": "socal",
+      "mobile": true,
+      "bootMs": 988,
+      "traces": [
+        {
+          "kind": "movement",
+          "trial": 0,
+          "eventStartTimeMs": 1189.199999988079,
+          "actionTimeMs": 1201.0999999940395,
+          "ms": 11.900000005960464,
+          "trusted": true,
+          "observation": "actual player/projectile mutation"
+        },
+        {
+          "kind": "movement",
+          "trial": 1,
+          "eventStartTimeMs": 1369.199999988079,
+          "actionTimeMs": 1384.5999999940395,
+          "ms": 15.400000005960464,
+          "trusted": true,
+          "observation": "actual player/projectile mutation"
+        },
+        {
+          "kind": "movement",
+          "trial": 2,
+          "eventStartTimeMs": 1554,
+          "actionTimeMs": 1568,
+          "ms": 14,
+          "trusted": true,
+          "observation": "actual player/projectile mutation"
+        },
+        {
+          "kind": "jump",
+          "trial": 0,
+          "eventStartTimeMs": 1736.8999999761581,
+          "actionTimeMs": 1751.5,
+          "ms": 14.600000023841858,
+          "trusted": true,
+          "observation": "actual player/projectile mutation"
+        },
+        {
+          "kind": "jump",
+          "trial": 1,
+          "eventStartTimeMs": 1918.8999999761581,
+          "actionTimeMs": 1934.0999999940395,
+          "ms": 15.200000017881393,
+          "trusted": true,
+          "observation": "actual player/projectile mutation"
+        },
+        {
+          "kind": "jump",
+          "trial": 2,
+          "eventStartTimeMs": 2102.7999999821186,
+          "actionTimeMs": 2117.399999976158,
+          "ms": 14.599999994039536,
+          "trusted": true,
+          "observation": "actual player/projectile mutation"
+        },
+        {
+          "kind": "attack",
+          "trial": 0,
+          "eventStartTimeMs": 2285.699999988079,
+          "actionTimeMs": 2301.5,
+          "ms": 15.800000011920929,
+          "trusted": true,
+          "observation": "actual player/projectile mutation"
+        },
+        {
+          "kind": "attack",
+          "trial": 1,
+          "eventStartTimeMs": 2468.699999988079,
+          "actionTimeMs": 2483.899999976158,
+          "ms": 15.199999988079071,
+          "trusted": true,
+          "observation": "actual player/projectile mutation"
+        },
+        {
+          "kind": "attack",
+          "trial": 2,
+          "eventStartTimeMs": 2653.2999999821186,
+          "actionTimeMs": 2667.699999988079,
+          "ms": 14.400000005960464,
+          "trusted": true,
+          "observation": "actual player/projectile mutation"
+        },
+        {
+          "kind": "switch",
+          "trial": 0,
+          "eventStartTimeMs": 2836.2999999821186,
+          "actionTimeMs": 2837,
+          "ms": 0.7000000178813934,
+          "trusted": true,
+          "observation": "mutation microtask after Survival state change"
+        },
+        {
+          "kind": "switch",
+          "trial": 1,
+          "eventStartTimeMs": 3002.699999988079,
+          "actionTimeMs": 3003.199999988079,
+          "ms": 0.5,
+          "trusted": true,
+          "observation": "mutation microtask after Survival state change"
+        },
+        {
+          "kind": "switch",
+          "trial": 2,
+          "eventStartTimeMs": 3168.899999976158,
+          "actionTimeMs": 3169.399999976158,
+          "ms": 0.5,
+          "trusted": true,
+          "observation": "mutation microtask after Survival state change"
+        },
+        {
+          "kind": "team",
+          "trial": 0,
+          "eventStartTimeMs": 6335.5999999940395,
+          "actionTimeMs": 6336.299999982119,
+          "ms": 0.699999988079071,
+          "trusted": true,
+          "observation": "mutation microtask after Survival state change"
+        },
+        {
+          "kind": "team",
+          "trial": 1,
+          "eventStartTimeMs": 9502.299999982119,
+          "actionTimeMs": 9503,
+          "ms": 0.7000000178813934,
+          "trusted": true,
+          "observation": "mutation microtask after Survival state change"
+        },
+        {
+          "kind": "team",
+          "trial": 2,
+          "eventStartTimeMs": 12685.799999982119,
+          "actionTimeMs": 12686.399999976158,
+          "ms": 0.5999999940395355,
+          "trusted": true,
+          "observation": "mutation microtask after Survival state change"
+        }
+      ],
+      "firstUse": {
+        "startTime": 12826.199999988079,
+        "endTime": 12864.09999999404,
+        "samples": [
+          {
+            "id": "queen-beige",
+            "pose": "attack",
+            "size": 176,
+            "ms": 7.9000000059604645
+          },
+          {
+            "id": "queen-beige",
+            "pose": "hurt",
+            "size": 176,
+            "ms": 3.9000000059604645
+          },
+          {
+            "id": "queen-beige",
+            "pose": "defeat",
+            "size": 176,
+            "ms": 2.5
+          },
+          {
+            "id": "court-judge",
+            "pose": "attack",
+            "size": 106,
+            "ms": 6
+          },
+          {
+            "id": "court-judge",
+            "pose": "hurt",
+            "size": 106,
+            "ms": 1.699999988079071
+          },
+          {
+            "id": "court-judge",
+            "pose": "defeat",
+            "size": 106,
+            "ms": 2.800000011920929
+          },
+          {
+            "id": "flaming-law",
+            "pose": "attack",
+            "size": 80,
+            "ms": 1.4000000059604645
+          },
+          {
+            "id": "flaming-law",
+            "pose": "hurt",
+            "size": 80,
+            "ms": 1.199999988079071
+          },
+          {
+            "id": "flaming-law",
+            "pose": "defeat",
+            "size": 80,
+            "ms": 1.300000011920929
+          },
+          {
+            "id": "hoa-drone",
+            "pose": "attack",
+            "size": 80,
+            "ms": 4.899999976158142
+          },
+          {
+            "id": "hoa-drone",
+            "pose": "hurt",
+            "size": 80,
+            "ms": 1.2000000178813934
+          },
+          {
+            "id": "hoa-drone",
+            "pose": "defeat",
+            "size": 80,
+            "ms": 1.199999988079071
+          },
+          {
+            "id": "beige-bot",
+            "pose": "attack",
+            "size": 80,
+            "ms": 1.800000011920929
+          },
+          {
+            "id": "beige-bot",
+            "pose": "hurt",
+            "size": 80,
+            "ms": 0
+          },
+          {
+            "id": "beige-bot",
+            "pose": "defeat",
+            "size": 80,
+            "ms": 0
+          }
+        ],
+        "cache": {
+          "loaded": true,
+          "actors": [
+            "queen-beige",
+            "court-judge",
+            "flaming-law",
+            "hoa-drone",
+            "beige-bot"
+          ],
+          "contours": 29,
+          "contourBytes": 2983648,
+          "contourBuilds": 29,
+          "draws": 16201,
+          "backgrounds": 703,
+          "failed": [],
+          "poses": {
+            "walk": 15300,
+            "idle": 703,
+            "hurt": 29,
+            "defeat": 164,
+            "attack": 5
+          },
+          "lastPanel": 0
+        }
+      },
+      "diagnostics": {
+        "longTaskSupported": true,
+        "longTasks": [
+          {
+            "startTime": 99.09999999403954,
+            "duration": 300
+          },
+          {
+            "startTime": 1051.0999999940395,
+            "duration": 90
+          }
+        ],
+        "resources": [
+          {
+            "name": "css/style.css?v=3.4.1",
+            "duration": 1,
+            "transferBytes": 82003
+          },
+          {
+            "name": "css/pwa241.css?v=3.4.1",
+            "duration": 1.4000000059604645,
+            "transferBytes": 2141
+          },
+          {
+            "name": "css/audio330.css?v=3.4.1",
+            "duration": 1.5,
+            "transferBytes": 2029
+          },
+          {
+            "name": "css/viewport310.css?v=3.4.1",
+            "duration": 2.100000023841858,
+            "transferBytes": 11230
+          },
+          {
+            "name": "css/retro320.css?v=3.4.1",
+            "duration": 2.9000000059604645,
+            "transferBytes": 7443
+          },
+          {
+            "name": "css/visual340.css?v=3.4.1",
+            "duration": 3.300000011920929,
+            "transferBytes": 2069
+          },
+          {
+            "name": "core/quest-release.js?v=3.4.1",
+            "duration": 2.7999999821186066,
+            "transferBytes": 779
+          },
+          {
+            "name": "css/origin-story.css?v=3.4.1",
+            "duration": 3.199999988079071,
+            "transferBytes": 3412
+          },
+          {
+            "name": "css/polish4.css?v=3.4.1",
+            "duration": 2,
+            "transferBytes": 4250
+          },
+          {
+            "name": "css/survival.css?v=3.4.1",
+            "duration": 2.699999988079071,
+            "transferBytes": 2898
+          },
+          {
+            "name": "core/quest-survival.js?v=3.4.1",
+            "duration": 3.199999988079071,
+            "transferBytes": 19985
+          },
+          {
+            "name": "core/quest-score.js?v=3.4.1",
+            "duration": 3.4000000059604645,
+            "transferBytes": 8118
+          },
+          {
+            "name": "core/quest-runtime.js?v=3.4.1",
+            "duration": 3.2999999821186066,
+            "transferBytes": 9663
+          },
+          {
+            "name": "core/quest-audio.js?v=3.4.1",
+            "duration": 3.5,
+            "transferBytes": 13879
+          },
+          {
+            "name": "core/quest-retro.js?v=3.4.1",
+            "duration": 3.5,
+            "transferBytes": 4222
+          },
+          {
+            "name": "core/quest-cast.js?v=3.4.1",
+            "duration": 4.199999988079071,
+            "transferBytes": 5999
+          },
+          {
+            "name": "core/quest-journey.js?v=3.4.1",
+            "duration": 4.0999999940395355,
+            "transferBytes": 2654
+          },
+          {
+            "name": "core/quest-encounters.js?v=3.4.1",
+            "duration": 4.300000011920929,
+            "transferBytes": 2349
+          },
+          {
+            "name": "core/quest-story.js?v=3.4.1",
+            "duration": 4.4000000059604645,
+            "transferBytes": 12946
+          },
+          {
+            "name": "core/quest-master-art.js?v=3.4.1",
+            "duration": 4.4000000059604645,
+            "transferBytes": 7306
+          },
+          {
+            "name": "core/quest-core.js?v=3.4.1",
+            "duration": 4.4000000059604645,
+            "transferBytes": 18008
+          },
+          {
+            "name": "js/remaster.js?v=3.4.1",
+            "duration": 4.9000000059604645,
+            "transferBytes": 837
+          },
+          {
+            "name": "js/gold-master-self-test.js?v=3.4.1",
+            "duration": 5.200000017881393,
+            "transferBytes": 4975
+          },
+          {
+            "name": "core/quest-viewport.js?v=3.4.1",
+            "duration": 5.300000011920929,
+            "transferBytes": 6648
+          },
+          {
+            "name": "js/pwa241.js?v=3.4.1",
+            "duration": 5.200000017881393,
+            "transferBytes": 4437
+          },
+          {
+            "name": "core/quest-interface.js?v=3.4.1",
+            "duration": 5.4000000059604645,
+            "transferBytes": 4420
+          },
+          {
+            "name": "js/app109.js?v=3.4.1",
+            "duration": 4.5,
+            "transferBytes": 144054
+          },
+          {
+            "name": "cast340/socal.png?v=3.4.0",
+            "duration": 1.300000011920929,
+            "transferBytes": 1382358
+          },
+          {
+            "name": "cast341/will.png?v=3.4.1",
+            "duration": 3.5999999940395355,
+            "transferBytes": 1886918
+          },
+          {
+            "name": "cast341/daniel.png?v=3.4.1",
+            "duration": 4.5,
+            "transferBytes": 1802547
+          },
+          {
+            "name": "cast341/caleb.png?v=3.4.1",
+            "duration": 11.599999994039536,
+            "transferBytes": 2429051
+          },
+          {
+            "name": "actors/queen-beige.webp",
+            "duration": 3,
+            "transferBytes": 149390
+          },
+          {
+            "name": "actors/queen-beige-actions.webp",
+            "duration": 3,
+            "transferBytes": 160740
+          },
+          {
+            "name": "actors/court-judge.webp",
+            "duration": 1.9000000059604645,
+            "transferBytes": 139760
+          },
+          {
+            "name": "actors/court-judge-actions.webp",
+            "duration": 3,
+            "transferBytes": 175162
+          },
+          {
+            "name": "actors/flaming-law.webp",
+            "duration": 3.5,
+            "transferBytes": 116490
+          },
+          {
+            "name": "actors/flaming-law-actions.webp",
+            "duration": 4.5999999940395355,
+            "transferBytes": 138108
+          },
+          {
+            "name": "actors/hoa-drone.webp",
+            "duration": 4.5,
+            "transferBytes": 106574
+          },
+          {
+            "name": "actors/hoa-drone-actions.webp",
+            "duration": 4.5999999940395355,
+            "transferBytes": 146092
+          },
+          {
+            "name": "actors/beige-bot.webp",
+            "duration": 4.5,
+            "transferBytes": 119106
+          },
+          {
+            "name": "actors/beige-bot-actions.webp",
+            "duration": 4.800000011920929,
+            "transferBytes": 148730
+          },
+          {
+            "name": "master-build/foreground.webp",
+            "duration": 5,
+            "transferBytes": 556560
+          },
+          {
+            "name": "master-build/socal-scenes.webp",
+            "duration": 5.5,
+            "transferBytes": 1922406
+          },
+          {
+            "name": "environments/home_base_remastered.svg",
+            "duration": 0.5999999940395355,
+            "transferBytes": 6712
+          },
+          {
+            "name": "sprites_hd/hoa_queen_idle.png",
+            "duration": 0.699999988079071,
+            "transferBytes": 49535
+          },
+          {
+            "name": "baseline/favicon.ico?v=3.4.1",
+            "duration": 0.9000000059604645,
+            "transferBytes": 15580
+          },
+          {
+            "name": "icons/favicon-32.png?v=3.4.1",
+            "duration": 1.300000011920929,
+            "transferBytes": 309
+          }
+        ]
+      }
+    },
+    {
+      "label": "candidate",
+      "world": "socal",
+      "mobile": true,
+      "bootMs": 975,
+      "traces": [
+        {
+          "kind": "movement",
+          "trial": 0,
+          "eventStartTimeMs": 1196,
+          "actionTimeMs": 1220.2000000178814,
+          "ms": 24.200000017881393,
+          "trusted": true,
+          "observation": "actual player/projectile mutation"
+        },
+        {
+          "kind": "movement",
+          "trial": 1,
+          "eventStartTimeMs": 1389,
+          "actionTimeMs": 1419.4000000059605,
+          "ms": 30.400000005960464,
+          "trusted": true,
+          "observation": "actual player/projectile mutation"
+        },
+        {
+          "kind": "movement",
+          "trial": 2,
+          "eventStartTimeMs": 1588.9000000059605,
+          "actionTimeMs": 1603.2000000178814,
+          "ms": 14.300000011920929,
+          "trusted": true,
+          "observation": "actual player/projectile mutation"
+        },
+        {
+          "kind": "jump",
+          "trial": 0,
+          "eventStartTimeMs": 1773.300000011921,
+          "actionTimeMs": 1787.1000000238419,
+          "ms": 13.800000011920929,
+          "trusted": true,
+          "observation": "actual player/projectile mutation"
+        },
+        {
+          "kind": "jump",
+          "trial": 1,
+          "eventStartTimeMs": 1955.7000000178814,
+          "actionTimeMs": 1986.7000000178814,
+          "ms": 31,
+          "trusted": true,
+          "observation": "actual player/projectile mutation"
+        },
+        {
+          "kind": "jump",
+          "trial": 2,
+          "eventStartTimeMs": 2155.9000000059605,
+          "actionTimeMs": 2186.800000011921,
+          "ms": 30.900000005960464,
+          "trusted": true,
+          "observation": "actual player/projectile mutation"
+        },
+        {
+          "kind": "attack",
+          "trial": 0,
+          "eventStartTimeMs": 2356.2000000178814,
+          "actionTimeMs": 2370.9000000059605,
+          "ms": 14.699999988079071,
+          "trusted": true,
+          "observation": "actual player/projectile mutation"
+        },
+        {
+          "kind": "attack",
+          "trial": 1,
+          "eventStartTimeMs": 2538.4000000059605,
+          "actionTimeMs": 2553.7000000178814,
+          "ms": 15.300000011920929,
+          "trusted": true,
+          "observation": "actual player/projectile mutation"
+        },
+        {
+          "kind": "attack",
+          "trial": 2,
+          "eventStartTimeMs": 2722.4000000059605,
+          "actionTimeMs": 2737.100000023842,
+          "ms": 14.700000017881393,
+          "trusted": true,
+          "observation": "actual player/projectile mutation"
+        },
+        {
+          "kind": "switch",
+          "trial": 0,
+          "eventStartTimeMs": 2905.100000023842,
+          "actionTimeMs": 2906.5,
+          "ms": 1.399999976158142,
+          "trusted": true,
+          "observation": "mutation microtask after Survival state change"
+        },
+        {
+          "kind": "switch",
+          "trial": 1,
+          "eventStartTimeMs": 3072.4000000059605,
+          "actionTimeMs": 3072.9000000059605,
+          "ms": 0.5,
+          "trusted": true,
+          "observation": "mutation microtask after Survival state change"
+        },
+        {
+          "kind": "switch",
+          "trial": 2,
+          "eventStartTimeMs": 3238.4000000059605,
+          "actionTimeMs": 3239,
+          "ms": 0.5999999940395355,
+          "trusted": true,
+          "observation": "mutation microtask after Survival state change"
+        },
+        {
+          "kind": "team",
+          "trial": 0,
+          "eventStartTimeMs": 6421.600000023842,
+          "actionTimeMs": 6422.5,
+          "ms": 0.8999999761581421,
+          "trusted": true,
+          "observation": "mutation microtask after Survival state change"
+        },
+        {
+          "kind": "team",
+          "trial": 1,
+          "eventStartTimeMs": 9587.800000011921,
+          "actionTimeMs": 9588.300000011921,
+          "ms": 0.5,
+          "trusted": true,
+          "observation": "mutation microtask after Survival state change"
+        },
+        {
+          "kind": "team",
+          "trial": 2,
+          "eventStartTimeMs": 12755.700000017881,
+          "actionTimeMs": 12756.600000023842,
+          "ms": 0.9000000059604645,
+          "trusted": true,
+          "observation": "mutation microtask after Survival state change"
+        }
+      ],
+      "firstUse": {
+        "startTime": 12896,
+        "endTime": 12937.100000023842,
+        "samples": [
+          {
+            "id": "queen-beige",
+            "pose": "attack",
+            "size": 176,
+            "ms": 9.200000017881393
+          },
+          {
+            "id": "queen-beige",
+            "pose": "hurt",
+            "size": 176,
+            "ms": 3.0999999940395355
+          },
+          {
+            "id": "queen-beige",
+            "pose": "defeat",
+            "size": 176,
+            "ms": 2.5999999940395355
+          },
+          {
+            "id": "court-judge",
+            "pose": "attack",
+            "size": 106,
+            "ms": 7.4000000059604645
+          },
+          {
+            "id": "court-judge",
+            "pose": "hurt",
+            "size": 106,
+            "ms": 2.0999999940395355
+          },
+          {
+            "id": "court-judge",
+            "pose": "defeat",
+            "size": 106,
+            "ms": 2.5999999940395355
+          },
+          {
+            "id": "flaming-law",
+            "pose": "attack",
+            "size": 80,
+            "ms": 1.7000000178813934
+          },
+          {
+            "id": "flaming-law",
+            "pose": "hurt",
+            "size": 80,
+            "ms": 1.5999999940395355
+          },
+          {
+            "id": "flaming-law",
+            "pose": "defeat",
+            "size": 80,
+            "ms": 1.4000000059604645
+          },
+          {
+            "id": "hoa-drone",
+            "pose": "attack",
+            "size": 80,
+            "ms": 5.699999988079071
+          },
+          {
+            "id": "hoa-drone",
+            "pose": "hurt",
+            "size": 80,
+            "ms": 1.2000000178813934
+          },
+          {
+            "id": "hoa-drone",
+            "pose": "defeat",
+            "size": 80,
+            "ms": 1.0999999940395355
+          },
+          {
+            "id": "beige-bot",
+            "pose": "attack",
+            "size": 80,
+            "ms": 1.300000011920929
+          },
+          {
+            "id": "beige-bot",
+            "pose": "hurt",
+            "size": 80,
+            "ms": 0
+          },
+          {
+            "id": "beige-bot",
+            "pose": "defeat",
+            "size": 80,
+            "ms": 0
+          }
+        ],
+        "cache": {
+          "loaded": true,
+          "actors": [
+            "queen-beige",
+            "court-judge",
+            "flaming-law",
+            "hoa-drone",
+            "beige-bot"
+          ],
+          "contours": 29,
+          "contourBytes": 2983648,
+          "contourBuilds": 29,
+          "draws": 16300,
+          "backgrounds": 707,
+          "failed": [],
+          "poses": {
+            "walk": 15395,
+            "idle": 707,
+            "hurt": 29,
+            "defeat": 164,
+            "attack": 5
+          },
+          "lastPanel": 0
+        }
+      },
+      "diagnostics": {
+        "longTaskSupported": true,
+        "longTasks": [
+          {
+            "startTime": 97.2000000178814,
+            "duration": 296
+          },
+          {
+            "startTime": 1043.1000000238419,
+            "duration": 100
+          }
+        ],
+        "resources": [
+          {
+            "name": "css/style.css?v=3.4.1",
+            "duration": 1.0999999940395355,
+            "transferBytes": 82003
+          },
+          {
+            "name": "css/pwa241.css?v=3.4.1",
+            "duration": 1.300000011920929,
+            "transferBytes": 2141
+          },
+          {
+            "name": "css/viewport310.css?v=3.4.1",
+            "duration": 1.5,
+            "transferBytes": 12167
+          },
+          {
+            "name": "css/retro320.css?v=3.4.1",
+            "duration": 1.5,
+            "transferBytes": 7443
+          },
+          {
+            "name": "css/audio330.css?v=3.4.1",
+            "duration": 1.4000000059604645,
+            "transferBytes": 2029
+          },
+          {
+            "name": "css/visual340.css?v=3.4.1",
+            "duration": 1.699999988079071,
+            "transferBytes": 2069
+          },
+          {
+            "name": "css/origin-story.css?v=3.4.1",
+            "duration": 1.7999999821186066,
+            "transferBytes": 3412
+          },
+          {
+            "name": "css/survival.css?v=3.4.1",
+            "duration": 2.0999999940395355,
+            "transferBytes": 2898
+          },
+          {
+            "name": "core/quest-release.js?v=3.4.1",
+            "duration": 2.2999999821186066,
+            "transferBytes": 780
+          },
+          {
+            "name": "css/polish4.css?v=3.4.1",
+            "duration": 2,
+            "transferBytes": 4387
+          },
+          {
+            "name": "core/quest-runtime.js?v=3.4.1",
+            "duration": 2.699999988079071,
+            "transferBytes": 10403
+          },
+          {
+            "name": "core/quest-survival.js?v=3.4.1",
+            "duration": 2.5999999940395355,
+            "transferBytes": 20596
+          },
+          {
+            "name": "core/quest-score.js?v=3.4.1",
+            "duration": 2.9000000059604645,
+            "transferBytes": 8118
+          },
+          {
+            "name": "core/quest-audio.js?v=3.4.1",
+            "duration": 3.300000011920929,
+            "transferBytes": 13879
+          },
+          {
+            "name": "core/quest-journey.js?v=3.4.1",
+            "duration": 3.4000000059604645,
+            "transferBytes": 2654
+          },
+          {
+            "name": "core/quest-retro.js?v=3.4.1",
+            "duration": 3.4000000059604645,
+            "transferBytes": 4222
+          },
+          {
+            "name": "core/quest-cast.js?v=3.4.1",
+            "duration": 3.7000000178813934,
+            "transferBytes": 5999
+          },
+          {
+            "name": "core/quest-encounters.js?v=3.4.1",
+            "duration": 3.9000000059604645,
+            "transferBytes": 2349
+          },
+          {
+            "name": "core/quest-master-art.js?v=3.4.1",
+            "duration": 4,
+            "transferBytes": 7306
+          },
+          {
+            "name": "core/quest-core.js?v=3.4.1",
+            "duration": 4.200000017881393,
+            "transferBytes": 18008
+          },
+          {
+            "name": "core/quest-story.js?v=3.4.1",
+            "duration": 4.300000011920929,
+            "transferBytes": 12946
+          },
+          {
+            "name": "js/gold-master-self-test.js?v=3.4.1",
+            "duration": 4.800000011920929,
+            "transferBytes": 4975
+          },
+          {
+            "name": "js/remaster.js?v=3.4.1",
+            "duration": 4.700000017881393,
+            "transferBytes": 837
+          },
+          {
+            "name": "js/app109.js?v=3.4.1",
+            "duration": 4.5,
+            "transferBytes": 144054
+          },
+          {
+            "name": "js/pwa241.js?v=3.4.1",
+            "duration": 4.699999988079071,
+            "transferBytes": 4437
+          },
+          {
+            "name": "core/quest-viewport.js?v=3.4.1",
+            "duration": 4.799999982118607,
+            "transferBytes": 9620
+          },
+          {
+            "name": "core/quest-interface.js?v=3.4.1",
+            "duration": 5,
+            "transferBytes": 4420
+          },
+          {
+            "name": "cast340/socal.png?v=3.4.0",
+            "duration": 1.600000023841858,
+            "transferBytes": 1382358
+          },
+          {
+            "name": "cast341/will.png?v=3.4.1",
+            "duration": 2.5999999940395355,
+            "transferBytes": 1886918
+          },
+          {
+            "name": "cast341/daniel.png?v=3.4.1",
+            "duration": 3.2999999821186066,
+            "transferBytes": 1802547
+          },
+          {
+            "name": "cast341/caleb.png?v=3.4.1",
+            "duration": 26.5,
+            "transferBytes": 2429051
+          },
+          {
+            "name": "actors/queen-beige.webp",
+            "duration": 3.9000000059604645,
+            "transferBytes": 149390
+          },
+          {
+            "name": "actors/queen-beige-actions.webp",
+            "duration": 4.5999999940395355,
+            "transferBytes": 160740
+          },
+          {
+            "name": "actors/court-judge-actions.webp",
+            "duration": 4.5,
+            "transferBytes": 175162
+          },
+          {
+            "name": "actors/flaming-law.webp",
+            "duration": 4.700000017881393,
+            "transferBytes": 116490
+          },
+          {
+            "name": "actors/flaming-law-actions.webp",
+            "duration": 4.9000000059604645,
+            "transferBytes": 138108
+          },
+          {
+            "name": "actors/court-judge.webp",
+            "duration": 5.200000017881393,
+            "transferBytes": 139760
+          },
+          {
+            "name": "actors/hoa-drone.webp",
+            "duration": 5.200000017881393,
+            "transferBytes": 106574
+          },
+          {
+            "name": "actors/hoa-drone-actions.webp",
+            "duration": 5.200000017881393,
+            "transferBytes": 146092
+          },
+          {
+            "name": "actors/beige-bot.webp",
+            "duration": 5.5,
+            "transferBytes": 119106
+          },
+          {
+            "name": "actors/beige-bot-actions.webp",
+            "duration": 5.5,
+            "transferBytes": 148730
+          },
+          {
+            "name": "master-build/foreground.webp",
+            "duration": 5.700000017881393,
+            "transferBytes": 556560
+          },
+          {
+            "name": "master-build/socal-scenes.webp",
+            "duration": 6.200000017881393,
+            "transferBytes": 1922406
+          },
+          {
+            "name": "environments/home_base_remastered.svg",
+            "duration": 0.4000000059604645,
+            "transferBytes": 6712
+          },
+          {
+            "name": "sprites_hd/hoa_queen_idle.png",
+            "duration": 0.5,
+            "transferBytes": 49535
+          },
+          {
+            "name": "candidate/favicon.ico?v=3.4.1",
+            "duration": 0.7000000178813934,
+            "transferBytes": 15580
+          },
+          {
+            "name": "icons/favicon-32.png?v=3.4.1",
+            "duration": 1,
+            "transferBytes": 309
+          }
+        ]
+      }
+    },
+    {
+      "label": "baseline",
+      "world": "tahoe",
+      "mobile": true,
+      "bootMs": 499,
+      "traces": [
+        {
+          "kind": "movement",
+          "trial": 0,
+          "eventStartTimeMs": 618.5,
+          "actionTimeMs": 634.0999999940395,
+          "ms": 15.599999994039536,
+          "trusted": true,
+          "observation": "actual player/projectile mutation"
+        },
+        {
+          "kind": "movement",
+          "trial": 1,
+          "eventStartTimeMs": 801.7999999821186,
+          "actionTimeMs": 816.5,
+          "ms": 14.700000017881393,
+          "trusted": true,
+          "observation": "actual player/projectile mutation"
+        },
+        {
+          "kind": "movement",
+          "trial": 2,
+          "eventStartTimeMs": 984.5999999940395,
+          "actionTimeMs": 1000.6999999880791,
+          "ms": 16.099999994039536,
+          "trusted": true,
+          "observation": "actual player/projectile mutation"
+        },
+        {
+          "kind": "jump",
+          "trial": 0,
+          "eventStartTimeMs": 1168.8999999761581,
+          "actionTimeMs": 1184.2999999821186,
+          "ms": 15.400000005960464,
+          "trusted": true,
+          "observation": "actual player/projectile mutation"
+        },
+        {
+          "kind": "jump",
+          "trial": 1,
+          "eventStartTimeMs": 1352,
+          "actionTimeMs": 1384,
+          "ms": 32,
+          "trusted": true,
+          "observation": "actual player/projectile mutation"
+        },
+        {
+          "kind": "jump",
+          "trial": 2,
+          "eventStartTimeMs": 1552,
+          "actionTimeMs": 1567.5999999940395,
+          "ms": 15.599999994039536,
+          "trusted": true,
+          "observation": "actual player/projectile mutation"
+        },
+        {
+          "kind": "attack",
+          "trial": 0,
+          "eventStartTimeMs": 1733.8999999761581,
+          "actionTimeMs": 1751.199999988079,
+          "ms": 17.30000001192093,
+          "trusted": true,
+          "observation": "actual player/projectile mutation"
+        },
+        {
+          "kind": "attack",
+          "trial": 1,
+          "eventStartTimeMs": 1935.0999999940395,
+          "actionTimeMs": 1949.8999999761581,
+          "ms": 14.799999982118607,
+          "trusted": true,
+          "observation": "actual player/projectile mutation"
+        },
+        {
+          "kind": "attack",
+          "trial": 2,
+          "eventStartTimeMs": 2117.5,
+          "actionTimeMs": 2134.2999999821186,
+          "ms": 16.799999982118607,
+          "trusted": true,
+          "observation": "actual player/projectile mutation"
+        },
+        {
+          "kind": "switch",
+          "trial": 0,
+          "eventStartTimeMs": 2301.2999999821186,
+          "actionTimeMs": 2302.7999999821186,
+          "ms": 1.5,
+          "trusted": true,
+          "observation": "mutation microtask after Survival state change"
+        },
+        {
+          "kind": "switch",
+          "trial": 1,
+          "eventStartTimeMs": 2471.0999999940395,
+          "actionTimeMs": 2472,
+          "ms": 0.9000000059604645,
+          "trusted": true,
+          "observation": "mutation microtask after Survival state change"
+        },
+        {
+          "kind": "switch",
+          "trial": 2,
+          "eventStartTimeMs": 2635.0999999940395,
+          "actionTimeMs": 2635.899999976158,
+          "ms": 0.7999999821186066,
+          "trusted": true,
+          "observation": "mutation microtask after Survival state change"
+        },
+        {
+          "kind": "team",
+          "trial": 0,
+          "eventStartTimeMs": 5818.5999999940395,
+          "actionTimeMs": 5820,
+          "ms": 1.4000000059604645,
+          "trusted": true,
+          "observation": "mutation microtask after Survival state change"
+        },
+        {
+          "kind": "team",
+          "trial": 1,
+          "eventStartTimeMs": 9000.699999988079,
+          "actionTimeMs": 9001.5,
+          "ms": 0.800000011920929,
+          "trusted": true,
+          "observation": "mutation microtask after Survival state change"
+        },
+        {
+          "kind": "team",
+          "trial": 2,
+          "eventStartTimeMs": 12183.59999999404,
+          "actionTimeMs": 12184.399999976158,
+          "ms": 0.7999999821186066,
+          "trusted": true,
+          "observation": "mutation microtask after Survival state change"
+        }
+      ],
+      "firstUse": {
+        "startTime": 12324.699999988079,
+        "endTime": 12383.5,
+        "samples": [
+          {
+            "id": "toxic-bloom",
+            "pose": "attack",
+            "size": 205,
+            "ms": 15.5
+          },
+          {
+            "id": "toxic-bloom",
+            "pose": "hurt",
+            "size": 205,
+            "ms": 3.5
+          },
+          {
+            "id": "toxic-bloom",
+            "pose": "defeat",
+            "size": 205,
+            "ms": 3
+          },
+          {
+            "id": "algae-slime",
+            "pose": "attack",
+            "size": 80,
+            "ms": 5.5
+          },
+          {
+            "id": "algae-slime",
+            "pose": "hurt",
+            "size": 80,
+            "ms": 1.4000000059604645
+          },
+          {
+            "id": "algae-slime",
+            "pose": "defeat",
+            "size": 80,
+            "ms": 1.2999999821186066
+          },
+          {
+            "id": "pine-queen",
+            "pose": "attack",
+            "size": 218,
+            "ms": 7.4000000059604645
+          },
+          {
+            "id": "pine-queen",
+            "pose": "hurt",
+            "size": 218,
+            "ms": 3.2000000178813934
+          },
+          {
+            "id": "pine-queen",
+            "pose": "defeat",
+            "size": 218,
+            "ms": 3
+          },
+          {
+            "id": "pine-beetle",
+            "pose": "attack",
+            "size": 80,
+            "ms": 1.2999999821186066
+          },
+          {
+            "id": "pine-beetle",
+            "pose": "hurt",
+            "size": 80,
+            "ms": 1.5
+          },
+          {
+            "id": "pine-beetle",
+            "pose": "defeat",
+            "size": 80,
+            "ms": 1.300000011920929
+          },
+          {
+            "id": "larva",
+            "pose": "attack",
+            "size": 80,
+            "ms": 4.5999999940395355
+          },
+          {
+            "id": "larva",
+            "pose": "hurt",
+            "size": 80,
+            "ms": 1.2000000178813934
+          },
+          {
+            "id": "larva",
+            "pose": "defeat",
+            "size": 80,
+            "ms": 1.0999999940395355
+          },
+          {
+            "id": "flying-beetle",
+            "pose": "attack",
+            "size": 80,
+            "ms": 1.300000011920929
+          },
+          {
+            "id": "flying-beetle",
+            "pose": "hurt",
+            "size": 80,
+            "ms": 1.0999999940395355
+          },
+          {
+            "id": "flying-beetle",
+            "pose": "defeat",
+            "size": 80,
+            "ms": 1.4000000059604645
+          }
+        ],
+        "cache": {
+          "loaded": true,
+          "actors": [
+            "toxic-bloom",
+            "algae-slime",
+            "pine-queen",
+            "pine-beetle",
+            "larva",
+            "flying-beetle"
+          ],
+          "contours": 24,
+          "contourBytes": 4137624,
+          "contourBuilds": 24,
+          "draws": 368,
+          "backgrounds": 711,
+          "failed": [],
+          "poses": {
+            "walk": 148,
+            "hurt": 40,
+            "defeat": 174,
+            "attack": 6
+          },
+          "lastPanel": 0
+        }
+      },
+      "diagnostics": {
+        "longTaskSupported": true,
+        "longTasks": [
+          {
+            "startTime": 119.09999999403954,
+            "duration": 298
+          },
+          {
+            "startTime": 432,
+            "duration": 55
+          }
+        ],
+        "resources": [
+          {
+            "name": "css/tahoe.css?v=3.4.1",
+            "duration": 1.0999999940395355,
+            "transferBytes": 14071
+          },
+          {
+            "name": "css/pwa241.css?v=3.4.1",
+            "duration": 1.4000000059604645,
+            "transferBytes": 2141
+          },
+          {
+            "name": "css/visual340.css?v=3.4.1",
+            "duration": 1.5999999940395355,
+            "transferBytes": 2069
+          },
+          {
+            "name": "css/viewport310.css?v=3.4.1",
+            "duration": 1.899999976158142,
+            "transferBytes": 11230
+          },
+          {
+            "name": "core/quest-release.js?v=3.4.1",
+            "duration": 2.399999976158142,
+            "transferBytes": 779
+          },
+          {
+            "name": "css/audio330.css?v=3.4.1",
+            "duration": 3.399999976158142,
+            "transferBytes": 2029
+          },
+          {
+            "name": "css/retro320.css?v=3.4.1",
+            "duration": 3.5,
+            "transferBytes": 7443
+          },
+          {
+            "name": "css/polish4.css?v=3.4.1",
+            "duration": 2.199999988079071,
+            "transferBytes": 4250
+          },
+          {
+            "name": "css/survival.css?v=3.4.1",
+            "duration": 3.4000000059604645,
+            "transferBytes": 2898
+          },
+          {
+            "name": "core/quest-survival.js?v=3.4.1",
+            "duration": 3.5,
+            "transferBytes": 19985
+          },
+          {
+            "name": "core/quest-score.js?v=3.4.1",
+            "duration": 3.800000011920929,
+            "transferBytes": 8118
+          },
+          {
+            "name": "core/quest-runtime.js?v=3.4.1",
+            "duration": 3.699999988079071,
+            "transferBytes": 9663
+          },
+          {
+            "name": "core/quest-audio.js?v=3.4.1",
+            "duration": 4.199999988079071,
+            "transferBytes": 13879
+          },
+          {
+            "name": "core/quest-retro.js?v=3.4.1",
+            "duration": 4.0999999940395355,
+            "transferBytes": 4222
+          },
+          {
+            "name": "core/quest-journey.js?v=3.4.1",
+            "duration": 4.300000011920929,
+            "transferBytes": 2654
+          },
+          {
+            "name": "core/quest-encounters.js?v=3.4.1",
+            "duration": 4.300000011920929,
+            "transferBytes": 2349
+          },
+          {
+            "name": "core/quest-cast.js?v=3.4.1",
+            "duration": 4.300000011920929,
+            "transferBytes": 5999
+          },
+          {
+            "name": "core/quest-master-art.js?v=3.4.1",
+            "duration": 4.600000023841858,
+            "transferBytes": 7306
+          },
+          {
+            "name": "js/pwa241.js?v=3.4.1",
+            "duration": 4.700000017881393,
+            "transferBytes": 4437
+          },
+          {
+            "name": "core/quest-core.js?v=3.4.1",
+            "duration": 5,
+            "transferBytes": 18008
+          },
+          {
+            "name": "core/quest-viewport.js?v=3.4.1",
+            "duration": 5,
+            "transferBytes": 6648
+          },
+          {
+            "name": "js/tahoe253.js?v=3.4.1",
+            "duration": 4.700000017881393,
+            "transferBytes": 67032
+          },
+          {
+            "name": "core/quest-interface.js?v=3.4.1",
+            "duration": 4.899999976158142,
+            "transferBytes": 4420
+          },
+          {
+            "name": "cast340/tahoe.png?v=3.4.0",
+            "duration": 1.899999976158142,
+            "transferBytes": 1368129
+          },
+          {
+            "name": "cast341/will.png?v=3.4.1",
+            "duration": 5.5999999940395355,
+            "transferBytes": 1886918
+          },
+          {
+            "name": "cast341/daniel.png?v=3.4.1",
+            "duration": 4,
+            "transferBytes": 1802547
+          },
+          {
+            "name": "cast341/caleb.png?v=3.4.1",
+            "duration": 39,
+            "transferBytes": 2429051
+          },
+          {
+            "name": "actors/algae-slime.webp",
+            "duration": 2.100000023841858,
+            "transferBytes": 61068
+          },
+          {
+            "name": "actors/toxic-bloom.webp",
+            "duration": 2.600000023841858,
+            "transferBytes": 180810
+          },
+          {
+            "name": "actors/toxic-bloom-actions.webp",
+            "duration": 2.7000000178813934,
+            "transferBytes": 140058
+          },
+          {
+            "name": "actors/algae-slime-actions.webp",
+            "duration": 3.4000000059604645,
+            "transferBytes": 72310
+          },
+          {
+            "name": "actors/pine-beetle.webp",
+            "duration": 5.399999976158142,
+            "transferBytes": 94678
+          },
+          {
+            "name": "actors/pine-queen.webp",
+            "duration": 5.699999988079071,
+            "transferBytes": 190486
+          },
+          {
+            "name": "actors/pine-queen-actions.webp",
+            "duration": 6,
+            "transferBytes": 204522
+          },
+          {
+            "name": "actors/pine-beetle-actions.webp",
+            "duration": 6,
+            "transferBytes": 101100
+          },
+          {
+            "name": "actors/larva.webp",
+            "duration": 6.399999976158142,
+            "transferBytes": 87544
+          },
+          {
+            "name": "actors/larva-actions.webp",
+            "duration": 6.699999988079071,
+            "transferBytes": 89660
+          },
+          {
+            "name": "actors/flying-beetle.webp",
+            "duration": 7.399999976158142,
+            "transferBytes": 93434
+          },
+          {
+            "name": "actors/flying-beetle-actions.webp",
+            "duration": 7.699999988079071,
+            "transferBytes": 93528
+          },
+          {
+            "name": "master-build/foreground.webp",
+            "duration": 7.9000000059604645,
+            "transferBytes": 556560
+          },
+          {
+            "name": "master-build/tahoe-scenes.webp",
+            "duration": 39.900000005960464,
+            "transferBytes": 2295316
+          },
+          {
+            "name": "baseline/favicon.ico?v=3.4.1",
+            "duration": 1.2000000178813934,
+            "transferBytes": 15580
+          },
+          {
+            "name": "icons/favicon-32.png?v=3.4.1",
+            "duration": 0.9000000059604645,
+            "transferBytes": 309
+          }
+        ]
+      }
+    },
+    {
+      "label": "candidate",
+      "world": "tahoe",
+      "mobile": true,
+      "bootMs": 496,
+      "traces": [
+        {
+          "kind": "movement",
+          "trial": 0,
+          "eventStartTimeMs": 607.7000000178814,
+          "actionTimeMs": 640,
+          "ms": 32.29999998211861,
+          "trusted": true,
+          "observation": "actual player/projectile mutation"
+        },
+        {
+          "kind": "movement",
+          "trial": 1,
+          "eventStartTimeMs": 808.4000000059605,
+          "actionTimeMs": 823.5999999940395,
+          "ms": 15.199999988079071,
+          "trusted": true,
+          "observation": "actual player/projectile mutation"
+        },
+        {
+          "kind": "movement",
+          "trial": 2,
+          "eventStartTimeMs": 991.9000000059605,
+          "actionTimeMs": 1006,
+          "ms": 14.099999994039536,
+          "trusted": true,
+          "observation": "actual player/projectile mutation"
+        },
+        {
+          "kind": "jump",
+          "trial": 0,
+          "eventStartTimeMs": 1174.5999999940395,
+          "actionTimeMs": 1190.300000011921,
+          "ms": 15.700000017881393,
+          "trusted": true,
+          "observation": "actual player/projectile mutation"
+        },
+        {
+          "kind": "jump",
+          "trial": 1,
+          "eventStartTimeMs": 1358.0999999940395,
+          "actionTimeMs": 1373.5,
+          "ms": 15.400000005960464,
+          "trusted": true,
+          "observation": "actual player/projectile mutation"
+        },
+        {
+          "kind": "jump",
+          "trial": 2,
+          "eventStartTimeMs": 1541.9000000059605,
+          "actionTimeMs": 1557,
+          "ms": 15.099999994039536,
+          "trusted": true,
+          "observation": "actual player/projectile mutation"
+        },
+        {
+          "kind": "attack",
+          "trial": 0,
+          "eventStartTimeMs": 1724.800000011921,
+          "actionTimeMs": 1740.800000011921,
+          "ms": 16,
+          "trusted": true,
+          "observation": "actual player/projectile mutation"
+        },
+        {
+          "kind": "attack",
+          "trial": 1,
+          "eventStartTimeMs": 1925.0999999940395,
+          "actionTimeMs": 1940.4000000059605,
+          "ms": 15.300000011920929,
+          "trusted": true,
+          "observation": "actual player/projectile mutation"
+        },
+        {
+          "kind": "attack",
+          "trial": 2,
+          "eventStartTimeMs": 2107.4000000059605,
+          "actionTimeMs": 2124,
+          "ms": 16.599999994039536,
+          "trusted": true,
+          "observation": "actual player/projectile mutation"
+        },
+        {
+          "kind": "switch",
+          "trial": 0,
+          "eventStartTimeMs": 2290.5,
+          "actionTimeMs": 2291.9000000059605,
+          "ms": 1.4000000059604645,
+          "trusted": true,
+          "observation": "mutation microtask after Survival state change"
+        },
+        {
+          "kind": "switch",
+          "trial": 1,
+          "eventStartTimeMs": 2458,
+          "actionTimeMs": 2458.7000000178814,
+          "ms": 0.7000000178813934,
+          "trusted": true,
+          "observation": "mutation microtask after Survival state change"
+        },
+        {
+          "kind": "switch",
+          "trial": 2,
+          "eventStartTimeMs": 2624.800000011921,
+          "actionTimeMs": 2625.5999999940395,
+          "ms": 0.7999999821186066,
+          "trusted": true,
+          "observation": "mutation microtask after Survival state change"
+        },
+        {
+          "kind": "team",
+          "trial": 0,
+          "eventStartTimeMs": 5807.800000011921,
+          "actionTimeMs": 5809.0999999940395,
+          "ms": 1.2999999821186066,
+          "trusted": true,
+          "observation": "mutation microtask after Survival state change"
+        },
+        {
+          "kind": "team",
+          "trial": 1,
+          "eventStartTimeMs": 8991.200000017881,
+          "actionTimeMs": 8992.200000017881,
+          "ms": 1,
+          "trusted": true,
+          "observation": "mutation microtask after Survival state change"
+        },
+        {
+          "kind": "team",
+          "trial": 2,
+          "eventStartTimeMs": 12175.09999999404,
+          "actionTimeMs": 12176,
+          "ms": 0.9000000059604645,
+          "trusted": true,
+          "observation": "mutation microtask after Survival state change"
+        }
+      ],
+      "firstUse": {
+        "startTime": 12313.59999999404,
+        "endTime": 12371.800000011921,
+        "samples": [
+          {
+            "id": "toxic-bloom",
+            "pose": "attack",
+            "size": 205,
+            "ms": 12.900000005960464
+          },
+          {
+            "id": "toxic-bloom",
+            "pose": "hurt",
+            "size": 205,
+            "ms": 4.5
+          },
+          {
+            "id": "toxic-bloom",
+            "pose": "defeat",
+            "size": 205,
+            "ms": 3
+          },
+          {
+            "id": "algae-slime",
+            "pose": "attack",
+            "size": 80,
+            "ms": 5.9000000059604645
+          },
+          {
+            "id": "algae-slime",
+            "pose": "hurt",
+            "size": 80,
+            "ms": 2.0999999940395355
+          },
+          {
+            "id": "algae-slime",
+            "pose": "defeat",
+            "size": 80,
+            "ms": 1.5
+          },
+          {
+            "id": "pine-queen",
+            "pose": "attack",
+            "size": 218,
+            "ms": 6.700000017881393
+          },
+          {
+            "id": "pine-queen",
+            "pose": "hurt",
+            "size": 218,
+            "ms": 3.2999999821186066
+          },
+          {
+            "id": "pine-queen",
+            "pose": "defeat",
+            "size": 218,
+            "ms": 3.300000011920929
+          },
+          {
+            "id": "pine-beetle",
+            "pose": "attack",
+            "size": 80,
+            "ms": 1.4000000059604645
+          },
+          {
+            "id": "pine-beetle",
+            "pose": "hurt",
+            "size": 80,
+            "ms": 1.199999988079071
+          },
+          {
+            "id": "pine-beetle",
+            "pose": "defeat",
+            "size": 80,
+            "ms": 1.199999988079071
+          },
+          {
+            "id": "larva",
+            "pose": "attack",
+            "size": 80,
+            "ms": 4.200000017881393
+          },
+          {
+            "id": "larva",
+            "pose": "hurt",
+            "size": 80,
+            "ms": 1.199999988079071
+          },
+          {
+            "id": "larva",
+            "pose": "defeat",
+            "size": 80,
+            "ms": 2.300000011920929
+          },
+          {
+            "id": "flying-beetle",
+            "pose": "attack",
+            "size": 80,
+            "ms": 1.2999999821186066
+          },
+          {
+            "id": "flying-beetle",
+            "pose": "hurt",
+            "size": 80,
+            "ms": 1.100000023841858
+          },
+          {
+            "id": "flying-beetle",
+            "pose": "defeat",
+            "size": 80,
+            "ms": 1.0999999940395355
+          }
+        ],
+        "cache": {
+          "loaded": true,
+          "actors": [
+            "toxic-bloom",
+            "algae-slime",
+            "pine-queen",
+            "pine-beetle",
+            "larva",
+            "flying-beetle"
+          ],
+          "contours": 24,
+          "contourBytes": 4137624,
+          "contourBuilds": 24,
+          "draws": 368,
+          "backgrounds": 712,
+          "failed": [],
+          "poses": {
+            "walk": 149,
+            "hurt": 39,
+            "defeat": 174,
+            "attack": 6
+          },
+          "lastPanel": 0
+        }
+      },
+      "diagnostics": {
+        "longTaskSupported": true,
+        "longTasks": [
+          {
+            "startTime": 116.59999999403954,
+            "duration": 295
+          },
+          {
+            "startTime": 426.40000000596046,
+            "duration": 56
+          }
+        ],
+        "resources": [
+          {
+            "name": "css/tahoe.css?v=3.4.1",
+            "duration": 0.800000011920929,
+            "transferBytes": 14071
+          },
+          {
+            "name": "css/pwa241.css?v=3.4.1",
+            "duration": 1.600000023841858,
+            "transferBytes": 2141
+          },
+          {
+            "name": "css/viewport310.css?v=3.4.1",
+            "duration": 2,
+            "transferBytes": 12167
+          },
+          {
+            "name": "css/retro320.css?v=3.4.1",
+            "duration": 1.899999976158142,
+            "transferBytes": 7443
+          },
+          {
+            "name": "css/audio330.css?v=3.4.1",
+            "duration": 2.0999999940395355,
+            "transferBytes": 2029
+          },
+          {
+            "name": "css/visual340.css?v=3.4.1",
+            "duration": 2.5,
+            "transferBytes": 2069
+          },
+          {
+            "name": "css/survival.css?v=3.4.1",
+            "duration": 2.2999999821186066,
+            "transferBytes": 2898
+          },
+          {
+            "name": "css/polish4.css?v=3.4.1",
+            "duration": 2.9000000059604645,
+            "transferBytes": 4387
+          },
+          {
+            "name": "core/quest-release.js?v=3.4.1",
+            "duration": 3.2999999821186066,
+            "transferBytes": 780
+          },
+          {
+            "name": "core/quest-score.js?v=3.4.1",
+            "duration": 2.699999988079071,
+            "transferBytes": 8118
+          },
+          {
+            "name": "core/quest-survival.js?v=3.4.1",
+            "duration": 3,
+            "transferBytes": 20596
+          },
+          {
+            "name": "core/quest-runtime.js?v=3.4.1",
+            "duration": 3.0999999940395355,
+            "transferBytes": 10403
+          },
+          {
+            "name": "core/quest-retro.js?v=3.4.1",
+            "duration": 3.4000000059604645,
+            "transferBytes": 4222
+          },
+          {
+            "name": "core/quest-audio.js?v=3.4.1",
+            "duration": 3.7000000178813934,
+            "transferBytes": 13879
+          },
+          {
+            "name": "core/quest-journey.js?v=3.4.1",
+            "duration": 3.2000000178813934,
+            "transferBytes": 2654
+          },
+          {
+            "name": "core/quest-encounters.js?v=3.4.1",
+            "duration": 3.5,
+            "transferBytes": 2349
+          },
+          {
+            "name": "core/quest-cast.js?v=3.4.1",
+            "duration": 3.300000011920929,
+            "transferBytes": 5999
+          },
+          {
+            "name": "core/quest-master-art.js?v=3.4.1",
+            "duration": 4.100000023841858,
+            "transferBytes": 7306
+          },
+          {
+            "name": "core/quest-core.js?v=3.4.1",
+            "duration": 3.800000011920929,
+            "transferBytes": 18008
+          },
+          {
+            "name": "js/tahoe253.js?v=3.4.1",
+            "duration": 3.7000000178813934,
+            "transferBytes": 67032
+          },
+          {
+            "name": "core/quest-interface.js?v=3.4.1",
+            "duration": 4,
+            "transferBytes": 4420
+          },
+          {
+            "name": "js/pwa241.js?v=3.4.1",
+            "duration": 4.299999982118607,
+            "transferBytes": 4437
+          },
+          {
+            "name": "core/quest-viewport.js?v=3.4.1",
+            "duration": 4.5,
+            "transferBytes": 9620
+          },
+          {
+            "name": "cast340/tahoe.png?v=3.4.0",
+            "duration": 1.300000011920929,
+            "transferBytes": 1368129
+          },
+          {
+            "name": "cast341/will.png?v=3.4.1",
+            "duration": 2.300000011920929,
+            "transferBytes": 1886918
+          },
+          {
+            "name": "cast341/daniel.png?v=3.4.1",
+            "duration": 3.7000000178813934,
+            "transferBytes": 1802547
+          },
+          {
+            "name": "cast341/caleb.png?v=3.4.1",
+            "duration": 38.5,
+            "transferBytes": 2429051
+          },
+          {
+            "name": "actors/algae-slime.webp",
+            "duration": 2.4000000059604645,
+            "transferBytes": 61068
+          },
+          {
+            "name": "actors/toxic-bloom.webp",
+            "duration": 4.800000011920929,
+            "transferBytes": 180810
+          },
+          {
+            "name": "actors/toxic-bloom-actions.webp",
+            "duration": 4.9000000059604645,
+            "transferBytes": 140058
+          },
+          {
+            "name": "actors/pine-queen.webp",
+            "duration": 5.300000011920929,
+            "transferBytes": 190486
+          },
+          {
+            "name": "actors/pine-queen-actions.webp",
+            "duration": 5.700000017881393,
+            "transferBytes": 204522
+          },
+          {
+            "name": "actors/algae-slime-actions.webp",
+            "duration": 5.9000000059604645,
+            "transferBytes": 72310
+          },
+          {
+            "name": "actors/larva.webp",
+            "duration": 5.800000011920929,
+            "transferBytes": 87544
+          },
+          {
+            "name": "actors/pine-beetle.webp",
+            "duration": 6.100000023841858,
+            "transferBytes": 94678
+          },
+          {
+            "name": "actors/pine-beetle-actions.webp",
+            "duration": 6.100000023841858,
+            "transferBytes": 101100
+          },
+          {
+            "name": "actors/larva-actions.webp",
+            "duration": 6.0999999940395355,
+            "transferBytes": 89660
+          },
+          {
+            "name": "actors/flying-beetle.webp",
+            "duration": 6.299999982118607,
+            "transferBytes": 93434
+          },
+          {
+            "name": "actors/flying-beetle-actions.webp",
+            "duration": 6.399999976158142,
+            "transferBytes": 93528
+          },
+          {
+            "name": "master-build/foreground.webp",
+            "duration": 6.5999999940395355,
+            "transferBytes": 556560
+          },
+          {
+            "name": "master-build/tahoe-scenes.webp",
+            "duration": 39.5,
+            "transferBytes": 2295316
+          },
+          {
+            "name": "candidate/favicon.ico?v=3.4.1",
+            "duration": 0.7999999821186066,
+            "transferBytes": 15580
+          },
+          {
+            "name": "icons/favicon-32.png?v=3.4.1",
+            "duration": 0.5999999940395355,
+            "transferBytes": 309
+          }
+        ]
+      }
+    },
+    {
+      "label": "baseline",
+      "world": "alaska",
+      "mobile": true,
+      "bootMs": 518,
+      "traces": [
+        {
+          "kind": "movement",
+          "trial": 0,
+          "eventStartTimeMs": 599.5999999940395,
+          "actionTimeMs": 603.4000000059605,
+          "ms": 3.800000011920929,
+          "trusted": true,
+          "observation": "actual player/projectile mutation"
+        },
+        {
+          "kind": "movement",
+          "trial": 1,
+          "eventStartTimeMs": 771.5999999940395,
+          "actionTimeMs": 803.5999999940395,
+          "ms": 32,
+          "trusted": true,
+          "observation": "actual player/projectile mutation"
+        },
+        {
+          "kind": "movement",
+          "trial": 2,
+          "eventStartTimeMs": 971.6999999880791,
+          "actionTimeMs": 987.0999999940395,
+          "ms": 15.400000005960464,
+          "trusted": true,
+          "observation": "actual player/projectile mutation"
+        },
+        {
+          "kind": "jump",
+          "trial": 0,
+          "eventStartTimeMs": 1154.5999999940395,
+          "actionTimeMs": 1170,
+          "ms": 15.400000005960464,
+          "trusted": true,
+          "observation": "actual player/projectile mutation"
+        },
+        {
+          "kind": "jump",
+          "trial": 1,
+          "eventStartTimeMs": 1337.7999999821186,
+          "actionTimeMs": 1352.9000000059605,
+          "ms": 15.100000023841858,
+          "trusted": true,
+          "observation": "actual player/projectile mutation"
+        },
+        {
+          "kind": "jump",
+          "trial": 2,
+          "eventStartTimeMs": 1519.9000000059605,
+          "actionTimeMs": 1537.0999999940395,
+          "ms": 17.19999998807907,
+          "trusted": true,
+          "observation": "actual player/projectile mutation"
+        },
+        {
+          "kind": "attack",
+          "trial": 0,
+          "eventStartTimeMs": 1703.9000000059605,
+          "actionTimeMs": 1720.699999988079,
+          "ms": 16.799999982118607,
+          "trusted": true,
+          "observation": "actual player/projectile mutation"
+        },
+        {
+          "kind": "attack",
+          "trial": 1,
+          "eventStartTimeMs": 1888.199999988079,
+          "actionTimeMs": 1903.7999999821186,
+          "ms": 15.599999994039536,
+          "trusted": true,
+          "observation": "actual player/projectile mutation"
+        },
+        {
+          "kind": "attack",
+          "trial": 2,
+          "eventStartTimeMs": 2070.7999999821186,
+          "actionTimeMs": 2104.2999999821186,
+          "ms": 33.5,
+          "trusted": true,
+          "observation": "actual player/projectile mutation"
+        },
+        {
+          "kind": "switch",
+          "trial": 0,
+          "eventStartTimeMs": 2280.699999988079,
+          "actionTimeMs": 2281.5,
+          "ms": 0.800000011920929,
+          "trusted": true,
+          "observation": "mutation microtask after Survival state change"
+        },
+        {
+          "kind": "switch",
+          "trial": 1,
+          "eventStartTimeMs": 2471.5,
+          "actionTimeMs": 2472.199999988079,
+          "ms": 0.699999988079071,
+          "trusted": true,
+          "observation": "mutation microtask after Survival state change"
+        },
+        {
+          "kind": "switch",
+          "trial": 2,
+          "eventStartTimeMs": 2638,
+          "actionTimeMs": 2638.5999999940395,
+          "ms": 0.5999999940395355,
+          "trusted": true,
+          "observation": "mutation microtask after Survival state change"
+        },
+        {
+          "kind": "team",
+          "trial": 0,
+          "eventStartTimeMs": 5820.9000000059605,
+          "actionTimeMs": 5821.9000000059605,
+          "ms": 1,
+          "trusted": true,
+          "observation": "mutation microtask after Survival state change"
+        },
+        {
+          "kind": "team",
+          "trial": 1,
+          "eventStartTimeMs": 9004.40000000596,
+          "actionTimeMs": 9005.09999999404,
+          "ms": 0.699999988079071,
+          "trusted": true,
+          "observation": "mutation microtask after Survival state change"
+        },
+        {
+          "kind": "team",
+          "trial": 2,
+          "eventStartTimeMs": 12170.699999988079,
+          "actionTimeMs": 12171.40000000596,
+          "ms": 0.7000000178813934,
+          "trusted": true,
+          "observation": "mutation microtask after Survival state change"
+        }
+      ],
+      "firstUse": {
+        "startTime": 12308.699999988079,
+        "endTime": 12367.59999999404,
+        "samples": [
+          {
+            "id": "pipeline-worker",
+            "pose": "attack",
+            "size": 80,
+            "ms": 6.5999999940395355
+          },
+          {
+            "id": "pipeline-worker",
+            "pose": "hurt",
+            "size": 80,
+            "ms": 1.300000011920929
+          },
+          {
+            "id": "pipeline-worker",
+            "pose": "defeat",
+            "size": 80,
+            "ms": 0.9000000059604645
+          },
+          {
+            "id": "surveillance-drone",
+            "pose": "attack",
+            "size": 80,
+            "ms": 4.0999999940395355
+          },
+          {
+            "id": "surveillance-drone",
+            "pose": "hurt",
+            "size": 80,
+            "ms": 1.9000000059604645
+          },
+          {
+            "id": "surveillance-drone",
+            "pose": "defeat",
+            "size": 80,
+            "ms": 1.0999999940395355
+          },
+          {
+            "id": "security-turret",
+            "pose": "attack",
+            "size": 80,
+            "ms": 4.300000011920929
+          },
+          {
+            "id": "security-turret",
+            "pose": "hurt",
+            "size": 80,
+            "ms": 1.0999999940395355
+          },
+          {
+            "id": "security-turret",
+            "pose": "defeat",
+            "size": 80,
+            "ms": 2.0999999940395355
+          },
+          {
+            "id": "machinery",
+            "pose": "attack",
+            "size": 80,
+            "ms": 4.5
+          },
+          {
+            "id": "machinery",
+            "pose": "hurt",
+            "size": 80,
+            "ms": 1
+          },
+          {
+            "id": "machinery",
+            "pose": "defeat",
+            "size": 80,
+            "ms": 1.0999999940395355
+          },
+          {
+            "id": "oil-slime",
+            "pose": "attack",
+            "size": 80,
+            "ms": 4
+          },
+          {
+            "id": "oil-slime",
+            "pose": "hurt",
+            "size": 80,
+            "ms": 1.0999999940395355
+          },
+          {
+            "id": "oil-slime",
+            "pose": "defeat",
+            "size": 80,
+            "ms": 1.7000000178813934
+          },
+          {
+            "id": "frost-queen",
+            "pose": "attack",
+            "size": 202,
+            "ms": 7.5
+          },
+          {
+            "id": "frost-queen",
+            "pose": "hurt",
+            "size": 202,
+            "ms": 2.4000000059604645
+          },
+          {
+            "id": "frost-queen",
+            "pose": "defeat",
+            "size": 202,
+            "ms": 2.199999988079071
+          },
+          {
+            "id": "zombie-salmon",
+            "pose": "attack",
+            "size": 80,
+            "ms": 1.4000000059604645
+          },
+          {
+            "id": "zombie-salmon",
+            "pose": "hurt",
+            "size": 80,
+            "ms": 1
+          },
+          {
+            "id": "zombie-salmon",
+            "pose": "defeat",
+            "size": 80,
+            "ms": 1.0999999940395355
+          },
+          {
+            "id": "alaskan-owl",
+            "pose": "attack",
+            "size": 80,
+            "ms": 4.4000000059604645
+          },
+          {
+            "id": "alaskan-owl",
+            "pose": "hurt",
+            "size": 80,
+            "ms": 1.0999999940395355
+          },
+          {
+            "id": "alaskan-owl",
+            "pose": "defeat",
+            "size": 80,
+            "ms": 1
+          }
+        ],
+        "cache": {
+          "loaded": true,
+          "actors": [
+            "pipeline-worker",
+            "surveillance-drone",
+            "security-turret",
+            "machinery",
+            "oil-slime",
+            "frost-queen",
+            "zombie-salmon",
+            "alaskan-owl"
+          ],
+          "contours": 30,
+          "contourBytes": 3170104,
+          "contourBuilds": 30,
+          "draws": 6834,
+          "backgrounds": 711,
+          "failed": [],
+          "poses": {
+            "walk": 6687,
+            "hurt": 25,
+            "defeat": 114,
+            "attack": 8
+          },
+          "lastPanel": 0
+        }
+      },
+      "diagnostics": {
+        "longTaskSupported": true,
+        "longTasks": [
+          {
+            "startTime": 117.59999999403954,
+            "duration": 318
+          },
+          {
+            "startTime": 451.5,
+            "duration": 53
+          }
+        ],
+        "resources": [
+          {
+            "name": "css/tahoe.css?v=3.4.1",
+            "duration": 1.0999999940395355,
+            "transferBytes": 14071
+          },
+          {
+            "name": "css/pwa241.css?v=3.4.1",
+            "duration": 1.2000000178813934,
+            "transferBytes": 2141
+          },
+          {
+            "name": "css/viewport310.css?v=3.4.1",
+            "duration": 1.4000000059604645,
+            "transferBytes": 11230
+          },
+          {
+            "name": "css/audio330.css?v=3.4.1",
+            "duration": 1.4000000059604645,
+            "transferBytes": 2029
+          },
+          {
+            "name": "css/retro320.css?v=3.4.1",
+            "duration": 1.7000000178813934,
+            "transferBytes": 7443
+          },
+          {
+            "name": "css/visual340.css?v=3.4.1",
+            "duration": 1.600000023841858,
+            "transferBytes": 2069
+          },
+          {
+            "name": "css/survival.css?v=3.4.1",
+            "duration": 1.699999988079071,
+            "transferBytes": 2898
+          },
+          {
+            "name": "css/polish4.css?v=3.4.1",
+            "duration": 2.0999999940395355,
+            "transferBytes": 4250
+          },
+          {
+            "name": "core/quest-release.js?v=3.4.1",
+            "duration": 1.699999988079071,
+            "transferBytes": 779
+          },
+          {
+            "name": "core/quest-survival.js?v=3.4.1",
+            "duration": 2.399999976158142,
+            "transferBytes": 19985
+          },
+          {
+            "name": "core/quest-score.js?v=3.4.1",
+            "duration": 2.7999999821186066,
+            "transferBytes": 8118
+          },
+          {
+            "name": "core/quest-runtime.js?v=3.4.1",
+            "duration": 2.699999988079071,
+            "transferBytes": 9663
+          },
+          {
+            "name": "core/quest-audio.js?v=3.4.1",
+            "duration": 2.9000000059604645,
+            "transferBytes": 13879
+          },
+          {
+            "name": "core/quest-retro.js?v=3.4.1",
+            "duration": 3,
+            "transferBytes": 4222
+          },
+          {
+            "name": "core/quest-journey.js?v=3.4.1",
+            "duration": 3.2000000178813934,
+            "transferBytes": 2654
+          },
+          {
+            "name": "core/quest-cast.js?v=3.4.1",
+            "duration": 3.2000000178813934,
+            "transferBytes": 5999
+          },
+          {
+            "name": "core/quest-encounters.js?v=3.4.1",
+            "duration": 3.2000000178813934,
+            "transferBytes": 2349
+          },
+          {
+            "name": "core/quest-master-art.js?v=3.4.1",
+            "duration": 3.4000000059604645,
+            "transferBytes": 7306
+          },
+          {
+            "name": "core/quest-core.js?v=3.4.1",
+            "duration": 3.5,
+            "transferBytes": 18008
+          },
+          {
+            "name": "core/quest-adventure.js?v=3.4.1",
+            "duration": 3.600000023841858,
+            "transferBytes": 39557
+          },
+          {
+            "name": "js/world-alaska.js?v=3.4.1",
+            "duration": 3.699999988079071,
+            "transferBytes": 2628
+          },
+          {
+            "name": "js/pwa241.js?v=3.4.1",
+            "duration": 4.5,
+            "transferBytes": 4437
+          },
+          {
+            "name": "core/quest-viewport.js?v=3.4.1",
+            "duration": 4.5,
+            "transferBytes": 6648
+          },
+          {
+            "name": "core/quest-interface.js?v=3.4.1",
+            "duration": 4.5,
+            "transferBytes": 4420
+          },
+          {
+            "name": "cast340/alaska.png?v=3.4.0",
+            "duration": 1.899999976158142,
+            "transferBytes": 1421858
+          },
+          {
+            "name": "cast341/will.png?v=3.4.1",
+            "duration": 3.5,
+            "transferBytes": 1886918
+          },
+          {
+            "name": "cast341/daniel.png?v=3.4.1",
+            "duration": 3.9000000059604645,
+            "transferBytes": 1802547
+          },
+          {
+            "name": "cast341/caleb.png?v=3.4.1",
+            "duration": 38,
+            "transferBytes": 2429051
+          },
+          {
+            "name": "actors/pipeline-worker.webp",
+            "duration": 2.300000011920929,
+            "transferBytes": 89818
+          },
+          {
+            "name": "actors/pipeline-worker-actions.webp",
+            "duration": 2.5,
+            "transferBytes": 100240
+          },
+          {
+            "name": "actors/surveillance-drone.webp",
+            "duration": 2.800000011920929,
+            "transferBytes": 62898
+          },
+          {
+            "name": "actors/surveillance-drone-actions.webp",
+            "duration": 4.4000000059604645,
+            "transferBytes": 79716
+          },
+          {
+            "name": "actors/security-turret.webp",
+            "duration": 4.5,
+            "transferBytes": 72660
+          },
+          {
+            "name": "actors/security-turret-actions.webp",
+            "duration": 4.199999988079071,
+            "transferBytes": 87296
+          },
+          {
+            "name": "actors/machinery.webp",
+            "duration": 4.299999982118607,
+            "transferBytes": 97056
+          },
+          {
+            "name": "actors/machinery-actions.webp",
+            "duration": 4.299999982118607,
+            "transferBytes": 117898
+          },
+          {
+            "name": "actors/oil-slime.webp",
+            "duration": 4.699999988079071,
+            "transferBytes": 55136
+          },
+          {
+            "name": "actors/oil-slime-actions.webp",
+            "duration": 5,
+            "transferBytes": 80304
+          },
+          {
+            "name": "actors/frost-queen.webp",
+            "duration": 5.0999999940395355,
+            "transferBytes": 148584
+          },
+          {
+            "name": "actors/frost-queen-actions.webp",
+            "duration": 5.0999999940395355,
+            "transferBytes": 155194
+          },
+          {
+            "name": "actors/zombie-salmon.webp",
+            "duration": 5.200000017881393,
+            "transferBytes": 81550
+          },
+          {
+            "name": "actors/zombie-salmon-actions.webp",
+            "duration": 5.200000017881393,
+            "transferBytes": 81846
+          },
+          {
+            "name": "actors/alaskan-owl.webp",
+            "duration": 5.5,
+            "transferBytes": 91296
+          },
+          {
+            "name": "actors/alaskan-owl-actions.webp",
+            "duration": 5.9000000059604645,
+            "transferBytes": 103960
+          },
+          {
+            "name": "master-build/foreground.webp",
+            "duration": 6.0999999940395355,
+            "transferBytes": 556560
+          },
+          {
+            "name": "master-build/alaska-scenes.webp",
+            "duration": 39.10000002384186,
+            "transferBytes": 2248912
+          },
+          {
+            "name": "baseline/favicon.ico",
+            "duration": 0.699999988079071,
+            "transferBytes": 15580
+          },
+          {
+            "name": "baseline/favicon.ico",
+            "duration": 0.699999988079071,
+            "transferBytes": 15580
+          }
+        ]
+      }
+    },
+    {
+      "label": "candidate",
+      "world": "alaska",
+      "mobile": true,
+      "bootMs": 555,
+      "traces": [
+        {
+          "kind": "movement",
+          "trial": 0,
+          "eventStartTimeMs": 684.5,
+          "actionTimeMs": 700.5999999940395,
+          "ms": 16.099999994039536,
+          "trusted": true,
+          "observation": "actual player/projectile mutation"
+        },
+        {
+          "kind": "movement",
+          "trial": 1,
+          "eventStartTimeMs": 901.5,
+          "actionTimeMs": 917.2999999821186,
+          "ms": 15.799999982118607,
+          "trusted": true,
+          "observation": "actual player/projectile mutation"
+        },
+        {
+          "kind": "movement",
+          "trial": 2,
+          "eventStartTimeMs": 1133.9000000059605,
+          "actionTimeMs": 1150.5999999940395,
+          "ms": 16.69999998807907,
+          "trusted": true,
+          "observation": "actual player/projectile mutation"
+        },
+        {
+          "kind": "jump",
+          "trial": 0,
+          "eventStartTimeMs": 1350,
+          "actionTimeMs": 1366.2999999821186,
+          "ms": 16.299999982118607,
+          "trusted": true,
+          "observation": "actual player/projectile mutation"
+        },
+        {
+          "kind": "jump",
+          "trial": 1,
+          "eventStartTimeMs": 1567,
+          "actionTimeMs": 1600.199999988079,
+          "ms": 33.19999998807907,
+          "trusted": true,
+          "observation": "actual player/projectile mutation"
+        },
+        {
+          "kind": "jump",
+          "trial": 2,
+          "eventStartTimeMs": 1801.5,
+          "actionTimeMs": 1816.699999988079,
+          "ms": 15.199999988079071,
+          "trusted": true,
+          "observation": "actual player/projectile mutation"
+        },
+        {
+          "kind": "attack",
+          "trial": 0,
+          "eventStartTimeMs": 2017.4000000059605,
+          "actionTimeMs": 2050,
+          "ms": 32.599999994039536,
+          "trusted": true,
+          "observation": "actual player/projectile mutation"
+        },
+        {
+          "kind": "attack",
+          "trial": 1,
+          "eventStartTimeMs": 2250.9000000059605,
+          "actionTimeMs": 2267.0999999940395,
+          "ms": 16.19999998807907,
+          "trusted": true,
+          "observation": "actual player/projectile mutation"
+        },
+        {
+          "kind": "attack",
+          "trial": 2,
+          "eventStartTimeMs": 2467.699999988079,
+          "actionTimeMs": 2500.2999999821186,
+          "ms": 32.599999994039536,
+          "trusted": true,
+          "observation": "actual player/projectile mutation"
+        },
+        {
+          "kind": "switch",
+          "trial": 0,
+          "eventStartTimeMs": 2701.2999999821186,
+          "actionTimeMs": 2701.9000000059605,
+          "ms": 0.6000000238418579,
+          "trusted": true,
+          "observation": "mutation microtask after Survival state change"
+        },
+        {
+          "kind": "switch",
+          "trial": 1,
+          "eventStartTimeMs": 2901.4000000059605,
+          "actionTimeMs": 2901.9000000059605,
+          "ms": 0.5,
+          "trusted": true,
+          "observation": "mutation microtask after Survival state change"
+        },
+        {
+          "kind": "switch",
+          "trial": 2,
+          "eventStartTimeMs": 3100.7999999821186,
+          "actionTimeMs": 3101.199999988079,
+          "ms": 0.4000000059604645,
+          "trusted": true,
+          "observation": "mutation microtask after Survival state change"
+        },
+        {
+          "kind": "team",
+          "trial": 0,
+          "eventStartTimeMs": 6300.4000000059605,
+          "actionTimeMs": 6301,
+          "ms": 0.5999999940395355,
+          "trusted": true,
+          "observation": "mutation microtask after Survival state change"
+        },
+        {
+          "kind": "team",
+          "trial": 1,
+          "eventStartTimeMs": 9518.5,
+          "actionTimeMs": 9519.299999982119,
+          "ms": 0.7999999821186066,
+          "trusted": true,
+          "observation": "mutation microtask after Survival state change"
+        },
+        {
+          "kind": "team",
+          "trial": 2,
+          "eventStartTimeMs": 12734,
+          "actionTimeMs": 12734.699999988079,
+          "ms": 0.699999988079071,
+          "trusted": true,
+          "observation": "mutation microtask after Survival state change"
+        }
+      ],
+      "firstUse": {
+        "startTime": 12891.699999988079,
+        "endTime": 12964.59999999404,
+        "samples": [
+          {
+            "id": "pipeline-worker",
+            "pose": "attack",
+            "size": 80,
+            "ms": 10.900000005960464
+          },
+          {
+            "id": "pipeline-worker",
+            "pose": "hurt",
+            "size": 80,
+            "ms": 2.2000000178813934
+          },
+          {
+            "id": "pipeline-worker",
+            "pose": "defeat",
+            "size": 80,
+            "ms": 1.7999999821186066
+          },
+          {
+            "id": "surveillance-drone",
+            "pose": "attack",
+            "size": 80,
+            "ms": 6.200000017881393
+          },
+          {
+            "id": "surveillance-drone",
+            "pose": "hurt",
+            "size": 80,
+            "ms": 1.399999976158142
+          },
+          {
+            "id": "surveillance-drone",
+            "pose": "defeat",
+            "size": 80,
+            "ms": 1.5
+          },
+          {
+            "id": "security-turret",
+            "pose": "attack",
+            "size": 80,
+            "ms": 6
+          },
+          {
+            "id": "security-turret",
+            "pose": "hurt",
+            "size": 80,
+            "ms": 1.300000011920929
+          },
+          {
+            "id": "security-turret",
+            "pose": "defeat",
+            "size": 80,
+            "ms": 1.300000011920929
+          },
+          {
+            "id": "machinery",
+            "pose": "attack",
+            "size": 80,
+            "ms": 5.299999982118607
+          },
+          {
+            "id": "machinery",
+            "pose": "hurt",
+            "size": 80,
+            "ms": 1.300000011920929
+          },
+          {
+            "id": "machinery",
+            "pose": "defeat",
+            "size": 80,
+            "ms": 1.2999999821186066
+          },
+          {
+            "id": "oil-slime",
+            "pose": "attack",
+            "size": 80,
+            "ms": 4.700000017881393
+          },
+          {
+            "id": "oil-slime",
+            "pose": "hurt",
+            "size": 80,
+            "ms": 1.199999988079071
+          },
+          {
+            "id": "oil-slime",
+            "pose": "defeat",
+            "size": 80,
+            "ms": 1.300000011920929
+          },
+          {
+            "id": "frost-queen",
+            "pose": "attack",
+            "size": 202,
+            "ms": 8.900000005960464
+          },
+          {
+            "id": "frost-queen",
+            "pose": "hurt",
+            "size": 202,
+            "ms": 2.9000000059604645
+          },
+          {
+            "id": "frost-queen",
+            "pose": "defeat",
+            "size": 202,
+            "ms": 2.699999988079071
+          },
+          {
+            "id": "zombie-salmon",
+            "pose": "attack",
+            "size": 80,
+            "ms": 1.4000000059604645
+          },
+          {
+            "id": "zombie-salmon",
+            "pose": "hurt",
+            "size": 80,
+            "ms": 1.199999988079071
+          },
+          {
+            "id": "zombie-salmon",
+            "pose": "defeat",
+            "size": 80,
+            "ms": 1.0999999940395355
+          },
+          {
+            "id": "alaskan-owl",
+            "pose": "attack",
+            "size": 80,
+            "ms": 4.800000011920929
+          },
+          {
+            "id": "alaskan-owl",
+            "pose": "hurt",
+            "size": 80,
+            "ms": 1
+          },
+          {
+            "id": "alaskan-owl",
+            "pose": "defeat",
+            "size": 80,
+            "ms": 1
+          }
+        ],
+        "cache": {
+          "loaded": true,
+          "actors": [
+            "pipeline-worker",
+            "surveillance-drone",
+            "security-turret",
+            "machinery",
+            "oil-slime",
+            "frost-queen",
+            "zombie-salmon",
+            "alaskan-owl"
+          ],
+          "contours": 30,
+          "contourBytes": 3170104,
+          "contourBuilds": 30,
+          "draws": 7168,
+          "backgrounds": 744,
+          "failed": [],
+          "poses": {
+            "walk": 7023,
+            "hurt": 24,
+            "defeat": 113,
+            "attack": 8
+          },
+          "lastPanel": 0
+        }
+      },
+      "diagnostics": {
+        "longTaskSupported": true,
+        "longTasks": [
+          {
+            "startTime": 130.59999999403954,
+            "duration": 340
+          },
+          {
+            "startTime": 487.90000000596046,
+            "duration": 53
+          }
+        ],
+        "resources": [
+          {
+            "name": "css/tahoe.css?v=3.4.1",
+            "duration": 1.5999999940395355,
+            "transferBytes": 14071
+          },
+          {
+            "name": "css/pwa241.css?v=3.4.1",
+            "duration": 1.9000000059604645,
+            "transferBytes": 2141
+          },
+          {
+            "name": "css/viewport310.css?v=3.4.1",
+            "duration": 2.300000011920929,
+            "transferBytes": 12167
+          },
+          {
+            "name": "css/retro320.css?v=3.4.1",
+            "duration": 2.4000000059604645,
+            "transferBytes": 7443
+          },
+          {
+            "name": "css/audio330.css?v=3.4.1",
+            "duration": 2.4000000059604645,
+            "transferBytes": 2029
+          },
+          {
+            "name": "css/visual340.css?v=3.4.1",
+            "duration": 2.5,
+            "transferBytes": 2069
+          },
+          {
+            "name": "css/survival.css?v=3.4.1",
+            "duration": 2.800000011920929,
+            "transferBytes": 2898
+          },
+          {
+            "name": "css/polish4.css?v=3.4.1",
+            "duration": 3,
+            "transferBytes": 4387
+          },
+          {
+            "name": "core/quest-release.js?v=3.4.1",
+            "duration": 2.7000000178813934,
+            "transferBytes": 780
+          },
+          {
+            "name": "core/quest-survival.js?v=3.4.1",
+            "duration": 3.0999999940395355,
+            "transferBytes": 20596
+          },
+          {
+            "name": "core/quest-runtime.js?v=3.4.1",
+            "duration": 3.2000000178813934,
+            "transferBytes": 10403
+          },
+          {
+            "name": "core/quest-retro.js?v=3.4.1",
+            "duration": 3.5,
+            "transferBytes": 4222
+          },
+          {
+            "name": "core/quest-score.js?v=3.4.1",
+            "duration": 3.4000000059604645,
+            "transferBytes": 8118
+          },
+          {
+            "name": "core/quest-audio.js?v=3.4.1",
+            "duration": 3.4000000059604645,
+            "transferBytes": 13879
+          },
+          {
+            "name": "core/quest-journey.js?v=3.4.1",
+            "duration": 3.5999999940395355,
+            "transferBytes": 2654
+          },
+          {
+            "name": "core/quest-encounters.js?v=3.4.1",
+            "duration": 3.699999988079071,
+            "transferBytes": 2349
+          },
+          {
+            "name": "core/quest-cast.js?v=3.4.1",
+            "duration": 3.5999999940395355,
+            "transferBytes": 5999
+          },
+          {
+            "name": "core/quest-master-art.js?v=3.4.1",
+            "duration": 3.7999999821186066,
+            "transferBytes": 7306
+          },
+          {
+            "name": "core/quest-core.js?v=3.4.1",
+            "duration": 4.0999999940395355,
+            "transferBytes": 18008
+          },
+          {
+            "name": "core/quest-adventure.js?v=3.4.1",
+            "duration": 4.199999988079071,
+            "transferBytes": 39557
+          },
+          {
+            "name": "js/world-alaska.js?v=3.4.1",
+            "duration": 4.0999999940395355,
+            "transferBytes": 2628
+          },
+          {
+            "name": "js/pwa241.js?v=3.4.1",
+            "duration": 4.199999988079071,
+            "transferBytes": 4437
+          },
+          {
+            "name": "core/quest-viewport.js?v=3.4.1",
+            "duration": 4.300000011920929,
+            "transferBytes": 9620
+          },
+          {
+            "name": "core/quest-interface.js?v=3.4.1",
+            "duration": 4.5,
+            "transferBytes": 4420
+          },
+          {
+            "name": "cast340/alaska.png?v=3.4.0",
+            "duration": 1.699999988079071,
+            "transferBytes": 1421858
+          },
+          {
+            "name": "cast341/will.png?v=3.4.1",
+            "duration": 5.399999976158142,
+            "transferBytes": 1886918
+          },
+          {
+            "name": "cast341/daniel.png?v=3.4.1",
+            "duration": 3.2999999821186066,
+            "transferBytes": 1802547
+          },
+          {
+            "name": "cast341/caleb.png?v=3.4.1",
+            "duration": 41.099999994039536,
+            "transferBytes": 2429051
+          },
+          {
+            "name": "actors/pipeline-worker.webp",
+            "duration": 4.200000017881393,
+            "transferBytes": 89818
+          },
+          {
+            "name": "actors/pipeline-worker-actions.webp",
+            "duration": 5.200000017881393,
+            "transferBytes": 100240
+          },
+          {
+            "name": "actors/surveillance-drone.webp",
+            "duration": 2,
+            "transferBytes": 62898
+          },
+          {
+            "name": "actors/surveillance-drone-actions.webp",
+            "duration": 4.600000023841858,
+            "transferBytes": 79716
+          },
+          {
+            "name": "actors/security-turret.webp",
+            "duration": 4.700000017881393,
+            "transferBytes": 72660
+          },
+          {
+            "name": "actors/machinery-actions.webp",
+            "duration": 5.4000000059604645,
+            "transferBytes": 117898
+          },
+          {
+            "name": "actors/machinery.webp",
+            "duration": 5.4000000059604645,
+            "transferBytes": 97056
+          },
+          {
+            "name": "actors/security-turret-actions.webp",
+            "duration": 6,
+            "transferBytes": 87296
+          },
+          {
+            "name": "actors/oil-slime.webp",
+            "duration": 6.5,
+            "transferBytes": 55136
+          },
+          {
+            "name": "actors/frost-queen.webp",
+            "duration": 6.5999999940395355,
+            "transferBytes": 148584
+          },
+          {
+            "name": "actors/oil-slime-actions.webp",
+            "duration": 6.5,
+            "transferBytes": 80304
+          },
+          {
+            "name": "actors/frost-queen-actions.webp",
+            "duration": 6.799999982118607,
+            "transferBytes": 155194
+          },
+          {
+            "name": "actors/zombie-salmon.webp",
+            "duration": 7.0999999940395355,
+            "transferBytes": 81550
+          },
+          {
+            "name": "actors/zombie-salmon-actions.webp",
+            "duration": 7,
+            "transferBytes": 81846
+          },
+          {
+            "name": "actors/alaskan-owl.webp",
+            "duration": 7.199999988079071,
+            "transferBytes": 91296
+          },
+          {
+            "name": "actors/alaskan-owl-actions.webp",
+            "duration": 7.199999988079071,
+            "transferBytes": 103960
+          },
+          {
+            "name": "master-build/foreground.webp",
+            "duration": 7.4000000059604645,
+            "transferBytes": 556560
+          },
+          {
+            "name": "master-build/alaska-scenes.webp",
+            "duration": 42.80000001192093,
+            "transferBytes": 2248912
+          },
+          {
+            "name": "candidate/favicon.ico",
+            "duration": 0.7000000178813934,
+            "transferBytes": 15580
+          },
+          {
+            "name": "candidate/favicon.ico",
+            "duration": 0.800000011920929,
+            "transferBytes": 15580
+          }
+        ]
+      }
+    }
+  ]
+}

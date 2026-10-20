@@ -1,0 +1,220 @@
+{
+  "world": "alaska",
+  "method": "normal keyboard; read-only state observations; no teleports/invulnerability/boss edits",
+  "seconds": 31.086,
+  "result": {
+    "poses": {
+      "walk": 6859,
+      "hurt": 438,
+      "defeat": 920,
+      "prepare": 109,
+      "attack": 44,
+      "transform": 18
+    },
+    "pipeline": true,
+    "completed": true,
+    "deaths": 0,
+    "sessionMethods": [
+      "isActive",
+      "save",
+      "pause",
+      "suspendViewport"
+    ],
+    "ending": "ADVENTURE 3 COMPLETE\nThe Aurora Returns\n\nTHE LAST FRONTIER IS SAVED! Her curse breaks, the salmon return to normal, and the northern lights shine in rainbow colors. Rigsby celebrates with snow zoomies; Zoey retrieves the trail keeper’s satchel.\n\nBeyond the portal: Hawaii. Costa Rica awaits as the fifth and final adventure, where the three dudes retire together.\n\nNEXT ADVENTURE: HAWAII · COMING SOON...\nReplay Alaska\nReturn to Quest Hub",
+    "survival": {
+      "schema": 1,
+      "enabled": true,
+      "id": "mvh1uc0q",
+      "sequence": 82,
+      "characters": [
+        {
+          "hp": 4,
+          "available": true
+        },
+        {
+          "hp": 4,
+          "available": true
+        },
+        {
+          "hp": 4,
+          "available": true
+        }
+      ],
+      "active": 0,
+      "charge": 100,
+      "contributions": [
+        true,
+        false,
+        false
+      ],
+      "currentWorld": "alaska",
+      "completedWorlds": [
+        "alaska"
+      ],
+      "achievements": [
+        {
+          "world": "alaska",
+          "badge": "THREE DUDES STANDING"
+        }
+      ],
+      "status": "playing",
+      "worlds": {
+        "3dudes1quest_alaska_v340": {
+          "version": 1,
+          "encounters": {
+            "version": 1,
+            "legacyAccess": false,
+            "pastMid": false,
+            "pipeline": {
+              "complete": true,
+              "defeated": [
+                true,
+                true,
+                true,
+                true,
+                true
+              ],
+              "valves": [
+                0,
+                0,
+                0
+              ],
+              "stage": 5,
+              "floodTicks": 169
+            }
+          },
+          "dude": 0,
+          "health": 4,
+          "score": 9550,
+          "checkpoint": 6320,
+          "relays": [
+            0,
+            0,
+            0
+          ],
+          "shards": [
+            false,
+            false,
+            false,
+            false,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            false,
+            false
+          ],
+          "caches": [
+            false,
+            true
+          ],
+          "enemies": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            true,
+            true,
+            true,
+            true,
+            true,
+            false
+          ],
+          "bossDefeated": true,
+          "completed": true
+        },
+        "3dudes1quest_journey": {
+          "alaska": true
+        }
+      },
+      "ledger": {
+        "alaska:hit:undefined:0:0": true,
+        "alaska:hit:relay:1150:1": true,
+        "alaska:hit:relay:1150:0": true,
+        "alaska:hit:undefined:1:0": true,
+        "alaska:hit:undefined:3:0": true,
+        "alaska:hit:undefined:6:0": true,
+        "alaska:hit:relay:3850:1": true,
+        "alaska:hit:relay:3850:0": true,
+        "alaska:hit:undefined:203:0": true,
+        "alaska:hit:undefined:202:0": true,
+        "alaska:hit:undefined:201:0": true,
+        "alaska:hit:undefined:7:0": true,
+        "alaska:hit:valve:1:1": true,
+        "alaska:hit:valve:0:1": true,
+        "alaska:hit:undefined:200:0": true,
+        "alaska:hit:valve:0:0": true,
+        "alaska:hit:undefined:4:0": true,
+        "alaska:hit:undefined:5:0": true,
+        "alaska:hit:valve:1:0": true,
+        "alaska:hit:undefined:204:0": true,
+        "alaska:hit:valve:2:1": true,
+        "alaska:hit:valve:2:0": true,
+        "alaska:hit:undefined:8:1": true,
+        "alaska:hit:undefined:8:0": true,
+        "alaska:hit:undefined:9:0": true,
+        "alaska:hit:relay:5900:1": true,
+        "alaska:hit:undefined:10:0": true,
+        "alaska:objective:supplies:1": true,
+        "alaska:heal:supplies:1": true,
+        "alaska:objective:pipeline": true,
+        "alaska:heal:pipeline": true,
+        "alaska:hit:relay:5900:0": true,
+        "alaska:hit:frost-queen:11": true,
+        "alaska:hit:frost-queen:10": true,
+        "alaska:hit:frost-queen:9": true,
+        "alaska:hit:frost-queen:8": true,
+        "alaska:hit:frost-queen:7": true,
+        "alaska:hit:frost-queen:6": true,
+        "alaska:hit:frost-queen:5": true,
+        "alaska:hit:frost-queen:4": true,
+        "alaska:hit:frost-queen:3": true,
+        "alaska:hit:undefined:1641:1": true,
+        "alaska:hit:frost-queen:2": true,
+        "alaska:hit:undefined:1641:0": true,
+        "alaska:hit:frost-queen:1": true,
+        "alaska:objective:frost-queen": true,
+        "alaska:heal:frost-queen": true,
+        "alaska:objective:world:alaska": true,
+        "alaska:heal:world:alaska": true,
+        "alaska:hit:frost-queen:0": true
+      },
+      "history": []
+    }
+  },
+  "events": [],
+  "errors": [],
+  "assets": [
+    "assets/master-build/actors/pipeline-worker.webp",
+    "assets/master-build/actors/pipeline-worker-actions.webp",
+    "assets/master-build/actors/surveillance-drone-actions.webp",
+    "assets/master-build/actors/surveillance-drone.webp",
+    "assets/master-build/actors/security-turret.webp",
+    "assets/cast340/alaska.png",
+    "assets/master-build/actors/security-turret-actions.webp",
+    "assets/cast341/will.png",
+    "assets/master-build/actors/machinery.webp",
+    "assets/cast341/daniel.png",
+    "assets/master-build/actors/machinery-actions.webp",
+    "assets/master-build/actors/oil-slime.webp",
+    "assets/cast341/caleb.png",
+    "assets/master-build/actors/oil-slime-actions.webp",
+    "assets/master-build/actors/frost-queen.webp",
+    "assets/master-build/actors/frost-queen-actions.webp",
+    "assets/master-build/actors/zombie-salmon-actions.webp",
+    "assets/master-build/actors/alaskan-owl-actions.webp",
+    "assets/master-build/actors/zombie-salmon.webp",
+    "assets/master-build/actors/alaskan-owl.webp",
+    "assets/master-build/foreground.webp",
+    "assets/master-build/alaska-scenes.webp"
+  ]
+}

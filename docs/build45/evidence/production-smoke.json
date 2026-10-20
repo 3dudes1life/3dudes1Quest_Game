@@ -1,0 +1,282 @@
+[
+  {
+    "world": "socal",
+    "mobile": false,
+    "release": {
+      "version": "3.4.1",
+      "cacheRevision": "build4-candidate-1"
+    },
+    "run": "mvgxr55t",
+    "hp": [
+      4,
+      4,
+      4
+    ],
+    "active": 1,
+    "art": {
+      "loaded": true,
+      "actors": [
+        "queen-beige",
+        "court-judge",
+        "flaming-law",
+        "hoa-drone",
+        "beige-bot"
+      ],
+      "contours": 12,
+      "contourBytes": 705312,
+      "contourBuilds": 12,
+      "draws": 1125,
+      "backgrounds": 45,
+      "failed": [],
+      "poses": {
+        "walk": 1080,
+        "idle": 45
+      },
+      "lastPanel": 0
+    },
+    "hud": {
+      "x": 8,
+      "y": 2,
+      "width": 1114,
+      "height": 50,
+      "top": 2,
+      "right": 1122,
+      "bottom": 52,
+      "left": 8
+    }
+  },
+  {
+    "world": "tahoe",
+    "mobile": false,
+    "release": {
+      "version": "3.4.1",
+      "cacheRevision": "build4-candidate-1"
+    },
+    "run": "mvgxr55t",
+    "hp": [
+      4,
+      4,
+      4
+    ],
+    "active": 1,
+    "art": {
+      "loaded": true,
+      "actors": [
+        "toxic-bloom",
+        "algae-slime",
+        "pine-queen",
+        "pine-beetle",
+        "larva",
+        "flying-beetle"
+      ],
+      "contours": 2,
+      "contourBytes": 43808,
+      "contourBuilds": 2,
+      "draws": 48,
+      "backgrounds": 48,
+      "failed": [],
+      "poses": {
+        "walk": 48
+      },
+      "lastPanel": 0
+    },
+    "hud": {
+      "x": 8,
+      "y": 2,
+      "width": 1114,
+      "height": 50,
+      "top": 2,
+      "right": 1122,
+      "bottom": 52,
+      "left": 8
+    }
+  },
+  {
+    "world": "alaska",
+    "mobile": false,
+    "release": {
+      "version": "3.4.1",
+      "cacheRevision": "build4-candidate-1"
+    },
+    "run": "mvgxr55t",
+    "hp": [
+      4,
+      4,
+      4
+    ],
+    "active": 1,
+    "art": {
+      "loaded": true,
+      "actors": [
+        "pipeline-worker",
+        "surveillance-drone",
+        "security-turret",
+        "machinery",
+        "oil-slime",
+        "frost-queen",
+        "zombie-salmon",
+        "alaskan-owl"
+      ],
+      "contours": 4,
+      "contourBytes": 100000,
+      "contourBuilds": 4,
+      "draws": 550,
+      "backgrounds": 50,
+      "failed": [],
+      "poses": {
+        "walk": 550
+      },
+      "lastPanel": 0
+    },
+    "hud": {
+      "x": 8,
+      "y": 2,
+      "width": 1114,
+      "height": 50,
+      "top": 2,
+      "right": 1122,
+      "bottom": 52,
+      "left": 8
+    }
+  },
+  {
+    "world": "socal",
+    "mobile": true,
+    "release": {
+      "version": "3.4.1",
+      "cacheRevision": "build4-candidate-1"
+    },
+    "run": "mvgxr99s",
+    "hp": [
+      4,
+      4,
+      4
+    ],
+    "active": 1,
+    "art": {
+      "loaded": true,
+      "actors": [
+        "queen-beige",
+        "court-judge",
+        "flaming-law",
+        "hoa-drone",
+        "beige-bot"
+      ],
+      "contours": 12,
+      "contourBytes": 705312,
+      "contourBuilds": 12,
+      "draws": 1125,
+      "backgrounds": 45,
+      "failed": [],
+      "poses": {
+        "walk": 1080,
+        "idle": 45
+      },
+      "lastPanel": 0
+    },
+    "hud": {
+      "x": 8,
+      "y": 2,
+      "width": 684,
+      "height": 50,
+      "top": 2,
+      "right": 692,
+      "bottom": 52,
+      "left": 8
+    }
+  },
+  {
+    "world": "tahoe",
+    "mobile": true,
+    "release": {
+      "version": "3.4.1",
+      "cacheRevision": "build4-candidate-1"
+    },
+    "run": "mvgxr99s",
+    "hp": [
+      4,
+      4,
+      4
+    ],
+    "active": 1,
+    "art": {
+      "loaded": true,
+      "actors": [
+        "toxic-bloom",
+        "algae-slime",
+        "pine-queen",
+        "pine-beetle",
+        "larva",
+        "flying-beetle"
+      ],
+      "contours": 2,
+      "contourBytes": 43808,
+      "contourBuilds": 2,
+      "draws": 48,
+      "backgrounds": 48,
+      "failed": [],
+      "poses": {
+        "walk": 48
+      },
+      "lastPanel": 0
+    },
+    "hud": {
+      "x": 8,
+      "y": 2,
+      "width": 684,
+      "height": 50,
+      "top": 2,
+      "right": 692,
+      "bottom": 52,
+      "left": 8
+    }
+  },
+  {
+    "world": "alaska",
+    "mobile": true,
+    "release": {
+      "version": "3.4.1",
+      "cacheRevision": "build4-candidate-1"
+    },
+    "run": "mvgxr99s",
+    "hp": [
+      4,
+      4,
+      4
+    ],
+    "active": 1,
+    "art": {
+      "loaded": true,
+      "actors": [
+        "pipeline-worker",
+        "surveillance-drone",
+        "security-turret",
+        "machinery",
+        "oil-slime",
+        "frost-queen",
+        "zombie-salmon",
+        "alaskan-owl"
+      ],
+      "contours": 4,
+      "contourBytes": 100000,
+      "contourBuilds": 4,
+      "draws": 550,
+      "backgrounds": 50,
+      "failed": [],
+      "poses": {
+        "walk": 550
+      },
+      "lastPanel": 0
+    },
+    "hud": {
+      "x": 8,
+      "y": 2,
+      "width": 684,
+      "height": 50,
+      "top": 2,
+      "right": 692,
+      "bottom": 52,
+      "left": 8
+    }
+  }
+]

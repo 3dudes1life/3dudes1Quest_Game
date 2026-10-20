@@ -1,0 +1,28 @@
+{
+  "status": "PASS limited desktop GUI smoke; full owner certification UNVERIFIED",
+  "browser": "Safari 27.0.1 (22625.1.29.11.28)",
+  "platform": "macOS 27.0.1, Apple M2 Pro",
+  "method": "Computer Use with native Safari, isolated Private Browsing window. Final source at fresh localhost origin8894. No browser privacy/security settings changed.",
+  "driverAttempt": {
+    "status": "BLOCKED",
+    "result": "Native safaridriver session creation timed out before page load; GUI fallback used instead."
+  },
+  "finalSourceChecks": [
+    "Fresh SoCal title hides unavailable Continue Survival/Play Legacy buttons",
+    "Skip existing Origin intro, start Survival, movement/jump inputs, Space power input, switch to Daniel",
+    "Direct Tahoe navigation shows Saved run updated without false stale-save freeze",
+    "Tahoe movement/jump/Space/switch to Caleb; same four-heart roster retained",
+    "Direct Alaska navigation shows Saved run updated without false stale-save freeze",
+    "Alaska movement/jump/Space/switch to Will; same roster/charge retained; Escape opens pause settings"
+  ],
+  "earlierSameBranchChecks": [
+    "SoCal collectible and score gain, pause/save/reload/Continue preserve health/charge/active character",
+    "Control inset changed through real native slider click, persisted after reload, then reset"
+  ],
+  "limits": [
+    "Not a continuous native campaign or boss certification",
+    "No quantitative native jump apex/input latency or CSS viewport measurement",
+    "No physical iPhone/Android, installed mobile PWA, real system interruption, thermal or controller acceptance",
+    "Actual browser zoom/high-DPI/fullscreen native GUI matrix remains owner acceptance"
+  ]
+}

@@ -1,0 +1,23 @@
+[
+  {
+    "label": "latency-final",
+    "script": "measure-input45.cjs",
+    "startedEpochMs": 1792523029269.95,
+    "completedEpochMs": 1792523178808.9558,
+    "exitCode": 0
+  },
+  {
+    "label": "encounters-final",
+    "script": "profile-encounters45.cjs",
+    "startedEpochMs": 1792523178809.619,
+    "completedEpochMs": 1792523267383.038,
+    "exitCode": 0
+  },
+  {
+    "label": "assets-final",
+    "script": "measure-assets45.cjs",
+    "startedEpochMs": 1792523267383.656,
+    "completedEpochMs": 1792523270067.782,
+    "exitCode": 0
+  }
+]

@@ -8,13 +8,13 @@ function setup(){
  vm.runInNewContext(fs.readFileSync('js/core/quest-runtime.js','utf8'),context);
  return {runtime:context.window.QuestRuntime,data,frame(now){const batch=[...callbacks.values()];callbacks.clear();batch.forEach(cb=>cb(now));},callbacks,context};
 }
-test('simulation produces identical movement at 30, 60 and 120 Hz',()=>{
- const results=[30,60,120].map(hz=>{
+test('simulation produces identical movement at 30, 60, 90 and 120 Hz',()=>{
+ const results=[30,60,90,120].map(hz=>{
   const {runtime,frame}=setup();const p={x:0,y:428,w:44,h:72,vx:0,vy:0,on:true};let ticks=0;
   const loop=runtime.createLoop({active:()=>true,draw(){},update(){ticks++;runtime.movePlayer(p,{right:true,jump:true},{speed:6.2,jump:14},{ground:()=>500,world:10000,platforms:[],motion:{},jumpPressed:false})}});
   loop.start();frame(0);for(let i=1;i<=hz*2;i++)frame(i*1000/hz);
   return [ticks,p.x,p.y];
- });assert.deepEqual(results[0],results[1]);assert.deepEqual(results[1],results[2]);assert.equal(results[0][0],120);assert.ok(results[0][1]>700);
+ });assert.deepEqual(results[0],results[1]);assert.deepEqual(results[1],results[2]);assert.deepEqual(results[2],results[3]);assert.equal(results[0][0],120);assert.ok(results[0][1]>700);
 });
 test('loop start is idempotent and pause/resume discards accumulated time',()=>{
  const {runtime,frame,callbacks}=setup();let active=true,ticks=0;

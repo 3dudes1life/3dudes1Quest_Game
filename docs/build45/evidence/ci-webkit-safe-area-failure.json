@@ -1,0 +1,559 @@
+{
+  "currentCase": {
+    "engine": "webkit",
+    "version": "26.5",
+    "profile": "touch-landscape",
+    "world": "socal"
+  },
+  "error": "The expression evaluated to a falsy value:\n\n  assert.ok(r.x>=27&&r.right<=813&&r.y>=7&&r.bottom<=380)\n",
+  "state": {
+    "menu": {
+      "menu": null,
+      "isolated": 0,
+      "observers": 1
+    },
+    "visibility": "visible",
+    "focus": true,
+    "paused": false,
+    "x": 167.21999999999997,
+    "y": 548,
+    "vx": 4.92,
+    "held": {
+      "left": false,
+      "right": false,
+      "jump": false,
+      "power": false
+    }
+  },
+  "completedResults": [
+    {
+      "engine": "chromium",
+      "version": "151.0.7922.34",
+      "profile": {
+        "name": "desktop",
+        "width": 1280,
+        "height": 800,
+        "scale": 1
+      },
+      "world": "socal",
+      "movementObservedMs": 7,
+      "geometry": {
+        "rect": {
+          "x": 85.328125,
+          "y": 100,
+          "width": 1109.328125,
+          "height": 624,
+          "top": 100,
+          "right": 1194.65625,
+          "bottom": 724,
+          "left": 85.328125
+        },
+        "logical": [
+          1280,
+          720
+        ],
+        "smoothing": false
+      },
+      "fullscreen": "entered",
+      "gamepads": {
+        "api": true,
+        "connected": 0
+      },
+      "status": "PASS"
+    },
+    {
+      "engine": "chromium",
+      "version": "151.0.7922.34",
+      "profile": {
+        "name": "desktop",
+        "width": 1280,
+        "height": 800,
+        "scale": 1
+      },
+      "world": "tahoe",
+      "movementObservedMs": 4,
+      "geometry": {
+        "rect": {
+          "x": 85.328125,
+          "y": 100,
+          "width": 1109.328125,
+          "height": 624,
+          "top": 100,
+          "right": 1194.65625,
+          "bottom": 724,
+          "left": 85.328125
+        },
+        "logical": [
+          1280,
+          720
+        ],
+        "smoothing": false
+      },
+      "fullscreen": "entered",
+      "gamepads": {
+        "api": true,
+        "connected": 0
+      },
+      "status": "PASS"
+    },
+    {
+      "engine": "chromium",
+      "version": "151.0.7922.34",
+      "profile": {
+        "name": "desktop",
+        "width": 1280,
+        "height": 800,
+        "scale": 1
+      },
+      "world": "alaska",
+      "movementObservedMs": 26,
+      "geometry": {
+        "rect": {
+          "x": 85.328125,
+          "y": 100,
+          "width": 1109.328125,
+          "height": 624,
+          "top": 100,
+          "right": 1194.65625,
+          "bottom": 724,
+          "left": 85.328125
+        },
+        "logical": [
+          1280,
+          720
+        ],
+        "smoothing": false
+      },
+      "fullscreen": "entered",
+      "gamepads": {
+        "api": true,
+        "connected": 0
+      },
+      "status": "PASS"
+    },
+    {
+      "engine": "chromium",
+      "version": "151.0.7922.34",
+      "profile": {
+        "name": "large-hidpi",
+        "width": 2560,
+        "height": 1440,
+        "scale": 2
+      },
+      "world": "socal",
+      "movementObservedMs": 11,
+      "geometry": {
+        "rect": {
+          "x": 156.4375,
+          "y": 100,
+          "width": 2247.109375,
+          "height": 1264,
+          "top": 100,
+          "right": 2403.546875,
+          "bottom": 1364,
+          "left": 156.4375
+        },
+        "logical": [
+          1280,
+          720
+        ],
+        "smoothing": false
+      },
+      "fullscreen": "entered",
+      "gamepads": {
+        "api": true,
+        "connected": 0
+      },
+      "status": "PASS"
+    },
+    {
+      "engine": "chromium",
+      "version": "151.0.7922.34",
+      "profile": {
+        "name": "large-hidpi",
+        "width": 2560,
+        "height": 1440,
+        "scale": 2
+      },
+      "world": "tahoe",
+      "movementObservedMs": 27,
+      "geometry": {
+        "rect": {
+          "x": 156.4375,
+          "y": 100,
+          "width": 2247.109375,
+          "height": 1264,
+          "top": 100,
+          "right": 2403.546875,
+          "bottom": 1364,
+          "left": 156.4375
+        },
+        "logical": [
+          1280,
+          720
+        ],
+        "smoothing": false
+      },
+      "fullscreen": "entered",
+      "gamepads": {
+        "api": true,
+        "connected": 0
+      },
+      "status": "PASS"
+    },
+    {
+      "engine": "chromium",
+      "version": "151.0.7922.34",
+      "profile": {
+        "name": "large-hidpi",
+        "width": 2560,
+        "height": 1440,
+        "scale": 2
+      },
+      "world": "alaska",
+      "movementObservedMs": 4,
+      "geometry": {
+        "rect": {
+          "x": 156.4375,
+          "y": 100,
+          "width": 2247.109375,
+          "height": 1264,
+          "top": 100,
+          "right": 2403.546875,
+          "bottom": 1364,
+          "left": 156.4375
+        },
+        "logical": [
+          1280,
+          720
+        ],
+        "smoothing": false
+      },
+      "fullscreen": "entered",
+      "gamepads": {
+        "api": true,
+        "connected": 0
+      },
+      "status": "PASS"
+    },
+    {
+      "engine": "chromium",
+      "version": "151.0.7922.34",
+      "profile": {
+        "name": "touch-landscape",
+        "width": 844,
+        "height": 390,
+        "scale": 3,
+        "touch": true
+      },
+      "world": "socal",
+      "movementObservedMs": 9,
+      "geometry": {
+        "rect": {
+          "x": 226.21875,
+          "y": 135,
+          "width": 387.546875,
+          "height": 218,
+          "top": 135,
+          "right": 613.765625,
+          "bottom": 353,
+          "left": 226.21875
+        },
+        "logical": [
+          1280,
+          720
+        ],
+        "smoothing": false
+      },
+      "fullscreen": "not attempted on touch",
+      "gamepads": {
+        "api": true,
+        "connected": 0
+      },
+      "status": "PASS"
+    },
+    {
+      "engine": "chromium",
+      "version": "151.0.7922.34",
+      "profile": {
+        "name": "touch-landscape",
+        "width": 844,
+        "height": 390,
+        "scale": 3,
+        "touch": true
+      },
+      "world": "tahoe",
+      "movementObservedMs": 25,
+      "geometry": {
+        "rect": {
+          "x": 226.21875,
+          "y": 135,
+          "width": 387.546875,
+          "height": 218,
+          "top": 135,
+          "right": 613.765625,
+          "bottom": 353,
+          "left": 226.21875
+        },
+        "logical": [
+          1280,
+          720
+        ],
+        "smoothing": false
+      },
+      "fullscreen": "not attempted on touch",
+      "gamepads": {
+        "api": true,
+        "connected": 0
+      },
+      "status": "PASS"
+    },
+    {
+      "engine": "chromium",
+      "version": "151.0.7922.34",
+      "profile": {
+        "name": "touch-landscape",
+        "width": 844,
+        "height": 390,
+        "scale": 3,
+        "touch": true
+      },
+      "world": "alaska",
+      "movementObservedMs": 13,
+      "geometry": {
+        "rect": {
+          "x": 226.21875,
+          "y": 135,
+          "width": 387.546875,
+          "height": 218,
+          "top": 135,
+          "right": 613.765625,
+          "bottom": 353,
+          "left": 226.21875
+        },
+        "logical": [
+          1280,
+          720
+        ],
+        "smoothing": false
+      },
+      "fullscreen": "not attempted on touch",
+      "gamepads": {
+        "api": true,
+        "connected": 0
+      },
+      "status": "PASS"
+    },
+    {
+      "engine": "webkit",
+      "version": "26.5",
+      "profile": {
+        "name": "desktop",
+        "width": 1280,
+        "height": 800,
+        "scale": 1
+      },
+      "world": "socal",
+      "movementObservedMs": 1046,
+      "geometry": {
+        "rect": {
+          "x": 85.328125,
+          "y": 100,
+          "width": 1109.328125,
+          "height": 624,
+          "top": 100,
+          "right": 1194.65625,
+          "bottom": 724,
+          "left": 85.328125
+        },
+        "logical": [
+          1280,
+          720
+        ],
+        "smoothing": false
+      },
+      "fullscreen": "entered",
+      "gamepads": {
+        "api": true,
+        "connected": 0
+      },
+      "status": "PASS"
+    },
+    {
+      "engine": "webkit",
+      "version": "26.5",
+      "profile": {
+        "name": "desktop",
+        "width": 1280,
+        "height": 800,
+        "scale": 1
+      },
+      "world": "tahoe",
+      "movementObservedMs": 8,
+      "geometry": {
+        "rect": {
+          "x": 85.328125,
+          "y": 100,
+          "width": 1109.328125,
+          "height": 624,
+          "top": 100,
+          "right": 1194.65625,
+          "bottom": 724,
+          "left": 85.328125
+        },
+        "logical": [
+          1280,
+          720
+        ],
+        "smoothing": false
+      },
+      "fullscreen": "entered",
+      "gamepads": {
+        "api": true,
+        "connected": 0
+      },
+      "status": "PASS"
+    },
+    {
+      "engine": "webkit",
+      "version": "26.5",
+      "profile": {
+        "name": "desktop",
+        "width": 1280,
+        "height": 800,
+        "scale": 1
+      },
+      "world": "alaska",
+      "movementObservedMs": 10,
+      "geometry": {
+        "rect": {
+          "x": 85.328125,
+          "y": 100,
+          "width": 1109.328125,
+          "height": 624,
+          "top": 100,
+          "right": 1194.65625,
+          "bottom": 724,
+          "left": 85.328125
+        },
+        "logical": [
+          1280,
+          720
+        ],
+        "smoothing": false
+      },
+      "fullscreen": "entered",
+      "gamepads": {
+        "api": true,
+        "connected": 0
+      },
+      "status": "PASS"
+    },
+    {
+      "engine": "webkit",
+      "version": "26.5",
+      "profile": {
+        "name": "large-hidpi",
+        "width": 2560,
+        "height": 1440,
+        "scale": 2
+      },
+      "world": "socal",
+      "movementObservedMs": 207,
+      "geometry": {
+        "rect": {
+          "x": 156.4375,
+          "y": 100,
+          "width": 2247.109375,
+          "height": 1264,
+          "top": 100,
+          "right": 2403.546875,
+          "bottom": 1364,
+          "left": 156.4375
+        },
+        "logical": [
+          1280,
+          720
+        ],
+        "smoothing": false
+      },
+      "fullscreen": "entered",
+      "gamepads": {
+        "api": true,
+        "connected": 0
+      },
+      "status": "PASS"
+    },
+    {
+      "engine": "webkit",
+      "version": "26.5",
+      "profile": {
+        "name": "large-hidpi",
+        "width": 2560,
+        "height": 1440,
+        "scale": 2
+      },
+      "world": "tahoe",
+      "movementObservedMs": 102,
+      "geometry": {
+        "rect": {
+          "x": 156.4375,
+          "y": 100,
+          "width": 2247.109375,
+          "height": 1264,
+          "top": 100,
+          "right": 2403.546875,
+          "bottom": 1364,
+          "left": 156.4375
+        },
+        "logical": [
+          1280,
+          720
+        ],
+        "smoothing": false
+      },
+      "fullscreen": "entered",
+      "gamepads": {
+        "api": true,
+        "connected": 0
+      },
+      "status": "PASS"
+    },
+    {
+      "engine": "webkit",
+      "version": "26.5",
+      "profile": {
+        "name": "large-hidpi",
+        "width": 2560,
+        "height": 1440,
+        "scale": 2
+      },
+      "world": "alaska",
+      "movementObservedMs": 70,
+      "geometry": {
+        "rect": {
+          "x": 156.4375,
+          "y": 100,
+          "width": 2247.109375,
+          "height": 1264,
+          "top": 100,
+          "right": 2403.546875,
+          "bottom": 1364,
+          "left": 156.4375
+        },
+        "logical": [
+          1280,
+          720
+        ],
+        "smoothing": false
+      },
+      "fullscreen": "entered",
+      "gamepads": {
+        "api": true,
+        "connected": 0
+      },
+      "status": "PASS"
+    }
+  ],
+  "blocked": []
+}

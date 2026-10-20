@@ -41,7 +41,10 @@
       if (!input[action]) pending.add(action);
       held.set(source, action); sync(action);
     }
-    function up(source) { const action = held.get(source); held.delete(source); if (action) sync(action); }
+    function up(source, cancelled = false) {
+      const action = held.get(source); held.delete(source);
+      if (action) { sync(action); if (cancelled && !input[action]) pending.delete(action); }
+    }
     function releaseAll() {
       held.clear(); pending.clear();
       for (const action of ['left','right','jump','power','ultimate']) input[action] = false;
@@ -67,6 +70,7 @@
     });
     buttons.forEach(button => {
       button.addEventListener('pointerdown', event => {
+        if (event.pointerType === 'mouse' && event.button !== 0) return;
         event.preventDefault();
         down(`pointer:${event.pointerId}`, button.dataset.action);
         if (!active()) return;
@@ -74,7 +78,7 @@
         try { button.setPointerCapture(event.pointerId); } catch (_) {}
       }, { passive: false });
       const release = event => {
-        up(`pointer:${event.pointerId}`);
+        up(`pointer:${event.pointerId}`, event.type !== 'pointerup');
         button.classList.toggle('isPressed', input[button.dataset.action]);
       };
       for (const type of ['pointerup','pointercancel','lostpointercapture']) button.addEventListener(type, release);
@@ -82,6 +86,9 @@
     });
     for (const type of ['blur','pagehide','orientationchange']) addEventListener(type, releaseAll);
     document.addEventListener('visibilitychange', () => { if (document.hidden) releaseAll(); });
+    document.addEventListener('fullscreenchange', releaseAll);
+    // Suppress browser menus only on game surfaces; settings and other page content keep native behavior.
+    for (const surface of [canvas, ...buttons].filter(Boolean)) surface.addEventListener('contextmenu', event => event.preventDefault());
     return Object.assign(input, {
       releaseAll, isPlaying: active,
       consume(action) { const value = pending.has(action); pending.delete(action); return value; },
@@ -106,7 +113,10 @@
     for (const type of ['pointerup','pointercancel','lostpointercapture']) button.addEventListener(type, release);
     // Keyboard and assistive activation have no pointer press. Compatibility clicks must not fire twice.
     button.addEventListener('click', event => {event.preventDefault();if(event.detail === 0 && active()) press()});
+    button.addEventListener('contextmenu', event => event.preventDefault());
     for (const type of ['blur','pagehide','orientationchange']) addEventListener(type, release);
+    document.addEventListener('fullscreenchange', () => release());
+    document.addEventListener('visibilitychange', () => {if(document.hidden) release()});
   }
 
   function movePlayer(player, input, dude, { ground, platforms, world, jumpPressed, motion }) {

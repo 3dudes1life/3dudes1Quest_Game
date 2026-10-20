@@ -1,0 +1,48 @@
+{
+  "world": "socal",
+  "method": "normal keyboard; read-only state observations; no teleports/invulnerability/boss edits",
+  "seconds": 62.94,
+  "result": {
+    "poses": {
+      "walk": 28417,
+      "idle": 729,
+      "hurt": 563,
+      "defeat": 1946,
+      "attack": 311,
+      "prepare": 1887,
+      "transform": 531
+    },
+    "queenMid": true,
+    "complete": true,
+    "cards": 6,
+    "beacons": 3,
+    "court": true,
+    "queen": true,
+    "zoey": true,
+    "links": [
+      "tahoe.html"
+    ]
+  },
+  "events": [],
+  "errors": [],
+  "assets": [
+    "assets/master-build/actors/queen-beige.webp",
+    "assets/master-build/actors/queen-beige-actions.webp",
+    "assets/master-build/actors/court-judge.webp",
+    "assets/master-build/actors/court-judge-actions.webp",
+    "assets/cast340/socal.png",
+    "assets/master-build/actors/flaming-law.webp",
+    "assets/master-build/actors/flaming-law-actions.webp",
+    "assets/cast341/will.png",
+    "assets/cast341/daniel.png",
+    "assets/master-build/actors/hoa-drone.webp",
+    "assets/master-build/actors/hoa-drone-actions.webp",
+    "assets/master-build/actors/beige-bot.webp",
+    "assets/master-build/actors/beige-bot-actions.webp",
+    "assets/cast341/caleb.png",
+    "assets/environments/home_base_remastered.svg",
+    "assets/sprites_hd/hoa_queen_idle.png",
+    "assets/master-build/foreground.webp",
+    "assets/master-build/socal-scenes.webp"
+  ]
+}

@@ -12,7 +12,7 @@
  function valid(v){return v?.schema===1&&typeof v.enabled==='boolean'&&Array.isArray(v.characters)&&v.characters.length===3&&v.characters.every(c=>Number.isInteger(c.hp)&&c.hp>=0&&c.hp<=4&&c.available===(c.hp>0))&&Number.isInteger(v.active)&&v.active>=0&&v.active<3&&Number.isFinite(v.charge)&&v.charge>=0&&v.charge<=100&&Array.isArray(v.contributions)&&v.contributions.length===3&&v.contributions.every(c=>typeof c==='boolean')&&['playing','ended'].includes(v.status)&&v.worlds&&typeof v.worlds==='object'&&v.ledger&&typeof v.ledger==='object'&&Array.isArray(v.completedWorlds)&&Array.isArray(v.achievements)&&v.achievements.every(a=>a&&typeof a.world==='string'&&typeof a.badge==='string')&&Array.isArray(v.history)&&Number.isInteger(v.sequence)&&v.sequence>=0&&(v.status==='ended'?v.characters.every(c=>!c.hp):v.characters[v.active].hp>0)}
  function read(){for(const k of [key,key+':backup'])try{const v=JSON.parse(localStorage.getItem(k)||'null');if(valid(v))return v}catch(_){}return null}
  const revision=r=>r?r.id+':'+r.sequence:null;
- let record=read(),seenRevision=revision(record),conflict=false,adapter,shieldUntil=0,chargeBlockedUntil=0,lastRender='',saving=false,storageBlocked=false,teamDamage=false;
+ let record=read(),seenRevision=revision(record),conflict=false,adapter,shieldUntil=0,chargeBlockedUntil=0,lastRender='',saving=false,storageBlocked=false,teamDamage=false,hasEntered=false;
  const enabled=()=>Boolean(record?.enabled),live=()=>enabled()&&record.status==='playing';
  function store(){
   if(!record)return true;
@@ -69,7 +69,7 @@
   });
  }
  function attach(a){adapter=a;bindState(a.state());mount();render()}
- function enter(){if(!enabled())return;record.currentWorld=adapter.world;if(record.status==='ended')adapter?.freeze();else commit();render()}
+ function enter(){hasEntered=true;if(!enabled())return;record.currentWorld=adapter.world;if(record.status==='ended')adapter?.freeze();else commit();render()}
  function select(n,cycle=false){
   if(!enabled())return true;if(!live()||storageBlocked)return false;
   n=((Math.floor(n)%3)+3)%3;
@@ -169,7 +169,17 @@
   button.setAttribute('aria-label',tier()+' '+record.charge+' percent. '+(practice?'Practice fight; campaign charge is protected.':blocked?'Rights Drain; wait for powers to return.':ready?'Ready. Press T or tap to activate.':needsTeam?'Land '+missing.join(', ')+' powers; fill charge through hits and objectives.':'Fill charge through hits and objectives.'));
   button.title=practice?'Practice fight — campaign charge is protected.':blocked?'Rights Drain — wait for powers to return.':ready?'Ready — press T or tap.':record.charge===100?'Land '+missing.join(' + ')+' powers to complete the team.':'Land powers and complete objectives to charge. Check marks show contributions.';
  }
- if(typeof addEventListener==='function')addEventListener('storage',e=>{if(e.key===key&&enabled()&&revision(read())!==seenRevision){storageBlocked=true;conflict=true;adapter?.release();adapter?.freeze();announce('ANOTHER TAB SAVED THIS RUN · reload this tab to continue safely.')}});
+ if(typeof addEventListener==='function')addEventListener('storage',e=>{
+  if(e.key!==key)return;
+  const incoming=read();if(revision(incoming)===seenRevision)return;
+  // An untouched landing page has no local gameplay to reconcile. Adopt only a
+  // whole validated commit; a page that has ever played must retain the guard.
+  const title=typeof document!=='undefined'&&document.querySelector('#titleScreen.active,#openingCard:not(.hidden)');
+  if(!hasEntered&&title&&incoming){
+   record=incoming;seenRevision=revision(incoming);storageBlocked=conflict=false;lastRender='';render();window.QuestJourney?.render();announce('Saved run updated · your team is ready to continue.');return;
+  }
+  if(enabled()){storageBlocked=true;conflict=true;adapter?.release();adapter?.freeze();announce('ANOTHER TAB SAVED THIS RUN · reload this tab to continue safely.')}
+ });
  if(testing&&!record)begin();
  window.QuestSurvival=Object.freeze({BALANCE,enabled,live,storage,bindState,attach,enter,select,damage,recover,objective,hit,complete,activate,begin,leave,commit,refresh:render,valid,get state(){return record?copy(record):null},get testing(){return testing},get storageBlocked(){return storageBlocked}});
 })();

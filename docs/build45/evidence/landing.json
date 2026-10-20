@@ -1,0 +1,23 @@
+{
+  "results": [
+    {
+      "file": "index",
+      "freshHiddenButtons": true
+    },
+    {
+      "file": "tahoe",
+      "freshHiddenButtons": true
+    },
+    {
+      "file": "alaska",
+      "freshHiddenButtons": true
+    },
+    {
+      "untouchedLandingAdoptsWholeCommit": true,
+      "healthChargeAndRosterPreserved": true,
+      "activeWriterProtected": true,
+      "returnedTitleWriterProtected": true
+    }
+  ],
+  "errors": []
+}

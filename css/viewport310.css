@@ -23,6 +23,9 @@ html.quest-layout, .quest-layout body { margin:0; padding:0; width:100%; height:
 .quest-layout #bossHud div { height:8px; }
 .quest-layout #touchControls { position:absolute; left:8px; right:8px; bottom:6px; padding:0; gap:8px; height:calc(var(--control-size) + 8px); pointer-events:none!important; opacity:1!important; }
 .quest-layout #touchControls .touchGroup { gap:5px; padding:3px; border-radius:14px; pointer-events:auto; }
+.quest-layout #touchControls .left { transform:translate(var(--move-shift-x,0px),var(--move-shift-y,0px)); }
+.quest-layout #touchControls .right { transform:translate(var(--action-shift-x,0px),var(--action-shift-y,0px)); }
+.quest-layout :is(#touchControls button,#teamPower,#pauseBtn,#switchBtn) { touch-action:none;-webkit-touch-callout:none;user-select:none;-webkit-user-select:none; }
 .quest-layout #touchControls button, .quest-layout #touchControls .mini { width:var(--control-size); min-width:var(--control-size); height:var(--control-size); min-height:44px; border-radius:14px; flex-shrink:0; padding:3px!important; }
 .quest-layout #touchControls .controlLabel { font-size:10px!important; letter-spacing:0; }
 .quest-layout #touchControls .controlIcon { font-size:20px!important; }
@@ -45,6 +48,9 @@ html.quest-layout, .quest-layout body { margin:0; padding:0; width:100%; height:
 .quest-layout .controlSettings { display:flex; flex-wrap:wrap; gap:12px; border:1px solid currentColor; border-radius:10px; margin:16px 0 0; padding:10px; text-align:left; }
 .quest-layout .controlSettings label { display:flex; align-items:center; gap:8px; font:600 14px system-ui; }
 .quest-layout .controlSettings select { font:inherit; min-height:44px; max-width:100%; }
+.quest-layout .controlSettings input[type=range] { min-width:100px;width:120px;height:44px;touch-action:pan-x; }
+.quest-layout .controlSettings p { flex-basis:100%;margin:0;font:13px/1.5 ui-monospace,monospace; }
+.quest-layout .controlSettings button { min-height:44px; }
 .quest-layout #viewportPause { z-index:10000; display:grid; place-items:center; background:rgba(4,10,28,.96); color:white; text-align:center; padding:12px; touch-action:pan-y; }
 .quest-layout #viewportPause[hidden] { display:none; }
 .quest-layout #viewportPause>div { max-height:100%; overflow:auto; max-width:520px; }
@@ -71,6 +77,9 @@ html.quest-layout, .quest-layout body { margin:0; padding:0; width:100%; height:
 /* Landscape puts thumb controls in the letterbox gutters, keeping the world larger. */
 .quest-layout.quest-rails #touchControls { height:auto; align-items:flex-end; }
 .quest-layout.quest-rails #touchControls .right { flex-direction:column; }
+.quest-layout.quest-short-controls #touchControls .right { display:grid;grid-template-columns:repeat(2,var(--control-size)); }
+.quest-layout.quest-short-controls #jumpBtn { grid-column:2; }
+.quest-layout.quest-short-controls[data-control-hand=left] #jumpBtn { grid-column:1; }
 .quest-layout #gameCanvas, .quest-layout #tahoeCanvas { outline:none; }
 .quest-layout #comboHud { left:auto; right:8px; top:78px; transform:none; font-size:14px; width:auto; }
 .quest-layout .cinematicZoneCard { width:min(400px,70%); padding:6px; }

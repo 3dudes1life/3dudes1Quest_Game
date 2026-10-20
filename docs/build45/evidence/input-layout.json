@@ -1,0 +1,1356 @@
+{
+  "method": "Actual Chrome CDP contacts and native UI/keyboard actions. Individual cancellation, secondary mouse and fullscreen events also have explicitly controlled fixtures. No physical-device claim.",
+  "results": [
+    {
+      "world": "socal",
+      "width": 844,
+      "height": 390,
+      "inputResult": {
+        "mouseIgnored": true,
+        "cancelSafe": true,
+        "quickTap": true,
+        "otherHeld": true,
+        "contextMenuPrevented": true
+      },
+      "controls": [
+        {
+          "id": "",
+          "rect": {
+            "x": 688,
+            "y": 311,
+            "width": 70,
+            "height": 70,
+            "top": 311,
+            "right": 758,
+            "bottom": 381,
+            "left": 688
+          }
+        },
+        {
+          "id": "",
+          "rect": {
+            "x": 763,
+            "y": 311,
+            "width": 70,
+            "height": 70,
+            "top": 311,
+            "right": 833,
+            "bottom": 381,
+            "left": 763
+          }
+        },
+        {
+          "id": "switchBtn",
+          "rect": {
+            "x": 43,
+            "y": 115,
+            "width": 70,
+            "height": 70,
+            "top": 115,
+            "right": 113,
+            "bottom": 185,
+            "left": 43
+          }
+        },
+        {
+          "id": "powerBtn",
+          "rect": {
+            "x": 43,
+            "y": 190,
+            "width": 70,
+            "height": 70,
+            "top": 190,
+            "right": 113,
+            "bottom": 260,
+            "left": 43
+          }
+        },
+        {
+          "id": "",
+          "rect": {
+            "x": 43,
+            "y": 265,
+            "width": 70,
+            "height": 70,
+            "top": 265,
+            "right": 113,
+            "bottom": 335,
+            "left": 43
+          }
+        }
+      ],
+      "canvas": {
+        "x": 198,
+        "y": 112,
+        "width": 448,
+        "height": 252,
+        "top": 112,
+        "right": 646,
+        "bottom": 364,
+        "left": 198
+      },
+      "button": 70
+    },
+    {
+      "world": "socal",
+      "width": 852,
+      "height": 393,
+      "inputResult": {
+        "mouseIgnored": true,
+        "cancelSafe": true,
+        "quickTap": true,
+        "otherHeld": true,
+        "contextMenuPrevented": true
+      },
+      "controls": [
+        {
+          "id": "",
+          "rect": {
+            "x": 696,
+            "y": 314,
+            "width": 70,
+            "height": 70,
+            "top": 314,
+            "right": 766,
+            "bottom": 384,
+            "left": 696
+          }
+        },
+        {
+          "id": "",
+          "rect": {
+            "x": 771,
+            "y": 314,
+            "width": 70,
+            "height": 70,
+            "top": 314,
+            "right": 841,
+            "bottom": 384,
+            "left": 771
+          }
+        },
+        {
+          "id": "switchBtn",
+          "rect": {
+            "x": 43,
+            "y": 115,
+            "width": 70,
+            "height": 70,
+            "top": 115,
+            "right": 113,
+            "bottom": 185,
+            "left": 43
+          }
+        },
+        {
+          "id": "powerBtn",
+          "rect": {
+            "x": 43,
+            "y": 190,
+            "width": 70,
+            "height": 70,
+            "top": 190,
+            "right": 113,
+            "bottom": 260,
+            "left": 43
+          }
+        },
+        {
+          "id": "",
+          "rect": {
+            "x": 43,
+            "y": 265,
+            "width": 70,
+            "height": 70,
+            "top": 265,
+            "right": 113,
+            "bottom": 335,
+            "left": 43
+          }
+        }
+      ],
+      "canvas": {
+        "x": 199.328125,
+        "y": 112,
+        "width": 453.328125,
+        "height": 255,
+        "top": 112,
+        "right": 652.65625,
+        "bottom": 367,
+        "left": 199.328125
+      },
+      "button": 70
+    },
+    {
+      "world": "socal",
+      "width": 932,
+      "height": 430,
+      "inputResult": {
+        "mouseIgnored": true,
+        "cancelSafe": true,
+        "quickTap": true,
+        "otherHeld": true,
+        "contextMenuPrevented": true
+      },
+      "controls": [
+        {
+          "id": "",
+          "rect": {
+            "x": 776,
+            "y": 351,
+            "width": 70,
+            "height": 70,
+            "top": 351,
+            "right": 846,
+            "bottom": 421,
+            "left": 776
+          }
+        },
+        {
+          "id": "",
+          "rect": {
+            "x": 851,
+            "y": 351,
+            "width": 70,
+            "height": 70,
+            "top": 351,
+            "right": 921,
+            "bottom": 421,
+            "left": 851
+          }
+        },
+        {
+          "id": "switchBtn",
+          "rect": {
+            "x": 43,
+            "y": 115,
+            "width": 70,
+            "height": 70,
+            "top": 115,
+            "right": 113,
+            "bottom": 185,
+            "left": 43
+          }
+        },
+        {
+          "id": "powerBtn",
+          "rect": {
+            "x": 43,
+            "y": 190,
+            "width": 70,
+            "height": 70,
+            "top": 190,
+            "right": 113,
+            "bottom": 260,
+            "left": 43
+          }
+        },
+        {
+          "id": "",
+          "rect": {
+            "x": 43,
+            "y": 265,
+            "width": 70,
+            "height": 70,
+            "top": 265,
+            "right": 113,
+            "bottom": 335,
+            "left": 43
+          }
+        }
+      ],
+      "canvas": {
+        "x": 206.4375,
+        "y": 112,
+        "width": 519.109375,
+        "height": 292,
+        "top": 112,
+        "right": 725.546875,
+        "bottom": 404,
+        "left": 206.4375
+      },
+      "button": 70
+    },
+    {
+      "world": "socal",
+      "width": 740,
+      "height": 280,
+      "inputResult": {
+        "mouseIgnored": true,
+        "cancelSafe": true,
+        "quickTap": true,
+        "otherHeld": true,
+        "contextMenuPrevented": true
+      },
+      "controls": [
+        {
+          "id": "",
+          "rect": {
+            "x": 594,
+            "y": 206,
+            "width": 65,
+            "height": 65,
+            "top": 206,
+            "right": 659,
+            "bottom": 271,
+            "left": 594
+          }
+        },
+        {
+          "id": "",
+          "rect": {
+            "x": 664,
+            "y": 206,
+            "width": 65,
+            "height": 65,
+            "top": 206,
+            "right": 729,
+            "bottom": 271,
+            "left": 664
+          }
+        },
+        {
+          "id": "switchBtn",
+          "rect": {
+            "x": 43,
+            "y": 136,
+            "width": 65,
+            "height": 65,
+            "top": 136,
+            "right": 108,
+            "bottom": 201,
+            "left": 43
+          }
+        },
+        {
+          "id": "powerBtn",
+          "rect": {
+            "x": 113,
+            "y": 136,
+            "width": 65,
+            "height": 65,
+            "top": 136,
+            "right": 178,
+            "bottom": 201,
+            "left": 113
+          }
+        },
+        {
+          "id": "",
+          "rect": {
+            "x": 43,
+            "y": 206,
+            "width": 65,
+            "height": 65,
+            "top": 206,
+            "right": 108,
+            "bottom": 271,
+            "left": 43
+          }
+        }
+      ],
+      "canvas": {
+        "x": 258,
+        "y": 128,
+        "width": 224,
+        "height": 126,
+        "top": 128,
+        "right": 482,
+        "bottom": 254,
+        "left": 258
+      },
+      "button": 65
+    },
+    {
+      "world": "socal",
+      "width": 740,
+      "height": 240,
+      "inputResult": {
+        "mouseIgnored": true,
+        "cancelSafe": true,
+        "quickTap": true,
+        "otherHeld": true,
+        "contextMenuPrevented": true
+      },
+      "controls": [
+        {
+          "id": "",
+          "rect": {
+            "x": 634,
+            "y": 186,
+            "width": 45,
+            "height": 45,
+            "top": 186,
+            "right": 679,
+            "bottom": 231,
+            "left": 634
+          }
+        },
+        {
+          "id": "",
+          "rect": {
+            "x": 684,
+            "y": 186,
+            "width": 45,
+            "height": 45,
+            "top": 186,
+            "right": 729,
+            "bottom": 231,
+            "left": 684
+          }
+        },
+        {
+          "id": "switchBtn",
+          "rect": {
+            "x": 43,
+            "y": 136,
+            "width": 45,
+            "height": 45,
+            "top": 136,
+            "right": 88,
+            "bottom": 181,
+            "left": 43
+          }
+        },
+        {
+          "id": "powerBtn",
+          "rect": {
+            "x": 93,
+            "y": 136,
+            "width": 45,
+            "height": 45,
+            "top": 136,
+            "right": 138,
+            "bottom": 181,
+            "left": 93
+          }
+        },
+        {
+          "id": "",
+          "rect": {
+            "x": 43,
+            "y": 186,
+            "width": 45,
+            "height": 45,
+            "top": 186,
+            "right": 88,
+            "bottom": 231,
+            "left": 43
+          }
+        }
+      ],
+      "canvas": {
+        "x": 293.546875,
+        "y": 128,
+        "width": 152.875,
+        "height": 86,
+        "top": 128,
+        "right": 446.421875,
+        "bottom": 214,
+        "left": 293.546875
+      },
+      "button": 45
+    },
+    {
+      "world": "tahoe",
+      "width": 844,
+      "height": 390,
+      "inputResult": {
+        "mouseIgnored": true,
+        "cancelSafe": true,
+        "quickTap": true,
+        "otherHeld": true,
+        "contextMenuPrevented": true
+      },
+      "controls": [
+        {
+          "id": "",
+          "rect": {
+            "x": 688,
+            "y": 311,
+            "width": 70,
+            "height": 70,
+            "top": 311,
+            "right": 758,
+            "bottom": 381,
+            "left": 688
+          }
+        },
+        {
+          "id": "",
+          "rect": {
+            "x": 763,
+            "y": 311,
+            "width": 70,
+            "height": 70,
+            "top": 311,
+            "right": 833,
+            "bottom": 381,
+            "left": 763
+          }
+        },
+        {
+          "id": "switchBtn",
+          "rect": {
+            "x": 43,
+            "y": 115,
+            "width": 70,
+            "height": 70,
+            "top": 115,
+            "right": 113,
+            "bottom": 185,
+            "left": 43
+          }
+        },
+        {
+          "id": "powerBtn",
+          "rect": {
+            "x": 43,
+            "y": 190,
+            "width": 70,
+            "height": 70,
+            "top": 190,
+            "right": 113,
+            "bottom": 260,
+            "left": 43
+          }
+        },
+        {
+          "id": "",
+          "rect": {
+            "x": 43,
+            "y": 265,
+            "width": 70,
+            "height": 70,
+            "top": 265,
+            "right": 113,
+            "bottom": 335,
+            "left": 43
+          }
+        }
+      ],
+      "canvas": {
+        "x": 198,
+        "y": 112,
+        "width": 448,
+        "height": 252,
+        "top": 112,
+        "right": 646,
+        "bottom": 364,
+        "left": 198
+      },
+      "button": 70
+    },
+    {
+      "world": "tahoe",
+      "width": 852,
+      "height": 393,
+      "inputResult": {
+        "mouseIgnored": true,
+        "cancelSafe": true,
+        "quickTap": true,
+        "otherHeld": true,
+        "contextMenuPrevented": true
+      },
+      "controls": [
+        {
+          "id": "",
+          "rect": {
+            "x": 696,
+            "y": 314,
+            "width": 70,
+            "height": 70,
+            "top": 314,
+            "right": 766,
+            "bottom": 384,
+            "left": 696
+          }
+        },
+        {
+          "id": "",
+          "rect": {
+            "x": 771,
+            "y": 314,
+            "width": 70,
+            "height": 70,
+            "top": 314,
+            "right": 841,
+            "bottom": 384,
+            "left": 771
+          }
+        },
+        {
+          "id": "switchBtn",
+          "rect": {
+            "x": 43,
+            "y": 115,
+            "width": 70,
+            "height": 70,
+            "top": 115,
+            "right": 113,
+            "bottom": 185,
+            "left": 43
+          }
+        },
+        {
+          "id": "powerBtn",
+          "rect": {
+            "x": 43,
+            "y": 190,
+            "width": 70,
+            "height": 70,
+            "top": 190,
+            "right": 113,
+            "bottom": 260,
+            "left": 43
+          }
+        },
+        {
+          "id": "",
+          "rect": {
+            "x": 43,
+            "y": 265,
+            "width": 70,
+            "height": 70,
+            "top": 265,
+            "right": 113,
+            "bottom": 335,
+            "left": 43
+          }
+        }
+      ],
+      "canvas": {
+        "x": 199.328125,
+        "y": 112,
+        "width": 453.328125,
+        "height": 255,
+        "top": 112,
+        "right": 652.65625,
+        "bottom": 367,
+        "left": 199.328125
+      },
+      "button": 70
+    },
+    {
+      "world": "tahoe",
+      "width": 932,
+      "height": 430,
+      "inputResult": {
+        "mouseIgnored": true,
+        "cancelSafe": true,
+        "quickTap": true,
+        "otherHeld": true,
+        "contextMenuPrevented": true
+      },
+      "controls": [
+        {
+          "id": "",
+          "rect": {
+            "x": 776,
+            "y": 351,
+            "width": 70,
+            "height": 70,
+            "top": 351,
+            "right": 846,
+            "bottom": 421,
+            "left": 776
+          }
+        },
+        {
+          "id": "",
+          "rect": {
+            "x": 851,
+            "y": 351,
+            "width": 70,
+            "height": 70,
+            "top": 351,
+            "right": 921,
+            "bottom": 421,
+            "left": 851
+          }
+        },
+        {
+          "id": "switchBtn",
+          "rect": {
+            "x": 43,
+            "y": 115,
+            "width": 70,
+            "height": 70,
+            "top": 115,
+            "right": 113,
+            "bottom": 185,
+            "left": 43
+          }
+        },
+        {
+          "id": "powerBtn",
+          "rect": {
+            "x": 43,
+            "y": 190,
+            "width": 70,
+            "height": 70,
+            "top": 190,
+            "right": 113,
+            "bottom": 260,
+            "left": 43
+          }
+        },
+        {
+          "id": "",
+          "rect": {
+            "x": 43,
+            "y": 265,
+            "width": 70,
+            "height": 70,
+            "top": 265,
+            "right": 113,
+            "bottom": 335,
+            "left": 43
+          }
+        }
+      ],
+      "canvas": {
+        "x": 206.4375,
+        "y": 112,
+        "width": 519.109375,
+        "height": 292,
+        "top": 112,
+        "right": 725.546875,
+        "bottom": 404,
+        "left": 206.4375
+      },
+      "button": 70
+    },
+    {
+      "world": "tahoe",
+      "width": 740,
+      "height": 280,
+      "inputResult": {
+        "mouseIgnored": true,
+        "cancelSafe": true,
+        "quickTap": true,
+        "otherHeld": true,
+        "contextMenuPrevented": true
+      },
+      "controls": [
+        {
+          "id": "",
+          "rect": {
+            "x": 594,
+            "y": 206,
+            "width": 65,
+            "height": 65,
+            "top": 206,
+            "right": 659,
+            "bottom": 271,
+            "left": 594
+          }
+        },
+        {
+          "id": "",
+          "rect": {
+            "x": 664,
+            "y": 206,
+            "width": 65,
+            "height": 65,
+            "top": 206,
+            "right": 729,
+            "bottom": 271,
+            "left": 664
+          }
+        },
+        {
+          "id": "switchBtn",
+          "rect": {
+            "x": 43,
+            "y": 136,
+            "width": 65,
+            "height": 65,
+            "top": 136,
+            "right": 108,
+            "bottom": 201,
+            "left": 43
+          }
+        },
+        {
+          "id": "powerBtn",
+          "rect": {
+            "x": 113,
+            "y": 136,
+            "width": 65,
+            "height": 65,
+            "top": 136,
+            "right": 178,
+            "bottom": 201,
+            "left": 113
+          }
+        },
+        {
+          "id": "",
+          "rect": {
+            "x": 43,
+            "y": 206,
+            "width": 65,
+            "height": 65,
+            "top": 206,
+            "right": 108,
+            "bottom": 271,
+            "left": 43
+          }
+        }
+      ],
+      "canvas": {
+        "x": 258,
+        "y": 128,
+        "width": 224,
+        "height": 126,
+        "top": 128,
+        "right": 482,
+        "bottom": 254,
+        "left": 258
+      },
+      "button": 65
+    },
+    {
+      "world": "tahoe",
+      "width": 740,
+      "height": 240,
+      "inputResult": {
+        "mouseIgnored": true,
+        "cancelSafe": true,
+        "quickTap": true,
+        "otherHeld": true,
+        "contextMenuPrevented": true
+      },
+      "controls": [
+        {
+          "id": "",
+          "rect": {
+            "x": 634,
+            "y": 186,
+            "width": 45,
+            "height": 45,
+            "top": 186,
+            "right": 679,
+            "bottom": 231,
+            "left": 634
+          }
+        },
+        {
+          "id": "",
+          "rect": {
+            "x": 684,
+            "y": 186,
+            "width": 45,
+            "height": 45,
+            "top": 186,
+            "right": 729,
+            "bottom": 231,
+            "left": 684
+          }
+        },
+        {
+          "id": "switchBtn",
+          "rect": {
+            "x": 43,
+            "y": 136,
+            "width": 45,
+            "height": 45,
+            "top": 136,
+            "right": 88,
+            "bottom": 181,
+            "left": 43
+          }
+        },
+        {
+          "id": "powerBtn",
+          "rect": {
+            "x": 93,
+            "y": 136,
+            "width": 45,
+            "height": 45,
+            "top": 136,
+            "right": 138,
+            "bottom": 181,
+            "left": 93
+          }
+        },
+        {
+          "id": "",
+          "rect": {
+            "x": 43,
+            "y": 186,
+            "width": 45,
+            "height": 45,
+            "top": 186,
+            "right": 88,
+            "bottom": 231,
+            "left": 43
+          }
+        }
+      ],
+      "canvas": {
+        "x": 293.546875,
+        "y": 128,
+        "width": 152.875,
+        "height": 86,
+        "top": 128,
+        "right": 446.421875,
+        "bottom": 214,
+        "left": 293.546875
+      },
+      "button": 45
+    },
+    {
+      "world": "alaska",
+      "width": 844,
+      "height": 390,
+      "inputResult": {
+        "mouseIgnored": true,
+        "cancelSafe": true,
+        "quickTap": true,
+        "otherHeld": true,
+        "contextMenuPrevented": true
+      },
+      "controls": [
+        {
+          "id": "",
+          "rect": {
+            "x": 688,
+            "y": 311,
+            "width": 70,
+            "height": 70,
+            "top": 311,
+            "right": 758,
+            "bottom": 381,
+            "left": 688
+          }
+        },
+        {
+          "id": "",
+          "rect": {
+            "x": 763,
+            "y": 311,
+            "width": 70,
+            "height": 70,
+            "top": 311,
+            "right": 833,
+            "bottom": 381,
+            "left": 763
+          }
+        },
+        {
+          "id": "switchBtn",
+          "rect": {
+            "x": 43,
+            "y": 115,
+            "width": 70,
+            "height": 70,
+            "top": 115,
+            "right": 113,
+            "bottom": 185,
+            "left": 43
+          }
+        },
+        {
+          "id": "powerBtn",
+          "rect": {
+            "x": 43,
+            "y": 190,
+            "width": 70,
+            "height": 70,
+            "top": 190,
+            "right": 113,
+            "bottom": 260,
+            "left": 43
+          }
+        },
+        {
+          "id": "",
+          "rect": {
+            "x": 43,
+            "y": 265,
+            "width": 70,
+            "height": 70,
+            "top": 265,
+            "right": 113,
+            "bottom": 335,
+            "left": 43
+          }
+        }
+      ],
+      "canvas": {
+        "x": 198,
+        "y": 112,
+        "width": 448,
+        "height": 252,
+        "top": 112,
+        "right": 646,
+        "bottom": 364,
+        "left": 198
+      },
+      "button": 70
+    },
+    {
+      "world": "alaska",
+      "width": 852,
+      "height": 393,
+      "inputResult": {
+        "mouseIgnored": true,
+        "cancelSafe": true,
+        "quickTap": true,
+        "otherHeld": true,
+        "contextMenuPrevented": true
+      },
+      "controls": [
+        {
+          "id": "",
+          "rect": {
+            "x": 696,
+            "y": 314,
+            "width": 70,
+            "height": 70,
+            "top": 314,
+            "right": 766,
+            "bottom": 384,
+            "left": 696
+          }
+        },
+        {
+          "id": "",
+          "rect": {
+            "x": 771,
+            "y": 314,
+            "width": 70,
+            "height": 70,
+            "top": 314,
+            "right": 841,
+            "bottom": 384,
+            "left": 771
+          }
+        },
+        {
+          "id": "switchBtn",
+          "rect": {
+            "x": 43,
+            "y": 115,
+            "width": 70,
+            "height": 70,
+            "top": 115,
+            "right": 113,
+            "bottom": 185,
+            "left": 43
+          }
+        },
+        {
+          "id": "powerBtn",
+          "rect": {
+            "x": 43,
+            "y": 190,
+            "width": 70,
+            "height": 70,
+            "top": 190,
+            "right": 113,
+            "bottom": 260,
+            "left": 43
+          }
+        },
+        {
+          "id": "",
+          "rect": {
+            "x": 43,
+            "y": 265,
+            "width": 70,
+            "height": 70,
+            "top": 265,
+            "right": 113,
+            "bottom": 335,
+            "left": 43
+          }
+        }
+      ],
+      "canvas": {
+        "x": 199.328125,
+        "y": 112,
+        "width": 453.328125,
+        "height": 255,
+        "top": 112,
+        "right": 652.65625,
+        "bottom": 367,
+        "left": 199.328125
+      },
+      "button": 70
+    },
+    {
+      "world": "alaska",
+      "width": 932,
+      "height": 430,
+      "inputResult": {
+        "mouseIgnored": true,
+        "cancelSafe": true,
+        "quickTap": true,
+        "otherHeld": true,
+        "contextMenuPrevented": true
+      },
+      "controls": [
+        {
+          "id": "",
+          "rect": {
+            "x": 776,
+            "y": 351,
+            "width": 70,
+            "height": 70,
+            "top": 351,
+            "right": 846,
+            "bottom": 421,
+            "left": 776
+          }
+        },
+        {
+          "id": "",
+          "rect": {
+            "x": 851,
+            "y": 351,
+            "width": 70,
+            "height": 70,
+            "top": 351,
+            "right": 921,
+            "bottom": 421,
+            "left": 851
+          }
+        },
+        {
+          "id": "switchBtn",
+          "rect": {
+            "x": 43,
+            "y": 115,
+            "width": 70,
+            "height": 70,
+            "top": 115,
+            "right": 113,
+            "bottom": 185,
+            "left": 43
+          }
+        },
+        {
+          "id": "powerBtn",
+          "rect": {
+            "x": 43,
+            "y": 190,
+            "width": 70,
+            "height": 70,
+            "top": 190,
+            "right": 113,
+            "bottom": 260,
+            "left": 43
+          }
+        },
+        {
+          "id": "",
+          "rect": {
+            "x": 43,
+            "y": 265,
+            "width": 70,
+            "height": 70,
+            "top": 265,
+            "right": 113,
+            "bottom": 335,
+            "left": 43
+          }
+        }
+      ],
+      "canvas": {
+        "x": 206.4375,
+        "y": 112,
+        "width": 519.109375,
+        "height": 292,
+        "top": 112,
+        "right": 725.546875,
+        "bottom": 404,
+        "left": 206.4375
+      },
+      "button": 70
+    },
+    {
+      "world": "alaska",
+      "width": 740,
+      "height": 280,
+      "inputResult": {
+        "mouseIgnored": true,
+        "cancelSafe": true,
+        "quickTap": true,
+        "otherHeld": true,
+        "contextMenuPrevented": true
+      },
+      "controls": [
+        {
+          "id": "",
+          "rect": {
+            "x": 594,
+            "y": 206,
+            "width": 65,
+            "height": 65,
+            "top": 206,
+            "right": 659,
+            "bottom": 271,
+            "left": 594
+          }
+        },
+        {
+          "id": "",
+          "rect": {
+            "x": 664,
+            "y": 206,
+            "width": 65,
+            "height": 65,
+            "top": 206,
+            "right": 729,
+            "bottom": 271,
+            "left": 664
+          }
+        },
+        {
+          "id": "switchBtn",
+          "rect": {
+            "x": 43,
+            "y": 136,
+            "width": 65,
+            "height": 65,
+            "top": 136,
+            "right": 108,
+            "bottom": 201,
+            "left": 43
+          }
+        },
+        {
+          "id": "powerBtn",
+          "rect": {
+            "x": 113,
+            "y": 136,
+            "width": 65,
+            "height": 65,
+            "top": 136,
+            "right": 178,
+            "bottom": 201,
+            "left": 113
+          }
+        },
+        {
+          "id": "",
+          "rect": {
+            "x": 43,
+            "y": 206,
+            "width": 65,
+            "height": 65,
+            "top": 206,
+            "right": 108,
+            "bottom": 271,
+            "left": 43
+          }
+        }
+      ],
+      "canvas": {
+        "x": 258,
+        "y": 128,
+        "width": 224,
+        "height": 126,
+        "top": 128,
+        "right": 482,
+        "bottom": 254,
+        "left": 258
+      },
+      "button": 65
+    },
+    {
+      "world": "alaska",
+      "width": 740,
+      "height": 240,
+      "inputResult": {
+        "mouseIgnored": true,
+        "cancelSafe": true,
+        "quickTap": true,
+        "otherHeld": true,
+        "contextMenuPrevented": true
+      },
+      "controls": [
+        {
+          "id": "",
+          "rect": {
+            "x": 634,
+            "y": 186,
+            "width": 45,
+            "height": 45,
+            "top": 186,
+            "right": 679,
+            "bottom": 231,
+            "left": 634
+          }
+        },
+        {
+          "id": "",
+          "rect": {
+            "x": 684,
+            "y": 186,
+            "width": 45,
+            "height": 45,
+            "top": 186,
+            "right": 729,
+            "bottom": 231,
+            "left": 684
+          }
+        },
+        {
+          "id": "switchBtn",
+          "rect": {
+            "x": 43,
+            "y": 136,
+            "width": 45,
+            "height": 45,
+            "top": 136,
+            "right": 88,
+            "bottom": 181,
+            "left": 43
+          }
+        },
+        {
+          "id": "powerBtn",
+          "rect": {
+            "x": 93,
+            "y": 136,
+            "width": 45,
+            "height": 45,
+            "top": 136,
+            "right": 138,
+            "bottom": 181,
+            "left": 93
+          }
+        },
+        {
+          "id": "",
+          "rect": {
+            "x": 43,
+            "y": 186,
+            "width": 45,
+            "height": 45,
+            "top": 186,
+            "right": 88,
+            "bottom": 231,
+            "left": 43
+          }
+        }
+      ],
+      "canvas": {
+        "x": 293.546875,
+        "y": 128,
+        "width": 152.875,
+        "height": 86,
+        "top": 128,
+        "right": 446.421875,
+        "bottom": 214,
+        "left": 293.546875
+      },
+      "button": 45
+    }
+  ],
+  "errors": []
+}

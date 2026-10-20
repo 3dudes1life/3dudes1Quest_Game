@@ -1,0 +1,28 @@
+# Cross-platform input and interface audit
+
+The active entries are `index.html`, `tahoe.html` and `alaska.html`. They use the shared runtime, viewport manager, Survival module, interface focus manager and artwork renderer. Existing world implementations still own combat, collision, bosses, checkpoints and saves. This candidate extends those shared owners instead of adding a new engine or control system.
+
+| Priority | Verified issue or requirement gap | Repair | Evidence |
+|---|---|---|---|
+| P1 | A cancelled touch retained an unconsumed jump/action, allowing an action after cancellation. | Discard its pending action when no other source holds that action. Preserve complete quick taps and independent key/contact aliases. | [Baseline reproduction](evidence/input-before.json), actual runtime cancellation/quick-tap/second-source assertions. |
+| P2 | Secondary mouse pointer presses on movement controls could move the player. | Accept primary mouse presses for held controls, consistent with discrete buttons. | Same baseline reproduction and candidate regression. |
+| P2 | Browser context menus were not cancelled on game buttons. | Suppress context menus only on game surfaces; use touch-action/user-select/callout CSS on gameplay buttons. Reserved OS gestures remain OS-controlled. | Cancelable context-menu dispatch and existing touch/selection styles; physical long-press/edge gestures still require owner checks. |
+| P1 | A three-button vertical action column cannot retain usable targets below the HUD at the shortest landscape heights. | Height-aware sizes and a two-row action cluster when the column cannot fit; retain minimum44px targets. | Native before/after captures and bounds assertions down to 740×240, including maximum saved adjustments. |
+| P1 | Court phase 3 drain warning wrapped to38px and overlapped the740×240 world by6px. | Reserve another HUD line on narrow touch landscapes; no per-frame observer or camera change. | [Before geometry](evidence/narrow-hud-before.json); all six encounters in Legacy/Survival with adjusted large controls at 740×240. |
+| P2 | Menu button display CSS overrode native hidden, drawing unavailable mode actions on a fresh title. | Scope a hidden override to Survival menu buttons. | Native Safari before/after and fresh-title assertions in all three worlds. |
+| P1 | Native Safari navigation reproduced a newer committed save arriving while the destination was still an untouched title; the active-writer guard froze that landing page. | Untouched titles may adopt a complete validated commit. Pages that have ever entered gameplay retain the freeze and overwrite protection. | Native Safari corrected Tahoe/Alaska landings; two-tab tests verify whole-record refresh, retained roster/health/charge and active/returned-title rejection. Underlying browser event ordering is not claimed. |
+| Requirement | Preferences offered size and handedness but no positions or reset. | Movement/action inset and lift, safe gutter clamping, persistent backward-compatible preference fields, explicit reset and storage-refusal feedback. | Native menus, reload persistence, separate campaign-save comparison, quota refusal and reset tests across all three worlds. |
+| P2 | Fullscreen/visibility interruption did not explicitly clear all discrete button presentation states. | Clear captured press presentation on fullscreen/visibility changes; held input also releases on fullscreen changes. Existing rotation/recovery ownership is retained. | Input and focus recovery tests, real supported headless fullscreen entry/exit, controlled interruption events. |
+| Investigation | First-use outline draws can briefly approach/exceed a frame budget. | Renderer remains unchanged: experiments did not demonstrate a clear improvement and one raster hint failed pixel equivalence. Do not trade artwork consistency or doubled readiness time for an unproven gain. | Matched input/first-use measurements, pixel/interior/outline regression and demanding encounter profiling. Cold spikes remain a profiling limitation; no claim of GPU timing or hardware-to-photon latency. |
+
+## Preserved behavior
+
+Build 4's held-input character switching, fourth-contact actions, independent health, permanent run knockouts, charge/contribution rules, team tiers, practice isolation, ended-run recovery, stale-tab protection and accessible menus are retained. All movement, gravity, collision, attack and boss values remain unchanged. The same actual loops are tested under30/60/90/120Hz controlled schedules, including late boss states and team activation; rendering is omitted only in that scheduling fixture to isolate simulation.
+
+Approved character/environment assets, enemy outlines/shadows, parallax, dying/restored Tahoe forest, six encounters, original audio and55-second Origin Story are preserved. Pixel regressions verify original actor interiors and bounded outlines. No new worlds, bosses, powers, controller mappings or public difficulty tuning are included.
+
+## Compatibility boundaries
+
+Installed Chrome, Playwright WebKit and CI browser engines are reported by exact version/platform. WebKit is not branded Safari; headless engine tests do not establish physical-phone acceptance. Local Firefox launch failures occur before page load and remain explicitly blocked locally. CI's Linux Firefox result is separate evidence, not a relabeling of the local failure.
+
+Gamepad API presence and connected-device count are inspected. There is no existing gameplay polling/mapping, no connected controller is assumed, and no controller system is introduced. Human ergonomics, real browser zoom, system gestures, phone calls, installed mobile PWA lifecycle and thermal/GPU behavior remain owner-operated checks.

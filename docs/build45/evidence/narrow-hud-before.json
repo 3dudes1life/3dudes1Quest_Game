@@ -1,0 +1,23 @@
+{
+  "status": "reproduced before narrow HUD repair",
+  "viewport": [
+    740,
+    240
+  ],
+  "encounter": "Court phase3 drain warning",
+  "bossRect": {
+    "x": 436,
+    "y": 80,
+    "width": 296,
+    "height": 38,
+    "bottom": 118
+  },
+  "worldRect": {
+    "x": 279.328125,
+    "y": 112,
+    "width": 181.328125,
+    "height": 102
+  },
+  "overlapY": 6,
+  "repair": "Reserve one additional HUD line on touch landscape widths below800; no per-frame HUD observer."
+}

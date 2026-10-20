@@ -1,0 +1,1117 @@
+{
+  "method": "Controlled 30/60/90/120Hz RAF scheduler around each actual runtime loop; eight simulated seconds per case, input dispatched at identical simulation ticks. Rendering omitted to isolate simulation; deterministic random fixture and damage protection, explicit arena prerequisites. Not display refresh or hardware certification.",
+  "results": [
+    {
+      "world": "socal",
+      "encounter": false,
+      "hz": 30,
+      "snapshot": {
+        "ticks": 480,
+        "apex": 424.9088,
+        "player": {
+          "x": 717.54,
+          "y": 548,
+          "vx": 0,
+          "vy": 0,
+          "inv": 99520
+        },
+        "active": 1,
+        "health": [
+          4,
+          4,
+          4
+        ],
+        "charge": 5,
+        "contributions": [
+          true,
+          false,
+          false
+        ],
+        "saveSequence": 31,
+        "checkpoint": 0,
+        "shots": [],
+        "cooldown": 0,
+        "boss": {
+          "judges": [],
+          "phase": 1,
+          "drain": 0,
+          "timer": 360,
+          "warning": 0
+        }
+      }
+    },
+    {
+      "world": "socal",
+      "encounter": false,
+      "hz": 60,
+      "snapshot": {
+        "ticks": 480,
+        "apex": 424.9088,
+        "player": {
+          "x": 717.54,
+          "y": 548,
+          "vx": 0,
+          "vy": 0,
+          "inv": 99520
+        },
+        "active": 1,
+        "health": [
+          4,
+          4,
+          4
+        ],
+        "charge": 5,
+        "contributions": [
+          true,
+          false,
+          false
+        ],
+        "saveSequence": 31,
+        "checkpoint": 0,
+        "shots": [],
+        "cooldown": 0,
+        "boss": {
+          "judges": [],
+          "phase": 1,
+          "drain": 0,
+          "timer": 360,
+          "warning": 0
+        }
+      }
+    },
+    {
+      "world": "socal",
+      "encounter": false,
+      "hz": 90,
+      "snapshot": {
+        "ticks": 480,
+        "apex": 424.9088,
+        "player": {
+          "x": 717.54,
+          "y": 548,
+          "vx": 0,
+          "vy": 0,
+          "inv": 99520
+        },
+        "active": 1,
+        "health": [
+          4,
+          4,
+          4
+        ],
+        "charge": 5,
+        "contributions": [
+          true,
+          false,
+          false
+        ],
+        "saveSequence": 31,
+        "checkpoint": 0,
+        "shots": [],
+        "cooldown": 0,
+        "boss": {
+          "judges": [],
+          "phase": 1,
+          "drain": 0,
+          "timer": 360,
+          "warning": 0
+        }
+      }
+    },
+    {
+      "world": "socal",
+      "encounter": false,
+      "hz": 120,
+      "snapshot": {
+        "ticks": 480,
+        "apex": 424.9088,
+        "player": {
+          "x": 717.54,
+          "y": 548,
+          "vx": 0,
+          "vy": 0,
+          "inv": 99520
+        },
+        "active": 1,
+        "health": [
+          4,
+          4,
+          4
+        ],
+        "charge": 5,
+        "contributions": [
+          true,
+          false,
+          false
+        ],
+        "saveSequence": 31,
+        "checkpoint": 0,
+        "shots": [],
+        "cooldown": 0,
+        "boss": {
+          "judges": [],
+          "phase": 1,
+          "drain": 0,
+          "timer": 360,
+          "warning": 0
+        }
+      }
+    },
+    {
+      "world": "socal",
+      "encounter": true,
+      "hz": 30,
+      "snapshot": {
+        "ticks": 480,
+        "apex": 424.9088,
+        "player": {
+          "x": 8542.482371,
+          "y": 548,
+          "vx": 0,
+          "vy": 0,
+          "inv": 99520
+        },
+        "active": 1,
+        "health": [
+          4,
+          4,
+          4
+        ],
+        "charge": 0,
+        "contributions": [
+          false,
+          false,
+          false
+        ],
+        "saveSequence": 31,
+        "checkpoint": 0,
+        "shots": [],
+        "cooldown": 0,
+        "boss": {
+          "judges": [
+            {
+              "hp": 1,
+              "alive": true,
+              "cool": 13
+            },
+            {
+              "hp": 1,
+              "alive": true,
+              "cool": 105
+            },
+            {
+              "hp": 1,
+              "alive": true,
+              "cool": 210
+            },
+            {
+              "hp": 1,
+              "alive": true,
+              "cool": 30
+            },
+            {
+              "hp": 0,
+              "alive": false,
+              "cool": 159
+            },
+            {
+              "hp": 0,
+              "alive": false,
+              "cool": 197
+            },
+            {
+              "hp": 0,
+              "alive": false,
+              "cool": 233
+            },
+            {
+              "hp": 0,
+              "alive": false,
+              "cool": 275
+            },
+            {
+              "hp": 0,
+              "alive": false,
+              "cool": 310
+            }
+          ],
+          "phase": 3,
+          "drain": 0,
+          "timer": 239,
+          "warning": 0
+        }
+      }
+    },
+    {
+      "world": "socal",
+      "encounter": true,
+      "hz": 60,
+      "snapshot": {
+        "ticks": 480,
+        "apex": 424.9088,
+        "player": {
+          "x": 8542.482371,
+          "y": 548,
+          "vx": 0,
+          "vy": 0,
+          "inv": 99520
+        },
+        "active": 1,
+        "health": [
+          4,
+          4,
+          4
+        ],
+        "charge": 0,
+        "contributions": [
+          false,
+          false,
+          false
+        ],
+        "saveSequence": 31,
+        "checkpoint": 0,
+        "shots": [],
+        "cooldown": 0,
+        "boss": {
+          "judges": [
+            {
+              "hp": 1,
+              "alive": true,
+              "cool": 13
+            },
+            {
+              "hp": 1,
+              "alive": true,
+              "cool": 105
+            },
+            {
+              "hp": 1,
+              "alive": true,
+              "cool": 210
+            },
+            {
+              "hp": 1,
+              "alive": true,
+              "cool": 30
+            },
+            {
+              "hp": 0,
+              "alive": false,
+              "cool": 159
+            },
+            {
+              "hp": 0,
+              "alive": false,
+              "cool": 197
+            },
+            {
+              "hp": 0,
+              "alive": false,
+              "cool": 233
+            },
+            {
+              "hp": 0,
+              "alive": false,
+              "cool": 275
+            },
+            {
+              "hp": 0,
+              "alive": false,
+              "cool": 310
+            }
+          ],
+          "phase": 3,
+          "drain": 0,
+          "timer": 239,
+          "warning": 0
+        }
+      }
+    },
+    {
+      "world": "socal",
+      "encounter": true,
+      "hz": 90,
+      "snapshot": {
+        "ticks": 480,
+        "apex": 424.9088,
+        "player": {
+          "x": 8542.482371,
+          "y": 548,
+          "vx": 0,
+          "vy": 0,
+          "inv": 99520
+        },
+        "active": 1,
+        "health": [
+          4,
+          4,
+          4
+        ],
+        "charge": 0,
+        "contributions": [
+          false,
+          false,
+          false
+        ],
+        "saveSequence": 31,
+        "checkpoint": 0,
+        "shots": [],
+        "cooldown": 0,
+        "boss": {
+          "judges": [
+            {
+              "hp": 1,
+              "alive": true,
+              "cool": 13
+            },
+            {
+              "hp": 1,
+              "alive": true,
+              "cool": 105
+            },
+            {
+              "hp": 1,
+              "alive": true,
+              "cool": 210
+            },
+            {
+              "hp": 1,
+              "alive": true,
+              "cool": 30
+            },
+            {
+              "hp": 0,
+              "alive": false,
+              "cool": 159
+            },
+            {
+              "hp": 0,
+              "alive": false,
+              "cool": 197
+            },
+            {
+              "hp": 0,
+              "alive": false,
+              "cool": 233
+            },
+            {
+              "hp": 0,
+              "alive": false,
+              "cool": 275
+            },
+            {
+              "hp": 0,
+              "alive": false,
+              "cool": 310
+            }
+          ],
+          "phase": 3,
+          "drain": 0,
+          "timer": 239,
+          "warning": 0
+        }
+      }
+    },
+    {
+      "world": "socal",
+      "encounter": true,
+      "hz": 120,
+      "snapshot": {
+        "ticks": 480,
+        "apex": 424.9088,
+        "player": {
+          "x": 8542.482371,
+          "y": 548,
+          "vx": 0,
+          "vy": 0,
+          "inv": 99520
+        },
+        "active": 1,
+        "health": [
+          4,
+          4,
+          4
+        ],
+        "charge": 0,
+        "contributions": [
+          false,
+          false,
+          false
+        ],
+        "saveSequence": 31,
+        "checkpoint": 0,
+        "shots": [],
+        "cooldown": 0,
+        "boss": {
+          "judges": [
+            {
+              "hp": 1,
+              "alive": true,
+              "cool": 13
+            },
+            {
+              "hp": 1,
+              "alive": true,
+              "cool": 105
+            },
+            {
+              "hp": 1,
+              "alive": true,
+              "cool": 210
+            },
+            {
+              "hp": 1,
+              "alive": true,
+              "cool": 30
+            },
+            {
+              "hp": 0,
+              "alive": false,
+              "cool": 159
+            },
+            {
+              "hp": 0,
+              "alive": false,
+              "cool": 197
+            },
+            {
+              "hp": 0,
+              "alive": false,
+              "cool": 233
+            },
+            {
+              "hp": 0,
+              "alive": false,
+              "cool": 275
+            },
+            {
+              "hp": 0,
+              "alive": false,
+              "cool": 310
+            }
+          ],
+          "phase": 3,
+          "drain": 0,
+          "timer": 239,
+          "warning": 0
+        }
+      }
+    },
+    {
+      "world": "tahoe",
+      "encounter": false,
+      "hz": 30,
+      "snapshot": {
+        "ticks": 480,
+        "apex": 374.9088,
+        "player": {
+          "x": 863.14,
+          "y": 498,
+          "vx": 0,
+          "vy": 0,
+          "inv": 92200
+        },
+        "active": 1,
+        "health": [
+          4,
+          4,
+          4
+        ],
+        "charge": 0,
+        "contributions": [
+          false,
+          false,
+          false
+        ],
+        "saveSequence": 33,
+        "checkpoint": 250,
+        "shots": [],
+        "cooldown": 0,
+        "boss": {
+          "hp": 18,
+          "phase": 1,
+          "attackTimer": 1200,
+          "spawnTimer": 1900
+        }
+      }
+    },
+    {
+      "world": "tahoe",
+      "encounter": false,
+      "hz": 60,
+      "snapshot": {
+        "ticks": 480,
+        "apex": 374.9088,
+        "player": {
+          "x": 863.14,
+          "y": 498,
+          "vx": 0,
+          "vy": 0,
+          "inv": 92200
+        },
+        "active": 1,
+        "health": [
+          4,
+          4,
+          4
+        ],
+        "charge": 0,
+        "contributions": [
+          false,
+          false,
+          false
+        ],
+        "saveSequence": 33,
+        "checkpoint": 250,
+        "shots": [],
+        "cooldown": 0,
+        "boss": {
+          "hp": 18,
+          "phase": 1,
+          "attackTimer": 1200,
+          "spawnTimer": 1900
+        }
+      }
+    },
+    {
+      "world": "tahoe",
+      "encounter": false,
+      "hz": 90,
+      "snapshot": {
+        "ticks": 480,
+        "apex": 374.9088,
+        "player": {
+          "x": 863.14,
+          "y": 498,
+          "vx": 0,
+          "vy": 0,
+          "inv": 92200
+        },
+        "active": 1,
+        "health": [
+          4,
+          4,
+          4
+        ],
+        "charge": 0,
+        "contributions": [
+          false,
+          false,
+          false
+        ],
+        "saveSequence": 33,
+        "checkpoint": 250,
+        "shots": [],
+        "cooldown": 0,
+        "boss": {
+          "hp": 18,
+          "phase": 1,
+          "attackTimer": 1200,
+          "spawnTimer": 1900
+        }
+      }
+    },
+    {
+      "world": "tahoe",
+      "encounter": false,
+      "hz": 120,
+      "snapshot": {
+        "ticks": 480,
+        "apex": 374.9088,
+        "player": {
+          "x": 863.14,
+          "y": 498,
+          "vx": 0,
+          "vy": 0,
+          "inv": 92200
+        },
+        "active": 1,
+        "health": [
+          4,
+          4,
+          4
+        ],
+        "charge": 0,
+        "contributions": [
+          false,
+          false,
+          false
+        ],
+        "saveSequence": 33,
+        "checkpoint": 250,
+        "shots": [],
+        "cooldown": 0,
+        "boss": {
+          "hp": 18,
+          "phase": 1,
+          "attackTimer": 1200,
+          "spawnTimer": 1900
+        }
+      }
+    },
+    {
+      "world": "tahoe",
+      "encounter": true,
+      "hz": 30,
+      "snapshot": {
+        "ticks": 480,
+        "apex": 220.093126,
+        "player": {
+          "x": 9010.44,
+          "y": 318.393697,
+          "vx": 0,
+          "vy": 0,
+          "inv": 92050
+        },
+        "active": 1,
+        "health": [
+          4,
+          4,
+          4
+        ],
+        "charge": 0,
+        "contributions": [
+          false,
+          false,
+          false
+        ],
+        "saveSequence": 33,
+        "checkpoint": 6820,
+        "shots": [],
+        "cooldown": 0,
+        "boss": {
+          "hp": 16,
+          "phase": 3,
+          "attackTimer": 98.333333,
+          "spawnTimer": 1450
+        }
+      }
+    },
+    {
+      "world": "tahoe",
+      "encounter": true,
+      "hz": 60,
+      "snapshot": {
+        "ticks": 480,
+        "apex": 220.093126,
+        "player": {
+          "x": 9010.44,
+          "y": 318.393697,
+          "vx": 0,
+          "vy": 0,
+          "inv": 92050
+        },
+        "active": 1,
+        "health": [
+          4,
+          4,
+          4
+        ],
+        "charge": 0,
+        "contributions": [
+          false,
+          false,
+          false
+        ],
+        "saveSequence": 33,
+        "checkpoint": 6820,
+        "shots": [],
+        "cooldown": 0,
+        "boss": {
+          "hp": 16,
+          "phase": 3,
+          "attackTimer": 98.333333,
+          "spawnTimer": 1450
+        }
+      }
+    },
+    {
+      "world": "tahoe",
+      "encounter": true,
+      "hz": 90,
+      "snapshot": {
+        "ticks": 480,
+        "apex": 220.093126,
+        "player": {
+          "x": 9010.44,
+          "y": 318.393697,
+          "vx": 0,
+          "vy": 0,
+          "inv": 92050
+        },
+        "active": 1,
+        "health": [
+          4,
+          4,
+          4
+        ],
+        "charge": 0,
+        "contributions": [
+          false,
+          false,
+          false
+        ],
+        "saveSequence": 33,
+        "checkpoint": 6820,
+        "shots": [],
+        "cooldown": 0,
+        "boss": {
+          "hp": 16,
+          "phase": 3,
+          "attackTimer": 98.333333,
+          "spawnTimer": 1450
+        }
+      }
+    },
+    {
+      "world": "tahoe",
+      "encounter": true,
+      "hz": 120,
+      "snapshot": {
+        "ticks": 480,
+        "apex": 220.093126,
+        "player": {
+          "x": 9010.44,
+          "y": 318.393697,
+          "vx": 0,
+          "vy": 0,
+          "inv": 92050
+        },
+        "active": 1,
+        "health": [
+          4,
+          4,
+          4
+        ],
+        "charge": 0,
+        "contributions": [
+          false,
+          false,
+          false
+        ],
+        "saveSequence": 33,
+        "checkpoint": 6820,
+        "shots": [],
+        "cooldown": 0,
+        "boss": {
+          "hp": 16,
+          "phase": 3,
+          "attackTimer": 98.333333,
+          "spawnTimer": 1450
+        }
+      }
+    },
+    {
+      "world": "alaska",
+      "encounter": false,
+      "hz": 30,
+      "snapshot": {
+        "ticks": 480,
+        "apex": 424.9088,
+        "player": {
+          "x": 727.54,
+          "y": 548,
+          "vx": 0,
+          "vy": 0,
+          "inv": 99520
+        },
+        "active": 1,
+        "health": [
+          4,
+          4,
+          4
+        ],
+        "charge": 0,
+        "contributions": [
+          false,
+          false,
+          false
+        ],
+        "saveSequence": 30,
+        "checkpoint": 160,
+        "shots": [],
+        "cooldown": 0,
+        "boss": {
+          "hp": 12,
+          "shield": 0,
+          "phase": 1,
+          "timer": 100,
+          "blizzard": 0
+        }
+      }
+    },
+    {
+      "world": "alaska",
+      "encounter": false,
+      "hz": 60,
+      "snapshot": {
+        "ticks": 480,
+        "apex": 424.9088,
+        "player": {
+          "x": 727.54,
+          "y": 548,
+          "vx": 0,
+          "vy": 0,
+          "inv": 99520
+        },
+        "active": 1,
+        "health": [
+          4,
+          4,
+          4
+        ],
+        "charge": 0,
+        "contributions": [
+          false,
+          false,
+          false
+        ],
+        "saveSequence": 30,
+        "checkpoint": 160,
+        "shots": [],
+        "cooldown": 0,
+        "boss": {
+          "hp": 12,
+          "shield": 0,
+          "phase": 1,
+          "timer": 100,
+          "blizzard": 0
+        }
+      }
+    },
+    {
+      "world": "alaska",
+      "encounter": false,
+      "hz": 90,
+      "snapshot": {
+        "ticks": 480,
+        "apex": 424.9088,
+        "player": {
+          "x": 727.54,
+          "y": 548,
+          "vx": 0,
+          "vy": 0,
+          "inv": 99520
+        },
+        "active": 1,
+        "health": [
+          4,
+          4,
+          4
+        ],
+        "charge": 0,
+        "contributions": [
+          false,
+          false,
+          false
+        ],
+        "saveSequence": 30,
+        "checkpoint": 160,
+        "shots": [],
+        "cooldown": 0,
+        "boss": {
+          "hp": 12,
+          "shield": 0,
+          "phase": 1,
+          "timer": 100,
+          "blizzard": 0
+        }
+      }
+    },
+    {
+      "world": "alaska",
+      "encounter": false,
+      "hz": 120,
+      "snapshot": {
+        "ticks": 480,
+        "apex": 424.9088,
+        "player": {
+          "x": 727.54,
+          "y": 548,
+          "vx": 0,
+          "vy": 0,
+          "inv": 99520
+        },
+        "active": 1,
+        "health": [
+          4,
+          4,
+          4
+        ],
+        "charge": 0,
+        "contributions": [
+          false,
+          false,
+          false
+        ],
+        "saveSequence": 30,
+        "checkpoint": 160,
+        "shots": [],
+        "cooldown": 0,
+        "boss": {
+          "hp": 12,
+          "shield": 0,
+          "phase": 1,
+          "timer": 100,
+          "blizzard": 0
+        }
+      }
+    },
+    {
+      "world": "alaska",
+      "encounter": true,
+      "hz": 30,
+      "snapshot": {
+        "ticks": 480,
+        "apex": 424.9088,
+        "player": {
+          "x": 7129.632371,
+          "y": 548,
+          "vx": 0,
+          "vy": 0,
+          "inv": 99520
+        },
+        "active": 1,
+        "health": [
+          4,
+          4,
+          4
+        ],
+        "charge": 0,
+        "contributions": [
+          false,
+          false,
+          false
+        ],
+        "saveSequence": 29,
+        "checkpoint": 6320,
+        "shots": [],
+        "cooldown": 0,
+        "boss": {
+          "hp": 11,
+          "shield": 0,
+          "phase": 1,
+          "timer": 0,
+          "blizzard": 0
+        }
+      }
+    },
+    {
+      "world": "alaska",
+      "encounter": true,
+      "hz": 60,
+      "snapshot": {
+        "ticks": 480,
+        "apex": 424.9088,
+        "player": {
+          "x": 7129.632371,
+          "y": 548,
+          "vx": 0,
+          "vy": 0,
+          "inv": 99520
+        },
+        "active": 1,
+        "health": [
+          4,
+          4,
+          4
+        ],
+        "charge": 0,
+        "contributions": [
+          false,
+          false,
+          false
+        ],
+        "saveSequence": 29,
+        "checkpoint": 6320,
+        "shots": [],
+        "cooldown": 0,
+        "boss": {
+          "hp": 11,
+          "shield": 0,
+          "phase": 1,
+          "timer": 0,
+          "blizzard": 0
+        }
+      }
+    },
+    {
+      "world": "alaska",
+      "encounter": true,
+      "hz": 90,
+      "snapshot": {
+        "ticks": 480,
+        "apex": 424.9088,
+        "player": {
+          "x": 7129.632371,
+          "y": 548,
+          "vx": 0,
+          "vy": 0,
+          "inv": 99520
+        },
+        "active": 1,
+        "health": [
+          4,
+          4,
+          4
+        ],
+        "charge": 0,
+        "contributions": [
+          false,
+          false,
+          false
+        ],
+        "saveSequence": 29,
+        "checkpoint": 6320,
+        "shots": [],
+        "cooldown": 0,
+        "boss": {
+          "hp": 11,
+          "shield": 0,
+          "phase": 1,
+          "timer": 0,
+          "blizzard": 0
+        }
+      }
+    },
+    {
+      "world": "alaska",
+      "encounter": true,
+      "hz": 120,
+      "snapshot": {
+        "ticks": 480,
+        "apex": 424.9088,
+        "player": {
+          "x": 7129.632371,
+          "y": 548,
+          "vx": 0,
+          "vy": 0,
+          "inv": 99520
+        },
+        "active": 1,
+        "health": [
+          4,
+          4,
+          4
+        ],
+        "charge": 0,
+        "contributions": [
+          false,
+          false,
+          false
+        ],
+        "saveSequence": 29,
+        "checkpoint": 6320,
+        "shots": [],
+        "cooldown": 0,
+        "boss": {
+          "hp": 11,
+          "shield": 0,
+          "phase": 1,
+          "timer": 0,
+          "blizzard": 0
+        }
+      }
+    }
+  ]
+}

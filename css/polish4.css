@@ -44,3 +44,6 @@
 .quest-layout :is(#survivalPauseStatus,#survivalEndStatus):empty{display:none}
 .quest-layout :is(.pauseMenu,.storyCard,.trailheadCard) a{border:2px solid #b8b8c0;border-radius:2px;background:#282858;color:#fff;font:700 14px/1.4 ui-monospace,monospace}
 .quest-layout #bossHud :is(small,b){font-size:12px;line-height:1.25}
+
+/* Native hidden must win over the mode menu button display rule. */
+.quest-layout .survivalMenu button[hidden]{display:none!important}
