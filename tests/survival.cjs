@@ -6,7 +6,7 @@ module.exports=async function(browser,base){
   try{
    for(const [world,url,button]of[['socal','index','#startBtn'],['tahoe','tahoe','#beginTahoe'],['alaska','alaska','#beginAdventure']]){
     await p.goto(base+'/'+url+'.html?qa');await p.waitForFunction(()=>!(document.querySelector('#startBtn')||document.querySelector('#beginTahoe')||document.querySelector('#beginAdventure')).disabled);
-    if(world==='socal')await p.evaluate(()=>{localStorage.setItem('3dudes1quest-save-109','{"legacy":"untouched"}');localStorage.setItem('3dudes1quest-save-108x','{"state":{"health":1},"legacy":true}');QuestSurvival.begin()});
+    if(world==='socal')assert.equal(await p.evaluate(()=>{QuestJourney.complete('socal');localStorage.setItem('3dudes1quest-save-109','{"legacy":"untouched"}');localStorage.setItem('3dudes1quest-save-108x','{"state":{"health":1},"legacy":true}');QuestSurvival.begin();return ![...document.querySelectorAll('#titleScreen .journeyRoute small')].some(e=>e.textContent==='CLEARED')}),true);
     await p.locator(button).click();
     await p.evaluate(()=>{(window.__questGame?.clock||window.__TAHOE_TEST__?.clock||window.__ADVENTURE_TEST__?.clock).stop()});
     if(world==='socal'){

@@ -40,7 +40,7 @@
   const old=record;
   record={schema:1,enabled:true,id:Date.now().toString(36),sequence:0,characters:names.map(()=>({hp:4,available:true})),active:[0,1,2].includes(startingDude)?startingDude:0,charge:0,contributions:[false,false,false],currentWorld:world,completedWorlds:[],achievements:[],status:'playing',worlds:{},ledger:{},history:old?[...(old.history||[]),{id:old.id,status:old.status,characters:old.characters,completedWorlds:old.completedWorlds,achievements:old.achievements}]:[]};
   if(!store()){record=old;announce('Survival could not start: storage unavailable. Existing saves are safe.');return false}
-  shieldUntil=chargeBlockedUntil=0;render();return true;
+  shieldUntil=chargeBlockedUntil=0;render();window.QuestJourney?.render();return true;
  }
  function leave(){if(!record)return true;const old=record.enabled;record.enabled=false;if(!store()){record.enabled=old;return false}return true}
  function routeKey(k){return worldKeys.some(w=>k===w||k.startsWith(w+'-'))||k==='3dudes1quest_journey'}

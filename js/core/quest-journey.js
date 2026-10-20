@@ -22,13 +22,13 @@
         const item=document.createElement('li');if(world.id===current)item.setAttribute('aria-current','step');
         const label=document.createElement(world.url?'a':'span');label.textContent=`${i+1}. ${world.name}`;
         if(world.url)label.href=world.url;
-        const status=document.createElement('small');status.textContent=completed[world.id]?'CLEARED':world.url?(world.id===current?'YOU ARE HERE':'PLAYABLE'):'COMING SOON';
+        const status=document.createElement('small');status.textContent=(QuestSurvival.enabled()?QuestSurvival.state.completedWorlds.includes(world.id):completed[world.id])?'CLEARED':world.url?(world.id===current?'YOU ARE HERE':'PLAYABLE'):'COMING SOON';
         item.append(label,status);route.append(item);
       }
       panel.append(route);
     }
   }
   function next(id){const index=worlds.findIndex(w=>w.id===id);return index>=0?worlds[index+1]||null:null}
-  window.QuestJourney=Object.freeze({worlds,complete,next});
+  window.QuestJourney=Object.freeze({worlds,complete,next,render});
   document.addEventListener('DOMContentLoaded',render);
 })();
