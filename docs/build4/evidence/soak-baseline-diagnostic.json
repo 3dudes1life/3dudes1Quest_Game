@@ -1,0 +1,4411 @@
+{
+  "method": "Two isolated desktop/emulated-touch contexts in one local headless Chrome. Protected tester namespace; real movement/jump/attack/switch/pause input; direct world navigation every minute. Team charge uses labeled synthetic HP-threshold fixtures, then real T activation. GC-forced retained heap and CDP listener counts every 10s; RAF includes GC/navigation overhead. Not a natural campaign, physical-device or thermal certification.",
+  "base": "http://127.0.0.1:8886",
+  "minutes": 5,
+  "wallSeconds": 300.542,
+  "results": [
+    {
+      "mobile": true,
+      "wallSeconds": 300.289,
+      "operations": {
+        "switches": 60,
+        "pauses": 15,
+        "teams": 5,
+        "worldEntries": 5
+      },
+      "samples": [
+        {
+          "seconds": 2.049,
+          "world": "socal",
+          "retainedHeap": 3259992,
+          "listeners": 351,
+          "nodes": 1542,
+          "documents": 2,
+          "art": {
+            "loaded": true,
+            "actors": [
+              "queen-beige",
+              "court-judge",
+              "flaming-law",
+              "hoa-drone",
+              "beige-bot"
+            ],
+            "contours": 12,
+            "contourBytes": 705312,
+            "contourBuilds": 12,
+            "draws": 250,
+            "backgrounds": 10,
+            "failed": [],
+            "poses": {
+              "walk": 240,
+              "idle": 10
+            },
+            "lastPanel": 0
+          },
+          "audio": {
+            "initialized": true,
+            "state": "running",
+            "blocked": false,
+            "track": "socal",
+            "cursor": 1,
+            "playing": true,
+            "completed": false,
+            "voices": 6,
+            "musicVoices": 2,
+            "sfxVoices": 4,
+            "ahead": 0.11533333333333337,
+            "peakVoices": 9,
+            "scheduled": 12,
+            "dropped": 0,
+            "transitions": 2,
+            "schedulers": 1,
+            "settings": {
+              "music": true,
+              "sfx": true,
+              "musicVolume": 0.32,
+              "sfxVolume": 0.55,
+              "mute": false
+            },
+            "events": {
+              "menu": 1,
+              "jump": 1,
+              "ricochet": 1,
+              "switch": 1
+            },
+            "signalPeak": 0.3273610770702362,
+            "rms": 0.11190054242210672
+          },
+          "frames": {
+            "count": 7,
+            "p95": 16.700000000000045,
+            "over33": 0
+          },
+          "storageBytes": 4671
+        },
+        {
+          "seconds": 10.599,
+          "world": "socal",
+          "retainedHeap": 3605712,
+          "listeners": 348,
+          "nodes": 1543,
+          "documents": 2,
+          "art": {
+            "loaded": true,
+            "actors": [
+              "queen-beige",
+              "court-judge",
+              "flaming-law",
+              "hoa-drone",
+              "beige-bot"
+            ],
+            "contours": 14,
+            "contourBytes": 855376,
+            "contourBuilds": 14,
+            "draws": 12701,
+            "backgrounds": 523,
+            "failed": [],
+            "poses": {
+              "walk": 12116,
+              "idle": 523,
+              "hurt": 9,
+              "defeat": 53
+            },
+            "lastPanel": 0
+          },
+          "audio": {
+            "initialized": true,
+            "state": "running",
+            "blocked": false,
+            "track": "socal",
+            "cursor": 42,
+            "playing": true,
+            "completed": false,
+            "voices": 4,
+            "musicVoices": 2,
+            "sfxVoices": 2,
+            "ahead": 0.10233333333333228,
+            "peakVoices": 9,
+            "scheduled": 157,
+            "dropped": 0,
+            "transitions": 2,
+            "schedulers": 1,
+            "settings": {
+              "music": true,
+              "sfx": true,
+              "musicVolume": 0.32,
+              "sfxVolume": 0.55,
+              "mute": false
+            },
+            "events": {
+              "menu": 1,
+              "jump": 10,
+              "ricochet": 1,
+              "switch": 3,
+              "land": 9,
+              "hit": 1,
+              "defeat": 1
+            },
+            "signalPeak": 0.15958033502101898,
+            "rms": 0.054633253871393644
+          },
+          "frames": {
+            "count": 513,
+            "p95": 16.700000000000728,
+            "over33": 0
+          },
+          "storageBytes": 4751
+        },
+        {
+          "seconds": 20.619,
+          "world": "socal",
+          "retainedHeap": 3704312,
+          "listeners": 351,
+          "nodes": 1552,
+          "documents": 2,
+          "art": {
+            "loaded": true,
+            "actors": [
+              "queen-beige",
+              "court-judge",
+              "flaming-law",
+              "hoa-drone",
+              "beige-bot"
+            ],
+            "contours": 18,
+            "contourBytes": 1185984,
+            "contourBuilds": 18,
+            "draws": 26844,
+            "backgrounds": 1124,
+            "failed": [],
+            "poses": {
+              "walk": 25478,
+              "idle": 1124,
+              "hurt": 33,
+              "defeat": 209
+            },
+            "lastPanel": 1
+          },
+          "audio": {
+            "initialized": true,
+            "state": "running",
+            "blocked": false,
+            "track": "socal",
+            "cursor": 27,
+            "playing": true,
+            "completed": false,
+            "voices": 8,
+            "musicVoices": 3,
+            "sfxVoices": 5,
+            "ahead": 0.1923333333333197,
+            "peakVoices": 12,
+            "scheduled": 358,
+            "dropped": 0,
+            "transitions": 2,
+            "schedulers": 1,
+            "settings": {
+              "music": true,
+              "sfx": true,
+              "musicVolume": 0.32,
+              "sfxVolume": 0.55,
+              "mute": false
+            },
+            "events": {
+              "menu": 3,
+              "jump": 20,
+              "ricochet": 4,
+              "switch": 5,
+              "land": 20,
+              "hit": 4,
+              "defeat": 4,
+              "card": 2,
+              "secret": 1,
+              "checkpoint": 1,
+              "throuple": 1
+            },
+            "signalPeak": 0.1344476193189621,
+            "rms": 0.038122442405858076
+          },
+          "frames": {
+            "count": 601,
+            "p95": 16.700000000000728,
+            "over33": 0
+          },
+          "storageBytes": 7025
+        },
+        {
+          "seconds": 30.822,
+          "world": "socal",
+          "retainedHeap": 3844440,
+          "listeners": 344,
+          "nodes": 1544,
+          "documents": 2,
+          "art": {
+            "loaded": true,
+            "actors": [
+              "queen-beige",
+              "court-judge",
+              "flaming-law",
+              "hoa-drone",
+              "beige-bot"
+            ],
+            "contours": 18,
+            "contourBytes": 1185984,
+            "contourBuilds": 18,
+            "draws": 39696,
+            "backgrounds": 1736,
+            "failed": [],
+            "poses": {
+              "walk": 37718,
+              "idle": 1736,
+              "hurt": 33,
+              "defeat": 209
+            },
+            "lastPanel": 1
+          },
+          "audio": {
+            "initialized": true,
+            "state": "running",
+            "blocked": false,
+            "track": "socal",
+            "cursor": 12,
+            "playing": false,
+            "completed": false,
+            "voices": 1,
+            "musicVoices": 0,
+            "sfxVoices": 1,
+            "ahead": 0.19799999999992934,
+            "peakVoices": 12,
+            "scheduled": 528,
+            "dropped": 0,
+            "transitions": 2,
+            "schedulers": 1,
+            "settings": {
+              "music": true,
+              "sfx": true,
+              "musicVolume": 0.32,
+              "sfxVolume": 0.55,
+              "mute": false
+            },
+            "events": {
+              "menu": 5,
+              "jump": 31,
+              "ricochet": 4,
+              "switch": 6,
+              "land": 31,
+              "hit": 4,
+              "defeat": 4,
+              "card": 2,
+              "secret": 1,
+              "checkpoint": 1,
+              "throuple": 1,
+              "cookie": 1
+            },
+            "signalPeak": 0.03980594873428345,
+            "rms": 0.00360810391639262
+          },
+          "frames": {
+            "count": 612,
+            "p95": 16.700000000000728,
+            "over33": 0
+          },
+          "storageBytes": 7023
+        },
+        {
+          "seconds": 40.705,
+          "world": "socal",
+          "retainedHeap": 4007968,
+          "listeners": 346,
+          "nodes": 1544,
+          "documents": 2,
+          "art": {
+            "loaded": true,
+            "actors": [
+              "queen-beige",
+              "court-judge",
+              "flaming-law",
+              "hoa-drone",
+              "beige-bot"
+            ],
+            "contours": 18,
+            "contourBytes": 1185984,
+            "contourBuilds": 18,
+            "draws": 52149,
+            "backgrounds": 2329,
+            "failed": [],
+            "poses": {
+              "walk": 49578,
+              "idle": 2329,
+              "hurt": 33,
+              "defeat": 209
+            },
+            "lastPanel": 1
+          },
+          "audio": {
+            "initialized": true,
+            "state": "running",
+            "blocked": false,
+            "track": "socal",
+            "cursor": 60,
+            "playing": true,
+            "completed": false,
+            "voices": 3,
+            "musicVoices": 3,
+            "sfxVoices": 0,
+            "ahead": 0.15233333333339516,
+            "peakVoices": 12,
+            "scheduled": 692,
+            "dropped": 0,
+            "transitions": 2,
+            "schedulers": 1,
+            "settings": {
+              "music": true,
+              "sfx": true,
+              "musicVolume": 0.32,
+              "sfxVolume": 0.55,
+              "mute": false
+            },
+            "events": {
+              "menu": 5,
+              "jump": 42,
+              "ricochet": 4,
+              "switch": 8,
+              "land": 41,
+              "hit": 4,
+              "defeat": 4,
+              "card": 2,
+              "secret": 1,
+              "checkpoint": 1,
+              "throuple": 1,
+              "cookie": 1
+            },
+            "signalPeak": 0.0957270935177803,
+            "rms": 0.04643280383174341
+          },
+          "frames": {
+            "count": 593,
+            "p95": 16.700000000004366,
+            "over33": 0
+          },
+          "storageBytes": 7051
+        },
+        {
+          "seconds": 50.746,
+          "world": "socal",
+          "retainedHeap": 4043184,
+          "listeners": 346,
+          "nodes": 1554,
+          "documents": 2,
+          "art": {
+            "loaded": true,
+            "actors": [
+              "queen-beige",
+              "court-judge",
+              "flaming-law",
+              "hoa-drone",
+              "beige-bot"
+            ],
+            "contours": 18,
+            "contourBytes": 1185984,
+            "contourBuilds": 18,
+            "draws": 64662,
+            "backgrounds": 2932,
+            "failed": [],
+            "poses": {
+              "walk": 61427,
+              "idle": 2932,
+              "hurt": 41,
+              "defeat": 262
+            },
+            "lastPanel": 1
+          },
+          "audio": {
+            "initialized": true,
+            "state": "running",
+            "blocked": false,
+            "track": "socal",
+            "cursor": 45,
+            "playing": true,
+            "completed": false,
+            "voices": 3,
+            "musicVoices": 3,
+            "sfxVoices": 0,
+            "ahead": 0.17633333333338186,
+            "peakVoices": 12,
+            "scheduled": 870,
+            "dropped": 0,
+            "transitions": 2,
+            "schedulers": 1,
+            "settings": {
+              "music": true,
+              "sfx": true,
+              "musicVolume": 0.32,
+              "sfxVolume": 0.55,
+              "mute": false
+            },
+            "events": {
+              "menu": 7,
+              "jump": 52,
+              "ricochet": 4,
+              "switch": 10,
+              "land": 52,
+              "hit": 5,
+              "defeat": 5,
+              "card": 2,
+              "secret": 1,
+              "checkpoint": 1,
+              "throuple": 1,
+              "cookie": 3
+            },
+            "signalPeak": 0.10725516080856323,
+            "rms": 0.033680593664363184
+          },
+          "frames": {
+            "count": 603,
+            "p95": 16.799999999995634,
+            "over33": 0
+          },
+          "storageBytes": 7109
+        },
+        {
+          "seconds": 60.79,
+          "world": "tahoe",
+          "retainedHeap": 2859488,
+          "listeners": 141,
+          "nodes": 712,
+          "documents": 1,
+          "art": {
+            "loaded": true,
+            "actors": [
+              "toxic-bloom",
+              "algae-slime",
+              "pine-queen",
+              "pine-beetle",
+              "larva",
+              "flying-beetle"
+            ],
+            "contours": 1,
+            "contourBytes": 21904,
+            "contourBuilds": 1,
+            "draws": 13,
+            "backgrounds": 13,
+            "failed": [],
+            "poses": {
+              "walk": 13
+            },
+            "lastPanel": 0
+          },
+          "audio": {
+            "initialized": true,
+            "state": "running",
+            "blocked": false,
+            "track": "tahoe",
+            "cursor": 1,
+            "playing": true,
+            "completed": false,
+            "voices": 2,
+            "musicVoices": 2,
+            "sfxVoices": 0,
+            "ahead": 0.15576190476190477,
+            "peakVoices": 7,
+            "scheduled": 7,
+            "dropped": 0,
+            "transitions": 2,
+            "schedulers": 1,
+            "settings": {
+              "music": true,
+              "sfx": true,
+              "musicVolume": 0.32,
+              "sfxVolume": 0.55,
+              "mute": false
+            },
+            "events": {
+              "menu": 1
+            },
+            "signalPeak": 0.08839432150125504,
+            "rms": 0.04458251365551765
+          },
+          "frames": {
+            "count": 6,
+            "p95": 16.799999999999955,
+            "over33": 0
+          },
+          "storageBytes": 16409
+        },
+        {
+          "seconds": 70.915,
+          "world": "tahoe",
+          "retainedHeap": 3190572,
+          "listeners": 144,
+          "nodes": 716,
+          "documents": 1,
+          "art": {
+            "loaded": true,
+            "actors": [
+              "toxic-bloom",
+              "algae-slime",
+              "pine-queen",
+              "pine-beetle",
+              "larva",
+              "flying-beetle"
+            ],
+            "contours": 2,
+            "contourBytes": 43808,
+            "contourBuilds": 2,
+            "draws": 738,
+            "backgrounds": 621,
+            "failed": [],
+            "poses": {
+              "walk": 738
+            },
+            "lastPanel": 0
+          },
+          "audio": {
+            "initialized": true,
+            "state": "running",
+            "blocked": false,
+            "track": "tahoe",
+            "cursor": 44,
+            "playing": true,
+            "completed": false,
+            "voices": 4,
+            "musicVoices": 4,
+            "sfxVoices": 0,
+            "ahead": 0.2658571428571346,
+            "peakVoices": 7,
+            "scheduled": 150,
+            "dropped": 0,
+            "transitions": 2,
+            "schedulers": 1,
+            "settings": {
+              "music": true,
+              "sfx": true,
+              "musicVolume": 0.32,
+              "sfxVolume": 0.55,
+              "mute": false
+            },
+            "events": {
+              "menu": 1,
+              "jump": 11,
+              "land": 10
+            },
+            "signalPeak": 0.10433943569660187,
+            "rms": 0.04049468422470501
+          },
+          "frames": {
+            "count": 608,
+            "p95": 16.799999999999272,
+            "over33": 0
+          },
+          "storageBytes": 18027
+        },
+        {
+          "seconds": 80.916,
+          "world": "tahoe",
+          "retainedHeap": 3336132,
+          "listeners": 143,
+          "nodes": 727,
+          "documents": 1,
+          "art": {
+            "loaded": true,
+            "actors": [
+              "toxic-bloom",
+              "algae-slime",
+              "pine-queen",
+              "pine-beetle",
+              "larva",
+              "flying-beetle"
+            ],
+            "contours": 9,
+            "contourBytes": 363096,
+            "contourBuilds": 9,
+            "draws": 2111,
+            "backgrounds": 1221,
+            "failed": [],
+            "poses": {
+              "walk": 1773,
+              "hurt": 11,
+              "defeat": 54,
+              "attack": 258,
+              "prepare": 15
+            },
+            "lastPanel": 0
+          },
+          "audio": {
+            "initialized": true,
+            "state": "running",
+            "blocked": false,
+            "track": "tahoe",
+            "cursor": 22,
+            "playing": true,
+            "completed": false,
+            "voices": 4,
+            "musicVoices": 4,
+            "sfxVoices": 0,
+            "ahead": 0.20795238095236002,
+            "peakVoices": 9,
+            "scheduled": 310,
+            "dropped": 0,
+            "transitions": 2,
+            "schedulers": 1,
+            "settings": {
+              "music": true,
+              "sfx": true,
+              "musicVolume": 0.32,
+              "sfxVolume": 0.55,
+              "mute": false
+            },
+            "events": {
+              "menu": 3,
+              "jump": 21,
+              "land": 21,
+              "ricochet": 1,
+              "hit": 2,
+              "defeat": 1,
+              "memory": 1,
+              "warning": 1,
+              "throuple": 1
+            },
+            "signalPeak": 0.11913957446813583,
+            "rms": 0.04316542941392691
+          },
+          "frames": {
+            "count": 600,
+            "p95": 16.700000000000728,
+            "over33": 0
+          },
+          "storageBytes": 20601
+        },
+        {
+          "seconds": 90.993,
+          "world": "tahoe",
+          "retainedHeap": 3383360,
+          "listeners": 142,
+          "nodes": 729,
+          "documents": 1,
+          "art": {
+            "loaded": true,
+            "actors": [
+              "toxic-bloom",
+              "algae-slime",
+              "pine-queen",
+              "pine-beetle",
+              "larva",
+              "flying-beetle"
+            ],
+            "contours": 11,
+            "contourBytes": 473288,
+            "contourBuilds": 11,
+            "draws": 4603,
+            "backgrounds": 1826,
+            "failed": [],
+            "poses": {
+              "walk": 2661,
+              "hurt": 33,
+              "defeat": 161,
+              "attack": 1718,
+              "prepare": 30
+            },
+            "lastPanel": 0
+          },
+          "audio": {
+            "initialized": true,
+            "state": "running",
+            "blocked": false,
+            "track": "tahoe",
+            "cursor": 0,
+            "playing": true,
+            "completed": false,
+            "voices": 3,
+            "musicVoices": 3,
+            "sfxVoices": 0,
+            "ahead": 0.14661904761904765,
+            "peakVoices": 10,
+            "scheduled": 468,
+            "dropped": 0,
+            "transitions": 2,
+            "schedulers": 1,
+            "settings": {
+              "music": true,
+              "sfx": true,
+              "musicVolume": 0.32,
+              "sfxVolume": 0.55,
+              "mute": false
+            },
+            "events": {
+              "menu": 5,
+              "jump": 32,
+              "land": 32,
+              "ricochet": 1,
+              "hit": 4,
+              "defeat": 3,
+              "memory": 1,
+              "warning": 2,
+              "throuple": 1,
+              "nest": 1,
+              "cookie": 1
+            },
+            "signalPeak": 0.12026984989643097,
+            "rms": 0.045825585875285825
+          },
+          "frames": {
+            "count": 605,
+            "p95": 16.799999999999272,
+            "over33": 0
+          },
+          "storageBytes": 21389
+        },
+        {
+          "seconds": 101.074,
+          "world": "tahoe",
+          "retainedHeap": 3387652,
+          "listeners": 144,
+          "nodes": 726,
+          "documents": 1,
+          "art": {
+            "loaded": true,
+            "actors": [
+              "toxic-bloom",
+              "algae-slime",
+              "pine-queen",
+              "pine-beetle",
+              "larva",
+              "flying-beetle"
+            ],
+            "contours": 11,
+            "contourBytes": 473288,
+            "contourBuilds": 11,
+            "draws": 6409,
+            "backgrounds": 2431,
+            "failed": [],
+            "poses": {
+              "walk": 3190,
+              "hurt": 44,
+              "defeat": 213,
+              "attack": 2932,
+              "prepare": 30
+            },
+            "lastPanel": 0
+          },
+          "audio": {
+            "initialized": true,
+            "state": "running",
+            "blocked": false,
+            "track": "tahoe",
+            "cursor": 43,
+            "playing": true,
+            "completed": false,
+            "voices": 4,
+            "musicVoices": 4,
+            "sfxVoices": 0,
+            "ahead": 0.2993809523810498,
+            "peakVoices": 10,
+            "scheduled": 615,
+            "dropped": 0,
+            "transitions": 2,
+            "schedulers": 1,
+            "settings": {
+              "music": true,
+              "sfx": true,
+              "musicVolume": 0.32,
+              "sfxVolume": 0.55,
+              "mute": false
+            },
+            "events": {
+              "menu": 5,
+              "jump": 43,
+              "land": 42,
+              "ricochet": 1,
+              "hit": 5,
+              "defeat": 4,
+              "memory": 1,
+              "warning": 2,
+              "throuple": 1,
+              "nest": 1,
+              "cookie": 1
+            },
+            "signalPeak": 0.08122267574071884,
+            "rms": 0.02850231991536397
+          },
+          "frames": {
+            "count": 605,
+            "p95": 16.799999999995634,
+            "over33": 0
+          },
+          "storageBytes": 21459
+        },
+        {
+          "seconds": 111.143,
+          "world": "tahoe",
+          "retainedHeap": 3453364,
+          "listeners": 143,
+          "nodes": 729,
+          "documents": 1,
+          "art": {
+            "loaded": true,
+            "actors": [
+              "toxic-bloom",
+              "algae-slime",
+              "pine-queen",
+              "pine-beetle",
+              "larva",
+              "flying-beetle"
+            ],
+            "contours": 11,
+            "contourBytes": 473288,
+            "contourBuilds": 11,
+            "draws": 8177,
+            "backgrounds": 3035,
+            "failed": [],
+            "poses": {
+              "walk": 3750,
+              "hurt": 44,
+              "defeat": 213,
+              "attack": 4140,
+              "prepare": 30
+            },
+            "lastPanel": 0
+          },
+          "audio": {
+            "initialized": true,
+            "state": "running",
+            "blocked": false,
+            "track": "tahoe",
+            "cursor": 21,
+            "playing": true,
+            "completed": false,
+            "voices": 3,
+            "musicVoices": 3,
+            "sfxVoices": 0,
+            "ahead": 0.2700476190476877,
+            "peakVoices": 10,
+            "scheduled": 761,
+            "dropped": 0,
+            "transitions": 2,
+            "schedulers": 1,
+            "settings": {
+              "music": true,
+              "sfx": true,
+              "musicVolume": 0.32,
+              "sfxVolume": 0.55,
+              "mute": false
+            },
+            "events": {
+              "menu": 7,
+              "jump": 53,
+              "land": 53,
+              "ricochet": 1,
+              "hit": 5,
+              "defeat": 4,
+              "memory": 1,
+              "warning": 2,
+              "throuple": 1,
+              "nest": 1,
+              "cookie": 2
+            },
+            "signalPeak": 0.04155519977211952,
+            "rms": 0.011119124874994826
+          },
+          "frames": {
+            "count": 604,
+            "p95": 16.700000000004366,
+            "over33": 0
+          },
+          "storageBytes": 21483
+        },
+        {
+          "seconds": 121.185,
+          "world": "alaska",
+          "retainedHeap": 2857036,
+          "listeners": 151,
+          "nodes": 570,
+          "documents": 1,
+          "art": {
+            "loaded": true,
+            "actors": [
+              "pipeline-worker",
+              "surveillance-drone",
+              "security-turret",
+              "machinery",
+              "oil-slime",
+              "frost-queen",
+              "zombie-salmon",
+              "alaskan-owl"
+            ],
+            "contours": 4,
+            "contourBytes": 100000,
+            "contourBuilds": 4,
+            "draws": 418,
+            "backgrounds": 38,
+            "failed": [],
+            "poses": {
+              "walk": 418
+            },
+            "lastPanel": 0
+          },
+          "audio": {
+            "initialized": true,
+            "state": "running",
+            "blocked": false,
+            "track": "alaska",
+            "cursor": 3,
+            "playing": true,
+            "completed": false,
+            "voices": 3,
+            "musicVoices": 3,
+            "sfxVoices": 0,
+            "ahead": 0.2101515151515152,
+            "peakVoices": 9,
+            "scheduled": 15,
+            "dropped": 0,
+            "transitions": 2,
+            "schedulers": 1,
+            "settings": {
+              "music": true,
+              "sfx": true,
+              "musicVolume": 0.32,
+              "sfxVolume": 0.55,
+              "mute": false
+            },
+            "events": {
+              "switch": 1,
+              "menu": 1,
+              "jump": 1
+            },
+            "signalPeak": 0.10706837475299835,
+            "rms": 0.02321121885634809
+          },
+          "frames": {
+            "count": 29,
+            "p95": 16.700000000000045,
+            "over33": 0
+          },
+          "storageBytes": 22595
+        },
+        {
+          "seconds": 131.225,
+          "world": "alaska",
+          "retainedHeap": 3152880,
+          "listeners": 150,
+          "nodes": 569,
+          "documents": 1,
+          "art": {
+            "loaded": true,
+            "actors": [
+              "pipeline-worker",
+              "surveillance-drone",
+              "security-turret",
+              "machinery",
+              "oil-slime",
+              "frost-queen",
+              "zombie-salmon",
+              "alaskan-owl"
+            ],
+            "contours": 4,
+            "contourBytes": 100000,
+            "contourBuilds": 4,
+            "draws": 7051,
+            "backgrounds": 641,
+            "failed": [],
+            "poses": {
+              "walk": 7051
+            },
+            "lastPanel": 0
+          },
+          "audio": {
+            "initialized": true,
+            "state": "running",
+            "blocked": false,
+            "track": "alaska",
+            "cursor": 47,
+            "playing": true,
+            "completed": false,
+            "voices": 2,
+            "musicVoices": 2,
+            "sfxVoices": 0,
+            "ahead": 0.17281818181817776,
+            "peakVoices": 9,
+            "scheduled": 168,
+            "dropped": 0,
+            "transitions": 2,
+            "schedulers": 1,
+            "settings": {
+              "music": true,
+              "sfx": true,
+              "musicVolume": 0.32,
+              "sfxVolume": 0.55,
+              "mute": false
+            },
+            "events": {
+              "switch": 3,
+              "menu": 1,
+              "jump": 12,
+              "land": 11
+            },
+            "signalPeak": 0.11990462988615036,
+            "rms": 0.04504626723669535
+          },
+          "frames": {
+            "count": 603,
+            "p95": 16.700000000000728,
+            "over33": 0
+          },
+          "storageBytes": 22595
+        },
+        {
+          "seconds": 141.393,
+          "world": "alaska",
+          "retainedHeap": 3131088,
+          "listeners": 153,
+          "nodes": 575,
+          "documents": 1,
+          "art": {
+            "loaded": true,
+            "actors": [
+              "pipeline-worker",
+              "surveillance-drone",
+              "security-turret",
+              "machinery",
+              "oil-slime",
+              "frost-queen",
+              "zombie-salmon",
+              "alaskan-owl"
+            ],
+            "contours": 6,
+            "contourBytes": 236512,
+            "contourBuilds": 6,
+            "draws": 13761,
+            "backgrounds": 1251,
+            "failed": [],
+            "poses": {
+              "walk": 13725,
+              "hurt": 8,
+              "defeat": 28
+            },
+            "lastPanel": 0
+          },
+          "audio": {
+            "initialized": true,
+            "state": "running",
+            "blocked": false,
+            "track": "alaska",
+            "cursor": 28,
+            "playing": true,
+            "completed": false,
+            "voices": 5,
+            "musicVoices": 4,
+            "sfxVoices": 1,
+            "ahead": 0.22796969696968006,
+            "peakVoices": 13,
+            "scheduled": 345,
+            "dropped": 0,
+            "transitions": 2,
+            "schedulers": 1,
+            "settings": {
+              "music": true,
+              "sfx": true,
+              "musicVolume": 0.32,
+              "sfxVolume": 0.55,
+              "mute": false
+            },
+            "events": {
+              "switch": 5,
+              "menu": 3,
+              "jump": 23,
+              "land": 22,
+              "throuple": 1,
+              "heartPop": 2,
+              "ice": 2,
+              "hit": 1,
+              "defeat": 1,
+              "ricochet": 2
+            },
+            "signalPeak": 0.18226811289787292,
+            "rms": 0.06606951402798954
+          },
+          "frames": {
+            "count": 610,
+            "p95": 16.799999999999272,
+            "over33": 0
+          },
+          "storageBytes": 24555
+        },
+        {
+          "seconds": 151.615,
+          "world": "alaska",
+          "retainedHeap": 3230820,
+          "listeners": 153,
+          "nodes": 586,
+          "documents": 1,
+          "art": {
+            "loaded": true,
+            "actors": [
+              "pipeline-worker",
+              "surveillance-drone",
+              "security-turret",
+              "machinery",
+              "oil-slime",
+              "frost-queen",
+              "zombie-salmon",
+              "alaskan-owl"
+            ],
+            "contours": 6,
+            "contourBytes": 236512,
+            "contourBuilds": 6,
+            "draws": 19915,
+            "backgrounds": 1864,
+            "failed": [],
+            "poses": {
+              "walk": 19855,
+              "hurt": 8,
+              "defeat": 52
+            },
+            "lastPanel": 0
+          },
+          "audio": {
+            "initialized": true,
+            "state": "running",
+            "blocked": false,
+            "track": "alaska",
+            "cursor": 9,
+            "playing": true,
+            "completed": false,
+            "voices": 3,
+            "musicVoices": 3,
+            "sfxVoices": 0,
+            "ahead": 0.2499090909090853,
+            "peakVoices": 13,
+            "scheduled": 509,
+            "dropped": 0,
+            "transitions": 2,
+            "schedulers": 1,
+            "settings": {
+              "music": true,
+              "sfx": true,
+              "musicVolume": 0.32,
+              "sfxVolume": 0.55,
+              "mute": false
+            },
+            "events": {
+              "switch": 7,
+              "menu": 5,
+              "jump": 34,
+              "land": 33,
+              "throuple": 1,
+              "heartPop": 2,
+              "ice": 3,
+              "hit": 1,
+              "defeat": 1,
+              "ricochet": 2,
+              "cookie": 2
+            },
+            "signalPeak": 0.042213812470436096,
+            "rms": 0.009983687058970334
+          },
+          "frames": {
+            "count": 613,
+            "p95": 16.700000000000728,
+            "over33": 0
+          },
+          "storageBytes": 24557
+        },
+        {
+          "seconds": 161.613,
+          "world": "alaska",
+          "retainedHeap": 3314488,
+          "listeners": 151,
+          "nodes": 575,
+          "documents": 1,
+          "art": {
+            "loaded": true,
+            "actors": [
+              "pipeline-worker",
+              "surveillance-drone",
+              "security-turret",
+              "machinery",
+              "oil-slime",
+              "frost-queen",
+              "zombie-salmon",
+              "alaskan-owl"
+            ],
+            "contours": 6,
+            "contourBytes": 236512,
+            "contourBuilds": 6,
+            "draws": 25915,
+            "backgrounds": 2464,
+            "failed": [],
+            "poses": {
+              "walk": 25855,
+              "hurt": 8,
+              "defeat": 52
+            },
+            "lastPanel": 0
+          },
+          "audio": {
+            "initialized": true,
+            "state": "running",
+            "blocked": false,
+            "track": "alaska",
+            "cursor": 53,
+            "playing": true,
+            "completed": false,
+            "voices": 3,
+            "musicVoices": 3,
+            "sfxVoices": 0,
+            "ahead": 0.24990909090905689,
+            "peakVoices": 13,
+            "scheduled": 665,
+            "dropped": 0,
+            "transitions": 2,
+            "schedulers": 1,
+            "settings": {
+              "music": true,
+              "sfx": true,
+              "musicVolume": 0.32,
+              "sfxVolume": 0.55,
+              "mute": false
+            },
+            "events": {
+              "switch": 9,
+              "menu": 5,
+              "jump": 45,
+              "land": 44,
+              "throuple": 1,
+              "heartPop": 2,
+              "ice": 3,
+              "hit": 1,
+              "defeat": 1,
+              "ricochet": 2,
+              "cookie": 3
+            },
+            "signalPeak": 0.03553832694888115,
+            "rms": 0.007735442555377809
+          },
+          "frames": {
+            "count": 600,
+            "p95": 16.700000000004366,
+            "over33": 0
+          },
+          "storageBytes": 24557
+        },
+        {
+          "seconds": 171.641,
+          "world": "alaska",
+          "retainedHeap": 3365900,
+          "listeners": 150,
+          "nodes": 575,
+          "documents": 1,
+          "art": {
+            "loaded": true,
+            "actors": [
+              "pipeline-worker",
+              "surveillance-drone",
+              "security-turret",
+              "machinery",
+              "oil-slime",
+              "frost-queen",
+              "zombie-salmon",
+              "alaskan-owl"
+            ],
+            "contours": 6,
+            "contourBytes": 236512,
+            "contourBuilds": 6,
+            "draws": 31935,
+            "backgrounds": 3066,
+            "failed": [],
+            "poses": {
+              "walk": 31875,
+              "hurt": 8,
+              "defeat": 52
+            },
+            "lastPanel": 0
+          },
+          "audio": {
+            "initialized": true,
+            "state": "running",
+            "blocked": false,
+            "track": "alaska",
+            "cursor": 33,
+            "playing": true,
+            "completed": false,
+            "voices": 2,
+            "musicVoices": 2,
+            "sfxVoices": 0,
+            "ahead": 0.1426363636363419,
+            "peakVoices": 13,
+            "scheduled": 824,
+            "dropped": 0,
+            "transitions": 2,
+            "schedulers": 1,
+            "settings": {
+              "music": true,
+              "sfx": true,
+              "musicVolume": 0.32,
+              "sfxVolume": 0.55,
+              "mute": false
+            },
+            "events": {
+              "switch": 11,
+              "menu": 7,
+              "jump": 55,
+              "land": 55,
+              "throuple": 1,
+              "heartPop": 2,
+              "ice": 4,
+              "hit": 1,
+              "defeat": 1,
+              "ricochet": 2,
+              "cookie": 5
+            },
+            "signalPeak": 0.10405521839857101,
+            "rms": 0.04500207104847026
+          },
+          "frames": {
+            "count": 602,
+            "p95": 16.799999999995634,
+            "over33": 0
+          },
+          "storageBytes": 24557
+        },
+        {
+          "seconds": 181.696,
+          "world": "socal",
+          "retainedHeap": 3398900,
+          "listeners": 346,
+          "nodes": 1532,
+          "documents": 2,
+          "art": {
+            "loaded": true,
+            "actors": [
+              "queen-beige",
+              "court-judge",
+              "flaming-law",
+              "hoa-drone",
+              "beige-bot"
+            ],
+            "contours": 12,
+            "contourBytes": 705312,
+            "contourBuilds": 12,
+            "draws": 1425,
+            "backgrounds": 57,
+            "failed": [],
+            "poses": {
+              "walk": 1368,
+              "idle": 57
+            },
+            "lastPanel": 0
+          },
+          "audio": {
+            "initialized": true,
+            "state": "running",
+            "blocked": false,
+            "track": "socal",
+            "cursor": 5,
+            "playing": true,
+            "completed": false,
+            "voices": 3,
+            "musicVoices": 3,
+            "sfxVoices": 0,
+            "ahead": 0.15933333333333333,
+            "peakVoices": 9,
+            "scheduled": 21,
+            "dropped": 0,
+            "transitions": 2,
+            "schedulers": 1,
+            "settings": {
+              "music": true,
+              "sfx": true,
+              "musicVolume": 0.32,
+              "sfxVolume": 0.55,
+              "mute": false
+            },
+            "events": {
+              "menu": 1,
+              "switch": 1,
+              "jump": 1
+            },
+            "signalPeak": 0.09661699086427689,
+            "rms": 0.043441769337504585
+          },
+          "frames": {
+            "count": 56,
+            "p95": 16.799999999999955,
+            "over33": 1
+          },
+          "storageBytes": 24489
+        },
+        {
+          "seconds": 191.808,
+          "world": "socal",
+          "retainedHeap": 3735244,
+          "listeners": 349,
+          "nodes": 1541,
+          "documents": 2,
+          "art": {
+            "loaded": true,
+            "actors": [
+              "queen-beige",
+              "court-judge",
+              "flaming-law",
+              "hoa-drone",
+              "beige-bot"
+            ],
+            "contours": 12,
+            "contourBytes": 705312,
+            "contourBuilds": 12,
+            "draws": 16600,
+            "backgrounds": 664,
+            "failed": [],
+            "poses": {
+              "walk": 15936,
+              "idle": 664
+            },
+            "lastPanel": 0
+          },
+          "audio": {
+            "initialized": true,
+            "state": "running",
+            "blocked": false,
+            "track": "socal",
+            "cursor": 54,
+            "playing": true,
+            "completed": false,
+            "voices": 6,
+            "musicVoices": 5,
+            "sfxVoices": 1,
+            "ahead": 0.2556666666666718,
+            "peakVoices": 9,
+            "scheduled": 190,
+            "dropped": 0,
+            "transitions": 2,
+            "schedulers": 1,
+            "settings": {
+              "music": true,
+              "sfx": true,
+              "musicVolume": 0.32,
+              "sfxVolume": 0.55,
+              "mute": false
+            },
+            "events": {
+              "menu": 1,
+              "switch": 3,
+              "jump": 12,
+              "land": 11
+            },
+            "signalPeak": 0.1818900853395462,
+            "rms": 0.06515841645197488
+          },
+          "frames": {
+            "count": 607,
+            "p95": 16.799999999999272,
+            "over33": 0
+          },
+          "storageBytes": 24545
+        },
+        {
+          "seconds": 201.764,
+          "world": "socal",
+          "retainedHeap": 3870616,
+          "listeners": 347,
+          "nodes": 1546,
+          "documents": 2,
+          "art": {
+            "loaded": true,
+            "actors": [
+              "queen-beige",
+              "court-judge",
+              "flaming-law",
+              "hoa-drone",
+              "beige-bot"
+            ],
+            "contours": 12,
+            "contourBytes": 705312,
+            "contourBuilds": 12,
+            "draws": 31525,
+            "backgrounds": 1261,
+            "failed": [],
+            "poses": {
+              "walk": 30264,
+              "idle": 1261
+            },
+            "lastPanel": 0
+          },
+          "audio": {
+            "initialized": true,
+            "state": "running",
+            "blocked": false,
+            "track": "socal",
+            "cursor": 38,
+            "playing": true,
+            "completed": false,
+            "voices": 6,
+            "musicVoices": 4,
+            "sfxVoices": 2,
+            "ahead": 0.322999999999972,
+            "peakVoices": 10,
+            "scheduled": 361,
+            "dropped": 0,
+            "transitions": 2,
+            "schedulers": 1,
+            "settings": {
+              "music": true,
+              "sfx": true,
+              "musicVolume": 0.32,
+              "sfxVolume": 0.55,
+              "mute": false
+            },
+            "events": {
+              "menu": 3,
+              "switch": 5,
+              "jump": 22,
+              "land": 22,
+              "throuple": 1,
+              "cookie": 1
+            },
+            "signalPeak": 0.18313390016555786,
+            "rms": 0.0736939278349295
+          },
+          "frames": {
+            "count": 597,
+            "p95": 16.700000000000728,
+            "over33": 0
+          },
+          "storageBytes": 26457
+        },
+        {
+          "seconds": 211.806,
+          "world": "socal",
+          "retainedHeap": 3834048,
+          "listeners": 350,
+          "nodes": 1548,
+          "documents": 2,
+          "art": {
+            "loaded": true,
+            "actors": [
+              "queen-beige",
+              "court-judge",
+              "flaming-law",
+              "hoa-drone",
+              "beige-bot"
+            ],
+            "contours": 14,
+            "contourBytes": 855376,
+            "contourBuilds": 14,
+            "draws": 46110,
+            "backgrounds": 1864,
+            "failed": [],
+            "poses": {
+              "walk": 44186,
+              "idle": 1864,
+              "hurt": 8,
+              "defeat": 52
+            },
+            "lastPanel": 0
+          },
+          "audio": {
+            "initialized": true,
+            "state": "running",
+            "blocked": false,
+            "track": "socal",
+            "cursor": 22,
+            "playing": true,
+            "completed": false,
+            "voices": 7,
+            "musicVoices": 5,
+            "sfxVoices": 2,
+            "ahead": 0.30433333333332513,
+            "peakVoices": 11,
+            "scheduled": 538,
+            "dropped": 0,
+            "transitions": 2,
+            "schedulers": 1,
+            "settings": {
+              "music": true,
+              "sfx": true,
+              "musicVolume": 0.32,
+              "sfxVolume": 0.55,
+              "mute": false
+            },
+            "events": {
+              "menu": 5,
+              "switch": 7,
+              "jump": 33,
+              "land": 32,
+              "throuple": 1,
+              "cookie": 3,
+              "hit": 1,
+              "defeat": 1,
+              "heartPop": 1
+            },
+            "signalPeak": 0.18817025423049927,
+            "rms": 0.06677287433458896
+          },
+          "frames": {
+            "count": 603,
+            "p95": 16.700000000000728,
+            "over33": 0
+          },
+          "storageBytes": 26465
+        },
+        {
+          "seconds": 221.879,
+          "world": "socal",
+          "retainedHeap": 3962420,
+          "listeners": 348,
+          "nodes": 1539,
+          "documents": 2,
+          "art": {
+            "loaded": true,
+            "actors": [
+              "queen-beige",
+              "court-judge",
+              "flaming-law",
+              "hoa-drone",
+              "beige-bot"
+            ],
+            "contours": 14,
+            "contourBytes": 855376,
+            "contourBuilds": 14,
+            "draws": 60606,
+            "backgrounds": 2468,
+            "failed": [],
+            "poses": {
+              "walk": 58078,
+              "idle": 2468,
+              "hurt": 8,
+              "defeat": 52
+            },
+            "lastPanel": 0
+          },
+          "audio": {
+            "initialized": true,
+            "state": "running",
+            "blocked": false,
+            "track": "socal",
+            "cursor": 6,
+            "playing": true,
+            "completed": false,
+            "voices": 4,
+            "musicVoices": 4,
+            "sfxVoices": 0,
+            "ahead": 0.22966666666676616,
+            "peakVoices": 11,
+            "scheduled": 703,
+            "dropped": 0,
+            "transitions": 2,
+            "schedulers": 1,
+            "settings": {
+              "music": true,
+              "sfx": true,
+              "musicVolume": 0.32,
+              "sfxVolume": 0.55,
+              "mute": false
+            },
+            "events": {
+              "menu": 5,
+              "switch": 9,
+              "jump": 44,
+              "land": 43,
+              "throuple": 1,
+              "cookie": 3,
+              "hit": 1,
+              "defeat": 1,
+              "heartPop": 1
+            },
+            "signalPeak": 0.0945800393819809,
+            "rms": 0.04052190492770238
+          },
+          "frames": {
+            "count": 604,
+            "p95": 16.700000000004366,
+            "over33": 0
+          },
+          "storageBytes": 26487
+        },
+        {
+          "seconds": 231.973,
+          "world": "socal",
+          "retainedHeap": 4020420,
+          "listeners": 346,
+          "nodes": 1549,
+          "documents": 2,
+          "art": {
+            "loaded": true,
+            "actors": [
+              "queen-beige",
+              "court-judge",
+              "flaming-law",
+              "hoa-drone",
+              "beige-bot"
+            ],
+            "contours": 14,
+            "contourBytes": 855376,
+            "contourBuilds": 14,
+            "draws": 75150,
+            "backgrounds": 3074,
+            "failed": [],
+            "poses": {
+              "walk": 72016,
+              "idle": 3074,
+              "hurt": 8,
+              "defeat": 52
+            },
+            "lastPanel": 0
+          },
+          "audio": {
+            "initialized": true,
+            "state": "running",
+            "blocked": false,
+            "track": "socal",
+            "cursor": 55,
+            "playing": true,
+            "completed": false,
+            "voices": 6,
+            "musicVoices": 5,
+            "sfxVoices": 1,
+            "ahead": 0.2963333333334006,
+            "peakVoices": 11,
+            "scheduled": 878,
+            "dropped": 0,
+            "transitions": 2,
+            "schedulers": 1,
+            "settings": {
+              "music": true,
+              "sfx": true,
+              "musicVolume": 0.32,
+              "sfxVolume": 0.55,
+              "mute": false
+            },
+            "events": {
+              "menu": 7,
+              "switch": 11,
+              "jump": 55,
+              "land": 54,
+              "throuple": 1,
+              "cookie": 5,
+              "hit": 1,
+              "defeat": 1,
+              "heartPop": 1
+            },
+            "signalPeak": 0.2061445415019989,
+            "rms": 0.06665799998948078
+          },
+          "frames": {
+            "count": 606,
+            "p95": 16.700000000004366,
+            "over33": 0
+          },
+          "storageBytes": 26487
+        },
+        {
+          "seconds": 241.956,
+          "world": "tahoe",
+          "retainedHeap": 3042828,
+          "listeners": 143,
+          "nodes": 718,
+          "documents": 1,
+          "art": {
+            "loaded": true,
+            "actors": [
+              "toxic-bloom",
+              "algae-slime",
+              "pine-queen",
+              "pine-beetle",
+              "larva",
+              "flying-beetle"
+            ],
+            "contours": 1,
+            "contourBytes": 21904,
+            "contourBuilds": 1,
+            "draws": 7,
+            "backgrounds": 81,
+            "failed": [],
+            "poses": {
+              "walk": 7
+            },
+            "lastPanel": 0
+          },
+          "audio": {
+            "initialized": true,
+            "state": "running",
+            "blocked": false,
+            "track": "tahoe",
+            "cursor": 6,
+            "playing": true,
+            "completed": false,
+            "voices": 4,
+            "musicVoices": 4,
+            "sfxVoices": 0,
+            "ahead": 0.24223809523809536,
+            "peakVoices": 7,
+            "scheduled": 24,
+            "dropped": 0,
+            "transitions": 2,
+            "schedulers": 1,
+            "settings": {
+              "music": true,
+              "sfx": true,
+              "musicVolume": 0.32,
+              "sfxVolume": 0.55,
+              "mute": false
+            },
+            "events": {
+              "menu": 1,
+              "jump": 2,
+              "land": 1
+            },
+            "signalPeak": 0.06848219782114029,
+            "rms": 0.03975029089556808
+          },
+          "frames": {
+            "count": 73,
+            "p95": 16.700000000000045,
+            "over33": 0
+          },
+          "storageBytes": 25503
+        },
+        {
+          "seconds": 252.082,
+          "world": "tahoe",
+          "retainedHeap": 3169856,
+          "listeners": 141,
+          "nodes": 716,
+          "documents": 1,
+          "art": {
+            "loaded": true,
+            "actors": [
+              "toxic-bloom",
+              "algae-slime",
+              "pine-queen",
+              "pine-beetle",
+              "larva",
+              "flying-beetle"
+            ],
+            "contours": 2,
+            "contourBytes": 43808,
+            "contourBuilds": 2,
+            "draws": 241,
+            "backgrounds": 689,
+            "failed": [],
+            "poses": {
+              "walk": 241
+            },
+            "lastPanel": 0
+          },
+          "audio": {
+            "initialized": true,
+            "state": "running",
+            "blocked": false,
+            "track": "tahoe",
+            "cursor": 48,
+            "playing": true,
+            "completed": false,
+            "voices": 2,
+            "musicVoices": 2,
+            "sfxVoices": 0,
+            "ahead": 0.11423809523808437,
+            "peakVoices": 7,
+            "scheduled": 166,
+            "dropped": 0,
+            "transitions": 2,
+            "schedulers": 1,
+            "settings": {
+              "music": true,
+              "sfx": true,
+              "musicVolume": 0.32,
+              "sfxVolume": 0.55,
+              "mute": false
+            },
+            "events": {
+              "menu": 1,
+              "jump": 13,
+              "land": 12
+            },
+            "signalPeak": 0.11080297082662582,
+            "rms": 0.04631857619610596
+          },
+          "frames": {
+            "count": 608,
+            "p95": 16.700000000000728,
+            "over33": 0
+          },
+          "storageBytes": 26091
+        },
+        {
+          "seconds": 262.11,
+          "world": "tahoe",
+          "retainedHeap": 3379732,
+          "listeners": 142,
+          "nodes": 722,
+          "documents": 1,
+          "art": {
+            "loaded": true,
+            "actors": [
+              "toxic-bloom",
+              "algae-slime",
+              "pine-queen",
+              "pine-beetle",
+              "larva",
+              "flying-beetle"
+            ],
+            "contours": 4,
+            "contourBytes": 154000,
+            "contourBuilds": 4,
+            "draws": 384,
+            "backgrounds": 1290,
+            "failed": [],
+            "poses": {
+              "walk": 358,
+              "hurt": 11,
+              "defeat": 15
+            },
+            "lastPanel": 0
+          },
+          "audio": {
+            "initialized": true,
+            "state": "running",
+            "blocked": false,
+            "track": "tahoe",
+            "cursor": 27,
+            "playing": true,
+            "completed": false,
+            "voices": 3,
+            "musicVoices": 2,
+            "sfxVoices": 1,
+            "ahead": 0.177095238095216,
+            "peakVoices": 10,
+            "scheduled": 319,
+            "dropped": 0,
+            "transitions": 2,
+            "schedulers": 1,
+            "settings": {
+              "music": true,
+              "sfx": true,
+              "musicVolume": 0.32,
+              "sfxVolume": 0.55,
+              "mute": false
+            },
+            "events": {
+              "menu": 3,
+              "jump": 23,
+              "land": 23,
+              "throuple": 1,
+              "hit": 1,
+              "defeat": 1
+            },
+            "signalPeak": 0.09461888670921326,
+            "rms": 0.04526051864428514
+          },
+          "frames": {
+            "count": 601,
+            "p95": 16.700000000000728,
+            "over33": 0
+          },
+          "storageBytes": 27989
+        },
+        {
+          "seconds": 272.204,
+          "world": "tahoe",
+          "retainedHeap": 3360276,
+          "listeners": 141,
+          "nodes": 722,
+          "documents": 1,
+          "art": {
+            "loaded": true,
+            "actors": [
+              "toxic-bloom",
+              "algae-slime",
+              "pine-queen",
+              "pine-beetle",
+              "larva",
+              "flying-beetle"
+            ],
+            "contours": 4,
+            "contourBytes": 154000,
+            "contourBuilds": 4,
+            "draws": 421,
+            "backgrounds": 1896,
+            "failed": [],
+            "poses": {
+              "walk": 358,
+              "hurt": 11,
+              "defeat": 52
+            },
+            "lastPanel": 0
+          },
+          "audio": {
+            "initialized": true,
+            "state": "running",
+            "blocked": false,
+            "track": "tahoe",
+            "cursor": 5,
+            "playing": true,
+            "completed": false,
+            "voices": 2,
+            "musicVoices": 2,
+            "sfxVoices": 0,
+            "ahead": 0.12109523809522926,
+            "peakVoices": 10,
+            "scheduled": 464,
+            "dropped": 0,
+            "transitions": 2,
+            "schedulers": 1,
+            "settings": {
+              "music": true,
+              "sfx": true,
+              "musicVolume": 0.32,
+              "sfxVolume": 0.55,
+              "mute": false
+            },
+            "events": {
+              "menu": 5,
+              "jump": 34,
+              "land": 33,
+              "throuple": 1,
+              "hit": 1,
+              "defeat": 1,
+              "cookie": 1
+            },
+            "signalPeak": 0.10644376277923584,
+            "rms": 0.04512713194919538
+          },
+          "frames": {
+            "count": 606,
+            "p95": 16.700000000000728,
+            "over33": 0
+          },
+          "storageBytes": 28033
+        },
+        {
+          "seconds": 282.292,
+          "world": "tahoe",
+          "retainedHeap": 3403736,
+          "listeners": 143,
+          "nodes": 719,
+          "documents": 1,
+          "art": {
+            "loaded": true,
+            "actors": [
+              "toxic-bloom",
+              "algae-slime",
+              "pine-queen",
+              "pine-beetle",
+              "larva",
+              "flying-beetle"
+            ],
+            "contours": 4,
+            "contourBytes": 154000,
+            "contourBuilds": 4,
+            "draws": 421,
+            "backgrounds": 2501,
+            "failed": [],
+            "poses": {
+              "walk": 358,
+              "hurt": 11,
+              "defeat": 52
+            },
+            "lastPanel": 0
+          },
+          "audio": {
+            "initialized": true,
+            "state": "running",
+            "blocked": false,
+            "track": "tahoe",
+            "cursor": 48,
+            "playing": true,
+            "completed": false,
+            "voices": 4,
+            "musicVoices": 4,
+            "sfxVoices": 0,
+            "ahead": 0.26852380952391286,
+            "peakVoices": 10,
+            "scheduled": 609,
+            "dropped": 0,
+            "transitions": 2,
+            "schedulers": 1,
+            "settings": {
+              "music": true,
+              "sfx": true,
+              "musicVolume": 0.32,
+              "sfxVolume": 0.55,
+              "mute": false
+            },
+            "events": {
+              "menu": 5,
+              "jump": 45,
+              "land": 44,
+              "throuple": 1,
+              "hit": 1,
+              "defeat": 1,
+              "cookie": 1
+            },
+            "signalPeak": 0.10727214813232422,
+            "rms": 0.04089728996892486
+          },
+          "frames": {
+            "count": 605,
+            "p95": 16.700000000004366,
+            "over33": 0
+          },
+          "storageBytes": 28031
+        },
+        {
+          "seconds": 292.347,
+          "world": "tahoe",
+          "retainedHeap": 3436084,
+          "listeners": 141,
+          "nodes": 722,
+          "documents": 1,
+          "art": {
+            "loaded": true,
+            "actors": [
+              "toxic-bloom",
+              "algae-slime",
+              "pine-queen",
+              "pine-beetle",
+              "larva",
+              "flying-beetle"
+            ],
+            "contours": 4,
+            "contourBytes": 154000,
+            "contourBuilds": 4,
+            "draws": 421,
+            "backgrounds": 3105,
+            "failed": [],
+            "poses": {
+              "walk": 358,
+              "hurt": 11,
+              "defeat": 52
+            },
+            "lastPanel": 0
+          },
+          "audio": {
+            "initialized": true,
+            "state": "running",
+            "blocked": false,
+            "track": "tahoe",
+            "cursor": 26,
+            "playing": true,
+            "completed": false,
+            "voices": 2,
+            "musicVoices": 2,
+            "sfxVoices": 0,
+            "ahead": 0.12376190476197735,
+            "peakVoices": 10,
+            "scheduled": 754,
+            "dropped": 0,
+            "transitions": 2,
+            "schedulers": 1,
+            "settings": {
+              "music": true,
+              "sfx": true,
+              "musicVolume": 0.32,
+              "sfxVolume": 0.55,
+              "mute": false
+            },
+            "events": {
+              "menu": 7,
+              "jump": 55,
+              "land": 55,
+              "throuple": 1,
+              "hit": 1,
+              "defeat": 1,
+              "cookie": 2
+            },
+            "signalPeak": 0.10770940780639648,
+            "rms": 0.0448754859794004
+          },
+          "frames": {
+            "count": 604,
+            "p95": 16.700000000004366,
+            "over33": 0
+          },
+          "storageBytes": 28033
+        }
+      ],
+      "errors": []
+    },
+    {
+      "mobile": false,
+      "wallSeconds": 300.306,
+      "operations": {
+        "switches": 60,
+        "pauses": 15,
+        "teams": 5,
+        "worldEntries": 5
+      },
+      "samples": [
+        {
+          "seconds": 2.112,
+          "world": "socal",
+          "retainedHeap": 3216136,
+          "listeners": 351,
+          "nodes": 1540,
+          "documents": 2,
+          "art": {
+            "loaded": true,
+            "actors": [
+              "queen-beige",
+              "court-judge",
+              "flaming-law",
+              "hoa-drone",
+              "beige-bot"
+            ],
+            "contours": 12,
+            "contourBytes": 705312,
+            "contourBuilds": 12,
+            "draws": 275,
+            "backgrounds": 11,
+            "failed": [],
+            "poses": {
+              "walk": 264,
+              "idle": 11
+            },
+            "lastPanel": 0
+          },
+          "audio": {
+            "initialized": true,
+            "state": "running",
+            "blocked": false,
+            "track": "socal",
+            "cursor": 2,
+            "playing": true,
+            "completed": false,
+            "voices": 9,
+            "musicVoices": 5,
+            "sfxVoices": 4,
+            "ahead": 0.32100000000000006,
+            "peakVoices": 9,
+            "scheduled": 15,
+            "dropped": 0,
+            "transitions": 2,
+            "schedulers": 1,
+            "settings": {
+              "music": true,
+              "sfx": true,
+              "musicVolume": 0.32,
+              "sfxVolume": 0.55,
+              "mute": false
+            },
+            "events": {
+              "menu": 1,
+              "jump": 1,
+              "ricochet": 1,
+              "switch": 1
+            },
+            "signalPeak": 0.3604113757610321,
+            "rms": 0.11288668703072914
+          },
+          "frames": {
+            "count": 7,
+            "p95": 16.799999999999955,
+            "over33": 0
+          },
+          "storageBytes": 4671
+        },
+        {
+          "seconds": 10.649,
+          "world": "socal",
+          "retainedHeap": 3617308,
+          "listeners": 348,
+          "nodes": 1541,
+          "documents": 2,
+          "art": {
+            "loaded": true,
+            "actors": [
+              "queen-beige",
+              "court-judge",
+              "flaming-law",
+              "hoa-drone",
+              "beige-bot"
+            ],
+            "contours": 14,
+            "contourBytes": 855376,
+            "contourBuilds": 14,
+            "draws": 12725,
+            "backgrounds": 524,
+            "failed": [],
+            "poses": {
+              "walk": 12140,
+              "idle": 524,
+              "hurt": 8,
+              "defeat": 53
+            },
+            "lastPanel": 0
+          },
+          "audio": {
+            "initialized": true,
+            "state": "running",
+            "blocked": false,
+            "track": "socal",
+            "cursor": 42,
+            "playing": true,
+            "completed": false,
+            "voices": 4,
+            "musicVoices": 2,
+            "sfxVoices": 2,
+            "ahead": 0.09966666666666413,
+            "peakVoices": 9,
+            "scheduled": 157,
+            "dropped": 0,
+            "transitions": 2,
+            "schedulers": 1,
+            "settings": {
+              "music": true,
+              "sfx": true,
+              "musicVolume": 0.32,
+              "sfxVolume": 0.55,
+              "mute": false
+            },
+            "events": {
+              "menu": 1,
+              "jump": 10,
+              "ricochet": 1,
+              "switch": 3,
+              "land": 9,
+              "hit": 1,
+              "defeat": 1
+            },
+            "signalPeak": 0.17350533604621887,
+            "rms": 0.05492291009890705
+          },
+          "frames": {
+            "count": 513,
+            "p95": 16.799999999999272,
+            "over33": 0
+          },
+          "storageBytes": 4751
+        },
+        {
+          "seconds": 20.673,
+          "world": "socal",
+          "retainedHeap": 3929388,
+          "listeners": 351,
+          "nodes": 1550,
+          "documents": 2,
+          "art": {
+            "loaded": true,
+            "actors": [
+              "queen-beige",
+              "court-judge",
+              "flaming-law",
+              "hoa-drone",
+              "beige-bot"
+            ],
+            "contours": 18,
+            "contourBytes": 1185984,
+            "contourBuilds": 18,
+            "draws": 26871,
+            "backgrounds": 1125,
+            "failed": [],
+            "poses": {
+              "walk": 25504,
+              "idle": 1125,
+              "hurt": 33,
+              "defeat": 209
+            },
+            "lastPanel": 1
+          },
+          "audio": {
+            "initialized": true,
+            "state": "running",
+            "blocked": false,
+            "track": "socal",
+            "cursor": 27,
+            "playing": true,
+            "completed": false,
+            "voices": 8,
+            "musicVoices": 3,
+            "sfxVoices": 5,
+            "ahead": 0.20299999999998875,
+            "peakVoices": 11,
+            "scheduled": 358,
+            "dropped": 0,
+            "transitions": 2,
+            "schedulers": 1,
+            "settings": {
+              "music": true,
+              "sfx": true,
+              "musicVolume": 0.32,
+              "sfxVolume": 0.55,
+              "mute": false
+            },
+            "events": {
+              "menu": 3,
+              "jump": 20,
+              "ricochet": 4,
+              "switch": 5,
+              "land": 20,
+              "hit": 4,
+              "defeat": 4,
+              "card": 2,
+              "secret": 1,
+              "checkpoint": 1,
+              "throuple": 1
+            },
+            "signalPeak": 0.15156418085098267,
+            "rms": 0.032144674058107815
+          },
+          "frames": {
+            "count": 601,
+            "p95": 16.700000000000728,
+            "over33": 0
+          },
+          "storageBytes": 7027
+        },
+        {
+          "seconds": 30.823,
+          "world": "socal",
+          "retainedHeap": 3798700,
+          "listeners": 344,
+          "nodes": 1542,
+          "documents": 2,
+          "art": {
+            "loaded": true,
+            "actors": [
+              "queen-beige",
+              "court-judge",
+              "flaming-law",
+              "hoa-drone",
+              "beige-bot"
+            ],
+            "contours": 18,
+            "contourBytes": 1185984,
+            "contourBuilds": 18,
+            "draws": 39723,
+            "backgrounds": 1737,
+            "failed": [],
+            "poses": {
+              "walk": 37744,
+              "idle": 1737,
+              "hurt": 33,
+              "defeat": 209
+            },
+            "lastPanel": 1
+          },
+          "audio": {
+            "initialized": true,
+            "state": "running",
+            "blocked": false,
+            "track": "socal",
+            "cursor": 11,
+            "playing": false,
+            "completed": false,
+            "voices": 1,
+            "musicVoices": 0,
+            "sfxVoices": 1,
+            "ahead": 0.00033333333326623915,
+            "peakVoices": 11,
+            "scheduled": 525,
+            "dropped": 0,
+            "transitions": 2,
+            "schedulers": 1,
+            "settings": {
+              "music": true,
+              "sfx": true,
+              "musicVolume": 0.32,
+              "sfxVolume": 0.55,
+              "mute": false
+            },
+            "events": {
+              "menu": 5,
+              "jump": 31,
+              "ricochet": 4,
+              "switch": 6,
+              "land": 31,
+              "hit": 4,
+              "defeat": 4,
+              "card": 2,
+              "secret": 1,
+              "checkpoint": 1,
+              "throuple": 1,
+              "cookie": 1
+            },
+            "signalPeak": 0.03980594873428345,
+            "rms": 0.00360810391639262
+          },
+          "frames": {
+            "count": 612,
+            "p95": 16.799999999999272,
+            "over33": 0
+          },
+          "storageBytes": 7025
+        },
+        {
+          "seconds": 40.704,
+          "world": "socal",
+          "retainedHeap": 3963160,
+          "listeners": 345,
+          "nodes": 1542,
+          "documents": 2,
+          "art": {
+            "loaded": true,
+            "actors": [
+              "queen-beige",
+              "court-judge",
+              "flaming-law",
+              "hoa-drone",
+              "beige-bot"
+            ],
+            "contours": 18,
+            "contourBytes": 1185984,
+            "contourBuilds": 18,
+            "draws": 52176,
+            "backgrounds": 2330,
+            "failed": [],
+            "poses": {
+              "walk": 49604,
+              "idle": 2330,
+              "hurt": 33,
+              "defeat": 209
+            },
+            "lastPanel": 1
+          },
+          "audio": {
+            "initialized": true,
+            "state": "running",
+            "blocked": false,
+            "track": "socal",
+            "cursor": 59,
+            "playing": true,
+            "completed": false,
+            "voices": 2,
+            "musicVoices": 2,
+            "sfxVoices": 0,
+            "ahead": 0.1576666666667279,
+            "peakVoices": 11,
+            "scheduled": 690,
+            "dropped": 0,
+            "transitions": 2,
+            "schedulers": 1,
+            "settings": {
+              "music": true,
+              "sfx": true,
+              "musicVolume": 0.32,
+              "sfxVolume": 0.55,
+              "mute": false
+            },
+            "events": {
+              "menu": 5,
+              "jump": 42,
+              "ricochet": 4,
+              "switch": 8,
+              "land": 41,
+              "hit": 4,
+              "defeat": 4,
+              "card": 2,
+              "secret": 1,
+              "checkpoint": 1,
+              "throuple": 1,
+              "cookie": 1
+            },
+            "signalPeak": 0.10679570585489273,
+            "rms": 0.04474128280239211
+          },
+          "frames": {
+            "count": 593,
+            "p95": 16.700000000004366,
+            "over33": 0
+          },
+          "storageBytes": 7053
+        },
+        {
+          "seconds": 50.747,
+          "world": "socal",
+          "retainedHeap": 4002376,
+          "listeners": 347,
+          "nodes": 1551,
+          "documents": 2,
+          "art": {
+            "loaded": true,
+            "actors": [
+              "queen-beige",
+              "court-judge",
+              "flaming-law",
+              "hoa-drone",
+              "beige-bot"
+            ],
+            "contours": 18,
+            "contourBytes": 1185984,
+            "contourBuilds": 18,
+            "draws": 64839,
+            "backgrounds": 2933,
+            "failed": [],
+            "poses": {
+              "walk": 61664,
+              "idle": 2933,
+              "hurt": 33,
+              "defeat": 209
+            },
+            "lastPanel": 1
+          },
+          "audio": {
+            "initialized": true,
+            "state": "running",
+            "blocked": false,
+            "track": "socal",
+            "cursor": 44,
+            "playing": true,
+            "completed": false,
+            "voices": 4,
+            "musicVoices": 4,
+            "sfxVoices": 0,
+            "ahead": 0.18700000000005446,
+            "peakVoices": 11,
+            "scheduled": 863,
+            "dropped": 0,
+            "transitions": 2,
+            "schedulers": 1,
+            "settings": {
+              "music": true,
+              "sfx": true,
+              "musicVolume": 0.32,
+              "sfxVolume": 0.55,
+              "mute": false
+            },
+            "events": {
+              "menu": 7,
+              "jump": 52,
+              "ricochet": 4,
+              "switch": 10,
+              "land": 52,
+              "hit": 4,
+              "defeat": 4,
+              "card": 2,
+              "secret": 1,
+              "checkpoint": 1,
+              "throuple": 1,
+              "cookie": 3
+            },
+            "signalPeak": 0.11866980791091919,
+            "rms": 0.04177263376334377
+          },
+          "frames": {
+            "count": 603,
+            "p95": 16.700000000004366,
+            "over33": 0
+          },
+          "storageBytes": 7055
+        },
+        {
+          "seconds": 60.88,
+          "world": "tahoe",
+          "retainedHeap": 2905528,
+          "listeners": 143,
+          "nodes": 712,
+          "documents": 1,
+          "art": {
+            "loaded": true,
+            "actors": [
+              "toxic-bloom",
+              "algae-slime",
+              "pine-queen",
+              "pine-beetle",
+              "larva",
+              "flying-beetle"
+            ],
+            "contours": 2,
+            "contourBytes": 43808,
+            "contourBuilds": 2,
+            "draws": 23,
+            "backgrounds": 23,
+            "failed": [],
+            "poses": {
+              "walk": 23
+            },
+            "lastPanel": 0
+          },
+          "audio": {
+            "initialized": true,
+            "state": "running",
+            "blocked": false,
+            "track": "tahoe",
+            "cursor": 2,
+            "playing": true,
+            "completed": false,
+            "voices": 4,
+            "musicVoices": 4,
+            "sfxVoices": 0,
+            "ahead": 0.2711904761904762,
+            "peakVoices": 7,
+            "scheduled": 10,
+            "dropped": 0,
+            "transitions": 2,
+            "schedulers": 1,
+            "settings": {
+              "music": true,
+              "sfx": true,
+              "musicVolume": 0.32,
+              "sfxVolume": 0.55,
+              "mute": false
+            },
+            "events": {
+              "menu": 1,
+              "jump": 1
+            },
+            "signalPeak": 0.09032124280929565,
+            "rms": 0.04490574255768131
+          },
+          "frames": {
+            "count": 14,
+            "p95": 16.799999999999955,
+            "over33": 0
+          },
+          "storageBytes": 17919
+        },
+        {
+          "seconds": 71.015,
+          "world": "tahoe",
+          "retainedHeap": 3141764,
+          "listeners": 142,
+          "nodes": 715,
+          "documents": 1,
+          "art": {
+            "loaded": true,
+            "actors": [
+              "toxic-bloom",
+              "algae-slime",
+              "pine-queen",
+              "pine-beetle",
+              "larva",
+              "flying-beetle"
+            ],
+            "contours": 2,
+            "contourBytes": 43808,
+            "contourBuilds": 2,
+            "draws": 748,
+            "backgrounds": 631,
+            "failed": [],
+            "poses": {
+              "walk": 748
+            },
+            "lastPanel": 0
+          },
+          "audio": {
+            "initialized": true,
+            "state": "running",
+            "blocked": false,
+            "track": "tahoe",
+            "cursor": 44,
+            "playing": true,
+            "completed": false,
+            "voices": 2,
+            "musicVoices": 2,
+            "sfxVoices": 0,
+            "ahead": 0.13252380952380172,
+            "peakVoices": 7,
+            "scheduled": 152,
+            "dropped": 0,
+            "transitions": 2,
+            "schedulers": 1,
+            "settings": {
+              "music": true,
+              "sfx": true,
+              "musicVolume": 0.32,
+              "sfxVolume": 0.55,
+              "mute": false
+            },
+            "events": {
+              "menu": 1,
+              "jump": 12,
+              "land": 11
+            },
+            "signalPeak": 0.10122241079807281,
+            "rms": 0.04536612322788535
+          },
+          "frames": {
+            "count": 608,
+            "p95": 16.799999999999272,
+            "over33": 0
+          },
+          "storageBytes": 17965
+        },
+        {
+          "seconds": 81.074,
+          "world": "tahoe",
+          "retainedHeap": 3213848,
+          "listeners": 146,
+          "nodes": 717,
+          "documents": 1,
+          "art": {
+            "loaded": true,
+            "actors": [
+              "toxic-bloom",
+              "algae-slime",
+              "pine-queen",
+              "pine-beetle",
+              "larva",
+              "flying-beetle"
+            ],
+            "contours": 3,
+            "contourBytes": 98904,
+            "contourBuilds": 3,
+            "draws": 1585,
+            "backgrounds": 1234,
+            "failed": [],
+            "poses": {
+              "walk": 1584,
+              "hurt": 1
+            },
+            "lastPanel": 0
+          },
+          "audio": {
+            "initialized": true,
+            "state": "running",
+            "blocked": false,
+            "track": "tahoe",
+            "cursor": 23,
+            "playing": true,
+            "completed": false,
+            "voices": 7,
+            "musicVoices": 3,
+            "sfxVoices": 4,
+            "ahead": 0.2433809523809316,
+            "peakVoices": 9,
+            "scheduled": 306,
+            "dropped": 0,
+            "transitions": 2,
+            "schedulers": 1,
+            "settings": {
+              "music": true,
+              "sfx": true,
+              "musicVolume": 0.32,
+              "sfxVolume": 0.55,
+              "mute": false
+            },
+            "events": {
+              "menu": 3,
+              "jump": 22,
+              "land": 22,
+              "throuple": 1,
+              "hit": 1,
+              "defeat": 1
+            },
+            "signalPeak": 0.1470373123884201,
+            "rms": 0.036872141494899736
+          },
+          "frames": {
+            "count": 603,
+            "p95": 16.799999999999272,
+            "over33": 0
+          },
+          "storageBytes": 19871
+        },
+        {
+          "seconds": 91.168,
+          "world": "tahoe",
+          "retainedHeap": 3266828,
+          "listeners": 141,
+          "nodes": 723,
+          "documents": 1,
+          "art": {
+            "loaded": true,
+            "actors": [
+              "toxic-bloom",
+              "algae-slime",
+              "pine-queen",
+              "pine-beetle",
+              "larva",
+              "flying-beetle"
+            ],
+            "contours": 6,
+            "contourBytes": 264192,
+            "contourBuilds": 6,
+            "draws": 1782,
+            "backgrounds": 1840,
+            "failed": [],
+            "poses": {
+              "walk": 1584,
+              "hurt": 33,
+              "defeat": 165
+            },
+            "lastPanel": 0
+          },
+          "audio": {
+            "initialized": true,
+            "state": "running",
+            "blocked": false,
+            "track": "tahoe",
+            "cursor": 1,
+            "playing": true,
+            "completed": false,
+            "voices": 2,
+            "musicVoices": 2,
+            "sfxVoices": 0,
+            "ahead": 0.16071428571428115,
+            "peakVoices": 9,
+            "scheduled": 460,
+            "dropped": 0,
+            "transitions": 2,
+            "schedulers": 1,
+            "settings": {
+              "music": true,
+              "sfx": true,
+              "musicVolume": 0.32,
+              "sfxVolume": 0.55,
+              "mute": false
+            },
+            "events": {
+              "menu": 5,
+              "jump": 33,
+              "land": 33,
+              "throuple": 1,
+              "hit": 3,
+              "defeat": 3,
+              "cookie": 1
+            },
+            "signalPeak": 0.10603529959917068,
+            "rms": 0.045719535086843954
+          },
+          "frames": {
+            "count": 606,
+            "p95": 16.700000000000728,
+            "over33": 0
+          },
+          "storageBytes": 20063
+        },
+        {
+          "seconds": 101.242,
+          "world": "tahoe",
+          "retainedHeap": 3316912,
+          "listeners": 145,
+          "nodes": 723,
+          "documents": 1,
+          "art": {
+            "loaded": true,
+            "actors": [
+              "toxic-bloom",
+              "algae-slime",
+              "pine-queen",
+              "pine-beetle",
+              "larva",
+              "flying-beetle"
+            ],
+            "contours": 6,
+            "contourBytes": 264192,
+            "contourBuilds": 6,
+            "draws": 1782,
+            "backgrounds": 2445,
+            "failed": [],
+            "poses": {
+              "walk": 1584,
+              "hurt": 33,
+              "defeat": 165
+            },
+            "lastPanel": 0
+          },
+          "audio": {
+            "initialized": true,
+            "state": "running",
+            "blocked": false,
+            "track": "tahoe",
+            "cursor": 44,
+            "playing": true,
+            "completed": false,
+            "voices": 6,
+            "musicVoices": 5,
+            "sfxVoices": 1,
+            "ahead": 0.3241428571429523,
+            "peakVoices": 9,
+            "scheduled": 604,
+            "dropped": 0,
+            "transitions": 2,
+            "schedulers": 1,
+            "settings": {
+              "music": true,
+              "sfx": true,
+              "musicVolume": 0.32,
+              "sfxVolume": 0.55,
+              "mute": false
+            },
+            "events": {
+              "menu": 5,
+              "jump": 44,
+              "land": 44,
+              "throuple": 1,
+              "hit": 3,
+              "defeat": 3,
+              "cookie": 1
+            },
+            "signalPeak": 0.10942211002111435,
+            "rms": 0.04550771662406707
+          },
+          "frames": {
+            "count": 605,
+            "p95": 16.700000000004366,
+            "over33": 0
+          },
+          "storageBytes": 20057
+        },
+        {
+          "seconds": 111.316,
+          "world": "tahoe",
+          "retainedHeap": 3312772,
+          "listeners": 144,
+          "nodes": 720,
+          "documents": 1,
+          "art": {
+            "loaded": true,
+            "actors": [
+              "toxic-bloom",
+              "algae-slime",
+              "pine-queen",
+              "pine-beetle",
+              "larva",
+              "flying-beetle"
+            ],
+            "contours": 6,
+            "contourBytes": 264192,
+            "contourBuilds": 6,
+            "draws": 1782,
+            "backgrounds": 3049,
+            "failed": [],
+            "poses": {
+              "walk": 1584,
+              "hurt": 33,
+              "defeat": 165
+            },
+            "lastPanel": 0
+          },
+          "audio": {
+            "initialized": true,
+            "state": "running",
+            "blocked": false,
+            "track": "tahoe",
+            "cursor": 23,
+            "playing": true,
+            "completed": false,
+            "voices": 5,
+            "musicVoices": 5,
+            "sfxVoices": 0,
+            "ahead": 0.3481428571429177,
+            "peakVoices": 9,
+            "scheduled": 753,
+            "dropped": 0,
+            "transitions": 2,
+            "schedulers": 1,
+            "settings": {
+              "music": true,
+              "sfx": true,
+              "musicVolume": 0.32,
+              "sfxVolume": 0.55,
+              "mute": false
+            },
+            "events": {
+              "menu": 7,
+              "jump": 55,
+              "land": 54,
+              "throuple": 1,
+              "hit": 3,
+              "defeat": 3,
+              "cookie": 2
+            },
+            "signalPeak": 0.10658102482557297,
+            "rms": 0.045608798060205576
+          },
+          "frames": {
+            "count": 604,
+            "p95": 16.799999999995634,
+            "over33": 0
+          },
+          "storageBytes": 20063
+        },
+        {
+          "seconds": 121.406,
+          "world": "alaska",
+          "retainedHeap": 2859496,
+          "listeners": 153,
+          "nodes": 580,
+          "documents": 1,
+          "art": {
+            "loaded": true,
+            "actors": [
+              "pipeline-worker",
+              "surveillance-drone",
+              "security-turret",
+              "machinery",
+              "oil-slime",
+              "frost-queen",
+              "zombie-salmon",
+              "alaskan-owl"
+            ],
+            "contours": 4,
+            "contourBytes": 100000,
+            "contourBuilds": 4,
+            "draws": 572,
+            "backgrounds": 52,
+            "failed": [],
+            "poses": {
+              "walk": 572
+            },
+            "lastPanel": 0
+          },
+          "audio": {
+            "initialized": true,
+            "state": "running",
+            "blocked": false,
+            "track": "alaska",
+            "cursor": 4,
+            "playing": true,
+            "completed": false,
+            "voices": 4,
+            "musicVoices": 4,
+            "sfxVoices": 0,
+            "ahead": 0.22409090909090912,
+            "peakVoices": 9,
+            "scheduled": 19,
+            "dropped": 0,
+            "transitions": 2,
+            "schedulers": 1,
+            "settings": {
+              "music": true,
+              "sfx": true,
+              "musicVolume": 0.32,
+              "sfxVolume": 0.55,
+              "mute": false
+            },
+            "events": {
+              "switch": 1,
+              "menu": 1,
+              "jump": 1,
+              "land": 1
+            },
+            "signalPeak": 0.06989821046590805,
+            "rms": 0.0396077249492165
+          },
+          "frames": {
+            "count": 42,
+            "p95": 16.700000000000045,
+            "over33": 0
+          },
+          "storageBytes": 21185
+        },
+        {
+          "seconds": 131.465,
+          "world": "alaska",
+          "retainedHeap": 3110288,
+          "listeners": 151,
+          "nodes": 568,
+          "documents": 1,
+          "art": {
+            "loaded": true,
+            "actors": [
+              "pipeline-worker",
+              "surveillance-drone",
+              "security-turret",
+              "machinery",
+              "oil-slime",
+              "frost-queen",
+              "zombie-salmon",
+              "alaskan-owl"
+            ],
+            "contours": 4,
+            "contourBytes": 100000,
+            "contourBuilds": 4,
+            "draws": 7216,
+            "backgrounds": 656,
+            "failed": [],
+            "poses": {
+              "walk": 7216
+            },
+            "lastPanel": 0
+          },
+          "audio": {
+            "initialized": true,
+            "state": "running",
+            "blocked": false,
+            "track": "alaska",
+            "cursor": 48,
+            "playing": true,
+            "completed": false,
+            "voices": 3,
+            "musicVoices": 3,
+            "sfxVoices": 0,
+            "ahead": 0.16542424242423515,
+            "peakVoices": 9,
+            "scheduled": 172,
+            "dropped": 0,
+            "transitions": 2,
+            "schedulers": 1,
+            "settings": {
+              "music": true,
+              "sfx": true,
+              "musicVolume": 0.32,
+              "sfxVolume": 0.55,
+              "mute": false
+            },
+            "events": {
+              "switch": 3,
+              "menu": 1,
+              "jump": 12,
+              "land": 12
+            },
+            "signalPeak": 0.09643688797950745,
+            "rms": 0.04552578991030888
+          },
+          "frames": {
+            "count": 604,
+            "p95": 16.799999999999272,
+            "over33": 0
+          },
+          "storageBytes": 21185
+        },
+        {
+          "seconds": 141.524,
+          "world": "alaska",
+          "retainedHeap": 3189068,
+          "listeners": 153,
+          "nodes": 574,
+          "documents": 1,
+          "art": {
+            "loaded": true,
+            "actors": [
+              "pipeline-worker",
+              "surveillance-drone",
+              "security-turret",
+              "machinery",
+              "oil-slime",
+              "frost-queen",
+              "zombie-salmon",
+              "alaskan-owl"
+            ],
+            "contours": 6,
+            "contourBytes": 236512,
+            "contourBuilds": 6,
+            "draws": 13860,
+            "backgrounds": 1260,
+            "failed": [],
+            "poses": {
+              "walk": 13817,
+              "hurt": 8,
+              "defeat": 35
+            },
+            "lastPanel": 0
+          },
+          "audio": {
+            "initialized": true,
+            "state": "running",
+            "blocked": false,
+            "track": "alaska",
+            "cursor": 28,
+            "playing": true,
+            "completed": false,
+            "voices": 5,
+            "musicVoices": 3,
+            "sfxVoices": 2,
+            "ahead": 0.13196969696967997,
+            "peakVoices": 13,
+            "scheduled": 347,
+            "dropped": 0,
+            "transitions": 2,
+            "schedulers": 1,
+            "settings": {
+              "music": true,
+              "sfx": true,
+              "musicVolume": 0.32,
+              "sfxVolume": 0.55,
+              "mute": false
+            },
+            "events": {
+              "switch": 5,
+              "menu": 3,
+              "jump": 23,
+              "land": 22,
+              "throuple": 1,
+              "heartPop": 2,
+              "ice": 2,
+              "hit": 1,
+              "defeat": 1,
+              "ricochet": 2,
+              "cookie": 1
+            },
+            "signalPeak": 0.12049491703510284,
+            "rms": 0.050878634442421806
+          },
+          "frames": {
+            "count": 604,
+            "p95": 16.799999999999272,
+            "over33": 0
+          },
+          "storageBytes": 23145
+        },
+        {
+          "seconds": 151.54,
+          "world": "alaska",
+          "retainedHeap": 3230388,
+          "listeners": 152,
+          "nodes": 574,
+          "documents": 1,
+          "art": {
+            "loaded": true,
+            "actors": [
+              "pipeline-worker",
+              "surveillance-drone",
+              "security-turret",
+              "machinery",
+              "oil-slime",
+              "frost-queen",
+              "zombie-salmon",
+              "alaskan-owl"
+            ],
+            "contours": 6,
+            "contourBytes": 236512,
+            "contourBuilds": 6,
+            "draws": 19887,
+            "backgrounds": 1861,
+            "failed": [],
+            "poses": {
+              "walk": 19827,
+              "hurt": 8,
+              "defeat": 52
+            },
+            "lastPanel": 0
+          },
+          "audio": {
+            "initialized": true,
+            "state": "running",
+            "blocked": false,
+            "track": "alaska",
+            "cursor": 9,
+            "playing": true,
+            "completed": false,
+            "voices": 4,
+            "musicVoices": 4,
+            "sfxVoices": 0,
+            "ahead": 0.28396969696969165,
+            "peakVoices": 13,
+            "scheduled": 505,
+            "dropped": 0,
+            "transitions": 2,
+            "schedulers": 1,
+            "settings": {
+              "music": true,
+              "sfx": true,
+              "musicVolume": 0.32,
+              "sfxVolume": 0.55,
+              "mute": false
+            },
+            "events": {
+              "switch": 7,
+              "menu": 5,
+              "jump": 34,
+              "land": 33,
+              "throuple": 1,
+              "heartPop": 2,
+              "ice": 2,
+              "hit": 1,
+              "defeat": 1,
+              "ricochet": 2,
+              "cookie": 1
+            },
+            "signalPeak": 0.09329108148813248,
+            "rms": 0.02818985258018272
+          },
+          "frames": {
+            "count": 601,
+            "p95": 16.700000000000728,
+            "over33": 0
+          },
+          "storageBytes": 23147
+        },
+        {
+          "seconds": 161.673,
+          "world": "alaska",
+          "retainedHeap": 3311536,
+          "listeners": 151,
+          "nodes": 574,
+          "documents": 1,
+          "art": {
+            "loaded": true,
+            "actors": [
+              "pipeline-worker",
+              "surveillance-drone",
+              "security-turret",
+              "machinery",
+              "oil-slime",
+              "frost-queen",
+              "zombie-salmon",
+              "alaskan-owl"
+            ],
+            "contours": 6,
+            "contourBytes": 236512,
+            "contourBuilds": 6,
+            "draws": 25967,
+            "backgrounds": 2469,
+            "failed": [],
+            "poses": {
+              "walk": 25907,
+              "hurt": 8,
+              "defeat": 52
+            },
+            "lastPanel": 0
+          },
+          "audio": {
+            "initialized": true,
+            "state": "running",
+            "blocked": false,
+            "track": "alaska",
+            "cursor": 53,
+            "playing": true,
+            "completed": false,
+            "voices": 2,
+            "musicVoices": 2,
+            "sfxVoices": 0,
+            "ahead": 0.15063636363633748,
+            "peakVoices": 13,
+            "scheduled": 659,
+            "dropped": 0,
+            "transitions": 2,
+            "schedulers": 1,
+            "settings": {
+              "music": true,
+              "sfx": true,
+              "musicVolume": 0.32,
+              "sfxVolume": 0.55,
+              "mute": false
+            },
+            "events": {
+              "switch": 9,
+              "menu": 5,
+              "jump": 45,
+              "land": 44,
+              "throuple": 1,
+              "heartPop": 2,
+              "ice": 2,
+              "hit": 1,
+              "defeat": 1,
+              "ricochet": 2,
+              "cookie": 1
+            },
+            "signalPeak": 0.10661257058382034,
+            "rms": 0.04462896802924181
+          },
+          "frames": {
+            "count": 608,
+            "p95": 16.799999999995634,
+            "over33": 0
+          },
+          "storageBytes": 23147
+        },
+        {
+          "seconds": 171.709,
+          "world": "alaska",
+          "retainedHeap": 3307008,
+          "listeners": 154,
+          "nodes": 574,
+          "documents": 1,
+          "art": {
+            "loaded": true,
+            "actors": [
+              "pipeline-worker",
+              "surveillance-drone",
+              "security-turret",
+              "machinery",
+              "oil-slime",
+              "frost-queen",
+              "zombie-salmon",
+              "alaskan-owl"
+            ],
+            "contours": 6,
+            "contourBytes": 236512,
+            "contourBuilds": 6,
+            "draws": 31987,
+            "backgrounds": 3071,
+            "failed": [],
+            "poses": {
+              "walk": 31927,
+              "hurt": 8,
+              "defeat": 52
+            },
+            "lastPanel": 0
+          },
+          "audio": {
+            "initialized": true,
+            "state": "running",
+            "blocked": false,
+            "track": "alaska",
+            "cursor": 34,
+            "playing": true,
+            "completed": false,
+            "voices": 6,
+            "musicVoices": 5,
+            "sfxVoices": 1,
+            "ahead": 0.3059090909090685,
+            "peakVoices": 13,
+            "scheduled": 822,
+            "dropped": 0,
+            "transitions": 2,
+            "schedulers": 1,
+            "settings": {
+              "music": true,
+              "sfx": true,
+              "musicVolume": 0.32,
+              "sfxVolume": 0.55,
+              "mute": false
+            },
+            "events": {
+              "switch": 11,
+              "menu": 7,
+              "jump": 56,
+              "land": 55,
+              "throuple": 1,
+              "heartPop": 2,
+              "ice": 3,
+              "hit": 1,
+              "defeat": 1,
+              "ricochet": 2,
+              "cookie": 3
+            },
+            "signalPeak": 0.19783306121826172,
+            "rms": 0.06815453874904563
+          },
+          "frames": {
+            "count": 602,
+            "p95": 16.799999999995634,
+            "over33": 0
+          },
+          "storageBytes": 23147
+        },
+        {
+          "seconds": 181.868,
+          "world": "socal",
+          "retainedHeap": 3404376,
+          "listeners": 348,
+          "nodes": 1530,
+          "documents": 2,
+          "art": {
+            "loaded": true,
+            "actors": [
+              "queen-beige",
+              "court-judge",
+              "flaming-law",
+              "hoa-drone",
+              "beige-bot"
+            ],
+            "contours": 12,
+            "contourBytes": 705312,
+            "contourBuilds": 12,
+            "draws": 1825,
+            "backgrounds": 73,
+            "failed": [],
+            "poses": {
+              "walk": 1752,
+              "idle": 73
+            },
+            "lastPanel": 0
+          },
+          "audio": {
+            "initialized": true,
+            "state": "running",
+            "blocked": false,
+            "track": "socal",
+            "cursor": 7,
+            "playing": true,
+            "completed": false,
+            "voices": 5,
+            "musicVoices": 5,
+            "sfxVoices": 0,
+            "ahead": 0.29866666666666664,
+            "peakVoices": 8,
+            "scheduled": 27,
+            "dropped": 0,
+            "transitions": 2,
+            "schedulers": 1,
+            "settings": {
+              "music": true,
+              "sfx": true,
+              "musicVolume": 0.32,
+              "sfxVolume": 0.55,
+              "mute": false
+            },
+            "events": {
+              "menu": 1,
+              "switch": 1,
+              "jump": 1
+            },
+            "signalPeak": 0.10871069878339767,
+            "rms": 0.04513866269237083
+          },
+          "frames": {
+            "count": 70,
+            "p95": 16.700000000000045,
+            "over33": 0
+          },
+          "storageBytes": 23109
+        },
+        {
+          "seconds": 191.875,
+          "world": "socal",
+          "retainedHeap": 3676008,
+          "listeners": 348,
+          "nodes": 1539,
+          "documents": 2,
+          "art": {
+            "loaded": true,
+            "actors": [
+              "queen-beige",
+              "court-judge",
+              "flaming-law",
+              "hoa-drone",
+              "beige-bot"
+            ],
+            "contours": 12,
+            "contourBytes": 705312,
+            "contourBuilds": 12,
+            "draws": 16850,
+            "backgrounds": 674,
+            "failed": [],
+            "poses": {
+              "walk": 16176,
+              "idle": 674
+            },
+            "lastPanel": 0
+          },
+          "audio": {
+            "initialized": true,
+            "state": "running",
+            "blocked": false,
+            "track": "socal",
+            "cursor": 55,
+            "playing": true,
+            "completed": false,
+            "voices": 5,
+            "musicVoices": 5,
+            "sfxVoices": 0,
+            "ahead": 0.2933333333333401,
+            "peakVoices": 8,
+            "scheduled": 193,
+            "dropped": 0,
+            "transitions": 2,
+            "schedulers": 1,
+            "settings": {
+              "music": true,
+              "sfx": true,
+              "musicVolume": 0.32,
+              "sfxVolume": 0.55,
+              "mute": false
+            },
+            "events": {
+              "menu": 1,
+              "switch": 3,
+              "jump": 12,
+              "land": 11
+            },
+            "signalPeak": 0.10674205422401428,
+            "rms": 0.04442717254287607
+          },
+          "frames": {
+            "count": 601,
+            "p95": 16.799999999999272,
+            "over33": 0
+          },
+          "storageBytes": 23163
+        },
+        {
+          "seconds": 202.047,
+          "world": "socal",
+          "retainedHeap": 3792580,
+          "listeners": 347,
+          "nodes": 1543,
+          "documents": 2,
+          "art": {
+            "loaded": true,
+            "actors": [
+              "queen-beige",
+              "court-judge",
+              "flaming-law",
+              "hoa-drone",
+              "beige-bot"
+            ],
+            "contours": 12,
+            "contourBytes": 705312,
+            "contourBuilds": 12,
+            "draws": 32100,
+            "backgrounds": 1284,
+            "failed": [],
+            "poses": {
+              "walk": 30816,
+              "idle": 1284
+            },
+            "lastPanel": 0
+          },
+          "audio": {
+            "initialized": true,
+            "state": "running",
+            "blocked": false,
+            "track": "socal",
+            "cursor": 39,
+            "playing": true,
+            "completed": false,
+            "voices": 3,
+            "musicVoices": 2,
+            "sfxVoices": 1,
+            "ahead": 0.15799999999997283,
+            "peakVoices": 10,
+            "scheduled": 365,
+            "dropped": 0,
+            "transitions": 2,
+            "schedulers": 1,
+            "settings": {
+              "music": true,
+              "sfx": true,
+              "musicVolume": 0.32,
+              "sfxVolume": 0.55,
+              "mute": false
+            },
+            "events": {
+              "menu": 3,
+              "switch": 5,
+              "jump": 23,
+              "land": 22,
+              "throuple": 1,
+              "cookie": 1
+            },
+            "signalPeak": 0.2061711847782135,
+            "rms": 0.06928254126041579
+          },
+          "frames": {
+            "count": 610,
+            "p95": 16.799999999999272,
+            "over33": 0
+          },
+          "storageBytes": 25077
+        },
+        {
+          "seconds": 212.051,
+          "world": "socal",
+          "retainedHeap": 3738520,
+          "listeners": 346,
+          "nodes": 1537,
+          "documents": 2,
+          "art": {
+            "loaded": true,
+            "actors": [
+              "queen-beige",
+              "court-judge",
+              "flaming-law",
+              "hoa-drone",
+              "beige-bot"
+            ],
+            "contours": 14,
+            "contourBytes": 855376,
+            "contourBuilds": 14,
+            "draws": 46589,
+            "backgrounds": 1884,
+            "failed": [],
+            "poses": {
+              "walk": 44645,
+              "idle": 1884,
+              "hurt": 8,
+              "defeat": 52
+            },
+            "lastPanel": 0
+          },
+          "audio": {
+            "initialized": true,
+            "state": "running",
+            "blocked": false,
+            "track": "socal",
+            "cursor": 23,
+            "playing": true,
+            "completed": false,
+            "voices": 3,
+            "musicVoices": 3,
+            "sfxVoices": 0,
+            "ahead": 0.20333333333332249,
+            "peakVoices": 11,
+            "scheduled": 542,
+            "dropped": 0,
+            "transitions": 2,
+            "schedulers": 1,
+            "settings": {
+              "music": true,
+              "sfx": true,
+              "musicVolume": 0.32,
+              "sfxVolume": 0.55,
+              "mute": false
+            },
+            "events": {
+              "menu": 5,
+              "switch": 7,
+              "jump": 33,
+              "land": 33,
+              "throuple": 1,
+              "cookie": 3,
+              "hit": 1,
+              "defeat": 1,
+              "heartPop": 1
+            },
+            "signalPeak": 0,
+            "rms": 0
+          },
+          "frames": {
+            "count": 600,
+            "p95": 16.799999999999272,
+            "over33": 0
+          },
+          "storageBytes": 25083
+        },
+        {
+          "seconds": 222.05,
+          "world": "socal",
+          "retainedHeap": 3917016,
+          "listeners": 346,
+          "nodes": 1537,
+          "documents": 2,
+          "art": {
+            "loaded": true,
+            "actors": [
+              "queen-beige",
+              "court-judge",
+              "flaming-law",
+              "hoa-drone",
+              "beige-bot"
+            ],
+            "contours": 14,
+            "contourBytes": 855376,
+            "contourBuilds": 14,
+            "draws": 60989,
+            "backgrounds": 2484,
+            "failed": [],
+            "poses": {
+              "walk": 58445,
+              "idle": 2484,
+              "hurt": 8,
+              "defeat": 52
+            },
+            "lastPanel": 0
+          },
+          "audio": {
+            "initialized": true,
+            "state": "running",
+            "blocked": false,
+            "track": "socal",
+            "cursor": 7,
+            "playing": true,
+            "completed": false,
+            "voices": 3,
+            "musicVoices": 3,
+            "sfxVoices": 0,
+            "ahead": 0.20333333333342551,
+            "peakVoices": 11,
+            "scheduled": 707,
+            "dropped": 0,
+            "transitions": 2,
+            "schedulers": 1,
+            "settings": {
+              "music": true,
+              "sfx": true,
+              "musicVolume": 0.32,
+              "sfxVolume": 0.55,
+              "mute": false
+            },
+            "events": {
+              "menu": 5,
+              "switch": 9,
+              "jump": 44,
+              "land": 44,
+              "throuple": 1,
+              "cookie": 3,
+              "hit": 1,
+              "defeat": 1,
+              "heartPop": 1
+            },
+            "signalPeak": 0,
+            "rms": 0
+          },
+          "frames": {
+            "count": 600,
+            "p95": 16.700000000004366,
+            "over33": 0
+          },
+          "storageBytes": 25107
+        },
+        {
+          "seconds": 232.07,
+          "world": "socal",
+          "retainedHeap": 3951464,
+          "listeners": 348,
+          "nodes": 1546,
+          "documents": 2,
+          "art": {
+            "loaded": true,
+            "actors": [
+              "queen-beige",
+              "court-judge",
+              "flaming-law",
+              "hoa-drone",
+              "beige-bot"
+            ],
+            "contours": 14,
+            "contourBytes": 855376,
+            "contourBuilds": 14,
+            "draws": 75437,
+            "backgrounds": 3086,
+            "failed": [],
+            "poses": {
+              "walk": 72291,
+              "idle": 3086,
+              "hurt": 8,
+              "defeat": 52
+            },
+            "lastPanel": 0
+          },
+          "audio": {
+            "initialized": true,
+            "state": "running",
+            "blocked": false,
+            "track": "socal",
+            "cursor": 56,
+            "playing": true,
+            "completed": false,
+            "voices": 5,
+            "musicVoices": 5,
+            "sfxVoices": 0,
+            "ahead": 0.2860000000000724,
+            "peakVoices": 11,
+            "scheduled": 881,
+            "dropped": 0,
+            "transitions": 2,
+            "schedulers": 1,
+            "settings": {
+              "music": true,
+              "sfx": true,
+              "musicVolume": 0.32,
+              "sfxVolume": 0.55,
+              "mute": false
+            },
+            "events": {
+              "menu": 7,
+              "switch": 11,
+              "jump": 55,
+              "land": 54,
+              "throuple": 1,
+              "cookie": 5,
+              "hit": 1,
+              "defeat": 1,
+              "heartPop": 1
+            },
+            "signalPeak": 0.08113225549459457,
+            "rms": 0.043644321990248106
+          },
+          "frames": {
+            "count": 602,
+            "p95": 16.799999999995634,
+            "over33": 0
+          },
+          "storageBytes": 25107
+        },
+        {
+          "seconds": 242.175,
+          "world": "tahoe",
+          "retainedHeap": 2986284,
+          "listeners": 144,
+          "nodes": 714,
+          "documents": 1,
+          "art": {
+            "loaded": true,
+            "actors": [
+              "toxic-bloom",
+              "algae-slime",
+              "pine-queen",
+              "pine-beetle",
+              "larva",
+              "flying-beetle"
+            ],
+            "contours": 1,
+            "contourBytes": 21904,
+            "contourBuilds": 1,
+            "draws": 7,
+            "backgrounds": 94,
+            "failed": [],
+            "poses": {
+              "walk": 7
+            },
+            "lastPanel": 0
+          },
+          "audio": {
+            "initialized": true,
+            "state": "running",
+            "blocked": false,
+            "track": "tahoe",
+            "cursor": 7,
+            "playing": true,
+            "completed": false,
+            "voices": 3,
+            "musicVoices": 3,
+            "sfxVoices": 0,
+            "ahead": 0.2723333333333333,
+            "peakVoices": 7,
+            "scheduled": 28,
+            "dropped": 0,
+            "transitions": 2,
+            "schedulers": 1,
+            "settings": {
+              "music": true,
+              "sfx": true,
+              "musicVolume": 0.32,
+              "sfxVolume": 0.55,
+              "mute": false
+            },
+            "events": {
+              "menu": 1,
+              "jump": 2,
+              "land": 2
+            },
+            "signalPeak": 0.04507562890648842,
+            "rms": 0.012363141512335231
+          },
+          "frames": {
+            "count": 85,
+            "p95": 16.700000000000045,
+            "over33": 0
+          },
+          "storageBytes": 24751
+        },
+        {
+          "seconds": 252.442,
+          "world": "tahoe",
+          "retainedHeap": 3118792,
+          "listeners": 143,
+          "nodes": 711,
+          "documents": 1,
+          "art": {
+            "loaded": true,
+            "actors": [
+              "toxic-bloom",
+              "algae-slime",
+              "pine-queen",
+              "pine-beetle",
+              "larva",
+              "flying-beetle"
+            ],
+            "contours": 1,
+            "contourBytes": 21904,
+            "contourBuilds": 1,
+            "draws": 7,
+            "backgrounds": 710,
+            "failed": [],
+            "poses": {
+              "walk": 7
+            },
+            "lastPanel": 0
+          },
+          "audio": {
+            "initialized": true,
+            "state": "running",
+            "blocked": false,
+            "track": "tahoe",
+            "cursor": 50,
+            "playing": true,
+            "completed": false,
+            "voices": 4,
+            "musicVoices": 4,
+            "sfxVoices": 0,
+            "ahead": 0.24376190476189308,
+            "peakVoices": 7,
+            "scheduled": 173,
+            "dropped": 0,
+            "transitions": 2,
+            "schedulers": 1,
+            "settings": {
+              "music": true,
+              "sfx": true,
+              "musicVolume": 0.32,
+              "sfxVolume": 0.55,
+              "mute": false
+            },
+            "events": {
+              "menu": 1,
+              "jump": 13,
+              "land": 13
+            },
+            "signalPeak": 0.06834879517555237,
+            "rms": 0.04015808264871216
+          },
+          "frames": {
+            "count": 616,
+            "p95": 16.700000000000728,
+            "over33": 0
+          },
+          "storageBytes": 24783
+        },
+        {
+          "seconds": 262.498,
+          "world": "tahoe",
+          "retainedHeap": 3267256,
+          "listeners": 142,
+          "nodes": 715,
+          "documents": 1,
+          "art": {
+            "loaded": true,
+            "actors": [
+              "toxic-bloom",
+              "algae-slime",
+              "pine-queen",
+              "pine-beetle",
+              "larva",
+              "flying-beetle"
+            ],
+            "contours": 1,
+            "contourBytes": 21904,
+            "contourBuilds": 1,
+            "draws": 7,
+            "backgrounds": 1313,
+            "failed": [],
+            "poses": {
+              "walk": 7
+            },
+            "lastPanel": 0
+          },
+          "audio": {
+            "initialized": true,
+            "state": "running",
+            "blocked": false,
+            "track": "tahoe",
+            "cursor": 28,
+            "playing": true,
+            "completed": false,
+            "voices": 3,
+            "musicVoices": 3,
+            "sfxVoices": 0,
+            "ahead": 0.17328571428569006,
+            "peakVoices": 8,
+            "scheduled": 319,
+            "dropped": 0,
+            "transitions": 2,
+            "schedulers": 1,
+            "settings": {
+              "music": true,
+              "sfx": true,
+              "musicVolume": 0.32,
+              "sfxVolume": 0.55,
+              "mute": false
+            },
+            "events": {
+              "menu": 3,
+              "jump": 24,
+              "land": 23,
+              "throuple": 1
+            },
+            "signalPeak": 0.11574295908212662,
+            "rms": 0.04672903113885285
+          },
+          "frames": {
+            "count": 603,
+            "p95": 16.799999999999272,
+            "over33": 0
+          },
+          "storageBytes": 26703
+        },
+        {
+          "seconds": 272.499,
+          "world": "tahoe",
+          "retainedHeap": 3230596,
+          "listeners": 142,
+          "nodes": 715,
+          "documents": 1,
+          "art": {
+            "loaded": true,
+            "actors": [
+              "toxic-bloom",
+              "algae-slime",
+              "pine-queen",
+              "pine-beetle",
+              "larva",
+              "flying-beetle"
+            ],
+            "contours": 1,
+            "contourBytes": 21904,
+            "contourBuilds": 1,
+            "draws": 7,
+            "backgrounds": 1913,
+            "failed": [],
+            "poses": {
+              "walk": 7
+            },
+            "lastPanel": 0
+          },
+          "audio": {
+            "initialized": true,
+            "state": "running",
+            "blocked": false,
+            "track": "tahoe",
+            "cursor": 7,
+            "playing": true,
+            "completed": false,
+            "voices": 3,
+            "musicVoices": 3,
+            "sfxVoices": 0,
+            "ahead": 0.21861904761903972,
+            "peakVoices": 8,
+            "scheduled": 467,
+            "dropped": 0,
+            "transitions": 2,
+            "schedulers": 1,
+            "settings": {
+              "music": true,
+              "sfx": true,
+              "musicVolume": 0.32,
+              "sfxVolume": 0.55,
+              "mute": false
+            },
+            "events": {
+              "menu": 5,
+              "jump": 34,
+              "land": 34,
+              "throuple": 1,
+              "cookie": 1
+            },
+            "signalPeak": 0.1062828078866005,
+            "rms": 0.023218418563277346
+          },
+          "frames": {
+            "count": 600,
+            "p95": 16.700000000000728,
+            "over33": 0
+          },
+          "storageBytes": 26667
+        },
+        {
+          "seconds": 282.617,
+          "world": "tahoe",
+          "retainedHeap": 3367524,
+          "listeners": 144,
+          "nodes": 718,
+          "documents": 1,
+          "art": {
+            "loaded": true,
+            "actors": [
+              "toxic-bloom",
+              "algae-slime",
+              "pine-queen",
+              "pine-beetle",
+              "larva",
+              "flying-beetle"
+            ],
+            "contours": 1,
+            "contourBytes": 21904,
+            "contourBuilds": 1,
+            "draws": 7,
+            "backgrounds": 2521,
+            "failed": [],
+            "poses": {
+              "walk": 7
+            },
+            "lastPanel": 0
+          },
+          "audio": {
+            "initialized": true,
+            "state": "running",
+            "blocked": false,
+            "track": "tahoe",
+            "cursor": 50,
+            "playing": true,
+            "completed": false,
+            "voices": 5,
+            "musicVoices": 5,
+            "sfxVoices": 0,
+            "ahead": 0.33938095238106314,
+            "peakVoices": 8,
+            "scheduled": 612,
+            "dropped": 0,
+            "transitions": 2,
+            "schedulers": 1,
+            "settings": {
+              "music": true,
+              "sfx": true,
+              "musicVolume": 0.32,
+              "sfxVolume": 0.55,
+              "mute": false
+            },
+            "events": {
+              "menu": 5,
+              "jump": 45,
+              "land": 45,
+              "throuple": 1,
+              "cookie": 1
+            },
+            "signalPeak": 0.10671175271272659,
+            "rms": 0.04553820108843941
+          },
+          "frames": {
+            "count": 608,
+            "p95": 16.799999999995634,
+            "over33": 0
+          },
+          "storageBytes": 26663
+        },
+        {
+          "seconds": 292.636,
+          "world": "tahoe",
+          "retainedHeap": 3391388,
+          "listeners": 144,
+          "nodes": 718,
+          "documents": 1,
+          "art": {
+            "loaded": true,
+            "actors": [
+              "toxic-bloom",
+              "algae-slime",
+              "pine-queen",
+              "pine-beetle",
+              "larva",
+              "flying-beetle"
+            ],
+            "contours": 1,
+            "contourBytes": 21904,
+            "contourBuilds": 1,
+            "draws": 7,
+            "backgrounds": 3122,
+            "failed": [],
+            "poses": {
+              "walk": 7
+            },
+            "lastPanel": 0
+          },
+          "audio": {
+            "initialized": true,
+            "state": "running",
+            "blocked": false,
+            "track": "tahoe",
+            "cursor": 28,
+            "playing": true,
+            "completed": false,
+            "voices": 5,
+            "musicVoices": 5,
+            "sfxVoices": 0,
+            "ahead": 0.3367142857143648,
+            "peakVoices": 8,
+            "scheduled": 757,
+            "dropped": 0,
+            "transitions": 2,
+            "schedulers": 1,
+            "settings": {
+              "music": true,
+              "sfx": true,
+              "musicVolume": 0.32,
+              "sfxVolume": 0.55,
+              "mute": false
+            },
+            "events": {
+              "menu": 7,
+              "jump": 56,
+              "land": 55,
+              "throuple": 1,
+              "cookie": 2
+            },
+            "signalPeak": 0.10609456151723862,
+            "rms": 0.045376260032402194
+          },
+          "frames": {
+            "count": 601,
+            "p95": 16.700000000004366,
+            "over33": 0
+          },
+          "storageBytes": 26665
+        }
+      ],
+      "errors": []
+    }
+  ]
+}

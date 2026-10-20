@@ -114,7 +114,7 @@ function createUI(){
   const screens={title:qs('titleScreen'),help:qs('helpScreen'),game:qs('gameScreen'),complete:qs('completeScreen'),portal:qs('portalScreen')};
   const refs={dude:qs('hudDude'),health:qs('hudHealth'),cards:qs('hudCards'),beacons:qs('hudBeacons'),triangle:qs('hudTriangle'),score:qs('hudScore'),routeFill:qs('routeProgressFill'),routeLabel:qs('routeLabel'),objectiveTitle:qs('objectiveTitle'),objectiveDetail:qs('objectiveDetail'),message:qs('message'),completeStats:qs('completeStats'),bossPhase:qs('bossPhase')};
   function show(name){Object.values(screens).forEach(s=>s.classList.remove('active'));screens[name].classList.add('active')}
-  function flash(text){refs.message.textContent=text;refs.message.classList.add('show');clearTimeout(flash.t);flash.t=setTimeout(()=>refs.message.classList.remove('show'),1800)}
+  function flash(text,{protectFor=0,routine=false}={}){const now=performance.now();if(routine&&now<(flash.protectedUntil||0))return;if(protectFor)flash.protectedUntil=now+protectFor;refs.message.textContent=text;refs.message.classList.add('show');clearTimeout(flash.t);flash.t=setTimeout(()=>refs.message.classList.remove('show'),Math.max(1800,protectFor))}
   function hud(game){for(const id of ['courtReplayBtn','courtReplayNote'])qs(id).hidden=Boolean(game.courtReplay)||!(game.encounters.pastMid||game.encounters.finalComplete||game.encounters.legacyAccess);qs('courtReturnBtn').hidden=!game.courtReplay;qs('queenReplayBtn').hidden=Boolean(game.courtReplay);const s=game.state,d=DUDES[s.dude],z=game.zone();refs.dude.textContent=d.name;QuestCast.setPortrait(qs("hudPortrait"),d.key);refs.health.textContent=s.health;refs.cards.textContent=s.cards;refs.beacons.textContent=s.beacons;refs.triangle.textContent=Math.floor(s.triangle);if(refs.score)refs.score.textContent=(s.score||0).toLocaleString();refs.routeFill.style.width=(game.player.x/(WORLD-100)*100)+'%';refs.routeLabel.textContent=z.name;refs.objectiveTitle.textContent=s.objective.title;refs.objectiveDetail.textContent=s.objective.detail;refs.bossPhase.classList.toggle('hidden',!game.boss.active&&!game.court?.active);if(game.court?.active){refs.bossPhase.textContent=`COURT OF SUPREMES · PHASE ${game.court.phase} · ${game.court.drain?'RIGHTS DRAIN':game.court.warning?'DRAIN WARNING':'POWERS READY'}`;refs.bossPhase.style.setProperty('--boss-health',`${game.enemies.filter(e=>e.type==='judge'&&e.alive).length/[1,3,9][game.court.phase-1]*100}%`);}if(game.boss.active){const hp=Math.max(0,game.boss.hp);refs.bossPhase.textContent=`QUEEN OF BEIGE  ${hp}/${game.boss.maxHp}`;refs.bossPhase.style.setProperty('--boss-health',`${hp/game.boss.maxHp*100}%`);refs.bossPhase.dataset.phase=String(game.boss.phase)}}
   return {show,flash,hud,refs,screens};
 }
@@ -735,16 +735,16 @@ class Adventure{
       this.shake=Math.max(this.shake,5);
       this.burst(this.player.x+22,this.player.y+32,'#ffe66d',20);
       this.burst(this.player.x+22,this.player.y+32,'#ff4fb8',16);
-      this.sound(payload.sound);this.haptic(10);this.ui.flash(payload.feedback);return;
+      this.sound(payload.sound);this.haptic(10);this.ui.flash(payload.feedback,{routine:true});return;
     }
     if(this.state.dude===1){
       this.danielCast=12;
       this.player.inv=Math.max(this.player.inv,42);
       this.shake=Math.max(this.shake,2);
-      this.sound(payload.sound);this.haptic([12,20,18]);this.ui.flash(payload.feedback);return;
+      this.sound(payload.sound);this.haptic([12,20,18]);this.ui.flash(payload.feedback,{routine:true});return;
     }
     this.shake=Math.max(this.shake,2);
-    this.sound(payload.sound);this.haptic(18);this.ui.flash(payload.feedback);
+    this.sound(payload.sound);this.haptic(18);this.ui.flash(payload.feedback,{routine:true});
   }
 
   findRicochetTarget(shot,from){
@@ -980,14 +980,15 @@ class Adventure{
     this.ui.flash(['ONE JUDGE','MAJORITY OPINION','FULL COURT'][this.court.phase-1]);this.sound('bossAppear');
   }
   updateCourt(dt){
-    const c=this.court;if(!c.active)return;
+    const c=this.court;if(!c.active)return;const wasDrained=c.drain>0;
     this.player.x=Math.min(this.player.x,8670);
     c.drain=Math.max(0,c.drain-dt);
     if(c.warning>0){c.warning=Math.max(0,c.warning-dt);if(c.warning===0){c.drain=120;this.ui.flash('RIGHTS DRAIN — keep moving! Powers return in 2 seconds.')}}
     else if(c.drain===0&&(c.timer-=dt)<=0){c.warning=60;c.timer=420;this.sound('warning');this.ui.flash('RIGHTS DRAIN INCOMING — temporary power restriction!')}
     if(!this.enemies.some(e=>e.type==='judge'&&e.alive)){
-      if(c.phase<3){c.phase++;this.spawnCourt()}else{c.active=false;c.drain=c.warning=0;c.victoryUntil=this.clock.time+3000;this.state.courtDefeated=true;this.state.courtVictoryRecorded=true;this.enemyShots=this.enemyShots.filter(q=>q.type!=='flamingScroll');this.encounters.finalComplete=true;if(!this.courtReplay)this.state.score+=2000;this.zoneBanner={text:'OVERRULED!',until:this.clock.time+3000};this.ui.flash(this.courtReplay?'OVERRULED! Returning to your saved adventure.':'OVERRULED! Zoey is free!');for(const color of ['#ff4fb8','#ffe66d','#3ce7d2','#8d5cff'])this.burst(8320,FLOOR-100,color,20);this.particles.slice(-80).forEach(p=>p.paper=true);this.sound('bossDefeat');if(!this.courtReplay)this.beginCourtRescue();persistQuest('court-complete')}
+      if(c.phase<3){c.phase++;this.spawnCourt()}else{c.active=false;c.drain=c.warning=0;c.victoryUntil=this.clock.time+3000;this.state.courtDefeated=true;this.state.courtVictoryRecorded=true;this.enemyShots=this.enemyShots.filter(q=>q.type!=='flamingScroll');this.encounters.finalComplete=true;if(!this.courtReplay)this.state.score+=2000;this.zoneBanner={text:'OVERRULED!',until:this.clock.time+3000};this.ui.flash(this.courtReplay?'OVERRULED! Returning to your saved adventure.':'OVERRULED! Zoey is free!',{protectFor:3000});for(const color of ['#ff4fb8','#ffe66d','#3ce7d2','#8d5cff'])this.burst(8320,FLOOR-100,color,20);this.particles.slice(-80).forEach(p=>p.paper=true);this.sound('bossDefeat');if(!this.courtReplay)this.beginCourtRescue();persistQuest('court-complete')}
     }
+    if(wasDrained!==(c.drain>0))QuestSurvival.refresh();
   }
   updateBoss(dt,t){
     this.updateCourt(dt);
@@ -1095,7 +1096,7 @@ class Adventure{
   defeatBoss(){
     if(this.encounters.queenComplete)return;
     QuestMasterArt.defeat('queen-beige',this.boss.x+60,this.boss.y+150,this.clock.time,176);this.encounters.queenComplete=true;if(this.courtReplay?.kind==='queen'){this.returnFromCourtReplay(true);return;}this.boss.hp=0;this.boss.alive=false;this.boss.active=false;this.enemyShots=[];this.state.health=4;QuestSurvival.objective('queen-beige',true);
-    this.zoneBanner={text:'COAST COLOR RESTORED!',until:this.clock.time+3000};this.sound('bossDefeat');this.ui.flash('Queen defeated! The coast is free. Continue to Los Angeles and the Court.');
+    this.zoneBanner={text:'COAST COLOR RESTORED!',until:this.clock.time+3000};this.sound('bossDefeat');this.ui.flash('Queen defeated! The coast is free. Continue to Los Angeles and the Court.',{protectFor:3000});
     this.state.objective={title:'Continue toward Los Angeles',detail:'Restore the final beacon and confront the Court of Supremes.'};if(this.encounters.finalComplete&&!this.encounters.legacyAccess)this.beginCourtRescue();persistQuest('queen-midpoint');
   }
   beginCourtRescue(){
@@ -2191,9 +2192,10 @@ class Adventure{
     if(button){button.dataset.hero=dude.name.toLowerCase();button.setAttribute('aria-label',`Use ${dude.power}`)}
   }
   switchDude(i=null){
+    const previous=this.state.dude;
     if(!QuestSurvival.select(i===null?this.state.dude+1:i,i===null))return;
     const now=this.clock.time;
-    this.switchFrom=this.state.dude;
+    this.switchFrom=previous;
     this.state.dude=i===null?(this.state.dude+1)%3:i;
     this.switchBurst=this.state.dude===1?0:18;
     this.shake=Math.max(this.shake,1);
@@ -2547,7 +2549,7 @@ function updateStartingDudeSelection(index){
 
   if(selectedName)selectedName.textContent=dude.name;
   if(selectedPower)selectedPower.textContent=dude.power;
-  if(startBtn)startBtn.textContent=`Start as ${dude.name}`;
+  if(startBtn)startBtn.textContent=QuestSurvival.enabled()?'Restart SoCal · keep Survival team':`Start Legacy as ${dude.name}`;
 }
 
 document.querySelectorAll('.dudeSelectCard').forEach((card,index)=>{
@@ -2579,32 +2581,10 @@ qs('continueBtn').onclick=()=>begin(readSave());
 qs('helpBtn').onclick=()=>ui.show('help');
 qs('backBtn').onclick=()=>ui.show('title');
 qs('triangleUltimateBtn').onclick=()=>game.input.trigger('ultimate');
-qs('pauseBtn').onclick=()=>game.pauseGameplay();
+QuestRuntime.bindPressButton(qs('pauseBtn'),{active:()=>game.input.isPlaying(),press:()=>game.pauseGameplay()});
 qs('journalBtn').onclick=()=>{if(game.inputMode==='PAUSED')game.resumeGameplay();else game.pauseGameplay()};
 qs('journalClose').onclick=()=>game.resumeGameplay();
-{
-  const switchButton=qs('switchBtn');
-  switchButton.onclick=null;
-  switchButton.addEventListener('pointerdown',event=>{
-    event.preventDefault();
-    event.stopPropagation();
-    if(!game.input.isPlaying?.())return;
-    game.switchDude();
-    switchButton.classList.add('isPressed');
-    try{switchButton.setPointerCapture(event.pointerId)}catch(_){}
-  },{passive:false});
-  const releaseSwitch=event=>{
-    event.preventDefault();
-    switchButton.classList.remove('isPressed');
-    try{
-      if(switchButton.hasPointerCapture(event.pointerId)){
-        switchButton.releasePointerCapture(event.pointerId);
-      }
-    }catch(_){}
-  };
-  switchButton.addEventListener('pointerup',releaseSwitch,{passive:false});
-  switchButton.addEventListener('pointercancel',releaseSwitch,{passive:false});
-}
+QuestRuntime.bindPressButton(qs('switchBtn'),{active:()=>game.input.isPlaying(),press:()=>game.switchDude()});
 qs('restartBtn').onclick=()=>{clearAllQuestSaves();refresh();begin(null,selectedStartingDude)};
 qs('portalBtn').onclick=()=>ui.show('portal');
 qs('titleBtn').onclick=()=>ui.show('title');

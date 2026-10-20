@@ -42,7 +42,17 @@
   if(!store()){record=old;announce('Survival could not start: storage unavailable. Existing saves are safe.');return false}
   shieldUntil=chargeBlockedUntil=0;render();window.QuestJourney?.render();return true;
  }
- function leave(){if(!record)return true;const old=record.enabled;record.enabled=false;if(!store()){record.enabled=old;return false}return true}
+ function setEnabled(value){
+  if(!record)return false;
+  const previous={enabled:record.enabled,sequence:record.sequence};
+  record.enabled=value;record.sequence++;
+  if(!store()){
+   Object.assign(record,previous);adapter?.freeze();
+   announce(conflict?'Another tab changed this run. Reload before continuing.':'Could not save the mode change. Keep this tab open and retry.');return false;
+  }
+  render();return true;
+ }
+ function leave(){if(!record)return true;return setEnabled(false)}
  function routeKey(k){return worldKeys.some(w=>k===w||k.startsWith(w+'-'))||k==='3dudes1quest_journey'}
  const storage={
   read(k,validate){if(!enabled()||!routeKey(k))return undefined;const v=record.worlds[k];return v&&validate(v)?copy(v):null},
@@ -65,7 +75,10 @@
   n=((Math.floor(n)%3)+3)%3;
   if(cycle){for(let i=0;i<3&&!record.characters[n].hp;i++)n=(n+1)%3}
   if(!record.characters[n].hp){announce(names[n]+' is knocked out for this run.');return false}
-  record.active=n;adapter?.release();commit();return true;
+  if(record.active===n)return true;
+  // Manual switching keeps held movement/jump/attack. Knockouts and interruptions
+  // still explicitly release input through their existing safety paths.
+  record.active=n;commit();announce(names[n]+' selected · '+(window.QuestCore?.CAST[n].power||'ready'));return true;
  }
  function damage(){
   if(!enabled())return false;
@@ -97,7 +110,9 @@
  }
  function tier(){const count=record?.characters.filter(c=>c.hp).length||0;return ['QUEST ENDED','SOLO SURGE','DOUBLE TROUBLE','THROUPLE POWER'][count]}
  function activate(){
-  if(!live()||!adapter?.playing()||adapter.replaying()||adapter.blocked())return false;
+  if(!live()||!adapter?.playing())return false;
+  if(adapter.replaying()){render();announce('Practice fight · team charge stays with your campaign.');return false}
+  if(adapter.blocked()){render();announce('Rights Drain · powers return shortly. Your charge is safe.');return false}
   const survivors=record.characters.map((c,i)=>c.hp?i:-1).filter(i=>i>=0);
   const missing=survivors.filter(i=>!record.contributions[i]);
   if(record.charge<100){announce('THROUPLE POWER · '+record.charge+'% · land powers and complete objectives.');return false}
@@ -109,23 +124,28 @@
   survivors.forEach(i=>{adapter.emit(i,-12);adapter.emit(i,12)});
   adapter.interrupt();window.QuestAudio?.effect('throuple');announce(tier()+'! · short shield active');render();return true;
  }
- function announce(text){if(typeof document==='undefined')return;const el=document.getElementById('survivalStatus');if(el)el.textContent=text}
+ function announce(text){if(typeof document==='undefined')return;for(const id of ['survivalStatus','survivalMenuStatus','survivalPauseStatus','survivalEndStatus']){const el=document.getElementById(id);if(el)el.textContent=text}}
  function mount(){
   if(typeof document==='undefined')return;
   if(document.getElementById('survivalHud'))return;
   const panel=document.querySelector('#titleScreen .titleMenuCard,#titleScreen .card,#openingCard');
-  const menu=document.createElement('section');menu.className='survivalMenu';menu.innerHTML='<strong>Three dudes. One survival run.</strong><p>Four hearts each. Knockouts last for the run. Legacy saves stay separate.</p><button id="startSurvival">Start a fresh Survival run</button><button id="resumeSurvival">Continue Survival</button><button id="legacySurvival">Play legacy adventure</button>';
-  panel?.append(menu);
+  const menu=document.createElement('section');menu.className='survivalMenu';menu.innerHTML='<strong>Choose your adventure mode</strong><p>Survival: four hearts per dude; knockouts last for the run. Starts in SoCal and carries your team through all three worlds. Legacy keeps its own saves.</p><button id="startSurvival">New Survival · begin in SoCal</button><button id="resumeSurvival">Continue Survival</button><button id="legacySurvival">Play Legacy · separate saves</button><p id="survivalMenuStatus" role="status" aria-live="polite"></p>';
+  const start=panel?.querySelector('#startBtn');if(start)panel.insertBefore(menu,start);else panel?.append(menu);
   menu.querySelector('#startSurvival').onclick=()=>{const native=document.getElementById('startBtn');if(native?.disabled)return;if(begin('socal',Number(document.getElementById('titleScreen')?.dataset.hero)||0)){if(native)native.click();else location.href='index.html'+(testing?'?tester=1':'')}};
-  menu.querySelector('#resumeSurvival').onclick=()=>{if(!record)return;record.enabled=true;if(!store())return;location.href=({socal:'index',tahoe:'tahoe',alaska:'alaska'}[record.currentWorld]||'index')+'.html'+(testing?'?tester=1':'')};
+  menu.querySelector('#resumeSurvival').onclick=()=>{if(!setEnabled(true))return;location.href=({socal:'index',tahoe:'tahoe',alaska:'alaska'}[record.currentWorld]||'index')+'.html'+(testing?'?tester=1':'')};
   menu.querySelector('#legacySurvival').onclick=()=>{if(leave())location.reload()};
-  const runInfo=document.createElement('section');runInfo.id='survivalRunInfo';runInfo.className='survivalMenu';runInfo.innerHTML='<h3>Survival campaign</h3><p id="survivalRunSummary"></p><button id="survivalNewRun">Archive this run and start a fresh Survival run</button><button id="survivalLegacy">Return to legacy adventure</button>';document.querySelector('#journal,#pauseMenu')?.append(runInfo);
+  const runInfo=document.createElement('section');runInfo.id='survivalRunInfo';runInfo.className='survivalMenu';runInfo.innerHTML='<h3>Survival campaign</h3><p id="survivalRunSummary"></p><p id="survivalPauseStatus" role="status" aria-live="polite"></p><button id="survivalNewRun">Archive this run and start a fresh Survival run</button><button id="survivalLegacy">Return to legacy adventure</button>';document.querySelector('#journal,#pauseMenu')?.append(runInfo);
   runInfo.querySelector('#survivalNewRun').onclick=()=>{if(begin())location.href='index.html'+(testing?'?tester=1':'')};
   runInfo.querySelector('#survivalLegacy').onclick=()=>{if(leave())location.href='index.html'};
   const hud=document.createElement('section');hud.id='survivalHud';hud.setAttribute('aria-label','Survival team');hud.innerHTML=names.map((name,i)=>'<div class="survivor" data-survivor="'+i+'"><img data-cast-portrait="'+name.toLowerCase()+'" alt="'+name+'"><span></span></div>').join('')+'<button id="teamPower" aria-keyshortcuts="KeyT">THROUPLE POWER</button><output id="survivalStatus" role="status" aria-live="polite"></output>';
   (document.querySelector('#gameScreen,#tahoeApp,#app')||document.body).append(hud);
+  const ended=document.createElement('section');ended.id='survivalEnded';ended.hidden=true;ended.className='survivalEndPanel';ended.setAttribute('role','dialog');ended.setAttribute('aria-modal','true');ended.setAttribute('aria-labelledby','survivalEndedTitle');
+  ended.innerHTML='<h2 id="survivalEndedTitle" tabindex="-1">Your Survival run has ended</h2><p>All three dudes are knocked out. Your progress and run history are saved. A new Survival run archives this attempt; Legacy saves stay separate.</p><p id="survivalEndStatus" role="status" aria-live="polite"></p><button id="survivalTryAgain">Archive run · start fresh in SoCal</button><button id="survivalEndLegacy">Play Legacy instead</button>';
+  document.body.append(ended);
+  ended.querySelector('#survivalTryAgain').onclick=()=>{if(begin())location.href='index.html'+(testing?'?tester=1':'')};
+  ended.querySelector('#survivalEndLegacy').onclick=()=>{if(leave())location.href='index.html'};
   window.QuestCast?.ready.then(()=>{lastRender='';render()});
-  hud.querySelector('#teamPower').onclick=activate;
+  window.QuestRuntime.bindPressButton(hud.querySelector('#teamPower'),{active:()=>Boolean(adapter?.playing())&&!storageBlocked,press:activate});
   document.addEventListener('click',e=>{const link=e.target.closest?.('a[href]');if(enabled()&&link&&/^(index|tahoe|alaska)\.html/.test(link.getAttribute('href'))){if(!commit())e.preventDefault();else if(testing)link.href=link.pathname+'?tester=1';}},true);
   addEventListener('keydown',e=>{if(e.code==='KeyT'&&!e.repeat&&!/INPUT|SELECT|TEXTAREA/.test(e.target.tagName)){if(enabled()){e.preventDefault();activate()}}});
   if(testing){const tools=document.createElement('div');tools.className='survivalTest';tools.innerHTML='<b>LOCAL TEST MODE · damage protection · isolated saves</b><button>Reset test hearts</button>';tools.querySelector('button').onclick=()=>{if(!enabled())return;record.characters.forEach(c=>{c.hp=4;c.available=true});record.status='playing';commit()};document.querySelector('#journal,#pauseMenu')?.append(tools)}
@@ -134,13 +154,22 @@
   if(typeof document==='undefined')return;const hud=document.getElementById('survivalHud');if(!hud)return;
   const changed=document.documentElement.classList.contains('survival')!==enabled();document.documentElement.classList.toggle('survival',enabled());if(changed)dispatchEvent(new Event('resize'));
   document.querySelectorAll('#queenReplayBtn,#courtReplayBtn,#bloomReplayBtn,#pipelineReplayBtn').forEach(el=>{el.dataset.replayLabel??=el.textContent;el.textContent=el.dataset.replayLabel+(enabled()?' (practice)':'')});
-  hud.hidden=!enabled();document.getElementById('survivalRunInfo').hidden=!record;document.getElementById('survivalRunSummary').textContent=record?(testing?'LOCAL TEST MODE · ':'')+(record.status==='ended'?'Quest ended. Start a fresh run to try again.':'Knockouts last for this run. Charge carries between worlds.')+' '+record.achievements.map(a=>a.world+': '+a.badge).join(' · ')+' · Archived runs: '+(record.history?.length||0):'';document.getElementById('resumeSurvival').hidden=!record;document.getElementById('legacySurvival').hidden=!enabled();
+  hud.hidden=!enabled();document.getElementById('survivalEnded').hidden=!(enabled()&&record.status==='ended');document.getElementById('survivalRunInfo').hidden=!record;document.getElementById('survivalRunSummary').textContent=record?(testing?'LOCAL TEST MODE · ':'')+(record.status==='ended'?'Quest ended. Start a fresh run to try again.':'Knockouts last for this run. Charge carries between worlds. Check marks mean that dude has landed a power; all three are needed for the full team burst.')+' '+record.characters.map((c,i)=>names[i]+' '+(c.hp?c.hp+'/4':'OUT')).join(' · ')+' · '+tier()+' '+record.charge+'% · '+record.achievements.map(a=>a.world+': '+a.badge).join(' · ')+' · Archived runs: '+(record.history?.length||0):'';document.getElementById('resumeSurvival').hidden=!record;document.getElementById('resumeSurvival').textContent=record?.status==='ended'?'Review ended Survival run':'Continue Survival';document.getElementById('legacySurvival').hidden=!enabled();
+  const titleStart=document.getElementById('startBtn');if(titleStart)titleStart.textContent=enabled()?'Restart SoCal · keep Survival team':'Start Legacy as '+(document.getElementById('selectedDudeName')?.textContent||'Will');
+  const labels={continueBtn:enabled()?'Continue SoCal Survival':'Continue Legacy adventure',beginTahoe:enabled()?'Enter Tahoe · Survival team':'Enter Tahoe · Legacy',beginAdventure:enabled()?'Restart Alaska · keep Survival team':'New Alaska · Legacy',continueAdventure:enabled()?'Continue Alaska Survival':'Continue Alaska · Legacy'};
+  for(const [id,text] of Object.entries(labels)){const el=document.getElementById(id);if(el)el.textContent=text}
+  document.getElementById('startSurvival').textContent=record?'Archive run · new Survival in SoCal':'New Survival · begin in SoCal';
   if(!enabled())return;
-  const signature=JSON.stringify([record.characters,record.active,record.charge,record.contributions,record.status,testing]);if(signature===lastRender)return;lastRender=signature;
+  const blocked=Boolean(adapter?.blocked()),practice=Boolean(adapter?.replaying());
+  const signature=JSON.stringify([record.characters,record.active,record.charge,record.contributions,record.status,testing,blocked,practice]);if(signature===lastRender)return;lastRender=signature;
   hud.querySelectorAll('.survivor').forEach((el,i)=>{const c=record.characters[i],name=names[i];el.dataset.active=String(record.active===i);el.dataset.out=String(!c.hp);el.querySelector('span').textContent=name+' '+(c.hp?'♥'.repeat(c.hp)+'♡'.repeat(4-c.hp):'OUT')+(record.contributions[i]?' ✓':'');el.setAttribute('aria-label',name+' '+c.hp+' of 4 hearts'+(record.active===i?', active':'')+(c.hp?'':', knocked out'));window.QuestCast?.setPortrait(el.querySelector('img'),name.toLowerCase())});
-  const button=hud.querySelector('#teamPower');button.textContent=(testing?'TEST · ':'')+tier()+' '+record.charge+'% · T';button.setAttribute('aria-label',tier()+' '+record.charge+' percent. Press T or tap to activate.');
+  const button=hud.querySelector('#teamPower'),missing=record.characters.flatMap((c,i)=>c.hp&&!record.contributions[i]?[names[i]]:[]),needsTeam=record.characters.every(c=>c.hp)&&missing.length;
+  const ready=live()&&!blocked&&!practice&&record.charge===100&&!needsTeam;
+  button.dataset.ready=String(ready);button.textContent=(testing?'TEST · ':'')+tier()+' '+record.charge+'% · '+(practice?'PRACTICE':blocked?'DRAIN · WAIT':ready?'READY · T':record.charge===100?'NEED '+missing.join(' + '):'T');
+  button.setAttribute('aria-label',tier()+' '+record.charge+' percent. '+(practice?'Practice fight; campaign charge is protected.':blocked?'Rights Drain; wait for powers to return.':ready?'Ready. Press T or tap to activate.':needsTeam?'Land '+missing.join(', ')+' powers; fill charge through hits and objectives.':'Fill charge through hits and objectives.'));
+  button.title=practice?'Practice fight — campaign charge is protected.':blocked?'Rights Drain — wait for powers to return.':ready?'Ready — press T or tap.':record.charge===100?'Land '+missing.join(' + ')+' powers to complete the team.':'Land powers and complete objectives to charge. Check marks show contributions.';
  }
  if(typeof addEventListener==='function')addEventListener('storage',e=>{if(e.key===key&&enabled()&&revision(read())!==seenRevision){storageBlocked=true;conflict=true;adapter?.release();adapter?.freeze();announce('ANOTHER TAB SAVED THIS RUN · reload this tab to continue safely.')}});
  if(testing&&!record)begin();
- window.QuestSurvival=Object.freeze({BALANCE,enabled,live,storage,bindState,attach,enter,select,damage,recover,objective,hit,complete,activate,begin,leave,commit,valid,get state(){return record?copy(record):null},get testing(){return testing},get storageBlocked(){return storageBlocked}});
+ window.QuestSurvival=Object.freeze({BALANCE,enabled,live,storage,bindState,attach,enter,select,damage,recover,objective,hit,complete,activate,begin,leave,commit,refresh:render,valid,get state(){return record?copy(record):null},get testing(){return testing},get storageBlocked(){return storageBlocked}});
 })();

@@ -2,6 +2,8 @@ importScripts('./js/core/quest-release.js');
 const VERSION=self.QuestRelease.version;
 const CACHE=`3dudes1quest-${VERSION}-${self.QuestRelease.cacheRevision}`;
 const CORE=[
+  "./js/core/quest-interface.js",
+  "./css/polish4.css",
   "./js/core/quest-survival.js",
   "./css/survival.css",
   "./assets/story2/scenes.webp",

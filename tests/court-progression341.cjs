@@ -17,9 +17,9 @@ async function fightCourt(p,label,{observeDrain=false}={}){
  }
  throw Error('Court keyboard fight timed out '+await p.evaluate(()=>JSON.stringify({court:__questGame.court,player:__questGame.player,health:__questGame.state.health})));
 }
-async function freshRoute(p,base){
+async function freshRoute(p,base,{survival=false}={}){
  // This route tests the returning-player campaign; origin-story.cjs owns first-run cinematic coverage.
- await p.addInitScript(()=>localStorage.setItem('3dudes1quest-origin-seen','1'));await p.goto(base+'/index.html');await p.locator('#startBtn').click();await p.waitForFunction(()=>__questGame.running&&!window.QuestStory?.active);for(const key of ['ArrowLeft','ArrowRight','ArrowUp','Space'])await p.keyboard.up(key);await p.keyboard.press('2');
+ await p.addInitScript(()=>localStorage.setItem('3dudes1quest-origin-seen','1'));await p.goto(base+'/index.html');await p.locator(survival?'#startSurvival':'#startBtn').click();await p.waitForFunction(()=>__questGame.running&&!window.QuestStory?.active);for(const key of ['ArrowLeft','ArrowRight','ArrowUp','Space'])await p.keyboard.up(key);await p.keyboard.press('2');
  assert.equal(await p.evaluate(()=>__questGame.state.courtDefeated),false);assert.equal(await p.locator('#courtReplayBtn').isVisible(),false);
  let jumpEnd=0,powerAt=0,detour=null;const end=Date.now()+150000;
  while(Date.now()<end){

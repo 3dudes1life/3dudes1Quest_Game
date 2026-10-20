@@ -106,8 +106,9 @@ function overlap(a,b){return a.x<b.x+b.w&&a.x+a.w>b.x&&a.y<b.y+b.h&&a.y+a.h>b.y}
 function objective(a,b){ui.objectiveTitle.textContent=a;ui.objectiveText.textContent=b}
 function inputLabel(t){if(!ui.input)return;ui.input.querySelector("b").textContent=t;ui.input.classList.add("active");clearTimeout(inputLabel.t);inputLabel.t=setTimeout(()=>{ui.input.classList.remove("active");ui.input.querySelector("b").textContent="READY"},600)}
 function setDude(n,restoring=false){
+const previous=state.dude;
 if(!restoring&&!QuestSurvival.select(n,n===state.dude+1))return;
-if(state.started&&n!==state.dude)QuestAudio.effect('switch');
+if(!restoring&&state.started&&n!==previous)QuestAudio.effect('switch');
 state.dude=Number.isFinite(n)?((Math.floor(n)%3)+3)%3:0;const d=dudes[state.dude];ui.dude.textContent=d.name;QuestCast.setPortrait(ui.portrait,d.key);
 const icon=$("powerIcon"),label=$("powerButtonLabel");if(icon)icon.textContent=d.powerIcon;if(label)label.textContent="POWER";
 if(ui.power)ui.power.setAttribute("aria-label",`Use ${d.power}`);ui.powerFill.style.width="100%";ui.powerLabel.textContent=d.power.toUpperCase();
@@ -303,8 +304,8 @@ prepareCast();
 const bloomReplayButton=document.createElement('button');bloomReplayButton.id='bloomReplayBtn';bloomReplayButton.textContent='Replay Toxic Bloom';bloomReplayButton.onclick=startBloomReplay;ui.pause.appendChild(bloomReplayButton);
 const bloomReturnButton=document.createElement('button');bloomReturnButton.id='bloomReturnBtn';bloomReturnButton.textContent='Return to saved adventure';bloomReturnButton.onclick=()=>returnBloomReplay(state.encounters.bloom.complete);ui.pause.appendChild(bloomReturnButton);
 ui.begin.addEventListener("click",()=>{if(castReady)reset(false);else{Object.assign(imgs,QuestCore.loadCastImages());prepareCast()}});
-ui.switch.addEventListener("click",()=>{if(input.isPlaying())setDude(state.dude+1)});
-ui.pauseBtn.addEventListener("click",()=>setPaused(!state.paused));
+QuestRuntime.bindPressButton(ui.switch,{active:()=>input.isPlaying(),press:()=>setDude(state.dude+1)});
+QuestRuntime.bindPressButton(ui.pauseBtn,{active:()=>input.isPlaying(),press:()=>setPaused(true)});
 ui.resume.addEventListener("click",()=>setPaused(false));
 ui.restart.addEventListener("click",()=>reset(true));ui.replay.addEventListener("click",()=>reset(true));
 ui.continuePortal.addEventListener("click",()=>{if(!state.bossDefeated)return;state.portal=true;state.player.x=9480;state.player.y=ground(9480)-state.player.h;ui.trailhead.classList.add("hidden")});

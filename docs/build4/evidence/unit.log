@@ -1,0 +1,42 @@
+
+> 3dudes1quest@3.4.1 test
+> node --test tests/runtime.test.cjs
+
+Quest save failed Error: quota
+    at context.localStorage.setItem (/Volumes/OutAt Mac Mini/Development & Production/ChatGPT Projects/3dudes1Quest/tests/runtime.test.cjs:41:74)
+    at Object.writeSave (evalmachine.<anonymous>:162:20)
+    at TestContext.<anonymous> (/Volumes/OutAt Mac Mini/Development & Production/ChatGPT Projects/3dudes1Quest/tests/runtime.test.cjs:41:111)
+    at Test.runInAsyncScope (node:async_hooks:226:14)
+    at Test.run (node:internal/test_runner/test:1402:25)
+    at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+    at Test.postRun (node:internal/test_runner/test:1542:19)
+    at Test.run (node:internal/test_runner/test:1467:12)
+    at async Test.processPendingSubtests (node:internal/test_runner/test:974:7)
+✔ simulation produces identical movement at 30, 60 and 120 Hz (4.901417ms)
+✔ loop start is idempotent and pause/resume discards accumulated time (0.469375ms)
+✔ landing checks swept feet and does not snap upwards from below platforms (0.380042ms)
+✔ buffered landing jumps and coyote jumps work (0.364708ms)
+✔ corrupt primary save falls back to previous snapshot; restart clears both (0.949416ms)
+✔ storage failures return false instead of claiming a successful save (1.252333ms)
+✔ all characters retain distinct jump heights and settle on the floor (1.147208ms)
+✔ quick reversals and stopping are bounded without overshooting world edges (0.84375ms)
+✔ a short jump is lower than a held jump and one-way platforms ignore rising feet (0.716834ms)
+✔ camera tracks smoothly, settles when stopped, and respects world bounds (0.588666ms)
+✔ original scores have complete phrases, valid pitches and distinct melodies (1.594708ms)
+✔ all named gameplay sounds resolve to short original effects (1.184167ms)
+✔ Alaska route has reachable stepped platforms, separated shelters and three relays before the arena (0.405666ms)
+✔ 3.4.1 visual upgrade preserves 3.4 character stats and every left/right projectile property (14.479958ms)
+✔ release metadata, visible fallback badges and cache source stay aligned (17.039667ms)
+✔ additive encounters preserve legacy access without inventing new boss victories (0.617333ms)
+✔ survival health is independent, KO irreversible, no checkpoint or switch healing (1.554709ms)
+✔ charge needs real unique HP loss, three contributions and consumes exactly once (1.239583ms)
+✔ survival atomic envelope isolates legacy, quota retains previous complete generation and backup (0.567833ms)
+✔ backup recovery retains a committed knockout; public tester query grants no protection (0.441833ms)
+ℹ tests 20
+ℹ suites 0
+ℹ pass 20
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 237.158458

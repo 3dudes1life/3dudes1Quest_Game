@@ -1,0 +1,13 @@
+{
+  "baseline": "c3aba0f",
+  "world": "tahoe",
+  "before": 0,
+  "after": {
+    "active": 0,
+    "keys": {
+      "right": true,
+      "power": true,
+      "jump": true
+    }
+  }
+}

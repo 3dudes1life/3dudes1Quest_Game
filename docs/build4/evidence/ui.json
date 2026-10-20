@@ -1,0 +1,41 @@
+{
+  "results": [
+    {
+      "world": "socal",
+      "mobile": false,
+      "menuFocus": true,
+      "readiness": true
+    },
+    {
+      "world": "tahoe",
+      "mobile": false,
+      "menuFocus": true,
+      "readiness": true
+    },
+    {
+      "world": "alaska",
+      "mobile": false,
+      "menuFocus": true,
+      "readiness": true
+    },
+    {
+      "world": "socal",
+      "mobile": true,
+      "menuFocus": true,
+      "readiness": true
+    },
+    {
+      "world": "tahoe",
+      "mobile": true,
+      "menuFocus": true,
+      "readiness": true
+    },
+    {
+      "world": "alaska",
+      "mobile": true,
+      "menuFocus": true,
+      "readiness": true
+    }
+  ],
+  "errors": []
+}

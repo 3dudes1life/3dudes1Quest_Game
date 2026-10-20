@@ -1,0 +1,13 @@
+{
+  "date": "2026-10-20",
+  "os": "27.0.1",
+  "cpu": "Apple M2 Pro",
+  "ramBytes": 17179869184,
+  "chrome": "155.0.8059.85",
+  "node": "v26.11.1",
+  "profiles": {
+    "desktop": "1280 \u00d7 800",
+    "emulatedMobile": "844 \u00d7 390, touch enabled"
+  },
+  "physicalDevicesTested": false
+}

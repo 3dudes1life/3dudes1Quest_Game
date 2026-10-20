@@ -1,0 +1,827 @@
+[
+  {
+    "world": "socal",
+    "mobile": false,
+    "title": "\n      \n      \n      \n        🌴 SOUTHERN CALIFORNIA\n        THE QUEST IS ALREADY MOVING\n      \n      \n        3DUDES1LIFE CREATIVE PRESENTS\n        v3.4.1 • THE AURORA RETURN\n        3Dudes1Quest\n        Adventure 1: Southern California\n        The Queen of Beige is draining the color from SoCal—and she has taken Zoey captive. Follow Rigsby, restore the Prism Beacons, recover every Gay Card, rescue Zoey, and enter the portal together.\n\n        \n          \n            CHOOSE YOUR STARTING DUDE\n            Who leads the quest?\n          \n\n          \n            \n              \n                \n              \n              \n                Will\n                RAINBOW RICOCHET\n                Fast shots that bounce through groups\n              \n              ✓\n            \n\n            \n              \n                \n              \n              \n                Daniel\n                HEARTFIELD BURST\n                Homing hearts trap and explode enemies\n              \n              ✓\n            \n\n            \n              \n                \n              \n              \n                Caleb\n                LONG-RANGE COOKIE TOSS\n                Sticky bombs with delayed splash damage\n              \n              ✓\n            \n          \n\n          \n            Starting as Will\n            •\n            Power: DJ Soundwave\n          \n        \n\n        Start as Will\n        Continue Adventure\n        No saved quest yet.\n        Head right. Jump with ↑ / W; use Space or POWER to defeat enemies. Touching enemies hurts. Release jump early for a shorter hop. Pause for sound and control settings.\n        How to Play\n        Our Story\n        \n          🌲\n          World 2: Lake Tahoe\n          Continue the five-world quest\n        \n        Best played in landscape on mobile.\n      Three dudes. One survival run.Four hearts each. Knockouts last for the run. Legacy saves stay separate.Start a fresh Survival runContinue SurvivalPlay legacy adventureSound settingsOriginal chiptunes & effectsMaster muteMusicSound effectsMusic volume32%Effects volume55%Sound starts after you tap or press a key. Pause stops music; resume restarts it safely.1. Southern CaliforniaYOU ARE HERE2. Lake TahoePLAYABLE3. AlaskaPLAYABLE4. HawaiiCOMING SOON5. Costa RicaCOMING SOON\n    ",
+    "pause": "PAUSED\nAdventure Menu\nSAVE\n✕\n▶ Resume Adventure\n🗺 World Map\n📖 Passport\n📸 Photo Mode\nReplay Queen of Beige (practice)\nMap\nGay Cards\nThe Dudes\nPassport\nMemories\nSecrets\nObjectives\nSurvival campaign\n\nKnockouts last for this run. Charge carries between worlds. · Archived runs: 0\n\nArchive this run and start a fresh Survival runReturn to legacy adventure\nTouch controls\nButton size\nSmall\nStandard\nLarge\nMovement side\nLeft (default)\nRight (left-handed)\n\nCURRENT OBJECTIVE Find Zoey Follow Rigsby and recover the first Gay Card. Zoey has been taken by the Queen of Beige.\n\nSound settings\n1. Southern California\nYOU ARE HERE\n2. Lake Tahoe\nPLAYABLE\n3. Alaska\nPLAYABLE\n4. Hawaii\nCOMING SOON\n5. Costa Rica\nCOMING SOON\n↗ SHARE",
+    "buttons": [
+      {
+        "id": "pauseBtn",
+        "text": "Ⅱ",
+        "w": 44,
+        "h": 44,
+        "font": "16px"
+      },
+      {
+        "id": "journalBtn",
+        "text": "☰",
+        "w": 44,
+        "h": 44,
+        "font": "16px"
+      },
+      {
+        "id": "photoBtn",
+        "text": "📸",
+        "w": 44,
+        "h": 44,
+        "font": "16px"
+      },
+      {
+        "id": "saveBtn",
+        "text": "SAVE",
+        "w": 74.40625,
+        "h": 44,
+        "font": "16px"
+      },
+      {
+        "id": "journalClose",
+        "text": "✕",
+        "w": 44,
+        "h": 44,
+        "font": "16px"
+      },
+      {
+        "id": "resumeBtn",
+        "text": "▶ Resume Adventure",
+        "w": 280,
+        "h": 79,
+        "font": "16px"
+      },
+      {
+        "id": "mapBtn",
+        "text": "🗺 World Map",
+        "w": 140,
+        "h": 79,
+        "font": "16px"
+      },
+      {
+        "id": "passportBtn",
+        "text": "📖 Passport",
+        "w": 140,
+        "h": 79,
+        "font": "16px"
+      },
+      {
+        "id": "photoHubBtn",
+        "text": "📸 Photo Mode",
+        "w": 140,
+        "h": 79,
+        "font": "16px"
+      },
+      {
+        "id": "queenReplayBtn",
+        "text": "Replay Queen of Beige (practice)",
+        "w": 730,
+        "h": 53,
+        "font": "16px"
+      },
+      {
+        "id": "",
+        "text": "Map",
+        "w": 60.8125,
+        "h": 44,
+        "font": "16px"
+      },
+      {
+        "id": "",
+        "text": "Gay Cards",
+        "w": 118.421875,
+        "h": 44,
+        "font": "16px"
+      },
+      {
+        "id": "",
+        "text": "The Dudes",
+        "w": 118.421875,
+        "h": 44,
+        "font": "16px"
+      },
+      {
+        "id": "",
+        "text": "Passport",
+        "w": 108.8125,
+        "h": 44,
+        "font": "16px"
+      },
+      {
+        "id": "",
+        "text": "Memories",
+        "w": 108.8125,
+        "h": 44,
+        "font": "16px"
+      },
+      {
+        "id": "",
+        "text": "Secrets",
+        "w": 99.21875,
+        "h": 44,
+        "font": "16px"
+      },
+      {
+        "id": "",
+        "text": "Objectives",
+        "w": 128.015625,
+        "h": 44,
+        "font": "16px"
+      },
+      {
+        "id": "survivalNewRun",
+        "text": "Archive this run and start a fresh Survival run",
+        "w": 386.671875,
+        "h": 44,
+        "font": "13px"
+      },
+      {
+        "id": "survivalLegacy",
+        "text": "Return to legacy adventure",
+        "w": 222.84375,
+        "h": 44,
+        "font": "13px"
+      },
+      {
+        "id": "pwaShare",
+        "text": "↗ SHARE",
+        "w": 89.171875,
+        "h": 42,
+        "font": "12px"
+      },
+      {
+        "id": "teamPower",
+        "text": "THROUPLE POWER 0% · T",
+        "w": 743,
+        "h": 44,
+        "font": "12px"
+      }
+    ]
+  },
+  {
+    "world": "tahoe",
+    "mobile": false,
+    "title": "\n      ADVENTURE 2 · v3.4.1Lake TahoeSave Our Secret Place\n      Destroy the beetle nests, survive Tahoe’s changing weather, and defeat the three-phase Pine Beetle Queen with Will, Daniel, Caleb, Rigsby, and Zoey.\n      Head right. Jump with ↑ / W; use Space or POWER to defeat enemies. Touching enemies hurts. Release jump early for a shorter hop. Pause for sound and control settings.\n      Start Tahoe\n      Existing saves continue from the last checkpoint. Restart is available in the pause menu.\n    Three dudes. One survival run.Four hearts each. Knockouts last for the run. Legacy saves stay separate.Start a fresh Survival runContinue SurvivalPlay legacy adventureSound settingsOriginal chiptunes & effectsMaster muteMusicSound effectsMusic volume32%Effects volume55%Sound starts after you tap or press a key. Pause stops music; resume restarts it safely.1. Southern CaliforniaPLAYABLE2. Lake TahoeYOU ARE HERE3. AlaskaPLAYABLE4. HawaiiCOMING SOON5. Costa RicaCOMING SOON",
+    "pause": "ADVENTURE PAUSED\nLake Tahoe\nResume\nSave checkpoint\n\nRestart Tahoe\nReturn to Title\nReplay Toxic Bloom (practice)\nReturn to saved adventure\nSurvival campaign\n\nKnockouts last for this run. Charge carries between worlds. · Archived runs: 0\n\nArchive this run and start a fresh Survival run\nReturn to legacy adventure\nTouch controls\nButton size\nSmall\nStandard\nLarge\nMovement side\nLeft (default)\nRight (left-handed)\n\nCURRENT OBJECTIVESave the Tahoe forestDestroy the four nests and clear the trail to the Queen.\n\nSound settings\n1. Southern California\nPLAYABLE\n2. Lake Tahoe\nYOU ARE HERE\n3. Alaska\nPLAYABLE\n4. Hawaii\nCOMING SOON\n5. Costa Rica\nCOMING SOON\n↗ SHARE\n＋ INSTALL",
+    "buttons": [
+      {
+        "id": "pauseBtn",
+        "text": "Ⅱ",
+        "w": 44,
+        "h": 44,
+        "font": "16px"
+      },
+      {
+        "id": "resumeTahoe",
+        "text": "Resume",
+        "w": 390,
+        "h": 53,
+        "font": "16px"
+      },
+      {
+        "id": "saveTahoe",
+        "text": "Save checkpoint",
+        "w": 390,
+        "h": 53,
+        "font": "16px"
+      },
+      {
+        "id": "restartTahoe",
+        "text": "Restart Tahoe",
+        "w": 390,
+        "h": 53,
+        "font": "16px"
+      },
+      {
+        "id": "bloomReplayBtn",
+        "text": "Replay Toxic Bloom (practice)",
+        "w": 390,
+        "h": 53,
+        "font": "16px"
+      },
+      {
+        "id": "bloomReturnBtn",
+        "text": "Return to saved adventure",
+        "w": 390,
+        "h": 53,
+        "font": "16px"
+      },
+      {
+        "id": "survivalNewRun",
+        "text": "Archive this run and start a fresh Survival run",
+        "w": 390,
+        "h": 44,
+        "font": "13px"
+      },
+      {
+        "id": "survivalLegacy",
+        "text": "Return to legacy adventure",
+        "w": 390,
+        "h": 44,
+        "font": "13px"
+      },
+      {
+        "id": "pwaShare",
+        "text": "↗ SHARE",
+        "w": 302,
+        "h": 42,
+        "font": "12px"
+      },
+      {
+        "id": "pwaInstall",
+        "text": "＋ INSTALL",
+        "w": 302,
+        "h": 42,
+        "font": "12px"
+      },
+      {
+        "id": "",
+        "text": "◀",
+        "w": 58,
+        "h": 58,
+        "font": "16px"
+      },
+      {
+        "id": "",
+        "text": "▶",
+        "w": 58,
+        "h": 58,
+        "font": "16px"
+      },
+      {
+        "id": "switchBtn",
+        "text": "↻\nSWITCH",
+        "w": 58,
+        "h": 58,
+        "font": "16px"
+      },
+      {
+        "id": "powerBtn",
+        "text": "♫\nPOWER",
+        "w": 58,
+        "h": 58,
+        "font": "16px"
+      },
+      {
+        "id": "",
+        "text": "↑\nJUMP",
+        "w": 58,
+        "h": 58,
+        "font": "16px"
+      },
+      {
+        "id": "teamPower",
+        "text": "THROUPLE POWER 0% · T",
+        "w": 743,
+        "h": 44,
+        "font": "12px"
+      }
+    ]
+  },
+  {
+    "world": "alaska",
+    "mobile": false,
+    "title": "ADVENTURE 3 · v3.4.1AlaskaThe Aurora ReturnTahoe is safe, but the northern lights have gone dark. The Frost Queen controls blizzards and has cursed the salmon. Restore three Aurora Relays, then break her ice shield. Caleb has prepared a strongly worded cookie.Head right. Jump with ↑ / W; use Space / POWER on enemies and relays. 1 / 2 / 3 switches dudes. Blue ledges are safe; cracked thin ice hurts. Shelters save progress. Pause for sound and touch settings.New Alaska AdventureContinue AlaskaThree dudes. One survival run.Four hearts each. Knockouts last for the run. Legacy saves stay separate.Start a fresh Survival runContinue SurvivalPlay legacy adventureSound settingsOriginal chiptunes & effectsMaster muteMusicSound effectsMusic volume32%Effects volume55%Sound starts after you tap or press a key. Pause stops music; resume restarts it safely.1. Southern CaliforniaPLAYABLE2. Lake TahoePLAYABLE3. AlaskaYOU ARE HERE4. HawaiiCOMING SOON5. Costa RicaCOMING SOON",
+    "pause": "QUEST PAUSED\nAlaska\nResume\nSave checkpoint\n\nRestart Alaska\nReturn to Tahoe\nReplay Pipeline Meltdown (practice)\nReturn to saved adventure\nSurvival campaign\n\nKnockouts last for this run. Charge carries between worlds. · Archived runs: 0\n\nArchive this run and start a fresh Survival run\nReturn to legacy adventure\nTouch controls\nButton size\nSmall\nStandard\nLarge\nMovement side\nLeft (default)\nRight (left-handed)\n\nCURRENT OBJECTIVE0/3 relays · head rightHit each relay twice with your character power. Explore upper ledges for shards and supplies.\n\nSound settings\n1. Southern California\nPLAYABLE\n2. Lake Tahoe\nPLAYABLE\n3. Alaska\nYOU ARE HERE\n4. Hawaii\nCOMING SOON\n5. Costa Rica\nCOMING SOON\n↗ SHARE\n＋ INSTALL",
+    "buttons": [
+      {
+        "id": "pauseBtn",
+        "text": "Ⅱ",
+        "w": 44,
+        "h": 44,
+        "font": "16px"
+      },
+      {
+        "id": "resumeAdventure",
+        "text": "Resume",
+        "w": 390,
+        "h": 53,
+        "font": "16px"
+      },
+      {
+        "id": "saveAdventure",
+        "text": "Save checkpoint",
+        "w": 390,
+        "h": 53,
+        "font": "16px"
+      },
+      {
+        "id": "restartAdventure",
+        "text": "Restart Alaska",
+        "w": 390,
+        "h": 53,
+        "font": "16px"
+      },
+      {
+        "id": "pipelineReplayBtn",
+        "text": "Replay Pipeline Meltdown (practice)",
+        "w": 390,
+        "h": 53,
+        "font": "16px"
+      },
+      {
+        "id": "pipelineReturnBtn",
+        "text": "Return to saved adventure",
+        "w": 390,
+        "h": 53,
+        "font": "16px"
+      },
+      {
+        "id": "survivalNewRun",
+        "text": "Archive this run and start a fresh Survival run",
+        "w": 390,
+        "h": 44,
+        "font": "13px"
+      },
+      {
+        "id": "survivalLegacy",
+        "text": "Return to legacy adventure",
+        "w": 390,
+        "h": 44,
+        "font": "13px"
+      },
+      {
+        "id": "pwaShare",
+        "text": "↗ SHARE",
+        "w": 302,
+        "h": 42,
+        "font": "12px"
+      },
+      {
+        "id": "pwaInstall",
+        "text": "＋ INSTALL",
+        "w": 302,
+        "h": 42,
+        "font": "12px"
+      },
+      {
+        "id": "",
+        "text": "◀",
+        "w": 58,
+        "h": 58,
+        "font": "16px"
+      },
+      {
+        "id": "",
+        "text": "▶",
+        "w": 58,
+        "h": 58,
+        "font": "16px"
+      },
+      {
+        "id": "switchBtn",
+        "text": "↻\nSWITCH",
+        "w": 58,
+        "h": 58,
+        "font": "16px"
+      },
+      {
+        "id": "powerBtn",
+        "text": "♫\nPOWER",
+        "w": 58,
+        "h": 58,
+        "font": "16px"
+      },
+      {
+        "id": "",
+        "text": "↑\nJUMP",
+        "w": 58,
+        "h": 58,
+        "font": "16px"
+      },
+      {
+        "id": "teamPower",
+        "text": "THROUPLE POWER 0% · T",
+        "w": 743,
+        "h": 44,
+        "font": "12px"
+      }
+    ]
+  },
+  {
+    "world": "socal",
+    "mobile": true,
+    "title": "\n      \n      \n      \n        🌴 SOUTHERN CALIFORNIA\n        THE QUEST IS ALREADY MOVING\n      \n      \n        3DUDES1LIFE CREATIVE PRESENTS\n        v3.4.1 • THE AURORA RETURN\n        3Dudes1Quest\n        Adventure 1: Southern California\n        The Queen of Beige is draining the color from SoCal—and she has taken Zoey captive. Follow Rigsby, restore the Prism Beacons, recover every Gay Card, rescue Zoey, and enter the portal together.\n\n        \n          \n            CHOOSE YOUR STARTING DUDE\n            Who leads the quest?\n          \n\n          \n            \n              \n                \n              \n              \n                Will\n                RAINBOW RICOCHET\n                Fast shots that bounce through groups\n              \n              ✓\n            \n\n            \n              \n                \n              \n              \n                Daniel\n                HEARTFIELD BURST\n                Homing hearts trap and explode enemies\n              \n              ✓\n            \n\n            \n              \n                \n              \n              \n                Caleb\n                LONG-RANGE COOKIE TOSS\n                Sticky bombs with delayed splash damage\n              \n              ✓\n            \n          \n\n          \n            Starting as Will\n            •\n            Power: DJ Soundwave\n          \n        \n\n        Start as Will\n        Continue Adventure\n        No saved quest yet.\n        Head right. Jump with ↑ / W; use Space or POWER to defeat enemies. Touching enemies hurts. Release jump early for a shorter hop. Pause for sound and control settings.\n        How to Play\n        Our Story\n        \n          🌲\n          World 2: Lake Tahoe\n          Continue the five-world quest\n        \n        Best played in landscape on mobile.\n      Three dudes. One survival run.Four hearts each. Knockouts last for the run. Legacy saves stay separate.Start a fresh Survival runContinue SurvivalPlay legacy adventureSound settingsOriginal chiptunes & effectsMaster muteMusicSound effectsMusic volume32%Effects volume55%Sound starts after you tap or press a key. Pause stops music; resume restarts it safely.1. Southern CaliforniaYOU ARE HERE2. Lake TahoePLAYABLE3. AlaskaPLAYABLE4. HawaiiCOMING SOON5. Costa RicaCOMING SOON\n    ",
+    "pause": "PAUSED\nAdventure Menu\nSAVE\n✕\n▶ Resume Adventure\n🗺 World Map\n📖 Passport\n📸 Photo Mode\nReplay Queen of Beige (practice)\nMap\nGay Cards\nThe Dudes\nPassport\nMemories\nSecrets\nObjectives\nSurvival campaign\n\nKnockouts last for this run. Charge carries between worlds. · Archived runs: 0\n\nArchive this run and start a fresh Survival runReturn to legacy adventure\nTouch controls\nButton size\nSmall\nStandard\nLarge\nMovement side\nLeft (default)\nRight (left-handed)\n\nCURRENT OBJECTIVE Find Zoey Follow Rigsby and recover the first Gay Card. Zoey has been taken by the Queen of Beige.\n\nSound settings\n1. Southern California\nYOU ARE HERE\n2. Lake Tahoe\nPLAYABLE\n3. Alaska\nPLAYABLE\n4. Hawaii\nCOMING SOON\n5. Costa Rica\nCOMING SOON\n↗ SHARE",
+    "buttons": [
+      {
+        "id": "pauseBtn",
+        "text": "Ⅱ",
+        "w": 44,
+        "h": 44,
+        "font": "16px"
+      },
+      {
+        "id": "journalBtn",
+        "text": "☰",
+        "w": 44,
+        "h": 44,
+        "font": "16px"
+      },
+      {
+        "id": "photoBtn",
+        "text": "📸",
+        "w": 44,
+        "h": 44,
+        "font": "16px"
+      },
+      {
+        "id": "saveBtn",
+        "text": "SAVE",
+        "w": 74.40625,
+        "h": 44,
+        "font": "16px"
+      },
+      {
+        "id": "journalClose",
+        "text": "✕",
+        "w": 44,
+        "h": 44,
+        "font": "16px"
+      },
+      {
+        "id": "resumeBtn",
+        "text": "▶ Resume Adventure",
+        "w": 650.796875,
+        "h": 53,
+        "font": "16px"
+      },
+      {
+        "id": "mapBtn",
+        "text": "🗺 World Map",
+        "w": 320.390625,
+        "h": 58,
+        "font": "16px"
+      },
+      {
+        "id": "passportBtn",
+        "text": "📖 Passport",
+        "w": 320.40625,
+        "h": 58,
+        "font": "16px"
+      },
+      {
+        "id": "photoHubBtn",
+        "text": "📸 Photo Mode",
+        "w": 320.390625,
+        "h": 58,
+        "font": "16px"
+      },
+      {
+        "id": "queenReplayBtn",
+        "text": "Replay Queen of Beige (practice)",
+        "w": 650.796875,
+        "h": 53,
+        "font": "16px"
+      },
+      {
+        "id": "",
+        "text": "Map",
+        "w": 60.8125,
+        "h": 44,
+        "font": "16px"
+      },
+      {
+        "id": "",
+        "text": "Gay Cards",
+        "w": 118.421875,
+        "h": 44,
+        "font": "16px"
+      },
+      {
+        "id": "",
+        "text": "The Dudes",
+        "w": 118.421875,
+        "h": 44,
+        "font": "16px"
+      },
+      {
+        "id": "",
+        "text": "Passport",
+        "w": 108.8125,
+        "h": 44,
+        "font": "16px"
+      },
+      {
+        "id": "",
+        "text": "Memories",
+        "w": 108.8125,
+        "h": 44,
+        "font": "16px"
+      },
+      {
+        "id": "",
+        "text": "Secrets",
+        "w": 99.21875,
+        "h": 44,
+        "font": "16px"
+      },
+      {
+        "id": "",
+        "text": "Objectives",
+        "w": 128.015625,
+        "h": 44,
+        "font": "16px"
+      },
+      {
+        "id": "survivalNewRun",
+        "text": "Archive this run and start a fresh Survival run",
+        "w": 386.671875,
+        "h": 44,
+        "font": "13px"
+      },
+      {
+        "id": "survivalLegacy",
+        "text": "Return to legacy adventure",
+        "w": 222.84375,
+        "h": 44,
+        "font": "13px"
+      },
+      {
+        "id": "pwaShare",
+        "text": "↗ SHARE",
+        "w": 89.171875,
+        "h": 42,
+        "font": "12px"
+      },
+      {
+        "id": "",
+        "text": "◀",
+        "w": 58,
+        "h": 58,
+        "font": "16px"
+      },
+      {
+        "id": "",
+        "text": "▶",
+        "w": 58,
+        "h": 58,
+        "font": "16px"
+      },
+      {
+        "id": "switchBtn",
+        "text": "↻\nSWITCH",
+        "w": 58,
+        "h": 58,
+        "font": "10px"
+      },
+      {
+        "id": "powerBtn",
+        "text": "♫\nPOWER",
+        "w": 58,
+        "h": 58,
+        "font": "16px"
+      },
+      {
+        "id": "",
+        "text": "↑\nJUMP",
+        "w": 58,
+        "h": 58,
+        "font": "16px"
+      },
+      {
+        "id": "teamPower",
+        "text": "THROUPLE POWER 0% · T",
+        "w": 251.734375,
+        "h": 44,
+        "font": "10px"
+      }
+    ]
+  },
+  {
+    "world": "tahoe",
+    "mobile": true,
+    "title": "\n      ADVENTURE 2 · v3.4.1Lake TahoeSave Our Secret Place\n      Destroy the beetle nests, survive Tahoe’s changing weather, and defeat the three-phase Pine Beetle Queen with Will, Daniel, Caleb, Rigsby, and Zoey.\n      Head right. Jump with ↑ / W; use Space or POWER to defeat enemies. Touching enemies hurts. Release jump early for a shorter hop. Pause for sound and control settings.\n      Start Tahoe\n      Existing saves continue from the last checkpoint. Restart is available in the pause menu.\n    Three dudes. One survival run.Four hearts each. Knockouts last for the run. Legacy saves stay separate.Start a fresh Survival runContinue SurvivalPlay legacy adventureSound settingsOriginal chiptunes & effectsMaster muteMusicSound effectsMusic volume32%Effects volume55%Sound starts after you tap or press a key. Pause stops music; resume restarts it safely.1. Southern CaliforniaPLAYABLE2. Lake TahoeYOU ARE HERE3. AlaskaPLAYABLE4. HawaiiCOMING SOON5. Costa RicaCOMING SOON",
+    "pause": "ADVENTURE PAUSED\nLake Tahoe\nResume\nSave checkpoint\n\nRestart Tahoe\nReturn to Title\nReplay Toxic Bloom (practice)\nReturn to saved adventure\nSurvival campaign\n\nKnockouts last for this run. Charge carries between worlds. · Archived runs: 0\n\nArchive this run and start a fresh Survival run\nReturn to legacy adventure\nTouch controls\nButton size\nSmall\nStandard\nLarge\nMovement side\nLeft (default)\nRight (left-handed)\n\nCURRENT OBJECTIVESave the Tahoe forestDestroy the four nests and clear the trail to the Queen.\n\nSound settings\n1. Southern California\nPLAYABLE\n2. Lake Tahoe\nYOU ARE HERE\n3. Alaska\nPLAYABLE\n4. Hawaii\nCOMING SOON\n5. Costa Rica\nCOMING SOON\n↗ SHARE\n＋ INSTALL",
+    "buttons": [
+      {
+        "id": "pauseBtn",
+        "text": "Ⅱ",
+        "w": 44,
+        "h": 44,
+        "font": "16px"
+      },
+      {
+        "id": "resumeTahoe",
+        "text": "Resume",
+        "w": 390,
+        "h": 53,
+        "font": "16px"
+      },
+      {
+        "id": "saveTahoe",
+        "text": "Save checkpoint",
+        "w": 390,
+        "h": 53,
+        "font": "16px"
+      },
+      {
+        "id": "restartTahoe",
+        "text": "Restart Tahoe",
+        "w": 390,
+        "h": 53,
+        "font": "16px"
+      },
+      {
+        "id": "bloomReplayBtn",
+        "text": "Replay Toxic Bloom (practice)",
+        "w": 390,
+        "h": 53,
+        "font": "16px"
+      },
+      {
+        "id": "bloomReturnBtn",
+        "text": "Return to saved adventure",
+        "w": 390,
+        "h": 53,
+        "font": "16px"
+      },
+      {
+        "id": "survivalNewRun",
+        "text": "Archive this run and start a fresh Survival run",
+        "w": 390,
+        "h": 44,
+        "font": "13px"
+      },
+      {
+        "id": "survivalLegacy",
+        "text": "Return to legacy adventure",
+        "w": 390,
+        "h": 44,
+        "font": "13px"
+      },
+      {
+        "id": "pwaShare",
+        "text": "↗ SHARE",
+        "w": 302,
+        "h": 42,
+        "font": "12px"
+      },
+      {
+        "id": "pwaInstall",
+        "text": "＋ INSTALL",
+        "w": 302,
+        "h": 42,
+        "font": "12px"
+      },
+      {
+        "id": "",
+        "text": "◀",
+        "w": 58,
+        "h": 58,
+        "font": "16px"
+      },
+      {
+        "id": "",
+        "text": "▶",
+        "w": 58,
+        "h": 58,
+        "font": "16px"
+      },
+      {
+        "id": "switchBtn",
+        "text": "↻\nSWITCH",
+        "w": 58,
+        "h": 58,
+        "font": "16px"
+      },
+      {
+        "id": "powerBtn",
+        "text": "♫\nPOWER",
+        "w": 58,
+        "h": 58,
+        "font": "16px"
+      },
+      {
+        "id": "",
+        "text": "↑\nJUMP",
+        "w": 58,
+        "h": 58,
+        "font": "16px"
+      },
+      {
+        "id": "teamPower",
+        "text": "THROUPLE POWER 0% · T",
+        "w": 251.734375,
+        "h": 44,
+        "font": "10px"
+      }
+    ]
+  },
+  {
+    "world": "alaska",
+    "mobile": true,
+    "title": "ADVENTURE 3 · v3.4.1AlaskaThe Aurora ReturnTahoe is safe, but the northern lights have gone dark. The Frost Queen controls blizzards and has cursed the salmon. Restore three Aurora Relays, then break her ice shield. Caleb has prepared a strongly worded cookie.Head right. Jump with ↑ / W; use Space / POWER on enemies and relays. 1 / 2 / 3 switches dudes. Blue ledges are safe; cracked thin ice hurts. Shelters save progress. Pause for sound and touch settings.New Alaska AdventureContinue AlaskaThree dudes. One survival run.Four hearts each. Knockouts last for the run. Legacy saves stay separate.Start a fresh Survival runContinue SurvivalPlay legacy adventureSound settingsOriginal chiptunes & effectsMaster muteMusicSound effectsMusic volume32%Effects volume55%Sound starts after you tap or press a key. Pause stops music; resume restarts it safely.1. Southern CaliforniaPLAYABLE2. Lake TahoePLAYABLE3. AlaskaYOU ARE HERE4. HawaiiCOMING SOON5. Costa RicaCOMING SOON",
+    "pause": "QUEST PAUSED\nAlaska\nResume\nSave checkpoint\n\nRestart Alaska\nReturn to Tahoe\nReplay Pipeline Meltdown (practice)\nReturn to saved adventure\nSurvival campaign\n\nKnockouts last for this run. Charge carries between worlds. · Archived runs: 0\n\nArchive this run and start a fresh Survival run\nReturn to legacy adventure\nTouch controls\nButton size\nSmall\nStandard\nLarge\nMovement side\nLeft (default)\nRight (left-handed)\n\nCURRENT OBJECTIVE0/3 relays · head rightHit each relay twice with your character power. Explore upper ledges for shards and supplies.\n\nSound settings\n1. Southern California\nPLAYABLE\n2. Lake Tahoe\nPLAYABLE\n3. Alaska\nYOU ARE HERE\n4. Hawaii\nCOMING SOON\n5. Costa Rica\nCOMING SOON\n↗ SHARE\n＋ INSTALL",
+    "buttons": [
+      {
+        "id": "pauseBtn",
+        "text": "Ⅱ",
+        "w": 44,
+        "h": 44,
+        "font": "16px"
+      },
+      {
+        "id": "resumeAdventure",
+        "text": "Resume",
+        "w": 390,
+        "h": 53,
+        "font": "16px"
+      },
+      {
+        "id": "saveAdventure",
+        "text": "Save checkpoint",
+        "w": 390,
+        "h": 53,
+        "font": "16px"
+      },
+      {
+        "id": "restartAdventure",
+        "text": "Restart Alaska",
+        "w": 390,
+        "h": 53,
+        "font": "16px"
+      },
+      {
+        "id": "pipelineReplayBtn",
+        "text": "Replay Pipeline Meltdown (practice)",
+        "w": 390,
+        "h": 53,
+        "font": "16px"
+      },
+      {
+        "id": "pipelineReturnBtn",
+        "text": "Return to saved adventure",
+        "w": 390,
+        "h": 53,
+        "font": "16px"
+      },
+      {
+        "id": "survivalNewRun",
+        "text": "Archive this run and start a fresh Survival run",
+        "w": 390,
+        "h": 44,
+        "font": "13px"
+      },
+      {
+        "id": "survivalLegacy",
+        "text": "Return to legacy adventure",
+        "w": 390,
+        "h": 44,
+        "font": "13px"
+      },
+      {
+        "id": "pwaShare",
+        "text": "↗ SHARE",
+        "w": 302,
+        "h": 42,
+        "font": "12px"
+      },
+      {
+        "id": "pwaInstall",
+        "text": "＋ INSTALL",
+        "w": 302,
+        "h": 42,
+        "font": "12px"
+      },
+      {
+        "id": "",
+        "text": "◀",
+        "w": 58,
+        "h": 58,
+        "font": "16px"
+      },
+      {
+        "id": "",
+        "text": "▶",
+        "w": 58,
+        "h": 58,
+        "font": "16px"
+      },
+      {
+        "id": "switchBtn",
+        "text": "↻\nSWITCH",
+        "w": 58,
+        "h": 58,
+        "font": "16px"
+      },
+      {
+        "id": "powerBtn",
+        "text": "♫\nPOWER",
+        "w": 58,
+        "h": 58,
+        "font": "16px"
+      },
+      {
+        "id": "",
+        "text": "↑\nJUMP",
+        "w": 58,
+        "h": 58,
+        "font": "16px"
+      },
+      {
+        "id": "teamPower",
+        "text": "THROUPLE POWER 0% · T",
+        "w": 251.734375,
+        "h": 44,
+        "font": "10px"
+      }
+    ]
+  }
+]

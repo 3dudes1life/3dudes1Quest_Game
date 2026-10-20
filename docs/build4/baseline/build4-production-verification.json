@@ -1,0 +1,101 @@
+{
+  "commit": "c3aba0f47f58c32870bf1e64ebd1a463295dd362",
+  "files": [
+    {
+      "file": "index.html",
+      "status": 200,
+      "match": true,
+      "sha256": "c4ecf4de9d95e09be003ffc033b5f3c3155d11945a909c05ca3270349af09db7",
+      "bytes": 18961,
+      "cache_control": "max-age=600"
+    },
+    {
+      "file": "tahoe.html",
+      "status": 200,
+      "match": true,
+      "sha256": "e82da6423e45c61684be1424609445e9c882db8ef34cb28ce89f7c0952e249bf",
+      "bytes": 8550,
+      "cache_control": "max-age=600"
+    },
+    {
+      "file": "alaska.html",
+      "status": 200,
+      "match": true,
+      "sha256": "1df5e8c2210e2a85384b1fcfeba6085563fd43970554029572a72b96acae5af6",
+      "bytes": 5711,
+      "cache_control": "max-age=600"
+    },
+    {
+      "file": "js/core/quest-release.js",
+      "status": 200,
+      "match": true,
+      "sha256": "96c016649e4052c829c154a57b4fce9bc20fdab638b77720b7292ae842099e10",
+      "bytes": 478,
+      "cache_control": "max-age=600"
+    },
+    {
+      "file": "js/core/quest-survival.js",
+      "status": 200,
+      "match": true,
+      "sha256": "f726525702d8d422d5b9b5ec283ba417b0303cc5ef7de987824a38bcf6f1af3e",
+      "bytes": 15165,
+      "cache_control": "max-age=600"
+    },
+    {
+      "file": "css/survival.css",
+      "status": 200,
+      "match": true,
+      "sha256": "bc566fcc35f80d0e55fa2556de1af8024003c68826447f50fefeb4836229d1d3",
+      "bytes": 2598,
+      "cache_control": "max-age=600"
+    },
+    {
+      "file": "js/core/quest-master-art.js",
+      "status": 200,
+      "match": true,
+      "sha256": "2d18dfe1051606d31abb39c13aff05ce503ef654d6d684507032a60c1e3fbbe7",
+      "bytes": 7006,
+      "cache_control": "max-age=600"
+    },
+    {
+      "file": "js/app109.js",
+      "status": 200,
+      "match": true,
+      "sha256": "65d9e6f04a9aef6d6b21fa6c785215be74828ae580ddcce97d33c845114ebaba",
+      "bytes": 143938,
+      "cache_control": "max-age=600"
+    },
+    {
+      "file": "js/tahoe253.js",
+      "status": 200,
+      "match": true,
+      "sha256": "105a5949c318479810c47cb1c8a0e37f066fcbe8cc7423dcb1eb3ce1de1edd9f",
+      "bytes": 66645,
+      "cache_control": "max-age=600"
+    },
+    {
+      "file": "js/core/quest-adventure.js",
+      "status": 200,
+      "match": true,
+      "sha256": "7d4783a9f83d66033dbc131f85e33a82d8f0327d3ba6d94170edc7dcdbf8f03c",
+      "bytes": 39203,
+      "cache_control": "max-age=600"
+    },
+    {
+      "file": "service-worker.js",
+      "status": 200,
+      "match": true,
+      "sha256": "1b5ccf372a6a903204d802d09cb2aca58fcec91738aff0f024a021a4c3988561",
+      "bytes": 8042,
+      "cache_control": "max-age=600"
+    },
+    {
+      "file": "js/core/quest-story.js",
+      "status": 200,
+      "match": true,
+      "sha256": "bc5dc26c14c05538d0675d1772cdb5d038f4e714641fe35612b0caa9f06879ed",
+      "bytes": 12646,
+      "cache_control": "max-age=600"
+    }
+  ]
+}
