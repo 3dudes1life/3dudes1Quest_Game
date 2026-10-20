@@ -1,0 +1,8 @@
+{
+  "initialRun": "https://github.com/3dudes1life/3dudes1Quest_Game/actions/runs/39481218847",
+  "initialHead": "82cdb253704e3fbf65ad5ae631501324c33aa812",
+  "observedFailure": "After all9 Chromium screenshots, Linux WebKit first desktop SoCal movement assertion failed after a fixed160ms wait. No failure state had been saved by the original harness.",
+  "response": "Assert remaining held movement alias, wait up to3s for actual displacement, record engine/profile/world/held input/pause/focus/visibility/position and screenshot on any failure. Retain strict failures; no browser skip in CI.",
+  "interpretation": "Functional readiness timeout is separate from delivered-event latency. Cause remains under investigation until the strict final CI result; no game code or performance traces changed.",
+  "oldRun": "Cancelled remaining old-head gameplay job to run all checks on the corrected test head; no merge/deployment."
+}

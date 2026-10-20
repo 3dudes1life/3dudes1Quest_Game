@@ -5,7 +5,7 @@
     "osRelease": "27.0.0",
     "node": "v26.11.1"
   },
-  "method": "Installed Chrome or Playwright browser engines; native keyboard and menu actions. Touch contexts use synthetic PointerEvent contacts here; trusted four-contact CDP is in build45.cjs. WebKit is not branded Safari; Firefox is a Playwright-patched build. Not physical-device certification. High DPI is an emulated backing ratio; browser zoom/system gestures remain owner checks.",
+  "method": "Installed Chrome or Playwright browser engines; native keyboard and menu actions. Movement waits up to3s for an actual position change after asserting the remaining held alias; this is a functional gate, not latency measurement. Touch contexts use synthetic PointerEvent contacts here; trusted four-contact CDP is in build45.cjs. WebKit is not branded Safari; Firefox is a Playwright-patched build. Not physical-device certification. High DPI is an emulated backing ratio; browser zoom/system gestures remain owner checks.",
   "results": [
     {
       "engine": "chromium",
@@ -17,6 +17,7 @@
         "scale": 1
       },
       "world": "socal",
+      "movementObservedMs": 8,
       "geometry": {
         "rect": {
           "x": 85.328125,
@@ -51,6 +52,7 @@
         "scale": 1
       },
       "world": "tahoe",
+      "movementObservedMs": 10,
       "geometry": {
         "rect": {
           "x": 85.328125,
@@ -85,6 +87,7 @@
         "scale": 1
       },
       "world": "alaska",
+      "movementObservedMs": 11,
       "geometry": {
         "rect": {
           "x": 85.328125,
@@ -119,6 +122,7 @@
         "scale": 2
       },
       "world": "socal",
+      "movementObservedMs": 16,
       "geometry": {
         "rect": {
           "x": 156.4375,
@@ -153,6 +157,7 @@
         "scale": 2
       },
       "world": "tahoe",
+      "movementObservedMs": 2,
       "geometry": {
         "rect": {
           "x": 156.4375,
@@ -187,6 +192,7 @@
         "scale": 2
       },
       "world": "alaska",
+      "movementObservedMs": 3,
       "geometry": {
         "rect": {
           "x": 156.4375,
@@ -222,6 +228,7 @@
         "touch": true
       },
       "world": "socal",
+      "movementObservedMs": 15,
       "geometry": {
         "rect": {
           "x": 226.21875,
@@ -257,6 +264,7 @@
         "touch": true
       },
       "world": "tahoe",
+      "movementObservedMs": 4,
       "geometry": {
         "rect": {
           "x": 226.21875,
@@ -292,6 +300,7 @@
         "touch": true
       },
       "world": "alaska",
+      "movementObservedMs": 6,
       "geometry": {
         "rect": {
           "x": 226.21875,
@@ -326,6 +335,7 @@
         "scale": 1
       },
       "world": "socal",
+      "movementObservedMs": 7,
       "geometry": {
         "rect": {
           "x": 85.328125,
@@ -360,6 +370,7 @@
         "scale": 1
       },
       "world": "tahoe",
+      "movementObservedMs": 6,
       "geometry": {
         "rect": {
           "x": 85.328125,
@@ -394,6 +405,7 @@
         "scale": 1
       },
       "world": "alaska",
+      "movementObservedMs": 11,
       "geometry": {
         "rect": {
           "x": 85.328125,
@@ -428,6 +440,7 @@
         "scale": 2
       },
       "world": "socal",
+      "movementObservedMs": 10,
       "geometry": {
         "rect": {
           "x": 156.4375,
@@ -462,6 +475,7 @@
         "scale": 2
       },
       "world": "tahoe",
+      "movementObservedMs": 22,
       "geometry": {
         "rect": {
           "x": 156.4375,
@@ -496,6 +510,7 @@
         "scale": 2
       },
       "world": "alaska",
+      "movementObservedMs": 9,
       "geometry": {
         "rect": {
           "x": 156.4375,
@@ -531,6 +546,7 @@
         "touch": true
       },
       "world": "socal",
+      "movementObservedMs": 2,
       "geometry": {
         "rect": {
           "x": 226.21875,
@@ -566,6 +582,7 @@
         "touch": true
       },
       "world": "tahoe",
+      "movementObservedMs": 8,
       "geometry": {
         "rect": {
           "x": 226.21875,
@@ -601,6 +618,7 @@
         "touch": true
       },
       "world": "alaska",
+      "movementObservedMs": 11,
       "geometry": {
         "rect": {
           "x": 226.21875,
@@ -630,7 +648,7 @@
     {
       "engine": "firefox",
       "status": "BLOCKED: local browser launch",
-      "message": "browserType.launch: Timeout 20000ms exceeded.\nCall log:\n\u001b[2m  - <launching> <user>/Library/Caches/ms-playwright/firefox-1538/firefox/Nightly.app/Contents/MacOS/firefox -no-remote -headless -profile /var/folders/71/9pc6vl295tb7d26wn1fdzy_r0000gn/T/playwright_firefoxdev_profile-tG0CcU -juggler-pipe -silent\u001b[22m\n\u001b[2m  - <launched> pid=26840\u001b[22m\n\u001b[2m  - [pid=26840][err] *** You are running in headless mode.\u001b[22m\n\u001b[2m  - [pid=26840][err] sandbox_extension_issue_file_to_process failed for <user>/Library/Caches/ms-playwright/firefox-1538/firefox/Nightly.app/Contents/MacOS/plugin-container.app: 1 (Operation not permitted)\u001b[22m\n\u001b[2m  - [pid=26840][out] Crash Annotation GraphicsCriticalError: |[0][GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt (t=0.8255) [GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt\u001b[22m\n"
+      "message": "browserType.launch: Timeout 20000ms exceeded.\nCall log:\n\u001b[2m  - <launching> <user>/Library/Caches/ms-playwright/firefox-1538/firefox/Nightly.app/Contents/MacOS/firefox -no-remote -headless -profile /var/folders/71/9pc6vl295tb7d26wn1fdzy_r0000gn/T/playwright_firefoxdev_profile-JuXMNs -juggler-pipe -silent\u001b[22m\n\u001b[2m  - <launched> pid=29343\u001b[22m\n\u001b[2m  - [pid=29343][err] *** You are running in headless mode.\u001b[22m\n\u001b[2m  - [pid=29343][err] sandbox_extension_issue_file_to_process failed for <user>/Library/Caches/ms-playwright/firefox-1538/firefox/Nightly.app/Contents/MacOS/plugin-container.app: 1 (Operation not permitted)\u001b[22m\n\u001b[2m  - [pid=29343][out] Crash Annotation GraphicsCriticalError: |[0][GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt (t=0.887969) [GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt\u001b[22m\n"
     }
   ]
 }

@@ -28,6 +28,7 @@
     "baseline-ci.json",
     "boss-configurations.json",
     "browser.log",
+    "ci-investigation.json",
     "comparison-transport.json",
     "continuous-campaign.json",
     "controls-final.log",
