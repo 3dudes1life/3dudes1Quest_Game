@@ -75,7 +75,7 @@
     const safe = ['Top','Right','Bottom','Left'].map(edge => parseFloat(css['padding' + edge]) || 0);
     const width = Math.max(1, w - safe[1] - safe[3]), height = Math.max(1, h - safe[0] - safe[2]);
     const button = Math.min({small:48,standard:58,large:70}[preferences.size], Math.max(44, (width - 48) / 5));
-    const top = touch ? (portrait ? 118 : 76) : 64;
+    const top = (touch ? (portrait ? 118 : 76) : 64) + (window.QuestSurvival?.enabled() ? (width < 650 ? 64 : 36) : 0);
     const rails = touch && !portrait;
     const bottom = rails ? 26 : button + 18;
     const rail = rails ? button * 2 + 18 : 0;

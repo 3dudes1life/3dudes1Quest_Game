@@ -1,0 +1,35 @@
+# Survival & Throuple Power — candidate architecture
+
+Baseline: `ae5ec88a4d4ec445289c780696647a4cbb9e65b8` (PR13). Main stability39364632962 and Pages39364632453 succeeded. Production HTML for all three entries, release metadata, story runtime and the approved scenery atlas matched the baseline bytes. Rollback: `codex/rollback-origin-story2-ae5ec88`. Development: `codex/survival-throuple-power`. This is a draft review candidate; no deployment or merge is authorized.
+
+## Existing contracts inspected
+
+Read the master audit, six-boss report/migration design, native save fixture contracts, `QuestCore.POWER_CONTRACT` and actual world health/switch/save/checkpoint code. SoCal owns an Adventure class and saves current health; Tahoe historically never serialized health and restores four on load; Alaska serializes health but heals on checkpoints. Their controllers and geometry remain in place.
+
+`quest-survival.js` owns the additive campaign. Explicit adapters supply state, world snapshot, safe respawn, release, temporary hit protection, projectile emission, and narrowly interruptible boss windups. Health/dude accessors in survival mode expose the authoritative character record and ignore legacy reset/heal assignments. In legacy mode those fields retain ordinary numeric behavior. Explicit switching, damage and recovery go through campaign operations; no artwork, movement stats or signature projectile contract changes.
+
+## Campaign and save consistency
+
+The existing world keys and journey record route into the survival envelope only while explicitly opted in. Legacy keys and their backups remain untouched. The envelope contains schema, run ID, sequence, three `{hp, available}` records, active hero, shared charge, three contribution booleans, world, completed worlds, achievements, bounded reward/hit ledger, world snapshots and prior-run history. Save reads validate records and fall back to the campaign backup. Successful primary writes also mirror the latest complete generation into the backup, retaining committed knockouts during backup recovery. Backup refresh is best effort if storage is exhausted; the valid primary remains authoritative. A single localStorage replacement publishes the complete campaign/world generation. There is no separate health-versus-checkpoint commit to interrupt.
+
+A failed primary write retains the previous complete durable generation, leaves the in-memory run available, pauses play and reports Save Unavailable. Travel through game links and Tahoe's automatic portal requires successful saving. Retry Save before leaving the tab. A revision check and cross-tab storage listener refuse stale writers, pause their inputs and request a reload rather than overwriting a newer knockout or checkpoint. Storage quota cannot guarantee persistence of unsaved actions; the UI does not claim otherwise. Existing encounter replay sidecars remain within the isolated envelope. Practice fights cannot spend charge, earn charge/recovery, heal or damage the campaign; snapshot writes protect the main adventure position. Restarting a world does not restart the survival roster or reward ledger. An explicit fresh run archives the prior run's outcome and starts twelve hearts. It does not wipe legacy saves.
+
+Old3.4.1 single-health saves remain legacy campaigns. They are never interpreted as permanent knockouts. The title screen offers explicit fresh Survival, Continue Survival and legacy play. A fresh survival journey begins in SoCal; individual world launches remain available for testing. Charge and contributions persist without resets through SoCal → Tahoe → Alaska. Future order remains Hawaii → Costa Rica; neither is playable.
+
+## Health and recovery
+
+Four hearts per dude. Zero is permanent for this run; availability is derived and validated against HP. Automatic survivor selection releases held keys/touches, clears transient attacks/animation state and moves to the world's existing safe checkpoint/arena entry. All three out pauses the ended run and retains achievements/history; pause menus allow archiving it and starting fresh or returning to legacy play.
+
+Recovery is deterministic and limited: one heart for a distinct major objective, two for a distinct boss completion, capped at four and applied only to the active survivor. SoCal cards/beacons, Tahoe nests/saved trees/Bloom/Queen, Alaska supplies/pipeline/Frost are stable reward IDs. Random Tahoe heart drops have one recovery allowance per1000-world-unit trail segment. Ordinary checkpoint heals, loading and repeated Zoey assistance cannot heal survival characters. Existing legacy recovery is unchanged. Values live in `BALANCE`; public difficulty stats are unchanged.
+
+## Charge and attacks
+
+Five charge per genuine, previously unrewarded HP threshold. Invulnerable hits and switches give zero. Threshold IDs distinguish world/target/remaining HP; objectives add15 once. The ledger has a hard2048-entry ceiling; reaching it refuses additional rewards. This prevents unlimited reward growth or resetting an objective for charge. Contribution belongs to the signature that actually connected, including delayed hearts/cookies after switching.
+
+Full charge is required. Three survivors also require all three signature contributions, with a missing-contribution explanation; no silent downgrade. Two survivors activate Double Trouble; one activates Solo Surge. Each survivor emits two of their unchanged signature projectiles, capped at six new shots. Existing range, shields, core/valve collisions and phase gates own damage. Team activation grants1200ms of simulated-time damage protection and prevents charging for2500ms so the burst cannot refill itself. Ordinary phase transitions remain intact. Only explicit positive windups may be interrupted; Frost's shield and Court Rights Drain are not bypassed. The dedicated T key/button does not use attack, jump, switch, pause or Triangle inputs.
+
+The original three-note `throuple` effect uses the existing bounded synthesizer. No new audio graph, dependency or artwork. HUD writes happen on campaign mutations, not every simulation frame. Portraits reuse QuestCast. The viewport manager reserves additional top space; logical1280×720 and safe-area handling remain authoritative.
+
+## Testing access boundary
+
+`?tester=1` is honored only on loopback hostnames (`localhost`, `127.0.0.1`, IPv6 loopback). The supplied review server binds127.0.0.1. On the public hostname the parameter grants nothing. Test mode automatically uses a separate `-test` envelope, ignores damage, labels the HUD/pause panel TEST MODE, and provides Reset Test Hearts. All three world URLs can be visited with that local parameter; normal powers and encounters remain active. Normal achievements are never written by test mode. This is a local-environment restriction, not client-side authentication or a production owner authorization system. Existing historical QA scenario hooks are not being rebranded as secure access.

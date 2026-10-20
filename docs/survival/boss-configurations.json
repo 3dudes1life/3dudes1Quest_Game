@@ -1,0 +1,525 @@
+{
+  "method": "7 survivor masks × 3 worlds; real signature projectiles, controlled invulnerability and arena prerequisites; no forced boss victory. Normal keyboard routes reported separately.",
+  "results": [
+    {
+      "world": "socal",
+      "mask": 1,
+      "survivors": [
+        0
+      ],
+      "a": true,
+      "b": true,
+      "phases": [
+        1,
+        2,
+        3
+      ],
+      "shield": false,
+      "contributionBefore": true,
+      "activated": true,
+      "charge": 0,
+      "health": [
+        4,
+        0,
+        0
+      ],
+      "badge": "LAST DUDE STANDING"
+    },
+    {
+      "world": "socal",
+      "mask": 2,
+      "survivors": [
+        1
+      ],
+      "a": true,
+      "b": true,
+      "phases": [
+        1,
+        2,
+        3
+      ],
+      "shield": false,
+      "contributionBefore": true,
+      "activated": true,
+      "charge": 0,
+      "health": [
+        0,
+        4,
+        0
+      ],
+      "badge": "LAST DUDE STANDING"
+    },
+    {
+      "world": "socal",
+      "mask": 3,
+      "survivors": [
+        0,
+        1
+      ],
+      "a": true,
+      "b": true,
+      "phases": [
+        1,
+        2,
+        3
+      ],
+      "shield": false,
+      "contributionBefore": true,
+      "activated": true,
+      "charge": 0,
+      "health": [
+        4,
+        4,
+        0
+      ],
+      "badge": "DOUBLE TROUBLE"
+    },
+    {
+      "world": "socal",
+      "mask": 4,
+      "survivors": [
+        2
+      ],
+      "a": true,
+      "b": true,
+      "phases": [
+        1,
+        2,
+        3
+      ],
+      "shield": false,
+      "contributionBefore": true,
+      "activated": true,
+      "charge": 0,
+      "health": [
+        0,
+        0,
+        4
+      ],
+      "badge": "LAST DUDE STANDING"
+    },
+    {
+      "world": "socal",
+      "mask": 5,
+      "survivors": [
+        0,
+        2
+      ],
+      "a": true,
+      "b": true,
+      "phases": [
+        1,
+        2,
+        3
+      ],
+      "shield": false,
+      "contributionBefore": true,
+      "activated": true,
+      "charge": 0,
+      "health": [
+        4,
+        0,
+        4
+      ],
+      "badge": "DOUBLE TROUBLE"
+    },
+    {
+      "world": "socal",
+      "mask": 6,
+      "survivors": [
+        1,
+        2
+      ],
+      "a": true,
+      "b": true,
+      "phases": [
+        1,
+        2,
+        3
+      ],
+      "shield": false,
+      "contributionBefore": true,
+      "activated": true,
+      "charge": 0,
+      "health": [
+        0,
+        4,
+        4
+      ],
+      "badge": "DOUBLE TROUBLE"
+    },
+    {
+      "world": "socal",
+      "mask": 7,
+      "survivors": [
+        0,
+        1,
+        2
+      ],
+      "a": true,
+      "b": true,
+      "phases": [
+        1,
+        2,
+        3
+      ],
+      "shield": false,
+      "contributionBefore": true,
+      "activated": true,
+      "charge": 0,
+      "health": [
+        4,
+        4,
+        4
+      ],
+      "badge": "THREE DUDES STANDING"
+    },
+    {
+      "world": "tahoe",
+      "mask": 1,
+      "survivors": [
+        0
+      ],
+      "a": true,
+      "b": true,
+      "phases": [
+        1,
+        2,
+        3
+      ],
+      "shield": false,
+      "contributionBefore": true,
+      "activated": true,
+      "charge": 0,
+      "health": [
+        4,
+        0,
+        0
+      ],
+      "badge": "LAST DUDE STANDING"
+    },
+    {
+      "world": "tahoe",
+      "mask": 2,
+      "survivors": [
+        1
+      ],
+      "a": true,
+      "b": true,
+      "phases": [
+        1,
+        2,
+        3
+      ],
+      "shield": false,
+      "contributionBefore": true,
+      "activated": true,
+      "charge": 0,
+      "health": [
+        0,
+        4,
+        0
+      ],
+      "badge": "LAST DUDE STANDING"
+    },
+    {
+      "world": "tahoe",
+      "mask": 3,
+      "survivors": [
+        0,
+        1
+      ],
+      "a": true,
+      "b": true,
+      "phases": [
+        1,
+        2,
+        3
+      ],
+      "shield": false,
+      "contributionBefore": true,
+      "activated": true,
+      "charge": 0,
+      "health": [
+        4,
+        4,
+        0
+      ],
+      "badge": "DOUBLE TROUBLE"
+    },
+    {
+      "world": "tahoe",
+      "mask": 4,
+      "survivors": [
+        2
+      ],
+      "a": true,
+      "b": true,
+      "phases": [
+        1,
+        2,
+        3
+      ],
+      "shield": false,
+      "contributionBefore": true,
+      "activated": true,
+      "charge": 0,
+      "health": [
+        0,
+        0,
+        4
+      ],
+      "badge": "LAST DUDE STANDING"
+    },
+    {
+      "world": "tahoe",
+      "mask": 5,
+      "survivors": [
+        0,
+        2
+      ],
+      "a": true,
+      "b": true,
+      "phases": [
+        1,
+        2,
+        3
+      ],
+      "shield": false,
+      "contributionBefore": true,
+      "activated": true,
+      "charge": 0,
+      "health": [
+        4,
+        0,
+        4
+      ],
+      "badge": "DOUBLE TROUBLE"
+    },
+    {
+      "world": "tahoe",
+      "mask": 6,
+      "survivors": [
+        1,
+        2
+      ],
+      "a": true,
+      "b": true,
+      "phases": [
+        1,
+        2,
+        3
+      ],
+      "shield": false,
+      "contributionBefore": true,
+      "activated": true,
+      "charge": 0,
+      "health": [
+        0,
+        4,
+        4
+      ],
+      "badge": "DOUBLE TROUBLE"
+    },
+    {
+      "world": "tahoe",
+      "mask": 7,
+      "survivors": [
+        0,
+        1,
+        2
+      ],
+      "a": true,
+      "b": true,
+      "phases": [
+        1,
+        2,
+        3
+      ],
+      "shield": false,
+      "contributionBefore": true,
+      "activated": true,
+      "charge": 0,
+      "health": [
+        4,
+        4,
+        4
+      ],
+      "badge": "THREE DUDES STANDING"
+    },
+    {
+      "world": "alaska",
+      "mask": 1,
+      "survivors": [
+        0
+      ],
+      "a": true,
+      "b": true,
+      "phases": [
+        1,
+        2,
+        3
+      ],
+      "shield": true,
+      "contributionBefore": true,
+      "activated": true,
+      "charge": 0,
+      "health": [
+        4,
+        0,
+        0
+      ],
+      "badge": "LAST DUDE STANDING"
+    },
+    {
+      "world": "alaska",
+      "mask": 2,
+      "survivors": [
+        1
+      ],
+      "a": true,
+      "b": true,
+      "phases": [
+        1,
+        2,
+        3
+      ],
+      "shield": true,
+      "contributionBefore": true,
+      "activated": true,
+      "charge": 0,
+      "health": [
+        0,
+        4,
+        0
+      ],
+      "badge": "LAST DUDE STANDING"
+    },
+    {
+      "world": "alaska",
+      "mask": 3,
+      "survivors": [
+        0,
+        1
+      ],
+      "a": true,
+      "b": true,
+      "phases": [
+        1,
+        2,
+        3
+      ],
+      "shield": true,
+      "contributionBefore": true,
+      "activated": true,
+      "charge": 0,
+      "health": [
+        4,
+        4,
+        0
+      ],
+      "badge": "DOUBLE TROUBLE"
+    },
+    {
+      "world": "alaska",
+      "mask": 4,
+      "survivors": [
+        2
+      ],
+      "a": true,
+      "b": true,
+      "phases": [
+        1,
+        2,
+        3
+      ],
+      "shield": true,
+      "contributionBefore": true,
+      "activated": true,
+      "charge": 0,
+      "health": [
+        0,
+        0,
+        4
+      ],
+      "badge": "LAST DUDE STANDING"
+    },
+    {
+      "world": "alaska",
+      "mask": 5,
+      "survivors": [
+        0,
+        2
+      ],
+      "a": true,
+      "b": true,
+      "phases": [
+        1,
+        2,
+        3
+      ],
+      "shield": true,
+      "contributionBefore": true,
+      "activated": true,
+      "charge": 0,
+      "health": [
+        4,
+        0,
+        4
+      ],
+      "badge": "DOUBLE TROUBLE"
+    },
+    {
+      "world": "alaska",
+      "mask": 6,
+      "survivors": [
+        1,
+        2
+      ],
+      "a": true,
+      "b": true,
+      "phases": [
+        1,
+        2,
+        3
+      ],
+      "shield": true,
+      "contributionBefore": true,
+      "activated": true,
+      "charge": 0,
+      "health": [
+        0,
+        4,
+        4
+      ],
+      "badge": "DOUBLE TROUBLE"
+    },
+    {
+      "world": "alaska",
+      "mask": 7,
+      "survivors": [
+        0,
+        1,
+        2
+      ],
+      "a": true,
+      "b": true,
+      "phases": [
+        1,
+        2,
+        3
+      ],
+      "shield": true,
+      "contributionBefore": true,
+      "activated": true,
+      "charge": 0,
+      "health": [
+        4,
+        4,
+        4
+      ],
+      "badge": "THREE DUDES STANDING"
+    }
+  ],
+  "errors": []
+}

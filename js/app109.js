@@ -142,6 +142,7 @@ class Adventure{
   reset(startingDude=0){
     QuestMasterArt.clearDeaths();this.encounters=QuestEncounters.read('socal');
     this.state={health:4,cards:0,beacons:0,score:0,dude:clamp(startingDude,0,2),triangle:0,paused:false,bossDefeated:false,zoeyUnlocked:false,adventureComplete:false,objective:{title:ZONES[0].objective,detail:ZONES[0].detail}};
+    QuestSurvival.bindState(this.state);
     this.player={x:150,y:FLOOR-72,w:44,h:72,vx:0,vy:0,onGround:true,facing:1,inv:0,anim:'idle',animUntil:0};this.camera=0;this.running=false;this.last=0;this.finished=false;this.zoneId='home';this.zoneIntro=this.clock.time+1300;this.jumpHeld=false;this.powerHeld=false;this.rigsby={x:265,y:FLOOR-42,w:56,h:40};
     this.cards=[650,1720,2600,3730,4630,7580].map((x,i)=>({x,y:FLOOR-100-(i%2)*95,w:38,h:52,taken:false}));
     this.beacons=[{x:3020,y:FLOOR-105,w:54,h:92,on:false},{x:4870,y:FLOOR-105,w:54,h:92,on:false},{x:6980,y:FLOOR-105,w:54,h:92,on:false}];
@@ -260,7 +261,7 @@ class Adventure{
       setTimeout(()=>this.showCinematicZone(ZONES[0],'THE QUEST BEGINS'),180);
     }
 
-    this.clock.start();
+    QuestSurvival.enter();this.clock.start();
   }
   stop(){this.running=false;this.clock.stop();this.input.releaseAll();}
   zone(){return ZONES.find(z=>this.player.x>=z.start&&this.player.x<z.end)||ZONES.at(-1)}
@@ -284,6 +285,7 @@ class Adventure{
     }
   }
   update(dt,t){
+    if(QuestSurvival.enabled()&&(!QuestSurvival.live()||QuestSurvival.storageBlocked))return;
     if(this.finale.active){
       this.updateFinale(dt,t);
       this.updateParticles(dt);
@@ -585,7 +587,7 @@ class Adventure{
     for(const c of this.cards){
       if(!c.taken&&overlap(this.player,c)){
         c.taken=true;this.sound('card');
-        this.state.cards++;this.state.score+=500;
+        this.state.cards++;QuestSurvival.objective('card:'+this.cards.indexOf(c));this.state.score+=500;
         this.state.triangle=clamp(this.state.triangle+12,0,100);
         this.worldPulse=14;
         this.shake=Math.max(this.shake,4);
@@ -598,7 +600,7 @@ class Adventure{
     for(const b of this.beacons){
       if(!b.on&&overlap(this.player,b)){
         b.on=true;this.sound('beacon');
-        this.state.beacons++;this.state.score+=1000;
+        this.state.beacons++;QuestSurvival.objective('beacon:'+this.beacons.indexOf(b));this.state.score+=1000;
         this.state.triangle=clamp(this.state.triangle+18,0,100);
         this.restorationBurst(b.x+27,b.y+46);
         showAchievement(`Color restored ${this.state.beacons}/3`,'🔺');persistQuest('beacon');
@@ -662,6 +664,7 @@ class Adventure{
 
   damageEnemy(e,amount=1,source='rainbow'){
     if(!e||!e.alive)return false;
+    const survivalHP=(e.hp??1)+(e.signUp?(e.signHp??1):0);
     this.sound('hit');let remaining=amount;
     e.hitFlash=12;e.stun=Math.max(e.stun||0,source==='heart'?20:8);
     const sourceColor=source==='cookie'?'#ff9a3c':source==='heart'?'#3ce7d2':'#ff4fb8';
@@ -690,6 +693,7 @@ class Adventure{
       this.hitNumbers.push({x:e.x+e.w/2,y:e.y-12,text:source==='heart'?'♥':source==='cookie'?'BOOM':'✦',color:sourceColor,life:32});
     }
 
+    QuestSurvival.hit(e.id??(e.type+':'+e.min),survivalHP,Math.max(0,e.hp)+(e.signUp?Math.max(0,e.signHp):0),source==='heart'?1:source==='cookie'?2:0);
     if(e.hp<=0){
       QuestMasterArt.defeat(e.type==='judge'?'court-judge':e.type==='flamingLaw'?'flaming-law':e.type==='hoa'&&Math.round(e.min||0)%3===0?'hoa-drone':'beige-bot',e.x+e.w/2,e.y+e.h,this.clock.time,e.type==='judge'?106:e.h+26);
       e.alive=false;
@@ -716,7 +720,7 @@ class Adventure{
     return false;
   }
 
-  hurt(source){if(this.player.inv>0||this.finished)return;this.state.health--;this.sound('damage');this.player.anim='hurt';this.player.animUntil=this.clock.time+400;this.player.inv=100;this.player.vx=source<this.player.x?7:-7;this.player.vy=-7;this.burst(this.player.x,this.player.y,'#ff6b8a',18);if(this.state.health<=0){this.sound('gameOver');this.court.drain=this.court.warning=0;this.court.timer=360;this.ui.flash('Back at the checkpoint — progress kept');this.state.health=4;const z=this.zone();this.player.x=this.court.active?8008:this.boss.active?4280:z.start+100;this.player.y=FLOOR-this.player.h;this.player.vx=this.player.vy=0;this.player.onGround=true;this.motion={};this.input.releaseAll();this.enemyShots=[];persistQuest("respawn");this.camera=clamp(this.player.x-250,0,WORLD-W)}}
+  hurt(source){if(this.player.inv>0||this.finished)return;if(QuestSurvival.damage())return;this.state.health--;this.sound('damage');this.player.anim='hurt';this.player.animUntil=this.clock.time+400;this.player.inv=100;this.player.vx=source<this.player.x?7:-7;this.player.vy=-7;this.burst(this.player.x,this.player.y,'#ff6b8a',18);if(this.state.health<=0){this.sound('gameOver');this.court.drain=this.court.warning=0;this.court.timer=360;this.ui.flash('Back at the checkpoint — progress kept');this.state.health=4;const z=this.zone();this.player.x=this.court.active?8008:this.boss.active?4280:z.start+100;this.player.y=FLOOR-this.player.h;this.player.vx=this.player.vy=0;this.player.onGround=true;this.motion={};this.input.releaseAll();this.enemyShots=[];persistQuest("respawn");this.camera=clamp(this.player.x-250,0,WORLD-W)}}
   sound(kind='hit'){QuestAudio.effect(kind)}
 
   power(t){
@@ -919,6 +923,7 @@ class Adventure{
   damageBoss(amount,message){
     if(!this.boss.active||!this.boss.alive)return;
     this.sound('bossHit');this.bossHitFlash=12;this.boss.hp-=amount;this.shake=14;this.burst(this.boss.x+60,this.boss.y+65,'#ff4fb8',52);this.ui.flash(message);
+    QuestSurvival.hit('queen-beige',this.boss.hp+amount,Math.max(0,this.boss.hp),message.startsWith('Heartfield')?1:message.startsWith('Cookie')?2:0);
     if(this.boss.hp<=7)this.boss.phase=Math.max(this.boss.phase,2);
     if(this.boss.hp<=4)this.boss.phase=Math.max(this.boss.phase,3);
     if(this.boss.hp<=0)this.defeatBoss();
@@ -1088,7 +1093,7 @@ class Adventure{
 
   defeatBoss(){
     if(this.encounters.queenComplete)return;
-    QuestMasterArt.defeat('queen-beige',this.boss.x+60,this.boss.y+150,this.clock.time,176);this.encounters.queenComplete=true;if(this.courtReplay?.kind==='queen'){this.returnFromCourtReplay(true);return;}this.boss.hp=0;this.boss.alive=false;this.boss.active=false;this.enemyShots=[];this.state.health=4;
+    QuestMasterArt.defeat('queen-beige',this.boss.x+60,this.boss.y+150,this.clock.time,176);this.encounters.queenComplete=true;if(this.courtReplay?.kind==='queen'){this.returnFromCourtReplay(true);return;}this.boss.hp=0;this.boss.alive=false;this.boss.active=false;this.enemyShots=[];this.state.health=4;QuestSurvival.objective('queen-beige',true);
     this.zoneBanner={text:'COAST COLOR RESTORED!',until:this.clock.time+3000};this.sound('bossDefeat');this.ui.flash('Queen defeated! The coast is free. Continue to Los Angeles and the Court.');
     this.state.objective={title:'Continue toward Los Angeles',detail:'Restore the final beacon and confront the Court of Supremes.'};if(this.encounters.finalComplete&&!this.encounters.legacyAccess)this.beginCourtRescue();persistQuest('queen-midpoint');
   }
@@ -2185,6 +2190,7 @@ class Adventure{
     if(button){button.dataset.hero=dude.name.toLowerCase();button.setAttribute('aria-label',`Use ${dude.power}`)}
   }
   switchDude(i=null){
+    if(!QuestSurvival.select(i===null?this.state.dude+1:i,i===null))return;
     const now=this.clock.time;
     this.switchFrom=this.state.dude;
     this.state.dude=i===null?(this.state.dude+1)%3:i;
@@ -2473,6 +2479,7 @@ function migrateSave(save){
 function readSave(){
   const current=parseStoredSave(SAVE);
   if(current)return current;
+  if(QuestSurvival.enabled())return null;
 
   for(const key of LEGACY_SAVES){
     const legacy=parseStoredSave(key);
@@ -2487,6 +2494,7 @@ function readSave(){
 }
 
 function clearAllQuestSaves(){
+  if(QuestSurvival.enabled()){QuestRuntime.clearSave(SAVE);return;}
   for(const key of [SAVE,...LEGACY_SAVES]){
     QuestRuntime.clearSave(key);
   }
@@ -2688,3 +2696,13 @@ window.__QUEST_SESSION__={isActive:()=>game.running,save:()=>persistQuest('updat
 }};
 
 QuestAudio.bind(()=>QuestStory.active?QuestStory.audioScene():({track:qs('titleScreen').classList.contains('active')?'title':game.court.active?'boss':game.state.bossDefeated?'victory':game.running?((game.boss.active&&game.boss.alive)||game.court.active?'boss':'socal'):'title',paused:game.running&&game.state.paused}));
+
+QuestSurvival.attach({world:'socal',state:()=>game.state,snapshot:()=>game.save(),now:()=>game.clock.time,
+ playing:()=>game.running&&!game.state.paused&&!game.finished&&game.inputMode==='PLAYING',replaying:()=>Boolean(game.courtReplay),blocked:()=>game.court.drain>0,
+ release:()=>{game.input.releaseAll();game.jumpHeld=game.powerHeld=false;game.player.anim='idle';game.player.animUntil=0;},
+ protect:()=>{game.player.inv=100;game.player.anim='hurt';game.player.animUntil=game.clock.time+400;},
+ respawn:()=>{game.court.drain=game.court.warning=0;game.court.timer=360;game.player.x=game.court.active?8008:game.boss.active?4280:game.zone().start+100;game.player.y=FLOOR-game.player.h;game.player.vx=game.player.vy=0;game.player.onGround=true;game.motion={};game.heroShots=[];game.cookieBombs=[];game.positiveFields=[];game.enemyShots=[];game.player.inv=120;},
+ freeze:()=>game.pauseGameplay(),
+ emit:(d,y)=>{const p=QuestCore.makePowerProjectile(d,{...game.player,y:game.player.y+y});if(p.kind==='cookieBomb')game.cookieBombs.push(p.entity);else game.heroShots.push(p.entity);},
+ interrupt:()=>{if(game.boss.active&&game.boss.warned&&game.boss.cool>0){game.boss.warned=false;game.boss.cool=Math.max(game.boss.cool,60);}}
+});

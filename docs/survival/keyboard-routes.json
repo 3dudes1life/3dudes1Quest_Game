@@ -1,0 +1,149 @@
+[
+  {
+    "world": "tahoe",
+    "seconds": 54.293,
+    "method": "normal keyboard; read-only state observations; no teleports/invulnerability/boss edits",
+    "result": {
+      "poses": {
+        "walk": 3816,
+        "hurt": 713,
+        "defeat": 1898,
+        "attack": 706,
+        "idle": 140,
+        "prepare": 72,
+        "transform": 52
+      },
+      "bloom": true,
+      "queen": true,
+      "nests": 4,
+      "memories": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "checkpoint": 6820,
+      "beetles": 21,
+      "transition": "/alaska.html"
+    },
+    "characters": [
+      {
+        "hp": 4,
+        "available": true
+      },
+      {
+        "hp": 4,
+        "available": true
+      },
+      {
+        "hp": 4,
+        "available": true
+      }
+    ],
+    "status": "playing",
+    "achievements": [
+      {
+        "world": "tahoe",
+        "badge": "THREE DUDES STANDING"
+      }
+    ],
+    "errors": []
+  },
+  {
+    "world": "socal",
+    "seconds": 63.217,
+    "method": "normal keyboard; read-only state observations; no teleports/invulnerability/boss edits",
+    "result": {
+      "poses": {
+        "walk": 26322,
+        "idle": 730,
+        "hurt": 579,
+        "defeat": 2049,
+        "attack": 227,
+        "prepare": 233,
+        "transform": 524
+      },
+      "queenMid": true,
+      "complete": true,
+      "cards": 6,
+      "beacons": 3,
+      "court": true,
+      "queen": true,
+      "zoey": true,
+      "links": [
+        "tahoe.html"
+      ]
+    },
+    "characters": [
+      {
+        "hp": 4,
+        "available": true
+      },
+      {
+        "hp": 4,
+        "available": true
+      },
+      {
+        "hp": 4,
+        "available": true
+      }
+    ],
+    "status": "playing",
+    "achievements": [
+      {
+        "world": "socal",
+        "badge": "THREE DUDES STANDING"
+      }
+    ],
+    "errors": []
+  },
+  {
+    "world": "alaska",
+    "seconds": 32.989,
+    "method": "normal keyboard; read-only state observations; no teleports/invulnerability/boss edits",
+    "result": {
+      "poses": {
+        "walk": 6871,
+        "hurt": 1515,
+        "defeat": 843,
+        "prepare": 175,
+        "attack": 84,
+        "transform": 17
+      },
+      "pipeline": true,
+      "completed": true,
+      "deaths": 0,
+      "sessionMethods": [
+        "isActive",
+        "save",
+        "pause",
+        "suspendViewport"
+      ],
+      "ending": "ADVENTURE 3 COMPLETE\nThe Aurora Returns\n\nTHE LAST FRONTIER IS SAVED! Her curse breaks, the salmon return to normal, and the northern lights shine in rainbow colors. Rigsby celebrates with snow zoomies; Zoey retrieves the trail keeper\u2019s satchel.\n\nBeyond the portal: Hawaii. Costa Rica awaits as the fifth and final adventure, where the three dudes retire together.\n\nNEXT ADVENTURE: HAWAII \u00b7 COMING SOON...\nReplay Alaska\nReturn to Quest Hub"
+    },
+    "characters": [
+      {
+        "hp": 4,
+        "available": true
+      },
+      {
+        "hp": 4,
+        "available": true
+      },
+      {
+        "hp": 4,
+        "available": true
+      }
+    ],
+    "status": "playing",
+    "achievements": [
+      {
+        "world": "alaska",
+        "badge": "THREE DUDES STANDING"
+      }
+    ],
+    "errors": []
+  }
+]

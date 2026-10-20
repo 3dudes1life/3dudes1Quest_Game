@@ -12,7 +12,7 @@
   if(QuestRuntime.readSave('3dudes1quest-save-109')?.state?.adventureComplete)completed.socal=true;
   if(QuestRuntime.readSave('3dudes1quest_tahoe_v250')?.bossDefeated)completed.tahoe=true;
   if(QuestRuntime.readSave('3dudes1quest_alaska_v340')?.bossDefeated)completed.alaska=true;
-  function complete(id){if(!worlds.some(w=>w.id===id&&w.url))return;completed[id]=true;QuestRuntime.writeSave(key,completed);render()}
+  function complete(id){QuestSurvival.complete(id);if(!worlds.some(w=>w.id===id&&w.url))return;completed[id]=true;QuestRuntime.writeSave(key,completed);render()}
   function render(){
     document.querySelectorAll('.journeyRoute').forEach(el=>el.remove());
     const current=document.querySelector('[data-world]')?.dataset.world||(document.querySelector('#tahoeApp')?'tahoe':'socal');

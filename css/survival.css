@@ -1,0 +1,14 @@
+/* Occupies reserved HUD space, outside the logical game canvas. */
+.survivalMenu{margin:12px 0;padding:10px;border:2px solid #67e5ed;background:#101e36;color:#fff;font:600 13px/1.4 system-ui}
+.survivalMenu p{font:inherit!important;margin:6px 0!important}.survivalMenu button{min-height:44px;margin:4px;padding:8px;font:700 13px system-ui}
+#survivalHud{position:absolute;z-index:24;top:2px;left:8px;right:158px;display:flex;align-items:center;gap:6px;color:#fff;background:#111d36;font:700 12px/1.2 system-ui;padding:2px;pointer-events:auto;border:1px solid #66dbd7}
+#survivalHud[hidden]{display:none}.survivor{display:flex;align-items:center;gap:3px;white-space:nowrap;padding:2px;border:1px solid transparent}.survivor img{width:24px;height:24px;image-rendering:pixelated;object-fit:contain}.survivor[data-active=true]{border-color:#ffec93}.survivor[data-out=true]{opacity:.65}#teamPower{min-height:44px;min-width:100px;flex:1;background:#242857;color:#fff;border:2px solid #f188dc;font:700 12px system-ui;padding:3px}#survivalStatus{position:absolute;top:100%;left:0;max-width:100%;background:#101e36;color:#fff;font-size:11px;white-space:normal}#survivalStatus:empty{display:none}
+.survival #hud,.survival #tahoeHud{top:52px;height:25px}.survival #objectiveCard,.survival #objective{top:80px}.survival #bossHud,.survival #bossPhase{top:80px}.survival #triangleUltimateBtn{top:50px}.survival #hud .dudeChip,.survival #hud .healthChip,.survival #tahoeHud .dudeChip{display:none}
+.survivalTest{padding:8px;border:2px solid #ffd760;color:#fff;background:#302644}.survivalTest button{min-height:44px}
+@media(max-width:950px){#survivalHud{gap:2px;font-size:11px;right:152px}.survivor{gap:1px;padding:1px}.survivor img{width:24px;height:24px}#teamPower{font-size:10px;min-width:105px}#survivalStatus{font-size:10px}}
+@media(max-width:650px){#survivalHud{right:56px;flex-wrap:wrap}.survivor{flex:1}#teamPower{min-height:44px;flex-basis:100%}.survival #hud,.survival #tahoeHud{top:82px}.survival #objectiveCard,.survival #objective,.survival #bossHud,.survival #bossPhase{top:108px}}
+
+#survivalStatus{position:fixed;top:auto;bottom:calc(100vh - var(--view-y,0px) - var(--view-h,100vh) + 2px);left:calc(var(--view-x,0px) + 8px);max-width:calc(var(--view-w,100vw) - 16px);pointer-events:none;padding:2px 5px}
+#tahoeApp:has(#openingCard:not(.hidden)) #survivalHud,#app:has(#openingCard:not(.hidden)) #survivalHud{display:none}
+
+.survival #hud .chip:has(#hudDude),.survival #hud .chip:has(#hudHealth),.survival #tahoeHud .tahoeChip:has(#hudDude),.survival #tahoeHud .tahoeChip:has(#hudHealth){display:none}

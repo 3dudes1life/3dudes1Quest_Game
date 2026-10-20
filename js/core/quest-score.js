@@ -40,6 +40,7 @@
   // [wave, start Hz, end Hz, duration seconds, delay seconds, amplitude]
   const tone=(wave,from,to,duration,delay=0,amp=.15)=>[wave,from,to,duration,delay,amp];
   const effects = {
+    throuple:[tone('pulse',262,1048,.20,0,.08),tone('triangle',659,1318,.24,.08,.08),tone('square',784,1568,.18,.20,.06)],
     salmon:[tone('triangle',160,400,.09,0,.09),tone('noise',900,300,.06,.06,.05)],
     ice:[tone('noise',2200,700,.07,0,.06),tone('triangle',1200,600,.08,0,.06)],
     snow:[tone('noise',1400,250,.12,0,.08)],

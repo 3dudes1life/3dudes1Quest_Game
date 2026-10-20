@@ -125,12 +125,16 @@
   }
 
   function readSave(key, validate = value => value && typeof value === 'object' && !Array.isArray(value)) {
+    const survival = window.QuestSurvival?.storage.read(key, validate);
+    if (survival !== undefined) return survival;
     for (const name of [key, `${key}:backup`]) {
       try { const value = JSON.parse(localStorage.getItem(name) || 'null'); if (validate(value)) return value; } catch (_) {}
     }
     return null;
   }
   function writeSave(key, value) {
+    const survival = window.QuestSurvival?.storage.write(key, value);
+    if (survival !== undefined) return survival;
     try {
       const encoded = JSON.stringify(value);
       // Keep the previous readable snapshot if the next write is interrupted.
@@ -140,7 +144,7 @@
       return true;
     } catch (error) { console.warn('Quest save failed', error); return false; }
   }
-  function clearSave(key) { try { localStorage.removeItem(key); localStorage.removeItem(`${key}:backup`); } catch (_) {} }
+  function clearSave(key) { if(window.QuestSurvival?.storage.clear(key))return; try { localStorage.removeItem(key); localStorage.removeItem(`${key}:backup`); } catch (_) {} }
   function capEffects(items, maximum = 280) { if (items.length > maximum) items.splice(0, items.length - maximum); }
   window.QuestRuntime = Object.freeze({ STEP, createLoop, createInput, movePlayer, followCamera, readSave, writeSave, clearSave, capEffects });
 })();
