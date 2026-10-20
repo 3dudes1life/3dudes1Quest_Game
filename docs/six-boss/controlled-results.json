@@ -1,0 +1,172 @@
+{
+  "method": "controlled scenarios with real power projectiles, distinct from natural keyboard full routes",
+  "socal": [
+    {
+      "d": 0,
+      "mid": true,
+      "reload": true,
+      "phases": [
+        1,
+        2,
+        3
+      ],
+      "final": true,
+      "rescue": true
+    },
+    {
+      "d": 1,
+      "mid": true,
+      "reload": true,
+      "phases": [
+        1,
+        2,
+        3
+      ],
+      "final": true,
+      "rescue": true
+    },
+    {
+      "d": 2,
+      "mid": true,
+      "reload": true,
+      "phases": [
+        1,
+        2,
+        3
+      ],
+      "final": true,
+      "rescue": true
+    }
+  ],
+  "bloom": [
+    {
+      "d": 0,
+      "won": true,
+      "reload": true,
+      "cores": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "d": 1,
+      "won": true,
+      "reload": true,
+      "cores": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "d": 2,
+      "won": true,
+      "reload": true,
+      "cores": [
+        0,
+        0,
+        0
+      ]
+    }
+  ],
+  "pine": [
+    {
+      "d": 0,
+      "won": true,
+      "phases": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "d": 1,
+      "won": true,
+      "phases": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "d": 2,
+      "won": true,
+      "phases": [
+        1,
+        2,
+        3
+      ]
+    }
+  ],
+  "pipeline": [
+    {
+      "d": 0,
+      "valves": [
+        0,
+        0,
+        0
+      ],
+      "warn": true,
+      "flood": true,
+      "sealed": true,
+      "frost": true,
+      "phases": [
+        1,
+        2,
+        3
+      ],
+      "shield": true
+    },
+    {
+      "d": 1,
+      "valves": [
+        0,
+        0,
+        0
+      ],
+      "warn": true,
+      "flood": true,
+      "sealed": true,
+      "frost": true,
+      "phases": [
+        1,
+        2,
+        3
+      ],
+      "shield": true
+    },
+    {
+      "d": 2,
+      "valves": [
+        0,
+        0,
+        0
+      ],
+      "warn": true,
+      "flood": true,
+      "sealed": true,
+      "frost": true,
+      "phases": [
+        1,
+        2,
+        3
+      ],
+      "shield": true
+    }
+  ],
+  "bloomReplay": {
+    "cp": 2680,
+    "preserved": true,
+    "score": 4321,
+    "checkpoint": 6820,
+    "memory": true
+  },
+  "pipeReplay": {
+    "cp": 3260,
+    "preserved": true,
+    "score": 7654,
+    "checkpoint": 6320,
+    "shard": true
+  }
+}
