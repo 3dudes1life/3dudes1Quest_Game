@@ -4,5 +4,9 @@
   "observedFailure": "After all9 Chromium screenshots, Linux WebKit first desktop SoCal movement assertion failed after a fixed160ms wait. No failure state had been saved by the original harness.",
   "response": "Assert remaining held movement alias, wait up to3s for actual displacement, record engine/profile/world/held input/pause/focus/visibility/position and screenshot on any failure. Retain strict failures; no browser skip in CI.",
   "interpretation": "Functional readiness timeout is separate from delivered-event latency. Cause remains under investigation until the strict final CI result; no game code or performance traces changed.",
-  "oldRun": "Cancelled remaining old-head gameplay job to run all checks on the corrected test head; no merge/deployment."
+  "oldRun": "Cancelled remaining old-head gameplay job to run all checks on the corrected test head; no merge/deployment.",
+  "secondRun": "https://github.com/3dudes1life/3dudes1Quest_Game/actions/runs/39482113642",
+  "secondObserved": "Linux WebKit passed movement and all desktop/high-DPI worlds, then failed the fixed70ms safe-area bounds check before the scheduled inset layout was observed. Diagnostic state showed visible/focused/unpaused gameplay with all inputs released. QA overlay was also visible in the test screenshot.",
+  "secondResponse": "Wait for actual CSS safe-area layout values before asserting unchanged control bounds; close the test-only Gold Master overlay before interaction/screenshots. No runtime or latency threshold changed.",
+  "remainingLimit": "Linux first movement was observed by functional polling after about1046ms in one case. This is automation/RAF observation time, not a delivered-event measurement; Linux/native-device latency is not certified. Raw diagnostic retained."
 }

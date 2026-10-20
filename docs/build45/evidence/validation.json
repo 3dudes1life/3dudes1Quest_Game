@@ -29,6 +29,7 @@
     "boss-configurations.json",
     "browser.log",
     "ci-investigation.json",
+    "ci-webkit-safe-area-failure.json",
     "comparison-transport.json",
     "continuous-campaign.json",
     "controls-final.log",
