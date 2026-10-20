@@ -1,3 +1,17 @@
-// Build-time encoding only. The runtime draws a single predecoded scenery atlas.
+// Build-time encoding only. Patch Scene 1; preserve every decoded pixel in the other five atlas panels.
 const sharp=require('sharp'),fs=require('node:fs'),crypto=require('node:crypto');
-(async()=>{const source='docs/origin-story-2/source/scenes.png',file='assets/story2/scenes.webp';await sharp(source).resize(1024,864,{kernel:'nearest'}).webp({nearLossless:true,quality:65,effort:6}).toFile(file);const meta=await sharp(file).metadata(),a=await sharp(source).resize(1024,864,{kernel:'nearest'}).ensureAlpha().raw().toBuffer(),b=await sharp(file).ensureAlpha().raw().toBuffer();let max=0;for(let i=0;i<a.length;i++)max=Math.max(max,Math.abs(a[i]-b[i]));if(max>4)throw Error('Scenery changed beyond encoding tolerance');fs.writeFileSync('assets/story2/manifest.json',JSON.stringify({source,file,baseline:'fcf991f5bf73c9d0789d89a0f5881a5e1991493f',approvedCastSha256:JSON.parse(fs.readFileSync('assets/story2/manifest.json')).approvedCastSha256,width:meta.width,height:meta.height,columns:2,rows:3,sourceBytes:fs.statSync(source).size,runtimeBytes:fs.statSync(file).size,maxChannelDelta:max,sha256:crypto.createHash('sha256').update(fs.readFileSync(file)).digest('hex'),panels:['Dominican Republic','Shared home','Through the storm','Emerging powers','Community and planet','Five-world journey'],cast:'Unchanged approved assets/cast341 and cast340; no generated protagonists',generator:'Built-in ImageGen; style reference assets/master-build/socal-scenes.png'},null,2)+'\n')})().catch(e=>{console.error(e);process.exitCode=1});
+const hash=b=>crypto.createHash('sha256').update(b).digest('hex');
+(async()=>{
+ const source='docs/origin-story-2/source/scenes.png',correctionSource='docs/origin-story-2/source/dominican-republic.png',file='assets/story2/scenes.webp';
+ const previous=JSON.parse(fs.readFileSync('assets/story2/manifest.json'));
+ const approved=await sharp(source).resize(1024,864,{kernel:'nearest'}).webp({nearLossless:true,quality:65,effort:6}).toBuffer();
+ if(hash(approved)!=='39318a4f588ed0a3f23dbe19f1d9506fbcad208fa7433d20c9f27823908976e1')throw Error('Approved atlas rebuild changed');
+ const panel=await sharp(correctionSource).resize(512,288,{fit:'cover',position:'centre',kernel:'nearest'}).png().toBuffer();
+ await sharp(approved).composite([{input:panel,left:0,top:0}]).webp({lossless:true,effort:6}).toFile(file);
+ const before=await sharp(approved).ensureAlpha().raw().toBuffer(),after=await sharp(file).ensureAlpha().raw().toBuffer();
+ let changed=0;for(let y=0;y<864;y++)for(let x=0;x<1024;x++)for(let c=0;c<4;c++){const i=(y*1024+x)*4+c;if(before[i]!==after[i]){if(x>=512||y>=288)throw Error('Changed artwork outside Scene 1');changed++}}
+ if(!changed)throw Error('Scene 1 did not change');
+ const panelHashes=[];for(let i=0;i<6;i++){const region={left:i%2*512,top:Math.floor(i/2)*288,width:512,height:288};panelHashes.push({panel:i,before:hash(await sharp(approved).extract(region).ensureAlpha().raw().toBuffer()),after:hash(await sharp(file).extract(region).ensureAlpha().raw().toBuffer())})}
+ fs.writeFileSync('assets/story2/manifest.json',JSON.stringify({...previous,correctionSource,correctionSourceBytes:fs.statSync(correctionSource).size,runtimeBytes:fs.statSync(file).size,sha256:hash(fs.readFileSync(file)),encoding:'Lossless composite over the approved decoded atlas; only panel 0 replaced',unchangedOtherPanels:true,panelHashes},null,2)+'\n');
+ console.log(JSON.stringify({runtimeBytes:fs.statSync(file).size,changedChannels:changed,otherPanelsIdentical:panelHashes.slice(1).every(p=>p.before===p.after)},null,2));
+})().catch(e=>{console.error(e);process.exitCode=1});

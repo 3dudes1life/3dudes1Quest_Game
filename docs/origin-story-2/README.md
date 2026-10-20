@@ -2,6 +2,10 @@
 
 **55 seconds. Seven scenes. GO for owner visual/listening review; NO-GO for merge or deployment until explicit approval and green final CI.** This is a separate cinematic build from verified six-boss merge `fcf991f5bf73c9d0789d89a0f5881a5e1991493f`. Production remains unchanged.
 
+## Dominican Republic correction
+
+Scene 1 has been revised following owner feedback; all other scene panels and approved characters are preserved. See the [correction report and before/after comparisons](DR-CORRECTION.md). The current runtime atlas is 1,384,810 bytes (+141,896 bytes); only the opening panel changed.
+
 ## Review package
 
 Open [the visual review](review.html). It includes complete desktop and landscape recordings, seven scenes at both sizes, approved character close-ups, before/after defect comparisons and the actual synthesized music preview. Videos are silent browser recordings and include a brief menu lead-in; the cinematic clock itself is 55 seconds. The embedded **Our Story** replay supplies the actual interactive experience with synchronized audio after a user gesture. Replay does not start or rewrite a campaign.
@@ -27,9 +31,9 @@ The full local browser suite passed, including the installed Tahoe offline check
 
 ## Weight and runtime behavior
 
-One new runtime atlas: **1,242,914 bytes**, 1024×864; about 3.54 MB of decoded RGBA before browser/GPU overhead. It decodes lazily once per visit when the story is opened, then is reused for replays. The existing atomic PWA precache includes this asset once per new release. Original source PNG, screenshots, WAV and review videos are excluded from runtime precaching. Build-time nearest-neighbor resizing/near-lossless encoding avoids per-frame processing. Load failure falls back to the already-loaded SoCal art; required cast strips decode before playback.
+One new runtime atlas: **1,384,810 bytes**, 1024×864; about 3.54 MB of decoded RGBA before browser/GPU overhead. It decodes lazily once per visit when the story is opened, then is reused for replays. The existing atomic PWA precache includes this asset once per new release. Original source PNG, screenshots, WAV and review videos are excluded from runtime precaching. Build-time nearest-neighbor resizing/near-lossless encoding avoids per-frame processing. Load failure falls back to the already-loaded SoCal art; required cast strips decode before playback.
 
-One animation request is pending while active, zero after finish/pause; existing audio voices remain bounded at 40 with one scheduler. No runtime pixel readback was added: face probes and alpha analysis run only in tests. New release metadata keeps version 3.4.1 and changes cache revision to `origin-story-2-1`, retaining the established save-approved update flow and caches.
+One animation request is pending while active, zero after finish/pause; existing audio voices remain bounded at 40 with one scheduler. No runtime pixel readback was added: face probes and alpha analysis run only in tests. New release metadata keeps version 3.4.1 and changes cache revision to `origin-story-2-dr-1`, retaining the established save-approved update flow and caches.
 
 ## Modified files and scope
 

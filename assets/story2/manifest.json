@@ -6,9 +6,9 @@
   "columns": 2,
   "rows": 3,
   "sourceBytes": 3569416,
-  "runtimeBytes": 1242914,
+  "runtimeBytes": 1384810,
   "maxChannelDelta": 2,
-  "sha256": "39318a4f588ed0a3f23dbe19f1d9506fbcad208fa7433d20c9f27823908976e1",
+  "sha256": "e938bea98622f4c989c7599f1d56bad7f8e796eca448aab0c4aa9b70c5ad6be5",
   "panels": [
     "Dominican Republic",
     "Shared home",
@@ -25,5 +25,41 @@
     "assets/cast341/daniel.png": "ca214509e4f72ff7a4f7f3fc7f193a4b160cd88bae014bf07486d0bd536a933a",
     "assets/cast341/caleb.png": "a9b3e72959fcf8eabf0c4b0e4f0b6a7fa38c61d066cfec9cc5f425d6873d809b",
     "assets/cast340/socal.png": "e1a66fdd1e0eff005382a6352b746b62df1286b2a0c9e18802b872a903fc64c7"
-  }
+  },
+  "correctionSource": "docs/origin-story-2/source/dominican-republic.png",
+  "correctionSourceBytes": 3449945,
+  "encoding": "Lossless composite over the approved decoded atlas; only panel 0 replaced",
+  "unchangedOtherPanels": true,
+  "panelHashes": [
+    {
+      "panel": 0,
+      "before": "1c7ca1eac8916066b63948e4ad0dd4fbd5bd1db31c59fb5bf75a06a274296567",
+      "after": "4a155095a69c0cff70b00e23b152a3e01c8c1edf0411109d913756b8fe91ea02"
+    },
+    {
+      "panel": 1,
+      "before": "161868c36a31959f500ecc252002ede8675c9b562ec92a1b4d721a9f1000d8dd",
+      "after": "161868c36a31959f500ecc252002ede8675c9b562ec92a1b4d721a9f1000d8dd"
+    },
+    {
+      "panel": 2,
+      "before": "d8edfaffc78011ddd96182841206bef0946b2cb3adba1feea8a40cc0f8723330",
+      "after": "d8edfaffc78011ddd96182841206bef0946b2cb3adba1feea8a40cc0f8723330"
+    },
+    {
+      "panel": 3,
+      "before": "613c5ad9379e3537a6a80d9536585b673fd17dcafa22d8ef70e84a064be5832a",
+      "after": "613c5ad9379e3537a6a80d9536585b673fd17dcafa22d8ef70e84a064be5832a"
+    },
+    {
+      "panel": 4,
+      "before": "b14183c5045899c2e95f79bb92dc523320c7053f5a8c086352dc3f821425310c",
+      "after": "b14183c5045899c2e95f79bb92dc523320c7053f5a8c086352dc3f821425310c"
+    },
+    {
+      "panel": 5,
+      "before": "f331409518aeb3f5ae8c165c96f8fae8f217f73ff06d07ba517eb86631bb7209",
+      "after": "f331409518aeb3f5ae8c165c96f8fae8f217f73ff06d07ba517eb86631bb7209"
+    }
+  ]
 }

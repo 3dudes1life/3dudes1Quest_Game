@@ -4,12 +4,12 @@
   "natural": [
     {
       "mobile": false,
-      "wallSeconds": 54.986,
+      "wallSeconds": 55.002,
       "runtime": 55
     },
     {
       "mobile": true,
-      "wallSeconds": 54.98,
+      "wallSeconds": 54.965,
       "runtime": 55
     }
   ],
@@ -350,6 +350,14 @@
         }
       ]
     }
+  ],
+  "panelHashes": [
+    "4a155095a69c0cff70b00e23b152a3e01c8c1edf0411109d913756b8fe91ea02",
+    "161868c36a31959f500ecc252002ede8675c9b562ec92a1b4d721a9f1000d8dd",
+    "d8edfaffc78011ddd96182841206bef0946b2cb3adba1feea8a40cc0f8723330",
+    "613c5ad9379e3537a6a80d9536585b673fd17dcafa22d8ef70e84a064be5832a",
+    "b14183c5045899c2e95f79bb92dc523320c7053f5a8c086352dc3f821425310c",
+    "f331409518aeb3f5ae8c165c96f8fae8f217f73ff06d07ba517eb86631bb7209"
   ],
   "alpha": [
     {
