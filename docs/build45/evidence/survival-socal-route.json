@@ -1,0 +1,418 @@
+{
+  "world": "socal",
+  "method": "normal keyboard; read-only state observations; no teleports/invulnerability/boss edits",
+  "seconds": 62.596,
+  "result": {
+    "poses": {
+      "walk": 28422,
+      "idle": 729,
+      "hurt": 562,
+      "defeat": 1946,
+      "attack": 326,
+      "prepare": 1934,
+      "transform": 530
+    },
+    "queenMid": true,
+    "complete": true,
+    "cards": 6,
+    "beacons": 3,
+    "court": true,
+    "queen": true,
+    "zoey": true,
+    "links": [
+      "tahoe.html"
+    ],
+    "survival": {
+      "schema": 1,
+      "enabled": true,
+      "id": "mvh1uc0q",
+      "sequence": 107,
+      "characters": [
+        {
+          "hp": 4,
+          "available": true
+        },
+        {
+          "hp": 4,
+          "available": true
+        },
+        {
+          "hp": 4,
+          "available": true
+        }
+      ],
+      "active": 1,
+      "charge": 100,
+      "contributions": [
+        false,
+        true,
+        false
+      ],
+      "currentWorld": "socal",
+      "completedWorlds": [
+        "socal"
+      ],
+      "achievements": [
+        {
+          "world": "socal",
+          "badge": "THREE DUDES STANDING"
+        }
+      ],
+      "status": "playing",
+      "worlds": {
+        "3dudes1quest-save-109": {
+          "schema": 2,
+          "encounters": {
+            "version": 1,
+            "legacyAccess": false,
+            "pastMid": false,
+            "queenComplete": true,
+            "finalComplete": true,
+            "court": {
+              "active": false,
+              "phase": 3,
+              "hp": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ]
+            }
+          },
+          "version": "3.4.1",
+          "player": {
+            "x": 8796.320000000045,
+            "y": 548,
+            "facing": 1
+          },
+          "state": {
+            "health": 4,
+            "cards": 6,
+            "beacons": 3,
+            "score": 8500,
+            "dude": 1,
+            "triangle": 100,
+            "paused": false,
+            "bossDefeated": true,
+            "zoeyUnlocked": true,
+            "adventureComplete": true,
+            "objective": {
+              "title": "Enter the Lake Tahoe Portal",
+              "detail": "Southern California is restored. Adventure 2 awaits."
+            },
+            "courtDefeated": true,
+            "courtVictoryRecorded": true
+          },
+          "cards": [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+          ],
+          "beacons": [
+            true,
+            true,
+            true
+          ],
+          "enemies": [
+            {
+              "alive": false,
+              "hp": -1
+            },
+            {
+              "alive": false,
+              "hp": -1
+            },
+            {
+              "alive": false,
+              "hp": -1
+            },
+            {
+              "alive": false,
+              "hp": -1
+            },
+            {
+              "alive": false,
+              "hp": -1
+            },
+            {
+              "alive": false,
+              "hp": -1
+            },
+            {
+              "alive": false,
+              "hp": 0
+            },
+            {
+              "alive": false,
+              "hp": -1
+            },
+            {
+              "alive": false,
+              "hp": -1
+            },
+            {
+              "alive": false,
+              "hp": -1
+            },
+            {
+              "alive": false,
+              "hp": -1
+            },
+            {
+              "alive": false,
+              "hp": -1
+            },
+            {
+              "alive": false,
+              "hp": -1
+            },
+            {
+              "alive": false,
+              "hp": -1
+            },
+            {
+              "alive": false,
+              "hp": 0,
+              "signHp": 0,
+              "signUp": false
+            },
+            {
+              "alive": false,
+              "hp": 0,
+              "signHp": 0,
+              "signUp": false
+            },
+            {
+              "alive": true,
+              "hp": 1,
+              "signHp": 0,
+              "signUp": false
+            },
+            {
+              "alive": true,
+              "hp": 1,
+              "signHp": 0,
+              "signUp": false
+            },
+            {
+              "alive": false,
+              "hp": 0,
+              "signHp": 0,
+              "signUp": false
+            },
+            {
+              "alive": false,
+              "hp": 0,
+              "signHp": 0,
+              "signUp": false
+            },
+            {
+              "alive": false,
+              "hp": 0
+            },
+            {
+              "alive": false,
+              "hp": 0
+            },
+            {
+              "alive": false,
+              "hp": 0
+            },
+            {
+              "alive": false,
+              "hp": 0
+            },
+            {
+              "alive": true
+            },
+            {
+              "alive": false,
+              "hp": 0
+            },
+            {
+              "alive": false,
+              "hp": 0
+            },
+            {
+              "alive": false,
+              "hp": 0
+            },
+            {
+              "alive": false,
+              "hp": 0
+            },
+            {
+              "alive": false,
+              "hp": 0
+            },
+            {
+              "alive": false,
+              "hp": 0
+            },
+            {
+              "alive": false,
+              "hp": 0
+            },
+            {
+              "alive": false,
+              "hp": 0
+            },
+            {
+              "alive": false,
+              "hp": 0
+            },
+            {
+              "alive": false,
+              "hp": 0
+            }
+          ],
+          "secrets": [
+            true,
+            true,
+            true,
+            true,
+            true
+          ],
+          "boss": {
+            "x": 4466.256638470876,
+            "hp": 0,
+            "alive": false,
+            "active": false,
+            "phase": 3,
+            "summoned": true
+          },
+          "finale": {
+            "active": false,
+            "stage": 6,
+            "timer": 0,
+            "complete": true,
+            "portalReady": true
+          },
+          "portal": {
+            "open": true
+          },
+          "cityHallDamage": 1,
+          "savedAt": "2026-10-20T19:02:23.357Z"
+        },
+        "3dudes1quest_journey": {
+          "socal": true
+        }
+      },
+      "ledger": {
+        "socal:objective:card:0": true,
+        "socal:heal:card:0": true,
+        "socal:hit:enemy-0:0": true,
+        "socal:hit:enemy-1:0": true,
+        "socal:hit:enemy-20:0": true,
+        "socal:objective:card:1": true,
+        "socal:heal:card:1": true,
+        "socal:hit:enemy-2:0": true,
+        "socal:hit:enemy-3:0": true,
+        "socal:hit:enemy-4:0": true,
+        "socal:objective:card:2": true,
+        "socal:heal:card:2": true,
+        "socal:hit:enemy-5:0": true,
+        "socal:hit:enemy-6:0": true,
+        "socal:objective:beacon:0": true,
+        "socal:heal:beacon:0": true,
+        "socal:hit:enemy-21:0": true,
+        "socal:hit:enemy-7:0": true,
+        "socal:objective:card:3": true,
+        "socal:heal:card:3": true,
+        "socal:hit:enemy-8:0": true,
+        "socal:hit:enemy-9:0": true,
+        "socal:hit:queen-beige:9": true,
+        "socal:hit:enemy-10:0": true,
+        "socal:hit:queen-beige:8": true,
+        "socal:hit:queen-beige:7": true,
+        "socal:hit:queen-beige:6": true,
+        "socal:hit:queen-beige:5": true,
+        "socal:hit:queen-beige:4": true,
+        "socal:hit:queen-beige:3": true,
+        "socal:hit:undefined:4700:0": true,
+        "socal:hit:queen-beige:2": true,
+        "socal:hit:queen-beige:1": true,
+        "socal:hit:queen-beige:0": true,
+        "socal:objective:queen-beige": true,
+        "socal:heal:queen-beige": true,
+        "socal:objective:card:4": true,
+        "socal:heal:card:4": true,
+        "socal:objective:beacon:1": true,
+        "socal:heal:beacon:1": true,
+        "socal:hit:enemy-11:0": true,
+        "socal:hit:enemy-22:0": true,
+        "socal:hit:enemy-12:0": true,
+        "socal:hit:enemy-13:0": true,
+        "socal:hit:enemy-14:1": true,
+        "socal:hit:enemy-14:0": true,
+        "socal:hit:enemy-15:1": true,
+        "socal:hit:enemy-15:0": true,
+        "socal:objective:beacon:2": true,
+        "socal:heal:beacon:2": true,
+        "socal:hit:enemy-16:1": true,
+        "socal:hit:enemy-23:0": true,
+        "socal:hit:enemy-17:1": true,
+        "socal:hit:enemy-18:1": true,
+        "socal:objective:card:5": true,
+        "socal:heal:card:5": true,
+        "socal:hit:enemy-18:0": true,
+        "socal:hit:enemy-19:4": true,
+        "socal:hit:enemy-19:3": true,
+        "socal:hit:enemy-19:2": true,
+        "socal:hit:enemy-19:1": true,
+        "socal:hit:enemy-19:0": true,
+        "socal:hit:court-1-0:2": true,
+        "socal:hit:court-1-0:1": true,
+        "socal:hit:court-1-0:0": true,
+        "socal:hit:court-2-0:1": true,
+        "socal:hit:court-2-1:1": true,
+        "socal:hit:court-2-2:1": true,
+        "socal:hit:court-2-0:0": true,
+        "socal:hit:court-2-1:0": true,
+        "socal:hit:court-2-2:0": true,
+        "socal:hit:court-3-0:0": true,
+        "socal:hit:court-3-1:0": true,
+        "socal:hit:court-3-2:0": true,
+        "socal:hit:court-3-3:0": true,
+        "socal:hit:court-3-4:0": true,
+        "socal:hit:court-3-5:0": true,
+        "socal:hit:court-3-6:0": true,
+        "socal:hit:court-3-7:0": true,
+        "socal:hit:court-3-8:0": true,
+        "socal:objective:world:socal": true,
+        "socal:heal:world:socal": true
+      },
+      "history": []
+    }
+  },
+  "events": [],
+  "errors": [],
+  "assets": [
+    "assets/master-build/actors/queen-beige.webp",
+    "assets/master-build/actors/queen-beige-actions.webp",
+    "assets/cast340/socal.png",
+    "assets/master-build/actors/court-judge.webp",
+    "assets/cast341/will.png",
+    "assets/cast341/daniel.png",
+    "assets/master-build/actors/court-judge-actions.webp",
+    "assets/cast341/caleb.png",
+    "assets/master-build/actors/flaming-law.webp",
+    "assets/master-build/actors/flaming-law-actions.webp",
+    "assets/master-build/actors/hoa-drone.webp",
+    "assets/master-build/actors/beige-bot.webp",
+    "assets/master-build/actors/hoa-drone-actions.webp",
+    "assets/master-build/actors/beige-bot-actions.webp",
+    "assets/environments/home_base_remastered.svg",
+    "assets/sprites_hd/hoa_queen_idle.png",
+    "assets/master-build/foreground.webp",
+    "assets/master-build/socal-scenes.webp"
+  ]
+}

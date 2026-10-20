@@ -1,0 +1,5064 @@
+{
+  "method": "One isolated Survival campaign, native keyboard movement/combat, native SoCal portal and automatic Tahoe travel; same run ID throughout. Destination title pages reload with ?qa for read-only state observations. No teleports, invulnerability, forced charge or completion flags. Passive sessionStorage exit copies verify transition state.",
+  "seconds": 146.407,
+  "results": [
+    {
+      "world": "socal",
+      "result": {
+        "poses": {
+          "walk": 28816,
+          "idle": 729,
+          "hurt": 571,
+          "defeat": 1997,
+          "attack": 290,
+          "prepare": 265,
+          "transform": 534
+        },
+        "queenMid": true,
+        "complete": true,
+        "cards": 6,
+        "beacons": 3,
+        "court": true,
+        "queen": true,
+        "zoey": true,
+        "links": [
+          "tahoe.html"
+        ]
+      },
+      "events": [],
+      "run": {
+        "schema": 1,
+        "enabled": true,
+        "id": "mvh1li19",
+        "sequence": 108,
+        "characters": [
+          {
+            "hp": 4,
+            "available": true
+          },
+          {
+            "hp": 4,
+            "available": true
+          },
+          {
+            "hp": 4,
+            "available": true
+          }
+        ],
+        "active": 1,
+        "charge": 100,
+        "contributions": [
+          false,
+          true,
+          false
+        ],
+        "currentWorld": "socal",
+        "completedWorlds": [
+          "socal"
+        ],
+        "achievements": [
+          {
+            "world": "socal",
+            "badge": "THREE DUDES STANDING"
+          }
+        ],
+        "status": "playing",
+        "worlds": {
+          "3dudes1quest-save-109": {
+            "schema": 2,
+            "encounters": {
+              "version": 1,
+              "legacyAccess": false,
+              "pastMid": false,
+              "queenComplete": true,
+              "finalComplete": true,
+              "court": {
+                "active": false,
+                "phase": 3,
+                "hp": [
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              }
+            },
+            "version": "3.4.1",
+            "player": {
+              "x": 8796.320000000045,
+              "y": 548,
+              "facing": 1
+            },
+            "state": {
+              "health": 4,
+              "cards": 6,
+              "beacons": 3,
+              "score": 8500,
+              "dude": 1,
+              "triangle": 100,
+              "paused": false,
+              "bossDefeated": true,
+              "zoeyUnlocked": true,
+              "adventureComplete": true,
+              "objective": {
+                "title": "Enter the Lake Tahoe Portal",
+                "detail": "Southern California is restored. Adventure 2 awaits."
+              },
+              "courtDefeated": true,
+              "courtVictoryRecorded": true
+            },
+            "cards": [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "beacons": [
+              true,
+              true,
+              true
+            ],
+            "enemies": [
+              {
+                "alive": false,
+                "hp": -1
+              },
+              {
+                "alive": false,
+                "hp": -1
+              },
+              {
+                "alive": false,
+                "hp": -1
+              },
+              {
+                "alive": false,
+                "hp": -1
+              },
+              {
+                "alive": false,
+                "hp": -1
+              },
+              {
+                "alive": false,
+                "hp": -1
+              },
+              {
+                "alive": false,
+                "hp": -1
+              },
+              {
+                "alive": false,
+                "hp": -1
+              },
+              {
+                "alive": false,
+                "hp": -1
+              },
+              {
+                "alive": false,
+                "hp": 0
+              },
+              {
+                "alive": false,
+                "hp": -1
+              },
+              {
+                "alive": false,
+                "hp": -1
+              },
+              {
+                "alive": false,
+                "hp": -1
+              },
+              {
+                "alive": false,
+                "hp": -1
+              },
+              {
+                "alive": false,
+                "hp": 0,
+                "signHp": 0,
+                "signUp": false
+              },
+              {
+                "alive": false,
+                "hp": 0,
+                "signHp": 0,
+                "signUp": false
+              },
+              {
+                "alive": true,
+                "hp": 1,
+                "signHp": 0,
+                "signUp": false
+              },
+              {
+                "alive": false,
+                "hp": 0,
+                "signHp": 0,
+                "signUp": false
+              },
+              {
+                "alive": false,
+                "hp": 0,
+                "signHp": 0,
+                "signUp": false
+              },
+              {
+                "alive": false,
+                "hp": 0,
+                "signHp": 0,
+                "signUp": false
+              },
+              {
+                "alive": false,
+                "hp": 0
+              },
+              {
+                "alive": false,
+                "hp": 0
+              },
+              {
+                "alive": false,
+                "hp": 0
+              },
+              {
+                "alive": false,
+                "hp": 0
+              },
+              {
+                "alive": true
+              },
+              {
+                "alive": false,
+                "hp": 0
+              },
+              {
+                "alive": false,
+                "hp": 0
+              },
+              {
+                "alive": false,
+                "hp": 0
+              },
+              {
+                "alive": false,
+                "hp": 0
+              },
+              {
+                "alive": false,
+                "hp": 0
+              },
+              {
+                "alive": false,
+                "hp": 0
+              },
+              {
+                "alive": false,
+                "hp": 0
+              },
+              {
+                "alive": false,
+                "hp": 0
+              },
+              {
+                "alive": false,
+                "hp": 0
+              },
+              {
+                "alive": false,
+                "hp": 0
+              }
+            ],
+            "secrets": [
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "boss": {
+              "x": 4637.399999999932,
+              "hp": 0,
+              "alive": false,
+              "active": false,
+              "phase": 3,
+              "summoned": true
+            },
+            "finale": {
+              "active": false,
+              "stage": 6,
+              "timer": 0,
+              "complete": true,
+              "portalReady": true
+            },
+            "portal": {
+              "open": true
+            },
+            "cityHallDamage": 1,
+            "savedAt": "2026-10-20T18:55:30.410Z"
+          },
+          "3dudes1quest_journey": {
+            "socal": true
+          }
+        },
+        "ledger": {
+          "socal:objective:card:0": true,
+          "socal:heal:card:0": true,
+          "socal:hit:enemy-0:0": true,
+          "socal:hit:enemy-1:0": true,
+          "socal:hit:enemy-20:0": true,
+          "socal:objective:card:1": true,
+          "socal:heal:card:1": true,
+          "socal:hit:enemy-2:0": true,
+          "socal:hit:enemy-3:0": true,
+          "socal:hit:enemy-4:0": true,
+          "socal:objective:card:2": true,
+          "socal:heal:card:2": true,
+          "socal:hit:enemy-5:0": true,
+          "socal:objective:beacon:0": true,
+          "socal:heal:beacon:0": true,
+          "socal:hit:enemy-6:0": true,
+          "socal:hit:enemy-21:0": true,
+          "socal:hit:enemy-7:0": true,
+          "socal:objective:card:3": true,
+          "socal:heal:card:3": true,
+          "socal:hit:enemy-8:0": true,
+          "socal:hit:queen-beige:9": true,
+          "socal:hit:queen-beige:8": true,
+          "socal:hit:queen-beige:7": true,
+          "socal:hit:queen-beige:6": true,
+          "socal:hit:queen-beige:5": true,
+          "socal:hit:queen-beige:4": true,
+          "socal:hit:enemy-9:0": true,
+          "socal:hit:queen-beige:3": true,
+          "socal:hit:undefined:4700:0": true,
+          "socal:hit:queen-beige:2": true,
+          "socal:hit:queen-beige:1": true,
+          "socal:hit:queen-beige:0": true,
+          "socal:objective:queen-beige": true,
+          "socal:heal:queen-beige": true,
+          "socal:objective:card:4": true,
+          "socal:heal:card:4": true,
+          "socal:hit:enemy-10:0": true,
+          "socal:objective:beacon:1": true,
+          "socal:heal:beacon:1": true,
+          "socal:hit:enemy-11:0": true,
+          "socal:hit:enemy-22:0": true,
+          "socal:hit:enemy-12:0": true,
+          "socal:hit:enemy-13:0": true,
+          "socal:hit:enemy-14:1": true,
+          "socal:hit:enemy-14:0": true,
+          "socal:hit:enemy-15:1": true,
+          "socal:objective:beacon:2": true,
+          "socal:heal:beacon:2": true,
+          "socal:hit:enemy-15:0": true,
+          "socal:hit:enemy-16:1": true,
+          "socal:hit:enemy-23:0": true,
+          "socal:hit:enemy-17:1": true,
+          "socal:objective:card:5": true,
+          "socal:heal:card:5": true,
+          "socal:hit:enemy-17:0": true,
+          "socal:hit:enemy-18:1": true,
+          "socal:hit:enemy-19:4": true,
+          "socal:hit:enemy-18:0": true,
+          "socal:hit:enemy-19:3": true,
+          "socal:hit:enemy-19:2": true,
+          "socal:hit:enemy-19:1": true,
+          "socal:hit:enemy-19:0": true,
+          "socal:hit:court-1-0:2": true,
+          "socal:hit:court-1-0:1": true,
+          "socal:hit:court-1-0:0": true,
+          "socal:hit:court-2-0:1": true,
+          "socal:hit:court-2-1:1": true,
+          "socal:hit:court-2-2:1": true,
+          "socal:hit:court-2-0:0": true,
+          "socal:hit:court-2-1:0": true,
+          "socal:hit:court-2-2:0": true,
+          "socal:hit:court-3-0:0": true,
+          "socal:hit:court-3-1:0": true,
+          "socal:hit:court-3-2:0": true,
+          "socal:hit:court-3-3:0": true,
+          "socal:hit:court-3-4:0": true,
+          "socal:hit:court-3-5:0": true,
+          "socal:hit:court-3-6:0": true,
+          "socal:hit:court-3-7:0": true,
+          "socal:hit:court-3-8:0": true,
+          "socal:objective:world:socal": true,
+          "socal:heal:world:socal": true
+        },
+        "history": []
+      }
+    },
+    {
+      "world": "tahoe",
+      "result": {
+        "poses": {
+          "walk": 3930,
+          "hurt": 732,
+          "defeat": 2044,
+          "attack": 600,
+          "prepare": 120,
+          "idle": 161,
+          "transform": 52
+        },
+        "bloom": true,
+        "queen": true,
+        "nests": 4,
+        "memories": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "checkpoint": 6820,
+        "beetles": 20,
+        "transition": "/alaska.html"
+      },
+      "events": [
+        {
+          "phase": 1,
+          "x": 8421.200000000012,
+          "health": 4
+        },
+        {
+          "phase": 2,
+          "x": 8393.533137830436,
+          "health": 4
+        },
+        {
+          "phase": 3,
+          "x": 8392.147651454094,
+          "health": 4
+        }
+      ],
+      "run": {
+        "schema": 1,
+        "enabled": true,
+        "id": "mvh1li19",
+        "sequence": 259,
+        "characters": [
+          {
+            "hp": 4,
+            "available": true
+          },
+          {
+            "hp": 4,
+            "available": true
+          },
+          {
+            "hp": 4,
+            "available": true
+          }
+        ],
+        "active": 1,
+        "charge": 100,
+        "contributions": [
+          false,
+          true,
+          true
+        ],
+        "currentWorld": "tahoe",
+        "completedWorlds": [
+          "socal",
+          "tahoe"
+        ],
+        "achievements": [
+          {
+            "world": "socal",
+            "badge": "THREE DUDES STANDING"
+          },
+          {
+            "world": "tahoe",
+            "badge": "THREE DUDES STANDING"
+          }
+        ],
+        "status": "playing",
+        "worlds": {
+          "3dudes1quest-save-109": {
+            "schema": 2,
+            "encounters": {
+              "version": 1,
+              "legacyAccess": false,
+              "pastMid": false,
+              "queenComplete": true,
+              "finalComplete": true,
+              "court": {
+                "active": false,
+                "phase": 3,
+                "hp": [
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              }
+            },
+            "version": "3.4.1",
+            "player": {
+              "x": 8796.320000000045,
+              "y": 548,
+              "facing": 1
+            },
+            "state": {
+              "health": 4,
+              "cards": 6,
+              "beacons": 3,
+              "score": 8500,
+              "dude": 1,
+              "triangle": 100,
+              "paused": false,
+              "bossDefeated": true,
+              "zoeyUnlocked": true,
+              "adventureComplete": true,
+              "objective": {
+                "title": "Enter the Lake Tahoe Portal",
+                "detail": "Southern California is restored. Adventure 2 awaits."
+              },
+              "courtDefeated": true,
+              "courtVictoryRecorded": true
+            },
+            "cards": [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "beacons": [
+              true,
+              true,
+              true
+            ],
+            "enemies": [
+              {
+                "alive": false,
+                "hp": -1
+              },
+              {
+                "alive": false,
+                "hp": -1
+              },
+              {
+                "alive": false,
+                "hp": -1
+              },
+              {
+                "alive": false,
+                "hp": -1
+              },
+              {
+                "alive": false,
+                "hp": -1
+              },
+              {
+                "alive": false,
+                "hp": -1
+              },
+              {
+                "alive": false,
+                "hp": -1
+              },
+              {
+                "alive": false,
+                "hp": -1
+              },
+              {
+                "alive": false,
+                "hp": -1
+              },
+              {
+                "alive": false,
+                "hp": 0
+              },
+              {
+                "alive": false,
+                "hp": -1
+              },
+              {
+                "alive": false,
+                "hp": -1
+              },
+              {
+                "alive": false,
+                "hp": -1
+              },
+              {
+                "alive": false,
+                "hp": -1
+              },
+              {
+                "alive": false,
+                "hp": 0,
+                "signHp": 0,
+                "signUp": false
+              },
+              {
+                "alive": false,
+                "hp": 0,
+                "signHp": 0,
+                "signUp": false
+              },
+              {
+                "alive": true,
+                "hp": 1,
+                "signHp": 0,
+                "signUp": false
+              },
+              {
+                "alive": false,
+                "hp": 0,
+                "signHp": 0,
+                "signUp": false
+              },
+              {
+                "alive": false,
+                "hp": 0,
+                "signHp": 0,
+                "signUp": false
+              },
+              {
+                "alive": false,
+                "hp": 0,
+                "signHp": 0,
+                "signUp": false
+              },
+              {
+                "alive": false,
+                "hp": 0
+              },
+              {
+                "alive": false,
+                "hp": 0
+              },
+              {
+                "alive": false,
+                "hp": 0
+              },
+              {
+                "alive": false,
+                "hp": 0
+              },
+              {
+                "alive": true
+              },
+              {
+                "alive": false,
+                "hp": 0
+              },
+              {
+                "alive": false,
+                "hp": 0
+              },
+              {
+                "alive": false,
+                "hp": 0
+              },
+              {
+                "alive": false,
+                "hp": 0
+              },
+              {
+                "alive": false,
+                "hp": 0
+              },
+              {
+                "alive": false,
+                "hp": 0
+              },
+              {
+                "alive": false,
+                "hp": 0
+              },
+              {
+                "alive": false,
+                "hp": 0
+              },
+              {
+                "alive": false,
+                "hp": 0
+              },
+              {
+                "alive": false,
+                "hp": 0
+              }
+            ],
+            "secrets": [
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "boss": {
+              "x": 4637.399999999932,
+              "hp": 0,
+              "alive": false,
+              "active": false,
+              "phase": 3,
+              "summoned": true
+            },
+            "finale": {
+              "active": false,
+              "stage": 6,
+              "timer": 0,
+              "complete": true,
+              "portalReady": true
+            },
+            "portal": {
+              "open": true
+            },
+            "cityHallDamage": 1,
+            "savedAt": "2026-10-20T18:55:31.344Z"
+          },
+          "3dudes1quest_journey": {
+            "socal": true,
+            "tahoe": true
+          },
+          "3dudes1quest_tahoe_v250": {
+            "schema": 3,
+            "encounters": {
+              "version": 1,
+              "legacyAccess": false,
+              "pastMid": false,
+              "bloom": {
+                "complete": true,
+                "cores": [
+                  0,
+                  0,
+                  0
+                ],
+                "contamination": 100
+              }
+            },
+            "savedAt": "2026-10-20T18:56:23.641Z",
+            "checkpoint": 6820,
+            "beetles": [
+              {
+                "targetKind": "beetle",
+                "x": 1243.4499999999982,
+                "y": 525.90818798163,
+                "w": 48,
+                "h": 30,
+                "v": -1.45,
+                "min": 1060,
+                "max": 1300,
+                "alive": false,
+                "type": "walker",
+                "hp": -1,
+                "flash": 160,
+                "stun": 140,
+                "alert": 0.33333333333333337,
+                "phase": 1.34986113174666,
+                "chargeWindup": 0,
+                "survivalId": "beetle:1060"
+              },
+              {
+                "targetKind": "beetle",
+                "x": 1526.7999999999972,
+                "y": 509.72756119906535,
+                "w": 48,
+                "h": 30,
+                "v": -1.2,
+                "min": 1360,
+                "max": 1600,
+                "alive": false,
+                "type": "charger",
+                "hp": -1,
+                "flash": 160,
+                "stun": 140,
+                "alert": 0,
+                "phase": 5.588964479402746,
+                "chargeWindup": 0,
+                "survivalId": "beetle:1360"
+              },
+              {
+                "targetKind": "beetle",
+                "x": 1739.3999999999987,
+                "y": 389.10144747111445,
+                "w": 48,
+                "h": 34,
+                "v": -1.45,
+                "min": 1660,
+                "max": 1900,
+                "alive": false,
+                "type": "flyer",
+                "hp": 0,
+                "flash": 160,
+                "stun": 140,
+                "alert": 0,
+                "phase": 5.5689647572090655,
+                "survivalId": "beetle:1660"
+              },
+              {
+                "targetKind": "beetle",
+                "x": 2060,
+                "y": 478.82947352514236,
+                "w": 48,
+                "h": 30,
+                "v": 1.45,
+                "min": 2060,
+                "max": 2300,
+                "alive": false,
+                "type": "walker",
+                "hp": 0,
+                "flash": 160,
+                "stun": 140,
+                "alert": 0,
+                "phase": 3.2416490888985647,
+                "chargeWindup": 0,
+                "survivalId": "beetle:2060"
+              },
+              {
+                "targetKind": "beetle",
+                "x": 2787.79999999997,
+                "y": 448.605147632226,
+                "w": 58,
+                "h": 30,
+                "v": 1.45,
+                "min": 2550,
+                "max": 2790,
+                "alive": false,
+                "type": "armored",
+                "hp": 0,
+                "flash": 160,
+                "stun": 140,
+                "alert": 0,
+                "phase": 0.5163923955186148,
+                "chargeWindup": 0,
+                "survivalId": "beetle:2550"
+              },
+              {
+                "targetKind": "beetle",
+                "x": 3008.000000000013,
+                "y": 471.4009794422636,
+                "w": 48,
+                "h": 30,
+                "v": -1.2,
+                "min": 2900,
+                "max": 3140,
+                "alive": false,
+                "type": "charger",
+                "hp": 0,
+                "flash": 160,
+                "stun": 140,
+                "alert": 1,
+                "phase": 6.186835242636383,
+                "chargeWindup": 400.0000000000001,
+                "survivalId": "beetle:2900"
+              },
+              {
+                "targetKind": "beetle",
+                "x": 3479.4499999999925,
+                "y": 425.0535758393832,
+                "w": 48,
+                "h": 34,
+                "v": -1.45,
+                "min": 3300,
+                "max": 3540,
+                "alive": false,
+                "type": "flyer",
+                "hp": 0,
+                "flash": 160,
+                "stun": 140,
+                "alert": 0,
+                "phase": 3.83300818092837,
+                "survivalId": "beetle:3300"
+              },
+              {
+                "targetKind": "beetle",
+                "x": 3809.5000000000164,
+                "y": 448.24079203974975,
+                "w": 48,
+                "h": 30,
+                "v": -1.45,
+                "min": 3700,
+                "max": 3940,
+                "alive": false,
+                "type": "walker",
+                "hp": 0,
+                "flash": 160,
+                "stun": 140,
+                "alert": 0,
+                "phase": 5.294889262651157,
+                "chargeWindup": 0,
+                "survivalId": "beetle:3700"
+              },
+              {
+                "targetKind": "beetle",
+                "x": 4359.200000000002,
+                "y": 498.2050342247396,
+                "w": 48,
+                "h": 30,
+                "v": -1.2,
+                "min": 4130,
+                "max": 4370,
+                "alive": false,
+                "type": "charger",
+                "hp": 0,
+                "flash": 160,
+                "stun": 140,
+                "alert": 0,
+                "phase": 4.651338251790199,
+                "chargeWindup": 0,
+                "survivalId": "beetle:4130"
+              },
+              {
+                "targetKind": "beetle",
+                "x": 4639.74999999999,
+                "y": 477.03259748497084,
+                "w": 58,
+                "h": 30,
+                "v": 1.45,
+                "min": 4560,
+                "max": 4800,
+                "alive": false,
+                "type": "armored",
+                "hp": 0,
+                "flash": 160,
+                "stun": 140,
+                "alert": 0,
+                "phase": 5.966844891773892,
+                "chargeWindup": 0,
+                "survivalId": "beetle:4560"
+              },
+              {
+                "targetKind": "beetle",
+                "x": 5132.324999999996,
+                "y": 337.6209081616687,
+                "w": 48,
+                "h": 34,
+                "v": -1.45,
+                "min": 5000,
+                "max": 5240,
+                "alive": false,
+                "type": "flyer",
+                "hp": 0,
+                "flash": 160,
+                "stun": 140,
+                "alert": 0.6,
+                "phase": 2.67779442993057,
+                "survivalId": "beetle:5000"
+              },
+              {
+                "targetKind": "beetle",
+                "x": 5507.450000000022,
+                "y": 450.9828823415723,
+                "w": 48,
+                "h": 30,
+                "v": -1.45,
+                "min": 5440,
+                "max": 5680,
+                "alive": false,
+                "type": "walker",
+                "hp": 0,
+                "flash": 160,
+                "stun": 140,
+                "alert": 0,
+                "phase": 1.7498542637455041,
+                "chargeWindup": 0,
+                "survivalId": "beetle:5440"
+              },
+              {
+                "targetKind": "beetle",
+                "x": 6042.049999999995,
+                "y": 423.534075851872,
+                "w": 58,
+                "h": 30,
+                "v": 1.45,
+                "min": 6000,
+                "max": 6240,
+                "alive": false,
+                "type": "armored",
+                "hp": 0,
+                "flash": 160,
+                "stun": 140,
+                "alert": 0,
+                "phase": 4.479682145643552,
+                "chargeWindup": 0,
+                "survivalId": "beetle:6000"
+              },
+              {
+                "targetKind": "beetle",
+                "x": 6528.400000000026,
+                "y": 406.4453652245192,
+                "w": 48,
+                "h": 30,
+                "v": -1.2,
+                "min": 6460,
+                "max": 6700,
+                "alive": false,
+                "type": "charger",
+                "hp": 0,
+                "flash": 160,
+                "stun": 140,
+                "alert": 0.6666666666666666,
+                "phase": 0.6635094520871029,
+                "chargeWindup": 0,
+                "survivalId": "beetle:6460"
+              },
+              {
+                "targetKind": "beetle",
+                "x": 7043.300000000008,
+                "y": 272.99986675168014,
+                "w": 48,
+                "h": 34,
+                "v": -1.45,
+                "min": 6990,
+                "max": 7230,
+                "alive": false,
+                "type": "flyer",
+                "hp": 0,
+                "flash": 160,
+                "stun": 140,
+                "alert": 0,
+                "phase": 1.3116186035064177,
+                "survivalId": "beetle:6990"
+              },
+              {
+                "targetKind": "beetle",
+                "x": 7513.800000000028,
+                "y": 420.35459354180296,
+                "w": 48,
+                "h": 30,
+                "v": -1.45,
+                "min": 7500,
+                "max": 7740,
+                "alive": false,
+                "type": "walker",
+                "hp": 0,
+                "flash": 160,
+                "stun": 140,
+                "alert": 0,
+                "phase": 1.5020255675426413,
+                "chargeWindup": 0,
+                "survivalId": "beetle:7500"
+              },
+              {
+                "targetKind": "beetle",
+                "x": 8298.799999999963,
+                "y": 396.96339645499546,
+                "w": 48,
+                "h": 30,
+                "v": -1.2,
+                "min": 8120,
+                "max": 8360,
+                "alive": false,
+                "type": "charger",
+                "hp": 0,
+                "flash": 160,
+                "stun": 140,
+                "alert": 0,
+                "phase": 6.212776934265383,
+                "chargeWindup": 0,
+                "survivalId": "beetle:8120"
+              },
+              {
+                "targetKind": "beetle",
+                "x": 8677.049999999948,
+                "y": 369.144284501303,
+                "w": 58,
+                "h": 30,
+                "v": -1.45,
+                "min": 8540,
+                "max": 8780,
+                "alive": false,
+                "type": "armored",
+                "hp": 0,
+                "flash": 160,
+                "stun": 140,
+                "alert": 0,
+                "phase": 4.139129822517853,
+                "chargeWindup": 0,
+                "survivalId": "beetle:8540"
+              },
+              {
+                "targetKind": "beetle",
+                "x": 8420,
+                "y": 392.1349068698817,
+                "w": 48,
+                "h": 30,
+                "v": -1.45,
+                "min": 8420,
+                "max": 8535.714372254084,
+                "alive": false,
+                "type": "larva",
+                "hp": 0,
+                "flash": 160,
+                "stun": 140,
+                "alert": 1,
+                "phase": 2.2223766377015965,
+                "chargeWindup": 0,
+                "survivalId": "beetle:8420"
+              },
+              {
+                "targetKind": "beetle",
+                "x": 8436.576148442491,
+                "y": 312.297371554983,
+                "w": 48,
+                "h": 34,
+                "v": 1.45,
+                "min": 8124.700000000024,
+                "max": 8644.700000000024,
+                "alive": false,
+                "type": "flyer",
+                "hp": 0,
+                "flash": 160,
+                "stun": 140,
+                "alert": 0.33333333333333337,
+                "phase": 5.737315478970197,
+                "survivalId": "beetle:8124.700000000024"
+              }
+            ],
+            "mem": [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "crystals": [
+              false,
+              false,
+              false,
+              false,
+              false
+            ],
+            "dude": 1,
+            "score": 30700,
+            "nests": [
+              {
+                "alive": false,
+                "hp": -1,
+                "spawned": 2
+              },
+              {
+                "alive": false,
+                "hp": 0,
+                "spawned": 2
+              },
+              {
+                "alive": false,
+                "hp": 0,
+                "spawned": 2
+              },
+              {
+                "alive": false,
+                "hp": 0,
+                "spawned": 1
+              }
+            ],
+            "boss": {
+              "targetKind": "boss",
+              "x": 8393.500000000027,
+              "y": 204.16563407605307,
+              "w": 190,
+              "h": 150,
+              "hp": 0,
+              "maxHp": 18,
+              "phase": 3,
+              "alive": false,
+              "flash": 180,
+              "inv": 120,
+              "vx": 5.5,
+              "vy": 0,
+              "attackTimer": 750.0000000000002,
+              "spawnTimer": 299.9999999999988,
+              "windup": 0,
+              "chargeDir": -1,
+              "survivalId": "boss:8920.20000000002",
+              "animUntil": 44899.99999999925,
+              "transformUntil": 40449.99999999993
+            },
+            "bossDefeated": true,
+            "forestRestored": true,
+            "forest": [
+              "green",
+              "green",
+              "green"
+            ]
+          }
+        },
+        "ledger": {
+          "socal:objective:card:0": true,
+          "socal:heal:card:0": true,
+          "socal:hit:enemy-0:0": true,
+          "socal:hit:enemy-1:0": true,
+          "socal:hit:enemy-20:0": true,
+          "socal:objective:card:1": true,
+          "socal:heal:card:1": true,
+          "socal:hit:enemy-2:0": true,
+          "socal:hit:enemy-3:0": true,
+          "socal:hit:enemy-4:0": true,
+          "socal:objective:card:2": true,
+          "socal:heal:card:2": true,
+          "socal:hit:enemy-5:0": true,
+          "socal:objective:beacon:0": true,
+          "socal:heal:beacon:0": true,
+          "socal:hit:enemy-6:0": true,
+          "socal:hit:enemy-21:0": true,
+          "socal:hit:enemy-7:0": true,
+          "socal:objective:card:3": true,
+          "socal:heal:card:3": true,
+          "socal:hit:enemy-8:0": true,
+          "socal:hit:queen-beige:9": true,
+          "socal:hit:queen-beige:8": true,
+          "socal:hit:queen-beige:7": true,
+          "socal:hit:queen-beige:6": true,
+          "socal:hit:queen-beige:5": true,
+          "socal:hit:queen-beige:4": true,
+          "socal:hit:enemy-9:0": true,
+          "socal:hit:queen-beige:3": true,
+          "socal:hit:undefined:4700:0": true,
+          "socal:hit:queen-beige:2": true,
+          "socal:hit:queen-beige:1": true,
+          "socal:hit:queen-beige:0": true,
+          "socal:objective:queen-beige": true,
+          "socal:heal:queen-beige": true,
+          "socal:objective:card:4": true,
+          "socal:heal:card:4": true,
+          "socal:hit:enemy-10:0": true,
+          "socal:objective:beacon:1": true,
+          "socal:heal:beacon:1": true,
+          "socal:hit:enemy-11:0": true,
+          "socal:hit:enemy-22:0": true,
+          "socal:hit:enemy-12:0": true,
+          "socal:hit:enemy-13:0": true,
+          "socal:hit:enemy-14:1": true,
+          "socal:hit:enemy-14:0": true,
+          "socal:hit:enemy-15:1": true,
+          "socal:objective:beacon:2": true,
+          "socal:heal:beacon:2": true,
+          "socal:hit:enemy-15:0": true,
+          "socal:hit:enemy-16:1": true,
+          "socal:hit:enemy-23:0": true,
+          "socal:hit:enemy-17:1": true,
+          "socal:objective:card:5": true,
+          "socal:heal:card:5": true,
+          "socal:hit:enemy-17:0": true,
+          "socal:hit:enemy-18:1": true,
+          "socal:hit:enemy-19:4": true,
+          "socal:hit:enemy-18:0": true,
+          "socal:hit:enemy-19:3": true,
+          "socal:hit:enemy-19:2": true,
+          "socal:hit:enemy-19:1": true,
+          "socal:hit:enemy-19:0": true,
+          "socal:hit:court-1-0:2": true,
+          "socal:hit:court-1-0:1": true,
+          "socal:hit:court-1-0:0": true,
+          "socal:hit:court-2-0:1": true,
+          "socal:hit:court-2-1:1": true,
+          "socal:hit:court-2-2:1": true,
+          "socal:hit:court-2-0:0": true,
+          "socal:hit:court-2-1:0": true,
+          "socal:hit:court-2-2:0": true,
+          "socal:hit:court-3-0:0": true,
+          "socal:hit:court-3-1:0": true,
+          "socal:hit:court-3-2:0": true,
+          "socal:hit:court-3-3:0": true,
+          "socal:hit:court-3-4:0": true,
+          "socal:hit:court-3-5:0": true,
+          "socal:hit:court-3-6:0": true,
+          "socal:hit:court-3-7:0": true,
+          "socal:hit:court-3-8:0": true,
+          "socal:objective:world:socal": true,
+          "socal:heal:world:socal": true,
+          "tahoe:hit:beetle:1060:0": true,
+          "tahoe:hit:beetle:1360:0": true,
+          "tahoe:heal:trail-heart:1": true,
+          "tahoe:hit:beetle:1660:0": true,
+          "tahoe:hit:beetle:2060:0": true,
+          "tahoe:hit:nest:2250:1": true,
+          "tahoe:hit:beetle:2030:0": true,
+          "tahoe:objective:nest:0": true,
+          "tahoe:heal:nest:0": true,
+          "tahoe:hit:nest:2250:0": true,
+          "tahoe:hit:beetle:2550:1": true,
+          "tahoe:hit:beetle:2550:0": true,
+          "tahoe:hit:bloomCore:0:1": true,
+          "tahoe:hit:bloomCore:0:0": true,
+          "tahoe:hit:beetle:2760:0": true,
+          "tahoe:hit:beetle:2900:0": true,
+          "tahoe:hit:bloomCore:1:1": true,
+          "tahoe:hit:bloomCore:1:0": true,
+          "tahoe:heal:trail-heart:3": true,
+          "tahoe:hit:bloomCore:2:1": true,
+          "tahoe:objective:toxic-bloom": true,
+          "tahoe:heal:toxic-bloom": true,
+          "tahoe:hit:bloomCore:2:0": true,
+          "tahoe:hit:beetle:3300:0": true,
+          "tahoe:hit:beetle:3700:0": true,
+          "tahoe:hit:beetle:4130:0": true,
+          "tahoe:hit:beetle:4560:1": true,
+          "tahoe:hit:nest:4720:3": true,
+          "tahoe:hit:beetle:4560:0": true,
+          "tahoe:hit:nest:4720:2": true,
+          "tahoe:objective:nest:1": true,
+          "tahoe:heal:nest:1": true,
+          "tahoe:hit:nest:4720:0": true,
+          "tahoe:hit:beetle:4500:0": true,
+          "tahoe:hit:beetle:5000:0": true,
+          "tahoe:hit:beetle:5440:0": true,
+          "tahoe:hit:beetle:6000:1": true,
+          "tahoe:hit:beetle:6000:0": true,
+          "tahoe:hit:nest:6380:2": true,
+          "tahoe:hit:beetle:6160:0": true,
+          "tahoe:objective:nest:2": true,
+          "tahoe:heal:nest:2": true,
+          "tahoe:hit:nest:6380:0": true,
+          "tahoe:hit:beetle:6460:0": true,
+          "tahoe:hit:beetle:6990:0": true,
+          "tahoe:hit:beetle:7500:0": true,
+          "tahoe:hit:nest:8020:3": true,
+          "tahoe:hit:beetle:7800:0": true,
+          "tahoe:hit:nest:8020:2": true,
+          "tahoe:objective:nest:3": true,
+          "tahoe:heal:nest:3": true,
+          "tahoe:hit:nest:8020:0": true,
+          "tahoe:hit:beetle:8120:0": true,
+          "tahoe:heal:trail-heart:8": true,
+          "tahoe:hit:beetle:8540:1": true,
+          "tahoe:hit:beetle:8540:0": true,
+          "tahoe:hit:boss:8920.20000000002:17": true,
+          "tahoe:hit:boss:8920.20000000002:16": true,
+          "tahoe:hit:boss:8920.20000000002:15": true,
+          "tahoe:hit:beetle:8522.300000000027:0": true,
+          "tahoe:hit:infection:8576:1": true,
+          "tahoe:hit:boss:8920.20000000002:14": true,
+          "tahoe:hit:boss:8920.20000000002:13": true,
+          "tahoe:objective:tree:0": true,
+          "tahoe:heal:tree:0": true,
+          "tahoe:hit:infection:8576:0": true,
+          "tahoe:hit:boss:8920.20000000002:12": true,
+          "tahoe:hit:boss:8920.20000000002:11": true,
+          "tahoe:hit:boss:8920.20000000002:10": true,
+          "tahoe:hit:beetle:8255.050000000027:0": true,
+          "tahoe:hit:beetle:8420:0": true,
+          "tahoe:hit:boss:8920.20000000002:9": true,
+          "tahoe:hit:boss:8920.20000000002:8": true,
+          "tahoe:hit:beetle:8132.550000000027:0": true,
+          "tahoe:hit:boss:8920.20000000002:7": true,
+          "tahoe:hit:boss:8920.20000000002:6": true,
+          "tahoe:hit:boss:8920.20000000002:5": true,
+          "tahoe:hit:beetle:8124.700000000024:0": true,
+          "tahoe:hit:boss:8920.20000000002:4": true,
+          "tahoe:hit:boss:8920.20000000002:3": true,
+          "tahoe:hit:boss:8920.20000000002:2": true,
+          "tahoe:hit:beetle:8120.300000000023:0": true,
+          "tahoe:hit:boss:8920.20000000002:1": true,
+          "tahoe:objective:pine-queen": true,
+          "tahoe:heal:pine-queen": true,
+          "tahoe:hit:boss:8920.20000000002:0": true,
+          "tahoe:objective:world:tahoe": true,
+          "tahoe:heal:world:tahoe": true
+        },
+        "history": []
+      }
+    },
+    {
+      "world": "alaska",
+      "result": {
+        "poses": {
+          "walk": 6770,
+          "hurt": 441,
+          "defeat": 917,
+          "prepare": 114,
+          "attack": 46,
+          "transform": 17
+        },
+        "pipeline": true,
+        "completed": true,
+        "deaths": 0,
+        "sessionMethods": [
+          "isActive",
+          "save",
+          "pause",
+          "suspendViewport"
+        ],
+        "ending": "ADVENTURE 3 COMPLETE\nThe Aurora Returns\n\nTHE LAST FRONTIER IS SAVED! Her curse breaks, the salmon return to normal, and the northern lights shine in rainbow colors. Rigsby celebrates with snow zoomies; Zoey retrieves the trail keeper’s satchel.\n\nBeyond the portal: Hawaii. Costa Rica awaits as the fifth and final adventure, where the three dudes retire together.\n\nNEXT ADVENTURE: HAWAII · COMING SOON...\nReplay Alaska\nReturn to Quest Hub"
+      },
+      "events": [],
+      "run": {
+        "schema": 1,
+        "enabled": true,
+        "id": "mvh1li19",
+        "sequence": 342,
+        "characters": [
+          {
+            "hp": 4,
+            "available": true
+          },
+          {
+            "hp": 4,
+            "available": true
+          },
+          {
+            "hp": 4,
+            "available": true
+          }
+        ],
+        "active": 0,
+        "charge": 100,
+        "contributions": [
+          true,
+          false,
+          false
+        ],
+        "currentWorld": "alaska",
+        "completedWorlds": [
+          "socal",
+          "tahoe",
+          "alaska"
+        ],
+        "achievements": [
+          {
+            "world": "socal",
+            "badge": "THREE DUDES STANDING"
+          },
+          {
+            "world": "tahoe",
+            "badge": "THREE DUDES STANDING"
+          },
+          {
+            "world": "alaska",
+            "badge": "THREE DUDES STANDING"
+          }
+        ],
+        "status": "playing",
+        "worlds": {
+          "3dudes1quest-save-109": {
+            "schema": 2,
+            "encounters": {
+              "version": 1,
+              "legacyAccess": false,
+              "pastMid": false,
+              "queenComplete": true,
+              "finalComplete": true,
+              "court": {
+                "active": false,
+                "phase": 3,
+                "hp": [
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              }
+            },
+            "version": "3.4.1",
+            "player": {
+              "x": 8796.320000000045,
+              "y": 548,
+              "facing": 1
+            },
+            "state": {
+              "health": 4,
+              "cards": 6,
+              "beacons": 3,
+              "score": 8500,
+              "dude": 1,
+              "triangle": 100,
+              "paused": false,
+              "bossDefeated": true,
+              "zoeyUnlocked": true,
+              "adventureComplete": true,
+              "objective": {
+                "title": "Enter the Lake Tahoe Portal",
+                "detail": "Southern California is restored. Adventure 2 awaits."
+              },
+              "courtDefeated": true,
+              "courtVictoryRecorded": true
+            },
+            "cards": [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "beacons": [
+              true,
+              true,
+              true
+            ],
+            "enemies": [
+              {
+                "alive": false,
+                "hp": -1
+              },
+              {
+                "alive": false,
+                "hp": -1
+              },
+              {
+                "alive": false,
+                "hp": -1
+              },
+              {
+                "alive": false,
+                "hp": -1
+              },
+              {
+                "alive": false,
+                "hp": -1
+              },
+              {
+                "alive": false,
+                "hp": -1
+              },
+              {
+                "alive": false,
+                "hp": -1
+              },
+              {
+                "alive": false,
+                "hp": -1
+              },
+              {
+                "alive": false,
+                "hp": -1
+              },
+              {
+                "alive": false,
+                "hp": 0
+              },
+              {
+                "alive": false,
+                "hp": -1
+              },
+              {
+                "alive": false,
+                "hp": -1
+              },
+              {
+                "alive": false,
+                "hp": -1
+              },
+              {
+                "alive": false,
+                "hp": -1
+              },
+              {
+                "alive": false,
+                "hp": 0,
+                "signHp": 0,
+                "signUp": false
+              },
+              {
+                "alive": false,
+                "hp": 0,
+                "signHp": 0,
+                "signUp": false
+              },
+              {
+                "alive": true,
+                "hp": 1,
+                "signHp": 0,
+                "signUp": false
+              },
+              {
+                "alive": false,
+                "hp": 0,
+                "signHp": 0,
+                "signUp": false
+              },
+              {
+                "alive": false,
+                "hp": 0,
+                "signHp": 0,
+                "signUp": false
+              },
+              {
+                "alive": false,
+                "hp": 0,
+                "signHp": 0,
+                "signUp": false
+              },
+              {
+                "alive": false,
+                "hp": 0
+              },
+              {
+                "alive": false,
+                "hp": 0
+              },
+              {
+                "alive": false,
+                "hp": 0
+              },
+              {
+                "alive": false,
+                "hp": 0
+              },
+              {
+                "alive": true
+              },
+              {
+                "alive": false,
+                "hp": 0
+              },
+              {
+                "alive": false,
+                "hp": 0
+              },
+              {
+                "alive": false,
+                "hp": 0
+              },
+              {
+                "alive": false,
+                "hp": 0
+              },
+              {
+                "alive": false,
+                "hp": 0
+              },
+              {
+                "alive": false,
+                "hp": 0
+              },
+              {
+                "alive": false,
+                "hp": 0
+              },
+              {
+                "alive": false,
+                "hp": 0
+              },
+              {
+                "alive": false,
+                "hp": 0
+              },
+              {
+                "alive": false,
+                "hp": 0
+              }
+            ],
+            "secrets": [
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "boss": {
+              "x": 4637.399999999932,
+              "hp": 0,
+              "alive": false,
+              "active": false,
+              "phase": 3,
+              "summoned": true
+            },
+            "finale": {
+              "active": false,
+              "stage": 6,
+              "timer": 0,
+              "complete": true,
+              "portalReady": true
+            },
+            "portal": {
+              "open": true
+            },
+            "cityHallDamage": 1,
+            "savedAt": "2026-10-20T18:55:31.344Z"
+          },
+          "3dudes1quest_journey": {
+            "socal": true,
+            "tahoe": true,
+            "alaska": true
+          },
+          "3dudes1quest_tahoe_v250": {
+            "schema": 3,
+            "encounters": {
+              "version": 1,
+              "legacyAccess": false,
+              "pastMid": false,
+              "bloom": {
+                "complete": true,
+                "cores": [
+                  0,
+                  0,
+                  0
+                ],
+                "contamination": 100
+              }
+            },
+            "savedAt": "2026-10-20T18:56:23.641Z",
+            "checkpoint": 6820,
+            "beetles": [
+              {
+                "targetKind": "beetle",
+                "x": 1243.4499999999982,
+                "y": 525.90818798163,
+                "w": 48,
+                "h": 30,
+                "v": -1.45,
+                "min": 1060,
+                "max": 1300,
+                "alive": false,
+                "type": "walker",
+                "hp": -1,
+                "flash": 160,
+                "stun": 140,
+                "alert": 0.33333333333333337,
+                "phase": 1.34986113174666,
+                "chargeWindup": 0,
+                "survivalId": "beetle:1060"
+              },
+              {
+                "targetKind": "beetle",
+                "x": 1526.7999999999972,
+                "y": 509.72756119906535,
+                "w": 48,
+                "h": 30,
+                "v": -1.2,
+                "min": 1360,
+                "max": 1600,
+                "alive": false,
+                "type": "charger",
+                "hp": -1,
+                "flash": 160,
+                "stun": 140,
+                "alert": 0,
+                "phase": 5.588964479402746,
+                "chargeWindup": 0,
+                "survivalId": "beetle:1360"
+              },
+              {
+                "targetKind": "beetle",
+                "x": 1739.3999999999987,
+                "y": 389.10144747111445,
+                "w": 48,
+                "h": 34,
+                "v": -1.45,
+                "min": 1660,
+                "max": 1900,
+                "alive": false,
+                "type": "flyer",
+                "hp": 0,
+                "flash": 160,
+                "stun": 140,
+                "alert": 0,
+                "phase": 5.5689647572090655,
+                "survivalId": "beetle:1660"
+              },
+              {
+                "targetKind": "beetle",
+                "x": 2060,
+                "y": 478.82947352514236,
+                "w": 48,
+                "h": 30,
+                "v": 1.45,
+                "min": 2060,
+                "max": 2300,
+                "alive": false,
+                "type": "walker",
+                "hp": 0,
+                "flash": 160,
+                "stun": 140,
+                "alert": 0,
+                "phase": 3.2416490888985647,
+                "chargeWindup": 0,
+                "survivalId": "beetle:2060"
+              },
+              {
+                "targetKind": "beetle",
+                "x": 2787.79999999997,
+                "y": 448.605147632226,
+                "w": 58,
+                "h": 30,
+                "v": 1.45,
+                "min": 2550,
+                "max": 2790,
+                "alive": false,
+                "type": "armored",
+                "hp": 0,
+                "flash": 160,
+                "stun": 140,
+                "alert": 0,
+                "phase": 0.5163923955186148,
+                "chargeWindup": 0,
+                "survivalId": "beetle:2550"
+              },
+              {
+                "targetKind": "beetle",
+                "x": 3008.000000000013,
+                "y": 471.4009794422636,
+                "w": 48,
+                "h": 30,
+                "v": -1.2,
+                "min": 2900,
+                "max": 3140,
+                "alive": false,
+                "type": "charger",
+                "hp": 0,
+                "flash": 160,
+                "stun": 140,
+                "alert": 1,
+                "phase": 6.186835242636383,
+                "chargeWindup": 400.0000000000001,
+                "survivalId": "beetle:2900"
+              },
+              {
+                "targetKind": "beetle",
+                "x": 3479.4499999999925,
+                "y": 425.0535758393832,
+                "w": 48,
+                "h": 34,
+                "v": -1.45,
+                "min": 3300,
+                "max": 3540,
+                "alive": false,
+                "type": "flyer",
+                "hp": 0,
+                "flash": 160,
+                "stun": 140,
+                "alert": 0,
+                "phase": 3.83300818092837,
+                "survivalId": "beetle:3300"
+              },
+              {
+                "targetKind": "beetle",
+                "x": 3809.5000000000164,
+                "y": 448.24079203974975,
+                "w": 48,
+                "h": 30,
+                "v": -1.45,
+                "min": 3700,
+                "max": 3940,
+                "alive": false,
+                "type": "walker",
+                "hp": 0,
+                "flash": 160,
+                "stun": 140,
+                "alert": 0,
+                "phase": 5.294889262651157,
+                "chargeWindup": 0,
+                "survivalId": "beetle:3700"
+              },
+              {
+                "targetKind": "beetle",
+                "x": 4359.200000000002,
+                "y": 498.2050342247396,
+                "w": 48,
+                "h": 30,
+                "v": -1.2,
+                "min": 4130,
+                "max": 4370,
+                "alive": false,
+                "type": "charger",
+                "hp": 0,
+                "flash": 160,
+                "stun": 140,
+                "alert": 0,
+                "phase": 4.651338251790199,
+                "chargeWindup": 0,
+                "survivalId": "beetle:4130"
+              },
+              {
+                "targetKind": "beetle",
+                "x": 4639.74999999999,
+                "y": 477.03259748497084,
+                "w": 58,
+                "h": 30,
+                "v": 1.45,
+                "min": 4560,
+                "max": 4800,
+                "alive": false,
+                "type": "armored",
+                "hp": 0,
+                "flash": 160,
+                "stun": 140,
+                "alert": 0,
+                "phase": 5.966844891773892,
+                "chargeWindup": 0,
+                "survivalId": "beetle:4560"
+              },
+              {
+                "targetKind": "beetle",
+                "x": 5132.324999999996,
+                "y": 337.6209081616687,
+                "w": 48,
+                "h": 34,
+                "v": -1.45,
+                "min": 5000,
+                "max": 5240,
+                "alive": false,
+                "type": "flyer",
+                "hp": 0,
+                "flash": 160,
+                "stun": 140,
+                "alert": 0.6,
+                "phase": 2.67779442993057,
+                "survivalId": "beetle:5000"
+              },
+              {
+                "targetKind": "beetle",
+                "x": 5507.450000000022,
+                "y": 450.9828823415723,
+                "w": 48,
+                "h": 30,
+                "v": -1.45,
+                "min": 5440,
+                "max": 5680,
+                "alive": false,
+                "type": "walker",
+                "hp": 0,
+                "flash": 160,
+                "stun": 140,
+                "alert": 0,
+                "phase": 1.7498542637455041,
+                "chargeWindup": 0,
+                "survivalId": "beetle:5440"
+              },
+              {
+                "targetKind": "beetle",
+                "x": 6042.049999999995,
+                "y": 423.534075851872,
+                "w": 58,
+                "h": 30,
+                "v": 1.45,
+                "min": 6000,
+                "max": 6240,
+                "alive": false,
+                "type": "armored",
+                "hp": 0,
+                "flash": 160,
+                "stun": 140,
+                "alert": 0,
+                "phase": 4.479682145643552,
+                "chargeWindup": 0,
+                "survivalId": "beetle:6000"
+              },
+              {
+                "targetKind": "beetle",
+                "x": 6528.400000000026,
+                "y": 406.4453652245192,
+                "w": 48,
+                "h": 30,
+                "v": -1.2,
+                "min": 6460,
+                "max": 6700,
+                "alive": false,
+                "type": "charger",
+                "hp": 0,
+                "flash": 160,
+                "stun": 140,
+                "alert": 0.6666666666666666,
+                "phase": 0.6635094520871029,
+                "chargeWindup": 0,
+                "survivalId": "beetle:6460"
+              },
+              {
+                "targetKind": "beetle",
+                "x": 7043.300000000008,
+                "y": 272.99986675168014,
+                "w": 48,
+                "h": 34,
+                "v": -1.45,
+                "min": 6990,
+                "max": 7230,
+                "alive": false,
+                "type": "flyer",
+                "hp": 0,
+                "flash": 160,
+                "stun": 140,
+                "alert": 0,
+                "phase": 1.3116186035064177,
+                "survivalId": "beetle:6990"
+              },
+              {
+                "targetKind": "beetle",
+                "x": 7513.800000000028,
+                "y": 420.35459354180296,
+                "w": 48,
+                "h": 30,
+                "v": -1.45,
+                "min": 7500,
+                "max": 7740,
+                "alive": false,
+                "type": "walker",
+                "hp": 0,
+                "flash": 160,
+                "stun": 140,
+                "alert": 0,
+                "phase": 1.5020255675426413,
+                "chargeWindup": 0,
+                "survivalId": "beetle:7500"
+              },
+              {
+                "targetKind": "beetle",
+                "x": 8298.799999999963,
+                "y": 396.96339645499546,
+                "w": 48,
+                "h": 30,
+                "v": -1.2,
+                "min": 8120,
+                "max": 8360,
+                "alive": false,
+                "type": "charger",
+                "hp": 0,
+                "flash": 160,
+                "stun": 140,
+                "alert": 0,
+                "phase": 6.212776934265383,
+                "chargeWindup": 0,
+                "survivalId": "beetle:8120"
+              },
+              {
+                "targetKind": "beetle",
+                "x": 8677.049999999948,
+                "y": 369.144284501303,
+                "w": 58,
+                "h": 30,
+                "v": -1.45,
+                "min": 8540,
+                "max": 8780,
+                "alive": false,
+                "type": "armored",
+                "hp": 0,
+                "flash": 160,
+                "stun": 140,
+                "alert": 0,
+                "phase": 4.139129822517853,
+                "chargeWindup": 0,
+                "survivalId": "beetle:8540"
+              },
+              {
+                "targetKind": "beetle",
+                "x": 8420,
+                "y": 392.1349068698817,
+                "w": 48,
+                "h": 30,
+                "v": -1.45,
+                "min": 8420,
+                "max": 8535.714372254084,
+                "alive": false,
+                "type": "larva",
+                "hp": 0,
+                "flash": 160,
+                "stun": 140,
+                "alert": 1,
+                "phase": 2.2223766377015965,
+                "chargeWindup": 0,
+                "survivalId": "beetle:8420"
+              },
+              {
+                "targetKind": "beetle",
+                "x": 8436.576148442491,
+                "y": 312.297371554983,
+                "w": 48,
+                "h": 34,
+                "v": 1.45,
+                "min": 8124.700000000024,
+                "max": 8644.700000000024,
+                "alive": false,
+                "type": "flyer",
+                "hp": 0,
+                "flash": 160,
+                "stun": 140,
+                "alert": 0.33333333333333337,
+                "phase": 5.737315478970197,
+                "survivalId": "beetle:8124.700000000024"
+              }
+            ],
+            "mem": [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "crystals": [
+              false,
+              false,
+              false,
+              false,
+              false
+            ],
+            "dude": 1,
+            "score": 30700,
+            "nests": [
+              {
+                "alive": false,
+                "hp": -1,
+                "spawned": 2
+              },
+              {
+                "alive": false,
+                "hp": 0,
+                "spawned": 2
+              },
+              {
+                "alive": false,
+                "hp": 0,
+                "spawned": 2
+              },
+              {
+                "alive": false,
+                "hp": 0,
+                "spawned": 1
+              }
+            ],
+            "boss": {
+              "targetKind": "boss",
+              "x": 8393.500000000027,
+              "y": 204.16563407605307,
+              "w": 190,
+              "h": 150,
+              "hp": 0,
+              "maxHp": 18,
+              "phase": 3,
+              "alive": false,
+              "flash": 180,
+              "inv": 120,
+              "vx": 5.5,
+              "vy": 0,
+              "attackTimer": 750.0000000000002,
+              "spawnTimer": 299.9999999999988,
+              "windup": 0,
+              "chargeDir": -1,
+              "survivalId": "boss:8920.20000000002",
+              "animUntil": 44899.99999999925,
+              "transformUntil": 40449.99999999993
+            },
+            "bossDefeated": true,
+            "forestRestored": true,
+            "forest": [
+              "green",
+              "green",
+              "green"
+            ]
+          },
+          "3dudes1quest_alaska_v340": {
+            "version": 1,
+            "encounters": {
+              "version": 1,
+              "legacyAccess": false,
+              "pastMid": false,
+              "pipeline": {
+                "complete": true,
+                "defeated": [
+                  true,
+                  true,
+                  true,
+                  true,
+                  true
+                ],
+                "valves": [
+                  0,
+                  0,
+                  0
+                ],
+                "stage": 5,
+                "floodTicks": 169
+              }
+            },
+            "dude": 0,
+            "health": 4,
+            "score": 9750,
+            "checkpoint": 6320,
+            "relays": [
+              0,
+              0,
+              0
+            ],
+            "shards": [
+              false,
+              false,
+              false,
+              false,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "caches": [
+              false,
+              true
+            ],
+            "enemies": [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              true,
+              true,
+              true,
+              true,
+              true,
+              false
+            ],
+            "bossDefeated": true,
+            "completed": true
+          }
+        },
+        "ledger": {
+          "socal:objective:card:0": true,
+          "socal:heal:card:0": true,
+          "socal:hit:enemy-0:0": true,
+          "socal:hit:enemy-1:0": true,
+          "socal:hit:enemy-20:0": true,
+          "socal:objective:card:1": true,
+          "socal:heal:card:1": true,
+          "socal:hit:enemy-2:0": true,
+          "socal:hit:enemy-3:0": true,
+          "socal:hit:enemy-4:0": true,
+          "socal:objective:card:2": true,
+          "socal:heal:card:2": true,
+          "socal:hit:enemy-5:0": true,
+          "socal:objective:beacon:0": true,
+          "socal:heal:beacon:0": true,
+          "socal:hit:enemy-6:0": true,
+          "socal:hit:enemy-21:0": true,
+          "socal:hit:enemy-7:0": true,
+          "socal:objective:card:3": true,
+          "socal:heal:card:3": true,
+          "socal:hit:enemy-8:0": true,
+          "socal:hit:queen-beige:9": true,
+          "socal:hit:queen-beige:8": true,
+          "socal:hit:queen-beige:7": true,
+          "socal:hit:queen-beige:6": true,
+          "socal:hit:queen-beige:5": true,
+          "socal:hit:queen-beige:4": true,
+          "socal:hit:enemy-9:0": true,
+          "socal:hit:queen-beige:3": true,
+          "socal:hit:undefined:4700:0": true,
+          "socal:hit:queen-beige:2": true,
+          "socal:hit:queen-beige:1": true,
+          "socal:hit:queen-beige:0": true,
+          "socal:objective:queen-beige": true,
+          "socal:heal:queen-beige": true,
+          "socal:objective:card:4": true,
+          "socal:heal:card:4": true,
+          "socal:hit:enemy-10:0": true,
+          "socal:objective:beacon:1": true,
+          "socal:heal:beacon:1": true,
+          "socal:hit:enemy-11:0": true,
+          "socal:hit:enemy-22:0": true,
+          "socal:hit:enemy-12:0": true,
+          "socal:hit:enemy-13:0": true,
+          "socal:hit:enemy-14:1": true,
+          "socal:hit:enemy-14:0": true,
+          "socal:hit:enemy-15:1": true,
+          "socal:objective:beacon:2": true,
+          "socal:heal:beacon:2": true,
+          "socal:hit:enemy-15:0": true,
+          "socal:hit:enemy-16:1": true,
+          "socal:hit:enemy-23:0": true,
+          "socal:hit:enemy-17:1": true,
+          "socal:objective:card:5": true,
+          "socal:heal:card:5": true,
+          "socal:hit:enemy-17:0": true,
+          "socal:hit:enemy-18:1": true,
+          "socal:hit:enemy-19:4": true,
+          "socal:hit:enemy-18:0": true,
+          "socal:hit:enemy-19:3": true,
+          "socal:hit:enemy-19:2": true,
+          "socal:hit:enemy-19:1": true,
+          "socal:hit:enemy-19:0": true,
+          "socal:hit:court-1-0:2": true,
+          "socal:hit:court-1-0:1": true,
+          "socal:hit:court-1-0:0": true,
+          "socal:hit:court-2-0:1": true,
+          "socal:hit:court-2-1:1": true,
+          "socal:hit:court-2-2:1": true,
+          "socal:hit:court-2-0:0": true,
+          "socal:hit:court-2-1:0": true,
+          "socal:hit:court-2-2:0": true,
+          "socal:hit:court-3-0:0": true,
+          "socal:hit:court-3-1:0": true,
+          "socal:hit:court-3-2:0": true,
+          "socal:hit:court-3-3:0": true,
+          "socal:hit:court-3-4:0": true,
+          "socal:hit:court-3-5:0": true,
+          "socal:hit:court-3-6:0": true,
+          "socal:hit:court-3-7:0": true,
+          "socal:hit:court-3-8:0": true,
+          "socal:objective:world:socal": true,
+          "socal:heal:world:socal": true,
+          "tahoe:hit:beetle:1060:0": true,
+          "tahoe:hit:beetle:1360:0": true,
+          "tahoe:heal:trail-heart:1": true,
+          "tahoe:hit:beetle:1660:0": true,
+          "tahoe:hit:beetle:2060:0": true,
+          "tahoe:hit:nest:2250:1": true,
+          "tahoe:hit:beetle:2030:0": true,
+          "tahoe:objective:nest:0": true,
+          "tahoe:heal:nest:0": true,
+          "tahoe:hit:nest:2250:0": true,
+          "tahoe:hit:beetle:2550:1": true,
+          "tahoe:hit:beetle:2550:0": true,
+          "tahoe:hit:bloomCore:0:1": true,
+          "tahoe:hit:bloomCore:0:0": true,
+          "tahoe:hit:beetle:2760:0": true,
+          "tahoe:hit:beetle:2900:0": true,
+          "tahoe:hit:bloomCore:1:1": true,
+          "tahoe:hit:bloomCore:1:0": true,
+          "tahoe:heal:trail-heart:3": true,
+          "tahoe:hit:bloomCore:2:1": true,
+          "tahoe:objective:toxic-bloom": true,
+          "tahoe:heal:toxic-bloom": true,
+          "tahoe:hit:bloomCore:2:0": true,
+          "tahoe:hit:beetle:3300:0": true,
+          "tahoe:hit:beetle:3700:0": true,
+          "tahoe:hit:beetle:4130:0": true,
+          "tahoe:hit:beetle:4560:1": true,
+          "tahoe:hit:nest:4720:3": true,
+          "tahoe:hit:beetle:4560:0": true,
+          "tahoe:hit:nest:4720:2": true,
+          "tahoe:objective:nest:1": true,
+          "tahoe:heal:nest:1": true,
+          "tahoe:hit:nest:4720:0": true,
+          "tahoe:hit:beetle:4500:0": true,
+          "tahoe:hit:beetle:5000:0": true,
+          "tahoe:hit:beetle:5440:0": true,
+          "tahoe:hit:beetle:6000:1": true,
+          "tahoe:hit:beetle:6000:0": true,
+          "tahoe:hit:nest:6380:2": true,
+          "tahoe:hit:beetle:6160:0": true,
+          "tahoe:objective:nest:2": true,
+          "tahoe:heal:nest:2": true,
+          "tahoe:hit:nest:6380:0": true,
+          "tahoe:hit:beetle:6460:0": true,
+          "tahoe:hit:beetle:6990:0": true,
+          "tahoe:hit:beetle:7500:0": true,
+          "tahoe:hit:nest:8020:3": true,
+          "tahoe:hit:beetle:7800:0": true,
+          "tahoe:hit:nest:8020:2": true,
+          "tahoe:objective:nest:3": true,
+          "tahoe:heal:nest:3": true,
+          "tahoe:hit:nest:8020:0": true,
+          "tahoe:hit:beetle:8120:0": true,
+          "tahoe:heal:trail-heart:8": true,
+          "tahoe:hit:beetle:8540:1": true,
+          "tahoe:hit:beetle:8540:0": true,
+          "tahoe:hit:boss:8920.20000000002:17": true,
+          "tahoe:hit:boss:8920.20000000002:16": true,
+          "tahoe:hit:boss:8920.20000000002:15": true,
+          "tahoe:hit:beetle:8522.300000000027:0": true,
+          "tahoe:hit:infection:8576:1": true,
+          "tahoe:hit:boss:8920.20000000002:14": true,
+          "tahoe:hit:boss:8920.20000000002:13": true,
+          "tahoe:objective:tree:0": true,
+          "tahoe:heal:tree:0": true,
+          "tahoe:hit:infection:8576:0": true,
+          "tahoe:hit:boss:8920.20000000002:12": true,
+          "tahoe:hit:boss:8920.20000000002:11": true,
+          "tahoe:hit:boss:8920.20000000002:10": true,
+          "tahoe:hit:beetle:8255.050000000027:0": true,
+          "tahoe:hit:beetle:8420:0": true,
+          "tahoe:hit:boss:8920.20000000002:9": true,
+          "tahoe:hit:boss:8920.20000000002:8": true,
+          "tahoe:hit:beetle:8132.550000000027:0": true,
+          "tahoe:hit:boss:8920.20000000002:7": true,
+          "tahoe:hit:boss:8920.20000000002:6": true,
+          "tahoe:hit:boss:8920.20000000002:5": true,
+          "tahoe:hit:beetle:8124.700000000024:0": true,
+          "tahoe:hit:boss:8920.20000000002:4": true,
+          "tahoe:hit:boss:8920.20000000002:3": true,
+          "tahoe:hit:boss:8920.20000000002:2": true,
+          "tahoe:hit:beetle:8120.300000000023:0": true,
+          "tahoe:hit:boss:8920.20000000002:1": true,
+          "tahoe:objective:pine-queen": true,
+          "tahoe:heal:pine-queen": true,
+          "tahoe:hit:boss:8920.20000000002:0": true,
+          "tahoe:objective:world:tahoe": true,
+          "tahoe:heal:world:tahoe": true,
+          "alaska:hit:undefined:0:0": true,
+          "alaska:hit:undefined:3:0": true,
+          "alaska:hit:undefined:6:0": true,
+          "alaska:hit:relay:3850:1": true,
+          "alaska:hit:relay:3850:0": true,
+          "alaska:hit:undefined:203:0": true,
+          "alaska:hit:undefined:202:0": true,
+          "alaska:hit:undefined:201:0": true,
+          "alaska:hit:undefined:7:0": true,
+          "alaska:hit:valve:1:1": true,
+          "alaska:hit:valve:0:1": true,
+          "alaska:hit:undefined:200:0": true,
+          "alaska:hit:valve:0:0": true,
+          "alaska:hit:undefined:4:0": true,
+          "alaska:hit:undefined:5:0": true,
+          "alaska:hit:valve:1:0": true,
+          "alaska:hit:undefined:204:0": true,
+          "alaska:hit:valve:2:1": true,
+          "alaska:hit:undefined:8:1": true,
+          "alaska:hit:valve:2:0": true,
+          "alaska:hit:undefined:8:0": true,
+          "alaska:hit:undefined:9:0": true,
+          "alaska:hit:relay:5900:1": true,
+          "alaska:hit:undefined:10:0": true,
+          "alaska:objective:supplies:1": true,
+          "alaska:heal:supplies:1": true,
+          "alaska:objective:pipeline": true,
+          "alaska:heal:pipeline": true,
+          "alaska:hit:relay:5900:0": true,
+          "alaska:hit:frost-queen:11": true,
+          "alaska:hit:frost-queen:10": true,
+          "alaska:hit:frost-queen:9": true,
+          "alaska:hit:frost-queen:8": true,
+          "alaska:hit:frost-queen:7": true,
+          "alaska:hit:frost-queen:6": true,
+          "alaska:hit:frost-queen:5": true,
+          "alaska:hit:frost-queen:4": true,
+          "alaska:hit:frost-queen:3": true,
+          "alaska:hit:undefined:1632:1": true,
+          "alaska:hit:frost-queen:2": true,
+          "alaska:hit:undefined:1632:0": true,
+          "alaska:hit:frost-queen:1": true,
+          "alaska:objective:frost-queen": true,
+          "alaska:heal:frost-queen": true,
+          "alaska:objective:world:alaska": true,
+          "alaska:heal:world:alaska": true,
+          "alaska:hit:frost-queen:0": true
+        },
+        "history": []
+      }
+    }
+  ],
+  "entries": [
+    {
+      "world": "tahoe",
+      "exit": {
+        "schema": 1,
+        "enabled": true,
+        "id": "mvh1li19",
+        "sequence": 109,
+        "characters": [
+          {
+            "hp": 4,
+            "available": true
+          },
+          {
+            "hp": 4,
+            "available": true
+          },
+          {
+            "hp": 4,
+            "available": true
+          }
+        ],
+        "active": 1,
+        "charge": 100,
+        "contributions": [
+          false,
+          true,
+          false
+        ],
+        "currentWorld": "socal",
+        "completedWorlds": [
+          "socal"
+        ],
+        "achievements": [
+          {
+            "world": "socal",
+            "badge": "THREE DUDES STANDING"
+          }
+        ],
+        "status": "playing",
+        "worlds": {
+          "3dudes1quest-save-109": {
+            "schema": 2,
+            "encounters": {
+              "version": 1,
+              "legacyAccess": false,
+              "pastMid": false,
+              "queenComplete": true,
+              "finalComplete": true,
+              "court": {
+                "active": false,
+                "phase": 3,
+                "hp": [
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              }
+            },
+            "version": "3.4.1",
+            "player": {
+              "x": 8796.320000000045,
+              "y": 548,
+              "facing": 1
+            },
+            "state": {
+              "health": 4,
+              "cards": 6,
+              "beacons": 3,
+              "score": 8500,
+              "dude": 1,
+              "triangle": 100,
+              "paused": false,
+              "bossDefeated": true,
+              "zoeyUnlocked": true,
+              "adventureComplete": true,
+              "objective": {
+                "title": "Enter the Lake Tahoe Portal",
+                "detail": "Southern California is restored. Adventure 2 awaits."
+              },
+              "courtDefeated": true,
+              "courtVictoryRecorded": true
+            },
+            "cards": [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "beacons": [
+              true,
+              true,
+              true
+            ],
+            "enemies": [
+              {
+                "alive": false,
+                "hp": -1
+              },
+              {
+                "alive": false,
+                "hp": -1
+              },
+              {
+                "alive": false,
+                "hp": -1
+              },
+              {
+                "alive": false,
+                "hp": -1
+              },
+              {
+                "alive": false,
+                "hp": -1
+              },
+              {
+                "alive": false,
+                "hp": -1
+              },
+              {
+                "alive": false,
+                "hp": -1
+              },
+              {
+                "alive": false,
+                "hp": -1
+              },
+              {
+                "alive": false,
+                "hp": -1
+              },
+              {
+                "alive": false,
+                "hp": 0
+              },
+              {
+                "alive": false,
+                "hp": -1
+              },
+              {
+                "alive": false,
+                "hp": -1
+              },
+              {
+                "alive": false,
+                "hp": -1
+              },
+              {
+                "alive": false,
+                "hp": -1
+              },
+              {
+                "alive": false,
+                "hp": 0,
+                "signHp": 0,
+                "signUp": false
+              },
+              {
+                "alive": false,
+                "hp": 0,
+                "signHp": 0,
+                "signUp": false
+              },
+              {
+                "alive": true,
+                "hp": 1,
+                "signHp": 0,
+                "signUp": false
+              },
+              {
+                "alive": false,
+                "hp": 0,
+                "signHp": 0,
+                "signUp": false
+              },
+              {
+                "alive": false,
+                "hp": 0,
+                "signHp": 0,
+                "signUp": false
+              },
+              {
+                "alive": false,
+                "hp": 0,
+                "signHp": 0,
+                "signUp": false
+              },
+              {
+                "alive": false,
+                "hp": 0
+              },
+              {
+                "alive": false,
+                "hp": 0
+              },
+              {
+                "alive": false,
+                "hp": 0
+              },
+              {
+                "alive": false,
+                "hp": 0
+              },
+              {
+                "alive": true
+              },
+              {
+                "alive": false,
+                "hp": 0
+              },
+              {
+                "alive": false,
+                "hp": 0
+              },
+              {
+                "alive": false,
+                "hp": 0
+              },
+              {
+                "alive": false,
+                "hp": 0
+              },
+              {
+                "alive": false,
+                "hp": 0
+              },
+              {
+                "alive": false,
+                "hp": 0
+              },
+              {
+                "alive": false,
+                "hp": 0
+              },
+              {
+                "alive": false,
+                "hp": 0
+              },
+              {
+                "alive": false,
+                "hp": 0
+              },
+              {
+                "alive": false,
+                "hp": 0
+              }
+            ],
+            "secrets": [
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "boss": {
+              "x": 4637.399999999932,
+              "hp": 0,
+              "alive": false,
+              "active": false,
+              "phase": 3,
+              "summoned": true
+            },
+            "finale": {
+              "active": false,
+              "stage": 6,
+              "timer": 0,
+              "complete": true,
+              "portalReady": true
+            },
+            "portal": {
+              "open": true
+            },
+            "cityHallDamage": 1,
+            "savedAt": "2026-10-20T18:55:31.311Z"
+          },
+          "3dudes1quest_journey": {
+            "socal": true
+          }
+        },
+        "ledger": {
+          "socal:objective:card:0": true,
+          "socal:heal:card:0": true,
+          "socal:hit:enemy-0:0": true,
+          "socal:hit:enemy-1:0": true,
+          "socal:hit:enemy-20:0": true,
+          "socal:objective:card:1": true,
+          "socal:heal:card:1": true,
+          "socal:hit:enemy-2:0": true,
+          "socal:hit:enemy-3:0": true,
+          "socal:hit:enemy-4:0": true,
+          "socal:objective:card:2": true,
+          "socal:heal:card:2": true,
+          "socal:hit:enemy-5:0": true,
+          "socal:objective:beacon:0": true,
+          "socal:heal:beacon:0": true,
+          "socal:hit:enemy-6:0": true,
+          "socal:hit:enemy-21:0": true,
+          "socal:hit:enemy-7:0": true,
+          "socal:objective:card:3": true,
+          "socal:heal:card:3": true,
+          "socal:hit:enemy-8:0": true,
+          "socal:hit:queen-beige:9": true,
+          "socal:hit:queen-beige:8": true,
+          "socal:hit:queen-beige:7": true,
+          "socal:hit:queen-beige:6": true,
+          "socal:hit:queen-beige:5": true,
+          "socal:hit:queen-beige:4": true,
+          "socal:hit:enemy-9:0": true,
+          "socal:hit:queen-beige:3": true,
+          "socal:hit:undefined:4700:0": true,
+          "socal:hit:queen-beige:2": true,
+          "socal:hit:queen-beige:1": true,
+          "socal:hit:queen-beige:0": true,
+          "socal:objective:queen-beige": true,
+          "socal:heal:queen-beige": true,
+          "socal:objective:card:4": true,
+          "socal:heal:card:4": true,
+          "socal:hit:enemy-10:0": true,
+          "socal:objective:beacon:1": true,
+          "socal:heal:beacon:1": true,
+          "socal:hit:enemy-11:0": true,
+          "socal:hit:enemy-22:0": true,
+          "socal:hit:enemy-12:0": true,
+          "socal:hit:enemy-13:0": true,
+          "socal:hit:enemy-14:1": true,
+          "socal:hit:enemy-14:0": true,
+          "socal:hit:enemy-15:1": true,
+          "socal:objective:beacon:2": true,
+          "socal:heal:beacon:2": true,
+          "socal:hit:enemy-15:0": true,
+          "socal:hit:enemy-16:1": true,
+          "socal:hit:enemy-23:0": true,
+          "socal:hit:enemy-17:1": true,
+          "socal:objective:card:5": true,
+          "socal:heal:card:5": true,
+          "socal:hit:enemy-17:0": true,
+          "socal:hit:enemy-18:1": true,
+          "socal:hit:enemy-19:4": true,
+          "socal:hit:enemy-18:0": true,
+          "socal:hit:enemy-19:3": true,
+          "socal:hit:enemy-19:2": true,
+          "socal:hit:enemy-19:1": true,
+          "socal:hit:enemy-19:0": true,
+          "socal:hit:court-1-0:2": true,
+          "socal:hit:court-1-0:1": true,
+          "socal:hit:court-1-0:0": true,
+          "socal:hit:court-2-0:1": true,
+          "socal:hit:court-2-1:1": true,
+          "socal:hit:court-2-2:1": true,
+          "socal:hit:court-2-0:0": true,
+          "socal:hit:court-2-1:0": true,
+          "socal:hit:court-2-2:0": true,
+          "socal:hit:court-3-0:0": true,
+          "socal:hit:court-3-1:0": true,
+          "socal:hit:court-3-2:0": true,
+          "socal:hit:court-3-3:0": true,
+          "socal:hit:court-3-4:0": true,
+          "socal:hit:court-3-5:0": true,
+          "socal:hit:court-3-6:0": true,
+          "socal:hit:court-3-7:0": true,
+          "socal:hit:court-3-8:0": true,
+          "socal:objective:world:socal": true,
+          "socal:heal:world:socal": true
+        },
+        "history": []
+      },
+      "arrival": {
+        "schema": 1,
+        "enabled": true,
+        "id": "mvh1li19",
+        "sequence": 112,
+        "characters": [
+          {
+            "hp": 4,
+            "available": true
+          },
+          {
+            "hp": 4,
+            "available": true
+          },
+          {
+            "hp": 4,
+            "available": true
+          }
+        ],
+        "active": 1,
+        "charge": 100,
+        "contributions": [
+          false,
+          true,
+          false
+        ],
+        "currentWorld": "socal",
+        "completedWorlds": [
+          "socal"
+        ],
+        "achievements": [
+          {
+            "world": "socal",
+            "badge": "THREE DUDES STANDING"
+          }
+        ],
+        "status": "playing",
+        "worlds": {
+          "3dudes1quest-save-109": {
+            "schema": 2,
+            "encounters": {
+              "version": 1,
+              "legacyAccess": false,
+              "pastMid": false,
+              "queenComplete": true,
+              "finalComplete": true,
+              "court": {
+                "active": false,
+                "phase": 3,
+                "hp": [
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              }
+            },
+            "version": "3.4.1",
+            "player": {
+              "x": 8796.320000000045,
+              "y": 548,
+              "facing": 1
+            },
+            "state": {
+              "health": 4,
+              "cards": 6,
+              "beacons": 3,
+              "score": 8500,
+              "dude": 1,
+              "triangle": 100,
+              "paused": false,
+              "bossDefeated": true,
+              "zoeyUnlocked": true,
+              "adventureComplete": true,
+              "objective": {
+                "title": "Enter the Lake Tahoe Portal",
+                "detail": "Southern California is restored. Adventure 2 awaits."
+              },
+              "courtDefeated": true,
+              "courtVictoryRecorded": true
+            },
+            "cards": [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "beacons": [
+              true,
+              true,
+              true
+            ],
+            "enemies": [
+              {
+                "alive": false,
+                "hp": -1
+              },
+              {
+                "alive": false,
+                "hp": -1
+              },
+              {
+                "alive": false,
+                "hp": -1
+              },
+              {
+                "alive": false,
+                "hp": -1
+              },
+              {
+                "alive": false,
+                "hp": -1
+              },
+              {
+                "alive": false,
+                "hp": -1
+              },
+              {
+                "alive": false,
+                "hp": -1
+              },
+              {
+                "alive": false,
+                "hp": -1
+              },
+              {
+                "alive": false,
+                "hp": -1
+              },
+              {
+                "alive": false,
+                "hp": 0
+              },
+              {
+                "alive": false,
+                "hp": -1
+              },
+              {
+                "alive": false,
+                "hp": -1
+              },
+              {
+                "alive": false,
+                "hp": -1
+              },
+              {
+                "alive": false,
+                "hp": -1
+              },
+              {
+                "alive": false,
+                "hp": 0,
+                "signHp": 0,
+                "signUp": false
+              },
+              {
+                "alive": false,
+                "hp": 0,
+                "signHp": 0,
+                "signUp": false
+              },
+              {
+                "alive": true,
+                "hp": 1,
+                "signHp": 0,
+                "signUp": false
+              },
+              {
+                "alive": false,
+                "hp": 0,
+                "signHp": 0,
+                "signUp": false
+              },
+              {
+                "alive": false,
+                "hp": 0,
+                "signHp": 0,
+                "signUp": false
+              },
+              {
+                "alive": false,
+                "hp": 0,
+                "signHp": 0,
+                "signUp": false
+              },
+              {
+                "alive": false,
+                "hp": 0
+              },
+              {
+                "alive": false,
+                "hp": 0
+              },
+              {
+                "alive": false,
+                "hp": 0
+              },
+              {
+                "alive": false,
+                "hp": 0
+              },
+              {
+                "alive": true
+              },
+              {
+                "alive": false,
+                "hp": 0
+              },
+              {
+                "alive": false,
+                "hp": 0
+              },
+              {
+                "alive": false,
+                "hp": 0
+              },
+              {
+                "alive": false,
+                "hp": 0
+              },
+              {
+                "alive": false,
+                "hp": 0
+              },
+              {
+                "alive": false,
+                "hp": 0
+              },
+              {
+                "alive": false,
+                "hp": 0
+              },
+              {
+                "alive": false,
+                "hp": 0
+              },
+              {
+                "alive": false,
+                "hp": 0
+              },
+              {
+                "alive": false,
+                "hp": 0
+              }
+            ],
+            "secrets": [
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "boss": {
+              "x": 4637.399999999932,
+              "hp": 0,
+              "alive": false,
+              "active": false,
+              "phase": 3,
+              "summoned": true
+            },
+            "finale": {
+              "active": false,
+              "stage": 6,
+              "timer": 0,
+              "complete": true,
+              "portalReady": true
+            },
+            "portal": {
+              "open": true
+            },
+            "cityHallDamage": 1,
+            "savedAt": "2026-10-20T18:55:31.344Z"
+          },
+          "3dudes1quest_journey": {
+            "socal": true
+          }
+        },
+        "ledger": {
+          "socal:objective:card:0": true,
+          "socal:heal:card:0": true,
+          "socal:hit:enemy-0:0": true,
+          "socal:hit:enemy-1:0": true,
+          "socal:hit:enemy-20:0": true,
+          "socal:objective:card:1": true,
+          "socal:heal:card:1": true,
+          "socal:hit:enemy-2:0": true,
+          "socal:hit:enemy-3:0": true,
+          "socal:hit:enemy-4:0": true,
+          "socal:objective:card:2": true,
+          "socal:heal:card:2": true,
+          "socal:hit:enemy-5:0": true,
+          "socal:objective:beacon:0": true,
+          "socal:heal:beacon:0": true,
+          "socal:hit:enemy-6:0": true,
+          "socal:hit:enemy-21:0": true,
+          "socal:hit:enemy-7:0": true,
+          "socal:objective:card:3": true,
+          "socal:heal:card:3": true,
+          "socal:hit:enemy-8:0": true,
+          "socal:hit:queen-beige:9": true,
+          "socal:hit:queen-beige:8": true,
+          "socal:hit:queen-beige:7": true,
+          "socal:hit:queen-beige:6": true,
+          "socal:hit:queen-beige:5": true,
+          "socal:hit:queen-beige:4": true,
+          "socal:hit:enemy-9:0": true,
+          "socal:hit:queen-beige:3": true,
+          "socal:hit:undefined:4700:0": true,
+          "socal:hit:queen-beige:2": true,
+          "socal:hit:queen-beige:1": true,
+          "socal:hit:queen-beige:0": true,
+          "socal:objective:queen-beige": true,
+          "socal:heal:queen-beige": true,
+          "socal:objective:card:4": true,
+          "socal:heal:card:4": true,
+          "socal:hit:enemy-10:0": true,
+          "socal:objective:beacon:1": true,
+          "socal:heal:beacon:1": true,
+          "socal:hit:enemy-11:0": true,
+          "socal:hit:enemy-22:0": true,
+          "socal:hit:enemy-12:0": true,
+          "socal:hit:enemy-13:0": true,
+          "socal:hit:enemy-14:1": true,
+          "socal:hit:enemy-14:0": true,
+          "socal:hit:enemy-15:1": true,
+          "socal:objective:beacon:2": true,
+          "socal:heal:beacon:2": true,
+          "socal:hit:enemy-15:0": true,
+          "socal:hit:enemy-16:1": true,
+          "socal:hit:enemy-23:0": true,
+          "socal:hit:enemy-17:1": true,
+          "socal:objective:card:5": true,
+          "socal:heal:card:5": true,
+          "socal:hit:enemy-17:0": true,
+          "socal:hit:enemy-18:1": true,
+          "socal:hit:enemy-19:4": true,
+          "socal:hit:enemy-18:0": true,
+          "socal:hit:enemy-19:3": true,
+          "socal:hit:enemy-19:2": true,
+          "socal:hit:enemy-19:1": true,
+          "socal:hit:enemy-19:0": true,
+          "socal:hit:court-1-0:2": true,
+          "socal:hit:court-1-0:1": true,
+          "socal:hit:court-1-0:0": true,
+          "socal:hit:court-2-0:1": true,
+          "socal:hit:court-2-1:1": true,
+          "socal:hit:court-2-2:1": true,
+          "socal:hit:court-2-0:0": true,
+          "socal:hit:court-2-1:0": true,
+          "socal:hit:court-2-2:0": true,
+          "socal:hit:court-3-0:0": true,
+          "socal:hit:court-3-1:0": true,
+          "socal:hit:court-3-2:0": true,
+          "socal:hit:court-3-3:0": true,
+          "socal:hit:court-3-4:0": true,
+          "socal:hit:court-3-5:0": true,
+          "socal:hit:court-3-6:0": true,
+          "socal:hit:court-3-7:0": true,
+          "socal:hit:court-3-8:0": true,
+          "socal:objective:world:socal": true,
+          "socal:heal:world:socal": true
+        },
+        "history": []
+      }
+    },
+    {
+      "world": "alaska",
+      "exit": {
+        "schema": 1,
+        "enabled": true,
+        "id": "mvh1li19",
+        "sequence": 259,
+        "characters": [
+          {
+            "hp": 4,
+            "available": true
+          },
+          {
+            "hp": 4,
+            "available": true
+          },
+          {
+            "hp": 4,
+            "available": true
+          }
+        ],
+        "active": 1,
+        "charge": 100,
+        "contributions": [
+          false,
+          true,
+          true
+        ],
+        "currentWorld": "tahoe",
+        "completedWorlds": [
+          "socal",
+          "tahoe"
+        ],
+        "achievements": [
+          {
+            "world": "socal",
+            "badge": "THREE DUDES STANDING"
+          },
+          {
+            "world": "tahoe",
+            "badge": "THREE DUDES STANDING"
+          }
+        ],
+        "status": "playing",
+        "worlds": {
+          "3dudes1quest-save-109": {
+            "schema": 2,
+            "encounters": {
+              "version": 1,
+              "legacyAccess": false,
+              "pastMid": false,
+              "queenComplete": true,
+              "finalComplete": true,
+              "court": {
+                "active": false,
+                "phase": 3,
+                "hp": [
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              }
+            },
+            "version": "3.4.1",
+            "player": {
+              "x": 8796.320000000045,
+              "y": 548,
+              "facing": 1
+            },
+            "state": {
+              "health": 4,
+              "cards": 6,
+              "beacons": 3,
+              "score": 8500,
+              "dude": 1,
+              "triangle": 100,
+              "paused": false,
+              "bossDefeated": true,
+              "zoeyUnlocked": true,
+              "adventureComplete": true,
+              "objective": {
+                "title": "Enter the Lake Tahoe Portal",
+                "detail": "Southern California is restored. Adventure 2 awaits."
+              },
+              "courtDefeated": true,
+              "courtVictoryRecorded": true
+            },
+            "cards": [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "beacons": [
+              true,
+              true,
+              true
+            ],
+            "enemies": [
+              {
+                "alive": false,
+                "hp": -1
+              },
+              {
+                "alive": false,
+                "hp": -1
+              },
+              {
+                "alive": false,
+                "hp": -1
+              },
+              {
+                "alive": false,
+                "hp": -1
+              },
+              {
+                "alive": false,
+                "hp": -1
+              },
+              {
+                "alive": false,
+                "hp": -1
+              },
+              {
+                "alive": false,
+                "hp": -1
+              },
+              {
+                "alive": false,
+                "hp": -1
+              },
+              {
+                "alive": false,
+                "hp": -1
+              },
+              {
+                "alive": false,
+                "hp": 0
+              },
+              {
+                "alive": false,
+                "hp": -1
+              },
+              {
+                "alive": false,
+                "hp": -1
+              },
+              {
+                "alive": false,
+                "hp": -1
+              },
+              {
+                "alive": false,
+                "hp": -1
+              },
+              {
+                "alive": false,
+                "hp": 0,
+                "signHp": 0,
+                "signUp": false
+              },
+              {
+                "alive": false,
+                "hp": 0,
+                "signHp": 0,
+                "signUp": false
+              },
+              {
+                "alive": true,
+                "hp": 1,
+                "signHp": 0,
+                "signUp": false
+              },
+              {
+                "alive": false,
+                "hp": 0,
+                "signHp": 0,
+                "signUp": false
+              },
+              {
+                "alive": false,
+                "hp": 0,
+                "signHp": 0,
+                "signUp": false
+              },
+              {
+                "alive": false,
+                "hp": 0,
+                "signHp": 0,
+                "signUp": false
+              },
+              {
+                "alive": false,
+                "hp": 0
+              },
+              {
+                "alive": false,
+                "hp": 0
+              },
+              {
+                "alive": false,
+                "hp": 0
+              },
+              {
+                "alive": false,
+                "hp": 0
+              },
+              {
+                "alive": true
+              },
+              {
+                "alive": false,
+                "hp": 0
+              },
+              {
+                "alive": false,
+                "hp": 0
+              },
+              {
+                "alive": false,
+                "hp": 0
+              },
+              {
+                "alive": false,
+                "hp": 0
+              },
+              {
+                "alive": false,
+                "hp": 0
+              },
+              {
+                "alive": false,
+                "hp": 0
+              },
+              {
+                "alive": false,
+                "hp": 0
+              },
+              {
+                "alive": false,
+                "hp": 0
+              },
+              {
+                "alive": false,
+                "hp": 0
+              },
+              {
+                "alive": false,
+                "hp": 0
+              }
+            ],
+            "secrets": [
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "boss": {
+              "x": 4637.399999999932,
+              "hp": 0,
+              "alive": false,
+              "active": false,
+              "phase": 3,
+              "summoned": true
+            },
+            "finale": {
+              "active": false,
+              "stage": 6,
+              "timer": 0,
+              "complete": true,
+              "portalReady": true
+            },
+            "portal": {
+              "open": true
+            },
+            "cityHallDamage": 1,
+            "savedAt": "2026-10-20T18:55:31.344Z"
+          },
+          "3dudes1quest_journey": {
+            "socal": true,
+            "tahoe": true
+          },
+          "3dudes1quest_tahoe_v250": {
+            "schema": 3,
+            "encounters": {
+              "version": 1,
+              "legacyAccess": false,
+              "pastMid": false,
+              "bloom": {
+                "complete": true,
+                "cores": [
+                  0,
+                  0,
+                  0
+                ],
+                "contamination": 100
+              }
+            },
+            "savedAt": "2026-10-20T18:56:23.641Z",
+            "checkpoint": 6820,
+            "beetles": [
+              {
+                "targetKind": "beetle",
+                "x": 1243.4499999999982,
+                "y": 525.90818798163,
+                "w": 48,
+                "h": 30,
+                "v": -1.45,
+                "min": 1060,
+                "max": 1300,
+                "alive": false,
+                "type": "walker",
+                "hp": -1,
+                "flash": 160,
+                "stun": 140,
+                "alert": 0.33333333333333337,
+                "phase": 1.34986113174666,
+                "chargeWindup": 0,
+                "survivalId": "beetle:1060"
+              },
+              {
+                "targetKind": "beetle",
+                "x": 1526.7999999999972,
+                "y": 509.72756119906535,
+                "w": 48,
+                "h": 30,
+                "v": -1.2,
+                "min": 1360,
+                "max": 1600,
+                "alive": false,
+                "type": "charger",
+                "hp": -1,
+                "flash": 160,
+                "stun": 140,
+                "alert": 0,
+                "phase": 5.588964479402746,
+                "chargeWindup": 0,
+                "survivalId": "beetle:1360"
+              },
+              {
+                "targetKind": "beetle",
+                "x": 1739.3999999999987,
+                "y": 389.10144747111445,
+                "w": 48,
+                "h": 34,
+                "v": -1.45,
+                "min": 1660,
+                "max": 1900,
+                "alive": false,
+                "type": "flyer",
+                "hp": 0,
+                "flash": 160,
+                "stun": 140,
+                "alert": 0,
+                "phase": 5.5689647572090655,
+                "survivalId": "beetle:1660"
+              },
+              {
+                "targetKind": "beetle",
+                "x": 2060,
+                "y": 478.82947352514236,
+                "w": 48,
+                "h": 30,
+                "v": 1.45,
+                "min": 2060,
+                "max": 2300,
+                "alive": false,
+                "type": "walker",
+                "hp": 0,
+                "flash": 160,
+                "stun": 140,
+                "alert": 0,
+                "phase": 3.2416490888985647,
+                "chargeWindup": 0,
+                "survivalId": "beetle:2060"
+              },
+              {
+                "targetKind": "beetle",
+                "x": 2787.79999999997,
+                "y": 448.605147632226,
+                "w": 58,
+                "h": 30,
+                "v": 1.45,
+                "min": 2550,
+                "max": 2790,
+                "alive": false,
+                "type": "armored",
+                "hp": 0,
+                "flash": 160,
+                "stun": 140,
+                "alert": 0,
+                "phase": 0.5163923955186148,
+                "chargeWindup": 0,
+                "survivalId": "beetle:2550"
+              },
+              {
+                "targetKind": "beetle",
+                "x": 3008.000000000013,
+                "y": 471.4009794422636,
+                "w": 48,
+                "h": 30,
+                "v": -1.2,
+                "min": 2900,
+                "max": 3140,
+                "alive": false,
+                "type": "charger",
+                "hp": 0,
+                "flash": 160,
+                "stun": 140,
+                "alert": 1,
+                "phase": 6.186835242636383,
+                "chargeWindup": 400.0000000000001,
+                "survivalId": "beetle:2900"
+              },
+              {
+                "targetKind": "beetle",
+                "x": 3479.4499999999925,
+                "y": 425.0535758393832,
+                "w": 48,
+                "h": 34,
+                "v": -1.45,
+                "min": 3300,
+                "max": 3540,
+                "alive": false,
+                "type": "flyer",
+                "hp": 0,
+                "flash": 160,
+                "stun": 140,
+                "alert": 0,
+                "phase": 3.83300818092837,
+                "survivalId": "beetle:3300"
+              },
+              {
+                "targetKind": "beetle",
+                "x": 3809.5000000000164,
+                "y": 448.24079203974975,
+                "w": 48,
+                "h": 30,
+                "v": -1.45,
+                "min": 3700,
+                "max": 3940,
+                "alive": false,
+                "type": "walker",
+                "hp": 0,
+                "flash": 160,
+                "stun": 140,
+                "alert": 0,
+                "phase": 5.294889262651157,
+                "chargeWindup": 0,
+                "survivalId": "beetle:3700"
+              },
+              {
+                "targetKind": "beetle",
+                "x": 4359.200000000002,
+                "y": 498.2050342247396,
+                "w": 48,
+                "h": 30,
+                "v": -1.2,
+                "min": 4130,
+                "max": 4370,
+                "alive": false,
+                "type": "charger",
+                "hp": 0,
+                "flash": 160,
+                "stun": 140,
+                "alert": 0,
+                "phase": 4.651338251790199,
+                "chargeWindup": 0,
+                "survivalId": "beetle:4130"
+              },
+              {
+                "targetKind": "beetle",
+                "x": 4639.74999999999,
+                "y": 477.03259748497084,
+                "w": 58,
+                "h": 30,
+                "v": 1.45,
+                "min": 4560,
+                "max": 4800,
+                "alive": false,
+                "type": "armored",
+                "hp": 0,
+                "flash": 160,
+                "stun": 140,
+                "alert": 0,
+                "phase": 5.966844891773892,
+                "chargeWindup": 0,
+                "survivalId": "beetle:4560"
+              },
+              {
+                "targetKind": "beetle",
+                "x": 5132.324999999996,
+                "y": 337.6209081616687,
+                "w": 48,
+                "h": 34,
+                "v": -1.45,
+                "min": 5000,
+                "max": 5240,
+                "alive": false,
+                "type": "flyer",
+                "hp": 0,
+                "flash": 160,
+                "stun": 140,
+                "alert": 0.6,
+                "phase": 2.67779442993057,
+                "survivalId": "beetle:5000"
+              },
+              {
+                "targetKind": "beetle",
+                "x": 5507.450000000022,
+                "y": 450.9828823415723,
+                "w": 48,
+                "h": 30,
+                "v": -1.45,
+                "min": 5440,
+                "max": 5680,
+                "alive": false,
+                "type": "walker",
+                "hp": 0,
+                "flash": 160,
+                "stun": 140,
+                "alert": 0,
+                "phase": 1.7498542637455041,
+                "chargeWindup": 0,
+                "survivalId": "beetle:5440"
+              },
+              {
+                "targetKind": "beetle",
+                "x": 6042.049999999995,
+                "y": 423.534075851872,
+                "w": 58,
+                "h": 30,
+                "v": 1.45,
+                "min": 6000,
+                "max": 6240,
+                "alive": false,
+                "type": "armored",
+                "hp": 0,
+                "flash": 160,
+                "stun": 140,
+                "alert": 0,
+                "phase": 4.479682145643552,
+                "chargeWindup": 0,
+                "survivalId": "beetle:6000"
+              },
+              {
+                "targetKind": "beetle",
+                "x": 6528.400000000026,
+                "y": 406.4453652245192,
+                "w": 48,
+                "h": 30,
+                "v": -1.2,
+                "min": 6460,
+                "max": 6700,
+                "alive": false,
+                "type": "charger",
+                "hp": 0,
+                "flash": 160,
+                "stun": 140,
+                "alert": 0.6666666666666666,
+                "phase": 0.6635094520871029,
+                "chargeWindup": 0,
+                "survivalId": "beetle:6460"
+              },
+              {
+                "targetKind": "beetle",
+                "x": 7043.300000000008,
+                "y": 272.99986675168014,
+                "w": 48,
+                "h": 34,
+                "v": -1.45,
+                "min": 6990,
+                "max": 7230,
+                "alive": false,
+                "type": "flyer",
+                "hp": 0,
+                "flash": 160,
+                "stun": 140,
+                "alert": 0,
+                "phase": 1.3116186035064177,
+                "survivalId": "beetle:6990"
+              },
+              {
+                "targetKind": "beetle",
+                "x": 7513.800000000028,
+                "y": 420.35459354180296,
+                "w": 48,
+                "h": 30,
+                "v": -1.45,
+                "min": 7500,
+                "max": 7740,
+                "alive": false,
+                "type": "walker",
+                "hp": 0,
+                "flash": 160,
+                "stun": 140,
+                "alert": 0,
+                "phase": 1.5020255675426413,
+                "chargeWindup": 0,
+                "survivalId": "beetle:7500"
+              },
+              {
+                "targetKind": "beetle",
+                "x": 8298.799999999963,
+                "y": 396.96339645499546,
+                "w": 48,
+                "h": 30,
+                "v": -1.2,
+                "min": 8120,
+                "max": 8360,
+                "alive": false,
+                "type": "charger",
+                "hp": 0,
+                "flash": 160,
+                "stun": 140,
+                "alert": 0,
+                "phase": 6.212776934265383,
+                "chargeWindup": 0,
+                "survivalId": "beetle:8120"
+              },
+              {
+                "targetKind": "beetle",
+                "x": 8677.049999999948,
+                "y": 369.144284501303,
+                "w": 58,
+                "h": 30,
+                "v": -1.45,
+                "min": 8540,
+                "max": 8780,
+                "alive": false,
+                "type": "armored",
+                "hp": 0,
+                "flash": 160,
+                "stun": 140,
+                "alert": 0,
+                "phase": 4.139129822517853,
+                "chargeWindup": 0,
+                "survivalId": "beetle:8540"
+              },
+              {
+                "targetKind": "beetle",
+                "x": 8420,
+                "y": 392.1349068698817,
+                "w": 48,
+                "h": 30,
+                "v": -1.45,
+                "min": 8420,
+                "max": 8535.714372254084,
+                "alive": false,
+                "type": "larva",
+                "hp": 0,
+                "flash": 160,
+                "stun": 140,
+                "alert": 1,
+                "phase": 2.2223766377015965,
+                "chargeWindup": 0,
+                "survivalId": "beetle:8420"
+              },
+              {
+                "targetKind": "beetle",
+                "x": 8436.576148442491,
+                "y": 312.297371554983,
+                "w": 48,
+                "h": 34,
+                "v": 1.45,
+                "min": 8124.700000000024,
+                "max": 8644.700000000024,
+                "alive": false,
+                "type": "flyer",
+                "hp": 0,
+                "flash": 160,
+                "stun": 140,
+                "alert": 0.33333333333333337,
+                "phase": 5.737315478970197,
+                "survivalId": "beetle:8124.700000000024"
+              }
+            ],
+            "mem": [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "crystals": [
+              false,
+              false,
+              false,
+              false,
+              false
+            ],
+            "dude": 1,
+            "score": 30700,
+            "nests": [
+              {
+                "alive": false,
+                "hp": -1,
+                "spawned": 2
+              },
+              {
+                "alive": false,
+                "hp": 0,
+                "spawned": 2
+              },
+              {
+                "alive": false,
+                "hp": 0,
+                "spawned": 2
+              },
+              {
+                "alive": false,
+                "hp": 0,
+                "spawned": 1
+              }
+            ],
+            "boss": {
+              "targetKind": "boss",
+              "x": 8393.500000000027,
+              "y": 204.16563407605307,
+              "w": 190,
+              "h": 150,
+              "hp": 0,
+              "maxHp": 18,
+              "phase": 3,
+              "alive": false,
+              "flash": 180,
+              "inv": 120,
+              "vx": 5.5,
+              "vy": 0,
+              "attackTimer": 750.0000000000002,
+              "spawnTimer": 299.9999999999988,
+              "windup": 0,
+              "chargeDir": -1,
+              "survivalId": "boss:8920.20000000002",
+              "animUntil": 44899.99999999925,
+              "transformUntil": 40449.99999999993
+            },
+            "bossDefeated": true,
+            "forestRestored": true,
+            "forest": [
+              "green",
+              "green",
+              "green"
+            ]
+          }
+        },
+        "ledger": {
+          "socal:objective:card:0": true,
+          "socal:heal:card:0": true,
+          "socal:hit:enemy-0:0": true,
+          "socal:hit:enemy-1:0": true,
+          "socal:hit:enemy-20:0": true,
+          "socal:objective:card:1": true,
+          "socal:heal:card:1": true,
+          "socal:hit:enemy-2:0": true,
+          "socal:hit:enemy-3:0": true,
+          "socal:hit:enemy-4:0": true,
+          "socal:objective:card:2": true,
+          "socal:heal:card:2": true,
+          "socal:hit:enemy-5:0": true,
+          "socal:objective:beacon:0": true,
+          "socal:heal:beacon:0": true,
+          "socal:hit:enemy-6:0": true,
+          "socal:hit:enemy-21:0": true,
+          "socal:hit:enemy-7:0": true,
+          "socal:objective:card:3": true,
+          "socal:heal:card:3": true,
+          "socal:hit:enemy-8:0": true,
+          "socal:hit:queen-beige:9": true,
+          "socal:hit:queen-beige:8": true,
+          "socal:hit:queen-beige:7": true,
+          "socal:hit:queen-beige:6": true,
+          "socal:hit:queen-beige:5": true,
+          "socal:hit:queen-beige:4": true,
+          "socal:hit:enemy-9:0": true,
+          "socal:hit:queen-beige:3": true,
+          "socal:hit:undefined:4700:0": true,
+          "socal:hit:queen-beige:2": true,
+          "socal:hit:queen-beige:1": true,
+          "socal:hit:queen-beige:0": true,
+          "socal:objective:queen-beige": true,
+          "socal:heal:queen-beige": true,
+          "socal:objective:card:4": true,
+          "socal:heal:card:4": true,
+          "socal:hit:enemy-10:0": true,
+          "socal:objective:beacon:1": true,
+          "socal:heal:beacon:1": true,
+          "socal:hit:enemy-11:0": true,
+          "socal:hit:enemy-22:0": true,
+          "socal:hit:enemy-12:0": true,
+          "socal:hit:enemy-13:0": true,
+          "socal:hit:enemy-14:1": true,
+          "socal:hit:enemy-14:0": true,
+          "socal:hit:enemy-15:1": true,
+          "socal:objective:beacon:2": true,
+          "socal:heal:beacon:2": true,
+          "socal:hit:enemy-15:0": true,
+          "socal:hit:enemy-16:1": true,
+          "socal:hit:enemy-23:0": true,
+          "socal:hit:enemy-17:1": true,
+          "socal:objective:card:5": true,
+          "socal:heal:card:5": true,
+          "socal:hit:enemy-17:0": true,
+          "socal:hit:enemy-18:1": true,
+          "socal:hit:enemy-19:4": true,
+          "socal:hit:enemy-18:0": true,
+          "socal:hit:enemy-19:3": true,
+          "socal:hit:enemy-19:2": true,
+          "socal:hit:enemy-19:1": true,
+          "socal:hit:enemy-19:0": true,
+          "socal:hit:court-1-0:2": true,
+          "socal:hit:court-1-0:1": true,
+          "socal:hit:court-1-0:0": true,
+          "socal:hit:court-2-0:1": true,
+          "socal:hit:court-2-1:1": true,
+          "socal:hit:court-2-2:1": true,
+          "socal:hit:court-2-0:0": true,
+          "socal:hit:court-2-1:0": true,
+          "socal:hit:court-2-2:0": true,
+          "socal:hit:court-3-0:0": true,
+          "socal:hit:court-3-1:0": true,
+          "socal:hit:court-3-2:0": true,
+          "socal:hit:court-3-3:0": true,
+          "socal:hit:court-3-4:0": true,
+          "socal:hit:court-3-5:0": true,
+          "socal:hit:court-3-6:0": true,
+          "socal:hit:court-3-7:0": true,
+          "socal:hit:court-3-8:0": true,
+          "socal:objective:world:socal": true,
+          "socal:heal:world:socal": true,
+          "tahoe:hit:beetle:1060:0": true,
+          "tahoe:hit:beetle:1360:0": true,
+          "tahoe:heal:trail-heart:1": true,
+          "tahoe:hit:beetle:1660:0": true,
+          "tahoe:hit:beetle:2060:0": true,
+          "tahoe:hit:nest:2250:1": true,
+          "tahoe:hit:beetle:2030:0": true,
+          "tahoe:objective:nest:0": true,
+          "tahoe:heal:nest:0": true,
+          "tahoe:hit:nest:2250:0": true,
+          "tahoe:hit:beetle:2550:1": true,
+          "tahoe:hit:beetle:2550:0": true,
+          "tahoe:hit:bloomCore:0:1": true,
+          "tahoe:hit:bloomCore:0:0": true,
+          "tahoe:hit:beetle:2760:0": true,
+          "tahoe:hit:beetle:2900:0": true,
+          "tahoe:hit:bloomCore:1:1": true,
+          "tahoe:hit:bloomCore:1:0": true,
+          "tahoe:heal:trail-heart:3": true,
+          "tahoe:hit:bloomCore:2:1": true,
+          "tahoe:objective:toxic-bloom": true,
+          "tahoe:heal:toxic-bloom": true,
+          "tahoe:hit:bloomCore:2:0": true,
+          "tahoe:hit:beetle:3300:0": true,
+          "tahoe:hit:beetle:3700:0": true,
+          "tahoe:hit:beetle:4130:0": true,
+          "tahoe:hit:beetle:4560:1": true,
+          "tahoe:hit:nest:4720:3": true,
+          "tahoe:hit:beetle:4560:0": true,
+          "tahoe:hit:nest:4720:2": true,
+          "tahoe:objective:nest:1": true,
+          "tahoe:heal:nest:1": true,
+          "tahoe:hit:nest:4720:0": true,
+          "tahoe:hit:beetle:4500:0": true,
+          "tahoe:hit:beetle:5000:0": true,
+          "tahoe:hit:beetle:5440:0": true,
+          "tahoe:hit:beetle:6000:1": true,
+          "tahoe:hit:beetle:6000:0": true,
+          "tahoe:hit:nest:6380:2": true,
+          "tahoe:hit:beetle:6160:0": true,
+          "tahoe:objective:nest:2": true,
+          "tahoe:heal:nest:2": true,
+          "tahoe:hit:nest:6380:0": true,
+          "tahoe:hit:beetle:6460:0": true,
+          "tahoe:hit:beetle:6990:0": true,
+          "tahoe:hit:beetle:7500:0": true,
+          "tahoe:hit:nest:8020:3": true,
+          "tahoe:hit:beetle:7800:0": true,
+          "tahoe:hit:nest:8020:2": true,
+          "tahoe:objective:nest:3": true,
+          "tahoe:heal:nest:3": true,
+          "tahoe:hit:nest:8020:0": true,
+          "tahoe:hit:beetle:8120:0": true,
+          "tahoe:heal:trail-heart:8": true,
+          "tahoe:hit:beetle:8540:1": true,
+          "tahoe:hit:beetle:8540:0": true,
+          "tahoe:hit:boss:8920.20000000002:17": true,
+          "tahoe:hit:boss:8920.20000000002:16": true,
+          "tahoe:hit:boss:8920.20000000002:15": true,
+          "tahoe:hit:beetle:8522.300000000027:0": true,
+          "tahoe:hit:infection:8576:1": true,
+          "tahoe:hit:boss:8920.20000000002:14": true,
+          "tahoe:hit:boss:8920.20000000002:13": true,
+          "tahoe:objective:tree:0": true,
+          "tahoe:heal:tree:0": true,
+          "tahoe:hit:infection:8576:0": true,
+          "tahoe:hit:boss:8920.20000000002:12": true,
+          "tahoe:hit:boss:8920.20000000002:11": true,
+          "tahoe:hit:boss:8920.20000000002:10": true,
+          "tahoe:hit:beetle:8255.050000000027:0": true,
+          "tahoe:hit:beetle:8420:0": true,
+          "tahoe:hit:boss:8920.20000000002:9": true,
+          "tahoe:hit:boss:8920.20000000002:8": true,
+          "tahoe:hit:beetle:8132.550000000027:0": true,
+          "tahoe:hit:boss:8920.20000000002:7": true,
+          "tahoe:hit:boss:8920.20000000002:6": true,
+          "tahoe:hit:boss:8920.20000000002:5": true,
+          "tahoe:hit:beetle:8124.700000000024:0": true,
+          "tahoe:hit:boss:8920.20000000002:4": true,
+          "tahoe:hit:boss:8920.20000000002:3": true,
+          "tahoe:hit:boss:8920.20000000002:2": true,
+          "tahoe:hit:beetle:8120.300000000023:0": true,
+          "tahoe:hit:boss:8920.20000000002:1": true,
+          "tahoe:objective:pine-queen": true,
+          "tahoe:heal:pine-queen": true,
+          "tahoe:hit:boss:8920.20000000002:0": true,
+          "tahoe:objective:world:tahoe": true,
+          "tahoe:heal:world:tahoe": true
+        },
+        "history": []
+      },
+      "arrival": {
+        "schema": 1,
+        "enabled": true,
+        "id": "mvh1li19",
+        "sequence": 259,
+        "characters": [
+          {
+            "hp": 4,
+            "available": true
+          },
+          {
+            "hp": 4,
+            "available": true
+          },
+          {
+            "hp": 4,
+            "available": true
+          }
+        ],
+        "active": 1,
+        "charge": 100,
+        "contributions": [
+          false,
+          true,
+          true
+        ],
+        "currentWorld": "tahoe",
+        "completedWorlds": [
+          "socal",
+          "tahoe"
+        ],
+        "achievements": [
+          {
+            "world": "socal",
+            "badge": "THREE DUDES STANDING"
+          },
+          {
+            "world": "tahoe",
+            "badge": "THREE DUDES STANDING"
+          }
+        ],
+        "status": "playing",
+        "worlds": {
+          "3dudes1quest-save-109": {
+            "schema": 2,
+            "encounters": {
+              "version": 1,
+              "legacyAccess": false,
+              "pastMid": false,
+              "queenComplete": true,
+              "finalComplete": true,
+              "court": {
+                "active": false,
+                "phase": 3,
+                "hp": [
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              }
+            },
+            "version": "3.4.1",
+            "player": {
+              "x": 8796.320000000045,
+              "y": 548,
+              "facing": 1
+            },
+            "state": {
+              "health": 4,
+              "cards": 6,
+              "beacons": 3,
+              "score": 8500,
+              "dude": 1,
+              "triangle": 100,
+              "paused": false,
+              "bossDefeated": true,
+              "zoeyUnlocked": true,
+              "adventureComplete": true,
+              "objective": {
+                "title": "Enter the Lake Tahoe Portal",
+                "detail": "Southern California is restored. Adventure 2 awaits."
+              },
+              "courtDefeated": true,
+              "courtVictoryRecorded": true
+            },
+            "cards": [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "beacons": [
+              true,
+              true,
+              true
+            ],
+            "enemies": [
+              {
+                "alive": false,
+                "hp": -1
+              },
+              {
+                "alive": false,
+                "hp": -1
+              },
+              {
+                "alive": false,
+                "hp": -1
+              },
+              {
+                "alive": false,
+                "hp": -1
+              },
+              {
+                "alive": false,
+                "hp": -1
+              },
+              {
+                "alive": false,
+                "hp": -1
+              },
+              {
+                "alive": false,
+                "hp": -1
+              },
+              {
+                "alive": false,
+                "hp": -1
+              },
+              {
+                "alive": false,
+                "hp": -1
+              },
+              {
+                "alive": false,
+                "hp": 0
+              },
+              {
+                "alive": false,
+                "hp": -1
+              },
+              {
+                "alive": false,
+                "hp": -1
+              },
+              {
+                "alive": false,
+                "hp": -1
+              },
+              {
+                "alive": false,
+                "hp": -1
+              },
+              {
+                "alive": false,
+                "hp": 0,
+                "signHp": 0,
+                "signUp": false
+              },
+              {
+                "alive": false,
+                "hp": 0,
+                "signHp": 0,
+                "signUp": false
+              },
+              {
+                "alive": true,
+                "hp": 1,
+                "signHp": 0,
+                "signUp": false
+              },
+              {
+                "alive": false,
+                "hp": 0,
+                "signHp": 0,
+                "signUp": false
+              },
+              {
+                "alive": false,
+                "hp": 0,
+                "signHp": 0,
+                "signUp": false
+              },
+              {
+                "alive": false,
+                "hp": 0,
+                "signHp": 0,
+                "signUp": false
+              },
+              {
+                "alive": false,
+                "hp": 0
+              },
+              {
+                "alive": false,
+                "hp": 0
+              },
+              {
+                "alive": false,
+                "hp": 0
+              },
+              {
+                "alive": false,
+                "hp": 0
+              },
+              {
+                "alive": true
+              },
+              {
+                "alive": false,
+                "hp": 0
+              },
+              {
+                "alive": false,
+                "hp": 0
+              },
+              {
+                "alive": false,
+                "hp": 0
+              },
+              {
+                "alive": false,
+                "hp": 0
+              },
+              {
+                "alive": false,
+                "hp": 0
+              },
+              {
+                "alive": false,
+                "hp": 0
+              },
+              {
+                "alive": false,
+                "hp": 0
+              },
+              {
+                "alive": false,
+                "hp": 0
+              },
+              {
+                "alive": false,
+                "hp": 0
+              },
+              {
+                "alive": false,
+                "hp": 0
+              }
+            ],
+            "secrets": [
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "boss": {
+              "x": 4637.399999999932,
+              "hp": 0,
+              "alive": false,
+              "active": false,
+              "phase": 3,
+              "summoned": true
+            },
+            "finale": {
+              "active": false,
+              "stage": 6,
+              "timer": 0,
+              "complete": true,
+              "portalReady": true
+            },
+            "portal": {
+              "open": true
+            },
+            "cityHallDamage": 1,
+            "savedAt": "2026-10-20T18:55:31.344Z"
+          },
+          "3dudes1quest_journey": {
+            "socal": true,
+            "tahoe": true
+          },
+          "3dudes1quest_tahoe_v250": {
+            "schema": 3,
+            "encounters": {
+              "version": 1,
+              "legacyAccess": false,
+              "pastMid": false,
+              "bloom": {
+                "complete": true,
+                "cores": [
+                  0,
+                  0,
+                  0
+                ],
+                "contamination": 100
+              }
+            },
+            "savedAt": "2026-10-20T18:56:23.641Z",
+            "checkpoint": 6820,
+            "beetles": [
+              {
+                "targetKind": "beetle",
+                "x": 1243.4499999999982,
+                "y": 525.90818798163,
+                "w": 48,
+                "h": 30,
+                "v": -1.45,
+                "min": 1060,
+                "max": 1300,
+                "alive": false,
+                "type": "walker",
+                "hp": -1,
+                "flash": 160,
+                "stun": 140,
+                "alert": 0.33333333333333337,
+                "phase": 1.34986113174666,
+                "chargeWindup": 0,
+                "survivalId": "beetle:1060"
+              },
+              {
+                "targetKind": "beetle",
+                "x": 1526.7999999999972,
+                "y": 509.72756119906535,
+                "w": 48,
+                "h": 30,
+                "v": -1.2,
+                "min": 1360,
+                "max": 1600,
+                "alive": false,
+                "type": "charger",
+                "hp": -1,
+                "flash": 160,
+                "stun": 140,
+                "alert": 0,
+                "phase": 5.588964479402746,
+                "chargeWindup": 0,
+                "survivalId": "beetle:1360"
+              },
+              {
+                "targetKind": "beetle",
+                "x": 1739.3999999999987,
+                "y": 389.10144747111445,
+                "w": 48,
+                "h": 34,
+                "v": -1.45,
+                "min": 1660,
+                "max": 1900,
+                "alive": false,
+                "type": "flyer",
+                "hp": 0,
+                "flash": 160,
+                "stun": 140,
+                "alert": 0,
+                "phase": 5.5689647572090655,
+                "survivalId": "beetle:1660"
+              },
+              {
+                "targetKind": "beetle",
+                "x": 2060,
+                "y": 478.82947352514236,
+                "w": 48,
+                "h": 30,
+                "v": 1.45,
+                "min": 2060,
+                "max": 2300,
+                "alive": false,
+                "type": "walker",
+                "hp": 0,
+                "flash": 160,
+                "stun": 140,
+                "alert": 0,
+                "phase": 3.2416490888985647,
+                "chargeWindup": 0,
+                "survivalId": "beetle:2060"
+              },
+              {
+                "targetKind": "beetle",
+                "x": 2787.79999999997,
+                "y": 448.605147632226,
+                "w": 58,
+                "h": 30,
+                "v": 1.45,
+                "min": 2550,
+                "max": 2790,
+                "alive": false,
+                "type": "armored",
+                "hp": 0,
+                "flash": 160,
+                "stun": 140,
+                "alert": 0,
+                "phase": 0.5163923955186148,
+                "chargeWindup": 0,
+                "survivalId": "beetle:2550"
+              },
+              {
+                "targetKind": "beetle",
+                "x": 3008.000000000013,
+                "y": 471.4009794422636,
+                "w": 48,
+                "h": 30,
+                "v": -1.2,
+                "min": 2900,
+                "max": 3140,
+                "alive": false,
+                "type": "charger",
+                "hp": 0,
+                "flash": 160,
+                "stun": 140,
+                "alert": 1,
+                "phase": 6.186835242636383,
+                "chargeWindup": 400.0000000000001,
+                "survivalId": "beetle:2900"
+              },
+              {
+                "targetKind": "beetle",
+                "x": 3479.4499999999925,
+                "y": 425.0535758393832,
+                "w": 48,
+                "h": 34,
+                "v": -1.45,
+                "min": 3300,
+                "max": 3540,
+                "alive": false,
+                "type": "flyer",
+                "hp": 0,
+                "flash": 160,
+                "stun": 140,
+                "alert": 0,
+                "phase": 3.83300818092837,
+                "survivalId": "beetle:3300"
+              },
+              {
+                "targetKind": "beetle",
+                "x": 3809.5000000000164,
+                "y": 448.24079203974975,
+                "w": 48,
+                "h": 30,
+                "v": -1.45,
+                "min": 3700,
+                "max": 3940,
+                "alive": false,
+                "type": "walker",
+                "hp": 0,
+                "flash": 160,
+                "stun": 140,
+                "alert": 0,
+                "phase": 5.294889262651157,
+                "chargeWindup": 0,
+                "survivalId": "beetle:3700"
+              },
+              {
+                "targetKind": "beetle",
+                "x": 4359.200000000002,
+                "y": 498.2050342247396,
+                "w": 48,
+                "h": 30,
+                "v": -1.2,
+                "min": 4130,
+                "max": 4370,
+                "alive": false,
+                "type": "charger",
+                "hp": 0,
+                "flash": 160,
+                "stun": 140,
+                "alert": 0,
+                "phase": 4.651338251790199,
+                "chargeWindup": 0,
+                "survivalId": "beetle:4130"
+              },
+              {
+                "targetKind": "beetle",
+                "x": 4639.74999999999,
+                "y": 477.03259748497084,
+                "w": 58,
+                "h": 30,
+                "v": 1.45,
+                "min": 4560,
+                "max": 4800,
+                "alive": false,
+                "type": "armored",
+                "hp": 0,
+                "flash": 160,
+                "stun": 140,
+                "alert": 0,
+                "phase": 5.966844891773892,
+                "chargeWindup": 0,
+                "survivalId": "beetle:4560"
+              },
+              {
+                "targetKind": "beetle",
+                "x": 5132.324999999996,
+                "y": 337.6209081616687,
+                "w": 48,
+                "h": 34,
+                "v": -1.45,
+                "min": 5000,
+                "max": 5240,
+                "alive": false,
+                "type": "flyer",
+                "hp": 0,
+                "flash": 160,
+                "stun": 140,
+                "alert": 0.6,
+                "phase": 2.67779442993057,
+                "survivalId": "beetle:5000"
+              },
+              {
+                "targetKind": "beetle",
+                "x": 5507.450000000022,
+                "y": 450.9828823415723,
+                "w": 48,
+                "h": 30,
+                "v": -1.45,
+                "min": 5440,
+                "max": 5680,
+                "alive": false,
+                "type": "walker",
+                "hp": 0,
+                "flash": 160,
+                "stun": 140,
+                "alert": 0,
+                "phase": 1.7498542637455041,
+                "chargeWindup": 0,
+                "survivalId": "beetle:5440"
+              },
+              {
+                "targetKind": "beetle",
+                "x": 6042.049999999995,
+                "y": 423.534075851872,
+                "w": 58,
+                "h": 30,
+                "v": 1.45,
+                "min": 6000,
+                "max": 6240,
+                "alive": false,
+                "type": "armored",
+                "hp": 0,
+                "flash": 160,
+                "stun": 140,
+                "alert": 0,
+                "phase": 4.479682145643552,
+                "chargeWindup": 0,
+                "survivalId": "beetle:6000"
+              },
+              {
+                "targetKind": "beetle",
+                "x": 6528.400000000026,
+                "y": 406.4453652245192,
+                "w": 48,
+                "h": 30,
+                "v": -1.2,
+                "min": 6460,
+                "max": 6700,
+                "alive": false,
+                "type": "charger",
+                "hp": 0,
+                "flash": 160,
+                "stun": 140,
+                "alert": 0.6666666666666666,
+                "phase": 0.6635094520871029,
+                "chargeWindup": 0,
+                "survivalId": "beetle:6460"
+              },
+              {
+                "targetKind": "beetle",
+                "x": 7043.300000000008,
+                "y": 272.99986675168014,
+                "w": 48,
+                "h": 34,
+                "v": -1.45,
+                "min": 6990,
+                "max": 7230,
+                "alive": false,
+                "type": "flyer",
+                "hp": 0,
+                "flash": 160,
+                "stun": 140,
+                "alert": 0,
+                "phase": 1.3116186035064177,
+                "survivalId": "beetle:6990"
+              },
+              {
+                "targetKind": "beetle",
+                "x": 7513.800000000028,
+                "y": 420.35459354180296,
+                "w": 48,
+                "h": 30,
+                "v": -1.45,
+                "min": 7500,
+                "max": 7740,
+                "alive": false,
+                "type": "walker",
+                "hp": 0,
+                "flash": 160,
+                "stun": 140,
+                "alert": 0,
+                "phase": 1.5020255675426413,
+                "chargeWindup": 0,
+                "survivalId": "beetle:7500"
+              },
+              {
+                "targetKind": "beetle",
+                "x": 8298.799999999963,
+                "y": 396.96339645499546,
+                "w": 48,
+                "h": 30,
+                "v": -1.2,
+                "min": 8120,
+                "max": 8360,
+                "alive": false,
+                "type": "charger",
+                "hp": 0,
+                "flash": 160,
+                "stun": 140,
+                "alert": 0,
+                "phase": 6.212776934265383,
+                "chargeWindup": 0,
+                "survivalId": "beetle:8120"
+              },
+              {
+                "targetKind": "beetle",
+                "x": 8677.049999999948,
+                "y": 369.144284501303,
+                "w": 58,
+                "h": 30,
+                "v": -1.45,
+                "min": 8540,
+                "max": 8780,
+                "alive": false,
+                "type": "armored",
+                "hp": 0,
+                "flash": 160,
+                "stun": 140,
+                "alert": 0,
+                "phase": 4.139129822517853,
+                "chargeWindup": 0,
+                "survivalId": "beetle:8540"
+              },
+              {
+                "targetKind": "beetle",
+                "x": 8420,
+                "y": 392.1349068698817,
+                "w": 48,
+                "h": 30,
+                "v": -1.45,
+                "min": 8420,
+                "max": 8535.714372254084,
+                "alive": false,
+                "type": "larva",
+                "hp": 0,
+                "flash": 160,
+                "stun": 140,
+                "alert": 1,
+                "phase": 2.2223766377015965,
+                "chargeWindup": 0,
+                "survivalId": "beetle:8420"
+              },
+              {
+                "targetKind": "beetle",
+                "x": 8436.576148442491,
+                "y": 312.297371554983,
+                "w": 48,
+                "h": 34,
+                "v": 1.45,
+                "min": 8124.700000000024,
+                "max": 8644.700000000024,
+                "alive": false,
+                "type": "flyer",
+                "hp": 0,
+                "flash": 160,
+                "stun": 140,
+                "alert": 0.33333333333333337,
+                "phase": 5.737315478970197,
+                "survivalId": "beetle:8124.700000000024"
+              }
+            ],
+            "mem": [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "crystals": [
+              false,
+              false,
+              false,
+              false,
+              false
+            ],
+            "dude": 1,
+            "score": 30700,
+            "nests": [
+              {
+                "alive": false,
+                "hp": -1,
+                "spawned": 2
+              },
+              {
+                "alive": false,
+                "hp": 0,
+                "spawned": 2
+              },
+              {
+                "alive": false,
+                "hp": 0,
+                "spawned": 2
+              },
+              {
+                "alive": false,
+                "hp": 0,
+                "spawned": 1
+              }
+            ],
+            "boss": {
+              "targetKind": "boss",
+              "x": 8393.500000000027,
+              "y": 204.16563407605307,
+              "w": 190,
+              "h": 150,
+              "hp": 0,
+              "maxHp": 18,
+              "phase": 3,
+              "alive": false,
+              "flash": 180,
+              "inv": 120,
+              "vx": 5.5,
+              "vy": 0,
+              "attackTimer": 750.0000000000002,
+              "spawnTimer": 299.9999999999988,
+              "windup": 0,
+              "chargeDir": -1,
+              "survivalId": "boss:8920.20000000002",
+              "animUntil": 44899.99999999925,
+              "transformUntil": 40449.99999999993
+            },
+            "bossDefeated": true,
+            "forestRestored": true,
+            "forest": [
+              "green",
+              "green",
+              "green"
+            ]
+          }
+        },
+        "ledger": {
+          "socal:objective:card:0": true,
+          "socal:heal:card:0": true,
+          "socal:hit:enemy-0:0": true,
+          "socal:hit:enemy-1:0": true,
+          "socal:hit:enemy-20:0": true,
+          "socal:objective:card:1": true,
+          "socal:heal:card:1": true,
+          "socal:hit:enemy-2:0": true,
+          "socal:hit:enemy-3:0": true,
+          "socal:hit:enemy-4:0": true,
+          "socal:objective:card:2": true,
+          "socal:heal:card:2": true,
+          "socal:hit:enemy-5:0": true,
+          "socal:objective:beacon:0": true,
+          "socal:heal:beacon:0": true,
+          "socal:hit:enemy-6:0": true,
+          "socal:hit:enemy-21:0": true,
+          "socal:hit:enemy-7:0": true,
+          "socal:objective:card:3": true,
+          "socal:heal:card:3": true,
+          "socal:hit:enemy-8:0": true,
+          "socal:hit:queen-beige:9": true,
+          "socal:hit:queen-beige:8": true,
+          "socal:hit:queen-beige:7": true,
+          "socal:hit:queen-beige:6": true,
+          "socal:hit:queen-beige:5": true,
+          "socal:hit:queen-beige:4": true,
+          "socal:hit:enemy-9:0": true,
+          "socal:hit:queen-beige:3": true,
+          "socal:hit:undefined:4700:0": true,
+          "socal:hit:queen-beige:2": true,
+          "socal:hit:queen-beige:1": true,
+          "socal:hit:queen-beige:0": true,
+          "socal:objective:queen-beige": true,
+          "socal:heal:queen-beige": true,
+          "socal:objective:card:4": true,
+          "socal:heal:card:4": true,
+          "socal:hit:enemy-10:0": true,
+          "socal:objective:beacon:1": true,
+          "socal:heal:beacon:1": true,
+          "socal:hit:enemy-11:0": true,
+          "socal:hit:enemy-22:0": true,
+          "socal:hit:enemy-12:0": true,
+          "socal:hit:enemy-13:0": true,
+          "socal:hit:enemy-14:1": true,
+          "socal:hit:enemy-14:0": true,
+          "socal:hit:enemy-15:1": true,
+          "socal:objective:beacon:2": true,
+          "socal:heal:beacon:2": true,
+          "socal:hit:enemy-15:0": true,
+          "socal:hit:enemy-16:1": true,
+          "socal:hit:enemy-23:0": true,
+          "socal:hit:enemy-17:1": true,
+          "socal:objective:card:5": true,
+          "socal:heal:card:5": true,
+          "socal:hit:enemy-17:0": true,
+          "socal:hit:enemy-18:1": true,
+          "socal:hit:enemy-19:4": true,
+          "socal:hit:enemy-18:0": true,
+          "socal:hit:enemy-19:3": true,
+          "socal:hit:enemy-19:2": true,
+          "socal:hit:enemy-19:1": true,
+          "socal:hit:enemy-19:0": true,
+          "socal:hit:court-1-0:2": true,
+          "socal:hit:court-1-0:1": true,
+          "socal:hit:court-1-0:0": true,
+          "socal:hit:court-2-0:1": true,
+          "socal:hit:court-2-1:1": true,
+          "socal:hit:court-2-2:1": true,
+          "socal:hit:court-2-0:0": true,
+          "socal:hit:court-2-1:0": true,
+          "socal:hit:court-2-2:0": true,
+          "socal:hit:court-3-0:0": true,
+          "socal:hit:court-3-1:0": true,
+          "socal:hit:court-3-2:0": true,
+          "socal:hit:court-3-3:0": true,
+          "socal:hit:court-3-4:0": true,
+          "socal:hit:court-3-5:0": true,
+          "socal:hit:court-3-6:0": true,
+          "socal:hit:court-3-7:0": true,
+          "socal:hit:court-3-8:0": true,
+          "socal:objective:world:socal": true,
+          "socal:heal:world:socal": true,
+          "tahoe:hit:beetle:1060:0": true,
+          "tahoe:hit:beetle:1360:0": true,
+          "tahoe:heal:trail-heart:1": true,
+          "tahoe:hit:beetle:1660:0": true,
+          "tahoe:hit:beetle:2060:0": true,
+          "tahoe:hit:nest:2250:1": true,
+          "tahoe:hit:beetle:2030:0": true,
+          "tahoe:objective:nest:0": true,
+          "tahoe:heal:nest:0": true,
+          "tahoe:hit:nest:2250:0": true,
+          "tahoe:hit:beetle:2550:1": true,
+          "tahoe:hit:beetle:2550:0": true,
+          "tahoe:hit:bloomCore:0:1": true,
+          "tahoe:hit:bloomCore:0:0": true,
+          "tahoe:hit:beetle:2760:0": true,
+          "tahoe:hit:beetle:2900:0": true,
+          "tahoe:hit:bloomCore:1:1": true,
+          "tahoe:hit:bloomCore:1:0": true,
+          "tahoe:heal:trail-heart:3": true,
+          "tahoe:hit:bloomCore:2:1": true,
+          "tahoe:objective:toxic-bloom": true,
+          "tahoe:heal:toxic-bloom": true,
+          "tahoe:hit:bloomCore:2:0": true,
+          "tahoe:hit:beetle:3300:0": true,
+          "tahoe:hit:beetle:3700:0": true,
+          "tahoe:hit:beetle:4130:0": true,
+          "tahoe:hit:beetle:4560:1": true,
+          "tahoe:hit:nest:4720:3": true,
+          "tahoe:hit:beetle:4560:0": true,
+          "tahoe:hit:nest:4720:2": true,
+          "tahoe:objective:nest:1": true,
+          "tahoe:heal:nest:1": true,
+          "tahoe:hit:nest:4720:0": true,
+          "tahoe:hit:beetle:4500:0": true,
+          "tahoe:hit:beetle:5000:0": true,
+          "tahoe:hit:beetle:5440:0": true,
+          "tahoe:hit:beetle:6000:1": true,
+          "tahoe:hit:beetle:6000:0": true,
+          "tahoe:hit:nest:6380:2": true,
+          "tahoe:hit:beetle:6160:0": true,
+          "tahoe:objective:nest:2": true,
+          "tahoe:heal:nest:2": true,
+          "tahoe:hit:nest:6380:0": true,
+          "tahoe:hit:beetle:6460:0": true,
+          "tahoe:hit:beetle:6990:0": true,
+          "tahoe:hit:beetle:7500:0": true,
+          "tahoe:hit:nest:8020:3": true,
+          "tahoe:hit:beetle:7800:0": true,
+          "tahoe:hit:nest:8020:2": true,
+          "tahoe:objective:nest:3": true,
+          "tahoe:heal:nest:3": true,
+          "tahoe:hit:nest:8020:0": true,
+          "tahoe:hit:beetle:8120:0": true,
+          "tahoe:heal:trail-heart:8": true,
+          "tahoe:hit:beetle:8540:1": true,
+          "tahoe:hit:beetle:8540:0": true,
+          "tahoe:hit:boss:8920.20000000002:17": true,
+          "tahoe:hit:boss:8920.20000000002:16": true,
+          "tahoe:hit:boss:8920.20000000002:15": true,
+          "tahoe:hit:beetle:8522.300000000027:0": true,
+          "tahoe:hit:infection:8576:1": true,
+          "tahoe:hit:boss:8920.20000000002:14": true,
+          "tahoe:hit:boss:8920.20000000002:13": true,
+          "tahoe:objective:tree:0": true,
+          "tahoe:heal:tree:0": true,
+          "tahoe:hit:infection:8576:0": true,
+          "tahoe:hit:boss:8920.20000000002:12": true,
+          "tahoe:hit:boss:8920.20000000002:11": true,
+          "tahoe:hit:boss:8920.20000000002:10": true,
+          "tahoe:hit:beetle:8255.050000000027:0": true,
+          "tahoe:hit:beetle:8420:0": true,
+          "tahoe:hit:boss:8920.20000000002:9": true,
+          "tahoe:hit:boss:8920.20000000002:8": true,
+          "tahoe:hit:beetle:8132.550000000027:0": true,
+          "tahoe:hit:boss:8920.20000000002:7": true,
+          "tahoe:hit:boss:8920.20000000002:6": true,
+          "tahoe:hit:boss:8920.20000000002:5": true,
+          "tahoe:hit:beetle:8124.700000000024:0": true,
+          "tahoe:hit:boss:8920.20000000002:4": true,
+          "tahoe:hit:boss:8920.20000000002:3": true,
+          "tahoe:hit:boss:8920.20000000002:2": true,
+          "tahoe:hit:beetle:8120.300000000023:0": true,
+          "tahoe:hit:boss:8920.20000000002:1": true,
+          "tahoe:objective:pine-queen": true,
+          "tahoe:heal:pine-queen": true,
+          "tahoe:hit:boss:8920.20000000002:0": true,
+          "tahoe:objective:world:tahoe": true,
+          "tahoe:heal:world:tahoe": true
+        },
+        "history": []
+      }
+    }
+  ],
+  "errors": []
+}

@@ -1,0 +1,37 @@
+PASS desktop movement, input, pause, saves, death, boss and portal scenarios
+PASS mobile movement, input, pause, saves, death, boss and portal scenarios
+PASS socal: rotation with 3 touches, paused/menu rotation, 4 landscape sizes, toolbar, safe areas, left-hand/size preferences, dialogue/completion
+PASS tahoe: rotation with 3 touches, paused/menu rotation, 4 landscape sizes, toolbar, safe areas, left-hand/size preferences, dialogue/completion
+PASS Android-sized touch layout and orientation event
+PASS socal: native 3.1 save, original-color pixel detail, damage immunity, all power visuals, collectibles/checkpoint and progression
+PASS tahoe: native 3.1 save, original-color pixel detail, damage immunity, all power visuals, collectibles/checkpoint and progression
+PASS socal audio: autoplay, real signal, settings, 3.2 saves, keyboard menus, rotation, focus loss, transitions and bounded nodes
+PASS tahoe audio: autoplay, real signal, settings, 3.2 saves, keyboard menus, rotation, focus loss, transitions and bounded nodes
+PASS real Web Audio renders: original gameplay and story scores and all effects produce finite, non-silent, unclipped output; loop boundaries contain signal
+PASS Alaska: full live keyboard route, three relays, boss and ending; all powers, collectible, checkpoint/death and backup-save recovery
+PASS Alaska desktop/touch layouts, three-touch rotation, pause/menu recovery, sound settings and timing observations
+PASS installed Alaska launches, moves and plays shared audio offline
+PASS SoCal/Tahoe native detail at three desktop sizes native 3.3 saves and live keyboard play with all characters
+PASS new cast lineups, all Flaming Law powers, Court 1/3/9 figures, warned temporary Rights Drain and save migration; live keyboard Court fight from controlled arena setup
+PASS live keyboard three-phase Pine Beetle Queen battle from controlled arena setup, using Daniel’s established power
+PASS Forest Drain interrupt/failure/save/bounded boost, larvae/flyers/restoration and all powers on roots; salmon route, Queen phases/blizzard/icicles/ice shield/thaw and Hawaii teaser
+PASS 3.4.1 all 27 world/animation strips, nonempty aligned transparent frames, selection/live character screenshots, left-facing power collisions and visual review package
+PASS release version in all adventures; old cached HTML updates only after pause/save approval, retains saves and caches, and repaired release works offline; unchanged worker source detects imported cache-revision updates
+PASS master audit: actual PWA pause/save contracts in three worlds, quota failure, start/continue clarity and opening/gameplay chrome on desktop and mobile
+PASS normal keyboard Queen midpoint → Court 1/3/9 → Zoey rescue; legacy replay protects campaign, quota failure and rotation release
+PASS controlled all-three-powers Queen/Court/Bloom/valves; Court HP reload, independent midpoint/rescue states, replay campaign protection and Hillcrest landmark
+PASS partial Bloom/valve reload, active-fight rotation, quota refusal, replay reward protection, fair flood death/reload and completed legacy world access
+PASS 19 idle/walk and 76 distinct action poses, PNG/WebP loading, alpha/pivots, three live renderers, desktop/landscape and all-world offline caching
+PASS survival: independent HP, world/reload persistence, KO, replay isolation, quota, mobile rotation, HUD bounds and local test namespace
+PASS all 42 encounters across seven survivor configurations, including 18 sole-survivor boss fights; all tiers and survivor achievements
+PASS team activation respects Rights Drain, transformation and Frost shield; interrupts only an eligible Queen windup
+PASS all19 actor interior pixels, crisp bounded outlines, deterministic forest gradient, real-power Queen restoration wave/reload and separate lake sequence, desktop/mobile
+PASS Build4 menu hierarchy, keyboard focus, mode labels, team readiness, ended-run recovery and stale mode/quota transactions
+PASS Build45 hidden menu buttons, untouched landing refresh, retained team and active/returned-title stale-writer protection
+PASS Build45 preferences/reset/quota, cancelled versus quick taps, independent contacts, four-contact switching, safe adjustable gutters and interruption recovery
+PASS actual three-world movement/combat/team/boss timing across 30/60/90/120Hz controlled schedules
+PASS all six encounters in Legacy/Survival at740x240 with large left-handed adjusted controls and visible separate status
+PASS continuous native-keyboard SoCal → Tahoe → Alaska Survival; one roster, genuine three-character contributions and team activation, exact health/charge/contribution handoffs
+PASS origin story: natural 55s/7 scenes, exact narrative, selected hero handoff, Continue, non-destructive replay, skip, gesture audio, pause/rotation, reduced motion, four touch sizes, rendered audio and offline replay
+PASS Story 2: two naturally timed 55s/7-scene recordings, real face-pixel comparisons, overlay negative control, alpha/gutters, actual draw order/smoothing, bounded replay timers/audio and scenery fallback
+PASS installed release launches Tahoe and synthesized music offline

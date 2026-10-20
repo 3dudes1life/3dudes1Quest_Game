@@ -1,0 +1,728 @@
+{
+  "input": [
+    {
+      "label": "baseline",
+      "profile": "keyboard",
+      "action": "movement",
+      "n": 9,
+      "median": 12.1,
+      "p95": 33,
+      "max": 33
+    },
+    {
+      "label": "baseline",
+      "profile": "keyboard",
+      "action": "jump",
+      "n": 9,
+      "median": 13.3,
+      "p95": 29.8,
+      "max": 29.8
+    },
+    {
+      "label": "baseline",
+      "profile": "keyboard",
+      "action": "attack",
+      "n": 9,
+      "median": 12.9,
+      "p95": 30.1,
+      "max": 30.1
+    },
+    {
+      "label": "baseline",
+      "profile": "keyboard",
+      "action": "switch",
+      "n": 9,
+      "median": 0.4,
+      "p95": 0.7,
+      "max": 0.7
+    },
+    {
+      "label": "baseline",
+      "profile": "keyboard",
+      "action": "team",
+      "n": 9,
+      "median": 0.5,
+      "p95": 1,
+      "max": 1
+    },
+    {
+      "label": "baseline",
+      "profile": "touch",
+      "action": "movement",
+      "n": 9,
+      "median": 15.4,
+      "p95": 32,
+      "max": 32
+    },
+    {
+      "label": "baseline",
+      "profile": "touch",
+      "action": "jump",
+      "n": 9,
+      "median": 15.4,
+      "p95": 32,
+      "max": 32
+    },
+    {
+      "label": "baseline",
+      "profile": "touch",
+      "action": "attack",
+      "n": 9,
+      "median": 15.8,
+      "p95": 33.5,
+      "max": 33.5
+    },
+    {
+      "label": "baseline",
+      "profile": "touch",
+      "action": "switch",
+      "n": 9,
+      "median": 0.7,
+      "p95": 1.5,
+      "max": 1.5
+    },
+    {
+      "label": "baseline",
+      "profile": "touch",
+      "action": "team",
+      "n": 9,
+      "median": 0.7,
+      "p95": 1.4,
+      "max": 1.4
+    },
+    {
+      "label": "candidate",
+      "profile": "keyboard",
+      "action": "movement",
+      "n": 9,
+      "median": 11.4,
+      "p95": 38.3,
+      "max": 38.3
+    },
+    {
+      "label": "candidate",
+      "profile": "keyboard",
+      "action": "jump",
+      "n": 9,
+      "median": 13.6,
+      "p95": 14.9,
+      "max": 14.9
+    },
+    {
+      "label": "candidate",
+      "profile": "keyboard",
+      "action": "attack",
+      "n": 9,
+      "median": 13.6,
+      "p95": 29.2,
+      "max": 29.2
+    },
+    {
+      "label": "candidate",
+      "profile": "keyboard",
+      "action": "switch",
+      "n": 9,
+      "median": 0.4,
+      "p95": 1.6,
+      "max": 1.6
+    },
+    {
+      "label": "candidate",
+      "profile": "keyboard",
+      "action": "team",
+      "n": 9,
+      "median": 0.6,
+      "p95": 1.4,
+      "max": 1.4
+    },
+    {
+      "label": "candidate",
+      "profile": "touch",
+      "action": "movement",
+      "n": 9,
+      "median": 16.1,
+      "p95": 32.3,
+      "max": 32.3
+    },
+    {
+      "label": "candidate",
+      "profile": "touch",
+      "action": "jump",
+      "n": 9,
+      "median": 15.7,
+      "p95": 33.2,
+      "max": 33.2
+    },
+    {
+      "label": "candidate",
+      "profile": "touch",
+      "action": "attack",
+      "n": 9,
+      "median": 16,
+      "p95": 32.6,
+      "max": 32.6
+    },
+    {
+      "label": "candidate",
+      "profile": "touch",
+      "action": "switch",
+      "n": 9,
+      "median": 0.6,
+      "p95": 1.4,
+      "max": 1.4
+    },
+    {
+      "label": "candidate",
+      "profile": "touch",
+      "action": "team",
+      "n": 9,
+      "median": 0.9,
+      "p95": 1.3,
+      "max": 1.3
+    }
+  ],
+  "encounters": [
+    {
+      "label": "baseline",
+      "name": "queen",
+      "profile": "desktop",
+      "p50": 16.7,
+      "p95": 16.7,
+      "max": 16.8,
+      "over33": 0,
+      "frames": 179,
+      "team": {
+        "before": 100,
+        "after": 0
+      }
+    },
+    {
+      "label": "baseline",
+      "name": "queen",
+      "profile": "touch",
+      "p50": 16.7,
+      "p95": 16.7,
+      "max": 16.8,
+      "over33": 0,
+      "frames": 179,
+      "team": {
+        "before": 100,
+        "after": 0
+      }
+    },
+    {
+      "label": "baseline",
+      "name": "court",
+      "profile": "desktop",
+      "p50": 16.7,
+      "p95": 16.8,
+      "max": 16.8,
+      "over33": 0,
+      "frames": 179,
+      "team": {
+        "before": 100,
+        "after": 0
+      }
+    },
+    {
+      "label": "baseline",
+      "name": "court",
+      "profile": "touch",
+      "p50": 16.7,
+      "p95": 16.8,
+      "max": 16.8,
+      "over33": 0,
+      "frames": 179,
+      "team": {
+        "before": 100,
+        "after": 0
+      }
+    },
+    {
+      "label": "baseline",
+      "name": "bloom",
+      "profile": "desktop",
+      "p50": 16.7,
+      "p95": 16.8,
+      "max": 16.8,
+      "over33": 0,
+      "frames": 179,
+      "team": {
+        "before": 100,
+        "after": 0
+      }
+    },
+    {
+      "label": "baseline",
+      "name": "bloom",
+      "profile": "touch",
+      "p50": 16.7,
+      "p95": 16.8,
+      "max": 16.8,
+      "over33": 0,
+      "frames": 179,
+      "team": {
+        "before": 100,
+        "after": 0
+      }
+    },
+    {
+      "label": "baseline",
+      "name": "pine-queen",
+      "profile": "desktop",
+      "p50": 16.7,
+      "p95": 16.8,
+      "max": 16.8,
+      "over33": 0,
+      "frames": 179,
+      "team": {
+        "before": 100,
+        "after": 0
+      }
+    },
+    {
+      "label": "baseline",
+      "name": "pine-queen",
+      "profile": "touch",
+      "p50": 16.7,
+      "p95": 16.7,
+      "max": 16.8,
+      "over33": 0,
+      "frames": 179,
+      "team": {
+        "before": 100,
+        "after": 0
+      }
+    },
+    {
+      "label": "baseline",
+      "name": "pipeline",
+      "profile": "desktop",
+      "p50": 16.7,
+      "p95": 16.7,
+      "max": 16.8,
+      "over33": 0,
+      "frames": 179,
+      "team": {
+        "before": 100,
+        "after": 0
+      }
+    },
+    {
+      "label": "baseline",
+      "name": "pipeline",
+      "profile": "touch",
+      "p50": 16.7,
+      "p95": 16.8,
+      "max": 16.8,
+      "over33": 0,
+      "frames": 179,
+      "team": {
+        "before": 100,
+        "after": 0
+      }
+    },
+    {
+      "label": "baseline",
+      "name": "frost-queen",
+      "profile": "desktop",
+      "p50": 16.7,
+      "p95": 16.8,
+      "max": 16.8,
+      "over33": 0,
+      "frames": 179,
+      "team": {
+        "before": 100,
+        "after": 0
+      }
+    },
+    {
+      "label": "baseline",
+      "name": "frost-queen",
+      "profile": "touch",
+      "p50": 16.7,
+      "p95": 16.7,
+      "max": 16.8,
+      "over33": 0,
+      "frames": 179,
+      "team": {
+        "before": 100,
+        "after": 0
+      }
+    },
+    {
+      "label": "candidate",
+      "name": "queen",
+      "profile": "desktop",
+      "p50": 16.7,
+      "p95": 16.8,
+      "max": 16.8,
+      "over33": 0,
+      "frames": 179,
+      "team": {
+        "before": 100,
+        "after": 0
+      }
+    },
+    {
+      "label": "candidate",
+      "name": "queen",
+      "profile": "touch",
+      "p50": 16.7,
+      "p95": 16.8,
+      "max": 16.8,
+      "over33": 0,
+      "frames": 179,
+      "team": {
+        "before": 100,
+        "after": 0
+      }
+    },
+    {
+      "label": "candidate",
+      "name": "court",
+      "profile": "desktop",
+      "p50": 16.7,
+      "p95": 16.7,
+      "max": 16.8,
+      "over33": 0,
+      "frames": 179,
+      "team": {
+        "before": 100,
+        "after": 0
+      }
+    },
+    {
+      "label": "candidate",
+      "name": "court",
+      "profile": "touch",
+      "p50": 16.7,
+      "p95": 16.8,
+      "max": 16.8,
+      "over33": 0,
+      "frames": 179,
+      "team": {
+        "before": 100,
+        "after": 0
+      }
+    },
+    {
+      "label": "candidate",
+      "name": "bloom",
+      "profile": "desktop",
+      "p50": 16.7,
+      "p95": 16.8,
+      "max": 16.8,
+      "over33": 0,
+      "frames": 179,
+      "team": {
+        "before": 100,
+        "after": 0
+      }
+    },
+    {
+      "label": "candidate",
+      "name": "bloom",
+      "profile": "touch",
+      "p50": 16.7,
+      "p95": 16.7,
+      "max": 16.8,
+      "over33": 0,
+      "frames": 179,
+      "team": {
+        "before": 100,
+        "after": 0
+      }
+    },
+    {
+      "label": "candidate",
+      "name": "pine-queen",
+      "profile": "desktop",
+      "p50": 16.7,
+      "p95": 16.8,
+      "max": 16.8,
+      "over33": 0,
+      "frames": 179,
+      "team": {
+        "before": 100,
+        "after": 0
+      }
+    },
+    {
+      "label": "candidate",
+      "name": "pine-queen",
+      "profile": "touch",
+      "p50": 16.7,
+      "p95": 16.7,
+      "max": 16.8,
+      "over33": 0,
+      "frames": 179,
+      "team": {
+        "before": 100,
+        "after": 0
+      }
+    },
+    {
+      "label": "candidate",
+      "name": "pipeline",
+      "profile": "desktop",
+      "p50": 16.7,
+      "p95": 16.7,
+      "max": 16.8,
+      "over33": 0,
+      "frames": 179,
+      "team": {
+        "before": 100,
+        "after": 0
+      }
+    },
+    {
+      "label": "candidate",
+      "name": "pipeline",
+      "profile": "touch",
+      "p50": 16.7,
+      "p95": 16.8,
+      "max": 16.8,
+      "over33": 0,
+      "frames": 179,
+      "team": {
+        "before": 100,
+        "after": 0
+      }
+    },
+    {
+      "label": "candidate",
+      "name": "frost-queen",
+      "profile": "desktop",
+      "p50": 16.7,
+      "p95": 16.7,
+      "max": 16.8,
+      "over33": 0,
+      "frames": 179,
+      "team": {
+        "before": 100,
+        "after": 0
+      }
+    },
+    {
+      "label": "candidate",
+      "name": "frost-queen",
+      "profile": "touch",
+      "p50": 16.7,
+      "p95": 16.8,
+      "max": 16.8,
+      "over33": 0,
+      "frames": 179,
+      "team": {
+        "before": 100,
+        "after": 0
+      }
+    }
+  ],
+  "boot": [
+    {
+      "label": "baseline",
+      "n": 6,
+      "median": 514.0,
+      "p95": 1086,
+      "max": 1086
+    },
+    {
+      "label": "candidate",
+      "n": 6,
+      "median": 525.5,
+      "p95": 1031,
+      "max": 1031
+    }
+  ],
+  "firstUse": [
+    {
+      "label": "baseline",
+      "n": 114,
+      "median": 1.4,
+      "p95": 6.9,
+      "max": 15.5,
+      "worst": {
+        "id": "toxic-bloom",
+        "pose": "attack",
+        "size": 205,
+        "ms": 15.5,
+        "world": "tahoe",
+        "mobile": true
+      }
+    },
+    {
+      "label": "candidate",
+      "n": 114,
+      "median": 1.65,
+      "p95": 9.2,
+      "max": 12.9,
+      "worst": {
+        "id": "toxic-bloom",
+        "pose": "attack",
+        "size": 205,
+        "ms": 12.900000005960464,
+        "world": "tahoe",
+        "mobile": true
+      }
+    }
+  ],
+  "decode": [
+    {
+      "label": "baseline",
+      "loadEvent": {
+        "n": 33,
+        "median": 1.3,
+        "p95": 2.4,
+        "max": 2.8
+      },
+      "explicitDecodeAfterLoad": {
+        "n": 33,
+        "median": 11.9,
+        "p95": 32.5,
+        "max": 32.6
+      },
+      "totalReady": {
+        "n": 33,
+        "median": 13.2,
+        "p95": 34.6,
+        "max": 35.1
+      }
+    },
+    {
+      "label": "candidate",
+      "loadEvent": {
+        "n": 33,
+        "median": 1.4,
+        "p95": 2.6,
+        "max": 2.7
+      },
+      "explicitDecodeAfterLoad": {
+        "n": 33,
+        "median": 12,
+        "p95": 32.7,
+        "max": 33
+      },
+      "totalReady": {
+        "n": 33,
+        "median": 13.4,
+        "p95": 34.7,
+        "max": 35.6
+      }
+    }
+  ],
+  "soak": [
+    {
+      "profile": "desktop",
+      "wallSeconds": 1200.124,
+      "operations": {
+        "switches": 240,
+        "pauses": 60,
+        "teams": 20,
+        "worldEntries": 20
+      },
+      "samples": 120,
+      "perWorld": [
+        {
+          "world": "socal",
+          "heapMiBMin": 3.12,
+          "heapMiBMax": 4.02,
+          "heapMiBFirst": 3.12,
+          "heapMiBLast": 3.98,
+          "listenersMin": 392,
+          "listenersMax": 401,
+          "documentsMax": 2
+        },
+        {
+          "world": "tahoe",
+          "heapMiBMin": 2.88,
+          "heapMiBMax": 3.36,
+          "heapMiBFirst": 2.88,
+          "heapMiBLast": 3.34,
+          "listenersMin": 182,
+          "listenersMax": 187,
+          "documentsMax": 1
+        },
+        {
+          "world": "alaska",
+          "heapMiBMin": 2.81,
+          "heapMiBMax": 3.37,
+          "heapMiBFirst": 2.81,
+          "heapMiBLast": 3.34,
+          "listenersMin": 191,
+          "listenersMax": 197,
+          "documentsMax": 1
+        }
+      ],
+      "audioSchedulersMax": 1,
+      "audioVoicesMax": 9,
+      "audioPeakVoicesMax": 17,
+      "contoursMax": 20,
+      "errors": []
+    },
+    {
+      "profile": "touch",
+      "wallSeconds": 1200.184,
+      "operations": {
+        "switches": 240,
+        "pauses": 60,
+        "teams": 20,
+        "worldEntries": 20
+      },
+      "samples": 120,
+      "perWorld": [
+        {
+          "world": "socal",
+          "heapMiBMin": 3.19,
+          "heapMiBMax": 4.05,
+          "heapMiBFirst": 3.19,
+          "heapMiBLast": 4.01,
+          "listenersMin": 393,
+          "listenersMax": 398,
+          "documentsMax": 2
+        },
+        {
+          "world": "tahoe",
+          "heapMiBMin": 2.91,
+          "heapMiBMax": 3.42,
+          "heapMiBFirst": 2.91,
+          "heapMiBLast": 3.38,
+          "listenersMin": 182,
+          "listenersMax": 186,
+          "documentsMax": 1
+        },
+        {
+          "world": "alaska",
+          "heapMiBMin": 2.82,
+          "heapMiBMax": 3.38,
+          "heapMiBFirst": 2.82,
+          "heapMiBLast": 3.36,
+          "listenersMin": 192,
+          "listenersMax": 201,
+          "documentsMax": 1
+        }
+      ],
+      "audioSchedulersMax": 1,
+      "audioVoicesMax": 12,
+      "audioPeakVoicesMax": 18,
+      "contoursMax": 20,
+      "errors": []
+    }
+  ],
+  "longTasks": [
+    {
+      "label": "baseline",
+      "startupCount": 12,
+      "startupMaxMs": 322,
+      "activeCount": 0,
+      "activeMaxMs": 0
+    },
+    {
+      "label": "candidate",
+      "startupCount": 11,
+      "startupMaxMs": 340,
+      "activeCount": 0,
+      "activeMaxMs": 0
+    }
+  ]
+}

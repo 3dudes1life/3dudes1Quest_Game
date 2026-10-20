@@ -1,0 +1,55 @@
+[
+  {
+    "label": "unit",
+    "command": [
+      "node",
+      "--test",
+      "tests/runtime.test.cjs"
+    ],
+    "startedEpochMs": 1792522104299.339,
+    "completedEpochMs": 1792522104593.0847,
+    "exitCode": 0
+  },
+  {
+    "label": "browser",
+    "command": [
+      "node",
+      "tests/browser.cjs"
+    ],
+    "startedEpochMs": 1792522104593.549,
+    "completedEpochMs": 1792522815229.1992,
+    "exitCode": 0
+  },
+  {
+    "label": "legacy-routes",
+    "command": [
+      "node",
+      "tests/audit-playthroughs.cjs",
+      "all"
+    ],
+    "startedEpochMs": 1792522815230.07,
+    "completedEpochMs": 1792522880237.032,
+    "exitCode": 0
+  },
+  {
+    "label": "survival-routes",
+    "command": [
+      "node",
+      "tests/audit-playthroughs.cjs",
+      "all"
+    ],
+    "startedEpochMs": 1792522880237.619,
+    "completedEpochMs": 1792522944475.904,
+    "exitCode": 0
+  },
+  {
+    "label": "cross-final",
+    "command": [
+      "node",
+      "tests/cross-platform.cjs"
+    ],
+    "startedEpochMs": 1792522944476.5352,
+    "completedEpochMs": 1792522993141.3682,
+    "exitCode": 0
+  }
+]

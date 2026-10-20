@@ -1,0 +1,636 @@
+{
+  "environment": {
+    "platform": "darwin",
+    "arch": "arm64",
+    "osRelease": "27.0.0",
+    "node": "v26.11.1"
+  },
+  "method": "Installed Chrome or Playwright browser engines; native keyboard and menu actions. Touch contexts use synthetic PointerEvent contacts here; trusted four-contact CDP is in build45.cjs. WebKit is not branded Safari; Firefox is a Playwright-patched build. Not physical-device certification. High DPI is an emulated backing ratio; browser zoom/system gestures remain owner checks.",
+  "results": [
+    {
+      "engine": "chromium",
+      "version": "155.0.8059.85",
+      "profile": {
+        "name": "desktop",
+        "width": 1280,
+        "height": 800,
+        "scale": 1
+      },
+      "world": "socal",
+      "geometry": {
+        "rect": {
+          "x": 85.328125,
+          "y": 100,
+          "width": 1109.328125,
+          "height": 624,
+          "top": 100,
+          "right": 1194.65625,
+          "bottom": 724,
+          "left": 85.328125
+        },
+        "logical": [
+          1280,
+          720
+        ],
+        "smoothing": false
+      },
+      "fullscreen": "entered",
+      "gamepads": {
+        "api": true,
+        "connected": 0
+      },
+      "status": "PASS"
+    },
+    {
+      "engine": "chromium",
+      "version": "155.0.8059.85",
+      "profile": {
+        "name": "desktop",
+        "width": 1280,
+        "height": 800,
+        "scale": 1
+      },
+      "world": "tahoe",
+      "geometry": {
+        "rect": {
+          "x": 85.328125,
+          "y": 100,
+          "width": 1109.328125,
+          "height": 624,
+          "top": 100,
+          "right": 1194.65625,
+          "bottom": 724,
+          "left": 85.328125
+        },
+        "logical": [
+          1280,
+          720
+        ],
+        "smoothing": false
+      },
+      "fullscreen": "entered",
+      "gamepads": {
+        "api": true,
+        "connected": 0
+      },
+      "status": "PASS"
+    },
+    {
+      "engine": "chromium",
+      "version": "155.0.8059.85",
+      "profile": {
+        "name": "desktop",
+        "width": 1280,
+        "height": 800,
+        "scale": 1
+      },
+      "world": "alaska",
+      "geometry": {
+        "rect": {
+          "x": 85.328125,
+          "y": 100,
+          "width": 1109.328125,
+          "height": 624,
+          "top": 100,
+          "right": 1194.65625,
+          "bottom": 724,
+          "left": 85.328125
+        },
+        "logical": [
+          1280,
+          720
+        ],
+        "smoothing": false
+      },
+      "fullscreen": "entered",
+      "gamepads": {
+        "api": true,
+        "connected": 0
+      },
+      "status": "PASS"
+    },
+    {
+      "engine": "chromium",
+      "version": "155.0.8059.85",
+      "profile": {
+        "name": "large-hidpi",
+        "width": 2560,
+        "height": 1440,
+        "scale": 2
+      },
+      "world": "socal",
+      "geometry": {
+        "rect": {
+          "x": 156.4375,
+          "y": 100,
+          "width": 2247.109375,
+          "height": 1264,
+          "top": 100,
+          "right": 2403.546875,
+          "bottom": 1364,
+          "left": 156.4375
+        },
+        "logical": [
+          1280,
+          720
+        ],
+        "smoothing": false
+      },
+      "fullscreen": "entered",
+      "gamepads": {
+        "api": true,
+        "connected": 0
+      },
+      "status": "PASS"
+    },
+    {
+      "engine": "chromium",
+      "version": "155.0.8059.85",
+      "profile": {
+        "name": "large-hidpi",
+        "width": 2560,
+        "height": 1440,
+        "scale": 2
+      },
+      "world": "tahoe",
+      "geometry": {
+        "rect": {
+          "x": 156.4375,
+          "y": 100,
+          "width": 2247.109375,
+          "height": 1264,
+          "top": 100,
+          "right": 2403.546875,
+          "bottom": 1364,
+          "left": 156.4375
+        },
+        "logical": [
+          1280,
+          720
+        ],
+        "smoothing": false
+      },
+      "fullscreen": "entered",
+      "gamepads": {
+        "api": true,
+        "connected": 0
+      },
+      "status": "PASS"
+    },
+    {
+      "engine": "chromium",
+      "version": "155.0.8059.85",
+      "profile": {
+        "name": "large-hidpi",
+        "width": 2560,
+        "height": 1440,
+        "scale": 2
+      },
+      "world": "alaska",
+      "geometry": {
+        "rect": {
+          "x": 156.4375,
+          "y": 100,
+          "width": 2247.109375,
+          "height": 1264,
+          "top": 100,
+          "right": 2403.546875,
+          "bottom": 1364,
+          "left": 156.4375
+        },
+        "logical": [
+          1280,
+          720
+        ],
+        "smoothing": false
+      },
+      "fullscreen": "entered",
+      "gamepads": {
+        "api": true,
+        "connected": 0
+      },
+      "status": "PASS"
+    },
+    {
+      "engine": "chromium",
+      "version": "155.0.8059.85",
+      "profile": {
+        "name": "touch-landscape",
+        "width": 844,
+        "height": 390,
+        "scale": 3,
+        "touch": true
+      },
+      "world": "socal",
+      "geometry": {
+        "rect": {
+          "x": 226.21875,
+          "y": 135,
+          "width": 387.546875,
+          "height": 218,
+          "top": 135,
+          "right": 613.765625,
+          "bottom": 353,
+          "left": 226.21875
+        },
+        "logical": [
+          1280,
+          720
+        ],
+        "smoothing": false
+      },
+      "fullscreen": "not attempted on touch",
+      "gamepads": {
+        "api": true,
+        "connected": 0
+      },
+      "status": "PASS"
+    },
+    {
+      "engine": "chromium",
+      "version": "155.0.8059.85",
+      "profile": {
+        "name": "touch-landscape",
+        "width": 844,
+        "height": 390,
+        "scale": 3,
+        "touch": true
+      },
+      "world": "tahoe",
+      "geometry": {
+        "rect": {
+          "x": 226.21875,
+          "y": 135,
+          "width": 387.546875,
+          "height": 218,
+          "top": 135,
+          "right": 613.765625,
+          "bottom": 353,
+          "left": 226.21875
+        },
+        "logical": [
+          1280,
+          720
+        ],
+        "smoothing": false
+      },
+      "fullscreen": "not attempted on touch",
+      "gamepads": {
+        "api": true,
+        "connected": 0
+      },
+      "status": "PASS"
+    },
+    {
+      "engine": "chromium",
+      "version": "155.0.8059.85",
+      "profile": {
+        "name": "touch-landscape",
+        "width": 844,
+        "height": 390,
+        "scale": 3,
+        "touch": true
+      },
+      "world": "alaska",
+      "geometry": {
+        "rect": {
+          "x": 226.21875,
+          "y": 135,
+          "width": 387.546875,
+          "height": 218,
+          "top": 135,
+          "right": 613.765625,
+          "bottom": 353,
+          "left": 226.21875
+        },
+        "logical": [
+          1280,
+          720
+        ],
+        "smoothing": false
+      },
+      "fullscreen": "not attempted on touch",
+      "gamepads": {
+        "api": true,
+        "connected": 0
+      },
+      "status": "PASS"
+    },
+    {
+      "engine": "webkit",
+      "version": "26.5",
+      "profile": {
+        "name": "desktop",
+        "width": 1280,
+        "height": 800,
+        "scale": 1
+      },
+      "world": "socal",
+      "geometry": {
+        "rect": {
+          "x": 85.328125,
+          "y": 100,
+          "width": 1109.328125,
+          "height": 624,
+          "top": 100,
+          "right": 1194.65625,
+          "bottom": 724,
+          "left": 85.328125
+        },
+        "logical": [
+          1280,
+          720
+        ],
+        "smoothing": false
+      },
+      "fullscreen": "entered",
+      "gamepads": {
+        "api": true,
+        "connected": 0
+      },
+      "status": "PASS"
+    },
+    {
+      "engine": "webkit",
+      "version": "26.5",
+      "profile": {
+        "name": "desktop",
+        "width": 1280,
+        "height": 800,
+        "scale": 1
+      },
+      "world": "tahoe",
+      "geometry": {
+        "rect": {
+          "x": 85.328125,
+          "y": 100,
+          "width": 1109.328125,
+          "height": 624,
+          "top": 100,
+          "right": 1194.65625,
+          "bottom": 724,
+          "left": 85.328125
+        },
+        "logical": [
+          1280,
+          720
+        ],
+        "smoothing": false
+      },
+      "fullscreen": "entered",
+      "gamepads": {
+        "api": true,
+        "connected": 0
+      },
+      "status": "PASS"
+    },
+    {
+      "engine": "webkit",
+      "version": "26.5",
+      "profile": {
+        "name": "desktop",
+        "width": 1280,
+        "height": 800,
+        "scale": 1
+      },
+      "world": "alaska",
+      "geometry": {
+        "rect": {
+          "x": 85.328125,
+          "y": 100,
+          "width": 1109.328125,
+          "height": 624,
+          "top": 100,
+          "right": 1194.65625,
+          "bottom": 724,
+          "left": 85.328125
+        },
+        "logical": [
+          1280,
+          720
+        ],
+        "smoothing": false
+      },
+      "fullscreen": "entered",
+      "gamepads": {
+        "api": true,
+        "connected": 0
+      },
+      "status": "PASS"
+    },
+    {
+      "engine": "webkit",
+      "version": "26.5",
+      "profile": {
+        "name": "large-hidpi",
+        "width": 2560,
+        "height": 1440,
+        "scale": 2
+      },
+      "world": "socal",
+      "geometry": {
+        "rect": {
+          "x": 156.4375,
+          "y": 100,
+          "width": 2247.109375,
+          "height": 1264,
+          "top": 100,
+          "right": 2403.546875,
+          "bottom": 1364,
+          "left": 156.4375
+        },
+        "logical": [
+          1280,
+          720
+        ],
+        "smoothing": false
+      },
+      "fullscreen": "entered",
+      "gamepads": {
+        "api": true,
+        "connected": 0
+      },
+      "status": "PASS"
+    },
+    {
+      "engine": "webkit",
+      "version": "26.5",
+      "profile": {
+        "name": "large-hidpi",
+        "width": 2560,
+        "height": 1440,
+        "scale": 2
+      },
+      "world": "tahoe",
+      "geometry": {
+        "rect": {
+          "x": 156.4375,
+          "y": 100,
+          "width": 2247.109375,
+          "height": 1264,
+          "top": 100,
+          "right": 2403.546875,
+          "bottom": 1364,
+          "left": 156.4375
+        },
+        "logical": [
+          1280,
+          720
+        ],
+        "smoothing": false
+      },
+      "fullscreen": "entered",
+      "gamepads": {
+        "api": true,
+        "connected": 0
+      },
+      "status": "PASS"
+    },
+    {
+      "engine": "webkit",
+      "version": "26.5",
+      "profile": {
+        "name": "large-hidpi",
+        "width": 2560,
+        "height": 1440,
+        "scale": 2
+      },
+      "world": "alaska",
+      "geometry": {
+        "rect": {
+          "x": 156.4375,
+          "y": 100,
+          "width": 2247.109375,
+          "height": 1264,
+          "top": 100,
+          "right": 2403.546875,
+          "bottom": 1364,
+          "left": 156.4375
+        },
+        "logical": [
+          1280,
+          720
+        ],
+        "smoothing": false
+      },
+      "fullscreen": "entered",
+      "gamepads": {
+        "api": true,
+        "connected": 0
+      },
+      "status": "PASS"
+    },
+    {
+      "engine": "webkit",
+      "version": "26.5",
+      "profile": {
+        "name": "touch-landscape",
+        "width": 844,
+        "height": 390,
+        "scale": 3,
+        "touch": true
+      },
+      "world": "socal",
+      "geometry": {
+        "rect": {
+          "x": 226.21875,
+          "y": 135,
+          "width": 387.546875,
+          "height": 218,
+          "top": 135,
+          "right": 613.765625,
+          "bottom": 353,
+          "left": 226.21875
+        },
+        "logical": [
+          1280,
+          720
+        ],
+        "smoothing": false
+      },
+      "fullscreen": "not attempted on touch",
+      "gamepads": {
+        "api": true,
+        "connected": 0
+      },
+      "status": "PASS"
+    },
+    {
+      "engine": "webkit",
+      "version": "26.5",
+      "profile": {
+        "name": "touch-landscape",
+        "width": 844,
+        "height": 390,
+        "scale": 3,
+        "touch": true
+      },
+      "world": "tahoe",
+      "geometry": {
+        "rect": {
+          "x": 226.21875,
+          "y": 135,
+          "width": 387.546875,
+          "height": 218,
+          "top": 135,
+          "right": 613.765625,
+          "bottom": 353,
+          "left": 226.21875
+        },
+        "logical": [
+          1280,
+          720
+        ],
+        "smoothing": false
+      },
+      "fullscreen": "not attempted on touch",
+      "gamepads": {
+        "api": true,
+        "connected": 0
+      },
+      "status": "PASS"
+    },
+    {
+      "engine": "webkit",
+      "version": "26.5",
+      "profile": {
+        "name": "touch-landscape",
+        "width": 844,
+        "height": 390,
+        "scale": 3,
+        "touch": true
+      },
+      "world": "alaska",
+      "geometry": {
+        "rect": {
+          "x": 226.21875,
+          "y": 135,
+          "width": 387.546875,
+          "height": 218,
+          "top": 135,
+          "right": 613.765625,
+          "bottom": 353,
+          "left": 226.21875
+        },
+        "logical": [
+          1280,
+          720
+        ],
+        "smoothing": false
+      },
+      "fullscreen": "not attempted on touch",
+      "gamepads": {
+        "api": true,
+        "connected": 0
+      },
+      "status": "PASS"
+    }
+  ],
+  "blocked": [
+    {
+      "engine": "firefox",
+      "status": "BLOCKED: local browser launch",
+      "message": "browserType.launch: Timeout 20000ms exceeded.\nCall log:\n\u001b[2m  - <launching> <user>/Library/Caches/ms-playwright/firefox-1538/firefox/Nightly.app/Contents/MacOS/firefox -no-remote -headless -profile /var/folders/71/9pc6vl295tb7d26wn1fdzy_r0000gn/T/playwright_firefoxdev_profile-tG0CcU -juggler-pipe -silent\u001b[22m\n\u001b[2m  - <launched> pid=26840\u001b[22m\n\u001b[2m  - [pid=26840][err] *** You are running in headless mode.\u001b[22m\n\u001b[2m  - [pid=26840][err] sandbox_extension_issue_file_to_process failed for <user>/Library/Caches/ms-playwright/firefox-1538/firefox/Nightly.app/Contents/MacOS/plugin-container.app: 1 (Operation not permitted)\u001b[22m\n\u001b[2m  - [pid=26840][out] Crash Annotation GraphicsCriticalError: |[0][GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt (t=0.8255) [GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt\u001b[22m\n"
+    }
+  ]
+}

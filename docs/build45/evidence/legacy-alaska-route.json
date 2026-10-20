@@ -1,0 +1,51 @@
+{
+  "world": "alaska",
+  "method": "normal keyboard; read-only state observations; no teleports/invulnerability/boss edits",
+  "seconds": 32.186,
+  "result": {
+    "poses": {
+      "walk": 6795,
+      "hurt": 1516,
+      "defeat": 843,
+      "prepare": 175,
+      "attack": 83,
+      "transform": 17
+    },
+    "pipeline": true,
+    "completed": true,
+    "deaths": 0,
+    "sessionMethods": [
+      "isActive",
+      "save",
+      "pause",
+      "suspendViewport"
+    ],
+    "ending": "ADVENTURE 3 COMPLETE\nThe Aurora Returns\n\nTHE LAST FRONTIER IS SAVED! Her curse breaks, the salmon return to normal, and the northern lights shine in rainbow colors. Rigsby celebrates with snow zoomies; Zoey retrieves the trail keeper’s satchel.\n\nBeyond the portal: Hawaii. Costa Rica awaits as the fifth and final adventure, where the three dudes retire together.\n\nNEXT ADVENTURE: HAWAII · COMING SOON...\nReplay Alaska\nReturn to Quest Hub"
+  },
+  "events": [],
+  "errors": [],
+  "assets": [
+    "assets/master-build/actors/pipeline-worker.webp",
+    "assets/master-build/actors/pipeline-worker-actions.webp",
+    "assets/master-build/actors/surveillance-drone.webp",
+    "assets/cast340/alaska.png",
+    "assets/master-build/actors/surveillance-drone-actions.webp",
+    "assets/master-build/actors/security-turret.webp",
+    "assets/cast341/will.png",
+    "assets/cast341/daniel.png",
+    "assets/master-build/actors/security-turret-actions.webp",
+    "assets/master-build/actors/machinery.webp",
+    "assets/cast341/caleb.png",
+    "assets/master-build/actors/machinery-actions.webp",
+    "assets/master-build/actors/oil-slime.webp",
+    "assets/master-build/actors/oil-slime-actions.webp",
+    "assets/master-build/actors/frost-queen-actions.webp",
+    "assets/master-build/actors/frost-queen.webp",
+    "assets/master-build/actors/zombie-salmon.webp",
+    "assets/master-build/actors/zombie-salmon-actions.webp",
+    "assets/master-build/actors/alaskan-owl.webp",
+    "assets/master-build/actors/alaskan-owl-actions.webp",
+    "assets/master-build/foreground.webp",
+    "assets/master-build/alaska-scenes.webp"
+  ]
+}

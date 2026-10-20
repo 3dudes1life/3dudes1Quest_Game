@@ -1,0 +1,134 @@
+{
+  "commit": "0ca1a2bc79246a08e567dfc92f28052b611a2c81",
+  "site": "https://3dudes1quest.com/",
+  "files": [
+    {
+      "file": "index.html",
+      "status": 200,
+      "sha256": "2d1e9a9ffbed48f7440ef3584d55959c2908c93822398effa25a6f46a2ddac6b",
+      "match": true,
+      "bytes": 19071,
+      "cache_control": "max-age=600"
+    },
+    {
+      "file": "tahoe.html",
+      "status": 200,
+      "sha256": "d3c11e83bf478682a8f7acab04db04cada44356eeaff95320a109656ab43b31f",
+      "match": true,
+      "bytes": 8662,
+      "cache_control": "max-age=600"
+    },
+    {
+      "file": "alaska.html",
+      "status": 200,
+      "sha256": "dbcdaeb6b0d267fd41751581a841421a1a08114767217b2bf02271b389f76a31",
+      "match": true,
+      "bytes": 5823,
+      "cache_control": "max-age=600"
+    },
+    {
+      "file": "VERSION.txt",
+      "status": 200,
+      "sha256": "cc714f5e0224a78311f4835e9fbb88e69ba35f65e7dd5cb7d86cabb4a84bbd72",
+      "match": true,
+      "bytes": 6,
+      "cache_control": "max-age=600"
+    },
+    {
+      "file": "js/core/quest-release.js",
+      "status": 200,
+      "sha256": "86e114cb74bb77b391152cbfe8c8b023426ab69f84c08644fda8067ccf6d88dd",
+      "match": true,
+      "bytes": 479,
+      "cache_control": "max-age=600"
+    },
+    {
+      "file": "js/core/quest-survival.js",
+      "status": 200,
+      "sha256": "71b70bbb87d33b11497b445c4b5779aacef87c5daa4f5bcaaa33a09e20597b8a",
+      "match": true,
+      "bytes": 19685,
+      "cache_control": "max-age=600"
+    },
+    {
+      "file": "js/core/quest-runtime.js",
+      "status": 200,
+      "sha256": "61be178dd1240c30938b0cbc7e2231c6284ad55085b31c7ecbf4a1a49d5ddf7e",
+      "match": true,
+      "bytes": 9363,
+      "cache_control": "max-age=600"
+    },
+    {
+      "file": "js/core/quest-interface.js",
+      "status": 200,
+      "sha256": "1fa729af39bc202cc7b9fe71f3ddb4fac36027ae5b4a0e38cd6ffdbe0840bb25",
+      "match": true,
+      "bytes": 4120,
+      "cache_control": "max-age=600"
+    },
+    {
+      "file": "js/core/quest-viewport.js",
+      "status": 200,
+      "sha256": "ef3ac4b92962a5efde418f0bd5f1964fec2350d143e4b7cfd3e8ba96a4438b46",
+      "match": true,
+      "bytes": 6348,
+      "cache_control": "max-age=600"
+    },
+    {
+      "file": "js/app109.js",
+      "status": 200,
+      "sha256": "a60122da004b689a37a17848e4b4489f77a76cd7510c2bf6ab1bb38bfe602b1b",
+      "match": true,
+      "bytes": 143754,
+      "cache_control": "max-age=600"
+    },
+    {
+      "file": "js/tahoe253.js",
+      "status": 200,
+      "sha256": "fb89dafee47d5e372613650abf2b88f41d343b8f7288d5881d9a66c6418f15fa",
+      "match": true,
+      "bytes": 66732,
+      "cache_control": "max-age=600"
+    },
+    {
+      "file": "js/core/quest-adventure.js",
+      "status": 200,
+      "sha256": "e7e4ab2a3e7df94b96ad46b926551e1fb228b7bb1d65fe67fd375c73de82a557",
+      "match": true,
+      "bytes": 39257,
+      "cache_control": "max-age=600"
+    },
+    {
+      "file": "js/core/quest-master-art.js",
+      "status": 200,
+      "sha256": "2d18dfe1051606d31abb39c13aff05ce503ef654d6d684507032a60c1e3fbbe7",
+      "match": true,
+      "bytes": 7006,
+      "cache_control": "max-age=600"
+    },
+    {
+      "file": "js/core/quest-story.js",
+      "status": 200,
+      "sha256": "bc5dc26c14c05538d0675d1772cdb5d038f4e714641fe35612b0caa9f06879ed",
+      "match": true,
+      "bytes": 12646,
+      "cache_control": "max-age=600"
+    },
+    {
+      "file": "css/polish4.css",
+      "status": 200,
+      "sha256": "90d50ecbb2481ef4d9ac1064defb55380e9e7c35285f0adf55eb34eb2d0aa527",
+      "match": true,
+      "bytes": 3950,
+      "cache_control": "max-age=600"
+    },
+    {
+      "file": "service-worker.js",
+      "status": 200,
+      "sha256": "fd9cb95feb61162945d91e95ca4ac764ca96103962dcb42e320024b1bbc0f0a7",
+      "match": true,
+      "bytes": 8099,
+      "cache_control": "max-age=600"
+    }
+  ]
+}

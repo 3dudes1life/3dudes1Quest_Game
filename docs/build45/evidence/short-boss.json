@@ -1,0 +1,409 @@
+{
+  "method": "Controlled arena/camera fixtures for visual review, damage protection and isolated prerequisites. Bloom/Pipeline use their native objective status instead of a separate boss bar. Queen/Bloom are defeated with real projectiles before the next scene; Frost prerequisites are fixtures. These screenshots do not claim natural-route completion. Native routes and 42-survivor victories are reported separately.",
+  "results": [
+    {
+      "world": "socal",
+      "mobile": true,
+      "survival": false,
+      "name": "queen",
+      "boss": {
+        "x": 436,
+        "y": 49,
+        "width": 296,
+        "height": 23,
+        "top": 49,
+        "right": 732,
+        "bottom": 72,
+        "left": 436
+      },
+      "objective": {
+        "x": 8,
+        "y": 48,
+        "width": 391,
+        "height": 26,
+        "top": 48,
+        "right": 399,
+        "bottom": 74,
+        "left": 8
+      },
+      "text": "QUEEN OF BEIGE 10/10",
+      "canvas": {
+        "x": 261.546875,
+        "y": 92,
+        "width": 216.875,
+        "height": 122,
+        "top": 92,
+        "right": 478.421875,
+        "bottom": 214,
+        "left": 261.546875
+      }
+    },
+    {
+      "world": "socal",
+      "mobile": true,
+      "survival": false,
+      "name": "court",
+      "boss": {
+        "x": 436,
+        "y": 49,
+        "width": 296,
+        "height": 38,
+        "top": 49,
+        "right": 732,
+        "bottom": 87,
+        "left": 436
+      },
+      "objective": {
+        "x": 8,
+        "y": 48,
+        "width": 391,
+        "height": 26,
+        "top": 48,
+        "right": 399,
+        "bottom": 74,
+        "left": 8
+      },
+      "text": "COURT OF SUPREMES · PHASE 3 · DRAIN WARNING",
+      "canvas": {
+        "x": 261.546875,
+        "y": 92,
+        "width": 216.875,
+        "height": 122,
+        "top": 92,
+        "right": 478.421875,
+        "bottom": 214,
+        "left": 261.546875
+      }
+    },
+    {
+      "world": "tahoe",
+      "mobile": true,
+      "survival": false,
+      "name": "bloom",
+      "objective": {
+        "x": 8,
+        "y": 48,
+        "width": 391,
+        "height": 26,
+        "top": 48,
+        "right": 399,
+        "bottom": 74,
+        "left": 8
+      },
+      "text": "TOXIC BLOOM · 3 cores remain",
+      "canvas": {
+        "x": 261.546875,
+        "y": 92,
+        "width": 216.875,
+        "height": 122,
+        "top": 92,
+        "right": 478.421875,
+        "bottom": 214,
+        "left": 261.546875
+      }
+    },
+    {
+      "world": "tahoe",
+      "mobile": true,
+      "survival": false,
+      "name": "pine-queen",
+      "boss": {
+        "x": 436,
+        "y": 49,
+        "width": 296,
+        "height": 31,
+        "top": 49,
+        "right": 732,
+        "bottom": 80,
+        "left": 436
+      },
+      "objective": {
+        "x": 8,
+        "y": 48,
+        "width": 391,
+        "height": 26,
+        "top": 48,
+        "right": 399,
+        "bottom": 74,
+        "left": 8
+      },
+      "text": "PINE BEETLE QUEEN\nPHASE 1",
+      "canvas": {
+        "x": 261.546875,
+        "y": 92,
+        "width": 216.875,
+        "height": 122,
+        "top": 92,
+        "right": 478.421875,
+        "bottom": 214,
+        "left": 261.546875
+      }
+    },
+    {
+      "world": "alaska",
+      "mobile": true,
+      "survival": false,
+      "name": "pipeline",
+      "objective": {
+        "x": 8,
+        "y": 48,
+        "width": 391,
+        "height": 26,
+        "top": 48,
+        "right": 399,
+        "bottom": 74,
+        "left": 8
+      },
+      "text": "PIPELINE MELTDOWN · 3 valves left",
+      "canvas": {
+        "x": 261.546875,
+        "y": 92,
+        "width": 216.875,
+        "height": 122,
+        "top": 92,
+        "right": 478.421875,
+        "bottom": 214,
+        "left": 261.546875
+      }
+    },
+    {
+      "world": "alaska",
+      "mobile": true,
+      "survival": false,
+      "name": "frost-queen",
+      "boss": {
+        "x": 436,
+        "y": 49,
+        "width": 296,
+        "height": 31,
+        "top": 49,
+        "right": 732,
+        "bottom": 80,
+        "left": 436
+      },
+      "objective": {
+        "x": 8,
+        "y": 48,
+        "width": 391,
+        "height": 26,
+        "top": 48,
+        "right": 399,
+        "bottom": 74,
+        "left": 8
+      },
+      "text": "FROST QUEEN\nPHASE 1 · BLIZZARD",
+      "canvas": {
+        "x": 261.546875,
+        "y": 92,
+        "width": 216.875,
+        "height": 122,
+        "top": 92,
+        "right": 478.421875,
+        "bottom": 214,
+        "left": 261.546875
+      }
+    },
+    {
+      "world": "socal",
+      "mobile": true,
+      "survival": true,
+      "name": "queen",
+      "boss": {
+        "x": 436,
+        "y": 80,
+        "width": 296,
+        "height": 23,
+        "top": 80,
+        "right": 732,
+        "bottom": 103,
+        "left": 436
+      },
+      "objective": {
+        "x": 8,
+        "y": 80,
+        "width": 391,
+        "height": 26,
+        "top": 80,
+        "right": 399,
+        "bottom": 106,
+        "left": 8
+      },
+      "text": "QUEEN OF BEIGE 10/10",
+      "canvas": {
+        "x": 293.546875,
+        "y": 128,
+        "width": 152.875,
+        "height": 86,
+        "top": 128,
+        "right": 446.421875,
+        "bottom": 214,
+        "left": 293.546875
+      }
+    },
+    {
+      "world": "socal",
+      "mobile": true,
+      "survival": true,
+      "name": "court",
+      "boss": {
+        "x": 436,
+        "y": 80,
+        "width": 296,
+        "height": 38,
+        "top": 80,
+        "right": 732,
+        "bottom": 118,
+        "left": 436
+      },
+      "objective": {
+        "x": 8,
+        "y": 80,
+        "width": 391,
+        "height": 26,
+        "top": 80,
+        "right": 399,
+        "bottom": 106,
+        "left": 8
+      },
+      "text": "COURT OF SUPREMES · PHASE 3 · DRAIN WARNING",
+      "canvas": {
+        "x": 293.546875,
+        "y": 128,
+        "width": 152.875,
+        "height": 86,
+        "top": 128,
+        "right": 446.421875,
+        "bottom": 214,
+        "left": 293.546875
+      }
+    },
+    {
+      "world": "tahoe",
+      "mobile": true,
+      "survival": true,
+      "name": "bloom",
+      "objective": {
+        "x": 8,
+        "y": 80,
+        "width": 391,
+        "height": 26,
+        "top": 80,
+        "right": 399,
+        "bottom": 106,
+        "left": 8
+      },
+      "text": "TOXIC BLOOM · 3 cores remain",
+      "canvas": {
+        "x": 293.546875,
+        "y": 128,
+        "width": 152.875,
+        "height": 86,
+        "top": 128,
+        "right": 446.421875,
+        "bottom": 214,
+        "left": 293.546875
+      }
+    },
+    {
+      "world": "tahoe",
+      "mobile": true,
+      "survival": true,
+      "name": "pine-queen",
+      "boss": {
+        "x": 436,
+        "y": 80,
+        "width": 296,
+        "height": 31,
+        "top": 80,
+        "right": 732,
+        "bottom": 111,
+        "left": 436
+      },
+      "objective": {
+        "x": 8,
+        "y": 80,
+        "width": 391,
+        "height": 26,
+        "top": 80,
+        "right": 399,
+        "bottom": 106,
+        "left": 8
+      },
+      "text": "PINE BEETLE QUEEN\nPHASE 1",
+      "canvas": {
+        "x": 293.546875,
+        "y": 128,
+        "width": 152.875,
+        "height": 86,
+        "top": 128,
+        "right": 446.421875,
+        "bottom": 214,
+        "left": 293.546875
+      }
+    },
+    {
+      "world": "alaska",
+      "mobile": true,
+      "survival": true,
+      "name": "pipeline",
+      "objective": {
+        "x": 8,
+        "y": 80,
+        "width": 391,
+        "height": 26,
+        "top": 80,
+        "right": 399,
+        "bottom": 106,
+        "left": 8
+      },
+      "text": "PIPELINE MELTDOWN · 3 valves left",
+      "canvas": {
+        "x": 293.546875,
+        "y": 128,
+        "width": 152.875,
+        "height": 86,
+        "top": 128,
+        "right": 446.421875,
+        "bottom": 214,
+        "left": 293.546875
+      }
+    },
+    {
+      "world": "alaska",
+      "mobile": true,
+      "survival": true,
+      "name": "frost-queen",
+      "boss": {
+        "x": 436,
+        "y": 80,
+        "width": 296,
+        "height": 31,
+        "top": 80,
+        "right": 732,
+        "bottom": 111,
+        "left": 436
+      },
+      "objective": {
+        "x": 8,
+        "y": 80,
+        "width": 391,
+        "height": 26,
+        "top": 80,
+        "right": 399,
+        "bottom": 106,
+        "left": 8
+      },
+      "text": "FROST QUEEN\nPHASE 1 · BLIZZARD",
+      "canvas": {
+        "x": 293.546875,
+        "y": 128,
+        "width": 152.875,
+        "height": 86,
+        "top": 128,
+        "right": 446.421875,
+        "bottom": 214,
+        "left": 293.546875
+      }
+    }
+  ]
+}

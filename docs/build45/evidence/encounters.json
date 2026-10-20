@@ -1,0 +1,2689 @@
+{
+  "method": "Matched sequential Chrome desktop/touch profiles. Controlled existing encounter prerequisites: nine judges, Bloom with native minions, phase3 Pine Queen after native larvae/flyer updates, Pipeline flood, phase3 Frost with native salmon/blizzard. 179 real RAF intervals per scene, full team charge fixture followed by actual T at about1s. Warm scene pacing includes simulation and team effects; not GPU timing or a normal route.",
+  "results": [
+    {
+      "label": "baseline",
+      "world": "socal",
+      "mobile": false,
+      "name": "queen",
+      "boss": {
+        "x": 760,
+        "y": 80,
+        "width": 512,
+        "height": 23,
+        "top": 80,
+        "right": 1272,
+        "bottom": 103,
+        "left": 760
+      },
+      "objective": {
+        "x": 8,
+        "y": 80,
+        "width": 688,
+        "height": 26,
+        "top": 80,
+        "right": 696,
+        "bottom": 106,
+        "left": 8
+      },
+      "text": "QUEEN OF BEIGE 10/10",
+      "canvas": {
+        "x": 85.328125,
+        "y": 100,
+        "width": 1109.328125,
+        "height": 624,
+        "top": 100,
+        "right": 1194.65625,
+        "bottom": 724,
+        "left": 85.328125
+      },
+      "sample": {
+        "p50": 16.699999999999818,
+        "p95": 16.700000000000728,
+        "max": 16.800000000000182,
+        "over33": 0,
+        "frames": 179,
+        "audio": {
+          "initialized": true,
+          "state": "running",
+          "blocked": false,
+          "track": "boss",
+          "cursor": 20,
+          "playing": true,
+          "completed": false,
+          "voices": 7,
+          "musicVoices": 5,
+          "sfxVoices": 2,
+          "ahead": 0.25937209302325526,
+          "peakVoices": 12,
+          "scheduled": 98,
+          "dropped": 0,
+          "transitions": 3,
+          "schedulers": 1,
+          "settings": {
+            "music": true,
+            "sfx": true,
+            "musicVolume": 0.32,
+            "sfxVolume": 0.55,
+            "mute": false
+          },
+          "events": {
+            "menu": 1,
+            "checkpoint": 1,
+            "bossAppear": 1,
+            "secret": 2,
+            "throuple": 1,
+            "bossHit": 3,
+            "warning": 2,
+            "heartPop": 1,
+            "cookie": 1,
+            "damage": 1
+          },
+          "signalPeak": 0.19934439659118652,
+          "rms": 0.09255322757933122
+        },
+        "art": {
+          "loaded": true,
+          "actors": [
+            "queen-beige",
+            "court-judge",
+            "flaming-law",
+            "hoa-drone",
+            "beige-bot"
+          ],
+          "contours": 13,
+          "contourBytes": 1712152,
+          "contourBuilds": 13,
+          "draws": 266,
+          "backgrounds": 184,
+          "failed": [],
+          "poses": {
+            "walk": 163,
+            "idle": 3,
+            "hurt": 27,
+            "prepare": 35,
+            "attack": 9,
+            "transform": 29
+          },
+          "lastPanel": 2
+        },
+        "heap": 8394433,
+        "charge": 0
+      },
+      "team": {
+        "before": 100,
+        "after": 0
+      }
+    },
+    {
+      "label": "baseline",
+      "world": "socal",
+      "mobile": false,
+      "name": "court",
+      "boss": {
+        "x": 760,
+        "y": 80,
+        "width": 512,
+        "height": 23,
+        "top": 80,
+        "right": 1272,
+        "bottom": 103,
+        "left": 760
+      },
+      "objective": {
+        "x": 8,
+        "y": 80,
+        "width": 688,
+        "height": 26,
+        "top": 80,
+        "right": 696,
+        "bottom": 106,
+        "left": 8
+      },
+      "text": "COURT OF SUPREMES · PHASE 3 · POWERS READY",
+      "canvas": {
+        "x": 85.328125,
+        "y": 100,
+        "width": 1109.328125,
+        "height": 624,
+        "top": 100,
+        "right": 1194.65625,
+        "bottom": 724,
+        "left": 85.328125
+      },
+      "sample": {
+        "p50": 16.699999999999818,
+        "p95": 16.799999999999272,
+        "max": 16.800000000000182,
+        "over33": 0,
+        "frames": 179,
+        "audio": {
+          "initialized": true,
+          "state": "running",
+          "blocked": false,
+          "track": "victory",
+          "cursor": 4,
+          "playing": true,
+          "completed": false,
+          "voices": 3,
+          "musicVoices": 3,
+          "sfxVoices": 0,
+          "ahead": 0.15475757575757676,
+          "peakVoices": 18,
+          "scheduled": 210,
+          "dropped": 0,
+          "transitions": 4,
+          "schedulers": 1,
+          "settings": {
+            "music": true,
+            "sfx": true,
+            "musicVolume": 0.32,
+            "sfxVolume": 0.55,
+            "mute": false
+          },
+          "events": {
+            "menu": 1,
+            "checkpoint": 2,
+            "bossAppear": 2,
+            "secret": 4,
+            "throuple": 2,
+            "bossHit": 4,
+            "warning": 3,
+            "heartPop": 2,
+            "cookie": 2,
+            "damage": 1,
+            "ricochet": 4,
+            "bossDefeat": 2,
+            "hit": 6,
+            "defeat": 6
+          },
+          "signalPeak": 0.09469303488731384,
+          "rms": 0.04663266550245857
+        },
+        "art": {
+          "loaded": true,
+          "actors": [
+            "queen-beige",
+            "court-judge",
+            "flaming-law",
+            "hoa-drone",
+            "beige-bot"
+          ],
+          "contours": 20,
+          "contourBytes": 2673840,
+          "contourBuilds": 20,
+          "draws": 1662,
+          "backgrounds": 365,
+          "failed": [],
+          "poses": {
+            "walk": 627,
+            "idle": 3,
+            "hurt": 107,
+            "prepare": 35,
+            "attack": 9,
+            "transform": 371,
+            "defeat": 510
+          },
+          "lastPanel": 5
+        },
+        "heap": 8741701,
+        "charge": 0
+      },
+      "team": {
+        "before": 100,
+        "after": 0
+      }
+    },
+    {
+      "label": "baseline",
+      "world": "tahoe",
+      "mobile": false,
+      "name": "bloom",
+      "objective": {
+        "x": 8,
+        "y": 80,
+        "width": 688,
+        "height": 26,
+        "top": 80,
+        "right": 696,
+        "bottom": 106,
+        "left": 8
+      },
+      "text": "TOXIC BLOOM · 3 cores remain",
+      "canvas": {
+        "x": 85.328125,
+        "y": 100,
+        "width": 1109.328125,
+        "height": 624,
+        "top": 100,
+        "right": 1194.65625,
+        "bottom": 724,
+        "left": 85.328125
+      },
+      "sample": {
+        "p50": 16.699999999999818,
+        "p95": 16.799999999999727,
+        "max": 16.800000000000182,
+        "over33": 0,
+        "frames": 179,
+        "audio": {
+          "initialized": true,
+          "state": "running",
+          "blocked": false,
+          "track": "boss",
+          "cursor": 19,
+          "playing": true,
+          "completed": false,
+          "voices": 2,
+          "musicVoices": 2,
+          "sfxVoices": 0,
+          "ahead": 0.127620155038759,
+          "peakVoices": 15,
+          "scheduled": 81,
+          "dropped": 0,
+          "transitions": 2,
+          "schedulers": 1,
+          "settings": {
+            "music": true,
+            "sfx": true,
+            "musicVolume": 0.32,
+            "sfxVolume": 0.55,
+            "mute": false
+          },
+          "events": {
+            "menu": 1,
+            "bossAppear": 1,
+            "warning": 2,
+            "throuple": 1,
+            "bossHit": 3,
+            "hit": 1,
+            "defeat": 1
+          },
+          "signalPeak": 0.0991690531373024,
+          "rms": 0.043066529464889695
+        },
+        "art": {
+          "loaded": true,
+          "actors": [
+            "toxic-bloom",
+            "algae-slime",
+            "pine-queen",
+            "pine-beetle",
+            "larva",
+            "flying-beetle"
+          ],
+          "contours": 13,
+          "contourBytes": 1986584,
+          "contourBuilds": 13,
+          "draws": 688,
+          "backgrounds": 369,
+          "failed": [],
+          "poses": {
+            "walk": 380,
+            "attack": 37,
+            "idle": 100,
+            "hurt": 63,
+            "defeat": 102,
+            "prepare": 6
+          },
+          "lastPanel": 1
+        },
+        "heap": 9897604,
+        "charge": 0
+      },
+      "team": {
+        "before": 100,
+        "after": 0
+      }
+    },
+    {
+      "label": "baseline",
+      "world": "tahoe",
+      "mobile": false,
+      "name": "pine-queen",
+      "boss": {
+        "x": 760,
+        "y": 80,
+        "width": 512,
+        "height": 31,
+        "top": 80,
+        "right": 1272,
+        "bottom": 111,
+        "left": 760
+      },
+      "objective": {
+        "x": 8,
+        "y": 80,
+        "width": 688,
+        "height": 26,
+        "top": 80,
+        "right": 696,
+        "bottom": 106,
+        "left": 8
+      },
+      "text": "PINE BEETLE QUEEN\nPHASE 3",
+      "canvas": {
+        "x": 85.328125,
+        "y": 100,
+        "width": 1109.328125,
+        "height": 624,
+        "top": 100,
+        "right": 1194.65625,
+        "bottom": 724,
+        "left": 85.328125
+      },
+      "sample": {
+        "p50": 16.699999999999818,
+        "p95": 16.799999999999272,
+        "max": 16.800000000000182,
+        "over33": 0,
+        "frames": 179,
+        "audio": {
+          "initialized": true,
+          "state": "running",
+          "blocked": false,
+          "track": "boss",
+          "cursor": 38,
+          "playing": true,
+          "completed": false,
+          "voices": 4,
+          "musicVoices": 4,
+          "sfxVoices": 0,
+          "ahead": 0.14024031007752313,
+          "peakVoices": 20,
+          "scheduled": 177,
+          "dropped": 0,
+          "transitions": 2,
+          "schedulers": 1,
+          "settings": {
+            "music": true,
+            "sfx": true,
+            "musicVolume": 0.32,
+            "sfxVolume": 0.55,
+            "mute": false
+          },
+          "events": {
+            "menu": 1,
+            "bossAppear": 2,
+            "warning": 3,
+            "throuple": 2,
+            "bossHit": 5,
+            "hit": 5,
+            "defeat": 5,
+            "ricochet": 1,
+            "bossDefeat": 1,
+            "checkpoint": 1,
+            "damage": 2
+          },
+          "signalPeak": 0.11849861592054367,
+          "rms": 0.04354253603014415
+        },
+        "art": {
+          "loaded": true,
+          "actors": [
+            "toxic-bloom",
+            "algae-slime",
+            "pine-queen",
+            "pine-beetle",
+            "larva",
+            "flying-beetle"
+          ],
+          "contours": 26,
+          "contourBytes": 3855912,
+          "contourBuilds": 26,
+          "draws": 3958,
+          "backgrounds": 552,
+          "failed": [],
+          "poses": {
+            "walk": 457,
+            "attack": 2358,
+            "idle": 100,
+            "hurt": 259,
+            "defeat": 778,
+            "prepare": 6
+          },
+          "lastPanel": 3
+        },
+        "heap": 10470055,
+        "charge": 0
+      },
+      "team": {
+        "before": 100,
+        "after": 0
+      }
+    },
+    {
+      "label": "baseline",
+      "world": "alaska",
+      "mobile": false,
+      "name": "pipeline",
+      "objective": {
+        "x": 8,
+        "y": 80,
+        "width": 688,
+        "height": 26,
+        "top": 80,
+        "right": 696,
+        "bottom": 106,
+        "left": 8
+      },
+      "text": "RISING RIVER · reach high ground →",
+      "canvas": {
+        "x": 85.328125,
+        "y": 100,
+        "width": 1109.328125,
+        "height": 624,
+        "top": 100,
+        "right": 1194.65625,
+        "bottom": 724,
+        "left": 85.328125
+      },
+      "sample": {
+        "p50": 16.699999999999818,
+        "p95": 16.700000000000273,
+        "max": 16.800000000000182,
+        "over33": 0,
+        "frames": 179,
+        "audio": {
+          "initialized": true,
+          "state": "running",
+          "blocked": false,
+          "track": "alaskaBoss",
+          "cursor": 19,
+          "playing": true,
+          "completed": false,
+          "voices": 2,
+          "musicVoices": 2,
+          "sfxVoices": 0,
+          "ahead": 0.14252380952380816,
+          "peakVoices": 16,
+          "scheduled": 85,
+          "dropped": 0,
+          "transitions": 3,
+          "schedulers": 1,
+          "settings": {
+            "music": true,
+            "sfx": true,
+            "musicVolume": 0.32,
+            "sfxVolume": 0.55,
+            "mute": false
+          },
+          "events": {
+            "switch": 1,
+            "menu": 1,
+            "bossAppear": 1,
+            "land": 1,
+            "throuple": 1,
+            "heartPop": 2,
+            "ice": 2,
+            "cookie": 2
+          },
+          "signalPeak": 0.10596293210983276,
+          "rms": 0.03651563695870187
+        },
+        "art": {
+          "loaded": true,
+          "actors": [
+            "pipeline-worker",
+            "surveillance-drone",
+            "security-turret",
+            "machinery",
+            "oil-slime",
+            "frost-queen",
+            "zombie-salmon",
+            "alaskan-owl"
+          ],
+          "contours": 14,
+          "contourBytes": 331040,
+          "contourBuilds": 14,
+          "draws": 2978,
+          "backgrounds": 188,
+          "failed": [],
+          "poses": {
+            "walk": 2978
+          },
+          "lastPanel": 3
+        },
+        "heap": 13242311,
+        "charge": 0
+      },
+      "team": {
+        "before": 100,
+        "after": 0
+      }
+    },
+    {
+      "label": "baseline",
+      "world": "alaska",
+      "mobile": false,
+      "name": "frost-queen",
+      "boss": {
+        "x": 760,
+        "y": 80,
+        "width": 512,
+        "height": 31,
+        "top": 80,
+        "right": 1272,
+        "bottom": 111,
+        "left": 760
+      },
+      "objective": {
+        "x": 8,
+        "y": 80,
+        "width": 688,
+        "height": 26,
+        "top": 80,
+        "right": 696,
+        "bottom": 106,
+        "left": 8
+      },
+      "text": "FROST QUEEN\nPHASE 1 · BLIZZARD",
+      "canvas": {
+        "x": 85.328125,
+        "y": 100,
+        "width": 1109.328125,
+        "height": 624,
+        "top": 100,
+        "right": 1194.65625,
+        "bottom": 724,
+        "left": 85.328125
+      },
+      "sample": {
+        "p50": 16.699999999999818,
+        "p95": 16.799999999999272,
+        "max": 16.800000000000182,
+        "over33": 0,
+        "frames": 179,
+        "audio": {
+          "initialized": true,
+          "state": "running",
+          "blocked": false,
+          "track": "alaskaBoss",
+          "cursor": 38,
+          "playing": true,
+          "completed": false,
+          "voices": 5,
+          "musicVoices": 5,
+          "sfxVoices": 0,
+          "ahead": 0.26604761904762064,
+          "peakVoices": 16,
+          "scheduled": 171,
+          "dropped": 0,
+          "transitions": 3,
+          "schedulers": 1,
+          "settings": {
+            "music": true,
+            "sfx": true,
+            "musicVolume": 0.32,
+            "sfxVolume": 0.55,
+            "mute": false
+          },
+          "events": {
+            "switch": 1,
+            "menu": 1,
+            "bossAppear": 2,
+            "land": 1,
+            "throuple": 2,
+            "heartPop": 4,
+            "ice": 3,
+            "cookie": 3,
+            "warning": 2,
+            "bossHit": 2,
+            "ricochet": 1,
+            "snow": 1,
+            "salmon": 1,
+            "damage": 1
+          },
+          "signalPeak": 0.1611732393503189,
+          "rms": 0.061731274416000584
+        },
+        "art": {
+          "loaded": true,
+          "actors": [
+            "pipeline-worker",
+            "surveillance-drone",
+            "security-turret",
+            "machinery",
+            "oil-slime",
+            "frost-queen",
+            "zombie-salmon",
+            "alaskan-owl"
+          ],
+          "contours": 21,
+          "contourBytes": 2151872,
+          "contourBuilds": 21,
+          "draws": 6116,
+          "backgrounds": 370,
+          "failed": [],
+          "poses": {
+            "walk": 5946,
+            "transform": 38,
+            "hurt": 47,
+            "prepare": 49,
+            "attack": 36
+          },
+          "lastPanel": 4
+        },
+        "heap": 13987657,
+        "charge": 0
+      },
+      "team": {
+        "before": 100,
+        "after": 0
+      }
+    },
+    {
+      "label": "baseline",
+      "world": "socal",
+      "mobile": true,
+      "name": "queen",
+      "boss": {
+        "x": 498.40625,
+        "y": 80,
+        "width": 337.59375,
+        "height": 23,
+        "top": 80,
+        "right": 836,
+        "bottom": 103,
+        "left": 498.40625
+      },
+      "objective": {
+        "x": 8,
+        "y": 80,
+        "width": 448.1875,
+        "height": 26,
+        "top": 80,
+        "right": 456.1875,
+        "bottom": 106,
+        "left": 8
+      },
+      "text": "QUEEN OF BEIGE 10/10",
+      "canvas": {
+        "x": 198,
+        "y": 112,
+        "width": 448,
+        "height": 252,
+        "top": 112,
+        "right": 646,
+        "bottom": 364,
+        "left": 198
+      },
+      "sample": {
+        "p50": 16.699999999999818,
+        "p95": 16.700000000000728,
+        "max": 16.800000000000182,
+        "over33": 0,
+        "frames": 179,
+        "audio": {
+          "initialized": true,
+          "state": "running",
+          "blocked": false,
+          "track": "boss",
+          "cursor": 19,
+          "playing": true,
+          "completed": false,
+          "voices": 4,
+          "musicVoices": 2,
+          "sfxVoices": 2,
+          "ahead": 0.127620155038759,
+          "peakVoices": 12,
+          "scheduled": 95,
+          "dropped": 0,
+          "transitions": 3,
+          "schedulers": 1,
+          "settings": {
+            "music": true,
+            "sfx": true,
+            "musicVolume": 0.32,
+            "sfxVolume": 0.55,
+            "mute": false
+          },
+          "events": {
+            "menu": 1,
+            "checkpoint": 1,
+            "bossAppear": 1,
+            "secret": 2,
+            "throuple": 1,
+            "bossHit": 3,
+            "warning": 2,
+            "heartPop": 1,
+            "cookie": 1,
+            "damage": 1
+          },
+          "signalPeak": 0.19310428202152252,
+          "rms": 0.09804876685827753
+        },
+        "art": {
+          "loaded": true,
+          "actors": [
+            "queen-beige",
+            "court-judge",
+            "flaming-law",
+            "hoa-drone",
+            "beige-bot"
+          ],
+          "contours": 13,
+          "contourBytes": 1712152,
+          "contourBuilds": 13,
+          "draws": 291,
+          "backgrounds": 185,
+          "failed": [],
+          "poses": {
+            "walk": 187,
+            "idle": 4,
+            "hurt": 28,
+            "prepare": 32,
+            "attack": 11,
+            "transform": 29
+          },
+          "lastPanel": 2
+        },
+        "heap": 9184850,
+        "charge": 0
+      },
+      "team": {
+        "before": 100,
+        "after": 0
+      }
+    },
+    {
+      "label": "baseline",
+      "world": "socal",
+      "mobile": true,
+      "name": "court",
+      "boss": {
+        "x": 498.40625,
+        "y": 80,
+        "width": 337.59375,
+        "height": 23,
+        "top": 80,
+        "right": 836,
+        "bottom": 103,
+        "left": 498.40625
+      },
+      "objective": {
+        "x": 8,
+        "y": 80,
+        "width": 448.1875,
+        "height": 26,
+        "top": 80,
+        "right": 456.1875,
+        "bottom": 106,
+        "left": 8
+      },
+      "text": "COURT OF SUPREMES · PHASE 3 · POWERS READY",
+      "canvas": {
+        "x": 198,
+        "y": 112,
+        "width": 448,
+        "height": 252,
+        "top": 112,
+        "right": 646,
+        "bottom": 364,
+        "left": 198
+      },
+      "sample": {
+        "p50": 16.699999999999818,
+        "p95": 16.800000000000182,
+        "max": 16.800000000000182,
+        "over33": 0,
+        "frames": 179,
+        "audio": {
+          "initialized": true,
+          "state": "running",
+          "blocked": false,
+          "track": "victory",
+          "cursor": 4,
+          "playing": true,
+          "completed": false,
+          "voices": 3,
+          "musicVoices": 3,
+          "sfxVoices": 0,
+          "ahead": 0.15475757575757676,
+          "peakVoices": 18,
+          "scheduled": 207,
+          "dropped": 0,
+          "transitions": 4,
+          "schedulers": 1,
+          "settings": {
+            "music": true,
+            "sfx": true,
+            "musicVolume": 0.32,
+            "sfxVolume": 0.55,
+            "mute": false
+          },
+          "events": {
+            "menu": 1,
+            "checkpoint": 2,
+            "bossAppear": 2,
+            "secret": 4,
+            "throuple": 2,
+            "bossHit": 4,
+            "warning": 3,
+            "heartPop": 2,
+            "cookie": 2,
+            "damage": 1,
+            "ricochet": 4,
+            "bossDefeat": 2,
+            "hit": 6,
+            "defeat": 6
+          },
+          "signalPeak": 0.09469303488731384,
+          "rms": 0.0466326654884632
+        },
+        "art": {
+          "loaded": true,
+          "actors": [
+            "queen-beige",
+            "court-judge",
+            "flaming-law",
+            "hoa-drone",
+            "beige-bot"
+          ],
+          "contours": 20,
+          "contourBytes": 2673840,
+          "contourBuilds": 20,
+          "draws": 1694,
+          "backgrounds": 367,
+          "failed": [],
+          "poses": {
+            "walk": 649,
+            "idle": 4,
+            "hurt": 110,
+            "prepare": 32,
+            "attack": 11,
+            "transform": 380,
+            "defeat": 508
+          },
+          "lastPanel": 5
+        },
+        "heap": 9526795,
+        "charge": 0
+      },
+      "team": {
+        "before": 100,
+        "after": 0
+      }
+    },
+    {
+      "label": "baseline",
+      "world": "tahoe",
+      "mobile": true,
+      "name": "bloom",
+      "objective": {
+        "x": 8,
+        "y": 80,
+        "width": 448.1875,
+        "height": 26,
+        "top": 80,
+        "right": 456.1875,
+        "bottom": 106,
+        "left": 8
+      },
+      "text": "TOXIC BLOOM · 3 cores remain",
+      "canvas": {
+        "x": 198,
+        "y": 112,
+        "width": 448,
+        "height": 252,
+        "top": 112,
+        "right": 646,
+        "bottom": 364,
+        "left": 198
+      },
+      "sample": {
+        "p50": 16.699999999999818,
+        "p95": 16.799999999999727,
+        "max": 16.800000000000182,
+        "over33": 0,
+        "frames": 179,
+        "audio": {
+          "initialized": true,
+          "state": "running",
+          "blocked": false,
+          "track": "boss",
+          "cursor": 19,
+          "playing": true,
+          "completed": false,
+          "voices": 2,
+          "musicVoices": 2,
+          "sfxVoices": 0,
+          "ahead": 0.11162015503875944,
+          "peakVoices": 15,
+          "scheduled": 83,
+          "dropped": 0,
+          "transitions": 2,
+          "schedulers": 1,
+          "settings": {
+            "music": true,
+            "sfx": true,
+            "musicVolume": 0.32,
+            "sfxVolume": 0.55,
+            "mute": false
+          },
+          "events": {
+            "menu": 1,
+            "bossAppear": 1,
+            "warning": 3,
+            "throuple": 1,
+            "bossHit": 3,
+            "hit": 1,
+            "defeat": 1
+          },
+          "signalPeak": 0.0991690531373024,
+          "rms": 0.04556437838657743
+        },
+        "art": {
+          "loaded": true,
+          "actors": [
+            "toxic-bloom",
+            "algae-slime",
+            "pine-queen",
+            "pine-beetle",
+            "larva",
+            "flying-beetle"
+          ],
+          "contours": 15,
+          "contourBytes": 2096776,
+          "contourBuilds": 15,
+          "draws": 690,
+          "backgrounds": 370,
+          "failed": [],
+          "poses": {
+            "walk": 342,
+            "attack": 63,
+            "idle": 101,
+            "hurt": 58,
+            "defeat": 104,
+            "prepare": 22
+          },
+          "lastPanel": 1
+        },
+        "heap": 9557490,
+        "charge": 0
+      },
+      "team": {
+        "before": 100,
+        "after": 0
+      }
+    },
+    {
+      "label": "baseline",
+      "world": "tahoe",
+      "mobile": true,
+      "name": "pine-queen",
+      "boss": {
+        "x": 498.40625,
+        "y": 80,
+        "width": 337.59375,
+        "height": 31,
+        "top": 80,
+        "right": 836,
+        "bottom": 111,
+        "left": 498.40625
+      },
+      "objective": {
+        "x": 8,
+        "y": 80,
+        "width": 448.1875,
+        "height": 26,
+        "top": 80,
+        "right": 456.1875,
+        "bottom": 106,
+        "left": 8
+      },
+      "text": "PINE BEETLE QUEEN\nPHASE 3",
+      "canvas": {
+        "x": 198,
+        "y": 112,
+        "width": 448,
+        "height": 252,
+        "top": 112,
+        "right": 646,
+        "bottom": 364,
+        "left": 198
+      },
+      "sample": {
+        "p50": 16.699999999999818,
+        "p95": 16.700000000000728,
+        "max": 16.800000000000182,
+        "over33": 0,
+        "frames": 179,
+        "audio": {
+          "initialized": true,
+          "state": "running",
+          "blocked": false,
+          "track": "boss",
+          "cursor": 38,
+          "playing": true,
+          "completed": false,
+          "voices": 4,
+          "musicVoices": 4,
+          "sfxVoices": 0,
+          "ahead": 0.19357364341085592,
+          "peakVoices": 20,
+          "scheduled": 175,
+          "dropped": 0,
+          "transitions": 2,
+          "schedulers": 1,
+          "settings": {
+            "music": true,
+            "sfx": true,
+            "musicVolume": 0.32,
+            "sfxVolume": 0.55,
+            "mute": false
+          },
+          "events": {
+            "menu": 1,
+            "bossAppear": 2,
+            "warning": 4,
+            "throuple": 2,
+            "bossHit": 5,
+            "hit": 4,
+            "defeat": 4,
+            "ricochet": 1,
+            "bossDefeat": 1,
+            "checkpoint": 1,
+            "damage": 2
+          },
+          "signalPeak": 0.10424882173538208,
+          "rms": 0.04146757520886603
+        },
+        "art": {
+          "loaded": true,
+          "actors": [
+            "toxic-bloom",
+            "algae-slime",
+            "pine-queen",
+            "pine-beetle",
+            "larva",
+            "flying-beetle"
+          ],
+          "contours": 28,
+          "contourBytes": 3966104,
+          "contourBuilds": 28,
+          "draws": 3825,
+          "backgrounds": 552,
+          "failed": [],
+          "poses": {
+            "walk": 424,
+            "attack": 2121,
+            "idle": 101,
+            "hurt": 273,
+            "defeat": 884,
+            "prepare": 22
+          },
+          "lastPanel": 3
+        },
+        "heap": 10496109,
+        "charge": 0
+      },
+      "team": {
+        "before": 100,
+        "after": 0
+      }
+    },
+    {
+      "label": "baseline",
+      "world": "alaska",
+      "mobile": true,
+      "name": "pipeline",
+      "objective": {
+        "x": 8,
+        "y": 80,
+        "width": 448.1875,
+        "height": 26,
+        "top": 80,
+        "right": 456.1875,
+        "bottom": 106,
+        "left": 8
+      },
+      "text": "RISING RIVER · reach high ground →",
+      "canvas": {
+        "x": 198,
+        "y": 112,
+        "width": 448,
+        "height": 252,
+        "top": 112,
+        "right": 646,
+        "bottom": 364,
+        "left": 198
+      },
+      "sample": {
+        "p50": 16.699999999999818,
+        "p95": 16.799999999999727,
+        "max": 16.800000000000182,
+        "over33": 0,
+        "frames": 179,
+        "audio": {
+          "initialized": true,
+          "state": "running",
+          "blocked": false,
+          "track": "alaskaBoss",
+          "cursor": 19,
+          "playing": true,
+          "completed": false,
+          "voices": 2,
+          "musicVoices": 2,
+          "sfxVoices": 0,
+          "ahead": 0.14252380952380816,
+          "peakVoices": 16,
+          "scheduled": 85,
+          "dropped": 0,
+          "transitions": 3,
+          "schedulers": 1,
+          "settings": {
+            "music": true,
+            "sfx": true,
+            "musicVolume": 0.32,
+            "sfxVolume": 0.55,
+            "mute": false
+          },
+          "events": {
+            "switch": 1,
+            "menu": 1,
+            "bossAppear": 1,
+            "land": 1,
+            "throuple": 1,
+            "heartPop": 2,
+            "ice": 2,
+            "cookie": 2
+          },
+          "signalPeak": 0.10596293210983276,
+          "rms": 0.036515636918380265
+        },
+        "art": {
+          "loaded": true,
+          "actors": [
+            "pipeline-worker",
+            "surveillance-drone",
+            "security-turret",
+            "machinery",
+            "oil-slime",
+            "frost-queen",
+            "zombie-salmon",
+            "alaskan-owl"
+          ],
+          "contours": 14,
+          "contourBytes": 331040,
+          "contourBuilds": 14,
+          "draws": 2978,
+          "backgrounds": 188,
+          "failed": [],
+          "poses": {
+            "walk": 2978
+          },
+          "lastPanel": 3
+        },
+        "heap": 10651127,
+        "charge": 0
+      },
+      "team": {
+        "before": 100,
+        "after": 0
+      }
+    },
+    {
+      "label": "baseline",
+      "world": "alaska",
+      "mobile": true,
+      "name": "frost-queen",
+      "boss": {
+        "x": 498.40625,
+        "y": 80,
+        "width": 337.59375,
+        "height": 31,
+        "top": 80,
+        "right": 836,
+        "bottom": 111,
+        "left": 498.40625
+      },
+      "objective": {
+        "x": 8,
+        "y": 80,
+        "width": 448.1875,
+        "height": 26,
+        "top": 80,
+        "right": 456.1875,
+        "bottom": 106,
+        "left": 8
+      },
+      "text": "FROST QUEEN\nPHASE 1 · BLIZZARD",
+      "canvas": {
+        "x": 198,
+        "y": 112,
+        "width": 448,
+        "height": 252,
+        "top": 112,
+        "right": 646,
+        "bottom": 364,
+        "left": 198
+      },
+      "sample": {
+        "p50": 16.699999999999818,
+        "p95": 16.700000000000728,
+        "max": 16.800000000000182,
+        "over33": 0,
+        "frames": 179,
+        "audio": {
+          "initialized": true,
+          "state": "running",
+          "blocked": false,
+          "track": "alaskaBoss",
+          "cursor": 37,
+          "playing": true,
+          "completed": false,
+          "voices": 3,
+          "musicVoices": 3,
+          "sfxVoices": 0,
+          "ahead": 0.1408095238095255,
+          "peakVoices": 16,
+          "scheduled": 168,
+          "dropped": 0,
+          "transitions": 3,
+          "schedulers": 1,
+          "settings": {
+            "music": true,
+            "sfx": true,
+            "musicVolume": 0.32,
+            "sfxVolume": 0.55,
+            "mute": false
+          },
+          "events": {
+            "switch": 1,
+            "menu": 1,
+            "bossAppear": 2,
+            "land": 1,
+            "throuple": 2,
+            "heartPop": 4,
+            "ice": 3,
+            "cookie": 3,
+            "warning": 2,
+            "bossHit": 2,
+            "ricochet": 1,
+            "snow": 1,
+            "salmon": 1,
+            "damage": 1
+          },
+          "signalPeak": 0.16302037239074707,
+          "rms": 0.06616157898214706
+        },
+        "art": {
+          "loaded": true,
+          "actors": [
+            "pipeline-worker",
+            "surveillance-drone",
+            "security-turret",
+            "machinery",
+            "oil-slime",
+            "frost-queen",
+            "zombie-salmon",
+            "alaskan-owl"
+          ],
+          "contours": 21,
+          "contourBytes": 2151872,
+          "contourBuilds": 21,
+          "draws": 6116,
+          "backgrounds": 370,
+          "failed": [],
+          "poses": {
+            "walk": 5947,
+            "transform": 39,
+            "hurt": 44,
+            "prepare": 51,
+            "attack": 35
+          },
+          "lastPanel": 4
+        },
+        "heap": 13148587,
+        "charge": 0
+      },
+      "team": {
+        "before": 100,
+        "after": 0
+      }
+    },
+    {
+      "label": "candidate",
+      "world": "socal",
+      "mobile": false,
+      "name": "queen",
+      "boss": {
+        "x": 760,
+        "y": 80,
+        "width": 512,
+        "height": 23,
+        "top": 80,
+        "right": 1272,
+        "bottom": 103,
+        "left": 760
+      },
+      "objective": {
+        "x": 8,
+        "y": 80,
+        "width": 688,
+        "height": 26,
+        "top": 80,
+        "right": 696,
+        "bottom": 106,
+        "left": 8
+      },
+      "text": "QUEEN OF BEIGE 10/10",
+      "canvas": {
+        "x": 85.328125,
+        "y": 100,
+        "width": 1109.328125,
+        "height": 624,
+        "top": 100,
+        "right": 1194.65625,
+        "bottom": 724,
+        "left": 85.328125
+      },
+      "sample": {
+        "p50": 16.699999999999818,
+        "p95": 16.799999999999727,
+        "max": 16.800000000000182,
+        "over33": 0,
+        "frames": 179,
+        "audio": {
+          "initialized": true,
+          "state": "running",
+          "blocked": false,
+          "track": "boss",
+          "cursor": 19,
+          "playing": true,
+          "completed": false,
+          "voices": 4,
+          "musicVoices": 2,
+          "sfxVoices": 2,
+          "ahead": 0.09562015503875898,
+          "peakVoices": 12,
+          "scheduled": 95,
+          "dropped": 0,
+          "transitions": 3,
+          "schedulers": 1,
+          "settings": {
+            "music": true,
+            "sfx": true,
+            "musicVolume": 0.32,
+            "sfxVolume": 0.55,
+            "mute": false
+          },
+          "events": {
+            "menu": 1,
+            "checkpoint": 1,
+            "bossAppear": 1,
+            "secret": 2,
+            "throuple": 1,
+            "bossHit": 3,
+            "warning": 2,
+            "heartPop": 1,
+            "cookie": 1,
+            "damage": 1
+          },
+          "signalPeak": 0.19071638584136963,
+          "rms": 0.09733298085348523
+        },
+        "art": {
+          "loaded": true,
+          "actors": [
+            "queen-beige",
+            "court-judge",
+            "flaming-law",
+            "hoa-drone",
+            "beige-bot"
+          ],
+          "contours": 13,
+          "contourBytes": 1712152,
+          "contourBuilds": 13,
+          "draws": 241,
+          "backgrounds": 183,
+          "failed": [],
+          "poses": {
+            "walk": 139,
+            "idle": 2,
+            "hurt": 28,
+            "prepare": 34,
+            "attack": 9,
+            "transform": 29
+          },
+          "lastPanel": 2
+        },
+        "heap": 8603438,
+        "charge": 0
+      },
+      "team": {
+        "before": 100,
+        "after": 0
+      }
+    },
+    {
+      "label": "candidate",
+      "world": "socal",
+      "mobile": false,
+      "name": "court",
+      "boss": {
+        "x": 760,
+        "y": 80,
+        "width": 512,
+        "height": 23,
+        "top": 80,
+        "right": 1272,
+        "bottom": 103,
+        "left": 760
+      },
+      "objective": {
+        "x": 8,
+        "y": 80,
+        "width": 688,
+        "height": 26,
+        "top": 80,
+        "right": 696,
+        "bottom": 106,
+        "left": 8
+      },
+      "text": "COURT OF SUPREMES · PHASE 3 · POWERS READY",
+      "canvas": {
+        "x": 85.328125,
+        "y": 100,
+        "width": 1109.328125,
+        "height": 624,
+        "top": 100,
+        "right": 1194.65625,
+        "bottom": 724,
+        "left": 85.328125
+      },
+      "sample": {
+        "p50": 16.699999999999818,
+        "p95": 16.700000000000728,
+        "max": 16.800000000000182,
+        "over33": 0,
+        "frames": 179,
+        "audio": {
+          "initialized": true,
+          "state": "running",
+          "blocked": false,
+          "track": "victory",
+          "cursor": 4,
+          "playing": true,
+          "completed": false,
+          "voices": 3,
+          "musicVoices": 3,
+          "sfxVoices": 0,
+          "ahead": 0.18142424242424315,
+          "peakVoices": 18,
+          "scheduled": 213,
+          "dropped": 0,
+          "transitions": 4,
+          "schedulers": 1,
+          "settings": {
+            "music": true,
+            "sfx": true,
+            "musicVolume": 0.32,
+            "sfxVolume": 0.55,
+            "mute": false
+          },
+          "events": {
+            "menu": 1,
+            "checkpoint": 2,
+            "bossAppear": 2,
+            "secret": 4,
+            "throuple": 2,
+            "bossHit": 4,
+            "warning": 3,
+            "heartPop": 2,
+            "cookie": 2,
+            "damage": 1,
+            "ricochet": 4,
+            "bossDefeat": 2,
+            "hit": 6,
+            "defeat": 6
+          },
+          "signalPeak": 0.09768817573785782,
+          "rms": 0.04633930667657316
+        },
+        "art": {
+          "loaded": true,
+          "actors": [
+            "queen-beige",
+            "court-judge",
+            "flaming-law",
+            "hoa-drone",
+            "beige-bot"
+          ],
+          "contours": 20,
+          "contourBytes": 2673840,
+          "contourBuilds": 20,
+          "draws": 1649,
+          "backgrounds": 365,
+          "failed": [],
+          "poses": {
+            "walk": 609,
+            "idle": 2,
+            "hurt": 110,
+            "prepare": 34,
+            "attack": 9,
+            "transform": 380,
+            "defeat": 505
+          },
+          "lastPanel": 5
+        },
+        "heap": 8562944,
+        "charge": 0
+      },
+      "team": {
+        "before": 100,
+        "after": 0
+      }
+    },
+    {
+      "label": "candidate",
+      "world": "tahoe",
+      "mobile": false,
+      "name": "bloom",
+      "objective": {
+        "x": 8,
+        "y": 80,
+        "width": 688,
+        "height": 26,
+        "top": 80,
+        "right": 696,
+        "bottom": 106,
+        "left": 8
+      },
+      "text": "TOXIC BLOOM · 3 cores remain",
+      "canvas": {
+        "x": 85.328125,
+        "y": 100,
+        "width": 1109.328125,
+        "height": 624,
+        "top": 100,
+        "right": 1194.65625,
+        "bottom": 724,
+        "left": 85.328125
+      },
+      "sample": {
+        "p50": 16.699999999999818,
+        "p95": 16.800000000000182,
+        "max": 16.800000000000182,
+        "over33": 0,
+        "frames": 179,
+        "audio": {
+          "initialized": true,
+          "state": "running",
+          "blocked": false,
+          "track": "boss",
+          "cursor": 19,
+          "playing": true,
+          "completed": false,
+          "voices": 3,
+          "musicVoices": 3,
+          "sfxVoices": 0,
+          "ahead": 0.14362015503875902,
+          "peakVoices": 15,
+          "scheduled": 83,
+          "dropped": 0,
+          "transitions": 2,
+          "schedulers": 1,
+          "settings": {
+            "music": true,
+            "sfx": true,
+            "musicVolume": 0.32,
+            "sfxVolume": 0.55,
+            "mute": false
+          },
+          "events": {
+            "menu": 1,
+            "bossAppear": 1,
+            "warning": 3,
+            "throuple": 1,
+            "bossHit": 3,
+            "hit": 1,
+            "defeat": 1
+          },
+          "signalPeak": 0.09883344173431396,
+          "rms": 0.032467789355251526
+        },
+        "art": {
+          "loaded": true,
+          "actors": [
+            "toxic-bloom",
+            "algae-slime",
+            "pine-queen",
+            "pine-beetle",
+            "larva",
+            "flying-beetle"
+          ],
+          "contours": 15,
+          "contourBytes": 2096776,
+          "contourBuilds": 15,
+          "draws": 691,
+          "backgrounds": 369,
+          "failed": [],
+          "poses": {
+            "walk": 334,
+            "attack": 69,
+            "idle": 102,
+            "hurt": 57,
+            "defeat": 106,
+            "prepare": 23
+          },
+          "lastPanel": 1
+        },
+        "heap": 10969112,
+        "charge": 0
+      },
+      "team": {
+        "before": 100,
+        "after": 0
+      }
+    },
+    {
+      "label": "candidate",
+      "world": "tahoe",
+      "mobile": false,
+      "name": "pine-queen",
+      "boss": {
+        "x": 760,
+        "y": 80,
+        "width": 512,
+        "height": 31,
+        "top": 80,
+        "right": 1272,
+        "bottom": 111,
+        "left": 760
+      },
+      "objective": {
+        "x": 8,
+        "y": 80,
+        "width": 688,
+        "height": 26,
+        "top": 80,
+        "right": 696,
+        "bottom": 106,
+        "left": 8
+      },
+      "text": "PINE BEETLE QUEEN\nPHASE 3",
+      "canvas": {
+        "x": 85.328125,
+        "y": 100,
+        "width": 1109.328125,
+        "height": 624,
+        "top": 100,
+        "right": 1194.65625,
+        "bottom": 724,
+        "left": 85.328125
+      },
+      "sample": {
+        "p50": 16.699999999999818,
+        "p95": 16.799999999999272,
+        "max": 16.800000000000182,
+        "over33": 0,
+        "frames": 179,
+        "audio": {
+          "initialized": true,
+          "state": "running",
+          "blocked": false,
+          "track": "boss",
+          "cursor": 38,
+          "playing": true,
+          "completed": false,
+          "voices": 4,
+          "musicVoices": 4,
+          "sfxVoices": 0,
+          "ahead": 0.19357364341085592,
+          "peakVoices": 20,
+          "scheduled": 179,
+          "dropped": 0,
+          "transitions": 2,
+          "schedulers": 1,
+          "settings": {
+            "music": true,
+            "sfx": true,
+            "musicVolume": 0.32,
+            "sfxVolume": 0.55,
+            "mute": false
+          },
+          "events": {
+            "menu": 1,
+            "bossAppear": 2,
+            "warning": 4,
+            "throuple": 2,
+            "bossHit": 5,
+            "hit": 5,
+            "defeat": 5,
+            "ricochet": 1,
+            "bossDefeat": 1,
+            "checkpoint": 1,
+            "damage": 2
+          },
+          "signalPeak": 0.10424882173538208,
+          "rms": 0.04146757520886603
+        },
+        "art": {
+          "loaded": true,
+          "actors": [
+            "toxic-bloom",
+            "algae-slime",
+            "pine-queen",
+            "pine-beetle",
+            "larva",
+            "flying-beetle"
+          ],
+          "contours": 26,
+          "contourBytes": 3855912,
+          "contourBuilds": 26,
+          "draws": 4278,
+          "backgrounds": 551,
+          "failed": [],
+          "poses": {
+            "walk": 410,
+            "attack": 3110,
+            "idle": 102,
+            "hurt": 163,
+            "defeat": 470,
+            "prepare": 23
+          },
+          "lastPanel": 3
+        },
+        "heap": 12439786,
+        "charge": 0
+      },
+      "team": {
+        "before": 100,
+        "after": 0
+      }
+    },
+    {
+      "label": "candidate",
+      "world": "alaska",
+      "mobile": false,
+      "name": "pipeline",
+      "objective": {
+        "x": 8,
+        "y": 80,
+        "width": 688,
+        "height": 26,
+        "top": 80,
+        "right": 696,
+        "bottom": 106,
+        "left": 8
+      },
+      "text": "RISING RIVER · reach high ground →",
+      "canvas": {
+        "x": 85.328125,
+        "y": 100,
+        "width": 1109.328125,
+        "height": 624,
+        "top": 100,
+        "right": 1194.65625,
+        "bottom": 724,
+        "left": 85.328125
+      },
+      "sample": {
+        "p50": 16.699999999999818,
+        "p95": 16.700000000000273,
+        "max": 16.800000000000182,
+        "over33": 0,
+        "frames": 179,
+        "audio": {
+          "initialized": true,
+          "state": "running",
+          "blocked": false,
+          "track": "alaskaBoss",
+          "cursor": 19,
+          "playing": true,
+          "completed": false,
+          "voices": 3,
+          "musicVoices": 3,
+          "sfxVoices": 0,
+          "ahead": 0.20652380952380778,
+          "peakVoices": 16,
+          "scheduled": 85,
+          "dropped": 0,
+          "transitions": 3,
+          "schedulers": 1,
+          "settings": {
+            "music": true,
+            "sfx": true,
+            "musicVolume": 0.32,
+            "sfxVolume": 0.55,
+            "mute": false
+          },
+          "events": {
+            "switch": 1,
+            "menu": 1,
+            "bossAppear": 1,
+            "land": 1,
+            "throuple": 1,
+            "heartPop": 2,
+            "ice": 2,
+            "cookie": 2
+          },
+          "signalPeak": 0.07315895706415176,
+          "rms": 0.01702343568057393
+        },
+        "art": {
+          "loaded": true,
+          "actors": [
+            "pipeline-worker",
+            "surveillance-drone",
+            "security-turret",
+            "machinery",
+            "oil-slime",
+            "frost-queen",
+            "zombie-salmon",
+            "alaskan-owl"
+          ],
+          "contours": 14,
+          "contourBytes": 331040,
+          "contourBuilds": 14,
+          "draws": 2978,
+          "backgrounds": 188,
+          "failed": [],
+          "poses": {
+            "walk": 2978
+          },
+          "lastPanel": 3
+        },
+        "heap": 13316895,
+        "charge": 0
+      },
+      "team": {
+        "before": 100,
+        "after": 0
+      }
+    },
+    {
+      "label": "candidate",
+      "world": "alaska",
+      "mobile": false,
+      "name": "frost-queen",
+      "boss": {
+        "x": 760,
+        "y": 80,
+        "width": 512,
+        "height": 31,
+        "top": 80,
+        "right": 1272,
+        "bottom": 111,
+        "left": 760
+      },
+      "objective": {
+        "x": 8,
+        "y": 80,
+        "width": 688,
+        "height": 26,
+        "top": 80,
+        "right": 696,
+        "bottom": 106,
+        "left": 8
+      },
+      "text": "FROST QUEEN\nPHASE 1 · BLIZZARD",
+      "canvas": {
+        "x": 85.328125,
+        "y": 100,
+        "width": 1109.328125,
+        "height": 624,
+        "top": 100,
+        "right": 1194.65625,
+        "bottom": 724,
+        "left": 85.328125
+      },
+      "sample": {
+        "p50": 16.699999999999818,
+        "p95": 16.700000000000728,
+        "max": 16.800000000000182,
+        "over33": 0,
+        "frames": 179,
+        "audio": {
+          "initialized": true,
+          "state": "running",
+          "blocked": false,
+          "track": "alaskaBoss",
+          "cursor": 37,
+          "playing": true,
+          "completed": false,
+          "voices": 3,
+          "musicVoices": 3,
+          "sfxVoices": 0,
+          "ahead": 0.17280952380952463,
+          "peakVoices": 16,
+          "scheduled": 168,
+          "dropped": 0,
+          "transitions": 3,
+          "schedulers": 1,
+          "settings": {
+            "music": true,
+            "sfx": true,
+            "musicVolume": 0.32,
+            "sfxVolume": 0.55,
+            "mute": false
+          },
+          "events": {
+            "switch": 1,
+            "menu": 1,
+            "bossAppear": 2,
+            "land": 1,
+            "throuple": 2,
+            "heartPop": 4,
+            "ice": 3,
+            "cookie": 3,
+            "warning": 2,
+            "bossHit": 2,
+            "ricochet": 1,
+            "snow": 1,
+            "salmon": 1,
+            "damage": 1
+          },
+          "signalPeak": 0.10329797118902206,
+          "rms": 0.05509864453030593
+        },
+        "art": {
+          "loaded": true,
+          "actors": [
+            "pipeline-worker",
+            "surveillance-drone",
+            "security-turret",
+            "machinery",
+            "oil-slime",
+            "frost-queen",
+            "zombie-salmon",
+            "alaskan-owl"
+          ],
+          "contours": 21,
+          "contourBytes": 2151872,
+          "contourBuilds": 21,
+          "draws": 6116,
+          "backgrounds": 370,
+          "failed": [],
+          "poses": {
+            "walk": 5946,
+            "transform": 39,
+            "hurt": 47,
+            "prepare": 49,
+            "attack": 35
+          },
+          "lastPanel": 4
+        },
+        "heap": 11531633,
+        "charge": 0
+      },
+      "team": {
+        "before": 100,
+        "after": 0
+      }
+    },
+    {
+      "label": "candidate",
+      "world": "socal",
+      "mobile": true,
+      "name": "queen",
+      "boss": {
+        "x": 498.40625,
+        "y": 80,
+        "width": 337.59375,
+        "height": 23,
+        "top": 80,
+        "right": 836,
+        "bottom": 103,
+        "left": 498.40625
+      },
+      "objective": {
+        "x": 8,
+        "y": 80,
+        "width": 448.1875,
+        "height": 26,
+        "top": 80,
+        "right": 456.1875,
+        "bottom": 106,
+        "left": 8
+      },
+      "text": "QUEEN OF BEIGE 10/10",
+      "canvas": {
+        "x": 198,
+        "y": 112,
+        "width": 448,
+        "height": 252,
+        "top": 112,
+        "right": 646,
+        "bottom": 364,
+        "left": 198
+      },
+      "sample": {
+        "p50": 16.699999999999818,
+        "p95": 16.799999999999727,
+        "max": 16.800000000000182,
+        "over33": 0,
+        "frames": 179,
+        "audio": {
+          "initialized": true,
+          "state": "running",
+          "blocked": false,
+          "track": "boss",
+          "cursor": 19,
+          "playing": true,
+          "completed": false,
+          "voices": 5,
+          "musicVoices": 3,
+          "sfxVoices": 2,
+          "ahead": 0.16495348837209223,
+          "peakVoices": 13,
+          "scheduled": 95,
+          "dropped": 0,
+          "transitions": 3,
+          "schedulers": 1,
+          "settings": {
+            "music": true,
+            "sfx": true,
+            "musicVolume": 0.32,
+            "sfxVolume": 0.55,
+            "mute": false
+          },
+          "events": {
+            "menu": 1,
+            "checkpoint": 1,
+            "bossAppear": 1,
+            "secret": 2,
+            "throuple": 1,
+            "bossHit": 3,
+            "warning": 2,
+            "heartPop": 1,
+            "cookie": 1,
+            "damage": 1
+          },
+          "signalPeak": 0.12467727065086365,
+          "rms": 0.0810373163482393
+        },
+        "art": {
+          "loaded": true,
+          "actors": [
+            "queen-beige",
+            "court-judge",
+            "flaming-law",
+            "hoa-drone",
+            "beige-bot"
+          ],
+          "contours": 13,
+          "contourBytes": 1712152,
+          "contourBuilds": 13,
+          "draws": 241,
+          "backgrounds": 183,
+          "failed": [],
+          "poses": {
+            "walk": 139,
+            "idle": 2,
+            "hurt": 28,
+            "prepare": 34,
+            "attack": 9,
+            "transform": 29
+          },
+          "lastPanel": 2
+        },
+        "heap": 9377957,
+        "charge": 0
+      },
+      "team": {
+        "before": 100,
+        "after": 0
+      }
+    },
+    {
+      "label": "candidate",
+      "world": "socal",
+      "mobile": true,
+      "name": "court",
+      "boss": {
+        "x": 498.40625,
+        "y": 80,
+        "width": 337.59375,
+        "height": 23,
+        "top": 80,
+        "right": 836,
+        "bottom": 103,
+        "left": 498.40625
+      },
+      "objective": {
+        "x": 8,
+        "y": 80,
+        "width": 448.1875,
+        "height": 26,
+        "top": 80,
+        "right": 456.1875,
+        "bottom": 106,
+        "left": 8
+      },
+      "text": "COURT OF SUPREMES · PHASE 3 · POWERS READY",
+      "canvas": {
+        "x": 198,
+        "y": 112,
+        "width": 448,
+        "height": 252,
+        "top": 112,
+        "right": 646,
+        "bottom": 364,
+        "left": 198
+      },
+      "sample": {
+        "p50": 16.699999999999818,
+        "p95": 16.799999999999272,
+        "max": 16.800000000000182,
+        "over33": 0,
+        "frames": 179,
+        "audio": {
+          "initialized": true,
+          "state": "running",
+          "blocked": false,
+          "track": "victory",
+          "cursor": 4,
+          "playing": true,
+          "completed": false,
+          "voices": 3,
+          "musicVoices": 3,
+          "sfxVoices": 0,
+          "ahead": 0.15475757575757676,
+          "peakVoices": 18,
+          "scheduled": 207,
+          "dropped": 0,
+          "transitions": 4,
+          "schedulers": 1,
+          "settings": {
+            "music": true,
+            "sfx": true,
+            "musicVolume": 0.32,
+            "sfxVolume": 0.55,
+            "mute": false
+          },
+          "events": {
+            "menu": 1,
+            "checkpoint": 2,
+            "bossAppear": 2,
+            "secret": 4,
+            "throuple": 2,
+            "bossHit": 4,
+            "warning": 3,
+            "heartPop": 2,
+            "cookie": 2,
+            "damage": 1,
+            "ricochet": 4,
+            "bossDefeat": 2,
+            "hit": 6,
+            "defeat": 6
+          },
+          "signalPeak": 0.09469303488731384,
+          "rms": 0.0466326654965589
+        },
+        "art": {
+          "loaded": true,
+          "actors": [
+            "queen-beige",
+            "court-judge",
+            "flaming-law",
+            "hoa-drone",
+            "beige-bot"
+          ],
+          "contours": 20,
+          "contourBytes": 2673840,
+          "contourBuilds": 20,
+          "draws": 1644,
+          "backgrounds": 365,
+          "failed": [],
+          "poses": {
+            "walk": 601,
+            "idle": 2,
+            "hurt": 110,
+            "prepare": 34,
+            "attack": 9,
+            "transform": 380,
+            "defeat": 508
+          },
+          "lastPanel": 5
+        },
+        "heap": 9672640,
+        "charge": 0
+      },
+      "team": {
+        "before": 100,
+        "after": 0
+      }
+    },
+    {
+      "label": "candidate",
+      "world": "tahoe",
+      "mobile": true,
+      "name": "bloom",
+      "objective": {
+        "x": 8,
+        "y": 80,
+        "width": 448.1875,
+        "height": 26,
+        "top": 80,
+        "right": 456.1875,
+        "bottom": 106,
+        "left": 8
+      },
+      "text": "TOXIC BLOOM · 3 cores remain",
+      "canvas": {
+        "x": 198,
+        "y": 112,
+        "width": 448,
+        "height": 252,
+        "top": 112,
+        "right": 646,
+        "bottom": 364,
+        "left": 198
+      },
+      "sample": {
+        "p50": 16.699999999999818,
+        "p95": 16.700000000000273,
+        "max": 16.800000000000182,
+        "over33": 0,
+        "frames": 179,
+        "audio": {
+          "initialized": true,
+          "state": "running",
+          "blocked": false,
+          "track": "boss",
+          "cursor": 19,
+          "playing": true,
+          "completed": false,
+          "voices": 5,
+          "musicVoices": 5,
+          "sfxVoices": 0,
+          "ahead": 0.22895348837209273,
+          "peakVoices": 14,
+          "scheduled": 83,
+          "dropped": 0,
+          "transitions": 2,
+          "schedulers": 1,
+          "settings": {
+            "music": true,
+            "sfx": true,
+            "musicVolume": 0.32,
+            "sfxVolume": 0.55,
+            "mute": false
+          },
+          "events": {
+            "menu": 1,
+            "bossAppear": 1,
+            "warning": 3,
+            "throuple": 1,
+            "bossHit": 3,
+            "hit": 1,
+            "defeat": 1
+          },
+          "signalPeak": 0.1092354953289032,
+          "rms": 0.03738767577494671
+        },
+        "art": {
+          "loaded": true,
+          "actors": [
+            "toxic-bloom",
+            "algae-slime",
+            "pine-queen",
+            "pine-beetle",
+            "larva",
+            "flying-beetle"
+          ],
+          "contours": 15,
+          "contourBytes": 2096776,
+          "contourBuilds": 15,
+          "draws": 691,
+          "backgrounds": 369,
+          "failed": [],
+          "poses": {
+            "walk": 331,
+            "attack": 74,
+            "idle": 102,
+            "hurt": 58,
+            "defeat": 104,
+            "prepare": 22
+          },
+          "lastPanel": 1
+        },
+        "heap": 11642974,
+        "charge": 0
+      },
+      "team": {
+        "before": 100,
+        "after": 0
+      }
+    },
+    {
+      "label": "candidate",
+      "world": "tahoe",
+      "mobile": true,
+      "name": "pine-queen",
+      "boss": {
+        "x": 498.40625,
+        "y": 80,
+        "width": 337.59375,
+        "height": 31,
+        "top": 80,
+        "right": 836,
+        "bottom": 111,
+        "left": 498.40625
+      },
+      "objective": {
+        "x": 8,
+        "y": 80,
+        "width": 448.1875,
+        "height": 26,
+        "top": 80,
+        "right": 456.1875,
+        "bottom": 106,
+        "left": 8
+      },
+      "text": "PINE BEETLE QUEEN\nPHASE 3",
+      "canvas": {
+        "x": 198,
+        "y": 112,
+        "width": 448,
+        "height": 252,
+        "top": 112,
+        "right": 646,
+        "bottom": 364,
+        "left": 198
+      },
+      "sample": {
+        "p50": 16.699999999999818,
+        "p95": 16.700000000000728,
+        "max": 16.800000000000182,
+        "over33": 0,
+        "frames": 179,
+        "audio": {
+          "initialized": true,
+          "state": "running",
+          "blocked": false,
+          "track": "boss",
+          "cursor": 38,
+          "playing": true,
+          "completed": false,
+          "voices": 5,
+          "musicVoices": 5,
+          "sfxVoices": 0,
+          "ahead": 0.257573643410856,
+          "peakVoices": 22,
+          "scheduled": 177,
+          "dropped": 0,
+          "transitions": 2,
+          "schedulers": 1,
+          "settings": {
+            "music": true,
+            "sfx": true,
+            "musicVolume": 0.32,
+            "sfxVolume": 0.55,
+            "mute": false
+          },
+          "events": {
+            "menu": 1,
+            "bossAppear": 2,
+            "warning": 4,
+            "throuple": 2,
+            "bossHit": 6,
+            "hit": 4,
+            "defeat": 4,
+            "ricochet": 1,
+            "bossDefeat": 1,
+            "checkpoint": 1,
+            "damage": 2
+          },
+          "signalPeak": 0.10603202879428864,
+          "rms": 0.0448159830607405
+        },
+        "art": {
+          "loaded": true,
+          "actors": [
+            "toxic-bloom",
+            "algae-slime",
+            "pine-queen",
+            "pine-beetle",
+            "larva",
+            "flying-beetle"
+          ],
+          "contours": 28,
+          "contourBytes": 3966104,
+          "contourBuilds": 28,
+          "draws": 3801,
+          "backgrounds": 551,
+          "failed": [],
+          "poses": {
+            "walk": 403,
+            "attack": 2103,
+            "idle": 102,
+            "hurt": 287,
+            "defeat": 884,
+            "prepare": 22
+          },
+          "lastPanel": 3
+        },
+        "heap": 11213152,
+        "charge": 0
+      },
+      "team": {
+        "before": 100,
+        "after": 0
+      }
+    },
+    {
+      "label": "candidate",
+      "world": "alaska",
+      "mobile": true,
+      "name": "pipeline",
+      "objective": {
+        "x": 8,
+        "y": 80,
+        "width": 448.1875,
+        "height": 26,
+        "top": 80,
+        "right": 456.1875,
+        "bottom": 106,
+        "left": 8
+      },
+      "text": "RISING RIVER · reach high ground →",
+      "canvas": {
+        "x": 198,
+        "y": 112,
+        "width": 448,
+        "height": 252,
+        "top": 112,
+        "right": 646,
+        "bottom": 364,
+        "left": 198
+      },
+      "sample": {
+        "p50": 16.699999999999818,
+        "p95": 16.799999999999955,
+        "max": 16.800000000000182,
+        "over33": 0,
+        "frames": 179,
+        "audio": {
+          "initialized": true,
+          "state": "running",
+          "blocked": false,
+          "track": "alaskaBoss",
+          "cursor": 18,
+          "playing": true,
+          "completed": false,
+          "voices": 3,
+          "musicVoices": 3,
+          "sfxVoices": 0,
+          "ahead": 0.12928571428571312,
+          "peakVoices": 16,
+          "scheduled": 82,
+          "dropped": 0,
+          "transitions": 3,
+          "schedulers": 1,
+          "settings": {
+            "music": true,
+            "sfx": true,
+            "musicVolume": 0.32,
+            "sfxVolume": 0.55,
+            "mute": false
+          },
+          "events": {
+            "switch": 1,
+            "menu": 1,
+            "bossAppear": 1,
+            "land": 1,
+            "throuple": 1,
+            "heartPop": 2,
+            "ice": 2,
+            "cookie": 2
+          },
+          "signalPeak": 0.120357446372509,
+          "rms": 0.04674437787280229
+        },
+        "art": {
+          "loaded": true,
+          "actors": [
+            "pipeline-worker",
+            "surveillance-drone",
+            "security-turret",
+            "machinery",
+            "oil-slime",
+            "frost-queen",
+            "zombie-salmon",
+            "alaskan-owl"
+          ],
+          "contours": 14,
+          "contourBytes": 331040,
+          "contourBuilds": 14,
+          "draws": 2962,
+          "backgrounds": 187,
+          "failed": [],
+          "poses": {
+            "walk": 2962
+          },
+          "lastPanel": 3
+        },
+        "heap": 10753516,
+        "charge": 0
+      },
+      "team": {
+        "before": 100,
+        "after": 0
+      }
+    },
+    {
+      "label": "candidate",
+      "world": "alaska",
+      "mobile": true,
+      "name": "frost-queen",
+      "boss": {
+        "x": 498.40625,
+        "y": 80,
+        "width": 337.59375,
+        "height": 31,
+        "top": 80,
+        "right": 836,
+        "bottom": 111,
+        "left": 498.40625
+      },
+      "objective": {
+        "x": 8,
+        "y": 80,
+        "width": 448.1875,
+        "height": 26,
+        "top": 80,
+        "right": 456.1875,
+        "bottom": 106,
+        "left": 8
+      },
+      "text": "FROST QUEEN\nPHASE 1 · BLIZZARD",
+      "canvas": {
+        "x": 198,
+        "y": 112,
+        "width": 448,
+        "height": 252,
+        "top": 112,
+        "right": 646,
+        "bottom": 364,
+        "left": 198
+      },
+      "sample": {
+        "p50": 16.699999999999818,
+        "p95": 16.800000000000182,
+        "max": 16.800000000000182,
+        "over33": 0,
+        "frames": 179,
+        "audio": {
+          "initialized": true,
+          "state": "running",
+          "blocked": false,
+          "track": "alaskaBoss",
+          "cursor": 36,
+          "playing": true,
+          "completed": false,
+          "voices": 4,
+          "musicVoices": 4,
+          "sfxVoices": 0,
+          "ahead": 0.19157142857142961,
+          "peakVoices": 16,
+          "scheduled": 165,
+          "dropped": 0,
+          "transitions": 3,
+          "schedulers": 1,
+          "settings": {
+            "music": true,
+            "sfx": true,
+            "musicVolume": 0.32,
+            "sfxVolume": 0.55,
+            "mute": false
+          },
+          "events": {
+            "switch": 1,
+            "menu": 1,
+            "bossAppear": 2,
+            "land": 1,
+            "throuple": 2,
+            "heartPop": 4,
+            "ice": 3,
+            "cookie": 3,
+            "warning": 2,
+            "bossHit": 2,
+            "ricochet": 1,
+            "snow": 1,
+            "salmon": 1,
+            "damage": 1
+          },
+          "signalPeak": 0.10502233356237411,
+          "rms": 0.043594992774102136
+        },
+        "art": {
+          "loaded": true,
+          "actors": [
+            "pipeline-worker",
+            "surveillance-drone",
+            "security-turret",
+            "machinery",
+            "oil-slime",
+            "frost-queen",
+            "zombie-salmon",
+            "alaskan-owl"
+          ],
+          "contours": 21,
+          "contourBytes": 2151872,
+          "contourBuilds": 21,
+          "draws": 6118,
+          "backgrounds": 370,
+          "failed": [],
+          "poses": {
+            "walk": 5948,
+            "transform": 39,
+            "hurt": 46,
+            "prepare": 49,
+            "attack": 36
+          },
+          "lastPanel": 4
+        },
+        "heap": 14248287,
+        "charge": 0
+      },
+      "team": {
+        "before": 100,
+        "after": 0
+      }
+    }
+  ]
+}

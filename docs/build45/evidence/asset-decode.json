@@ -1,0 +1,569 @@
+{
+  "method": "Fresh isolated context/image objects for each round;11 unchanged approved images×3 rounds×2 variants. One in-memory transport. Load event time includes fetching and any initial decode; explicit Image.decode wait after onload records remaining decode/queue delay, not all browser decoder CPU or GPU upload. No game initialized. Browser-global caches may remain; not mobile bandwidth/physical decode certification.",
+  "results": [
+    {
+      "label": "baseline",
+      "trial": 0,
+      "samples": [
+        {
+          "url": "assets/master-build/socal-scenes.webp",
+          "width": 1659,
+          "height": 948,
+          "loadEventMs": 2.4000000059604645,
+          "explicitDecodeAfterLoadMs": 29.400000005960464,
+          "totalReadyMs": 31.80000001192093
+        },
+        {
+          "url": "assets/master-build/tahoe-scenes.webp",
+          "width": 1354,
+          "height": 1161,
+          "loadEventMs": 2.800000011920929,
+          "explicitDecodeAfterLoadMs": 32.29999998211861,
+          "totalReadyMs": 35.099999994039536
+        },
+        {
+          "url": "assets/master-build/alaska-scenes.webp",
+          "width": 1659,
+          "height": 948,
+          "loadEventMs": 2.300000011920929,
+          "explicitDecodeAfterLoadMs": 31.099999994039536,
+          "totalReadyMs": 33.400000005960464
+        },
+        {
+          "url": "assets/master-build/actors/queen-beige-actions.webp",
+          "width": 1536,
+          "height": 256,
+          "loadEventMs": 1.0999999940395355,
+          "explicitDecodeAfterLoadMs": 2.9000000059604645,
+          "totalReadyMs": 4
+        },
+        {
+          "url": "assets/master-build/actors/court-judge-actions.webp",
+          "width": 1536,
+          "height": 256,
+          "loadEventMs": 0.699999988079071,
+          "explicitDecodeAfterLoadMs": 2.9000000059604645,
+          "totalReadyMs": 3.5999999940395355
+        },
+        {
+          "url": "assets/master-build/actors/toxic-bloom-actions.webp",
+          "width": 1536,
+          "height": 256,
+          "loadEventMs": 0.5999999940395355,
+          "explicitDecodeAfterLoadMs": 2.5,
+          "totalReadyMs": 3.0999999940395355
+        },
+        {
+          "url": "assets/master-build/actors/pine-queen-actions.webp",
+          "width": 1536,
+          "height": 256,
+          "loadEventMs": 0.7000000178813934,
+          "explicitDecodeAfterLoadMs": 3.199999988079071,
+          "totalReadyMs": 3.9000000059604645
+        },
+        {
+          "url": "assets/master-build/actors/frost-queen-actions.webp",
+          "width": 1536,
+          "height": 256,
+          "loadEventMs": 0.7000000178813934,
+          "explicitDecodeAfterLoadMs": 3.0999999940395355,
+          "totalReadyMs": 3.800000011920929
+        },
+        {
+          "url": "assets/cast341/will.png",
+          "width": 1261,
+          "height": 1247,
+          "loadEventMs": 1.4000000059604645,
+          "explicitDecodeAfterLoadMs": 12.299999982118607,
+          "totalReadyMs": 13.699999988079071
+        },
+        {
+          "url": "assets/cast341/daniel.png",
+          "width": 1246,
+          "height": 1262,
+          "loadEventMs": 1.5999999940395355,
+          "explicitDecodeAfterLoadMs": 12.100000023841858,
+          "totalReadyMs": 13.700000017881393
+        },
+        {
+          "url": "assets/cast341/caleb.png",
+          "width": 1024,
+          "height": 1536,
+          "loadEventMs": 1.5999999940395355,
+          "explicitDecodeAfterLoadMs": 14.900000005960464,
+          "totalReadyMs": 16.5
+        }
+      ]
+    },
+    {
+      "label": "candidate",
+      "trial": 0,
+      "samples": [
+        {
+          "url": "assets/master-build/socal-scenes.webp",
+          "width": 1659,
+          "height": 948,
+          "loadEventMs": 2.699999988079071,
+          "explicitDecodeAfterLoadMs": 29.5,
+          "totalReadyMs": 32.19999998807907
+        },
+        {
+          "url": "assets/master-build/tahoe-scenes.webp",
+          "width": 1354,
+          "height": 1161,
+          "loadEventMs": 2,
+          "explicitDecodeAfterLoadMs": 32.70000001788139,
+          "totalReadyMs": 34.70000001788139
+        },
+        {
+          "url": "assets/master-build/alaska-scenes.webp",
+          "width": 1659,
+          "height": 948,
+          "loadEventMs": 2,
+          "explicitDecodeAfterLoadMs": 31.69999998807907,
+          "totalReadyMs": 33.69999998807907
+        },
+        {
+          "url": "assets/master-build/actors/queen-beige-actions.webp",
+          "width": 1536,
+          "height": 256,
+          "loadEventMs": 0.9000000059604645,
+          "explicitDecodeAfterLoadMs": 3,
+          "totalReadyMs": 3.9000000059604645
+        },
+        {
+          "url": "assets/master-build/actors/court-judge-actions.webp",
+          "width": 1536,
+          "height": 256,
+          "loadEventMs": 0.9000000059604645,
+          "explicitDecodeAfterLoadMs": 3,
+          "totalReadyMs": 3.9000000059604645
+        },
+        {
+          "url": "assets/master-build/actors/toxic-bloom-actions.webp",
+          "width": 1536,
+          "height": 256,
+          "loadEventMs": 0.7999999821186066,
+          "explicitDecodeAfterLoadMs": 2.7000000178813934,
+          "totalReadyMs": 3.5
+        },
+        {
+          "url": "assets/master-build/actors/pine-queen-actions.webp",
+          "width": 1536,
+          "height": 256,
+          "loadEventMs": 0.699999988079071,
+          "explicitDecodeAfterLoadMs": 3.300000011920929,
+          "totalReadyMs": 4
+        },
+        {
+          "url": "assets/master-build/actors/frost-queen-actions.webp",
+          "width": 1536,
+          "height": 256,
+          "loadEventMs": 0.699999988079071,
+          "explicitDecodeAfterLoadMs": 3.199999988079071,
+          "totalReadyMs": 3.899999976158142
+        },
+        {
+          "url": "assets/cast341/will.png",
+          "width": 1261,
+          "height": 1247,
+          "loadEventMs": 1.4000000059604645,
+          "explicitDecodeAfterLoadMs": 12,
+          "totalReadyMs": 13.400000005960464
+        },
+        {
+          "url": "assets/cast341/daniel.png",
+          "width": 1246,
+          "height": 1262,
+          "loadEventMs": 1.5999999940395355,
+          "explicitDecodeAfterLoadMs": 11.700000017881393,
+          "totalReadyMs": 13.300000011920929
+        },
+        {
+          "url": "assets/cast341/caleb.png",
+          "width": 1024,
+          "height": 1536,
+          "loadEventMs": 1.5999999940395355,
+          "explicitDecodeAfterLoadMs": 14.5,
+          "totalReadyMs": 16.099999994039536
+        }
+      ]
+    },
+    {
+      "label": "baseline",
+      "trial": 1,
+      "samples": [
+        {
+          "url": "assets/master-build/socal-scenes.webp",
+          "width": 1659,
+          "height": 948,
+          "loadEventMs": 2.199999988079071,
+          "explicitDecodeAfterLoadMs": 30.69999998807907,
+          "totalReadyMs": 32.89999997615814
+        },
+        {
+          "url": "assets/master-build/tahoe-scenes.webp",
+          "width": 1354,
+          "height": 1161,
+          "loadEventMs": 1.9000000059604645,
+          "explicitDecodeAfterLoadMs": 32.599999994039536,
+          "totalReadyMs": 34.5
+        },
+        {
+          "url": "assets/master-build/alaska-scenes.webp",
+          "width": 1659,
+          "height": 948,
+          "loadEventMs": 1.9000000059604645,
+          "explicitDecodeAfterLoadMs": 31.099999994039536,
+          "totalReadyMs": 33
+        },
+        {
+          "url": "assets/master-build/actors/queen-beige-actions.webp",
+          "width": 1536,
+          "height": 256,
+          "loadEventMs": 0.9000000059604645,
+          "explicitDecodeAfterLoadMs": 2.9000000059604645,
+          "totalReadyMs": 3.800000011920929
+        },
+        {
+          "url": "assets/master-build/actors/court-judge-actions.webp",
+          "width": 1536,
+          "height": 256,
+          "loadEventMs": 0.699999988079071,
+          "explicitDecodeAfterLoadMs": 3.2000000178813934,
+          "totalReadyMs": 3.9000000059604645
+        },
+        {
+          "url": "assets/master-build/actors/toxic-bloom-actions.webp",
+          "width": 1536,
+          "height": 256,
+          "loadEventMs": 0.699999988079071,
+          "explicitDecodeAfterLoadMs": 2.5,
+          "totalReadyMs": 3.199999988079071
+        },
+        {
+          "url": "assets/master-build/actors/pine-queen-actions.webp",
+          "width": 1536,
+          "height": 256,
+          "loadEventMs": 0.7000000178813934,
+          "explicitDecodeAfterLoadMs": 3,
+          "totalReadyMs": 3.7000000178813934
+        },
+        {
+          "url": "assets/master-build/actors/frost-queen-actions.webp",
+          "width": 1536,
+          "height": 256,
+          "loadEventMs": 0.699999988079071,
+          "explicitDecodeAfterLoadMs": 3,
+          "totalReadyMs": 3.699999988079071
+        },
+        {
+          "url": "assets/cast341/will.png",
+          "width": 1261,
+          "height": 1247,
+          "loadEventMs": 1.300000011920929,
+          "explicitDecodeAfterLoadMs": 11.699999988079071,
+          "totalReadyMs": 13
+        },
+        {
+          "url": "assets/cast341/daniel.png",
+          "width": 1246,
+          "height": 1262,
+          "loadEventMs": 1.4000000059604645,
+          "explicitDecodeAfterLoadMs": 11.900000005960464,
+          "totalReadyMs": 13.300000011920929
+        },
+        {
+          "url": "assets/cast341/caleb.png",
+          "width": 1024,
+          "height": 1536,
+          "loadEventMs": 1.5999999940395355,
+          "explicitDecodeAfterLoadMs": 14.900000005960464,
+          "totalReadyMs": 16.5
+        }
+      ]
+    },
+    {
+      "label": "candidate",
+      "trial": 1,
+      "samples": [
+        {
+          "url": "assets/master-build/socal-scenes.webp",
+          "width": 1659,
+          "height": 948,
+          "loadEventMs": 2.0999999940395355,
+          "explicitDecodeAfterLoadMs": 30.80000001192093,
+          "totalReadyMs": 32.900000005960464
+        },
+        {
+          "url": "assets/master-build/tahoe-scenes.webp",
+          "width": 1354,
+          "height": 1161,
+          "loadEventMs": 2.5999999940395355,
+          "explicitDecodeAfterLoadMs": 33,
+          "totalReadyMs": 35.599999994039536
+        },
+        {
+          "url": "assets/master-build/alaska-scenes.webp",
+          "width": 1659,
+          "height": 948,
+          "loadEventMs": 1.9000000059604645,
+          "explicitDecodeAfterLoadMs": 31.799999982118607,
+          "totalReadyMs": 33.69999998807907
+        },
+        {
+          "url": "assets/master-build/actors/queen-beige-actions.webp",
+          "width": 1536,
+          "height": 256,
+          "loadEventMs": 1.100000023841858,
+          "explicitDecodeAfterLoadMs": 2.899999976158142,
+          "totalReadyMs": 4
+        },
+        {
+          "url": "assets/master-build/actors/court-judge-actions.webp",
+          "width": 1536,
+          "height": 256,
+          "loadEventMs": 0.9000000059604645,
+          "explicitDecodeAfterLoadMs": 3,
+          "totalReadyMs": 3.9000000059604645
+        },
+        {
+          "url": "assets/master-build/actors/toxic-bloom-actions.webp",
+          "width": 1536,
+          "height": 256,
+          "loadEventMs": 0.5999999940395355,
+          "explicitDecodeAfterLoadMs": 2.7000000178813934,
+          "totalReadyMs": 3.300000011920929
+        },
+        {
+          "url": "assets/master-build/actors/pine-queen-actions.webp",
+          "width": 1536,
+          "height": 256,
+          "loadEventMs": 0.699999988079071,
+          "explicitDecodeAfterLoadMs": 3.2000000178813934,
+          "totalReadyMs": 3.9000000059604645
+        },
+        {
+          "url": "assets/master-build/actors/frost-queen-actions.webp",
+          "width": 1536,
+          "height": 256,
+          "loadEventMs": 0.7999999821186066,
+          "explicitDecodeAfterLoadMs": 3,
+          "totalReadyMs": 3.7999999821186066
+        },
+        {
+          "url": "assets/cast341/will.png",
+          "width": 1261,
+          "height": 1247,
+          "loadEventMs": 1.5,
+          "explicitDecodeAfterLoadMs": 12.200000017881393,
+          "totalReadyMs": 13.700000017881393
+        },
+        {
+          "url": "assets/cast341/daniel.png",
+          "width": 1246,
+          "height": 1262,
+          "loadEventMs": 1.699999988079071,
+          "explicitDecodeAfterLoadMs": 12.300000011920929,
+          "totalReadyMs": 14
+        },
+        {
+          "url": "assets/cast341/caleb.png",
+          "width": 1024,
+          "height": 1536,
+          "loadEventMs": 1.5999999940395355,
+          "explicitDecodeAfterLoadMs": 15,
+          "totalReadyMs": 16.599999994039536
+        }
+      ]
+    },
+    {
+      "label": "baseline",
+      "trial": 2,
+      "samples": [
+        {
+          "url": "assets/master-build/socal-scenes.webp",
+          "width": 1659,
+          "height": 948,
+          "loadEventMs": 2.100000023841858,
+          "explicitDecodeAfterLoadMs": 30.399999976158142,
+          "totalReadyMs": 32.5
+        },
+        {
+          "url": "assets/master-build/tahoe-scenes.webp",
+          "width": 1354,
+          "height": 1161,
+          "loadEventMs": 2.100000023841858,
+          "explicitDecodeAfterLoadMs": 32.5,
+          "totalReadyMs": 34.60000002384186
+        },
+        {
+          "url": "assets/master-build/alaska-scenes.webp",
+          "width": 1659,
+          "height": 948,
+          "loadEventMs": 2,
+          "explicitDecodeAfterLoadMs": 31.599999994039536,
+          "totalReadyMs": 33.599999994039536
+        },
+        {
+          "url": "assets/master-build/actors/queen-beige-actions.webp",
+          "width": 1536,
+          "height": 256,
+          "loadEventMs": 1,
+          "explicitDecodeAfterLoadMs": 2.9000000059604645,
+          "totalReadyMs": 3.9000000059604645
+        },
+        {
+          "url": "assets/master-build/actors/court-judge-actions.webp",
+          "width": 1536,
+          "height": 256,
+          "loadEventMs": 0.7999999821186066,
+          "explicitDecodeAfterLoadMs": 3.0999999940395355,
+          "totalReadyMs": 3.899999976158142
+        },
+        {
+          "url": "assets/master-build/actors/toxic-bloom-actions.webp",
+          "width": 1536,
+          "height": 256,
+          "loadEventMs": 0.800000011920929,
+          "explicitDecodeAfterLoadMs": 2.699999988079071,
+          "totalReadyMs": 3.5
+        },
+        {
+          "url": "assets/master-build/actors/pine-queen-actions.webp",
+          "width": 1536,
+          "height": 256,
+          "loadEventMs": 0.7000000178813934,
+          "explicitDecodeAfterLoadMs": 3.2999999821186066,
+          "totalReadyMs": 4
+        },
+        {
+          "url": "assets/master-build/actors/frost-queen-actions.webp",
+          "width": 1536,
+          "height": 256,
+          "loadEventMs": 0.5,
+          "explicitDecodeAfterLoadMs": 3.2000000178813934,
+          "totalReadyMs": 3.7000000178813934
+        },
+        {
+          "url": "assets/cast341/will.png",
+          "width": 1261,
+          "height": 1247,
+          "loadEventMs": 1.2999999821186066,
+          "explicitDecodeAfterLoadMs": 11.900000005960464,
+          "totalReadyMs": 13.199999988079071
+        },
+        {
+          "url": "assets/cast341/daniel.png",
+          "width": 1246,
+          "height": 1262,
+          "loadEventMs": 1.300000011920929,
+          "explicitDecodeAfterLoadMs": 12.099999994039536,
+          "totalReadyMs": 13.400000005960464
+        },
+        {
+          "url": "assets/cast341/caleb.png",
+          "width": 1024,
+          "height": 1536,
+          "loadEventMs": 1.7000000178813934,
+          "explicitDecodeAfterLoadMs": 14.899999976158142,
+          "totalReadyMs": 16.599999994039536
+        }
+      ]
+    },
+    {
+      "label": "candidate",
+      "trial": 2,
+      "samples": [
+        {
+          "url": "assets/master-build/socal-scenes.webp",
+          "width": 1659,
+          "height": 948,
+          "loadEventMs": 2.5999999940395355,
+          "explicitDecodeAfterLoadMs": 29.400000005960464,
+          "totalReadyMs": 32
+        },
+        {
+          "url": "assets/master-build/tahoe-scenes.webp",
+          "width": 1354,
+          "height": 1161,
+          "loadEventMs": 2.0999999940395355,
+          "explicitDecodeAfterLoadMs": 32.400000005960464,
+          "totalReadyMs": 34.5
+        },
+        {
+          "url": "assets/master-build/alaska-scenes.webp",
+          "width": 1659,
+          "height": 948,
+          "loadEventMs": 2,
+          "explicitDecodeAfterLoadMs": 31.19999998807907,
+          "totalReadyMs": 33.19999998807907
+        },
+        {
+          "url": "assets/master-build/actors/queen-beige-actions.webp",
+          "width": 1536,
+          "height": 256,
+          "loadEventMs": 0.9000000059604645,
+          "explicitDecodeAfterLoadMs": 3,
+          "totalReadyMs": 3.9000000059604645
+        },
+        {
+          "url": "assets/master-build/actors/court-judge-actions.webp",
+          "width": 1536,
+          "height": 256,
+          "loadEventMs": 0.800000011920929,
+          "explicitDecodeAfterLoadMs": 3.0999999940395355,
+          "totalReadyMs": 3.9000000059604645
+        },
+        {
+          "url": "assets/master-build/actors/toxic-bloom-actions.webp",
+          "width": 1536,
+          "height": 256,
+          "loadEventMs": 0.699999988079071,
+          "explicitDecodeAfterLoadMs": 2.5,
+          "totalReadyMs": 3.199999988079071
+        },
+        {
+          "url": "assets/master-build/actors/pine-queen-actions.webp",
+          "width": 1536,
+          "height": 256,
+          "loadEventMs": 0.5999999940395355,
+          "explicitDecodeAfterLoadMs": 3.0999999940395355,
+          "totalReadyMs": 3.699999988079071
+        },
+        {
+          "url": "assets/master-build/actors/frost-queen-actions.webp",
+          "width": 1536,
+          "height": 256,
+          "loadEventMs": 0.5999999940395355,
+          "explicitDecodeAfterLoadMs": 3.300000011920929,
+          "totalReadyMs": 3.9000000059604645
+        },
+        {
+          "url": "assets/cast341/will.png",
+          "width": 1261,
+          "height": 1247,
+          "loadEventMs": 1.4000000059604645,
+          "explicitDecodeAfterLoadMs": 12.199999988079071,
+          "totalReadyMs": 13.599999994039536
+        },
+        {
+          "url": "assets/cast341/daniel.png",
+          "width": 1246,
+          "height": 1262,
+          "loadEventMs": 1.4000000059604645,
+          "explicitDecodeAfterLoadMs": 12.199999988079071,
+          "totalReadyMs": 13.599999994039536
+        },
+        {
+          "url": "assets/cast341/caleb.png",
+          "width": 1024,
+          "height": 1536,
+          "loadEventMs": 1.7000000178813934,
+          "explicitDecodeAfterLoadMs": 15,
+          "totalReadyMs": 16.700000017881393
+        }
+      ]
+    }
+  ]
+}

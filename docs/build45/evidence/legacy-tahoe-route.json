@@ -1,0 +1,86 @@
+{
+  "world": "tahoe",
+  "method": "normal keyboard; read-only state observations; no teleports/invulnerability/boss edits",
+  "seconds": 54.435,
+  "result": {
+    "poses": {
+      "walk": 3934,
+      "hurt": 741,
+      "defeat": 2002,
+      "attack": 612,
+      "idle": 143,
+      "prepare": 108,
+      "transform": 55
+    },
+    "bloom": true,
+    "queen": true,
+    "nests": 4,
+    "memories": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "checkpoint": 6820,
+    "beetles": 21,
+    "transition": "/alaska.html"
+  },
+  "events": [
+    {
+      "phase": 1,
+      "x": 8421.200000000012,
+      "health": 4
+    },
+    {
+      "phase": 2,
+      "x": 8387.293081081198,
+      "health": 4
+    },
+    {
+      "phase": 3,
+      "x": 8396.449612815191,
+      "health": 4
+    }
+  ],
+  "errors": [],
+  "assets": [
+    "assets/master-build/actors/toxic-bloom.webp",
+    "assets/master-build/actors/toxic-bloom-actions.webp",
+    "assets/master-build/actors/algae-slime.webp",
+    "assets/master-build/actors/algae-slime-actions.webp",
+    "assets/cast340/tahoe.png",
+    "assets/master-build/actors/pine-queen.webp",
+    "assets/master-build/actors/pine-queen-actions.webp",
+    "assets/cast341/daniel.png",
+    "assets/cast341/will.png",
+    "assets/master-build/actors/pine-beetle-actions.webp",
+    "assets/master-build/actors/larva.webp",
+    "assets/master-build/actors/pine-beetle.webp",
+    "assets/cast341/caleb.png",
+    "assets/master-build/actors/larva-actions.webp",
+    "assets/master-build/actors/flying-beetle.webp",
+    "assets/master-build/actors/flying-beetle-actions.webp",
+    "assets/master-build/foreground.webp",
+    "assets/master-build/tahoe-scenes.webp",
+    "assets/master-build/actors/pipeline-worker.webp",
+    "assets/master-build/actors/pipeline-worker-actions.webp",
+    "assets/master-build/actors/surveillance-drone.webp",
+    "assets/cast340/alaska.png",
+    "assets/master-build/actors/surveillance-drone-actions.webp",
+    "assets/master-build/actors/security-turret.webp",
+    "assets/master-build/actors/security-turret-actions.webp",
+    "assets/master-build/actors/machinery.webp",
+    "assets/master-build/actors/machinery-actions.webp",
+    "assets/master-build/actors/oil-slime.webp",
+    "assets/master-build/actors/oil-slime-actions.webp",
+    "assets/master-build/actors/frost-queen.webp",
+    "assets/master-build/actors/frost-queen-actions.webp",
+    "assets/master-build/actors/zombie-salmon.webp",
+    "assets/master-build/actors/zombie-salmon-actions.webp",
+    "assets/master-build/actors/alaskan-owl.webp",
+    "assets/master-build/actors/alaskan-owl-actions.webp",
+    "assets/master-build/alaska-scenes.webp"
+  ]
+}
