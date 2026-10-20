@@ -133,6 +133,7 @@
  function render(){
   if(typeof document==='undefined')return;const hud=document.getElementById('survivalHud');if(!hud)return;
   const changed=document.documentElement.classList.contains('survival')!==enabled();document.documentElement.classList.toggle('survival',enabled());if(changed)dispatchEvent(new Event('resize'));
+  document.querySelectorAll('#queenReplayBtn,#courtReplayBtn,#bloomReplayBtn,#pipelineReplayBtn').forEach(el=>{el.dataset.replayLabel??=el.textContent;el.textContent=el.dataset.replayLabel+(enabled()?' (practice)':'')});
   hud.hidden=!enabled();document.getElementById('survivalRunInfo').hidden=!record;document.getElementById('survivalRunSummary').textContent=record?(testing?'LOCAL TEST MODE · ':'')+(record.status==='ended'?'Quest ended. Start a fresh run to try again.':'Knockouts last for this run. Charge carries between worlds.')+' '+record.achievements.map(a=>a.world+': '+a.badge).join(' · ')+' · Archived runs: '+(record.history?.length||0):'';document.getElementById('resumeSurvival').hidden=!record;document.getElementById('legacySurvival').hidden=!enabled();
   if(!enabled())return;
   const signature=JSON.stringify([record.characters,record.active,record.charge,record.contributions,record.status,testing]);if(signature===lastRender)return;lastRender=signature;

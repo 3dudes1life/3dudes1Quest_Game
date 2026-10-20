@@ -961,6 +961,7 @@ class Adventure{
     this.ui.show('game');this.resumeGameplay();if(kind==='court')this.spawnCourt();this.clock.start();
   }
   returnFromCourtReplay(won=false){
+    if(QuestSurvival.enabled())won=false;
     const replay=this.courtReplay;if(!replay)return;
     const snapshot=replay.snapshot;
     if(won){snapshot.encounters=QuestEncounters.read('socal',snapshot);if(replay.kind==='queen')snapshot.encounters.queenComplete=true;else{snapshot.state.courtVictoryRecorded=true;snapshot.encounters.finalComplete=true;}}
