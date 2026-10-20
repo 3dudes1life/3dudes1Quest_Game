@@ -96,8 +96,8 @@ return 430-Math.min(55,(x-8100)*.045)+Math.sin(x/130)*7
 function overlap(a,b){return a.x<b.x+b.w&&a.x+a.w>b.x&&a.y<b.y+b.h&&a.y+a.h>b.y}
 function objective(a,b){ui.objectiveTitle.textContent=a;ui.objectiveText.textContent=b}
 function inputLabel(t){if(!ui.input)return;ui.input.querySelector("b").textContent=t;ui.input.classList.add("active");clearTimeout(inputLabel.t);inputLabel.t=setTimeout(()=>{ui.input.classList.remove("active");ui.input.querySelector("b").textContent="READY"},600)}
-function setDude(n){
-if(!QuestSurvival.select(n,n===state.dude+1))return;
+function setDude(n,restoring=false){
+if(!restoring&&!QuestSurvival.select(n,n===state.dude+1))return;
 if(state.started&&n!==state.dude)QuestAudio.effect('switch');
 state.dude=Number.isFinite(n)?((Math.floor(n)%3)+3)%3:0;const d=dudes[state.dude];ui.dude.textContent=d.name;QuestCast.setPortrait(ui.portrait,d.key);
 const icon=$("powerIcon"),label=$("powerButtonLabel");if(icon)icon.textContent=d.powerIcon;if(label)label.textContent="POWER";
@@ -153,7 +153,7 @@ if(state.bossDefeated)state.boss.hp=0;
 else state.boss.hp=Math.max(1,state.boss.hp);
 state.forest=newForest();state.forest.forEach((t,i)=>t.status=!state.bossDefeated&&d.forest?.[i]==='yellow'?'yellow':'green');state.forestBoost=state.forest.filter(t=>t.status==='yellow').length*.1;
 state.forestRestored=state.portal=state.bossDefeated;
-setDude(QuestSurvival.enabled()?QuestSurvival.state.active:Math.floor(number(d.dude,0,0,2)));
+setDude(QuestSurvival.enabled()?QuestSurvival.state.active:Math.floor(number(d.dude,0,0,2)),true);
 state.player.x=state.checkpoint;state.player.y=ground(state.player.x)-state.player.h;
 state.player.on=state.player.onGround=true;state.player.vx=state.player.vy=0;
 state.camera=Math.max(0,Math.min(WORLD-W,state.player.x-W*.36));syncHud();
@@ -169,7 +169,7 @@ state.forest=newForest();state.forestTimer=1800;state.forestBoost=0;state.scatte
 nests.forEach(n=>{n.alive=true;n.hp=n.maxHp;n.spawned=0;n.timer=700});
 Object.assign(state.boss,{targetKind:"boss",x:9000,y:260,hp:18,maxHp:18,phase:1,alive:true,flash:0,inv:0,vx:-1.4,vy:0,attackTimer:1200,spawnTimer:1900,windup:0,chargeDir:0});
 state.beetles=[makeBeetle(1180),makeBeetle(1480,"charger"),makeBeetle(1780,"flyer"),makeBeetle(2180),makeBeetle(2670,"armored"),makeBeetle(3020,"charger"),makeBeetle(3420,"flyer"),makeBeetle(3820),makeBeetle(4250,"charger"),makeBeetle(4680,"armored"),makeBeetle(5120,"flyer"),makeBeetle(5560),makeBeetle(6120,"armored"),makeBeetle(6580,"charger"),makeBeetle(7110,"flyer"),makeBeetle(7620),makeBeetle(8240,"charger"),makeBeetle(8660,"armored")];state.totalBeetles=18;
-setDude(QuestSurvival.enabled()?QuestSurvival.state.active:0);if(!clear)load();ui.opening.classList.add("hidden");ui.pause.classList.add("hidden");ui.trailhead.classList.add("hidden");ui.finale.classList.add("hidden");ui.dialogue.classList.add("hidden");ui.cinematic.classList.add("hidden");ui.mission.classList.remove("hidden");setTimeout(()=>ui.mission.classList.add("hidden"),2400);ui.tip.classList.remove("hidden");setTimeout(()=>ui.tip.classList.add("hidden"),6000);objective(state.bossDefeated?"Enter the Alaska portal":"Save the Tahoe forest",state.bossDefeated?"The Queen is defeated. Return to the summit portal.":"Destroy the four nests and clear the trail to the Queen.");syncHud();canvas.focus({preventScroll:true});QuestSurvival.enter()
+setDude(QuestSurvival.enabled()?QuestSurvival.state.active:0,true);if(!clear)load();ui.opening.classList.add("hidden");ui.pause.classList.add("hidden");ui.trailhead.classList.add("hidden");ui.finale.classList.add("hidden");ui.dialogue.classList.add("hidden");ui.cinematic.classList.add("hidden");ui.mission.classList.remove("hidden");setTimeout(()=>ui.mission.classList.add("hidden"),2400);ui.tip.classList.remove("hidden");setTimeout(()=>ui.tip.classList.add("hidden"),6000);objective(state.bossDefeated?"Enter the Alaska portal":"Save the Tahoe forest",state.bossDefeated?"The Queen is defeated. Return to the summit portal.":"Destroy the four nests and clear the trail to the Queen.");syncHud();canvas.focus({preventScroll:true});QuestSurvival.enter()
 }
 function firePower(){
 if(!state.started||state.paused||state.complete)return;

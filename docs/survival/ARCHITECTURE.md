@@ -6,7 +6,7 @@ Baseline: `ae5ec88a4d4ec445289c780696647a4cbb9e65b8` (PR13). Main stability39364
 
 Read the master audit, six-boss report/migration design, native save fixture contracts, `QuestCore.POWER_CONTRACT` and actual world health/switch/save/checkpoint code. SoCal owns an Adventure class and saves current health; Tahoe historically never serialized health and restores four on load; Alaska serializes health but heals on checkpoints. Their controllers and geometry remain in place.
 
-`quest-survival.js` owns the additive campaign. Explicit adapters supply state, world snapshot, safe respawn, release, temporary hit protection, projectile emission, and narrowly interruptible boss windups. Health/dude accessors in survival mode expose the authoritative character record and ignore legacy reset/heal assignments. In legacy mode those fields retain ordinary numeric behavior. Explicit switching, damage and recovery go through campaign operations; no artwork, movement stats or signature projectile contract changes.
+`quest-survival.js` owns the additive campaign. Explicit adapters supply state, world snapshot, safe respawn, release, temporary hit protection, projectile emission, and narrowly interruptible boss windups. Health/dude accessors in survival mode expose the authoritative character record and ignore legacy reset/heal assignments. In legacy mode those fields retain ordinary numeric behavior. Tahoe load/reset restores character UI without invoking a player-switch save, so the fresh reset snapshot cannot overwrite the saved checkpoint before loading it. Explicit switching, damage and recovery go through campaign operations; no artwork, movement stats or signature projectile contract changes.
 
 ## Campaign and save consistency
 
