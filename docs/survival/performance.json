@@ -1,0 +1,137 @@
+{
+  "method": "Sequential unthrottled local Chrome. 239 RAF intervals per sample while walking. Baseline ae5ec88 versus opt-in survival; no physical device, GPU memory or sustained thermal claim.",
+  "results": [
+    {
+      "world": "socal",
+      "mobile": false,
+      "label": "baseline",
+      "bootMs": 749,
+      "medianMs": 16.699999999999818,
+      "p95Ms": 16.700000000000728,
+      "over33": 0,
+      "heapBytes": 7521052,
+      "transferBytes": 11804908
+    },
+    {
+      "world": "socal",
+      "mobile": false,
+      "label": "survival",
+      "bootMs": 1170,
+      "medianMs": 16.699999999999818,
+      "p95Ms": 16.799999999999727,
+      "over33": 0,
+      "heapBytes": 8898599,
+      "transferBytes": 11825653
+    },
+    {
+      "world": "tahoe",
+      "mobile": false,
+      "label": "baseline",
+      "bootMs": 558,
+      "medianMs": 16.699999999999818,
+      "p95Ms": 16.700000000000728,
+      "over33": 0,
+      "heapBytes": 7287620,
+      "transferBytes": 11947686
+    },
+    {
+      "world": "tahoe",
+      "mobile": false,
+      "label": "survival",
+      "bootMs": 619,
+      "medianMs": 16.699999999999818,
+      "p95Ms": 16.700000000000273,
+      "over33": 0,
+      "heapBytes": 8040864,
+      "transferBytes": 11968784
+    },
+    {
+      "world": "alaska",
+      "mobile": false,
+      "label": "baseline",
+      "bootMs": 515,
+      "medianMs": 16.699999999999818,
+      "p95Ms": 16.700000000000273,
+      "over33": 0,
+      "heapBytes": 18415667,
+      "transferBytes": 12040784
+    },
+    {
+      "world": "alaska",
+      "mobile": false,
+      "label": "survival",
+      "bootMs": 635,
+      "medianMs": 16.699999999999818,
+      "p95Ms": 16.799999999999272,
+      "over33": 0,
+      "heapBytes": 18284694,
+      "transferBytes": 12061305
+    },
+    {
+      "world": "socal",
+      "mobile": true,
+      "label": "baseline",
+      "bootMs": 541,
+      "medianMs": 16.699999999999818,
+      "p95Ms": 16.799999999999955,
+      "over33": 0,
+      "heapBytes": 9118406,
+      "transferBytes": 11804908
+    },
+    {
+      "world": "socal",
+      "mobile": true,
+      "label": "survival",
+      "bootMs": 1295,
+      "medianMs": 16.699999999999818,
+      "p95Ms": 16.700000000000728,
+      "over33": 0,
+      "heapBytes": 8085547,
+      "transferBytes": 11825653
+    },
+    {
+      "world": "tahoe",
+      "mobile": true,
+      "label": "baseline",
+      "bootMs": 534,
+      "medianMs": 16.699999999999818,
+      "p95Ms": 16.700000000000728,
+      "over33": 0,
+      "heapBytes": 7410025,
+      "transferBytes": 11947686
+    },
+    {
+      "world": "tahoe",
+      "mobile": true,
+      "label": "survival",
+      "bootMs": 563,
+      "medianMs": 16.699999999999818,
+      "p95Ms": 16.700000000000728,
+      "over33": 0,
+      "heapBytes": 8013349,
+      "transferBytes": 11968829
+    },
+    {
+      "world": "alaska",
+      "mobile": true,
+      "label": "baseline",
+      "bootMs": 532,
+      "medianMs": 16.699999999999818,
+      "p95Ms": 16.799999999999727,
+      "over33": 0,
+      "heapBytes": 18658447,
+      "transferBytes": 12040784
+    },
+    {
+      "world": "alaska",
+      "mobile": true,
+      "label": "survival",
+      "bootMs": 633,
+      "medianMs": 16.699999999999818,
+      "p95Ms": 16.700000000000273,
+      "over33": 0,
+      "heapBytes": 18247294,
+      "transferBytes": 12061305
+    }
+  ]
+}

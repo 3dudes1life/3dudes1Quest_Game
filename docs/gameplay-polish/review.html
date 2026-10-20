@@ -1,0 +1,104 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><title>Enemy visibility & Tahoe restoration — draft review</title><style>body{background:#10182b;color:#edf7ff;font:16px/1.5 system-ui;max-width:1400px;margin:auto;padding:20px}a{color:#79e3ed}img{width:100%;image-rendering:pixelated;border:1px solid #59718c}.pair{display:grid;grid-template-columns:1fr 1fr;gap:12px}figure{margin:0}figcaption{padding:8px}button{background:#233653;color:white;border:1px solid #79e3ed;padding:12px;min-height:44px;cursor:pointer}h2{margin-top:36px}@media(max-width:800px){.pair{grid-template-columns:1fr}}</style><h1>Enemy visibility & Tahoe forest progression</h1><p>Included in the existing Survival draft PR14 at the owner’s request. <strong>Not merged or deployed.</strong> Approved artwork, gameplay values and save schemas are preserved.</p><p><a href="../survival/review.html">Survival review / play links</a> · <a href="REPORT.md">Polish report and limits</a> · <a href="results.json">Regression evidence</a></p><p>Native viewport screenshots: desktop 1280×800; mobile landscape 844×390. Open an image for its original size. These use controlled camera positions in the actual game renderer, not painted mockups. Separate automated keyboard routes verify normal play.</p><button onclick="document.querySelectorAll('.desktop').forEach(e=>e.hidden=false);document.querySelectorAll('.mobile').forEach(e=>e.hidden=true)">Desktop comparisons</button> <button onclick="document.querySelectorAll('.desktop').forEach(e=>e.hidden=true);document.querySelectorAll('.mobile').forEach(e=>e.hidden=false)">Mobile landscape comparisons</button>
+<section class="desktop">
+<h2>Socal — light scenery sections</h2><div class="pair">
+<figure><a href="screenshots/socal-light-desktop-before.png"><img loading="lazy" alt="socal desktop light before" src="screenshots/socal-light-desktop-before.png"></a><figcaption>Before — desktop</figcaption></figure>
+<figure><a href="screenshots/socal-light-desktop-after.png"><img loading="lazy" alt="socal desktop light after" src="screenshots/socal-light-desktop-after.png"></a><figcaption>After — desktop</figcaption></figure>
+</div>
+<h2>Socal — dark scenery sections</h2><div class="pair">
+<figure><a href="screenshots/socal-dark-desktop-before.png"><img loading="lazy" alt="socal desktop dark before" src="screenshots/socal-dark-desktop-before.png"></a><figcaption>Before — desktop</figcaption></figure>
+<figure><a href="screenshots/socal-dark-desktop-after.png"><img loading="lazy" alt="socal desktop dark after" src="screenshots/socal-dark-desktop-after.png"></a><figcaption>After — desktop</figcaption></figure>
+</div>
+<h2>Tahoe — light scenery sections</h2><div class="pair">
+<figure><a href="screenshots/tahoe-light-desktop-before.png"><img loading="lazy" alt="tahoe desktop light before" src="screenshots/tahoe-light-desktop-before.png"></a><figcaption>Before — desktop</figcaption></figure>
+<figure><a href="screenshots/tahoe-light-desktop-after.png"><img loading="lazy" alt="tahoe desktop light after" src="screenshots/tahoe-light-desktop-after.png"></a><figcaption>After — desktop</figcaption></figure>
+</div>
+<h2>Tahoe — dark scenery sections</h2><div class="pair">
+<figure><a href="screenshots/tahoe-dark-desktop-before.png"><img loading="lazy" alt="tahoe desktop dark before" src="screenshots/tahoe-dark-desktop-before.png"></a><figcaption>Before — desktop</figcaption></figure>
+<figure><a href="screenshots/tahoe-dark-desktop-after.png"><img loading="lazy" alt="tahoe desktop dark after" src="screenshots/tahoe-dark-desktop-after.png"></a><figcaption>After — desktop</figcaption></figure>
+</div>
+<h2>Alaska — light scenery sections</h2><div class="pair">
+<figure><a href="screenshots/alaska-light-desktop-before.png"><img loading="lazy" alt="alaska desktop light before" src="screenshots/alaska-light-desktop-before.png"></a><figcaption>Before — desktop</figcaption></figure>
+<figure><a href="screenshots/alaska-light-desktop-after.png"><img loading="lazy" alt="alaska desktop light after" src="screenshots/alaska-light-desktop-after.png"></a><figcaption>After — desktop</figcaption></figure>
+</div>
+<h2>Alaska — dark scenery sections</h2><div class="pair">
+<figure><a href="screenshots/alaska-dark-desktop-before.png"><img loading="lazy" alt="alaska desktop dark before" src="screenshots/alaska-dark-desktop-before.png"></a><figcaption>Before — desktop</figcaption></figure>
+<figure><a href="screenshots/alaska-dark-desktop-after.png"><img loading="lazy" alt="alaska desktop dark after" src="screenshots/alaska-dark-desktop-after.png"></a><figcaption>After — desktop</figcaption></figure>
+</div>
+<h2>Tahoe — opening forest</h2><div class="pair">
+<figure><a href="screenshots/forest-opening-desktop-before.png"><img loading="lazy" alt="opening before" src="screenshots/forest-opening-desktop-before.png"></a><figcaption>Before</figcaption></figure>
+<figure><a href="screenshots/forest-opening-desktop-after.png"><img loading="lazy" alt="opening after" src="screenshots/forest-opening-desktop-after.png"></a><figcaption>After</figcaption></figure>
+</div>
+<h2>Tahoe — early forest</h2><div class="pair">
+<figure><a href="screenshots/forest-early-desktop-before.png"><img loading="lazy" alt="early before" src="screenshots/forest-early-desktop-before.png"></a><figcaption>Before</figcaption></figure>
+<figure><a href="screenshots/forest-early-desktop-after.png"><img loading="lazy" alt="early after" src="screenshots/forest-early-desktop-after.png"></a><figcaption>After</figcaption></figure>
+</div>
+<h2>Tahoe — middle forest</h2><div class="pair">
+<figure><a href="screenshots/forest-middle-desktop-before.png"><img loading="lazy" alt="middle before" src="screenshots/forest-middle-desktop-before.png"></a><figcaption>Before</figcaption></figure>
+<figure><a href="screenshots/forest-middle-desktop-after.png"><img loading="lazy" alt="middle after" src="screenshots/forest-middle-desktop-after.png"></a><figcaption>After</figcaption></figure>
+</div>
+<h2>Tahoe — late forest</h2><div class="pair">
+<figure><a href="screenshots/forest-late-desktop-before.png"><img loading="lazy" alt="late before" src="screenshots/forest-late-desktop-before.png"></a><figcaption>Before</figcaption></figure>
+<figure><a href="screenshots/forest-late-desktop-after.png"><img loading="lazy" alt="late after" src="screenshots/forest-late-desktop-after.png"></a><figcaption>After</figcaption></figure>
+</div>
+<h2>Tahoe — arena forest</h2><div class="pair">
+<figure><a href="screenshots/forest-arena-desktop-before.png"><img loading="lazy" alt="arena before" src="screenshots/forest-arena-desktop-before.png"></a><figcaption>Before</figcaption></figure>
+<figure><a href="screenshots/forest-arena-desktop-after.png"><img loading="lazy" alt="arena after" src="screenshots/forest-arena-desktop-after.png"></a><figcaption>After</figcaption></figure>
+</div>
+<h2>Queen defeated — restoration wave</h2><div class="pair">
+<figure><a href="screenshots/restoration-0-desktop.png"><img loading="lazy" alt="Restoration at 0ms" src="screenshots/restoration-0-desktop.png"></a><figcaption>0s after actual projectile victory</figcaption></figure>
+<figure><a href="screenshots/restoration-1100-desktop.png"><img loading="lazy" alt="Restoration at 1100ms" src="screenshots/restoration-1100-desktop.png"></a><figcaption>1.1s after actual projectile victory</figcaption></figure>
+<figure><a href="screenshots/restoration-2600-desktop.png"><img loading="lazy" alt="Restoration at 2600ms" src="screenshots/restoration-2600-desktop.png"></a><figcaption>2.6s after actual projectile victory</figcaption></figure>
+<figure><a href="screenshots/restoration-10000-desktop.png"><img loading="lazy" alt="Restoration at 10000ms" src="screenshots/restoration-10000-desktop.png"></a><figcaption>10s after actual projectile victory</figcaption></figure>
+</div></section>
+<section class="mobile" hidden>
+<h2>Socal — light scenery sections</h2><div class="pair">
+<figure><a href="screenshots/socal-light-mobile-before.png"><img loading="lazy" alt="socal mobile light before" src="screenshots/socal-light-mobile-before.png"></a><figcaption>Before — mobile</figcaption></figure>
+<figure><a href="screenshots/socal-light-mobile-after.png"><img loading="lazy" alt="socal mobile light after" src="screenshots/socal-light-mobile-after.png"></a><figcaption>After — mobile</figcaption></figure>
+</div>
+<h2>Socal — dark scenery sections</h2><div class="pair">
+<figure><a href="screenshots/socal-dark-mobile-before.png"><img loading="lazy" alt="socal mobile dark before" src="screenshots/socal-dark-mobile-before.png"></a><figcaption>Before — mobile</figcaption></figure>
+<figure><a href="screenshots/socal-dark-mobile-after.png"><img loading="lazy" alt="socal mobile dark after" src="screenshots/socal-dark-mobile-after.png"></a><figcaption>After — mobile</figcaption></figure>
+</div>
+<h2>Tahoe — light scenery sections</h2><div class="pair">
+<figure><a href="screenshots/tahoe-light-mobile-before.png"><img loading="lazy" alt="tahoe mobile light before" src="screenshots/tahoe-light-mobile-before.png"></a><figcaption>Before — mobile</figcaption></figure>
+<figure><a href="screenshots/tahoe-light-mobile-after.png"><img loading="lazy" alt="tahoe mobile light after" src="screenshots/tahoe-light-mobile-after.png"></a><figcaption>After — mobile</figcaption></figure>
+</div>
+<h2>Tahoe — dark scenery sections</h2><div class="pair">
+<figure><a href="screenshots/tahoe-dark-mobile-before.png"><img loading="lazy" alt="tahoe mobile dark before" src="screenshots/tahoe-dark-mobile-before.png"></a><figcaption>Before — mobile</figcaption></figure>
+<figure><a href="screenshots/tahoe-dark-mobile-after.png"><img loading="lazy" alt="tahoe mobile dark after" src="screenshots/tahoe-dark-mobile-after.png"></a><figcaption>After — mobile</figcaption></figure>
+</div>
+<h2>Alaska — light scenery sections</h2><div class="pair">
+<figure><a href="screenshots/alaska-light-mobile-before.png"><img loading="lazy" alt="alaska mobile light before" src="screenshots/alaska-light-mobile-before.png"></a><figcaption>Before — mobile</figcaption></figure>
+<figure><a href="screenshots/alaska-light-mobile-after.png"><img loading="lazy" alt="alaska mobile light after" src="screenshots/alaska-light-mobile-after.png"></a><figcaption>After — mobile</figcaption></figure>
+</div>
+<h2>Alaska — dark scenery sections</h2><div class="pair">
+<figure><a href="screenshots/alaska-dark-mobile-before.png"><img loading="lazy" alt="alaska mobile dark before" src="screenshots/alaska-dark-mobile-before.png"></a><figcaption>Before — mobile</figcaption></figure>
+<figure><a href="screenshots/alaska-dark-mobile-after.png"><img loading="lazy" alt="alaska mobile dark after" src="screenshots/alaska-dark-mobile-after.png"></a><figcaption>After — mobile</figcaption></figure>
+</div>
+<h2>Tahoe — opening forest</h2><div class="pair">
+<figure><a href="screenshots/forest-opening-mobile-before.png"><img loading="lazy" alt="opening before" src="screenshots/forest-opening-mobile-before.png"></a><figcaption>Before</figcaption></figure>
+<figure><a href="screenshots/forest-opening-mobile-after.png"><img loading="lazy" alt="opening after" src="screenshots/forest-opening-mobile-after.png"></a><figcaption>After</figcaption></figure>
+</div>
+<h2>Tahoe — early forest</h2><div class="pair">
+<figure><a href="screenshots/forest-early-mobile-before.png"><img loading="lazy" alt="early before" src="screenshots/forest-early-mobile-before.png"></a><figcaption>Before</figcaption></figure>
+<figure><a href="screenshots/forest-early-mobile-after.png"><img loading="lazy" alt="early after" src="screenshots/forest-early-mobile-after.png"></a><figcaption>After</figcaption></figure>
+</div>
+<h2>Tahoe — middle forest</h2><div class="pair">
+<figure><a href="screenshots/forest-middle-mobile-before.png"><img loading="lazy" alt="middle before" src="screenshots/forest-middle-mobile-before.png"></a><figcaption>Before</figcaption></figure>
+<figure><a href="screenshots/forest-middle-mobile-after.png"><img loading="lazy" alt="middle after" src="screenshots/forest-middle-mobile-after.png"></a><figcaption>After</figcaption></figure>
+</div>
+<h2>Tahoe — late forest</h2><div class="pair">
+<figure><a href="screenshots/forest-late-mobile-before.png"><img loading="lazy" alt="late before" src="screenshots/forest-late-mobile-before.png"></a><figcaption>Before</figcaption></figure>
+<figure><a href="screenshots/forest-late-mobile-after.png"><img loading="lazy" alt="late after" src="screenshots/forest-late-mobile-after.png"></a><figcaption>After</figcaption></figure>
+</div>
+<h2>Tahoe — arena forest</h2><div class="pair">
+<figure><a href="screenshots/forest-arena-mobile-before.png"><img loading="lazy" alt="arena before" src="screenshots/forest-arena-mobile-before.png"></a><figcaption>Before</figcaption></figure>
+<figure><a href="screenshots/forest-arena-mobile-after.png"><img loading="lazy" alt="arena after" src="screenshots/forest-arena-mobile-after.png"></a><figcaption>After</figcaption></figure>
+</div>
+<h2>Queen defeated — restoration wave</h2><div class="pair">
+<figure><a href="screenshots/restoration-0-mobile.png"><img loading="lazy" alt="Restoration at 0ms" src="screenshots/restoration-0-mobile.png"></a><figcaption>0s after actual projectile victory</figcaption></figure>
+<figure><a href="screenshots/restoration-1100-mobile.png"><img loading="lazy" alt="Restoration at 1100ms" src="screenshots/restoration-1100-mobile.png"></a><figcaption>1.1s after actual projectile victory</figcaption></figure>
+<figure><a href="screenshots/restoration-2600-mobile.png"><img loading="lazy" alt="Restoration at 2600ms" src="screenshots/restoration-2600-mobile.png"></a><figcaption>2.6s after actual projectile victory</figcaption></figure>
+<figure><a href="screenshots/restoration-10000-mobile.png"><img loading="lazy" alt="Restoration at 10000ms" src="screenshots/restoration-10000-mobile.png"></a><figcaption>10s after actual projectile victory</figcaption></figure>
+</div></section>
+<p>No physical iPhone Safari or Android Chrome verification is claimed. Owner readability and gameplay approval remain required; the branch stays a draft.</p></html>

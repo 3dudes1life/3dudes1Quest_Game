@@ -128,3 +128,32 @@ test('additive encounters preserve legacy access without inventing new boss vict
  const pipe=q.read('alaska',{encounters:{version:1,pipeline:{valves:[0,0,0],stage:0,floodTicks:Infinity}}});assert.equal(pipe.pipeline.stage,2);assert.equal(pipe.pipeline.complete,false);assert.equal(pipe.pipeline.floodTicks,0);
  const court=q.read('socal',{encounters:{version:1,court:{active:true,phase:900,hp:[NaN,-20,2,1]}}});assert.equal(court.court.phase,3);assert.equal(court.court.hp[0],-1);assert.equal(court.court.hp[1],-1);assert.equal(court.court.hp[2],2);
 });
+
+function survivalSetup(){
+ const data=new Map(),context={window:{},console,URLSearchParams,location:{hostname:'test.invalid',search:''},localStorage:{getItem:k=>data.get(k)||null,setItem:(k,v)=>data.set(k,v)},Date};
+ vm.runInNewContext(fs.readFileSync('js/core/quest-survival.js','utf8'),context);
+ const q=context.window.QuestSurvival,s={health:4,dude:0,score:0};let respawns=0,paused=false,now=0,emitted=[];
+ q.attach({world:'socal',state:()=>s,snapshot:()=>({...s}),now:()=>now,playing:()=>!paused,replaying:()=>false,blocked:()=>false,freeze:()=>{paused=true},protect(){},release(){},respawn:()=>respawns++,emit:i=>emitted.push(i),interrupt(){}});
+ return{q,s,data,context,get respawns(){return respawns},get emitted(){return emitted},resume:()=>{paused=false},advance:()=>now+=3000};
+}
+test('survival health is independent, KO irreversible, no checkpoint or switch healing',()=>{
+ const t=survivalSetup(),{q,s}=t;assert.equal(q.enabled(),false);q.begin();q.damage();q.select(1);assert.equal(s.health,4);q.damage();q.damage();q.select(0);assert.equal(s.health,3);s.health=4;assert.equal(s.health,3);
+ q.damage();q.damage();q.damage();assert.equal(q.state.characters[0].hp,0);assert.equal(q.state.active,1);assert.equal(t.respawns,1);assert.equal(q.select(0),false);q.recover('boss',4);assert.equal(q.state.characters[0].hp,0);assert.equal(s.health,4);
+ q.complete('socal');assert.equal(q.state.achievements[0].badge,'DOUBLE TROUBLE');q.select(2);for(let i=0;i<4;i++)q.damage();q.select(1);for(let i=0;i<4;i++)q.damage();assert.equal(q.state.status,'ended');assert.equal(q.state.characters.every(c=>c.hp===0),true);assert.equal(q.state.achievements.length,1);
+ q.begin();assert.equal(q.state.history.at(-1).status,'ended');
+});
+test('charge needs real unique HP loss, three contributions and consumes exactly once',()=>{
+ const t=survivalSetup(),{q}=t;q.begin();q.hit('invulnerable',4,4,0);assert.equal(q.state.charge,0);
+ for(let i=0;i<20;i++)q.hit('enemy'+i,1,0,0);assert.equal(q.state.charge,100);assert.equal(q.activate(),false);
+ q.hit('daniel',1,0,1);q.hit('caleb',1,0,2);assert.equal(q.activate(),true);assert.deepEqual(Array.from(t.emitted),[0,0,1,1,2,2]);assert.equal(q.state.charge,0);assert.equal(q.activate(),false);q.hit('team',1,0,0);assert.equal(q.state.charge,0);t.advance();q.hit('enemy0',1,0,0);assert.equal(q.state.charge,0);
+ q.objective('beacon');assert.equal(q.state.charge,15);q.objective('beacon');assert.equal(q.state.charge,15);
+});
+test('survival atomic envelope isolates legacy, quota retains previous complete generation and backup',()=>{
+ const t=survivalSetup(),{q,s,data,context}=t;data.set('3dudes1quest-save-109','legacy bytes');q.begin();q.damage();s.score=123;q.commit();const primary='3dudes1quest-survival-v1',before=data.get(primary),old=JSON.parse(before);assert.equal(old.characters[0].hp,3);assert.equal(old.worlds['3dudes1quest-save-109'].health,3);assert.equal(old.worlds['3dudes1quest-save-109'].score,123);
+ const write=context.localStorage.setItem;context.localStorage.setItem=(k,v)=>{if(k===primary)throw Error('quota');write(k,v)};q.damage();assert.equal(q.storageBlocked,true);assert.equal(data.get(primary),before);assert.equal(data.get('3dudes1quest-save-109'),'legacy bytes');assert.equal(JSON.parse(data.get(primary+':backup')).characters[0].hp,3);
+ context.localStorage.setItem=write;assert.equal(q.commit(),true);assert.equal(JSON.parse(data.get(primary)).worlds['3dudes1quest-save-109'].health,2);
+ data.set(primary,'{bad');vm.runInNewContext(fs.readFileSync('js/core/quest-survival.js','utf8'),context);assert.equal(context.window.QuestSurvival.state.characters[0].hp,2);assert.equal(context.window.QuestSurvival.valid({...old,characters:[{hp:0,available:true},...old.characters.slice(1)]}),false);
+});
+test('backup recovery retains a committed knockout; public tester query grants no protection',()=>{
+ const {q,data,context}=survivalSetup();q.begin();for(let i=0;i<4;i++)q.damage();data.set('3dudes1quest-survival-v1','{interrupted');context.location.search='?tester=1';vm.runInNewContext(fs.readFileSync('js/core/quest-survival.js','utf8'),context);const recovered=context.window.QuestSurvival;assert.equal(recovered.testing,false);assert.equal(recovered.state.characters[0].hp,0);assert.equal(recovered.state.active,1);assert.equal(recovered.select(0),false);
+});

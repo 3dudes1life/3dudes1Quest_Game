@@ -45,7 +45,7 @@
   function startPipelineReplay(){if(pipelineReplay||!save())return;const snapshot=QuestRuntime.readSave(world.saveKey);if(!snapshot||!QuestRuntime.writeSave(world.saveKey+'-pipeline-replay',{campaign:snapshot}))return;
    pipelineReplay={snapshot,player:{...player},health:s.health};start(false);s.encounters=QuestEncounters.read('alaska');valves.forEach(v=>{v.hp=2;v.inv=0});s.bossDefeated=s.completed=s.paused=s.bossStarted=false;s.enemies=s.enemies.filter(e=>!e.pipeline);s.checkpoint=3260;player.x=3265;player.y=548;s.health=4;$('endingCard').classList.add('hidden');$('pauseMenu').classList.add('hidden');input.releaseAll();clock.reset();
   }
-  function returnPipelineReplay(won=false){if(!pipelineReplay)return;const replay=pipelineReplay;if(won){const data=JSON.parse(JSON.stringify(replay.snapshot));data.encounters=QuestEncounters.read('alaska',data);data.encounters.pipeline={complete:true,valves:[0,0,0],stage:5,floodTicks:0};if(!QuestRuntime.writeSave(world.saveKey,data)){pause(true);message('Replay won. Saving unavailable; keep this tab open and retry Return.');return;}}
+  function returnPipelineReplay(won=false){if(QuestSurvival.enabled())won=false;if(!pipelineReplay)return;const replay=pipelineReplay;if(won){const data=JSON.parse(JSON.stringify(replay.snapshot));data.encounters=QuestEncounters.read('alaska',data);data.encounters.pipeline={complete:true,valves:[0,0,0],stage:5,floodTicks:0};if(!QuestRuntime.writeSave(world.saveKey,data)){pause(true);message('Replay won. Saving unavailable; keep this tab open and retry Return.');return;}}
    pipelineReplay=null;QuestRuntime.clearSave(world.saveKey+'-pipeline-replay');start(false);Object.assign(player,replay.player,{vx:0,vy:0});s.health=replay.health;input.releaseAll();message(won?'Pipeline complete · saved adventure restored.':'Saved adventure restored.');
   }
   function spawnY(){const ledge=world.platforms.filter(p=>s.checkpoint>=p.x&&s.checkpoint+44<=p.x+p.w).sort((a,b)=>a.y-b.y)[0];return (s.encounters.pipeline.stage>=2&&!s.encounters.pipeline.complete&&ledge?ledge.y:world.floor)-player.h;}
@@ -58,7 +58,7 @@
    if(p.stage===3){p.floodTicks++;for(const ice of movingIce)ice.x=ice.origin+Math.round(Math.sin(s.tick*.018+ice.origin)*24);
     const water=620-Math.min(95,p.floodTicks*.08);if(player.x>4500&&player.x<5530&&player.y+player.h>water)hurt(player.x+30);
     if(s.tick%100===0&&s.hostile.filter(q=>q.pipeline).length<3)s.hostile.push({x:Math.min(5450,player.x+200),y:120,w:18,h:35,vx:0,vy:3,life:160,icicle:true,pipeline:true});
-    if(player.x>=5550){p.stage=5;p.complete=true;s.health=4;s.score+=1800;s.checkpoint=Math.max(s.checkpoint,5565);s.enemies.filter(e=>e.pipeline).forEach(e=>e.alive=false);s.hostile=s.hostile.filter(q=>!q.pipeline);QuestAudio.effect('bossDefeat');message('PIPELINE SEALED · RIVER SAFE · continue to the Frost Queen!');if(pipelineReplay)returnPipelineReplay(true);else save();}
+    if(player.x>=5550){p.stage=5;p.complete=true;s.health=4;QuestSurvival.objective('pipeline',true);s.score+=1800;s.checkpoint=Math.max(s.checkpoint,5565);s.enemies.filter(e=>e.pipeline).forEach(e=>e.alive=false);s.hostile=s.hostile.filter(q=>!q.pipeline);QuestAudio.effect('bossDefeat');message('PIPELINE SEALED · RIVER SAFE · continue to the Frost Queen!');if(pipelineReplay)returnPipelineReplay(true);else save();}
    }
   }
   function drawPipeline(){const p=s.encounters.pipeline;if(player.x<2400||player.x>6200)return;
@@ -68,18 +68,18 @@
    if(p.stage===2)label('GLACIER BREAKING · GET ON THE BLUE LEDGES!',s.camera+640,170,22,'#ffe3a0');
    if(p.stage===3){const water=620-Math.min(95,p.floodTicks*.08);ctx.fillStyle='rgba(27,119,170,.65)';ctx.fillRect(4500,water,1030,720-water);ctx.fillStyle='#b4f1ff';for(let x=4500;x<5530;x+=30)ctx.fillRect(x,water+Math.round(Math.sin(s.tick*.1+x)*4),22,4);label('RISING WATER · HIGH GROUND →',s.camera+640,170,22,'#ffe3a0');}
   }
-  function setDude(n){s.dude=(n+3)%3;player.anim='idle';player.animUntil=0;$('powerIcon').textContent=QuestCore.CAST[s.dude].powerIcon;QuestAudio.effect('switch');hud()}
+  function setDude(n){if(!QuestSurvival.select(n,n===s.dude+1))return;s.dude=(n+3)%3;player.anim='idle';player.animUntil=0;$('powerIcon').textContent=QuestCore.CAST[s.dude].powerIcon;QuestAudio.effect('switch');hud()}
   function reset(){
    input.releaseAll();QuestMasterArt.clearDeaths();s.encounters=QuestEncounters.read('alaska');valves.forEach(v=>{v.hp=2;v.inv=0});Object.assign(s,{health:4,score:0,checkpoint:160,dude:0,tick:0,camera:0,cooldown:0,bossStarted:false,bossDefeated:false,completed:false,deaths:0,blizzard:0,icePatches:[]});
    s.relays.forEach(r=>{r.hp=2;r.inv=0});s.shards.forEach(r=>r.got=false);s.caches.forEach(r=>r.got=false);s.enemies=makeEnemies();s.shots=[];s.cookies=[];s.fields=[];s.hostile=[];Object.assign(boss,{hp:12,inv:0,timer:100,windup:0,attack:0,phase:1,shield:0});
    Object.assign(player,{x:160,y:world.floor-72,vx:0,vy:0,inv:0});motion={};dialogueCheckpoint=0;gateWarned=false;$('dialogue').classList.add('hidden');$('endingCard').classList.add('hidden');
   }
   function start(fresh){if(!ready)return;if(fresh){QuestRuntime.clearSave(world.saveKey);reset()}else{reset();load()}
-   s.started=true;s.paused=false;$('openingCard').classList.add('hidden');$('pauseMenu').classList.add('hidden');setDude(s.dude);if(s.completed){s.paused=true;$('endingCard').classList.remove('hidden')}clock.reset();clock.start();input.focusCanvas();hud();message('Restore the relays · ↑/W jump · Space/POWER attack');QuestAudio.sync();
+   s.started=true;s.paused=false;$('openingCard').classList.add('hidden');$('pauseMenu').classList.add('hidden');setDude(s.dude);if(s.completed){s.paused=true;$('endingCard').classList.remove('hidden')}QuestSurvival.enter();clock.reset();clock.start();input.focusCanvas();hud();message('Restore the relays · ↑/W jump · Space/POWER attack');QuestAudio.sync();
   }
   function pause(value){if(!s.started||s.completed)return;s.paused=value;input.releaseAll();$('pauseMenu').classList.toggle('hidden',!value);if(value)save();else{clock.reset();input.focusCanvas()}QuestAudio.sync()}
   function burst(x,y,color){for(let i=0;i<12;i++)s.particles.push({x,y,vx:Math.cos(i*Math.PI/6)*3,vy:Math.sin(i*Math.PI/6)*3,life:25,color});QuestRuntime.capEffects(s.particles,100)}
-  function hurt(x){if(player.inv>0||!s.started||s.paused||s.completed)return false;s.health--;player.inv=90;player.vx=player.x<x?-5:5;player.vy=-5;player.anim='hurt';player.animUntil=clock.time+250;QuestAudio.effect('damage');burst(player.x,player.y,'#ff668a');
+  function hurt(x){if(player.inv>0||!s.started||s.paused||s.completed)return false;if(QuestSurvival.damage())return true;s.health--;player.inv=90;player.vx=player.x<x?-5:5;player.vy=-5;player.anim='hurt';player.animUntil=clock.time+250;QuestAudio.effect('damage');burst(player.x,player.y,'#ff668a');
    if(s.health<=0){s.deaths++;QuestAudio.effect('gameOver');s.health=4;player.x=s.checkpoint;player.y=spawnY();if(s.encounters.pipeline.stage>=2&&!s.encounters.pipeline.complete){s.encounters.pipeline.stage=2;s.encounters.pipeline.floodTicks=0;}player.vx=player.vy=0;player.inv=120;motion={};input.releaseAll();s.shots=[];s.cookies=[];s.fields=[];s.hostile=[];
     if(s.bossStarted&&!s.bossDefeated){s.bossStarted=false;Object.assign(boss,{hp:12,timer:100,windup:0,inv:0,attack:0,phase:1,shield:0});s.blizzard=0;s.icePatches=[];s.enemies=s.enemies.filter(e=>!e.summoned)}message('Back at the shelter. Relays and treasures are safe.');save();
    }hud();return true;
@@ -87,21 +87,22 @@
   function fire(){if(s.cooldown||s.paused||s.completed)return;const power=QuestCore.makePowerProjectile(s.dude,player);if(power.kind==='cookieBomb')s.cookies.push(power.entity);else s.shots.push(power.entity);s.cooldown=32;s.cast=s.dude===1?18:0;player.anim='attack';player.animStarted=clock.time;player.animUntil=clock.time+240;QuestAudio.effect(power.sound);}
   const overlaps=(a,b)=>a.x<b.x+b.w&&a.x+a.w>b.x&&a.y<b.y+b.h&&a.y+a.h>b.y;
   function targets(){return [...s.enemies.filter(e=>e.alive&&!e.normal),...s.relays.filter(r=>r.hp>0),...valves.filter(r=>s.encounters.pipeline.stage>0&&!s.encounters.pipeline.complete&&r.hp>0),...(s.bossStarted&&!s.bossDefeated?[boss]:[])]}
-  function hit(target,damage=1){
-   if(target===boss){if(boss.inv)return false;if(boss.shield>0){boss.shield=Math.max(0,boss.shield-damage);boss.inv=10;QuestAudio.effect('ice');burst(boss.x+60,boss.y+80,'#cffaff');hud();return true;}boss.hp=Math.max(0,boss.hp-damage);boss.inv=24;QuestAudio.effect('bossHit');burst(boss.x+60,boss.y+80,'#80ffe0');if(!boss.hp){QuestMasterArt.defeat('frost-queen',boss.x+boss.w/2,boss.y+boss.h,clock.time,202);s.bossDefeated=true;s.hostile=[];s.blizzard=0;s.icePatches=[];s.enemies.forEach(e=>{e.normal=true;e.alive=!e.pipeline;e.windup=0;e.vy=0});s.score+=3000;QuestAudio.effect('bossDefeat');QuestJourney.complete(world.id);save();message('The aurora returns! Head right to the trail marker.')}}
+  function hit(target,damage=1,owner=s.dude){const before=target.hp+(target===boss?boss.shield:0);const result=hitRaw(target,damage);if(result)QuestSurvival.hit(target===boss?'frost-queen':target.kind+':'+(target.index??target.id??target.x),before,Math.max(0,target.hp)+(target===boss?boss.shield:0),owner);return result}
+  function hitRaw(target,damage=1){
+   if(target===boss){if(boss.inv)return false;if(boss.shield>0){boss.shield=Math.max(0,boss.shield-damage);boss.inv=10;QuestAudio.effect('ice');burst(boss.x+60,boss.y+80,'#cffaff');hud();return true;}boss.hp=Math.max(0,boss.hp-damage);boss.inv=24;QuestAudio.effect('bossHit');burst(boss.x+60,boss.y+80,'#80ffe0');if(!boss.hp){QuestMasterArt.defeat('frost-queen',boss.x+boss.w/2,boss.y+boss.h,clock.time,202);s.bossDefeated=true;QuestSurvival.objective('frost-queen',true);s.hostile=[];s.blizzard=0;s.icePatches=[];s.enemies.forEach(e=>{e.normal=true;e.alive=!e.pipeline;e.windup=0;e.vy=0});s.score+=3000;QuestAudio.effect('bossDefeat');QuestJourney.complete(world.id);save();message('The aurora returns! Head right to the trail marker.')}}
    else if(target.kind==='valve'){if(target.inv)return false;target.hp=Math.max(0,target.hp-damage);target.inv=18;s.encounters.pipeline.valves[target.index]=target.hp;QuestAudio.effect(target.hp?'hit':'beacon');burst(target.x,target.y,'#91ffc5');if(valves.every(v=>v.hp===0)){s.encounters.pipeline.stage=2;s.encounters.pipeline.floodTicks=0;s.checkpoint=Math.max(s.checkpoint,4460);message('VALVES CLOSED · GLACIER BREAKING · climb the blue ice!')}save();}
    else if(target.kind==='relay'){const r=target;if(r.inv)return false;r.hp=Math.max(0,r.hp-damage);r.inv=18;QuestAudio.effect(r.hp?'ice':'beacon');if(!r.hp){s.score+=500;save();message(r.name+' restored!')}}
    else{target.hp-=damage;target.flash=12;QuestAudio.effect('hit');if(target.hp<=0){QuestMasterArt.defeat(target.pipeline?({worker:'pipeline-worker',drone:'surveillance-drone',turret:'security-turret',machine:'machinery',oil:'oil-slime'}[target.type]):target.type==='owl'?'alaskan-owl':'zombie-salmon',target.x+target.w/2,target.y+target.h,clock.time,76);target.alive=false;if(target.pipeline)s.encounters.pipeline.defeated[target.id-200]=true;s.score+=150;QuestAudio.effect('defeat');burst(target.x,target.y,'#b7efff');if(target.pipeline)save()}}hud();return true;
   }
-  function splash(x,y,radius,damage){for(const t of targets())if(Math.hypot(t.x+t.w/2-x,t.y+t.h/2-y)<radius)hit(t,damage)}
+  function splash(x,y,radius,damage,owner=2){for(const t of targets())if(Math.hypot(t.x+t.w/2-x,t.y+t.h/2-y)<radius)hit(t,damage,owner)}
   function powers(){
    for(const q of s.shots){q.life--;q.age=(q.age||0)+1;q.x+=q.vx;q.y+=q.vy;let collision=null;
     for(const t of targets())if(!(q.hitTargets||[]).includes(t)&&overlaps(q,t)){collision=t;break}
     if(q.type==='heart'&&(collision||q.age>=QuestCore.POWER_CONTRACT.heart.detonateAge)){s.fields.push({x:q.x,y:q.y,radius:98,life:62,age:0,detonated:false,hits:[]});q.life=0;QuestAudio.effect('heartPop')}
-    else if(collision){hit(collision);q.hitTargets.push(collision);if(q.bounces>0){q.bounces--;const next=targets().find(t=>!q.hitTargets.includes(t)&&Math.abs(t.x-q.x)<430);if(next){const dx=next.x-q.x,dy=next.y+20-q.y,dist=Math.hypot(dx,dy)||1;q.vx=dx/dist*12.8;q.vy=dy/dist*12.8}QuestAudio.effect('ricochet')}else q.life=0}
+    else if(collision){hit(collision,1,0);q.hitTargets.push(collision);if(q.bounces>0){q.bounces--;const next=targets().find(t=>!q.hitTargets.includes(t)&&Math.abs(t.x-q.x)<430);if(next){const dx=next.x-q.x,dy=next.y+20-q.y,dist=Math.hypot(dx,dy)||1;q.vx=dx/dist*12.8;q.vy=dy/dist*12.8}QuestAudio.effect('ricochet')}else q.life=0}
     if(q.x<0||q.x>world.length||q.y>720)q.life=0;
    }s.shots=s.shots.filter(q=>q.life>0);
-   for(const f of s.fields){f.life--;f.age++;for(const t of targets())if(!f.hits.includes(t)&&Math.hypot(t.x+t.w/2-f.x,t.y+t.h/2-f.y)<f.radius){hit(t);f.hits.push(t)}if(f.age===30){f.detonated=true;splash(f.x,f.y,98,1);QuestAudio.effect('heartPop')}}s.fields=s.fields.filter(f=>f.life>0);
+   for(const f of s.fields){f.life--;f.age++;for(const t of targets())if(!f.hits.includes(t)&&Math.hypot(t.x+t.w/2-f.x,t.y+t.h/2-f.y)<f.radius){hit(t,1,1);f.hits.push(t)}if(f.age===30){f.detonated=true;splash(f.x,f.y,98,1,1);QuestAudio.effect('heartPop')}}s.fields=s.fields.filter(f=>f.life>0);
    for(const q of s.cookies){q.life--;if(!q.stuck){q.vy+=q.gravity;q.x+=q.vx;q.y+=q.vy;const on=routePlatforms.find(p=>q.vy>=0&&q.x+q.w>p.x&&q.x<p.x+p.w&&q.y+q.h>=p.y&&q.y+q.h-q.vy<=p.y);if(q.y+q.h>=world.floor||on||targets().some(t=>overlaps(q,t))){q.stuck=true;q.vx=q.vy=0;q.y=Math.min(q.y,(on?.y||world.floor)-q.h);QuestAudio.effect('ice')}}else if(--q.fuse<=0){splash(q.x,q.y,220,2);burst(q.x,q.y,'#ffe29a');QuestAudio.effect('cookie');q.life=0}}s.cookies=s.cookies.filter(q=>q.life>0);
   }
   function enemies(){for(const e of s.enemies){if(!e.alive||Math.abs(e.x-player.x)>1000)continue;if(e.flash)e.flash--;
@@ -125,7 +126,7 @@
    }}else if(--boss.timer<=0){boss.windup=48;boss.markers=[Math.max(6550,player.x-110),Math.min(7210,player.x+120)];QuestAudio.effect('warning')}
    if(overlaps(player,boss))hurt(boss.x);
   }
-  function update(dt,time){
+  function update(dt,time){if(QuestSurvival.enabled()&&(!QuestSurvival.live()||QuestSurvival.storageBlocked))return;
    if(!s.started||s.paused||s.completed)return;s.tick++;if(player.inv>0)player.inv--;if(s.cooldown)s.cooldown--;if(s.cast)s.cast--;s.relays.forEach(r=>{if(r.inv)r.inv--});valves.forEach(v=>{if(v.inv)v.inv--});pipelineUpdate();
    const move=QuestRuntime.movePlayer(player,input,QuestCore.CAST[s.dude],{ground:()=>world.floor,platforms:routePlatforms,world:world.length,jumpPressed:input.consume('jump'),motion});
    if(move.jumped)QuestAudio.effect('jump');if(move.landed&&move.impact>3)QuestAudio.effect(world.ice.some(r=>player.x>r.x&&player.x<r.x+r.w)?'ice':'land');
@@ -137,7 +138,7 @@
    if(world.ice.some(r=>player.x+player.w>r.x&&player.x<r.x+r.w)&&player.y+player.h>=world.floor-1)hurt(player.x+20);
    powers();enemies();
    for(const r of s.shards)if(!r.got&&Math.abs(player.x+22-r.x)<38&&Math.abs(player.y+30-r.y)<65){r.got=true;s.score+=100;QuestAudio.effect('shard');burst(r.x,r.y,'#a4ffdc');save()}
-   for(const r of s.caches)if(!r.got&&Math.abs(player.x+22-r.x)<42&&Math.abs(player.y+30-r.y)<70){r.got=true;s.health=4;s.score+=250;QuestAudio.effect('secret');message('Zoey found trail supplies! Health restored.');save()}
+   for(const r of s.caches)if(!r.got&&Math.abs(player.x+22-r.x)<42&&Math.abs(player.y+30-r.y)<70){r.got=true;QuestSurvival.objective('supplies:'+s.caches.indexOf(r));s.health=4;s.score+=250;QuestAudio.effect('secret');message('Zoey found trail supplies! Health restored.');save()}
    for(const cp of world.checkpoints)if(player.x>=cp.x&&s.checkpoint<cp.x){s.checkpoint=cp.x;s.health=4;const ok=save();QuestAudio.effect('checkpoint');message(cp.name+(ok?' · saved':' · storage unavailable'));if(cp.x>dialogueCheckpoint){dialogueCheckpoint=cp.x;$('dialogueText').textContent=cp.line;$('dialogue').classList.remove('hidden');s.paused=true;input.releaseAll();QuestAudio.sync()}}
    if((!s.relays.every(r=>r.hp===0)||!(s.encounters.pipeline.complete||s.encounters.pastMid||s.encounters.legacyAccess))&&player.x>6460){player.x=6460;if(!gateWarned){message('Seal the pipeline and restore all three Aurora Relays before entering the arena.');gateWarned=true}}
    else if(!s.bossStarted&&!s.bossDefeated&&player.x>6500){s.bossStarted=true;boss.timer=100;QuestAudio.effect('bossAppear');message('Frost Queen: NO SARCASM IN THE LAST FRONTIER!');QuestAudio.sync()}
@@ -211,6 +212,12 @@
   Promise.all([QuestCore.preloadCastImages(imgs),QuestMasterArt.ready]).then(([report])=>{ready=report.ready&&QuestCore.verifyCastRenderer(imgs).ready;$('beginAdventure').disabled=!ready;$('continueAdventure').disabled=!ready||!QuestRuntime.readSave(world.saveKey);if(!ready)message('Characters could not load. Reload when online.');draw(0)}).catch(error=>{ready=false;$('beginAdventure').disabled=true;$('continueAdventure').disabled=true;message('Artwork could not load. Reconnect and reload.');console.error(error.message)});
   const api={state:s,player,boss,valves,movingIce,pipelineUpdate,startPipelineReplay,returnPipelineReplay,input,clock,save,load,update,draw,start,hit,hurt,fire,setDude,world,renderer};
   window.__ADVENTURE_DEBUG__={state:s,player,version:window.QuestRelease.version};if(new URLSearchParams(location.search).has('qa'))window.__ADVENTURE_TEST__=api;
+  QuestSurvival.attach({world:world.id,state:()=>s,snapshot:()=>({version:1,encounters:s.encounters,dude:s.dude,health:s.health,score:s.score,checkpoint:s.checkpoint,relays:s.relays.map(r=>r.hp),shards:s.shards.map(r=>r.got),caches:s.caches.map(r=>r.got),enemies:s.enemies.map(e=>!e.alive),bossDefeated:s.bossDefeated,completed:s.completed}),now:()=>clock.time,playing:()=>s.started&&!s.paused&&!s.completed,replaying:()=>Boolean(pipelineReplay),blocked:()=>false,
+   release:()=>{input.releaseAll();player.anim='idle';player.animUntil=0;},protect:()=>{player.inv=90;player.anim='hurt';player.animUntil=clock.time+250;},
+   respawn:()=>{player.x=s.checkpoint;player.y=spawnY();player.vx=player.vy=0;player.onGround=true;motion={};s.shots=[];s.cookies=[];s.fields=[];s.hostile=[];if(s.encounters.pipeline.stage>=2&&!s.encounters.pipeline.complete){s.encounters.pipeline.stage=2;s.encounters.pipeline.floodTicks=0;}},freeze:()=>pause(true),
+   emit:(d,y)=>{const p=QuestCore.makePowerProjectile(d,{...player,y:player.y+y});if(p.kind==='cookieBomb')s.cookies.push(p.entity);else s.shots.push(p.entity);},
+   interrupt:()=>{if(boss.windup>0&&!boss.shield){boss.windup=0;boss.timer=Math.max(60,boss.timer);}}
+  });
   clock.start();return api;
  }
  window.QuestAdventure=Object.freeze({create});
